@@ -1,0 +1,29 @@
+
+*******************************
+M.A.R.S. - a ridiculous Shooter
+*******************************
+
+Credits:
+********
+
+Textures:
+ - all textures are created with Blender (http://www.blender.org)
+   and Gimp (http://www.gimp.org)
+ - they are released under the Creative Commons Attribution 3.0
+   by (C) 2010 Simon Schneegans and Felix Lauer
+   (http://creativecommons.org/licenses/by/3.0/)
+   
+Sound Files:
+ - some soudfiles are modified with Audacity
+   (http://audacity.sourceforge.net/)
+ - Credits go to:
+   - http://www.pacdv.com/    (thisistheday.ogg)
+   - http://www.soundjay.com/ (interface-sounds)
+ - all toon sounds are public domain
+ - announcer sounds are created with eSpeak 
+   (http://espeak.sourceforge.net/)
+   
+Fonts
+ - HandelGotLig: Be careful with this one...
+   You can get it for free everywhere on the internet, but I wasn't
+   able to figure out it's correct license
