@@ -26,12 +26,12 @@ bool InfoDM::kClose_(false);
 
 UiWindow* InfoDM::get() {
     if (instance_ == NULL) {
-        instance_ = new InfoDM(320, 360);
-        instance_->addWidget(new Button("Close", &kClose_, Vector2f(240,330), 70, 20));
+        instance_ = new InfoDM(320, 400);
+        instance_->addWidget(new Button("Close", &kClose_, Vector2f(240,370), 70, 20));
         instance_->addWidget(new Label("DeathMatch", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label("Rules and Infos", TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et ea rebum. \nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", Vector2f(10, 50), 300, 300));
+        instance_->addWidget(new TextBox("As a result of the GREAT WAR you have lost everything: your home, your family and\nyour self-esteem.\nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\nDEATHMATCH-arena.\nResist the other fighters and earn points by destroying the nutshells, they call ships.\nPrepare yourself!\nDeath and Glory awaits you.\n\nUse the keys you configured in options menu for controlling your ship.\nTo change your weapon, land on your planet, press\nFIRE and then navigate through the weapons by pressing LEFT or RIGHT.\nUse TAB to show statistics about the current game.", Vector2f(10, 50), 300, 300));
     }
     return instance_;
 }

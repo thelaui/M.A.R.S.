@@ -26,12 +26,12 @@ bool InfoCK::kClose_(false);
 
 UiWindow* InfoCK::get() {
     if (instance_ == NULL) {
-        instance_ = new InfoCK(320, 360);
-        instance_->addWidget(new Button("Close", &kClose_, Vector2f(240,330), 70, 20));
+        instance_ = new InfoCK(320, 400);
+        instance_->addWidget(new Button("Close", &kClose_, Vector2f(240,370), 70, 20));
         instance_->addWidget(new Label("CannonKeep", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label("Rules and Infos", TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et ea rebum. \nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", Vector2f(10, 50), 300, 300));
+        instance_->addWidget(new TextBox("As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\nReach it first to turn your enemy's home planet into a place of desolation!\nBe the CANNONKEEPer.\n\nUse the keys you configured in options menu for controlling your ship.\nTo change your weapon, land on your planet, press\nFIRE and then navigate through the weapons by pressing LEFT or RIGHT.\nUse TAB to show statistics about the current game.", Vector2f(10, 50), 300, 300));
     }
     return instance_;
 }
