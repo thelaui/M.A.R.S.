@@ -144,18 +144,15 @@ void Ship::draw() const {
         glLoadIdentity();
         glTranslatef(location_.x_, location_.y_, 0.f);
 
-        glEnable(GL_TEXTURE_2D);
-
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
         // draw glow
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Glow));
-        owner_->team_->color().gl4f(0.6f);
+        owner_->team_->color().gl4f(0.9f);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-radius_*3.2f,-radius_*3.2f);
-            glTexCoord2i(0, 1); glVertex2f(-radius_*3.2f, radius_*3.2f);
-            glTexCoord2i(1, 1); glVertex2f( radius_*3.2f, radius_*3.2f);
-            glTexCoord2i(1, 0); glVertex2f( radius_*3.2f,-radius_*3.2f);
+            glTexCoord2f(0.f, 0.f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.125f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.125f);   glVertex2f( radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
         glEnd();
 
         // draw ship
@@ -163,56 +160,31 @@ void Ship::draw() const {
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
         glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
         currentWeapon_->draw();
         glEnable(GL_TEXTURE_2D);
 
-        switch (owner_->graphic()) {
-            case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust1)); break;
-            case 2: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust2)); break;
-            case 3: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust3)); break;
-            case 4: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust4)); break;
-            case 5: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust5)); break;
-            case 6: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust6)); break;
-            case 7: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust7)); break;
-            case 8: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust8)); break;
-            case 9: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust9)); break;
-            case 10: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust10)); break;
-            case 11: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust11)); break;
-            default:;
-        }
+        float x, y;
+
+        x = static_cast<float>(owner_->graphic()%4)*0.25f + 0.125f;
+        y = static_cast<float>(std::floor(owner_->graphic()*0.25f))*0.125f;
+
         glColor3f(1.f, 1.f, 1.f);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 1); glVertex2f(-radius_*1.1f, -radius_*1.1f);
-            glTexCoord2i(1, 1); glVertex2f(-radius_*1.1f,  radius_*1.1f);
-            glTexCoord2i(1, 0); glVertex2f( radius_*1.1f,  radius_*1.1f);
-            glTexCoord2i(0, 0); glVertex2f( radius_*1.1f, -radius_*1.1f);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
+            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
         glEnd();
 
-        switch (owner_->graphic()) {
-            case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer1)); break;
-            case 2: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer2)); break;
-            case 3: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer3)); break;
-            case 4: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer4)); break;
-            case 5: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer5)); break;
-            case 6: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer6)); break;
-            case 7: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer7)); break;
-            case 8: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer8)); break;
-            case 9: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer9)); break;
-            case 10: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer10)); break;
-            case 11: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer11)); break;
-            default:;
-        }
+        x -= 0.125f;
+
         owner_->color().gl3f();
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 1); glVertex2f(-radius_*1.1f, -radius_*1.1f);
-            glTexCoord2i(1, 1); glVertex2f(-radius_*1.1f,  radius_*1.1f);
-            glTexCoord2i(1, 0); glVertex2f( radius_*1.1f,  radius_*1.1f);
-            glTexCoord2i(0, 0); glVertex2f( radius_*1.1f, -radius_*1.1f);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
+            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
         glEnd();
-
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
 
         glPopMatrix();
     }
@@ -283,18 +255,13 @@ void Ship::drawHighLight() const {
         if ((docked_ && (getLife() < 100.f) | (getFuel() < 100.f)))
             glScalef(std::sin(timer::totalTime()*10.f)*0.15f + 1.f, std::sin(timer::totalTime()*10.f)*0.15f + 1.f, 0.f);
 
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Highlight1));
         owner_->color().gl4f(0.3f);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-radius_*3.2f,-radius_*3.2f);
-            glTexCoord2i(0, 1); glVertex2f(-radius_*3.2f, radius_*3.2f);
-            glTexCoord2i(1, 1); glVertex2f( radius_*3.2f, radius_*3.2f);
-            glTexCoord2i(1, 0); glVertex2f( radius_*3.2f,-radius_*3.2f);
+            glTexCoord2f(0.125f, 0.f);     glVertex2f(-radius_*3.2f,-radius_*3.2f);
+            glTexCoord2f(0.125f, 0.125f);  glVertex2f(-radius_*3.2f, radius_*3.2f);
+            glTexCoord2f(0.25f, 0.125f);   glVertex2f( radius_*3.2f, radius_*3.2f);
+            glTexCoord2f(0.25f, 0.f);      glVertex2f( radius_*3.2f,-radius_*3.2f);
         glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
 
         glPopMatrix();
     }

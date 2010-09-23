@@ -108,34 +108,35 @@ void Ball::draw() const {
         float drawRadius = radius_*(3.0/2.0);
 
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ball));
+        // pattern
         glColor3f(1.0f, 1.0f, 1.0f);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 1); glVertex2f(-drawRadius, -drawRadius);
-            glTexCoord2i(1, 1); glVertex2f(-drawRadius,  drawRadius);
-            glTexCoord2i(1, 0); glVertex2f( drawRadius,  drawRadius);
-            glTexCoord2i(0, 0); glVertex2f( drawRadius, -drawRadius);
+            glTexCoord2f(0, 0.5f); glVertex2f(-drawRadius, -drawRadius);
+            glTexCoord2f(0.5f, 0.5f); glVertex2f(-drawRadius,  drawRadius);
+            glTexCoord2f(0.5f, 0); glVertex2f( drawRadius,  drawRadius);
+            glTexCoord2f(0, 0); glVertex2f( drawRadius, -drawRadius);
         glEnd();
 
         if (heatTimer_ > 0) {
-            glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::BallHot));
+            // hotness
             glColor4f(1,1,1, 0.05*heatTimer_);
             glBegin(GL_QUADS);
-                glTexCoord2i(0, 0); glVertex2f(-drawRadius, -drawRadius);
-                glTexCoord2i(0, 1); glVertex2f(-drawRadius,  drawRadius);
-                glTexCoord2i(1, 1); glVertex2f( drawRadius,  drawRadius);
-                glTexCoord2i(1, 0); glVertex2f( drawRadius, -drawRadius);
+                glTexCoord2f(0, 0.5f); glVertex2f(-drawRadius, -drawRadius);
+                glTexCoord2f(0, 1.f); glVertex2f(-drawRadius,  drawRadius);
+                glTexCoord2f(0.5f, 1.f); glVertex2f( drawRadius,  drawRadius);
+                glTexCoord2f(0.5f, 0.5f); glVertex2f( drawRadius, -drawRadius);
             glEnd();
         }
 
         glLoadIdentity();
         glTranslatef(location_.x_, location_.y_, 0);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::BallShade));
+        // shading
         glColor4f(1,1,1, 1-0.05*heatTimer_);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-drawRadius, -drawRadius);
-            glTexCoord2i(0, 1); glVertex2f(-drawRadius,  drawRadius);
-            glTexCoord2i(1, 1); glVertex2f( drawRadius,  drawRadius);
-            glTexCoord2i(1, 0); glVertex2f( drawRadius, -drawRadius);
+            glTexCoord2f(0.5f, 0); glVertex2f(-drawRadius, -drawRadius);
+            glTexCoord2f(0.5f, 0.5f); glVertex2f(-drawRadius,  drawRadius);
+            glTexCoord2f(1, 0.5f); glVertex2f( drawRadius,  drawRadius);
+            glTexCoord2f(1, 0); glVertex2f( drawRadius, -drawRadius);
         glEnd();
 
         glDisable(GL_TEXTURE_2D);

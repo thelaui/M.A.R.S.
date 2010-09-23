@@ -154,6 +154,9 @@ namespace window {
         // Setup translation (according to left-upper corner)
         gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
 
+        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_LIGHTING);
+
         glEnable(GL_LINE_SMOOTH);
         glEnable(GL_POINT_SMOOTH);
         glEnable(GL_BLEND);

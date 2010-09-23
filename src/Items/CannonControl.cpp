@@ -55,10 +55,10 @@ void CannonControl::draw() const {
         glPushMatrix();
         glTranslatef(location_.x_, location_.y_, 0);
 
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PoGlare));
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
         glColor4f(1.f, 0.3f, 0.5f, 1.f);
         glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
-
+        // glow
         glBegin(GL_QUADS);
             glTexCoord2i(0, 0); glVertex2f(-radius_, -radius_);
             glTexCoord2i(0, 1); glVertex2f(-radius_, radius_);
@@ -71,8 +71,7 @@ void CannonControl::draw() const {
         float scale(std::sin(timer::totalTime() *7.f) / 4.f + 1.f);
         glScalef(scale, scale, 1.f);
         glColor3f(1.f, 1.f, 1.f);
-
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::CannonControl));
+        // remote control
         glBegin(GL_QUADS);
             glTexCoord2i(0, 0); glVertex2f(-radius_, -radius_);
             glTexCoord2i(0, 1); glVertex2f(-radius_, radius_);
@@ -104,7 +103,7 @@ void CannonControl::draw() const {
             glColor3f(1.f, 0.7f, 0.9f);
             glEnable(GL_TEXTURE_2D);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-            glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Glow));
+            // flash
             glBegin(GL_QUADS);
                 glTexCoord2i(0, 0); glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f-15);
                 glTexCoord2i(0, 1); glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f+15);
@@ -129,7 +128,7 @@ void CannonControl::draw() const {
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::HasControl));
+        // atomar radiance
         glColor4f(0.8f, 0.2f, 0.4f, 0.2f);
         glBegin(GL_QUADS);
             glTexCoord2i(0, 0); glVertex2f(-24, -24);

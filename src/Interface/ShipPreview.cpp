@@ -39,61 +39,40 @@ void ShipPreview::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
-    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Glow));
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
     color_->gl4f(0.6f);
     glBegin(GL_QUADS);
-        glTexCoord2i(0, 0); glVertex2f(-16.f*3.2f,-16.f*3.2f);
-        glTexCoord2i(0, 1); glVertex2f(-16.f*3.2f, 16.f*3.2f);
-        glTexCoord2i(1, 1); glVertex2f( 16.f*3.2f, 16.f*3.2f);
-        glTexCoord2i(1, 0); glVertex2f( 16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0, 0); glVertex2f(-16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0, 0.125f); glVertex2f(-16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(0.125f, 0.125f); glVertex2f( 16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(0.125f, 0); glVertex2f( 16.f*3.2f,-16.f*3.2f);
     glEnd();
 
     // draw ship
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glRotatef(timer::totalTime()*160, 0.f, 0.f, 1.f);
 
-    switch (*graphic_) {
-        case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust1)); break;
-        case 2: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust2)); break;
-        case 3: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust3)); break;
-        case 4: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust4)); break;
-        case 5: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust5)); break;
-        case 6: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust6)); break;
-        case 7: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust7)); break;
-        case 8: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust8)); break;
-        case 9: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust9)); break;
-        case 10: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust10)); break;
-        case 11: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Exhaust11)); break;
-        default:;
-    }
+    float x, y;
+
+    x = static_cast<float>((*graphic_)%4)*0.25f + 0.125f;
+    y = static_cast<float>(std::floor((*graphic_)*0.25f))*0.125f;
+
     glColor3f(1.f, 1.f, 1.f);
     glBegin(GL_QUADS);
-        glTexCoord2i(0, 1); glVertex2f(-16.f, -16.f);
-        glTexCoord2i(1, 1); glVertex2f(-16.f,  16.f);
-        glTexCoord2i(1, 0); glVertex2f( 16.f,  16.f);
-        glTexCoord2i(0, 0); glVertex2f( 16.f, -16.f);
+        glTexCoord2f(x, y+0.125f);          glVertex2f(-16.f, -16.f);
+        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-16.f,  16.f);
+        glTexCoord2f(x+0.125f, y);          glVertex2f( 16.f,  16.f);
+        glTexCoord2f(x, y);                 glVertex2f( 16.f, -16.f);
     glEnd();
 
-    switch (*graphic_) {
-        case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer1)); break;
-        case 2: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer2)); break;
-        case 3: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer3)); break;
-        case 4: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer4)); break;
-        case 5: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer5)); break;
-        case 6: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer6)); break;
-        case 7: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer7)); break;
-        case 8: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer8)); break;
-        case 9: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer9)); break;
-        case 10: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer10)); break;
-        case 11: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShipPlayerLayer11)); break;
-        default:;
-    }
+    x -= 0.125f;
+
     color_->gl3f();
     glBegin(GL_QUADS);
-        glTexCoord2i(0, 1); glVertex2f(-16.f, -16.f);
-        glTexCoord2i(1, 1); glVertex2f(-16.f,  16.f);
-        glTexCoord2i(1, 0); glVertex2f( 16.f,  16.f);
-        glTexCoord2i(0, 0); glVertex2f( 16.f, -16.f);
+        glTexCoord2f(x, y+0.125f);          glVertex2f(-16.f, -16.f);
+        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-16.f,  16.f);
+        glTexCoord2f(x+0.125f, y);          glVertex2f( 16.f,  16.f);
+        glTexCoord2f(x, y);                 glVertex2f( 16.f, -16.f);
     glEnd();
 
     glDisable(GL_TEXTURE_2D);

@@ -48,18 +48,8 @@ namespace cannonBalls {
     }
 
     void draw() {
-        glEnable(GL_TEXTURE_2D);
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Explode));
-        glBegin(GL_QUADS);
-
         for (std::list<CannonBall*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void update() {

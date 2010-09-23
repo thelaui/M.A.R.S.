@@ -40,7 +40,7 @@ void BlackHole::draw() const {
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Hole1));
 
     glColor4f(1,1,1,0.2);
-    float drawRadius = radius_*(4.0/3.0);
+    float drawRadius = radius_*1.8f;
     glBegin(GL_QUADS);
         glTexCoord2i(0, 0); glVertex2f(-drawRadius, -drawRadius);
         glTexCoord2i(0, 1); glVertex2f(-drawRadius,  drawRadius);
@@ -49,7 +49,7 @@ void BlackHole::draw() const {
     glEnd();
     glColor4f(1,1,1,0.6);
     glRotatef(rotation_*-2, 0, 0, 1);
-    drawRadius = radius_;
+    drawRadius = radius_*1.3f;
     glBegin(GL_QUADS);
         glTexCoord2i(0, 0); glVertex2f(-drawRadius, -drawRadius);
         glTexCoord2i(0, 1); glVertex2f(-drawRadius,  drawRadius);
@@ -58,7 +58,7 @@ void BlackHole::draw() const {
     glEnd();
     glColor4f(1,1,1,1);
     glRotatef(rotation_*4, 0, 0, 1);
-    drawRadius = radius_*2.0/3;
+    drawRadius = radius_;
     glBegin(GL_QUADS);
         glTexCoord2i(0, 0); glVertex2f(-drawRadius, -drawRadius);
         glTexCoord2i(0, 1); glVertex2f(-drawRadius,  drawRadius);

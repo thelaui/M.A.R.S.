@@ -34,8 +34,14 @@ namespace ships {
     }
 
     void draw() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
+
         for (std::vector<Ship*>::iterator it = shipList_.begin(); it != shipList_.end(); ++it)
             (*it)->draw();
+
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void drawNames() {
@@ -44,8 +50,15 @@ namespace ships {
     }
 
     void drawHighLights() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
         for (std::vector<Ship*>::iterator it = shipList_.begin(); it != shipList_.end(); ++it)
             (*it)->drawHighLight();
+
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     std::vector<Ship*> const& getShips() {

@@ -40,7 +40,7 @@ namespace stars {
 
     void draw() {
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Star));
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glBegin(GL_QUADS);
 

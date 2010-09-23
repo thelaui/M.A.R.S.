@@ -25,7 +25,7 @@ namespace explodes {
     }
 
     Explode::Explode(Vector2f const& location):
-               Particle(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.2f, 0.4f)) {
+               Particle(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.4f, 0.6f)) {
 
         velocity_ = Vector2f::randDir()*150*sf::Randomizer::Random(0.2f, 2.f);
 
@@ -47,10 +47,12 @@ namespace explodes {
 
     void Explode::draw() const {
         color_.gl4f(0.2);
-        glTexCoord2i(0, 0); glVertex2f(location_.x_-radius_, location_.y_-radius_);
-        glTexCoord2i(0, 1); glVertex2f(location_.x_-radius_, location_.y_+radius_);
-        glTexCoord2i(1, 1); glVertex2f(location_.x_+radius_, location_.y_+radius_);
-        glTexCoord2i(1, 0); glVertex2f(location_.x_+radius_, location_.y_-radius_);
+        const int posX = 6;
+        const int posY = 0;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+2)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+2)*0.125f, (posY+2)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+2)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
     void spawn(Vector2f const& location) {
@@ -58,18 +60,8 @@ namespace explodes {
     }
 
     void draw() {
-        glEnable(GL_TEXTURE_2D);
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Explode));
-        glBegin(GL_QUADS);
-
         for (std::list<Explode*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void update() {

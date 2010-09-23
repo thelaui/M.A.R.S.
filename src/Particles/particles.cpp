@@ -43,24 +43,45 @@ namespace particles {
     }
 
     void drawLower() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Particles));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glBegin(GL_QUADS);
+
+            explodes::          draw();
+            ammoFlubbas::       draw();
+            smokes::            draw();
+            dusts::             draw();
+            fragmentFlames::    draw();
+            miniAmmoFlubbas::   draw();
+            miniFlames::        draw();
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
         muds::              draw();
-        smokes::            draw();
         eruptions::         draw();
         ammoAFK47s::        draw();
         ammoROFLEs::        draw();
         ammoShotguns::      draw();
-        dusts::             draw();
-        fragmentFlames::    draw();
-        ammoFlubbas::       draw();
-        miniAmmoFlubbas::   draw();
-        miniFlames::        draw();
         fragments::         draw();
-        explodes::          draw();
+
     }
 
     void drawHigher() {
-        fuels::             draw();
-        cannonBalls::       draw();
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Particles));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glBegin(GL_QUADS);
+
+            fuels::             draw();
+            cannonBalls::       draw();
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
         sparks::            draw();
     }
 

@@ -29,9 +29,9 @@ namespace settings {
     int         C_soundVolume =             30;
     int         C_announcerVolume =         80;
     int         C_musicVolume =             60;
-    bool        C_showFPS =                 true;
-    bool        C_showParticleCount =       true;
-    bool        C_showLatency =             true;
+    bool        C_showFPS =                 false;
+    bool        C_showParticleCount =       false;
+    bool        C_showLatency =             false;
     bool        C_fullScreen =              false;
     bool        C_vsync =                   true;
     bool        C_drawAIPath =              false;

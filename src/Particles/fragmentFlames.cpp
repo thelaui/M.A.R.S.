@@ -54,10 +54,12 @@ namespace fragmentFlames {
 
     void FragmentFlame::draw() const {
         color_.gl3f();
-        glTexCoord2i(0, 0); glVertex2f(location_.x_-radius_, location_.y_-radius_);
-        glTexCoord2i(0, 1); glVertex2f(location_.x_-radius_, location_.y_+radius_);
-        glTexCoord2i(1, 1); glVertex2f(location_.x_+radius_, location_.y_+radius_);
-        glTexCoord2i(1, 0); glVertex2f(location_.x_+radius_, location_.y_-radius_);
+        const int posX = 5;
+        const int posY = 0;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
 
@@ -66,18 +68,8 @@ namespace fragmentFlames {
     }
 
     void draw() {
-        glEnable(GL_TEXTURE_2D);
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Fuel));
-        glBegin(GL_QUADS);
-
         for (std::list<FragmentFlame*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void update() {

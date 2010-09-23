@@ -35,7 +35,7 @@ void Planet::draw() const {
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture_));
     glColor3f(1,1,1);
 
-    float drawRadius = radius_*(4.0/3.0);
+    float drawRadius = radius_*1.7f;
     glBegin(GL_QUADS);
         glTexCoord2i(0, 0); glVertex2f(location_.x_-drawRadius, location_.y_-drawRadius);
         glTexCoord2i(0, 1); glVertex2f(location_.x_-drawRadius, location_.y_+drawRadius);

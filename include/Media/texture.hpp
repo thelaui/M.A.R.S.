@@ -23,14 +23,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace texture {
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6,
                       Planet7, Planet8, Planet9, Planet10, Planet11, Planet12, Planet13,
-                      Sun1, Hole1, Fuel, Ball, BallShade, BallHot, Blub, Flame, Smoke, Fragment,
-                      Star, Shield, Sleep, Confused, PoGlare, PoReverse, PoMedikit, PoShield,
-                      PoSleep, Glow, Highlight1, Exhaust1, ShipPlayerLayer1, Exhaust2, ShipPlayerLayer2,
-                      Exhaust3, ShipPlayerLayer3, Exhaust4, ShipPlayerLayer4, Exhaust5,
-                      ShipPlayerLayer5, Exhaust6, ShipPlayerLayer6, Exhaust7, ShipPlayerLayer7, Exhaust8,
-                      ShipPlayerLayer8, Exhaust9, ShipPlayerLayer9, Exhaust10,
-                      ShipPlayerLayer10, Exhaust11, ShipPlayerLayer11, MotherShip, MotherShipPlayerLayer, Sign1,
-                      Sign2, Logo1, Logo1off, Explode, Cannon, CannonSocket, CannonControl, HasControl,
+                      Sun1, Hole1, Ball, Particles, PowerUps, Ships, MotherShip, MotherShipPlayerLayer, Sign1,
+                      Sign2, Logo1, Logo1off, Explode, Cannon, CannonSocket,
                       WindowOn, WindowOff, EnergyBars, LeftHandle, RightHandle, BottomHandle, TopHandle, COUNT};
 
     GLuint const& getTexture(TextureType);
