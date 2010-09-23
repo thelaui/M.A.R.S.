@@ -148,6 +148,12 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
             life_ -= strength;
             if (life_ <= 0) explode();
             break;
+
+        case spaceObjects::oCannonBall:
+            life_ -= sf::Randomizer::Random(40, 60);
+            if (life_ <= 0) explode();
+            break;
+
         default:;
     }
 }

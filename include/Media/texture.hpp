@@ -24,7 +24,7 @@ namespace texture {
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6,
                       Planet7, Planet8, Planet9, Planet10, Planet11, Planet12, Planet13,
                       Sun1, Hole1, Ball, Particles, PowerUps, Ships, MotherShip, MotherShipPlayerLayer, Sign1,
-                      Sign2, Logo1, Logo1off, Explode, Cannon, CannonSocket,
+                      Sign2, Logo1, Logo1off, Explode, Cannon, CannonSocket, Background,
                       WindowOn, WindowOff, EnergyBars, LeftHandle, RightHandle, BottomHandle, TopHandle, COUNT};
 
     GLuint const& getTexture(TextureType);

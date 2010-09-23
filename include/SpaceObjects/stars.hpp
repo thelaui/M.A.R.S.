@@ -16,24 +16,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef STARS_HPP_INCLUDED
 # define STARS_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
-# include "System/Color3f.hpp"
-
 namespace stars {
-
-    class Star {
-        public:
-            Star();
-            void draw() const;
-
-        private:
-            Vector2f location_;
-            float    radius_;
-            Color3f  color_;
-    };
-
     void draw();
-    void populateSpace();
 }
 
 # endif // STARS_HPP_INCLUDED

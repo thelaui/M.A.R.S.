@@ -17,45 +17,34 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/texture.hpp"
 # include "System/settings.hpp"
+# include "System/window.hpp"
 
 # include <SFML/System.hpp>
 
 namespace stars {
-    Star::Star():
-        location_(sf::Randomizer::Random(0, 1280), sf::Randomizer::Random(0, 900)),
-        radius_(sf::Randomizer::Random(1.0f, 2.5f)),
-        color_(sf::Randomizer::Random(0.6f, 1.0f), sf::Randomizer::Random(0.6f, 1.0f), sf::Randomizer::Random(0.6f, 1.0f)) {}
-
-    void Star::draw() const {
-        glColor3f(color_.r(),color_.g(),color_.b());
-        glTexCoord2f(0, 0); glVertex2f(location_.x_-radius_, location_.y_-radius_);
-        glTexCoord2f(0, 1); glVertex2f(location_.x_-radius_, location_.y_+radius_);
-        glTexCoord2f(1, 1); glVertex2f(location_.x_+radius_, location_.y_+radius_);
-        glTexCoord2f(1, 0); glVertex2f(location_.x_+radius_, location_.y_-radius_);
-    }
-
-    namespace {
-        std::vector<Star> starVector_;
-    }
 
     void draw() {
+        window::setPixelView();
+
+        glDisable(GL_BLEND);
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Background));
         glBegin(GL_QUADS);
 
-        for (std::vector<Star>::iterator it = starVector_.begin(); it != starVector_.end(); ++it)
-            it->draw();
+        Vector2f const& viewport = window::getViewPort();
+
+        glColor3f(1.f, 1.f, 1.f);
+        glTexCoord2f(0, 0); glVertex2f(0, 0);
+        glTexCoord2f(0, static_cast<float>(viewport.y_)/512.f); glVertex2f(0, viewport.y_);
+        glTexCoord2f(static_cast<float>(viewport.x_)/512.f, static_cast<float>(viewport.y_)/512.f); glVertex2f(viewport.x_, viewport.y_);
+        glTexCoord2f(static_cast<float>(viewport.x_)/512.f, 0); glVertex2f(viewport.x_, 0);
 
         glEnd();
 
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
-    }
+        glEnable(GL_BLEND);
 
-    void populateSpace() {
-        starVector_.clear();
-        for (int i=0; i<settings::C_starCount; ++i)
-            starVector_.push_back(Star());
+        window::setSpaceView();
     }
 }

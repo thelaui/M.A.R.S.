@@ -38,7 +38,7 @@ namespace settings {
     bool        C_adaptiveParticleCount =   false;
     int         C_globalParticleCount =     50;
     int         C_globalParticleLifeTime =  50;
-    int         C_starCount =               500;
+    bool        C_showStars =               true;
     bool        C_enableSlowMotion =        true;
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
@@ -87,7 +87,7 @@ namespace settings {
         outStream << "[musicVolume] "           <<  C_musicVolume << std::endl;
         outStream << "[globalParticleCount] "   <<  C_globalParticleCount << std::endl;
         outStream << "[globalParticleLifeTime] "<<  C_globalParticleLifeTime << std::endl;
-        outStream << "[starCount] "             <<  C_starCount << std::endl;
+        outStream << "[showStars] "             << (C_showStars ? "true" : "false") << std::endl;
         outStream << "[showFPS] "               << (C_showFPS ? "true" : "false") << std::endl;
         outStream << "[showParticleCount] "     << (C_showParticleCount ? "true" : "false") << std::endl;
         outStream << "[showLatency] "           << (C_showLatency ? "true" : "false") << std::endl;
@@ -168,10 +168,12 @@ namespace settings {
                         iss >> value;
                         C_globalParticleLifeTime = clamp(value, 10, 300);
                     }
-                    else if (inputLine == "[starCount]") {
-                        int value;
+                    else if (inputLine == "[showStars]") {
+                        std::string value;
                         iss >> value;
-                        C_starCount = clamp(value, 100, 3000);
+                        if (value == "true")        C_showStars = true;
+                        else if (value == "false")  C_showStars = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                     }
                     else if (inputLine == "[showFPS]") {
                         std::string value;

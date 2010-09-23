@@ -29,6 +29,7 @@ namespace window {
     void setPixelView();
     void setSpaceView();
     void display();
+    void clear();
 
     void showCursor(bool show);
     void create();

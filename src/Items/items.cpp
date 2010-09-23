@@ -30,8 +30,14 @@ namespace items {
     }
 
     void draw() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
+
         if (cannonControl_)
             cannonControl_->draw();
+
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void addCannonControl() {

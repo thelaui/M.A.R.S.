@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 void mainLoop() {
     while (window::isOpen()) {
+        window::clear();
         window::handleEvents();
         timer::update();
         games::update();

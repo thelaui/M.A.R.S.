@@ -28,6 +28,9 @@ namespace cannonBalls {
 
             void update();
             void draw() const;
+
+        private:
+            float timer1_, timer2_;
     };
 
     void spawn(Vector2f const& location, Vector2f const& direction);

@@ -82,10 +82,10 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new Slider("Saturation", &sat2_, 0, 255, Vector2f(60,190), 380, 135, true));
         tabPlayer2->addWidget(new Slider("Value", &val2_, 0, 255, Vector2f(60,210), 380, 135, true));
 
-        tabGraphics->addWidget(new Slider("Star Count", &settings::C_starCount, 100, 3000, Vector2f(10,30), 440));
-        tabGraphics->addWidget(new Slider("Particle Count", &settings::C_globalParticleCount, 1, 300, Vector2f(10,50), 440));
-        tabGraphics->addWidget(new Slider("Particle Lifetime", &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,70), 440));
-        tabGraphics->addWidget(new Checkbox("Adaptive Particle Count", &settings::C_adaptiveParticleCount, Vector2f(10,90), 170));
+        tabGraphics->addWidget(new Slider("Particle Count", &settings::C_globalParticleCount, 1, 300, Vector2f(10,30), 440));
+        tabGraphics->addWidget(new Slider("Particle Lifetime", &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,50), 440));
+        tabGraphics->addWidget(new Checkbox("Adaptive Particle Count", &settings::C_adaptiveParticleCount, Vector2f(10,70), 170));
+        tabGraphics->addWidget(new Checkbox("Stars", &settings::C_showStars, Vector2f(10,90), 170));
         tabGraphics->addWidget(new Checkbox("Fullscreen", &fullscreen_, Vector2f(10,110), 170));
         tabGraphics->addWidget(new Checkbox("V-Sync", &vsync_, Vector2f(10,130), 170));
 

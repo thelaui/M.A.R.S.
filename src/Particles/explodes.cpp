@@ -25,7 +25,7 @@ namespace explodes {
     }
 
     Explode::Explode(Vector2f const& location):
-               Particle(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.4f, 0.6f)) {
+               Particle(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.3f, 0.45f)) {
 
         velocity_ = Vector2f::randDir()*150*sf::Randomizer::Random(0.2f, 2.f);
 

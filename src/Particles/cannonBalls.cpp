@@ -17,6 +17,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
+# include "System/settings.hpp"
+# include "Particles/particles.hpp"
+# include "SpaceObjects/Home.hpp"
+# include "SpaceObjects/ships.hpp"
 
 namespace cannonBalls {
 
@@ -25,22 +29,65 @@ namespace cannonBalls {
     }
 
     CannonBall::CannonBall(Vector2f const& location, Vector2f const& direction):
-             Particle(spaceObjects::oCannonBall, location, 15.f, 3.0f, 5.0f) {
+             Particle(spaceObjects::oCannonBall, location, 25.f, 30.0f, 5.0f),
+             timer1_(0.f),
+             timer2_(0.f) {
 
-        velocity_ = direction*800.f;
+        velocity_ = direction*300.f;
     }
 
     void CannonBall::update() {
         float time = timer::frameTime();
         location_ += velocity_*time;
+
+        if (timer1_ > 0)
+            timer1_ -= time;
+        else {
+            timer1_ = 0.03f/settings::C_globalParticleCount;
+            for (int i=0; i<20; ++i) {
+                particles::spawn(particles::pSmoke, location_+Vector2f::randDirLen()*15.f, velocity_);
+                particles::spawn(particles::pDust, location_);
+            }
+        }
+
+        if (timer2_ > 0)
+            timer2_ -= time;
+        else {
+            timer2_ = 0.2f/settings::C_globalParticleCount;
+            particles::spawn(particles::pFragmentFlame, location_, Vector2f(20.f,0), velocity_);
+        }
+
+        // check for collisions with homes
+        std::vector<Home*>const& homes = spaceObjects::getHomes();
+        for (std::vector<Home*>::const_iterator it = homes.begin(); it != homes.end(); ++it) {
+            if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2)) {
+                (*it)->onCollision(this, Vector2f(), Vector2f(), Vector2f());
+                sound::playSound(sound::BallExplode, location_, 100.f);
+                physics::causeShockWave(this, 100.f);
+                particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
+                particles::spawnMultiple(70, particles::pDust, location_);
+                particles::spawnMultiple(20, particles::pExplode, location_);
+                particles::spawnMultiple(8, particles::pBurningFragment, location_);
+                particles::spawnMultiple(1, particles::pMiniFlame, location_);
+                killMe();
+            }
+        }
+
+        // check for collisions with ships
+        std::vector<Ship*>const& shipsList = ships::getShips();
+        for (std::vector<Ship*>::const_iterator it = shipsList.begin(); it != shipsList.end(); ++it)
+            if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2))
+                (*it)->onCollision(this, Vector2f(), Vector2f(), Vector2f());
     }
 
     void CannonBall::draw() const {
-        glColor3f(1.0f, 0.5f, 0.2f);
-        glTexCoord2i(0, 0); glVertex2f(location_.x_-radius_, location_.y_-radius_);
-        glTexCoord2i(0, 1); glVertex2f(location_.x_-radius_, location_.y_+radius_);
-        glTexCoord2i(1, 1); glVertex2f(location_.x_+radius_, location_.y_+radius_);
-        glTexCoord2i(1, 0); glVertex2f(location_.x_+radius_, location_.y_-radius_);
+        glColor3f(1.0f, 1.0f, 1.0f);
+        const int posX = 5;
+        const int posY = 2;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+3)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+3)*0.125f, (posY+3)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+3)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
     void spawn(Vector2f const& location, Vector2f const& direction) {

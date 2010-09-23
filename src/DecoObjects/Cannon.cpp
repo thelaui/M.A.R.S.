@@ -42,25 +42,27 @@ void Cannon::update() {
         timer_ = 0.f;
         if (angle > 0.f) {
             if (angle > rotation_*M_PI/180)
-                rotation_ += timer::frameTime()*10;
+                rotation_ += timer::frameTime()*20;
             else
-                rotation_ -= timer::frameTime()*10;
+                rotation_ -= timer::frameTime()*20;
         }
         else {
             if (angle < rotation_*M_PI/180)
-                rotation_ -= timer::frameTime()*10;
+                rotation_ -= timer::frameTime()*20;
             else
-                rotation_ += timer::frameTime()*10;
+                rotation_ += timer::frameTime()*20;
         }
     }
     else if (std::abs(angle) > 0.1f) {
         timer_ += timer::frameTime();
-        if (timer_ > 5.f) {
+        Vector2f direction(-std::sin(rotation_*M_PI/180), std::cos(rotation_*M_PI/180));
+        Vector2f location(location_ + direction*180.f);
+        if (timer_ > 3.f) {
             timer_ = 0.f;
-            Vector2f direction(-std::sin(rotation_*M_PI/180), std::cos(rotation_*M_PI/180));
-            Vector2f location(location_ + direction*180.f);
             particles::spawn(particles::pCannonBall, location, direction);
         }
+        if (timer_ > 1.f)
+            particles::spawnTimed(std::pow(timer_-1, 3), particles::pDust, location);
     }
 }
 

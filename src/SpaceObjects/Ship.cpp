@@ -324,6 +324,11 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             setDamageSource(with->damageSource());
             break;
 
+        case spaceObjects::oCannonBall:
+            amount = life_;
+            setDamageSource(owner_);
+            break;
+
         default:;
     }
     life_ -= amount;
@@ -369,27 +374,28 @@ void Ship::explode() {
     fragStars_ = 0;
     fragStarTimer_ = 0.f;
 
-    if (damageSource_) {
-        if (damageSource_ == owner_) {
-            ++owner_->suicides_;
-            announcer::announce(announcer::Affronting);
-        }
-        else if (damageSource_->team() == owner_->team()) {
-            ++damageSource_->teamKills_;
-            damageSource_->ship()->fragStars_ = 0;
-            damageSource_->ship()->fragStarTimer_ = 0.f;
-            announcer::announce(announcer::Affronting);
-        }
-        else {
-            ++damageSource_->frags_;
-            ++damageSource_->points_;
-            if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-                ++damageSource_->team()->points_;
-            ++damageSource_->ship()->fragStars_;
-            damageSource_->ship()->fragStarTimer_ = 15.f;
-            announcer::announce(announcer::Praising);
-        }
+    if (!damageSource_) damageSource_ = owner_;
+
+    if (damageSource_ == owner_) {
+        ++owner_->suicides_;
+        announcer::announce(announcer::Affronting);
     }
+    else if (damageSource_->team() == owner_->team()) {
+        ++damageSource_->teamKills_;
+        damageSource_->ship()->fragStars_ = 0;
+        damageSource_->ship()->fragStarTimer_ = 0.f;
+        announcer::announce(announcer::Affronting);
+    }
+    else {
+        ++damageSource_->frags_;
+        ++damageSource_->points_;
+        if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
+            ++damageSource_->team()->points_;
+        ++damageSource_->ship()->fragStars_;
+        damageSource_->ship()->fragStarTimer_ = 15.f;
+        announcer::announce(announcer::Praising);
+    }
+
 }
 
 void Ship::respawn() {

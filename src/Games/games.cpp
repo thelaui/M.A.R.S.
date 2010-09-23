@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Hud/hud.hpp"
 # include "System/window.hpp"
+# include "SpaceObjects/stars.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -35,7 +36,7 @@ namespace games {
     }
 
     void update() {
-        glClear(GL_COLOR_BUFFER_BIT);
+        if (settings::C_showStars) stars::draw();
         currentGame_->update();
         if (newGame_) restart();
     }

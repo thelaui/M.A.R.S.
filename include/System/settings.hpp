@@ -35,7 +35,7 @@ namespace settings {
     extern bool           C_showParticleCount;
     extern bool           C_fullScreen;
     extern bool           C_vsync;
-    extern int            C_starCount;
+    extern bool           C_showStars;
     extern bool           C_drawLocalNames;
     extern bool           C_drawRemoteNames;
     extern bool           C_drawBotNames;

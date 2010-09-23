@@ -30,6 +30,7 @@ namespace window {
         sf::RenderWindow window_;
         Vector2f         viewPort_;
         bool             isCreated_(false);
+        bool             resized_(false);
         float            scale_(960.f/1280.f);
 
         void setViewPort() {
@@ -102,6 +103,7 @@ namespace window {
             viewPort_.x_  = windowWidth;
         }
         setViewPort();
+        resized_ = true;
     }
 
     void setPixelView() {
@@ -124,6 +126,13 @@ namespace window {
 
     void display() {
         window_.Display();
+    }
+
+    void clear() {
+        if (!settings::C_showStars || resized_) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            resized_ = false;
+        }
     }
 
     void showCursor(bool show) {

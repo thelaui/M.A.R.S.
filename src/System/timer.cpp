@@ -17,8 +17,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/window.hpp"
 
-# include <iostream>
-
 namespace timer {
 
     namespace {

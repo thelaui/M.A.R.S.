@@ -26,7 +26,7 @@ class Particle: public MobileSpaceObject {
                  lifeTime_(0) {}
 
         void killMe() {lifeTime_ = totalLifeTime_;}
-        bool isDead() {return (lifeTime_ > totalLifeTime_);}
+        bool isDead() {return (lifeTime_ >= totalLifeTime_);}
 
     protected:
         float totalLifeTime_;

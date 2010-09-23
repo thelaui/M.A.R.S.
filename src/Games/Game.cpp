@@ -15,7 +15,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/Game.hpp"
 
-# include "SpaceObjects/stars.hpp"
 # include "SpaceObjects/spaceObjects.hpp"
 # include "SpaceObjects/balls.hpp"
 # include "SpaceObjects/ships.hpp"
@@ -77,7 +76,6 @@ void Game::update() const {
 }
 
 void Game::draw() const {
-    stars::draw();
     particles::drawLower();
     ships::draw();
     balls::draw();
@@ -143,7 +141,6 @@ void Game::createSpace() const {
         }
 
     }
-    stars::populateSpace();
 }
 
 

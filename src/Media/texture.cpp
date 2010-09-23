@@ -34,7 +34,7 @@ namespace texture {
             glGenTextures(1, textures_[type]);
             glBindTexture(GL_TEXTURE_2D, *textures_[type]);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.GetWidth(), img.GetHeight(), 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);
-            if (type == WindowOff || type == WindowOn) {
+            if (type == WindowOff || type == WindowOn || type == Background) {
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
             }
@@ -70,10 +70,10 @@ namespace texture {
                 case Planet13:                 loadTexture_(type, "data/tex/spaceObjects/planet13.png");  break;
                 case Sun1:                     loadTexture_(type, "data/tex/spaceObjects/sun1.png");      break;
                 case Hole1:                    loadTexture_(type, "data/tex/spaceObjects/hole1.png");     break;
-                case Ball:                     loadTexture_(type, "data/tex/ball.png");             break;
+                case Ball:                     loadTexture_(type, "data/tex/ball.png");                   break;
                 case Particles:                loadTexture_(type, "data/tex/particles.png");              break;
                 case PowerUps:                 loadTexture_(type, "data/tex/powerUps.png");               break;
-                case Ships:                    loadTexture_(type, "data/tex/ships.png");            break;
+                case Ships:                    loadTexture_(type, "data/tex/ships.png");                  break;
                 case MotherShip:               loadTexture_(type, "data/tex/motherShip.png");             break;
                 case MotherShipPlayerLayer:    loadTexture_(type, "data/tex/motherShipPlayerLayer.png");  break;
                 case Sign1:                    loadTexture_(type, "data/tex/signs/sign1.png");            break;
@@ -82,6 +82,7 @@ namespace texture {
                 case Logo1off:                 loadTexture_(type, "data/tex/logos/logo1off.png");         break;
                 case Cannon:                   loadTexture_(type, "data/tex/cannon.png");                 break;
                 case CannonSocket:             loadTexture_(type, "data/tex/cannonSocket.png");           break;
+                case Background:               loadTexture_(type, "data/tex/background.jpg");             break;
                 case WindowOn:                 loadTexture_(type, "data/tex/interface/windowOn.png");     break;
                 case WindowOff:                loadTexture_(type, "data/tex/interface/windowOff.png");    break;
                 case EnergyBars:               loadTexture_(type, "data/tex/interface/energyBars.png");   break;

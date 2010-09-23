@@ -48,22 +48,21 @@ Ship* CannonControl::update() {
 
 void CannonControl::draw() const {
     if (!collected_) {
-        glEnable(GL_TEXTURE_2D);
-
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         glPushMatrix();
         glTranslatef(location_.x_, location_.y_, 0);
 
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
         glColor4f(1.f, 0.3f, 0.5f, 1.f);
         glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
         // glow
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-radius_, -radius_);
-            glTexCoord2i(0, 1); glVertex2f(-radius_, radius_);
-            glTexCoord2i(1, 1); glVertex2f(radius_, radius_);
-            glTexCoord2i(1, 0); glVertex2f(radius_, -radius_);
+            const int posX1 = 0;
+            const int posY1 = 0;
+            glTexCoord2f(posX1*0.15625f,     posY1*0.15625f);     glVertex2f(-radius_, -radius_);
+            glTexCoord2f(posX1*0.15625f,     (posY1+1)*0.15625f); glVertex2f(-radius_, +radius_);
+            glTexCoord2f((posX1+1)*0.15625f, (posY1+1)*0.15625f); glVertex2f(+radius_, +radius_);
+            glTexCoord2f((posX1+1)*0.15625f, posY1*0.15625f);     glVertex2f(+radius_, -radius_);
         glEnd();
 
         glLoadIdentity();
@@ -73,14 +72,13 @@ void CannonControl::draw() const {
         glColor3f(1.f, 1.f, 1.f);
         // remote control
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-radius_, -radius_);
-            glTexCoord2i(0, 1); glVertex2f(-radius_, radius_);
-            glTexCoord2i(1, 1); glVertex2f(radius_, radius_);
-            glTexCoord2i(1, 0); glVertex2f(radius_, -radius_);
+            const int posX2 = 1;
+            const int posY2 = 0;
+            glTexCoord2f(posX2*0.15625f,     posY2*0.15625f);     glVertex2f(-radius_, -radius_);
+            glTexCoord2f(posX2*0.15625f,     (posY2+1)*0.15625f); glVertex2f(-radius_, +radius_);
+            glTexCoord2f((posX2+1)*0.15625f, (posY2+1)*0.15625f); glVertex2f(+radius_, +radius_);
+            glTexCoord2f((posX2+1)*0.15625f, posY2*0.15625f);     glVertex2f(+radius_, -radius_);
         glEnd();
-
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
 
         glPopMatrix();
     }
@@ -88,6 +86,32 @@ void CannonControl::draw() const {
         glPushMatrix();
         glLoadIdentity();
         glTranslatef(ship_->location_.x_, ship_->location_.y_, 0.f);
+
+        if (fmod(timer::totalTime(), 0.5f) < 0.1) {
+            glColor3f(1.f, 0.7f, 0.9f);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+            // flash
+            glBegin(GL_QUADS);
+                const int posX3 = 0;
+                const int posY3 = 0;
+                glTexCoord2f(posX3*0.15625f,     posY3*0.15625f);     glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f-15);
+                glTexCoord2f(posX3*0.15625f,     (posY3+1)*0.15625f); glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f+15);
+                glTexCoord2f((posX3+1)*0.15625f, (posY3+1)*0.15625f); glVertex2f( - ship_->velocity_.x_ * 0.042f +15,  - ship_->velocity_.y_ * 0.0042f - 43.f+15);
+                glTexCoord2f((posX3+1)*0.15625f, posY3*0.15625f);     glVertex2f( - ship_->velocity_.x_ * 0.042f +15,  - ship_->velocity_.y_ * 0.0042f - 43.f-15);
+            glEnd();
+
+            glColor3f(1.f, 1.0f, 1.0f);
+        }
+        else {
+            glColor3f(1.f, 0.7f, 0.9f);
+        }
+
+        glDisable(GL_TEXTURE_2D);
+
+        glPointSize(8.f);
+        glBegin(GL_POINTS);
+            glVertex2f( - ship_->velocity_.x_ * 0.042f,  - ship_->velocity_.y_ * 0.0042f - 43.f);
+        glEnd();
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         ship_->owner_->color().gl3f();
@@ -99,30 +123,6 @@ void CannonControl::draw() const {
             glVertex2f( - ship_->velocity_.x_ * 0.04f,  - ship_->velocity_.y_ * 0.004f - 43.f);
         glEnd();
 
-        if (fmod(timer::totalTime(), 0.5f) < 0.1) {
-            glColor3f(1.f, 0.7f, 0.9f);
-            glEnable(GL_TEXTURE_2D);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-            // flash
-            glBegin(GL_QUADS);
-                glTexCoord2i(0, 0); glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f-15);
-                glTexCoord2i(0, 1); glVertex2f( - ship_->velocity_.x_ * 0.042f -15,  - ship_->velocity_.y_ * 0.0042f - 43.f+15);
-                glTexCoord2i(1, 1); glVertex2f( - ship_->velocity_.x_ * 0.042f +15,  - ship_->velocity_.y_ * 0.0042f - 43.f+15);
-                glTexCoord2i(1, 0); glVertex2f( - ship_->velocity_.x_ * 0.042f +15,  - ship_->velocity_.y_ * 0.0042f - 43.f-15);
-            glEnd();
-            glDisable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, 0);
-
-            glColor3f(1.f, 1.0f, 1.0f);
-        }
-        else {
-            glColor3f(1.f, 0.7f, 0.9f);
-        }
-         glPointSize(8.f);
-        glBegin(GL_POINTS);
-            glVertex2f( - ship_->velocity_.x_ * 0.042f,  - ship_->velocity_.y_ * 0.0042f - 43.f);
-        glEnd();
-
         glTranslatef( - ship_->velocity_.x_ * 0.042f,  - ship_->velocity_.y_ * 0.0042f - 43.f, 0.f);
         glRotatef(fmod(timer::totalTime()*-100.f, 360.f), 0.f, 0.f, 1.f);
 
@@ -131,15 +131,13 @@ void CannonControl::draw() const {
         // atomar radiance
         glColor4f(0.8f, 0.2f, 0.4f, 0.2f);
         glBegin(GL_QUADS);
-            glTexCoord2i(0, 0); glVertex2f(-24, -24);
-            glTexCoord2i(0, 1); glVertex2f(-24, 24);
-            glTexCoord2i(1, 1); glVertex2f(24, 24);
-            glTexCoord2i(1, 0); glVertex2f(24, -24);
+                const int posX = 2;
+                const int posY = 1;
+                glTexCoord2f(posX*0.15625f,     posY*0.15625f);     glVertex2f(-15, -15);
+                glTexCoord2f(posX*0.15625f,     (posY+1)*0.15625f); glVertex2f(-15, +15);
+                glTexCoord2f((posX+1)*0.15625f, (posY+1)*0.15625f); glVertex2f(+15, +15);
+                glTexCoord2f((posX+1)*0.15625f, posY*0.15625f);     glVertex2f(+15, -15);
         glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
-
-
 
         glPopMatrix();
     }
