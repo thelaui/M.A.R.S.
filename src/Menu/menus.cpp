@@ -43,7 +43,7 @@ namespace menus {
             for (std::vector<UiWindow*>::iterator it = windowStack_.begin(); it != windowStack_.end(); ++it)
                 (*it)->draw();
             Vector2f viewPort = window::getViewPort();
-            hud::drawScreenText("M.A.R.S. 0.2.143 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+            hud::drawScreenText("M.A.R.S. 0.3.2 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
             window::setSpaceView();
         }
     }
