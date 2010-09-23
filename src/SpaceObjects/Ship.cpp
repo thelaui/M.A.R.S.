@@ -383,7 +383,7 @@ void Ship::explode() {
         else {
             ++damageSource_->frags_;
             ++damageSource_->points_;
-            if (games::type() != games::gSpaceBall)
+            if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
                 ++damageSource_->team()->points_;
             ++damageSource_->ship()->fragStars_;
             damageSource_->ship()->fragStarTimer_ = 15.f;

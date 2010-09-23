@@ -22,6 +22,7 @@ class CannonKeep: public Game {
     public:
         CannonKeep();
 
+        void draw() const;
         void restart();
 };
 

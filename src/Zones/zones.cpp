@@ -18,8 +18,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/HomeZone.hpp"
 # include "Zones/TeamZone.hpp"
 # include "Zones/TacticalZone.hpp"
+# include "Zones/RasterZone.hpp"
 # include "Players/Team.hpp"
 # include "SpaceObjects/spaceObjects.hpp"
+# include "Games/games.hpp"
 
 # include <iostream>
 
@@ -29,7 +31,9 @@ namespace zones {
         Zone *homeL_(NULL), *homeR_(NULL), *teamL_(NULL), *teamR_(NULL);
         std::vector<TacticalZone*> tacticalZonesL_ = std::vector<TacticalZone*>();
         std::vector<TacticalZone*> tacticalZonesR_ = std::vector<TacticalZone*>();
+        std::vector<RasterZone*> rasterZones_ = std::vector<RasterZone*>();
         float totalTacticalAreaL_(0), totalTacticalAreaR_(0);
+        int lastZone_(0);
     }
 
     Zone* addTeamZone(Vector2f const& location) {
@@ -48,9 +52,9 @@ namespace zones {
 
     void detectTacticalZones() {
         // adding tactical zones around home planets
-        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 400));
+        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 400.f));
         totalTacticalAreaL_ += 160000;
-        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 400));
+        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 400.f));
         totalTacticalAreaR_ += 160000;
 
         // devide space objects into left and right side
@@ -217,6 +221,18 @@ namespace zones {
         }
     }
 
+    void createRaster(int dimX, int dimY) {
+        float maxX(0.f), maxY(0.f);
+        for (int y=0; y<dimY; ++y) {
+            for (int x=0; x<dimX; ++x) {
+                rasterZones_.push_back(new RasterZone(Vector2f(maxX, maxY), Vector2f(maxX + 1280.f/dimX,  maxY + 800.f/dimY)));
+                maxX += 1280.f/dimX;
+            }
+            maxX = 0;
+            maxY += 800.f/dimY;
+        }
+    }
+
     void update() {
         if (!tacticalZonesL_.empty())
             for (int i = 0; i < tacticalZonesL_.size(); ++i)
@@ -224,6 +240,9 @@ namespace zones {
         if (!tacticalZonesR_.empty())
             for (int i = 0; i < tacticalZonesR_.size(); ++i)
                 tacticalZonesR_[i]->update();
+        if (!rasterZones_.empty())
+            for (int i = 0; i < rasterZones_.size(); ++i)
+                rasterZones_[i]->update();
     }
 
     void draw() {
@@ -237,7 +256,9 @@ namespace zones {
         if (!tacticalZonesR_.empty())
             for (int i=0; i<tacticalZonesR_.size(); ++i)
                 tacticalZonesR_[i]->draw();
-
+        if (!rasterZones_.empty())
+            for (int i=0; i<rasterZones_.size(); ++i)
+                rasterZones_[i]->draw();
     }
 
     TacticalZone* toProtect(Team* checker) {
@@ -255,6 +276,17 @@ namespace zones {
                 else if (i == tacticalZonesR_.size()-1)
                     return tacticalZonesR_[0];
             }
+    }
+
+    RasterZone* freeZone() {
+        if (lastZone_ == rasterZones_.size()-1)
+            lastZone_ = 0;
+        for (int i=lastZone_; i<rasterZones_.size(); ++i)
+            if(!rasterZones_[i]->covered()) {
+                lastZone_ = i;
+                return rasterZones_[i];
+            }
+        return rasterZones_[sf::Randomizer::Random(0, rasterZones_.size())];
     }
 
     float totalTacticalArea(short homeSide) {
@@ -290,6 +322,8 @@ namespace zones {
             tacticalZonesL_.clear();
         if (!tacticalZonesR_.empty())
             tacticalZonesR_.clear();
+        if (!rasterZones_.empty())
+            rasterZones_.clear();
     }
 
 }

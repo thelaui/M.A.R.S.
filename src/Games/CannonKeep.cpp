@@ -47,6 +47,12 @@ CannonKeep::CannonKeep():
     items::addCannonControl();
 
     createSpace();
+    zones::createRaster(4,3);
+}
+
+void CannonKeep::draw() const {
+    if (settings::C_drawZones) zones::draw();
+    Game::draw();
 }
 
 void CannonKeep::restart() {
@@ -61,6 +67,7 @@ void CannonKeep::restart() {
     items::addCannonControl();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 

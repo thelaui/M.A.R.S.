@@ -29,15 +29,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Team;
 class TacticalZone;
+class RasterZone;
 
 namespace zones {
     Zone* addTeamZone(Vector2f const& location);
     Zone* addHomeZone(Vector2f const& location);
     void detectTacticalZones();
+    void createRaster(int dimX, int dimY);
     void update();
     void draw();
 
     TacticalZone* toProtect(Team* checker);
+    RasterZone*   freeZone();
     float totalTacticalArea(short homeSide);
 
     short isInside(Team* checker, SpaceObject const& toBeChecked);

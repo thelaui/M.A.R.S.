@@ -15,12 +15,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/BotController.hpp"
 # include "System/timer.hpp"
+# include "Items/items.hpp"
+# include "Items/CannonControl.hpp"
 
 # include <cfloat>
 
 BotController::BotController(Player* slave, controllers::ControlType type):
     Controller(slave, type),
-    actions_(8),
+    actions_(10),
     target_(NULL),
     weaponChangeTimer_(sf::Randomizer::Random(0, 1)),
     evaluationTimer_(0.f),
@@ -43,15 +45,16 @@ void BotController::update() {
 
     switch (action) {
 
-        case BOT_CHARGE:        charge();            break;
-        case BOT_LAND:          land();              break;
-        case BOT_KICK_BALL_TE:  kickBallToEnemy();   break;
-        case BOT_KICK_BALL_OH:  kickBallOutHome();   break;
-        case BOT_WAIT_FOR_BALL: waitForBall();       break;
-        case BOT_ATTACK_TARGET: attackTarget();      break;
-        case BOT_PROTECT_ZONE:  protectZone();       break;
-        case BOT_CHANGE_WEAPON: switchToWeapon();    break;
-
+        case BOT_CHARGE:             charge();                                              break;
+        case BOT_LAND:               land();                                                break;
+        case BOT_KICK_BALL_TE:       kickBallToEnemy();                                     break;
+        case BOT_KICK_BALL_OH:       kickBallOutHome();                                     break;
+        case BOT_WAIT_FOR_BALL:      waitForBall();                                         break;
+        case BOT_ATTACK_TARGET:      attackTarget();                                        break;
+        case BOT_PROTECT_ZONE:       protectZone();                                         break;
+        case BOT_CHANGE_WEAPON:      switchToWeapon();                                      break;
+        case BOT_GET_CANNON_CONTROL: moveTo(items::getCannonControl()->location(), 0.5f);   break;
+        case BOT_ESCAPE:             escape();                                              break;
         default:;
     }
 }

@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Team.hpp"
 # include "System/window.hpp"
 # include "Zones/TacticalZone.hpp"
-
+# include "Zones/RasterZone.hpp"
 int pathDepth = 0;
 
 void BotController::charge() const {
@@ -134,6 +134,22 @@ void BotController::protectZone() {
     if (moveTo(nextRoutePoint_, 1.5f, false, toCover_->radius_ / 4.f)) {
         nextRoutePoint_.x_ = FLT_MAX;
     }
+}
+
+void BotController::switchToWeapon() {
+    slaveFire();
+    slaveLeft();
+    if(ship()->currentWeapon_->getName() == "Flubba")
+        slaveLeft();
+    slaveFire();
+    actions_[BOT_CHANGE_WEAPON] = 0;
+}
+
+void BotController::escape() {
+    if (nextRoutePoint_.x_ == FLT_MAX)
+        nextRoutePoint_ = zones::freeZone()->getRandomPoint();
+    if (moveTo(nextRoutePoint_, 0.9f, false, 100.f))
+        nextRoutePoint_.x_ = FLT_MAX;
 }
 
 bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance) const {
@@ -280,12 +296,4 @@ void BotController::shootBall() const {
         slaveFire(spaceObjects::isOnLine(ship()->location(), shipDirection, pathToBall, 20.f));
 }
 
-void BotController::switchToWeapon() {
-    slaveFire();
-    slaveLeft();
-    if(ship()->currentWeapon_->getName() == "Flubba")
-        slaveLeft();
-    slaveFire();
-    actions_[BOT_CHANGE_WEAPON] = 0;
-}
 

@@ -24,6 +24,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define BOT_ATTACK_TARGET 5
 # define BOT_PROTECT_ZONE 6
 # define BOT_CHANGE_WEAPON 7
+# define BOT_GET_CANNON_CONTROL 8
+# define BOT_ESCAPE 9
 
 # include "Controllers/Controller.hpp"
 
@@ -59,6 +61,7 @@ class BotController: public Controller {
         void     attackTarget();
         void     protectZone();
         void     switchToWeapon();
+        void     escape();
 
         // helper functions
         void     turnTo(Vector2f const& location) const;

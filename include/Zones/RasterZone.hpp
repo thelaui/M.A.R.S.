@@ -1,4 +1,4 @@
-/* TacticalZone.hpp
+/* RasterZone.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -14,32 +14,24 @@ You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 
-# ifndef TACTICALZONE_HPP_INCLUDED
-# define TACTICALZONE_HPP_INCLUDED
+# ifndef RASTERZONE_HPP_INCLUDED
+# define RASTERZONE_HPP_INCLUDED
 
 # include "Zones/Zone.hpp"
 
-class TacticalZone: public Zone {
+class RasterZone: public Zone {
     public:
-        TacticalZone(Vector2f const& location, float radius);
+        RasterZone(Vector2f const& bottomLeft, Vector2f const& topRight);
 
         bool isInside(SpaceObject const& toBeChecked) const;
         void update();
         void draw() const;
 
         Vector2f getRandomPoint() const;
-        Vector2f const& location() const;
         bool covered() const;
-
-        friend class BotController;
-
     private:
-        float radius_;
-        Vector2f location_;
-        short homeSide_;
+        Vector2f bottomLeft_, topRight_;
         bool covered_;
-        float  shipCount_;
 };
 
-# endif // TACTICALZONE_HPP_INCLUDED
-
+# endif // RASTERZONE_HPP_INCLUDED

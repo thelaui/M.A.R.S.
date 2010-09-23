@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/zones.hpp"
 # include "Players/Player.hpp"
 # include "Players/Team.hpp"
+# include "Items/items.hpp"
+# include "Items/CannonControl.hpp"
 
 # include <cmath>
 
@@ -39,11 +41,34 @@ void CKBot::checkEnergy() {
 }
 
 void CKBot::checkCannonController() {
-    std::vector<Player*>const& enemies = players::getEnemy(slave_->team())->members();
-    for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it)
-        if ((*it)->ship()->getCollectedItems()[0] == true) {
-            target_ = (*it)->ship();
-            actions_[BOT_ATTACK_TARGET] = 80;
-            break;
+    if(items::getCannonControl()->getCarrier() == NULL) {
+        actions_[BOT_GET_CANNON_CONTROL] = 80;
+        actions_[BOT_ATTACK_TARGET] = 0;
+        actions_[BOT_ESCAPE] = 0;
+    }
+    else if (items::getCannonControl()->getCarrier() == slave_) {
+        actions_[BOT_ESCAPE] = 100;
+        actions_[BOT_GET_CANNON_CONTROL] = 0;
+        actions_[BOT_ATTACK_TARGET] = 0;
+    }
+    else {
+        actions_[BOT_GET_CANNON_CONTROL] = 0;
+        actions_[BOT_ESCAPE] = 0;
+        bool enemyHasControl(false);
+        std::vector<Player*>const& enemies = players::getEnemy(slave_->team())->members();
+        if(!enemies.empty()) {
+            for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it)
+                if ((*it)->ship()->getCollectedItems()[0] == true) {
+                    target_ = (*it)->ship();
+                    actions_[BOT_ATTACK_TARGET] = 80;
+                    enemyHasControl = true;
+                    break;
+                }
+            if (!enemyHasControl) {
+                int randomEnemy = sf::Randomizer::Random(0, enemies.size()-1);
+                target_ = enemies[randomEnemy]->ship();
+                actions_[BOT_ATTACK_TARGET] = 80;
+            }
         }
+    }
 }
