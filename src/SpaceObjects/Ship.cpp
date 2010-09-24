@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Team.hpp"
 # include "Controllers/Controller.hpp"
 # include "Games/games.hpp"
-
+# include "SpaceObjects/Ball.hpp"
 # include "Media/announcer.hpp"
 
 # include <cmath>
@@ -297,6 +297,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oBall:
+            amount =  dynamic_cast<Ball*>(with)->heatAmount()*0.1f;
             particles::spawnMultiple(2, particles::pSpark, location, direction*100.f, velocity_, owner_->color_);
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
             break;
@@ -327,6 +328,14 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oCannonBall:
             amount = life_;
             setDamageSource(owner_);
+            break;
+
+        case spaceObjects::oAmmoBurner:
+            amount = timer::frameTime()*0.75f;
+            velocity_ += velocity*0.0005f;
+            // chance to spawn smoke
+            if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.1f) particles::spawn(particles::pSmoke, location, velocity);
+            setDamageSource(with->damageSource());
             break;
 
         default:;

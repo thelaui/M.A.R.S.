@@ -29,7 +29,7 @@ class SpaceObject;
 namespace spaceObjects {
     enum ObjectType {oPlanet, oSun, oBlackHole, oHome, oShip, oBall, oFuel, oAmmoAFK47, oAmmoROFLE, oAmmoShotgun, oMud, oSmoke,
                      oEruption, oDust, oExplode, oFragment, oBurningFragment, oFragmentFlame, oMiniFlame, oAmmoFlubba, oMiniAmmoFlubba,
-                     oCannonBall, oSpark};
+                     oCannonBall, oSpark, oAmmoBurner};
 
     void update();
     void draw();

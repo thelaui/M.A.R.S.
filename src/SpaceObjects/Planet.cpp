@@ -68,6 +68,11 @@ void Planet::onCollision(SpaceObject* with, Vector2f const& location,
             if (strength > 50)
                 particles::spawnMultiple(10, particles::pMud, location, location-location_, velocity, color_);
             break;
+
+        case spaceObjects::oAmmoBurner:
+            particles::spawn(particles::pMiniFlame, location);
+            break;
+
         default:;
     }
 }

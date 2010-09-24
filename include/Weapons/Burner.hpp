@@ -1,4 +1,4 @@
-/* weapons.hpp
+/* Burner.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,14 +13,24 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef WEAPONS_HPP_INCLUDED
-# define WEAPONS_HPP_INCLUDED
+# ifndef BURNER_HPP_INCLUDED
+# define BURNER_HPP_INCLUDED
 
 # include "Weapons/Weapon.hpp"
-# include "Weapons/AFK47.hpp"
-# include "Weapons/ROFLE.hpp"
-# include "Weapons/Shotgun.hpp"
-# include "Weapons/Flubba.hpp"
-# include "Weapons/Burner.hpp"
 
-# endif // WEAPONS_HPP_INCLUDED
+class Burner: public Weapon {
+    public:
+        Burner(Ship* parent):
+              Weapon(parent, "BURNER") {};
+
+        void fire() const;
+        void draw() const;
+
+        void next();
+        void previous();
+};
+
+# endif // BURNER_HPP_INCLUDED
+
+
+

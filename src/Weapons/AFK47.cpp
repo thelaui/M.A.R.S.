@@ -52,6 +52,6 @@ void AFK47::next() {
 }
 
 void AFK47::previous() {
-    parent_->currentWeapon_ = new Shotgun(parent_);
+    parent_->currentWeapon_ = new Burner(parent_);
     delete this;
 }

@@ -30,9 +30,9 @@ Ball::Ball(Vector2f const& location):
            visible_(true),
            respawnLocation_(location),
            respawnRotation_(0),
-           heatTimer_(0),
-           smokeTimer_(0),
-           respawnTimer_(0) {
+           heatTimer_(0.f),
+           smokeTimer_(0.f),
+           respawnTimer_(0.f) {
     physics::addMobileObject(this);
 }
 
@@ -74,15 +74,14 @@ void Ball::update() {
         }
 
         // heating of ball
-        if (heatTimer_ > 0) {
+        if (heatTimer_ > 0.f) {
             heatTimer_ -= time;
             if (smokeTimer_ > 0)
                 smokeTimer_ -= time;
             else {
-                smokeTimer_ = (20-heatTimer_)/20 + 0.001;
-                for (int i = 0; i<settings::C_globalParticleCount/5; ++i) {
-                    Vector2f smokeLocation = location_ + Vector2f::randDirLen()*radius_;
-                    particles::spawn(particles::pSmoke, smokeLocation, Vector2f(0,0), velocity_);
+                smokeTimer_ = 0.3f/(settings::C_globalParticleCount*heatTimer_);
+                for (int i=0; i<5; ++i) {
+                    particles::spawn(particles::pSmoke, location_+Vector2f::randDirLen()*radius_, velocity_);
                 }
             }
         }
@@ -195,6 +194,12 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFlubba:
+            setDamageSource(with->damageSource());
+            break;
+
+        case spaceObjects::oAmmoBurner:
+            if (heatTimer_ < 20.f) heatTimer_ += 0.01f;
+            velocity_ += velocity*0.0005f;
             setDamageSource(with->damageSource());
             break;
     }

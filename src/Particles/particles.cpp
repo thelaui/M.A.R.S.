@@ -20,6 +20,7 @@
 # include "Particles/cannonBalls.hpp"
 # include "Particles/sparks.hpp"
 # include "Particles/fragments.hpp"
+# include "Particles/ammoBurners.hpp"
 
 namespace particles {
     void update() {
@@ -40,6 +41,7 @@ namespace particles {
         cannonBalls::       update();
         sparks::            update();
         fragments::         update();
+        ammoBurners::       update();
     }
 
     void drawLower() {
@@ -52,7 +54,6 @@ namespace particles {
             ammoFlubbas::       draw();
             smokes::            draw();
             dusts::             draw();
-            fragmentFlames::    draw();
             miniAmmoFlubbas::   draw();
             miniFlames::        draw();
 
@@ -77,6 +78,8 @@ namespace particles {
 
             fuels::             draw();
             cannonBalls::       draw();
+            ammoBurners::       draw();
+            fragmentFlames::    draw();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -105,6 +108,7 @@ namespace particles {
             case pCannonBall:       cannonBalls::       spawn(location, direction);                         break;
             case pSpark:            sparks::            spawn(location, direction, velocity, color);        break;
             case pFragment:         fragments::         spawn(location, color);                             break;
+            case pAmmoBurner:       ammoBurners::       spawn(location, direction, velocity, damageSource); break;
         }
     }
 
@@ -131,7 +135,7 @@ namespace particles {
                 + ammoAFK47s::count() + ammoROFLEs::count() + dusts::count() + explodes::count()
                 + burningFragments::count() + fragmentFlames::count() + ammoShotguns::count()
                 + miniFlames::count() + ammoFlubbas::count() + miniAmmoFlubbas::count()
-                + cannonBalls::count() + sparks::count() + fragments::count();
+                + cannonBalls::count() + sparks::count() + fragments::count() + ammoBurners::count();
     }
 
     void clear() {
@@ -152,5 +156,6 @@ namespace particles {
         cannonBalls::       clear();
         sparks::            clear();
         fragments::         clear();
+        ammoBurners::       clear();
     }
 }

@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class Flubba: public Weapon {
     public:
         Flubba(Ship* parent):
-              Weapon(parent, "Flubba") {};
+              Weapon(parent, "FLUBBA") {};
 
         void fire() const;
         void draw() const;

@@ -50,6 +50,7 @@ class Ship: public MobileSpaceObject {
         friend class ROFLE;
         friend class Shotgun;
         friend class Flubba;
+        friend class Burner;
         friend class CannonControl;
 
     private:

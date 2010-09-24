@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Games/games.hpp"
 # include "Players/Team.hpp"
+# include "SpaceObjects/Ball.hpp"
 
 # include <sstream>
 
@@ -145,13 +146,17 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oBall:
-            life_ -= strength;
+            life_ -= (strength + dynamic_cast<Ball*>(with)->heatAmount());
             if (life_ <= 0) explode();
             break;
 
         case spaceObjects::oCannonBall:
             life_ -= sf::Randomizer::Random(40, 60);
             if (life_ <= 0) explode();
+            break;
+
+        case spaceObjects::oAmmoBurner:
+            particles::spawn(particles::pMiniFlame, location);
             break;
 
         default:;

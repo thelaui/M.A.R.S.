@@ -1,4 +1,4 @@
-/* fuels.hpp
+/* ammoBurners.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,19 +13,19 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef FUELS_HPP_INCLUDED
-# define FUELS_HPP_INCLUDED
+# ifndef AMMOBURNERS_HPP_INCLUDED
+# define AMMOBURNERS_HPP_INCLUDED
 
 # include "Particles/Particle.hpp"
 # include "System/Color3f.hpp"
 
 # include <list>
 
-namespace fuels {
+namespace ammoBurners {
 
-    class Fuel: public Particle {
+    class AmmoBurner: public Particle {
         public:
-            Fuel(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity);
+            AmmoBurner(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Player* damageSource);
 
             void update();
             void draw() const;
@@ -34,12 +34,13 @@ namespace fuels {
             Color3f color_;
     };
 
-    void spawn(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity);
+    void spawn(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Player* damageSource);
     void update();
     void draw();
     int  count();
     void clear();
 }
 
-# endif // FUELS_HPP_INCLUDED
+# endif // AMMOBURNERS_HPP_INCLUDED
+
 

@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class Shotgun: public Weapon {
     public:
         Shotgun(Ship* parent):
-              Weapon(parent, "Shotgun") {};
+              Weapon(parent, "SHOTGUN") {};
 
         void fire() const;
         void draw() const;
