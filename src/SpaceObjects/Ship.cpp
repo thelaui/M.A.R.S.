@@ -93,7 +93,7 @@ void Ship::update() {
         Home const* home = owner_->team()->home();
         Vector2f toHome = home->location()-location_;
         bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
-        if (!up_ && velocity_.lengthSquare() < 4000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
+        if (!up_ && velocity_.lengthSquare() < 5000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
             docked_ = true;
             velocity_ = Vector2f();
             if (fuel_ < 100.f) fuel_ += time*20; else fuel_ = 100.f;
@@ -292,7 +292,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oHome:
-            if (strength > 75) amount = strength*0.08f;
+            if (strength > 100) amount = strength*0.08f;
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
             break;
 

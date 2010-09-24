@@ -49,7 +49,7 @@ class BotController: public Controller {
 
         float    weaponChangeTimer_;
 
-        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f) const;
+        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false) const;
 
     private:
         // actions

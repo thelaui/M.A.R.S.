@@ -34,7 +34,7 @@ void BotController::charge() const {
 }
 
 void BotController::land() const {
-    moveTo(slave_->team()->home()->location(), 5.f, true);
+    moveTo(slave_->team()->home()->location(), 50.f, true, 0.f, true);
 }
 
 void BotController::kickBallToEnemy() const {
@@ -66,7 +66,7 @@ void BotController::kickBallToEnemy() const {
     else {
         // move behind the ball
         Vector2f aimPosition = ballLocation + (ballLocation - targetPlanetLocation).normalize()*70 + ballVelocity*0.5f;
-        moveTo(aimPosition, 1.f, true);
+        moveTo(aimPosition, 0.2f, true);
     }
 
     shootEnemy();
@@ -98,7 +98,7 @@ void BotController::kickBallOutHome() const {
         Vector2f direction = (ballLocation - homeLocation).normalize();
         direction = direction * (slave_->team()->home()->radius() + ship()->radius()+30.f);
         Vector2f location = slave_->team()->home()->location()+direction;
-        moveTo(location, 1.f, true);
+        moveTo(location, 0.2f, true);
     }
 }
 
@@ -131,7 +131,7 @@ void BotController::protectZone() {
     if (tmp != toCover_ || nextRoutePoint_.x_ == FLT_MAX) {
             nextRoutePoint_ = toCover_->getRandomPoint();
     }
-    if (moveTo(nextRoutePoint_, 1.5f, false, toCover_->radius_ / 4.f)) {
+    if (moveTo(nextRoutePoint_, 0.5f, false, toCover_->radius_ / 4.f)) {
         nextRoutePoint_.x_ = FLT_MAX;
     }
 }
@@ -148,21 +148,21 @@ void BotController::switchToWeapon() {
 void BotController::escape() {
     if (nextRoutePoint_.x_ == FLT_MAX)
         nextRoutePoint_ = zones::freeZone()->getRandomPoint();
-    if (moveTo(nextRoutePoint_, 0.9f, false, 100.f))
+    if (moveTo(nextRoutePoint_, 0.4f, false, 100.f))
         nextRoutePoint_.x_ = FLT_MAX;
 }
 
-bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance) const {
+bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance, bool goingToLand) const {
     Vector2f targetPoint = calcPath(location, avoidBall);
 
-    Vector2f shipLocation = ship()->location();
+    Vector2f shipLocation = ship()->location_;
     Vector2f shipVelocity = ship()->velocity_;
     float    shipRotation = ship()->rotation_*M_PI/180.f;
-    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
+    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation));
 
     Vector2f aimDirection;
-    if (targetPoint == location) aimDirection = targetPoint - shipLocation - shipVelocity*stopFactor*shipVelocity.length()*0.003f;
-    else                         aimDirection = targetPoint - shipLocation - shipVelocity*0.8f*shipVelocity.length()*0.003f;
+    if (targetPoint == location) aimDirection = targetPoint - shipLocation - shipVelocity*stopFactor*shipVelocity.lengthSquare()*0.00003f;
+    else                         aimDirection = targetPoint - shipLocation - shipVelocity*0.8f*shipVelocity.lengthSquare()*0.00003f;
 
     aimDirection = aimDirection.normalize();
 
@@ -172,10 +172,10 @@ bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoi
     float distance = (targetPoint-shipLocation).lengthSquare();
 
     bool accelerate(false);
-    if ((velocityInAimDirection.length() < 300.f || shipVelocity.normalize()*aimDirection < 0.f)
-     && (distance > 2500.f || (shipVelocity.normalize()*aimDirection < 0.f && distance > 250.f))
-     && (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection*50.f, 10.f)))
-           accelerate = true;
+    if (velocityInAimDirection.lengthSquare() < 90000.f || shipVelocity*aimDirection < 0.f)
+        if (distance > 2500 || (shipVelocity*aimDirection < 0.f && (distance > 250.f || !goingToLand)))
+            if (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection*50.f, 10.f))
+                accelerate = true;
 
     slaveUp(accelerate);
 
@@ -210,7 +210,7 @@ bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoi
         glEnd();
     }
 
-    return (distance < minDistance * minDistance);
+    return ((location - shipLocation).lengthSquare() < minDistance * minDistance);
 }
 
 void BotController::turnTo(Vector2f const& location) const {
@@ -227,13 +227,13 @@ Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) const
 
     if (++pathDepth < 5) {
         // check for collision with planet
-        SpaceObject const* obstacle = spaceObjects::getObstacle(ship()->location(), endPoint, avoidBall, 30.f);
+        SpaceObject const* obstacle = spaceObjects::getObstacle(ship()->location(), endPoint, avoidBall, 40.f);
 
         if (obstacle != NULL) {
             // special case: obstacle center is target point
             if (obstacle->location() == endPoint) {
                 pathDepth = 0;
-                return obstacle->location() - toEndPoint*(obstacle->radius() + 20);
+                return obstacle->location() - toEndPoint*(obstacle->radius() + 20.f);
             }
 
             // calculate alternative point near obstacle
@@ -241,17 +241,17 @@ Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) const
             Vector2f normalToPath(-toEndPoint.y_, toEndPoint.x_);
             Vector2f newEndPoint;
             // if path hits obstacle exactly in the center
-            if (obstacleToStart * normalToPath == 0)
-                newEndPoint = obstacle->location() - toEndPoint*(obstacle->radius() + 40);
+            if (obstacleToStart * normalToPath == 0.f)
+                newEndPoint = obstacle->location() - normalToPath*(obstacle->radius() + 60.f);
             else {
                 normalToPath = (normalToPath * (obstacleToStart * normalToPath)).normalize();
-                newEndPoint = obstacle->location() + normalToPath*(obstacle->radius() + 40);
+                newEndPoint = obstacle->location() + normalToPath*(obstacle->radius() + 60.f);
             }
             // check whether new endPoint is in an obstacle again... (happens, whenever two obstacles are close to each other)
-            SpaceObject const* newObstacle = spaceObjects::getObstacle(ship()->location(), newEndPoint, avoidBall, 30.f);
+            SpaceObject const* newObstacle = spaceObjects::getObstacle(ship()->location(), newEndPoint, avoidBall, 40.f);
 
             // if a new obstacle was found, calculate the midpoint of both
-            if (newObstacle != NULL) {
+            if (newObstacle != NULL && obstacle != newObstacle) {
                 Vector2f obst1obst2 = (newObstacle->location() - obstacle->location()).normalize();
                 // get points on surface of obstacles
                 Vector2f obst1 = obstacle->   location() + obst1obst2*obstacle->   radius();

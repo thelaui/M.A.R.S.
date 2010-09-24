@@ -33,11 +33,11 @@ namespace stars {
 
         Vector2f const& viewport = window::getViewPort();
 
-        glColor3f(1.f, 1.f, 1.f);
+        glColor3f(1.f, 1.0f, 1.0f);
         glTexCoord2f(0, 0); glVertex2f(0, 0);
-        glTexCoord2f(0, static_cast<float>(viewport.y_)/512.f); glVertex2f(0, viewport.y_);
-        glTexCoord2f(static_cast<float>(viewport.x_)/512.f, static_cast<float>(viewport.y_)/512.f); glVertex2f(viewport.x_, viewport.y_);
-        glTexCoord2f(static_cast<float>(viewport.x_)/512.f, 0); glVertex2f(viewport.x_, 0);
+        glTexCoord2f(0, static_cast<float>(viewport.y_)/900.f); glVertex2f(0, viewport.y_);
+        glTexCoord2f(static_cast<float>(viewport.x_)/1440.f, static_cast<float>(viewport.y_)/900.f); glVertex2f(viewport.x_, viewport.y_);
+        glTexCoord2f(static_cast<float>(viewport.x_)/1440.f, 0); glVertex2f(viewport.x_, 0);
 
         glEnd();
 

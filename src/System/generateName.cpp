@@ -44,6 +44,8 @@ namespace generateName {
 
                         while (inputLine[0] == ' ')
                             inputLine.erase(inputLine.begin());
+                        while (inputLine[inputLine.size()-2] == ' ')
+                            inputLine.erase(inputLine.size()-2);
 
                         // start new list
                         if (inputLine[0] == '[') break;
@@ -53,7 +55,11 @@ namespace generateName {
                             while (inputLine[inputLine.size()-2] == ' ')
                                 inputLine.erase(inputLine.size()-2);
                             if(inputLine.size() >= 1) {
-                                inputLine.erase(inputLine.size()-1);
+                                # ifdef __WIN32__
+                                    inputLine.erase(inputLine.size());
+                                # else
+                                    inputLine.erase(inputLine.size()-1);
+                                # endif
                                 newList.push_back(inputLine);
                             }
                         }
@@ -114,7 +120,11 @@ namespace generateName {
                             while (inputLine[inputLine.size()-2] == ' ')
                                 inputLine.erase(inputLine.size()-2);
                             if(inputLine.size() >= 1) {
-                                inputLine.erase(inputLine.size());
+                                # ifdef __WIN32__
+                                    inputLine.erase(inputLine.size());
+                                # else
+                                    inputLine.erase(inputLine.size()-1);
+                                # endif
                                 newVector.push_back(inputLine);
                             }
                         }

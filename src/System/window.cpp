@@ -30,7 +30,7 @@ namespace window {
         sf::RenderWindow window_;
         Vector2f         viewPort_;
         bool             isCreated_(false);
-        bool             resized_(false);
+        bool             resized_(false), resized2_(false);
         float            scale_(960.f/1280.f);
 
         void setViewPort() {
@@ -129,9 +129,14 @@ namespace window {
     }
 
     void clear() {
-        if (!settings::C_showStars || resized_) {
+        if (!settings::C_showStars || (resized_ && resized2_)) {
             glClear(GL_COLOR_BUFFER_BIT);
             resized_ = false;
+            resized2_= false;
+        }
+        if (resized_) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            resized2_ = true;
         }
     }
 

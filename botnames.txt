@@ -5,7 +5,6 @@
 // names of one group will be used in a match) simply
 // place its name in [brackets]
 // please avoid lines, longer than 1024 characters...
-
 [german_presidents]
 Theodor
 Heinrich
@@ -34,7 +33,7 @@ Luke
 Lea
 Anakin
 Yoda
-Obi-Wan 
+Obi-Wan
 Chewbacca
 Han
 Lando
@@ -93,5 +92,3 @@ Faramir
 Eowyn
 Arwen
 Eomer
-
-

@@ -145,11 +145,9 @@ namespace physics {
     Vector2f attract (MobileSpaceObject* attracted) {
         Vector2f totalAcceleration;
         for (std::vector<SpaceObject*>::iterator it = gravitySources_.begin(); it != gravitySources_.end(); ++it) {
-            Vector2f acceleration;
             float distanceSquared = (attracted->location_ - (*it)->location_).lengthSquare();
-            if (distanceSquared > 1.f)
-                acceleration = ((*it)->location_ - attracted->location_) * (*it)->mass_ / distanceSquared;
-            totalAcceleration += acceleration;
+            if (distanceSquared > 100.f)
+                totalAcceleration += ((*it)->location_ - attracted->location_) * (*it)->mass_ / distanceSquared;
         }
         return totalAcceleration;
     }
