@@ -37,6 +37,7 @@ namespace menus {
 
     void showWindow(UiWindow* toBeShown);
     void hideWindow();
+    void hideMenu();
 
     bool visible();
 }

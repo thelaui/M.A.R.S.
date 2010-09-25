@@ -21,20 +21,24 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/ToMainConfirm.hpp"
 # include "Menu/NewGameConfirm.hpp"
 # include "Menu/OptionsMenu.hpp"
+# include "Menu/InfoHide.hpp"
+# include "System/settings.hpp"
 
 UiWindow* PauseMenu::instance_(NULL);
 bool PauseMenu::kResume_(false);
 bool PauseMenu::kNew_(false);
 bool PauseMenu::kOptions_(false);
 bool PauseMenu::kToMainMenu_(false);
+bool PauseMenu::kHide_(false);
 
 UiWindow* PauseMenu::get() {
     if (instance_ == NULL) {
-        instance_ = new PauseMenu(180, 130);
+        instance_ = new PauseMenu(180, 160);
         instance_->addWidget(new Button("Continue",     &kResume_,      Vector2f(10,10), 160, 20));
         instance_->addWidget(new Button("Restart Game", &kNew_,         Vector2f(10,40), 160, 20));
         instance_->addWidget(new Button("Options",            &kOptions_,     Vector2f(10,70), 160, 20));
-        instance_->addWidget(new Button("Quit current Game",       &kToMainMenu_,  Vector2f(10,100), 160, 20));
+        instance_->addWidget(new Button("Hide Menu",            &kHide_,     Vector2f(10,100), 160, 20));
+        instance_->addWidget(new Button("Quit current Game",       &kToMainMenu_,  Vector2f(10,130), 160, 20));
     }
     return instance_;
 }
@@ -55,6 +59,13 @@ void PauseMenu::checkWidgets() {
     else if (kNew_) {
         kNew_ = false;
         menus::showWindow(NewGameConfirm::get());
+    }
+    else if (kHide_) {
+        kHide_ = false;
+        if (settings::C_showInfoHide)
+            menus::showWindow(InfoHide::get());
+        else
+            menus::hideMenu();
     }
 }
 

@@ -1,4 +1,4 @@
-/* PauseMenu.hpp
+/* InfoHide.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,25 +13,29 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef PAUSEMENU_HPP_INCLUDED
-# define PAUSEMENU_HPP_INCLUDED
+# ifndef INFOHIDE_HPP_INCLUDED
+# define INFOHIDE_HPP_INCLUDED
 
 # include "Interface/UiWindow.hpp"
 
-class PauseMenu: public UiWindow {
+class InfoHide: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
         void onShow() {}
 
     private:
-        PauseMenu(int width, int height): UiWindow(width, height) {}
-        PauseMenu(PauseMenu const& copy);
+        InfoHide(int width, int height): UiWindow(width, height) {}
+        InfoHide(InfoHide const& copy);
 
         static UiWindow* instance_;
 
-        static bool kResume_, kNew_, kOptions_, kToMainMenu_, kHide_;
+        static bool kOk_;
 };
 
-# endif // PAUSEMENU_HPP_INCLUDED
+# endif // INFOHIDE_HPP_INCLUDED
+
+
+
+
 

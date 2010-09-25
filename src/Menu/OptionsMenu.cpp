@@ -84,7 +84,7 @@ UiWindow* OptionsMenu::get() {
 
         tabGraphics->addWidget(new Slider("Particle Count", &settings::C_globalParticleCount, 1, 300, Vector2f(10,30), 440));
         tabGraphics->addWidget(new Slider("Particle Lifetime", &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,50), 440));
-        tabGraphics->addWidget(new Checkbox("Adaptive Particle Count", &settings::C_adaptiveParticleCount, Vector2f(10,70), 170));
+        //tabGraphics->addWidget(new Checkbox("Adaptive Particle Count", &settings::C_adaptiveParticleCount, Vector2f(10,70), 170));
         tabGraphics->addWidget(new Checkbox("Stars", &settings::C_showStars, Vector2f(10,90), 170));
         tabGraphics->addWidget(new Checkbox("Fullscreen", &fullscreen_, Vector2f(10,110), 170));
         tabGraphics->addWidget(new Checkbox("V-Sync", &vsync_, Vector2f(10,130), 170));
@@ -101,7 +101,7 @@ UiWindow* OptionsMenu::get() {
         tabView->addWidget(new Checkbox("Show AI-Paths", &settings::C_drawAIPath, Vector2f(10,130), 170));
         tabView->addWidget(new Checkbox("Show FPS", &settings::C_showFPS, Vector2f(10,150), 170));
         tabView->addWidget(new Checkbox("Show Particle Count", &settings::C_showParticleCount, Vector2f(10,170), 170));
-        tabView->addWidget(new Checkbox("Show Latency", &settings::C_showLatency, Vector2f(10,190), 170));
+        //tabView->addWidget(new Checkbox("Show Latency", &settings::C_showLatency, Vector2f(10,190), 170));
 
         tabList->addTab(tabView);
         tabList->addTab(tabGraphics);

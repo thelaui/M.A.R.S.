@@ -25,6 +25,7 @@ namespace menus {
 
     namespace {
         std::vector<UiWindow*> windowStack_;
+        bool hidden_(false);
     }
 
     void showMain() {
@@ -38,12 +39,12 @@ namespace menus {
     }
 
     void draw() {
-        if (visible()) {
+        if (visible() && !hidden_) {
             window::setPixelView();
             for (std::vector<UiWindow*>::iterator it = windowStack_.begin(); it != windowStack_.end(); ++it)
                 (*it)->draw();
             Vector2f viewPort = window::getViewPort();
-            hud::drawScreenText("M.A.R.S. 0.3.2 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+            hud::drawScreenText("M.A.R.S. 0.4.0 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
             window::setSpaceView();
         }
     }
@@ -65,7 +66,11 @@ namespace menus {
     void buttonPressed(sf::Key::Code keyCode) {
         if (visible()) {
             if (keyCode == sf::Key::Escape) {
-                if (windowStack_.back() == MainMenu::get())
+                if (hidden_) {
+                    hidden_ = false;
+                    window::showCursor(true);
+                }
+                else if (windowStack_.back() == MainMenu::get())
                     showWindow(ExitConfirm::get());
                 else
                     hideWindow();
@@ -94,6 +99,11 @@ namespace menus {
         windowStack_.pop_back();
         if (!visible()) window::showCursor(false);
         else windowStack_.back()->setActive(true);
+    }
+
+    void hideMenu() {
+        window::showCursor(false);
+        hidden_ = true;
     }
 
     bool visible() {

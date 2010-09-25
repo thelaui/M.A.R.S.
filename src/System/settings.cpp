@@ -50,6 +50,11 @@ namespace settings {
     int         C_botsDeath =               10;
     int         C_pointLimit =              5;
     int         C_fragLimit =               20;
+    bool        C_showInfoHide =            true;
+    bool        C_showInfoSB =              true;
+    bool        C_showInfoDM =              true;
+    bool        C_showInfoTDM =             true;
+    bool        C_showInfoCK =              true;
 
     // player settings ----- adjustable via options menu
     std::string   C_playerIName =           "PlayerI";
@@ -121,6 +126,11 @@ namespace settings {
         outStream << "[connectIP] "             <<  C_ip << std::endl;
         outStream << "[connectPort] "           <<  C_port << std::endl;
         outStream << "[networkTeamRed] "        << (C_networkPlayerI ? "true" : "false") << std::endl;
+        outStream << "[showInfoHide] "          << (C_showInfoHide ? "true" : "false") << std::endl;
+        outStream << "[showInfoSB] "            << (C_showInfoSB ? "true" : "false") << std::endl;
+        outStream << "[showInfoDM] "            << (C_showInfoDM ? "true" : "false") << std::endl;
+        outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
+        outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
 
         outStream.close();
     }
@@ -382,6 +392,41 @@ namespace settings {
                         iss >> value;
                         if (value == "true")        C_networkPlayerI = true;
                         else if (value == "false")  C_networkPlayerI = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    }
+                    else if (inputLine == "[showInfoHide]") {
+                        std::string value;
+                        iss >> value;
+                        if (value == "true")        C_showInfoHide = true;
+                        else if (value == "false")  C_showInfoHide = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    }
+                    else if (inputLine == "[showInfoSB]") {
+                        std::string value;
+                        iss >> value;
+                        if (value == "true")        C_showInfoSB = true;
+                        else if (value == "false")  C_showInfoSB = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    }
+                    else if (inputLine == "[showInfoDM]") {
+                        std::string value;
+                        iss >> value;
+                        if (value == "true")        C_showInfoDM = true;
+                        else if (value == "false")  C_showInfoDM = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    }
+                    else if (inputLine == "[showInfoTDM]") {
+                        std::string value;
+                        iss >> value;
+                        if (value == "true")        C_showInfoTDM = true;
+                        else if (value == "false")  C_showInfoTDM = false;
+                        else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    }
+                    else if (inputLine == "[showInfoCK]") {
+                        std::string value;
+                        iss >> value;
+                        if (value == "true")        C_showInfoCK = true;
+                        else if (value == "false")  C_showInfoCK = false;
                         else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                     }
                     else

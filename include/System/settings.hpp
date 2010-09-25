@@ -49,6 +49,11 @@ namespace settings {
     extern int            C_botsDeath;
     extern int            C_pointLimit;
     extern int            C_fragLimit;
+    extern bool           C_showInfoHide;
+    extern bool           C_showInfoSB;
+    extern bool           C_showInfoDM;
+    extern bool           C_showInfoTDM;
+    extern bool           C_showInfoCK;
 
     // player settings ----- adjustable via options menu
     extern std::string    C_playerIName;
