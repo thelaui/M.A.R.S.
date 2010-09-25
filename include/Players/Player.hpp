@@ -39,10 +39,10 @@ class Player {
         friend class Ship;
         friend class Controller;
         friend class TabStats;
-
+std::string  name_;
     private:
         Ship* ship_;
-        std::string  name_;
+
         std::string* nameRef_;
         int points_, frags_, suicides_, deaths_, teamKills_;
         Color3f color_;

@@ -46,7 +46,7 @@ void AggroBot::checkEnergy() {
 void AggroBot::checkBall() {
     if (!balls::getBall()->isVisible()) {
         actions_[BOT_KICK_BALL_TE] = 0;
-        actions_[BOT_WAIT_FOR_BALL] = 30;
+        actions_[BOT_WAIT_FOR_BALL] = 10;
     }
     else {
         switch (zones::isInside(slave_->team(), *balls::getBall())) {

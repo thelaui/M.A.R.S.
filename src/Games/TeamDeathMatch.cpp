@@ -43,6 +43,7 @@ TeamDeathMatch::TeamDeathMatch():
     players::createShips();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 void TeamDeathMatch::restart() {
@@ -55,6 +56,7 @@ void TeamDeathMatch::restart() {
     players::createShips();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 

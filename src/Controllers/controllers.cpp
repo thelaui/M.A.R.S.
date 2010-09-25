@@ -62,6 +62,11 @@ namespace controllers {
         }
     }
 
+    void resetBots() {
+        for (std::vector<BotController*>::iterator it = botControllers_.begin(); it != botControllers_.end(); ++it)
+            (*it)->reset();
+    }
+
     void clear() {
         delete keyControllers1_;
         delete keyControllers2_;

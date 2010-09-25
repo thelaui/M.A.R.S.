@@ -28,6 +28,7 @@ namespace controllers {
 
     void addController(ControlType type, Player* slave);
 
+    void resetBots();
     void clear();
 }
 

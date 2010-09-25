@@ -33,6 +33,11 @@ void CKBot::checkEnergy() {
     if(shipDocked()) {
         actions_[BOT_LAND] = 0;
         actions_[BOT_CHARGE] = std::max(100 - ship()->getLife(), 100 - ship()->getFuel());  // max 100, min 0
+        if (weaponChangeTimer_ <= 0.f) {
+            actions_[BOT_CHANGE_WEAPON] = 100;
+            if (sf::Randomizer::Random(0, 10) <= 2)
+                weaponChangeTimer_ =sf::Randomizer::Random(30.f, 60.f);
+        }
     }
     else {
         actions_[BOT_LAND] = std::max(std::pow(100 - ship()->getLife(), 2), std::pow(100 - ship()->getFuel(), 2))/100;  // max 100, min 0

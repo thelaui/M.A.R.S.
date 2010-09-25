@@ -22,6 +22,7 @@ class DeathMatch: public Game {
     public:
         DeathMatch();
 
+        void draw() const;
         void restart();
 };
 

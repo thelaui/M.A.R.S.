@@ -46,7 +46,7 @@ void DefBot::checkEnergy(){
 void DefBot::checkBall(){
     if (!balls::getBall()->isVisible()) {
         actions_[BOT_KICK_BALL_TE] = 0;
-        actions_[BOT_PROTECT_ZONE] = 50;
+        actions_[BOT_PROTECT_ZONE] = 10;
         actions_[BOT_KICK_BALL_OH] = 0;
     }
     else {

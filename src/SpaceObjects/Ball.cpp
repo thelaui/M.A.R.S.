@@ -199,7 +199,7 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oAmmoBurner:
             if (heatTimer_ < 20.f) heatTimer_ += 0.01f;
-            velocity_ += velocity*0.0005f;
+            velocity_ += velocity*0.03f*timer::frameTime();
             setDamageSource(with->damageSource());
             break;
     }

@@ -55,8 +55,8 @@ void BotController::kickBallToEnemy() const {
             // kick ball
             moveTo(targetPlanetLocation, 0, false);
 
-            if (ballLocation == balls::getBall()->location_)
-                slaveFire(true);
+            if (ballLocation == balls::getBall()->location_ && !balls::getBall()->atStart())
+                shootPoint(ballLocation);
         }
         else {
             // rotate ship correctly
@@ -86,11 +86,11 @@ void BotController::kickBallOutHome() const {
         // wait a bit and face ball
         if (ballShip.lengthSquare() > 2500.f) {
             turnTo(ballLocation);
-            slaveFire(true);
+            shootPoint(ballLocation);
         }
         else {
             moveTo(shipLocation + ballShip*2.f, 0, false);
-            slaveFire(true);;
+            shootPoint(ballLocation);
         }
     }
     else {
@@ -120,8 +120,36 @@ void BotController::attackTarget() {
     if (target_ != NULL) {
         moveTo(target_->location(), 0.f, true);
         shootEnemy(target_);
-        if (target_->getLife() == 0.f)
-            target_ = NULL;
+        if (target_->getLife() == 0.f) {
+            aggroTable_[target_] = 0.f;
+            float maxAggro(0.f);
+            for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
+                if(it->second > maxAggro && it->first->getLife() > 0.f)
+                    maxAggro = it->second;
+            }
+
+            if(maxAggro == 0.f) {
+                float closest(FLT_MAX);
+                for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
+                    if((it->first->location() - ship()->location()).lengthSquare() < closest && it->first->getLife() != 0.f) {
+                        closest = (it->first->location() - ship()->location()).lengthSquare();
+                        target_ = it->first;
+                    }
+                if(closest == FLT_MAX)
+                    target_ = NULL;
+                else
+                    aggroTable_[target_] = 100.f;
+            }
+            else
+                for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
+                    if(it->second == maxAggro) {
+                        it->second = 100.f;
+                        target_ = it->first;
+                    }
+                    else
+                        it->second /= maxAggro/100.f;
+            }
+        }
     }
 }
 
@@ -150,6 +178,28 @@ void BotController::escape() {
         nextRoutePoint_ = zones::freeZone()->getRandomPoint();
     if (moveTo(nextRoutePoint_, 0.4f, false, 100.f))
         nextRoutePoint_.x_ = FLT_MAX;
+}
+
+void  BotController::startFight() {
+    if (nextRoutePoint_.x_ == FLT_MAX)
+        nextRoutePoint_ = zones::freeZone()->getRandomPoint();
+    if (moveTo(nextRoutePoint_, 0.9f, false, 150.f)) {
+        std::vector<Team*> const& enemies = players::getAllTeams();
+        if(!enemies.empty()) {
+            float distance(FLT_MAX);
+            for (std::vector<Team*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it)
+                if((*it) != slave_->team()) {
+                    std::vector<Player*> const& enemyMembers = (*it)->members();
+                    for (std::vector<Player*>::const_iterator it = enemyMembers.begin(); it != enemyMembers.end(); ++it) {
+                        if(((*it)->ship()->location() - ship()->location_).lengthSquare() < distance) {
+                            distance = ((*it)->ship()->location()-ship()->location_).lengthSquare();
+                            target_ = (*it)->ship();
+                        }
+                    }
+                }
+            aggroTable_[target_] = 100.f;
+        }
+     }
 }
 
 bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance, bool goingToLand) const {
@@ -270,30 +320,42 @@ Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) const
 void BotController::shootEnemy(Ship* enemyShip) const {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
     Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
-
     if (enemyShip == NULL) {
         std::vector<Player*>const& enemies = players::getEnemy(slave_->team())->members();
         for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it) {
             Vector2f pathToEnemy = calcPath((*it)->ship()->location(), false);
-            if (pathToEnemy == (*it)->ship()->location()) {
-                slaveFire(spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f));
+            if (pathToEnemy == (*it)->ship()->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f)) {
+                shootPoint(pathToEnemy);
                 break;
             }
         }
     }
     else {
         Vector2f pathToEnemy = calcPath(enemyShip->location(), true);
-            if (pathToEnemy == enemyShip->location())
-                slaveFire(spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f));
+            if (pathToEnemy == enemyShip->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f))
+                shootPoint(pathToEnemy);
     }
 }
 
-void BotController::shootBall() const {
-    float    shipRotation = ship()->rotation_*M_PI/180.f;
-    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
-    Vector2f pathToBall = calcPath(balls::getBall()->location(), false);
-    if (pathToBall == balls::getBall()->location())
-        slaveFire(spaceObjects::isOnLine(ship()->location(), shipDirection, pathToBall, 20.f));
+void BotController::shootPoint(Vector2f const& location) const {
+    float minDistance(FLT_MAX);
+    if (ship()->currentWeapon_->getName() == "SHOTGUN")
+        minDistance = 90000.f;
+    else if(ship()->currentWeapon_->getName() == "BURNER")
+        minDistance = 40000.f;
+    if((location - ship()->location()).lengthSquare() < minDistance) {
+        bool doShoot(true);
+        std::vector<Player*>const& teamMates = slave_->team()->members();
+        for (std::vector<Player*>::const_iterator it = teamMates.begin(); it != teamMates.end(); ++it) {
+            if (*it != slave_)
+                if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), location, 20.f)
+                   && ((location - ship()->location()).lengthSquare() > ((*it)->ship()->location() - ship()->location()).lengthSquare())) {
+                    doShoot = false;
+                    break;
+                }
+        }
+        slaveFire(doShoot);
+    }
 }
 
 

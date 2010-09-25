@@ -32,6 +32,12 @@ DeathMatch::DeathMatch():
     players::createShips();
 
     createSpace();
+    zones::createRaster(4,3);
+}
+void DeathMatch::draw() const {
+    if (settings::C_drawZones) zones::draw();
+    Game::draw();
+
 }
 
 void DeathMatch::restart() {
@@ -41,6 +47,7 @@ void DeathMatch::restart() {
     players::createShips();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 

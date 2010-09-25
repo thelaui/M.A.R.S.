@@ -225,7 +225,8 @@ namespace zones {
         float maxX(0.f), maxY(0.f);
         for (int y=0; y<dimY; ++y) {
             for (int x=0; x<dimX; ++x) {
-                rasterZones_.push_back(new RasterZone(Vector2f(maxX, maxY), Vector2f(maxX + 1280.f/dimX,  maxY + 800.f/dimY)));
+                if (!((x==0 && y==0) || (x==dimX-1 && y==0) || (x==0 && y==dimY-1) || (x==dimX-1 && y==dimY-1)))
+                    rasterZones_.push_back(new RasterZone(Vector2f(maxX, maxY), Vector2f(maxX + 1280.f/dimX,  maxY + 800.f/dimY)));
                 maxX += 1280.f/dimX;
             }
             maxX = 0;
@@ -279,14 +280,12 @@ namespace zones {
     }
 
     RasterZone* freeZone() {
-        if (lastZone_ == rasterZones_.size()-1)
-            lastZone_ = 0;
-        for (int i=lastZone_; i<rasterZones_.size(); ++i)
-            if(!rasterZones_[i]->covered()) {
-                lastZone_ = i;
-                return rasterZones_[i];
-            }
-        return rasterZones_[sf::Randomizer::Random(0, rasterZones_.size())];
+        int count(0), i(lastZone_);
+        while (++count < rasterZones_.size() && rasterZones_[(++i)%rasterZones_.size()]->covered())
+            i %= rasterZones_.size();
+        i %= rasterZones_.size();
+        lastZone_ = count < rasterZones_.size() ? i : sf::Randomizer::Random(0, rasterZones_.size()-1);
+        return rasterZones_[lastZone_];
     }
 
     float totalTacticalArea(short homeSide) {

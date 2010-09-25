@@ -45,7 +45,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                respawnLocation_(location),
                respawnRotation_(rotation),
                currentWeapon_(new AFK47(this)),
-               life_(100),
+               life_(200),
                fuel_(100),
                collectedItems_(1),
                fragStars_(0),
@@ -97,7 +97,7 @@ void Ship::update() {
             docked_ = true;
             velocity_ = Vector2f();
             if (fuel_ < 100.f) fuel_ += time*20; else fuel_ = 100.f;
-            if (life_ < 100.f) life_ += time*20; else life_ = 100.f;
+            if (life_ < 200.f) life_ += time*40; else life_ = 200.f;
         }
         else {
             docked_ = false;
@@ -292,7 +292,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oHome:
-            if (strength > 100) amount = strength*0.08f;
+            if (strength > 150) amount = strength*0.06f;
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
             break;
 
@@ -315,7 +315,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoShotgun:
-            amount = strength*0.003f;
+            amount = strength*0.002f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, owner_->color_);
             break;
@@ -331,10 +331,10 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoBurner:
-            amount = timer::frameTime()*0.75f;
-            velocity_ += velocity*0.0005f;
+            amount = timer::frameTime()*0.5f;
+            velocity_ += velocity*0.03f*timer::frameTime();
             // chance to spawn smoke
-            if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.1f) particles::spawn(particles::pSmoke, location, velocity);
+            if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
             setDamageSource(with->damageSource());
             break;
 
@@ -354,7 +354,7 @@ void Ship::setDamageSource(Player* evilOne) {
 }
 
 float Ship::getLife() const {
-    return life_ < 0.f ? 0.f : life_;
+    return life_ < 0.f ? 0.f : life_/2.f;
 }
 
 float Ship::getFuel() const {
@@ -413,7 +413,7 @@ void Ship::respawn() {
     rotation_ = respawnRotation_;
     velocity_ = Vector2f();
     rotateSpeed_ = (1.f);
-    life_ = 100.f;
+    life_ = 200.f;
     fuel_ = 100.f;
     visible_ = true;
     sound::playSound(sound::ShipRespawn, location_, 100.f);

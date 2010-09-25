@@ -14,15 +14,17 @@ You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/BotController.hpp"
+
 # include "System/timer.hpp"
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
+# include "Players/Team.hpp"
 
 # include <cfloat>
 
 BotController::BotController(Player* slave, controllers::ControlType type):
     Controller(slave, type),
-    actions_(10),
+    actions_(11),
     target_(NULL),
     weaponChangeTimer_(sf::Randomizer::Random(0, 1)),
     evaluationTimer_(0.f),
@@ -30,6 +32,16 @@ BotController::BotController(Player* slave, controllers::ControlType type):
     toCover_(NULL) {}
 
 void BotController::update() {
+    if(aggroTable_.empty()) {
+        std::vector<Team*> const& teams = players::getAllTeams();
+        for (std::vector<Team*>::const_iterator it = teams.begin(); it != teams.end(); ++it) {
+            if ((*it) != slave_->team()) {
+                std::vector<Player*> const& players = (*it)->members();
+                for (std::vector<Player*>::const_iterator it = players.begin(); it != players.end(); ++it)
+                    aggroTable_.insert(std::make_pair((*it)->ship(), 0.f));
+            }
+        }
+    }
     evaluationTimer_ += timer::frameTime();
     if (weaponChangeTimer_ > 0)
         weaponChangeTimer_ -= timer::frameTime();
@@ -55,7 +67,16 @@ void BotController::update() {
         case BOT_CHANGE_WEAPON:      switchToWeapon();                                      break;
         case BOT_GET_CANNON_CONTROL: moveTo(items::getCannonControl()->location(), 0.5f);   break;
         case BOT_ESCAPE:             escape();                                              break;
+        case BOT_START_FIGHT:        startFight();                                          break;
         default:;
     }
 }
 
+void BotController::reset() {
+    target_ = NULL;
+    nextRoutePoint_ = Vector2f(FLT_MAX, FLT_MAX);
+    for(int i=0; i<actions_.size(); ++i)
+        actions_[i] = 0;
+    for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
+        it->second = 0.f;
+}

@@ -26,10 +26,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define BOT_CHANGE_WEAPON 7
 # define BOT_GET_CANNON_CONTROL 8
 # define BOT_ESCAPE 9
+# define BOT_START_FIGHT 10
 
 # include "Controllers/Controller.hpp"
 
 # include "System/Vector2f.hpp"
+
+# include <map>
 
 class TacticalZone;
 
@@ -39,14 +42,14 @@ class BotController: public Controller {
 
         /*virtual*/ void update() ;
 
+        void reset();
+
     protected:
         virtual void evaluate() = 0;
 
-        virtual void checkEnergy() = 0;
-
         std::vector<int> actions_;
         Ship* target_;
-
+        std::map<Ship*, float> aggroTable_;
         float    weaponChangeTimer_;
 
         bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false) const;
@@ -62,12 +65,13 @@ class BotController: public Controller {
         void     protectZone();
         void     switchToWeapon();
         void     escape();
+        void     startFight();
 
         // helper functions
         void     turnTo(Vector2f const& location) const;
         Vector2f calcPath(Vector2f const& endPoint, bool avoidBall) const;
         void     shootEnemy(Ship* enemyShip = NULL) const;
-        void     shootBall() const;
+        void     shootPoint(Vector2f const& location) const;
 
         mutable float evaluationTimer_;
         Vector2f nextRoutePoint_;

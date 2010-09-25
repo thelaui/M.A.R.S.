@@ -99,6 +99,7 @@ void Game::restart() {
     if (players::getTopPoints() >= pointLimit_)
         players::resetPoints();
     startTime_ = timer::totalTime();
+    controllers::resetBots();
 }
 
 games::GameType Game::type() const {

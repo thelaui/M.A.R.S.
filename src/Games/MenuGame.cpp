@@ -45,6 +45,7 @@ MenuGame::MenuGame():
     menus::showMain();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 void MenuGame::restart() {
@@ -59,6 +60,7 @@ void MenuGame::restart() {
     menus::showMain();
 
     createSpace();
+    zones::createRaster(4,3);
 }
 
 

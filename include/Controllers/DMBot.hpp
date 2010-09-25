@@ -18,14 +18,24 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/BotController.hpp"
 
+# include "Players/Player.hpp"
+# include "SpaceObjects/Ship.hpp"
+
+# include <cfloat>
+
 class DMBot: public BotController {
     public:
         DMBot(Player* slave):
-            BotController(slave, controllers::cDMBot) {}
+            BotController(slave, controllers::cDMBot),
+            lastFrameLife_(FLT_MAX) {}
 
     private:
         void evaluate();
+        void checkAggro();
         void checkEnergy();
+        void checkEnemies();
+
+        float lastFrameLife_;
 };
 
 # endif // DMBOT_HPP_INCLUDED

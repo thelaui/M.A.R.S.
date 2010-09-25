@@ -52,12 +52,12 @@ class Ship: public MobileSpaceObject {
         friend class Flubba;
         friend class Burner;
         friend class CannonControl;
-
+Player* owner_;
     private:
         void explode();
         void respawn();
 
-        Player* owner_;
+
         float rotation_;
         float rotateSpeed_;
         bool up_, left_, right_;
