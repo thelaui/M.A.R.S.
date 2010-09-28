@@ -17,6 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "System/window.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -55,15 +56,6 @@ void TabList::draw () const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
-    /*glBegin(GL_QUADS);
-        glColor4f(1,0.5,0.8,0.0);
-        glVertex2f(origin.x_,origin.y_+height_*0.2);
-        glVertex2f(origin.x_+width_,origin.y_+height_*0.2);
-        glColor4f(1,0.5,0.8,0.4);
-        glVertex2f(origin.x_+width_,origin.y_+20);
-        glVertex2f(origin.x_,origin.y_+20);
-    glEnd();*/
-
     glLineWidth(2.f);
     glBegin(GL_LINES);
         glColor4f(1.f, 0.5f, 0.8f, 1.0f);
@@ -76,8 +68,6 @@ void TabList::draw () const {
         glColor4f(1.f, 0.5f, 0.8f, 0.0f);
         glVertex2f(origin.x_+width_,origin.y_+20);
     glEnd();
-
-
 
     for (std::vector<Tab*>::const_iterator i=tabs_.begin(); i != tabs_.end(); ++i)
         (*i)->draw();

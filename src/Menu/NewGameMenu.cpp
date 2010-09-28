@@ -15,6 +15,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Menu/NewGameMenu.hpp"
 
+# include "Media/text.hpp"
 # include "Interface/UiWindow.hpp"
 # include "Interface/Button.hpp"
 # include "Interface/Tab.hpp"
@@ -56,7 +57,7 @@ UiWindow* NewGameMenu::get() {
         TabList* tabList        = new TabList(Vector2f(10,55), 460, 220);
         Tab* tabSpaceBall       = new Tab("SpaceBall", 70);
         Tab* tabDeathMatch      = new Tab("DeathMatch", 80);
-        Tab* tabTeamDeathMatch  = new Tab("Team-DeatMatch", 110);
+        Tab* tabTeamDeathMatch  = new Tab("Team-DeathMatch", 110);
         Tab* tabCannonKeep      = new Tab("CannonKeep", 80);
 
         tabSpaceBall->addWidget(new Label("Left Team:", TEXT_ALIGN_LEFT, Vector2f(10, 40)));
@@ -130,7 +131,6 @@ void NewGameMenu::checkWidgets() {
         menus::hideWindow();
         menus::hideWindow();
         settings::save();
-        games::end();
         games::start(games::gSpaceBall);
     }
     if (kStartTDM_) {
@@ -138,14 +138,12 @@ void NewGameMenu::checkWidgets() {
         menus::hideWindow();
         menus::hideWindow();
         settings::save();
-        games::end();
         games::start(games::gTeamDeathMatch);
     }
     if (kStartDM_) {
         kStartDM_ = false;
         menus::hideWindow();
         menus::hideWindow();
-        games::end();
         settings::C_playerIteamR = false;
         settings::C_playerIteamL = false;
         settings::C_playerIIteamR = false;
@@ -163,7 +161,6 @@ void NewGameMenu::checkWidgets() {
         menus::hideWindow();
         menus::hideWindow();
         settings::save();
-        games::end();
         games::start(games::gCannonKeep);
     }
     if (kInfoSB_) {

@@ -1,4 +1,4 @@
-/* decoObjects.hpp
+/* H2OMG.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,25 +13,22 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DECOOBJECTS_HPP_INCLUDED
-# define DECOOBJECTS_HPP_INCLUDED
+# ifndef H2OMG_HPP_INCLUDED
+# define H2OMG_HPP_INCLUDED
 
-class Planet;
-class Ship;
+# include "Weapons/Weapon.hpp"
 
-namespace decoObjects {
+class H2OMG: public Weapon {
+    public:
+        H2OMG(Ship* parent):
+              Weapon(parent, "H2O-MG") {};
 
-    void update();
-    void draw();
-    void drawNames();
+        void fire() const;
+        void draw() const;
 
-    void addCannon();
-    void addPlanetSign(Planet* planet);
-    void addName      (Ship* ship);
-    void addHighlight (Ship* ship);
-
-    void clear();
+        void next();
+        void previous();
 };
 
-# endif //DECOOBJECTS_HPP_INCLUDED
+# endif // H2OMG_HPP_INCLUDED
 

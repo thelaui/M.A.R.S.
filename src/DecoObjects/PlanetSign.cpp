@@ -18,7 +18,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Planet.hpp"
 
 PlanetSign::PlanetSign(Planet* planet):
-    DecoObject(Vector2f(), 0.f, sf::Randomizer::Random(0.5f, 1.f)),
+    rotation_(0.f),
+    scale_(sf::Randomizer::Random(0.5f, 1.f)),
     texture_(texture::Sign1) {
 
     if (sf::Randomizer::Random(0, 1) == 1) texture_ = texture::Sign2;

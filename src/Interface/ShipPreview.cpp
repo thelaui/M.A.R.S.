@@ -40,7 +40,9 @@ void ShipPreview::draw() const {
 
     // draw glow
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
-    color_->gl4f(0.6f);
+    Color3f bg = *color_;
+    if (bg.v() < 0.5f) bg.v(0.5f);
+    bg.gl4f(0.6f);
     glBegin(GL_QUADS);
         glTexCoord2f(0, 0); glVertex2f(-16.f*3.2f,-16.f*3.2f);
         glTexCoord2f(0, 0.125f); glVertex2f(-16.f*3.2f, 16.f*3.2f);

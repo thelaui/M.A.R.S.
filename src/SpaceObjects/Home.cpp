@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "Media/announcer.hpp"
 # include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/window.hpp"
 # include "Games/games.hpp"
 # include "Players/Team.hpp"
@@ -69,7 +70,7 @@ void Home::drawLife() const {
     if (visible_) {
         std::stringstream sstr;
         sstr << static_cast<int>(ceil(life_/10.f));
-        hud::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
+        text::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
     }
 }
 

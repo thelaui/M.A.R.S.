@@ -15,6 +15,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Menu/OptionsMenu.hpp"
 
+# include "Media/text.hpp"
 # include "Interface/UiWindow.hpp"
 # include "Interface/Button.hpp"
 # include "Interface/Slider.hpp"

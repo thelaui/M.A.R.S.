@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "Interface/TextBox.hpp"
 # include "Interface/Line.hpp"
+# include "Media/text.hpp"
 
 UiWindow* InfoCK::instance_(NULL);
 bool InfoCK::kClose_(false);
@@ -31,7 +32,7 @@ UiWindow* InfoCK::get() {
         instance_->addWidget(new Label("CannonKeep", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label("Rules and Infos", TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox("As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\nReach it first to turn your enemy's home planet into a place of desolation!\nBe the CANNONKEEPer.\n\nUse the keys you configured in options menu for controlling your ship.\nTo change your weapon, land on your planet, press\nFIRE and then navigate through the weapons by pressing LEFT or RIGHT.\nUse TAB to show statistics about the current game.", Vector2f(10, 50), 300, 300));
+        instance_->addWidget(new TextBox("As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.", Vector2f(10, 50), 300, 300));
     }
     return instance_;
 }

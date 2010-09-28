@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "System/window.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <string>
@@ -106,7 +106,7 @@ void Slider::draw() const {
         else {
             sstr << *value_;
         }
-        hud::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
     }
 
     // draw Label

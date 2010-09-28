@@ -16,7 +16,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/GameStats.hpp"
 
 # include "System/settings.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/timer.hpp"
 # include "Particles/particles.hpp"
 # include "Media/texture.hpp"
@@ -86,7 +86,7 @@ void GameStats::draw() const {
             std::stringstream sstr;
             sstr << "FPS: " << static_cast<int>(timer::fps() + 0.5f);
             std::string textString = sstr.str();
-            hud::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
         if (settings::C_showParticleCount) {
@@ -99,14 +99,14 @@ void GameStats::draw() const {
             std::stringstream sstr;
             sstr << "Particles: " << particleCount_;
             std::string textString = sstr.str();
-            hud::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
         if (settings::C_showLatency) {
             std::stringstream sstr;
             sstr << "Latency: " << particles::count();
             std::string textString = sstr.str();
-            hud::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
     }

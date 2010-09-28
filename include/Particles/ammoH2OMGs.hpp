@@ -1,4 +1,4 @@
-/* dusts.hpp
+/* ammoH2OMGs.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,36 +13,38 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DUST_HPP_INCLUDED
-# define DUST_HPP_INCLUDED
+# ifndef AMMOH2OMGS_HPP_INCLUDED
+# define AMMOH2OMGS_HPP_INCLUDED
 
 # include "Particles/Particle.hpp"
 
 # include <list>
 
-namespace dusts {
+namespace ammoH2OMGs {
 
-    class Dust: public Particle {
+    class AmmoH2OMG: public Particle {
         public:
-            Dust(Vector2f const& location);
+            AmmoH2OMG(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Player* damageSource);
 
             void update();
             void draw() const;
 
-            friend void shockWave(SpaceObject* evilOne, float strength, float radius);
+            void onCollision(SpaceObject* with, Vector2f const& location,
+                             Vector2f const& direction, Vector2f const& velocity);
 
         private:
             Color3f color_;
     };
 
-    void spawn(Vector2f const& location);
+    void spawn(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Player* damageSource);
     void update();
     void draw();
-    void shockWave(SpaceObject* evilOne, float strength, float radius);
     int  count();
     void clear();
 }
 
-# endif // DUST_HPP_INCLUDED
+# endif // AMMOH2OMGS_HPP_INCLUDED
+
+
 
 

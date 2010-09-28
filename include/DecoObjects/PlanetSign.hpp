@@ -13,8 +13,8 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef PlanetSign_HPP_INCLUDED
-# define PlanetSign_HPP_INCLUDED
+# ifndef PLANETSIGN_HPP_INCLUDED
+# define PLANETSIGN_HPP_INCLUDED
 
 # include "DecoObjects/DecoObject.hpp"
 
@@ -30,6 +30,9 @@ class PlanetSign: public DecoObject {
 
     private:
         texture::TextureType texture_;
+        Vector2f location_;
+        float rotation_;
+        float scale_;
 };
 
-# endif // PlanetSign_HPP_INCLUDED
+# endif // PLANETSIGN_HPP_INCLUDED

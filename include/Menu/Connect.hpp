@@ -1,4 +1,4 @@
-/* decoObjects.hpp
+/* Connect.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,25 +13,29 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DECOOBJECTS_HPP_INCLUDED
-# define DECOOBJECTS_HPP_INCLUDED
+# ifndef CONNECT_HPP_INCLUDED
+# define CONNECT_HPP_INCLUDED
 
-class Planet;
-class Ship;
+# include "Interface/UiWindow.hpp"
 
-namespace decoObjects {
+class Connect: public UiWindow {
+    public:
+        static UiWindow* get();
+        void checkWidgets();
+        void onShow() {}
 
-    void update();
-    void draw();
-    void drawNames();
+    private:
+        Connect(int width, int height): UiWindow(width, height) {}
+        Connect(Connect const& copy);
 
-    void addCannon();
-    void addPlanetSign(Planet* planet);
-    void addName      (Ship* ship);
-    void addHighlight (Ship* ship);
+        static UiWindow* instance_;
 
-    void clear();
+        static bool kClose_;
 };
 
-# endif //DECOOBJECTS_HPP_INCLUDED
+# endif // CONNECT_HPP_INCLUDED
+
+
+
+
 

@@ -21,6 +21,7 @@
 # include "Particles/sparks.hpp"
 # include "Particles/fragments.hpp"
 # include "Particles/ammoBurners.hpp"
+# include "Particles/ammoH2OMGs.hpp"
 
 namespace particles {
     void update() {
@@ -42,6 +43,7 @@ namespace particles {
         sparks::            update();
         fragments::         update();
         ammoBurners::       update();
+        ammoH2OMGs::        update();
     }
 
     void drawLower() {
@@ -56,6 +58,7 @@ namespace particles {
             dusts::             draw();
             miniAmmoFlubbas::   draw();
             miniFlames::        draw();
+            ammoH2OMGs::        draw();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -109,6 +112,7 @@ namespace particles {
             case pSpark:            sparks::            spawn(location, direction, velocity, color);        break;
             case pFragment:         fragments::         spawn(location, color);                             break;
             case pAmmoBurner:       ammoBurners::       spawn(location, direction, velocity, damageSource); break;
+            case pAmmoH2OMG:        ammoH2OMGs::        spawn(location, direction, velocity, damageSource); break;
         }
     }
 
@@ -135,7 +139,8 @@ namespace particles {
                 + ammoAFK47s::count() + ammoROFLEs::count() + dusts::count() + explodes::count()
                 + burningFragments::count() + fragmentFlames::count() + ammoShotguns::count()
                 + miniFlames::count() + ammoFlubbas::count() + miniAmmoFlubbas::count()
-                + cannonBalls::count() + sparks::count() + fragments::count() + ammoBurners::count();
+                + cannonBalls::count() + sparks::count() + fragments::count() + ammoBurners::count()
+                + ammoH2OMGs::count();
     }
 
     void clear() {
@@ -157,5 +162,6 @@ namespace particles {
         sparks::            clear();
         fragments::         clear();
         ammoBurners::       clear();
+        ammoH2OMGs::        clear();
     }
 }

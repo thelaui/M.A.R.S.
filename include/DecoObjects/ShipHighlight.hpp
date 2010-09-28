@@ -1,4 +1,4 @@
-/* decoObjects.hpp
+/* ShipHighlight.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,25 +13,23 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DECOOBJECTS_HPP_INCLUDED
-# define DECOOBJECTS_HPP_INCLUDED
+# ifndef SHIPHIGHLIGHT_HPP_INCLUDED
+# define SHIPHIGHLIGHT_HPP_INCLUDED
 
-class Planet;
+# include "DecoObjects/DecoObject.hpp"
+
 class Ship;
 
-namespace decoObjects {
+class ShipHighlight: public DecoObject {
+    public:
+        ShipHighlight(Ship* ship): ship_(ship) {}
 
-    void update();
-    void draw();
-    void drawNames();
+        void draw() const;
 
-    void addCannon();
-    void addPlanetSign(Planet* planet);
-    void addName      (Ship* ship);
-    void addHighlight (Ship* ship);
-
-    void clear();
+    private:
+        Ship* ship_;
 };
 
-# endif //DECOOBJECTS_HPP_INCLUDED
+# endif // SHIPHIGHLIGHT_HPP_INCLUDED
+
 

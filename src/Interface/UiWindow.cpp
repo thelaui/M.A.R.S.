@@ -18,7 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/window.hpp"
 # include "Media/texture.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -142,7 +142,7 @@ void UiWindow::draw () const {
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
 
-    hud::drawScreenText("foo", Vector2f(-10000, -10000), font::HandelGotDLig, 1.f);
+    text::drawFooText();
 
     for (std::vector<UiElement*>::const_iterator i=widgets_.begin(); i != widgets_.end(); ++i)
         (*i)->draw();

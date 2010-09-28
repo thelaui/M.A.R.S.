@@ -1,4 +1,4 @@
-/* decoObjects.hpp
+/* numbers.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,25 +13,37 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DECOOBJECTS_HPP_INCLUDED
-# define DECOOBJECTS_HPP_INCLUDED
+# ifndef NUMBERS_HPP_INCLUDED
+# define NUMBERS_HPP_INCLUDED
 
-class Planet;
-class Ship;
+# include "System/Vector2f.hpp"
+# include "System/Color3f.hpp"
 
-namespace decoObjects {
+# include <list>
 
+namespace numbers {
+
+    class Number {
+        public:
+            Number(Vector2f const* location, int value);
+
+            bool update();
+            void draw() const;
+
+        private:
+            int value_;
+            Color3f color_;
+            Vector2f const* sourceLocation_;
+            float lifeTime_;
+    };
+
+    void spawn(Vector2f const* location, int value);
     void update();
     void draw();
-    void drawNames();
-
-    void addCannon();
-    void addPlanetSign(Planet* planet);
-    void addName      (Ship* ship);
-    void addHighlight (Ship* ship);
-
     void clear();
-};
+}
 
-# endif //DECOOBJECTS_HPP_INCLUDED
+# endif // NUMBERS_HPP_INCLUDED
+
+
 

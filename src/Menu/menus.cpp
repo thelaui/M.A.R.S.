@@ -15,7 +15,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 # include "Menu/menus.hpp"
 
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/window.hpp"
 # include "Menu/MainMenu.hpp"
 # include "Menu/PauseMenu.hpp"
@@ -44,7 +44,7 @@ namespace menus {
             for (std::vector<UiWindow*>::iterator it = windowStack_.begin(); it != windowStack_.end(); ++it)
                 (*it)->draw();
             Vector2f viewPort = window::getViewPort();
-            hud::drawScreenText("M.A.R.S. 0.4.0 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+            text::drawScreenText("M.A.R.S. 0.3.9 - " + std::string(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
             window::setSpaceView();
         }
     }

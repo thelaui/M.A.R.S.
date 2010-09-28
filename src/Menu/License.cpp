@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/TextBox.hpp"
 # include "Interface/Line.hpp"
 # include "System/generateName.hpp"
+# include "Media/text.hpp"
 
 UiWindow* License::instance_(NULL);
 bool License::kClose_(false);

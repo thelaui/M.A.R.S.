@@ -13,8 +13,12 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+# include "DecoObjects/decoObjects.hpp"
+
 # include "DecoObjects/Cannon.hpp"
 # include "DecoObjects/PlanetSign.hpp"
+# include "DecoObjects/ShipName.hpp"
+# include "DecoObjects/ShipHighlight.hpp"
 
 # include <SFML/System.hpp>
 # include <vector>
@@ -23,7 +27,8 @@ namespace decoObjects {
 
     namespace {
         Cannon* cannon_(NULL);
-        std::vector<DecoObject*> PlanetSign_;
+        std::vector<DecoObject*> decos_;
+        std::vector<DecoObject*> names_;
     }
 
     void update() {
@@ -34,7 +39,12 @@ namespace decoObjects {
     void draw() {
         if (cannon_)
             cannon_->draw();
-        for (std::vector<DecoObject*>::iterator it = PlanetSign_.begin(); it != PlanetSign_.end(); ++it)
+        for (std::vector<DecoObject*>::iterator it = decos_.begin(); it != decos_.end(); ++it)
+            (*it)->draw();
+    }
+
+    void drawNames() {
+        for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
             (*it)->draw();
     }
 
@@ -43,7 +53,15 @@ namespace decoObjects {
     }
 
     void addPlanetSign(Planet* planet) {
-        PlanetSign_.push_back(new PlanetSign(planet));
+        decos_.push_back(new PlanetSign(planet));
+    }
+
+    void addName(Ship* ship) {
+        names_.push_back(new ShipName(ship));
+    }
+
+    void addHighlight(Ship* ship) {
+        decos_.push_back(new ShipHighlight(ship));
     }
 
     void clear() {
@@ -51,9 +69,11 @@ namespace decoObjects {
             delete cannon_;
             cannon_ = NULL;
         }
-        for (std::vector<DecoObject*>::iterator it = PlanetSign_.begin(); it != PlanetSign_.end(); ++it)
+        for (std::vector<DecoObject*>::iterator it = decos_.begin(); it != decos_.end(); ++it)
             delete *it;
-        PlanetSign_.clear();
+        for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
+            delete *it;
+        decos_.clear();
+        names_.clear();
     }
-
 }

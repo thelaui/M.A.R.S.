@@ -15,6 +15,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/TextBox.hpp"
 
+# include "Media/text.hpp"
+
 
 TextBox::TextBox(std::string const& text, Vector2f const& topLeft, int width, int height):
     UiElement(topLeft, width, height) {
@@ -33,7 +35,7 @@ TextBox::TextBox(std::string const& text, Vector2f const& topLeft, int width, in
         }
         else {
             std::string tmp = line + word;
-            if (hud::getCharacterPos(tmp, tmp.length(), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT) < width_) {
+            if (text::getCharacterPos(tmp, tmp.length(), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT) < width_) {
                 line.append(word + " ");
                 word = "";
             }

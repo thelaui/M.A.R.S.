@@ -21,56 +21,103 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/MenuGame.hpp"
 # include "Games/SpaceBall.hpp"
 # include "Games/TeamDeathMatch.hpp"
-# include "Players/players.hpp"
 # include "System/settings.hpp"
-# include "Hud/hud.hpp"
-# include "System/window.hpp"
 # include "SpaceObjects/stars.hpp"
+# include "System/timer.hpp"
 
 # include <SFML/OpenGL.hpp>
 
 namespace games {
+
     namespace {
         Game* currentGame_(0);
-        bool newGame_(false);
+        bool restart_(false);
+        bool newGame_(true);
+        GameType newGameType_(gNoGame);
+        bool fadeOut_(false);
+        bool fadeIn_(false);
+        float fadeFactor_(1.f);
+
+        void fade() {
+            if (fadeIn_) {
+                fadeFactor_ -= timer::frameTime()*2.f;
+                if (fadeFactor_ <= 0.f) {
+                    fadeFactor_ = 0.f;
+                    fadeIn_ = false;
+                }
+            }
+            else if (fadeOut_) {
+                fadeFactor_ += timer::frameTime()*2.f;
+                if (fadeFactor_ >= 1.f) {
+                    fadeFactor_ = 1.f;
+                    fadeOut_ = false;
+                }
+            }
+
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            glBegin(GL_QUADS);
+                glColor4f(0.0,0.0,0.0,fadeFactor_);
+                glVertex2f(0.f, 0.f);
+                glVertex2f(0.f, 800.f);
+                glVertex2f(1280.f, 800.f);
+                glVertex2f(1280.f, 0.f);
+            glEnd();
+        }
+
     }
 
     void update() {
         if (settings::C_showStars) stars::draw();
-        currentGame_->update();
-        if (newGame_) restart();
+        if (!fadeIn_ && !fadeOut_) currentGame_->update();
+        if (restart_ && !fadeOut_) restart();
+        if (newGame_ && !fadeOut_) start(newGameType_);
     }
 
     void draw() {
         currentGame_->draw();
+        if (fadeIn_ || fadeOut_) fade();
     }
 
     void start(GameType const& type) {
-        switch (type) {
-            case gMenu:              currentGame_ = new MenuGame();       break;
-            case gSpaceBall:         currentGame_ = new SpaceBall();      break;
-            case gDeathMatch:        currentGame_ = new DeathMatch();     break;
-            case gTeamDeathMatch:    currentGame_ = new TeamDeathMatch(); break;
-            case gCannonKeep:        currentGame_ = new CannonKeep();     break;
-            default: end();
+        if (!newGame_) {
+            newGameType_ = type;
+            newGame_ = true;
+            fadeOut_ = true;
         }
-        hud::refreshTabStats();
+        else {
+            if (currentGame_) {
+                delete currentGame_;
+                currentGame_ = 0;
+            }
+
+            switch (type) {
+                case gMenu:              currentGame_ = new MenuGame();       break;
+                case gSpaceBall:         currentGame_ = new SpaceBall();      break;
+                case gDeathMatch:        currentGame_ = new DeathMatch();     break;
+                case gTeamDeathMatch:    currentGame_ = new TeamDeathMatch(); break;
+                case gCannonKeep:        currentGame_ = new CannonKeep();     break;
+                default: break;
+            }
+
+            newGame_ = false;
+            fadeIn_  = true;
+        }
     }
 
     void restart() {
-        if (!newGame_)
-            newGame_ = true;
+        if (!restart_) {
+            restart_ = true;
+            fadeOut_ = true;
+        }
         else {
             currentGame_->restart();
-            newGame_ = false;
+            restart_ = false;
+            fadeIn_  = true;
         }
     }
 
-    void end() {
-        if (currentGame_) {
-            delete currentGame_;
-            currentGame_ = 0;
-        }
+    bool active() {
+        return (!fadeIn_ && !fadeOut_);
     }
 
     GameType type() {

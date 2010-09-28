@@ -1,7 +1,7 @@
 solution "MarsProject"
   configurations { "Release", "Debug" }
 
-project "Mars2"
+project "Mars"
   language "C++"
   kind     "ConsoleApp"
   files  { "**.hpp", "**.cpp", "data/shaders/*" }

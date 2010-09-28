@@ -16,31 +16,17 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef HUD_HPP_INCLUDED
 # define HUD_HPP_INCLUDED
 
-# define TEXT_ALIGN_LEFT   0
-# define TEXT_ALIGN_CENTER 1
-# define TEXT_ALIGN_RIGHT  2
-
-# include "Media/font.hpp"
 # include "System/Vector2f.hpp"
-# include "System/Color3f.hpp"
 
 namespace hud {
+    void init();
+
     void update();
     void draw();
 
-    void drawSpaceText(std::string const& text, Vector2f const& location, font::FontType type = font::HandelGotDLig,
-                       float size = 12.f, int align = TEXT_ALIGN_CENTER, Color3f const& color = Color3f(1.0, 1.0, 1.0),
-                       Vector2f const& velocity = Vector2f());
-
-    void drawScreenText(std::string const& text, Vector2f const& location, font::FontType type = font::HandelGotDLig,
-                       float size = 12.f, int align = TEXT_ALIGN_LEFT, Color3f const& color = Color3f(1.0, 1.0, 1.0));
-
-    float getCharacterPos(std::string const& text, int pos, font::FontType type = font::HandelGotDLig, float size = 12.f,
-                          int align = TEXT_ALIGN_LEFT);
-
+    void spawnNumber(Vector2f const* location, int value);
     void displayPoints();
     void displayStats(bool show = true);
-    void refreshTabStats();
 }
 
 # endif // HUD_HPP_INCLUDED

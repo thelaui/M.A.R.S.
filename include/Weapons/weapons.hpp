@@ -22,5 +22,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Weapons/Shotgun.hpp"
 # include "Weapons/Flubba.hpp"
 # include "Weapons/Burner.hpp"
+# include "Weapons/H2OMG.hpp"
 
 # endif // WEAPONS_HPP_INCLUDED

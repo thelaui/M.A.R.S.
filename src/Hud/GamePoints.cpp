@@ -15,7 +15,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Hud/GamePoints.hpp"
 
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "Media/texture.hpp"
 # include "System/window.hpp"
 # include "Players/players.hpp"
@@ -92,8 +92,8 @@ void GamePoints::draw() const {
         std::stringstream sstr;
         sstr << players::getTeamL()->points_ << " : " << players::getTeamR()->points_;
         std::string textString = sstr.str();
-        hud::drawScreenText("foo", Vector2f(-10000, -10000), font::HandelGotDLig, 1.f);
-        hud::drawScreenText(textString, Vector2f(midPoint, viewPort.y_-50.f-top), font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
+        text::drawFooText();
+        text::drawScreenText(textString, Vector2f(midPoint, viewPort.y_-50.f-top), font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
     }
 }
 

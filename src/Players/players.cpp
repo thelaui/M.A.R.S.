@@ -115,12 +115,21 @@ namespace players {
         return checker == allTeams_[0] ? allTeams_[1] : allTeams_[0];
     }
 
-    int getTopPoints() {
+    int getFirstPoints() {
         int highest(0);
         for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-            if ((*it)->points_ > highest)
-                highest = (*it)->points_;
+            if ((*it)->points() > highest)
+                highest = (*it)->points();
         return highest;
+    }
+
+    int getSecondPoints() {
+        int highest(getFirstPoints());
+        int second(0);
+        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
+            if ((*it)->points() > second && (*it)->points() != highest)
+                second = (*it)->points();
+        return second;
     }
 
     void resetPoints() {

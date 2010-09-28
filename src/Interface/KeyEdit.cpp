@@ -16,6 +16,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/KeyEdit.hpp"
 
 # include "System/settings.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -125,9 +126,9 @@ void KeyEdit::draw() const {
     else if (*value_ == sf::Key::Up) key = "Up";
 
     if (pressed_ && hoovered_)
-        hud::drawScreenText("Press key while hoovering!", origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText("Press key while hoovering!", origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        hud::drawScreenText(key, origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(key, origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
 
     //draw Label
     label_->draw();

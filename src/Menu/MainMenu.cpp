@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/OptionsMenu.hpp"
 # include "Menu/NewGameMenu.hpp"
 # include "Menu/About.hpp"
+# include "Menu/Connect.hpp"
 
 UiWindow* MainMenu::instance_(NULL);
 bool MainMenu::kStartLocal_(false);
@@ -60,6 +61,14 @@ void MainMenu::checkWidgets() {
     else if (kStartLocal_) {
         kStartLocal_ = false;
         menus::showWindow(NewGameMenu::get());
+    }
+    else if (kJoinMulti_) {
+        kJoinMulti_ = false;
+        menus::showWindow(Connect::get());
+    }
+    else if (kStartMulti_) {
+        kStartMulti_ = false;
+        menus::showWindow(Connect::get());
     }
 }
 

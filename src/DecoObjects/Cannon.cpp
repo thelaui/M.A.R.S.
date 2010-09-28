@@ -24,15 +24,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/particles.hpp"
 
 Cannon::Cannon():
-    DecoObject(Vector2f(640.f, 0.f), 0.f, 1.f),
-    timer_(0.f) {}
+    timer_(0.f),
+    rotation_(0.f) {}
 
 void Cannon::update() {
     Player* carrier = items::getCannonControl()->getCarrier();
 
     Vector2f toTarget;
     if (carrier)
-        toTarget = (players::getEnemy(carrier->team())->home()->location() - location_).normalize();
+        toTarget = (players::getEnemy(carrier->team())->home()->location() - Vector2f(640.f, 0.f)).normalize();
     else
         toTarget = Vector2f(0.f, -1.f);
 
@@ -56,7 +56,7 @@ void Cannon::update() {
     else if (std::abs(angle) > 0.1f) {
         timer_ += timer::frameTime();
         Vector2f direction(-std::sin(rotation_*M_PI/180), std::cos(rotation_*M_PI/180));
-        Vector2f location(location_ + direction*180.f);
+        Vector2f location(Vector2f(640.f, 0.f) + direction*180.f);
         if (timer_ > 3.f) {
             timer_ = 0.f;
             particles::spawn(particles::pCannonBall, location, direction);
@@ -76,7 +76,7 @@ void Cannon::draw() const {
 
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::CannonSocket));
     glColor3f(1,1,1);
-    glTranslatef(location_.x_, location_.y_, 0.f);
+    glTranslatef(640.f, 0.f, 0.f);
 
     glBegin(GL_QUADS);
         glTexCoord2i(0, 0); glVertex2f(-50.f, 0.f);

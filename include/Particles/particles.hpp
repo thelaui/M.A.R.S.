@@ -25,7 +25,7 @@ class SpaceObject;
 namespace particles {
     enum ParticleType {pFuel, pSpark, pDust, pAmmoFlubba, pExplode, pAmmoAFK47, pFragment,
                        pAmmoShotgun, pAmmoROFLE, pMiniAmmoFlubba, pMud, pAmmoBurner, pMiniFlame, pSmoke,
-                       pEruption, pFragmentFlame, pBurningFragment, pCannonBall};
+                       pEruption, pFragmentFlame, pBurningFragment, pCannonBall, pAmmoH2OMG};
 
     void update();
     void drawLower();

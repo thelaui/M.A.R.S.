@@ -46,7 +46,8 @@ namespace players {
     std::vector<Team*> const& getAllTeams();
     Team   const* getEnemy(Team const* checker);
 
-    int getTopPoints();
+    int getFirstPoints();
+    int getSecondPoints();
 }
 
 # endif // PLAYERS_HPP_INCLUDED

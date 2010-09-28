@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
+# include "Media/text.hpp"
 
 UiWindow* NewGameConfirm::instance_(NULL);
 bool NewGameConfirm::kOk_(false);

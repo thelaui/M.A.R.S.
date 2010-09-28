@@ -17,6 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "System/window.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
@@ -115,13 +116,13 @@ void TextEdit::draw() const {
     glColor4f(1,1,1,0.7);
 
     if (pressed_ && hoovered_)
-        hud::drawScreenText("Enter text while hoovering!", origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText("Enter text while hoovering!", origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        hud::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
 
     // draw cursor
     if (hoovered_ && cursorTimer_ < 30) {
-        int pos = hud::getCharacterPos(*value_, cursorPos_, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
+        int pos = text::getCharacterPos(*value_, cursorPos_, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
         glColor4f(1,0.8,0.9,0.5);
         glLineWidth(0.5f);
         glBegin(GL_LINES);

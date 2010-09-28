@@ -27,6 +27,7 @@ class Cannon: public DecoObject {
 
     private:
         float timer_;
+        float rotation_;
 };
 
 # endif // CANNON_HPP_INCLUDED

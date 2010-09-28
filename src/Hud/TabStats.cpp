@@ -16,7 +16,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/TabStats.hpp"
 
 # include "System/settings.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/timer.hpp"
 # include "Media/texture.hpp"
 # include "Menu/menus.hpp"
@@ -147,12 +147,12 @@ void TabStats::draw() const {
         glBindTexture(GL_TEXTURE_2D, 0);
         glDisable(GL_TEXTURE_2D);
 
-        hud::drawScreenText("foo", Vector2f(-10000, -10000), font::HandelGotDLig, 1.f);
-        hud::drawScreenText("Statistics", topLeft + Vector2f(10, 10), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawFooText();
+        text::drawScreenText("Statistics", topLeft + Vector2f(10, 10), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f));
         std::stringstream sstr;
         int seconds = games::elapsedTime();
         sstr << std::setfill('0') << std::setw(2) << (seconds-seconds%60)/60 << " : " << std::setw(2) << seconds%60;
-        hud::drawScreenText(sstr.str(), topLeft + Vector2f(width-10, 18), font::FreeSans, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(sstr.str(), topLeft + Vector2f(width-10, 18), font::FreeSans, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7f, 0.7f, 0.7f));
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glLineWidth(2.f);
@@ -170,11 +170,11 @@ void TabStats::draw() const {
         height = 12;
         topLeft += Vector2f(10.f, 60.f);
 
-        hud::drawScreenText("Points", topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
-        hud::drawScreenText("Frags", topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
-        hud::drawScreenText("TeamKills", topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
-        hud::drawScreenText("Suicides", topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
-        hud::drawScreenText("Deaths", topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
+        text::drawScreenText("Points", topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText("Frags", topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText("TeamKills", topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText("Suicides", topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText("Deaths", topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
         topLeft.y_ += 15;
 
@@ -196,19 +196,23 @@ void TabStats::draw() const {
                 glEnd();
 
                 Color3f drawColor((*currentPlayer)->color());
-                // draw name
-                hud::drawScreenText((*currentPlayer)->name_, topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                // draw name, shadowed
+                text::drawScreenText((*currentPlayer)->name_, topLeft + Vector2f(3, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText((*currentPlayer)->name_, topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
                 // draw [BOT]
-                if ((*currentPlayer)->controlType_ != controllers::cPlayer1 && (*currentPlayer)->controlType_ != controllers::cPlayer2)
-                    hud::drawScreenText("[BOT]", topLeft+Vector2f(80,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                if ((*currentPlayer)->controlType_ != controllers::cPlayer1 && (*currentPlayer)->controlType_ != controllers::cPlayer2) {
+                    text::drawScreenText("[BOT]", topLeft+Vector2f(81,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+                    text::drawScreenText("[BOT]", topLeft+Vector2f(80,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                }
                 // draw points
-                int value = (*currentPlayer)->frags_ - (*currentPlayer)->suicides_ - (*currentPlayer)->teamKills_;
+                int value = (*currentPlayer)->points_;
                 if (value > 0)      drawColor = Color3f(0.3,1,0.3);
                 else if (value < 0) drawColor = Color3f(1,0.3,0.3);
                 else                drawColor = Color3f(1,1,0.3);
                 std::stringstream sstr;
                 sstr << value;
-                hud::drawScreenText(sstr.str(), topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft+Vector2f(171,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sstr.str(), topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw frags
                 value = (*currentPlayer)->frags_;
                 if (value > 0)      drawColor = Color3f(0.3,1,0.3);
@@ -216,7 +220,8 @@ void TabStats::draw() const {
                 totalFrags += value;
                 sstr.str("");
                 sstr << value;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(226, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw teamKills
                 value = (*currentPlayer)->teamKills_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -224,7 +229,8 @@ void TabStats::draw() const {
                 totalTeamKills += value;
                 sstr.str("");
                 sstr << value;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(281, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw suicides
                 value = (*currentPlayer)->suicides_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -232,7 +238,8 @@ void TabStats::draw() const {
                 totalSuicides += value;
                 sstr.str("");
                 sstr << value;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(336, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw deaths
                 value = (*currentPlayer)->deaths_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -240,7 +247,8 @@ void TabStats::draw() const {
                 totalDeaths += value;
                 sstr.str("");
                 sstr << value;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(391, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 topLeft.y_ += 12;
             }
@@ -256,45 +264,45 @@ void TabStats::draw() const {
                 glEnd();
 
                 Color3f drawColor(teamColor);
-                hud::drawScreenText("Total:", topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                text::drawScreenText("Total:", topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
 
-                if (totalFrags-totalSuicides-totalTeamKills > 0)      drawColor = Color3f(0.3,1,0.3);
-                else if (totalFrags-totalSuicides-totalTeamKills < 0) drawColor = Color3f(1,0.3,0.3);
+                if (it->first->points() > 0)      drawColor = Color3f(0.3,1,0.3);
+                else if (it->first->points() < 0) drawColor = Color3f(1,0.3,0.3);
                 else                                                  drawColor = Color3f(1,1,0.3);
                 std::stringstream sstr;
-                sstr << totalFrags-totalSuicides-totalTeamKills;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(170, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                sstr << it->first->points();
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(170, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalFrags > 0)     drawColor = Color3f(0.3,1,0.3);
                 else                    drawColor = Color3f(1,1,0.3);
                 sstr.str("");
                 sstr << totalFrags;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalTeamKills > 0) drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalTeamKills;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalSuicides > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalSuicides;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalDeaths > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalDeaths;
-                hud::drawScreenText(sstr.str(), topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sstr.str(), topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 topLeft.y_ += 18;
             }
             else
                 topLeft.y_ += 2;
         }
-        hud::drawScreenText("foo", Vector2f(-10000, -10000), font::HandelGotDLig, 1.f);
+        text::drawFooText();
     }
 }
 

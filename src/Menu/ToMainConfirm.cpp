@@ -15,6 +15,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Menu/ToMainConfirm.hpp"
 
+# include "Media/text.hpp"
 # include "Interface/UiWindow.hpp"
 # include "Interface/Button.hpp"
 # include "System/window.hpp"
@@ -40,7 +41,6 @@ void ToMainConfirm::checkWidgets() {
         kOk_ = false;
         menus::hideWindow();
         menus::hideWindow();
-        games::end();
         games::start(games::gMenu);
     }
     else if (kCancel_) {

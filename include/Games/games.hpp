@@ -24,7 +24,7 @@ namespace games {
 
     void start(GameType const& type);
     void restart();
-    void end();
+    bool active();
 
     GameType type();
     float elapsedTime();

@@ -26,13 +26,9 @@ namespace ships {
     void addShip(Vector2f const& location, float rotation, Player* owner);
 
     void update();
-
     void draw();
-    void drawNames();
-    void drawHighLights();
 
     std::vector<Ship*> const& getShips();
-
 
     void clear();
 }

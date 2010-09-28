@@ -17,6 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "Media/sound.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 

@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Line.hpp"
 # include "System/generateName.hpp"
 # include "Menu/License.hpp"
+# include "Media/text.hpp"
 
 UiWindow* About::instance_(NULL);
 bool About::kClose_(false);
@@ -36,7 +37,7 @@ UiWindow* About::get() {
         instance_->addWidget(new Label("M.A.R.S.", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox("This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage in Launchpad: \nhttps://launchpad.net/piss", Vector2f(10, 50), 300, 150));
+        instance_->addWidget(new TextBox("This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage: \nhttp://www.marsshooter.org", Vector2f(10, 50), 300, 150));
     }
     return instance_;
 }

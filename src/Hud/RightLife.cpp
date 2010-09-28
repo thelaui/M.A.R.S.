@@ -18,8 +18,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/players.hpp"
 # include "Players/Player.hpp"
 # include "System/settings.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/window.hpp"
+# include "Players/Team.hpp"
+
+# include <sstream>
 
 void RightLife::draw() const {
 
@@ -33,10 +36,20 @@ void RightLife::draw() const {
     else if (settings::C_playerIIteamR)                             player = players::getPlayerII();
 
     if (player) {
-        Color3f const& color = player->color();
+        Color3f color = player->color();
+        if (color.v() < 0.5f) color.v(0.5f);
         Vector2f const& port = window::getViewPort();
 
-        hud::drawScreenText(player->name(), Vector2f(port.x_-10.f,port.y_-85.f), font::HandelGotDLig, 20.f, TEXT_ALIGN_RIGHT, color);
+        std::stringstream sstr;
+        int first(players::getFirstPoints());
+        if (player->team()->points() == first) {
+            int second(players::getSecondPoints());
+            sstr << player->name() << " (" << player->team()->points() << "/ +" << first-second << ")";
+        }
+        else
+            sstr << player->name() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
+
+        text::drawScreenText(sstr.str(), Vector2f(port.x_-10.f,port.y_-85.f), font::HandelGotDLig, 20.f, TEXT_ALIGN_RIGHT, color);
 
         float life = player->ship()->getLife();
         float fuel = player->ship()->getFuel();

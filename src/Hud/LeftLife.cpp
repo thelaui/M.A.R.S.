@@ -19,11 +19,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "System/settings.hpp"
 # include "Media/font.hpp"
-# include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "System/window.hpp"
+# include "Players/Team.hpp"
+
+# include <sstream>
 
 void LeftLife::draw() const {
-    hud::drawScreenText("foo", Vector2f(-10000, -10000), font::HandelGotDLig, 1.f);
+    text::drawFooText();
 
     Player const* player(NULL);
 
@@ -35,10 +38,20 @@ void LeftLife::draw() const {
     else if (settings::C_playerIIteamL)                             player = players::getPlayerII();
 
     if (player) {
-        Color3f const& color = player->color();
+        Color3f color = player->color();
+        if (color.v() < 0.5f) color.v(0.5f);
         Vector2f const& port = window::getViewPort();
 
-        hud::drawScreenText(player->name(), Vector2f(10, port.y_-85), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, color);
+        std::stringstream sstr;
+        int first(players::getFirstPoints());
+        if (player->team()->points() == first) {
+            int second(players::getSecondPoints());
+            sstr << player->name() << " (" << player->team()->points() << "/ +" << first-second << ")";
+        }
+        else
+            sstr << player->name() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
+
+        text::drawScreenText(sstr.str(), Vector2f(10, port.y_-85), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, color);
 
         float life = player->ship()->getLife();
         float fuel = player->ship()->getFuel();

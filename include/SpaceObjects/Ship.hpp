@@ -51,12 +51,17 @@ class Ship: public MobileSpaceObject {
         friend class Shotgun;
         friend class Flubba;
         friend class Burner;
+        friend class H2OMG;
         friend class CannonControl;
-Player* owner_;
+        friend class ShipName;
+        friend class ShipHighlight;
+
     private:
+
         void explode();
         void respawn();
 
+        Player* owner_;
 
         float rotation_;
         float rotateSpeed_;
@@ -78,8 +83,8 @@ Player* owner_;
 
         std::vector<bool> collectedItems_;
 
-        int fragStars_;
-        float fragStarTimer_;
+        int fragStars_, rememberedPoints_;
+        float fragStarTimer_, pointCheckTimer_;
 };
 
 # endif // SHIP_HPP_INCLUDED

@@ -26,9 +26,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/GameStats.hpp"
 # include "Hud/GamePoints.hpp"
 # include "Hud/TabStats.hpp"
+# include "Hud/numbers.hpp"
+# include "DecoObjects/decoObjects.hpp"
 
 # include <sstream>
-# include <SFML/Graphics.hpp>
 
 namespace hud {
 
@@ -43,23 +44,25 @@ namespace hud {
 
     void update() {
         gamePoints_->update();
+        numbers::update();
+        tabStats_->update();
+
         if (window::getMainWindow()->GetInput().IsKeyDown(sf::Key::Tab)) {
             tabStats_->display();
             gamePoints_->display();
         }
         else tabStats_->display(false);
 
-        tabStats_->update();
     }
 
     void draw() {
-        ships::drawHighLights();
+        numbers::draw();
         window::setPixelView();
         if (games::type() == games::gMenu) logo_->draw();
         gameStats_->draw();
 
-        if (!menus::visible()) {
-            ships::drawNames();
+        if (!menus::visible() && games::active()) {
+            decoObjects::drawNames();
             if(games::type() == games::gSpaceBall || games::type() == games::gCannonKeep) {
                 std::vector<Home*> const& homes = spaceObjects::getHomes();
                 for (std::vector<Home*>::const_iterator it = homes.begin(); it != homes.end(); ++it)
@@ -73,82 +76,8 @@ namespace hud {
         window::setSpaceView();
     }
 
-    void drawSpaceText(std::string const& text, Vector2f const& location, font::FontType type,
-                       float size, int align, Color3f const& color, Vector2f const& velocity) {
-
-        sf::Text drawString(text, font::getFont(type), size);
-        drawString.SetColor(color.sfColor());
-
-        Vector2f loc = window::coordToPixel(location);
-        sf::FloatRect boundingBox = drawString.GetRect();
-
-        if      (align == TEXT_ALIGN_CENTER) loc -= Vector2f(boundingBox.Width*0.5f, 0.f);
-        else if (align == TEXT_ALIGN_RIGHT)  loc -= Vector2f(boundingBox.Width, 0.f);
-
-        // prevent text from being outside of screen
-        Vector2f const& port = window::getViewPort();
-        if (loc.x_ < 0.f)                             loc.x_ = 0.f;
-        if (loc.y_ < 0.f)                             loc.y_ = 0.f;
-        if (loc.x_ + boundingBox.Width  > port.x_)  loc.x_ = port.x_ - boundingBox.Width;
-        if (loc.y_ + boundingBox.Height > port.y_)  loc.y_ = port.y_ - boundingBox.Height;
-
-        if (velocity == Vector2f()) drawString.SetPosition(static_cast<int>(loc.x_), static_cast<int>(loc.y_));
-        else                        drawString.SetPosition(loc.x_, loc.y_);
-
-        sf::RenderWindow* mainWindow = window::getMainWindow();
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glEnable(GL_TEXTURE_2D);
-        mainWindow->Draw(drawString);
-        glDisable(GL_TEXTURE_2D);
-    }
-
-    void drawScreenText(std::string const& text, Vector2f const& location, font::FontType type,
-                       float size, int align, Color3f const& color) {
-
-        sf::Text drawString(text, font::getFont(type), size);
-        drawString.SetColor(color.sfColor());
-
-        switch (align) {
-            case TEXT_ALIGN_CENTER: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                drawString.SetPosition(static_cast<int>(location.x_-boundingBox.Width*0.5f), static_cast<int>(location.y_));
-                break;
-            }
-            case TEXT_ALIGN_RIGHT: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                drawString.SetPosition(static_cast<int>(location.x_-boundingBox.Width), static_cast<int>(location.y_));
-                break;
-            }
-            default:
-                drawString.SetPosition(static_cast<int>(location.x_), static_cast<int>(location.y_));
-        }
-        sf::RenderWindow* mainwindow = window::getMainWindow();
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glEnable(GL_TEXTURE_2D);
-        mainwindow->Draw(drawString);
-        glDisable(GL_TEXTURE_2D);
-    }
-
-    float getCharacterPos(std::string const& text, int pos, font::FontType type, float size, int align) {
-        sf::Text drawString(text, font::getFont(type), size);
-        float result = drawString.GetCharacterPos(pos).x;
-
-        switch (align) {
-            case TEXT_ALIGN_CENTER: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                result -= boundingBox.Width*0.5f;
-                break;
-            }
-            case TEXT_ALIGN_RIGHT: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                result -= boundingBox.Width;
-                break;
-            }
-            default: break;
-        }
-        return result;
+    void spawnNumber(Vector2f const* location, int value) {
+        numbers::spawn(location, value);
     }
 
     void displayPoints() {
@@ -159,7 +88,9 @@ namespace hud {
         gamePoints_->display();
         tabStats_->display(show);
     }
-    void refreshTabStats() {
+
+    void init() {
+        numbers::clear();
         tabStats_->refresh();
     }
 }

@@ -20,17 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class DecoObject {
     public:
-        DecoObject(Vector2f const& location, float rotation, float scale):
-            location_(location),
-            rotation_(rotation),
-            scale_(scale) {}
-
         virtual void draw() const = 0;
-
-    protected:
-        Vector2f location_;
-        float rotation_;
-        float scale_;
 };
 
 # endif // DECOOBJECT_HPP_INCLUDED

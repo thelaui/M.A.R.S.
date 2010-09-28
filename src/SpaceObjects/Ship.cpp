@@ -21,12 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Weapons/weapons.hpp"
 # include "Media/sound.hpp"
 # include "Hud/hud.hpp"
+# include "Media/text.hpp"
 # include "Players/Player.hpp"
 # include "Players/Team.hpp"
 # include "Controllers/Controller.hpp"
 # include "Games/games.hpp"
 # include "SpaceObjects/Ball.hpp"
 # include "Media/announcer.hpp"
+# include "DecoObjects/decoObjects.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -49,7 +51,13 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100),
                collectedItems_(1),
                fragStars_(0),
-               fragStarTimer_(0.f) {
+               rememberedPoints_(0),
+               fragStarTimer_(0.f),
+               pointCheckTimer_(0.f) {
+
+    decoObjects::addName(this);
+    if  ((owner_->controlType_ == controllers::cPlayer1) | (owner_->controlType_ == controllers::cPlayer2))
+        decoObjects::addHighlight(this);
     physics::addMobileObject(this);
     owner->ship_ = this;
     damageSource_ = owner_;
@@ -68,6 +76,14 @@ void Ship::update() {
         fragStarTimer_ -= time;
         if (fragStarTimer_ <= 0.f)
             fragStars_ = 0;
+    }
+
+    if (pointCheckTimer_ > 0.f) {
+        pointCheckTimer_ -= time;
+        if (pointCheckTimer_ <= 0.f && rememberedPoints_ != owner_->points_) {
+            hud::spawnNumber(&location_, owner_->points_ - rememberedPoints_);
+            rememberedPoints_ = owner_->points_;
+        }
     }
 
     if (visible_) {
@@ -190,83 +206,6 @@ void Ship::draw() const {
     }
 }
 
-void Ship::drawName() const {
-    if (visible_) {
-        if (weaponChange_ && ((owner_->controlType_ == controllers::cPlayer1) | (owner_->controlType_ == controllers::cPlayer2)))
-            hud::drawSpaceText(currentWeapon_->getName(), location_ + Vector2f(0.f, -radius_)*2.5f);
-        else {
-            Color3f color(1.f, 0.f, 0.f);
-            color.h(color.h() + getLife());
-            if (settings::C_drawBotOrientation)
-                switch (owner_->controlType_) {
-                    case controllers::cAggroBot:
-                        hud::drawSpaceText(owner_->name() + " [AGGRO]", location_ + Vector2f(0.f, -radius_)*2.5f,
-                        font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color, velocity_);
-                        break;
-                    case controllers::cDefBot:
-                        hud::drawSpaceText(owner_->name() + " [DEF]", location_ + Vector2f(0.f, -radius_)*2.5f,
-                        font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color, velocity_);
-                        break;
-                    case controllers::cMidBot:
-                        hud::drawSpaceText(owner_->name() + " [MID]", location_ + Vector2f(0.f, -radius_)*2.5f,
-                        font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color, velocity_);
-                        break;
-                    default:
-                        hud::drawSpaceText(owner_->name(), location_ + Vector2f(0.f, -radius_)*2.5f,
-                        font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color, velocity_);
-                }
-            else hud::drawSpaceText(owner_->name(), location_ + Vector2f(0.f, -radius_)*2.5f,
-                 font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color, velocity_);
-        }
-
-        if (fragStars_ > 0) {
-            Color3f color;
-            int showAmount;
-            if (fragStars_ > 10) {
-                color = Color3f(1.f, 0.8f, 0.f);
-                showAmount = fragStars_ -10;
-            }
-            else if (fragStars_ > 5) {
-                color = Color3f(0.8f, 0.8f, 0.8f);
-                showAmount = fragStars_-5;
-            }
-            else {
-                color = Color3f(1.0f, 0.5f, 0.7f);
-                showAmount = fragStars_;
-            }
-
-            std::stringstream sstr;
-            for (int i=0; i<showAmount; ++i)
-                sstr << "*";
-            hud::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -radius_)*2.5f + Vector2f(0.f, -10.f),
-                               font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, color, velocity_);
-        }
-    }
-}
-
-void Ship::drawHighLight() const {
-    if (visible_ && ((owner_->controlType_ == controllers::cPlayer1) | (owner_->controlType_ == controllers::cPlayer2))) {
-        glPushMatrix();
-        glLoadIdentity();
-        glTranslatef(location_.x_, location_.y_, 0.f);
-        glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
-
-        // wobble when charging
-        if ((docked_ && (getLife() < 100.f) | (getFuel() < 100.f)))
-            glScalef(std::sin(timer::totalTime()*10.f)*0.15f + 1.f, std::sin(timer::totalTime()*10.f)*0.15f + 1.f, 0.f);
-
-        owner_->color().gl4f(0.3f);
-        glBegin(GL_QUADS);
-            glTexCoord2f(0.125f, 0.f);     glVertex2f(-radius_*3.2f,-radius_*3.2f);
-            glTexCoord2f(0.125f, 0.125f);  glVertex2f(-radius_*3.2f, radius_*3.2f);
-            glTexCoord2f(0.25f, 0.125f);   glVertex2f( radius_*3.2f, radius_*3.2f);
-            glTexCoord2f(0.25f, 0.f);      glVertex2f( radius_*3.2f,-radius_*3.2f);
-        glEnd();
-
-        glPopMatrix();
-    }
-}
-
 void Ship::onCollision(SpaceObject* with, Vector2f const& location,
                        Vector2f const& direction, Vector2f const& velocity) {
     float strength = velocity.length();
@@ -350,7 +289,7 @@ void Ship::onShockWave(SpaceObject* source, float intensity) {
 
 void Ship::setDamageSource(Player* evilOne) {
     damageSource_ = evilOne;
-    damageSourceResetTimer_ = 1.f;
+    damageSourceResetTimer_ = 1.5f;
 }
 
 float Ship::getLife() const {
@@ -380,28 +319,42 @@ void Ship::explode() {
     respawnTimer_ = 10.f;
 
     ++owner_->deaths_;
-    fragStars_ = 0;
-    fragStarTimer_ = 0.f;
 
     if (!damageSource_) damageSource_ = owner_;
 
     if (damageSource_ == owner_) {
         ++owner_->suicides_;
+        --owner_->points_;
+        pointCheckTimer_ = 0.5f;
+        if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
+            --damageSource_->team()->points_;
+
         announcer::announce(announcer::Affronting);
     }
     else if (damageSource_->team() == owner_->team()) {
         ++damageSource_->teamKills_;
-        damageSource_->ship()->fragStars_ = 0;
-        damageSource_->ship()->fragStarTimer_ = 0.f;
+        --damageSource_->points_;
+          damageSource_->ship()->pointCheckTimer_ = 0.5f;
+
+          damageSource_->ship()->fragStars_ = 0;
+          damageSource_->ship()->fragStarTimer_ = 0.f;
+
+        if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
+            --damageSource_->team()->points_;
+
         announcer::announce(announcer::Affronting);
     }
     else {
         ++damageSource_->frags_;
-        ++damageSource_->points_;
+          damageSource_->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 1);
+          damageSource_->ship()->pointCheckTimer_ = 0.5f;
+
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            ++damageSource_->team()->points_;
+            damageSource_->team()->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 1);
+
         ++damageSource_->ship()->fragStars_;
-        damageSource_->ship()->fragStarTimer_ = 15.f;
+          damageSource_->ship()->fragStarTimer_ = 15.f;
+
         announcer::announce(announcer::Praising);
     }
 
@@ -415,6 +368,8 @@ void Ship::respawn() {
     rotateSpeed_ = (1.f);
     life_ = 200.f;
     fuel_ = 100.f;
+    fragStars_ = 0;
+    fragStarTimer_ = 0.f;
     visible_ = true;
     sound::playSound(sound::ShipRespawn, location_, 100.f);
 }

@@ -20,7 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <cmath>
 
 BlackHole::BlackHole(Vector2f const& location, float radius):
-                     SpaceObject(spaceObjects::oBlackHole, location, radius, radius*160),
+                     SpaceObject(spaceObjects::oBlackHole, location, radius, radius*130),
                      rotation_(0) {
     physics::addGravitySource(this);
 }

@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Button.hpp"
 # include "System/window.hpp"
 # include "Menu/menus.hpp"
+# include "Media/text.hpp"
 
 UiWindow* ExitConfirm::instance_(NULL);
 bool ExitConfirm::kOk_(false);
