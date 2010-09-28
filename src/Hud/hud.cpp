@@ -28,6 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/TabStats.hpp"
 # include "Hud/numbers.hpp"
 # include "DecoObjects/decoObjects.hpp"
+# include "Hud/CountDown.hpp"
 
 # include <sstream>
 
@@ -40,6 +41,7 @@ namespace hud {
         GameStats* gameStats_ = new GameStats();
         GamePoints* gamePoints_ = new GamePoints();
         TabStats* tabStats_ = new TabStats();
+        CountDown* countDown_ = new CountDown();
     }
 
     void update() {
@@ -58,7 +60,8 @@ namespace hud {
     void draw() {
         numbers::draw();
         window::setPixelView();
-        if (games::type() == games::gMenu) logo_->draw();
+        if (games::type() == games::gMenu)   logo_->draw();
+        else if (games::elapsedTime() < 6.f) countDown_->draw();
         gameStats_->draw();
 
         if (!menus::visible() && games::active()) {

@@ -36,7 +36,7 @@ Game::Game(games::GameType const& type):
     startTime_(timer::totalTime()) {
         switch (type_) {
             case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit; break;
-            default: pointLimit_ = settings::C_fragLimit;
+            default:                                         pointLimit_ = settings::C_fragLimit;
         }
 
     hud::init();
@@ -55,12 +55,12 @@ Game::~Game() {
     items::clear();
 }
 
-void Game::update() const {
+void Game::update() {
     if ((!menus::visible()) | (type_ == games::gMenu)) {
         hud::update();
         if (players::getFirstPoints() < pointLimit_) {
             controllers::update();
-            ships::update();
+            if (elapsedTime() > 4.f) ships::update();
             balls::update();
             spaceObjects::update();
         }
@@ -75,6 +75,8 @@ void Game::update() const {
         decoObjects::update();
         items::update();
     }
+    else
+        startTime_ += timer::frameTime();
 }
 
 void Game::draw() const {

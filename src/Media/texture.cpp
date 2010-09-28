@@ -90,6 +90,11 @@ namespace texture {
                 case RightHandle:              loadTexture_(type, "data/tex/interface/rightHandle.png");  break;
                 case BottomHandle:             loadTexture_(type, "data/tex/interface/bottomHandle.png"); break;
                 case TopHandle:                loadTexture_(type, "data/tex/interface/topHandle.png");    break;
+                case CountDown0:               loadTexture_(type, "data/tex/countdown/0.png");            break;
+                case CountDown1:               loadTexture_(type, "data/tex/countdown/1.png");            break;
+                case CountDown2:               loadTexture_(type, "data/tex/countdown/2.png");            break;
+                case CountDown3:               loadTexture_(type, "data/tex/countdown/3.png");            break;
+                case CountDown4:               loadTexture_(type, "data/tex/countdown/4.png");            break;
                 case COUNT: std::cout << "COUNT is not a valid Texturetype..." << std::endl;
             }
             // ... return it afterwards

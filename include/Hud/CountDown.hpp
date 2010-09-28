@@ -1,4 +1,4 @@
-/* Game.hpp
+/* CountDown.hpp
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -13,34 +13,17 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef GAME_HPP_INCLUDED
-# define GAME_HPP_INCLUDED
+# ifndef COUNTDOWN_HPP_INCLUDED
+# define COUNTDOWN_HPP_INCLUDED
 
-# include "Games/games.hpp"
+# include "Hud/HudElement.hpp"
 
-class Game {
+class CountDown: public HudElement {
     public:
-        Game(games::GameType const& type);
-        ~Game();
-
-        virtual void update();
-        virtual void draw() const;
-
-        virtual void restart();
-
-        games::GameType type() const;
-        float elapsedTime() const;
-
-    protected:
-        void createSpace() const;
-
-    private:
-        games::GameType type_;
-        float startTime_;
-        int pointLimit_;
+        void draw() const;
 };
 
-# endif // GAME_HPP_INCLUDED
+# endif // CANNON_HPP_INCLUDED
 
 
 
