@@ -17,9 +17,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Players/Team.hpp"
 # include "System/settings.hpp"
+# include "Media/music.hpp"
 
 DeathMatch::DeathMatch():
     Game(games::gDeathMatch) {
+
+    music::playMusic(music::Space);
 
     if (settings::C_playerIteamL  | settings::C_playerIteamR)
         players::addPlayer (players::addTeam(), controllers::cPlayer1);

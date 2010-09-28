@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 MenuGame::MenuGame():
     Game(games::gMenu) {
 
-     music::playMusic(music::Rock);
+    music::playMusic(music::Rock);
 
     Color3f rand = Color3f::random();
     Color3f randInv = rand;
@@ -33,7 +33,7 @@ MenuGame::MenuGame():
     Team* myTeamL = players::addTeam(rand);
     Team* myTeamR = players::addTeam(randInv);
 
-    for (int i=0; i<5;  ++i)     players::addPlayer(myTeamL, controllers::cDMBot);
+    for (int i=0; i<5;  ++i)    players::addPlayer(myTeamL, controllers::cDMBot);
     for (int i=0; i<5; ++i)     players::addPlayer(myTeamR, controllers::cDMBot);
 
     Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());

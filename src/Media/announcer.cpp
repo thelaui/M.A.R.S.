@@ -43,6 +43,7 @@ namespace announcer {
                     // play sound
                     soundChannel_.SetBuffer(*sounds_[sound]);
                     soundChannel_.SetVolume(static_cast<float>(settings::C_announcerVolume));
+                    soundChannel_.SetPosition(640, 0.f, 0.f);
                     soundChannel_.SetAttenuation(0.f);
                     soundChannel_.Play();
                 }

@@ -17,9 +17,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Players/Team.hpp"
 # include "System/settings.hpp"
+# include "Media/music.hpp"
 
 TeamDeathMatch::TeamDeathMatch():
     Game(games::gTeamDeathMatch) {
+
+    music::playMusic(music::Space);
 
     Color3f rand = Color3f::random();
     Color3f randInv = rand;
