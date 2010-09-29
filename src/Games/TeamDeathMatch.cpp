@@ -49,6 +49,11 @@ TeamDeathMatch::TeamDeathMatch():
     zones::createRaster(4,3);
 }
 
+void TeamDeathMatch::draw() const {
+    if (settings::C_drawZones) zones::draw();
+    Game::draw();
+}
+
 void TeamDeathMatch::restart() {
     Game::restart();
 

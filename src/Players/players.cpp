@@ -124,11 +124,16 @@ namespace players {
     }
 
     int getSecondPoints() {
-        int highest(getFirstPoints());
+        int first (0);
         int second(0);
         for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-            if ((*it)->points() > second && (*it)->points() != highest)
+            if ((*it)->points() >= first) {
+                second = first;
+                first  = (*it)->points();
+            }
+            else if ((*it)->points() > second) {
                 second = (*it)->points();
+            }
         return second;
     }
 

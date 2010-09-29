@@ -23,8 +23,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 void DMBot::evaluate() {
     checkEnergy();
-    checkEnemies();
-    checkAggro();
+
+    if (ship()->getLife() > 0.f) {
+        checkEnemies();
+        checkAggro();
+    }
 }
 
 void DMBot::checkAggro() {
@@ -69,7 +72,7 @@ void DMBot::checkEnergy() {
 
 void DMBot::checkEnemies() {
     if(lastFrameLife_ - ship()->getLife() > 0.f) {
-        if(ship()->damageSource()->ship() != ship() && ship()->damageSource()->ship() != target_
+        if(ship()->damageSource() != slave_ && ship()->damageSource()->ship() != target_
            && slave_->team() != ship()->damageSource()->team())
             aggroTable_[ship()->damageSource()->ship()] += (lastFrameLife_ - ship()->getLife()) * 30.f;
     }

@@ -22,6 +22,8 @@ class TeamDeathMatch: public Game {
     public:
         TeamDeathMatch();
 
+        void draw() const;
+
         void restart();
 };
 

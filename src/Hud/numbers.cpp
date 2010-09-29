@@ -52,9 +52,9 @@ namespace numbers {
         std::stringstream sstr;
         sstr << value_;
         if (value_ > 0)
-            text::drawScreenText(sstr.str(), *sourceLocation_ - Vector2f(0.0f, 40.f) - Vector2f(0.f, 20.f)*lifeTime_, font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, color_);
+            text::drawSpaceText(sstr.str(), *sourceLocation_ - Vector2f(0.0f, 40.f) - Vector2f(0.f, 20.f)*lifeTime_, font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, color_);
         else
-            text::drawScreenText(sstr.str(), *sourceLocation_ + Vector2f(0.f, 20.f)*lifeTime_, font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, color_);
+            text::drawSpaceText(sstr.str(), *sourceLocation_ + Vector2f(0.f, 20.f)*lifeTime_, font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, color_);
     }
 
     void spawn(Vector2f const* location, int value) {

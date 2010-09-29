@@ -131,7 +131,7 @@ void BotController::attackTarget() {
             if(maxAggro == 0.f) {
                 float closest(FLT_MAX);
                 for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
-                    if((it->first->location() - ship()->location()).lengthSquare() < closest && it->first->getLife() != 0.f) {
+                    if(((it->first->location() - ship()->location()).lengthSquare() < closest) && (it->first->getLife() > 0.f)) {
                         closest = (it->first->location() - ship()->location()).lengthSquare();
                         target_ = it->first;
                     }
@@ -142,12 +142,12 @@ void BotController::attackTarget() {
             }
             else
                 for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                    if(it->second == maxAggro) {
+                    if((it->second == maxAggro) && (it->first->getLife() > 0.f)) {
                         it->second = 100.f;
                         target_ = it->first;
                     }
                     else
-                        it->second /= maxAggro/100.f;
+                        it->second /= (maxAggro/100.f);
             }
         }
     }
@@ -183,7 +183,7 @@ void BotController::escape() {
 void  BotController::startFight() {
     if (nextRoutePoint_.x_ == FLT_MAX)
         nextRoutePoint_ = zones::freeZone()->getRandomPoint();
-    if (moveTo(nextRoutePoint_, 0.9f, false, 150.f)) {
+    if (moveTo(nextRoutePoint_, 0.9f, false, 250.f)) {
         std::vector<Team*> const& enemies = players::getAllTeams();
         if(!enemies.empty()) {
             float distance(FLT_MAX);
@@ -197,7 +197,8 @@ void  BotController::startFight() {
                         }
                     }
                 }
-            aggroTable_[target_] = 100.f;
+            if (target_)
+                aggroTable_[target_] = 100.f;
         }
      }
 }

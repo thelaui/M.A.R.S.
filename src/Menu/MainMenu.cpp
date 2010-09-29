@@ -23,6 +23,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/NewGameMenu.hpp"
 # include "Menu/About.hpp"
 # include "Menu/Connect.hpp"
+# include "Menu/InfoSB.hpp"
+# include "System/settings.hpp"
 
 UiWindow* MainMenu::instance_(NULL);
 bool MainMenu::kStartLocal_(false);
@@ -61,6 +63,8 @@ void MainMenu::checkWidgets() {
     else if (kStartLocal_) {
         kStartLocal_ = false;
         menus::showWindow(NewGameMenu::get());
+        if(settings::C_showInfoSB)
+            menus::showWindow(InfoSB::get());
     }
     else if (kJoinMulti_) {
         kJoinMulti_ = false;

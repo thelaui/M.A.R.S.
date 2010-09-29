@@ -58,8 +58,8 @@ namespace hud {
     }
 
     void draw() {
-        numbers::draw();
         window::setPixelView();
+        numbers::draw();
         if (games::type() == games::gMenu)   logo_->draw();
         else if (games::elapsedTime() < 6.f) countDown_->draw();
         gameStats_->draw();

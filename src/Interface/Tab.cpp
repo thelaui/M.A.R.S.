@@ -22,9 +22,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Tab::Tab (std::string const& name, int width):
+Tab::Tab (std::string const& name, int width, bool* activated):
     UiElement(Vector2f(), width, 20),
     name_(name),
+    activated_(activated),
     active_(false) {}
 
 Tab::~Tab() {
@@ -48,6 +49,8 @@ void Tab::mouseLeft(bool down) {
     if (!pressed_ && hoovered_) {
         dynamic_cast<TabList*>(parent_)->deactivateAll();
         active_ = true;
+        if(activated_)
+            *activated_ = true;
         sound::playSound(sound::Tab);
     }
     if (active_)

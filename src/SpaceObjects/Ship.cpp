@@ -98,7 +98,7 @@ void Ship::update() {
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
         Vector2f acceleration;
         if (up_) {
-            fuel_ -= time;
+            fuel_ -= time*2.f;
             acceleration = faceDirection * 300.f;
             particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
         }
@@ -200,6 +200,24 @@ void Ship::draw() const {
             glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
             glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
             glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
+        glEnd();
+
+        glPopMatrix();
+    }
+    else if (respawnTimer_ > 6.f) {
+        glPushMatrix();
+        glLoadIdentity();
+        glTranslatef(location_.x_, location_.y_, 0.f);
+
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
+        // draw glow
+        owner_->team_->color().gl4f((respawnTimer_ - 6.f)*0.25f);
+        glBegin(GL_QUADS);
+            glTexCoord2f(0.f, 0.f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.125f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.125f);   glVertex2f( radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
         glEnd();
 
         glPopMatrix();

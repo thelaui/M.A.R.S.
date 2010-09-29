@@ -74,7 +74,9 @@ void BotController::update() {
 
 void BotController::reset() {
     target_ = NULL;
+    weaponChangeTimer_ = sf::Randomizer::Random(0, 1);
     nextRoutePoint_ = Vector2f(FLT_MAX, FLT_MAX);
+    aggroTable_.clear();
     for(int i=0; i<actions_.size(); ++i)
         actions_[i] = 0;
     for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)

@@ -46,6 +46,10 @@ bool NewGameMenu::kInfoCK_(false);
 bool NewGameMenu::kCancel_(false);
 bool NewGameMenu::playerI_(false);
 bool NewGameMenu::playerII_(false);
+bool NewGameMenu::tSB_(false);
+bool NewGameMenu::tDM_(false);
+bool NewGameMenu::tTDM_(false);
+bool NewGameMenu::tCK_(false);
 
 UiWindow* NewGameMenu::get() {
     if (instance_ == NULL) {
@@ -55,10 +59,10 @@ UiWindow* NewGameMenu::get() {
         instance_->addWidget(new Label("Start local Game", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
 
         TabList* tabList        = new TabList(Vector2f(10,55), 460, 220);
-        Tab* tabSpaceBall       = new Tab("SpaceBall", 70);
-        Tab* tabDeathMatch      = new Tab("DeathMatch", 80);
-        Tab* tabTeamDeathMatch  = new Tab("Team-DeathMatch", 110);
-        Tab* tabCannonKeep      = new Tab("CannonKeep", 80);
+        Tab* tabSpaceBall       = new Tab("SpaceBall", 70,  &tSB_);
+        Tab* tabDeathMatch      = new Tab("DeathMatch", 80, &tDM_);
+        Tab* tabTeamDeathMatch  = new Tab("Team-DeathMatch", 110, &tTDM_);
+        Tab* tabCannonKeep      = new Tab("CannonKeep", 80, &tCK_);
 
         tabSpaceBall->addWidget(new Label("Left Team:", TEXT_ALIGN_LEFT, Vector2f(10, 40)));
         tabSpaceBall->addWidget(new Label("Right Team:", TEXT_ALIGN_LEFT, Vector2f(240, 40)));
@@ -133,14 +137,14 @@ void NewGameMenu::checkWidgets() {
         settings::save();
         games::start(games::gSpaceBall);
     }
-    if (kStartTDM_) {
+    else if (kStartTDM_) {
         kStartTDM_ = false;
         menus::hideWindow();
         menus::hideWindow();
         settings::save();
         games::start(games::gTeamDeathMatch);
     }
-    if (kStartDM_) {
+    else if (kStartDM_) {
         kStartDM_ = false;
         menus::hideWindow();
         menus::hideWindow();
@@ -156,28 +160,48 @@ void NewGameMenu::checkWidgets() {
 
         games::start(games::gDeathMatch);
     }
-    if (kStartCK_) {
+    else if (kStartCK_) {
         kStartCK_ = false;
         menus::hideWindow();
         menus::hideWindow();
         settings::save();
         games::start(games::gCannonKeep);
     }
-    if (kInfoSB_) {
+    else if (kInfoSB_) {
         kInfoSB_ = false;
         menus::showWindow(InfoSB::get());
     }
-    if (kInfoDM_) {
+    else if (kInfoDM_) {
         kInfoDM_ = false;
         menus::showWindow(InfoDM::get());
     }
-    if (kInfoTDM_) {
+    else if (kInfoTDM_) {
         kInfoTDM_ = false;
         menus::showWindow(InfoTDM::get());
     }
-    if (kInfoCK_) {
+    else if (kInfoCK_) {
         kInfoCK_ = false;
         menus::showWindow(InfoCK::get());
+    }
+    else if (tSB_) {
+        tSB_ = false;
+        if(settings::C_showInfoSB)
+            menus::showWindow(InfoSB::get());
+    }
+    else if (tDM_) {
+        tDM_ = false;
+        if(settings::C_showInfoDM)
+            menus::showWindow(InfoDM::get());
+    }
+    else if (tTDM_) {
+        tTDM_ = false;
+        if(settings::C_showInfoTDM)
+            menus::showWindow(InfoTDM::get());
+    }
+    else if (tCK_) {
+        tCK_ = false;
+        if(settings::C_showInfoCK)
+            menus::showWindow(InfoCK::get());
     }
     else if (kCancel_) {
         kCancel_ = false;

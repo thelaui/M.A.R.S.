@@ -31,7 +31,8 @@ class NewGameMenu: public UiWindow {
         static UiWindow* instance_;
 
         static bool kStartSB_, kStartDM_, kStartTDM_, kStartCK_, kInfoSB_,
-                    kInfoDM_,  kInfoTDM_, kInfoCK_,   kCancel_, playerI_, playerII_;
+                    kInfoDM_,  kInfoTDM_, kInfoCK_,   kCancel_, playerI_, playerII_,
+                    tSB_, tDM_, tTDM_, tCK_;
 };
 
 # endif // NEWGAMEMENU_HPP_INCLUDED
