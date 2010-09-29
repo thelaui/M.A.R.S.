@@ -51,7 +51,7 @@ void LeftLife::draw() const {
         else
             sstr << player->name() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
-        text::drawScreenText(sstr.str(), Vector2f(10, port.y_-85), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, color);
+        text::drawScreenText(sstr.str(), Vector2f(10, port.y_-75), font::HandelGotDLig, 18.f, TEXT_ALIGN_LEFT, color);
 
         float life = player->ship()->getLife();
         float fuel = player->ship()->getFuel();
@@ -61,56 +61,56 @@ void LeftLife::draw() const {
             Color3f lifeColor(1.f, 0.f, 0.f);
             lifeColor.h(lifeColor.h() + life);
             lifeColor.gl4f(0.9f);
-            glVertex2i(16, port.y_-37);
-            glVertex2i(16, port.y_-54);
-            glVertex2i(16 + life*1.92f, port.y_-54);
-            glVertex2i(16 + life*1.92f, port.y_-37);
+            glVertex2i(15, port.y_-32);
+            glVertex2i(15, port.y_-47);
+            glVertex2i(15 + life*1.64f, port.y_-47);
+            glVertex2i(15 + life*1.64f, port.y_-32);
         glEnd();
 
         // draw caps
         if (life > 0) {
             if (life == 100.f) {
                 glBegin(GL_QUADS);
-                    glVertex2i(208, port.y_-54);
-                    glVertex2i(214, port.y_-49);
-                    glVertex2i(214, port.y_-42);
-                    glVertex2i(208, port.y_-37);
+                    glVertex2i(179, port.y_-47);
+                    glVertex2i(184, port.y_-43);
+                    glVertex2i(184, port.y_-37);
+                    glVertex2i(179, port.y_-32);
                 glEnd();
             }
 
             glBegin(GL_QUADS);
-                glVertex2i(16, port.y_-54);
-                glVertex2i(10, port.y_-49);
-                glVertex2i(10, port.y_-42);
-                glVertex2i(16, port.y_-37);
+                glVertex2i(15, port.y_-47);
+                glVertex2i(10, port.y_-43);
+                glVertex2i(10, port.y_-37);
+                glVertex2i(15, port.y_-32);
             glEnd();
         }
 
         // player fuel bar
         glBegin(GL_QUADS);
             glColor4f(1.f,1.f,0.f,0.9f);
-            glVertex2i(16, port.y_-10);
-            glVertex2i(16, port.y_-27);
-            glVertex2i(16 + fuel*1.92f, port.y_-27);
-            glVertex2i(16 + fuel*1.92f, port.y_-10);
+            glVertex2i(15, port.y_-8);
+            glVertex2i(15, port.y_-23);
+            glVertex2i(15 + fuel*1.64f, port.y_-23);
+            glVertex2i(15 + fuel*1.64f, port.y_-8);
         glEnd();
 
         // draw caps
         if (fuel > 0) {
             if (fuel == 100.f) {
                 glBegin(GL_QUADS);
-                    glVertex2i(208, port.y_-27);
-                    glVertex2i(214, port.y_-22);
-                    glVertex2i(214, port.y_-15);
-                    glVertex2i(208, port.y_-10);
+                    glVertex2i(179, port.y_-23);
+                    glVertex2i(184, port.y_-18);
+                    glVertex2i(184, port.y_-13);
+                    glVertex2i(179, port.y_-8);
                 glEnd();
             }
 
             glBegin(GL_QUADS);
-                glVertex2i(16, port.y_-27);
-                glVertex2i(10, port.y_-22);
-                glVertex2i(10, port.y_-15);
-                glVertex2i(16, port.y_-10);
+                glVertex2i(15, port.y_-23);
+                glVertex2i(10, port.y_-18);
+                glVertex2i(10, port.y_-13);
+                glVertex2i(15, port.y_-8);
             glEnd();
         }
 
@@ -121,8 +121,8 @@ void LeftLife::draw() const {
             glColor3f(1.0,1.0,1.0);
             glTexCoord2i(0, 0); glVertex2f(0, port.y_-64);
             glTexCoord2i(0, 1); glVertex2f(0, port.y_);
-            glTexCoord2i(1, 1); glVertex2f(224, port.y_);
-            glTexCoord2i(1, 0); glVertex2f(224, port.y_-64);
+            glTexCoord2i(1, 1); glVertex2f(192, port.y_);
+            glTexCoord2i(1, 0); glVertex2f(192, port.y_-64);
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);

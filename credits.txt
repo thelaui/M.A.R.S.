@@ -14,7 +14,7 @@ Textures:
    (http://creativecommons.org/licenses/by/3.0/)
    
 Sound Files:
- - some soudfiles are modified with Audacity
+ - some soundfiles are modified with Audacity
    (http://audacity.sourceforge.net/)
  - Credits go to:
    - http://www.pacdv.com/    (thisistheday.ogg)

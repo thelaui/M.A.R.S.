@@ -48,7 +48,8 @@ namespace settings {
     extern int            C_botsRight;
     extern int            C_botsDeath;
     extern int            C_pointLimit;
-    extern int            C_fragLimit;
+    extern int            C_pointLimitDM;
+    extern int            C_pointLimitTDM;
     extern bool           C_showInfoHide;
     extern bool           C_showInfoSB;
     extern bool           C_showInfoDM;

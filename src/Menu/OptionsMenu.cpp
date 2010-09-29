@@ -94,15 +94,17 @@ UiWindow* OptionsMenu::get() {
         tabAudio->addWidget(new Slider("Sound Volume", &soundVolume_, 0, 100, Vector2f(10,50), 440, 185, true));
         tabAudio->addWidget(new Slider("Announcer Volume", &announcerVolume_, 0, 100, Vector2f(10,70), 440, 185, true));
 
-        tabView->addWidget(new Checkbox("Show Local Names", &settings::C_drawLocalNames, Vector2f(10,30), 170));
-        tabView->addWidget(new Checkbox("Show Remote Names", &settings::C_drawRemoteNames, Vector2f(10,50), 170));
-        tabView->addWidget(new Checkbox("Show Bots Names", &settings::C_drawBotNames, Vector2f(10,70), 170));
-        tabView->addWidget(new Checkbox("Show Bots Orientation", &settings::C_drawBotOrientation, Vector2f(10,90), 170));
-        tabView->addWidget(new Checkbox("Show Zones", &settings::C_drawZones, Vector2f(10,110), 170));
-        tabView->addWidget(new Checkbox("Show AI-Paths", &settings::C_drawAIPath, Vector2f(10,130), 170));
-        tabView->addWidget(new Checkbox("Show FPS", &settings::C_showFPS, Vector2f(10,150), 170));
-        tabView->addWidget(new Checkbox("Show Particle Count", &settings::C_showParticleCount, Vector2f(10,170), 170));
-        //tabView->addWidget(new Checkbox("Show Latency", &settings::C_showLatency, Vector2f(10,190), 170));
+        //tabView->addWidget(new Checkbox("Local Names", &settings::C_drawLocalNames, Vector2f(10,30), 170));
+        //tabView->addWidget(new Checkbox("Remote Names", &settings::C_drawRemoteNames, Vector2f(10,50), 170));
+        //tabView->addWidget(new Checkbox("Bots Names", &settings::C_drawBotNames, Vector2f(10,70), 170));
+        tabView->addWidget(new Label("Debugging Information", TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
+        tabView->addWidget(new Checkbox("Bots Orientation", &settings::C_drawBotOrientation, Vector2f(10,50), 170));
+        tabView->addWidget(new Checkbox("Zones", &settings::C_drawZones, Vector2f(10,70), 170));
+        tabView->addWidget(new Checkbox("AI-Paths", &settings::C_drawAIPath, Vector2f(10,90), 170));
+        tabView->addWidget(new Label("Game Information", TEXT_ALIGN_LEFT, Vector2f(10,130), 12.f));
+        tabView->addWidget(new Checkbox("FPS", &settings::C_showFPS, Vector2f(10,150), 170));
+        tabView->addWidget(new Checkbox("Particle Count", &settings::C_showParticleCount, Vector2f(10,170), 170));
+        //tabView->addWidget(new Checkbox("Latency", &settings::C_showLatency, Vector2f(10,190), 170));
 
         tabList->addTab(tabView);
         tabList->addTab(tabGraphics);

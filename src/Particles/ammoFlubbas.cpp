@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
+# include "Media/sound.hpp"
 
 namespace ammoFlubbas {
 
@@ -54,6 +55,7 @@ namespace ammoFlubbas {
         if (lifeTime_ > totalLifeTime_) {
             particles::spawnMultiple(2, particles::pMud, location_, Vector2f(), Vector2f(), color_);
             int rand = sf::Randomizer::Random(5, 10);
+            sound::playSound(sound::BlubCollide, location_);
             for (int i=0; i<rand; ++i)
                 particles::spawn(particles::pMiniAmmoFlubba, location_);
         }
@@ -73,6 +75,7 @@ namespace ammoFlubbas {
                              Vector2f const& direction, Vector2f const& velocity) {
 
         physics::causeShockWave(this, 150.f, 200.f);
+        sound::playSound(sound::BlubCollide, location_);
         killMe();
     }
 

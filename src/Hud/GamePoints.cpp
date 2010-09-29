@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/players.hpp"
 # include "Players/Team.hpp"
 # include "Particles/particles.hpp"
+# include "Media/sound.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -31,8 +32,10 @@ void GamePoints::draw() const {
         Vector2f viewPort = window::getViewPort();
         float midPoint = viewPort.x_/2;
         float top;
-        if (timer_ < 1.1578f)
+        if (timer_ < 1.1578f) {
+            if (timer_+timer::frameTime() >= 0.7f && timer_ < 0.7f) sound::playSound(sound::Swish);
             top = -75.f/0.64*std::pow((timer_-0.8f), 2) +15.f;
+        }
         else if (timer_ < 8.06f)
             top = 0.f;
         else {
@@ -93,7 +96,7 @@ void GamePoints::draw() const {
         sstr << players::getTeamL()->points_ << " : " << players::getTeamR()->points_;
         std::string textString = sstr.str();
         text::drawFooText();
-        text::drawScreenText(textString, Vector2f(midPoint, viewPort.y_-50.f-top), font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
+        text::drawScreenText(textString, Vector2f(midPoint, viewPort.y_-60.f-top), font::HandelGotDLig, 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
     }
 }
 
@@ -103,6 +106,8 @@ void GamePoints::update() {
 }
 
 void GamePoints::display() {
-    if (timer_ <= 0.f)
+    if (timer_ <= 0.f) {
+        sound::playSound(sound::Score);
         timer_ = 10.f;
+    }
 }

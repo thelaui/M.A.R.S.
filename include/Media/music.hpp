@@ -19,9 +19,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Audio.hpp>
 
 namespace music {
-    enum MusicType {Space, Menu, Rock};
+    void update();
 
-    void playMusic (MusicType);
+    void playMenuMusic();
+    void playGameMusic();
 
     void setGlobalVolume();
 }

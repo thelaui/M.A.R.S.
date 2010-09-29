@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 MenuGame::MenuGame():
     Game(games::gMenu) {
 
-    music::playMusic(music::Rock);
+    music::playMenuMusic();
 
     Color3f rand = Color3f::random();
     Color3f randInv = rand;

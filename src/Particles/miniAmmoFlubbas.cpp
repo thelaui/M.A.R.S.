@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
+# include "Media/sound.hpp"
 
 namespace miniAmmoFlubbas {
 
@@ -49,8 +50,10 @@ namespace miniAmmoFlubbas {
 
         lifeTime_ += time;
 
-        if (lifeTime_ > totalLifeTime_)
+        if (lifeTime_ > totalLifeTime_) {
             particles::spawnMultiple(2, particles::pMud, location_, Vector2f(), Vector2f(), color_);
+            sound::playSound(sound::BlubPop, location_);
+        }
     }
 
     void MiniAmmoFlubba::draw() const {

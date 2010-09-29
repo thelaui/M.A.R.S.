@@ -83,7 +83,7 @@ UiWindow* NewGameMenu::get() {
         tabDeathMatch->addWidget(new Slider("Bots", &settings::C_botsDeath, 0, 150, Vector2f(10,110), 440, 100, true));
         tabDeathMatch->addWidget(new Checkbox("Player I", &playerI_, Vector2f(10,60), 100));
         tabDeathMatch->addWidget(new Checkbox("Player II", &playerII_, Vector2f(240,60), 100));
-        tabDeathMatch->addWidget(new Slider("Fraglimit", &settings::C_fragLimit, 1, 50, Vector2f(10,150), 440, 100, true));
+        tabDeathMatch->addWidget(new Slider("Pointlimit", &settings::C_pointLimitDM, 1, 200, Vector2f(10,150), 440, 100, true));
         tabDeathMatch->addWidget(new Button("Start", &kStartDM_, Vector2f(385, 195), 70, 20));
         tabDeathMatch->addWidget(new Button("Info", &kInfoDM_, Vector2f(10,195), 70, 20));
 
@@ -99,7 +99,7 @@ UiWindow* NewGameMenu::get() {
             player2Group2->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamL, Vector2f(93,70), 80));
             player2Group2->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamR, Vector2f(323,70), 80));
             tabTeamDeathMatch->addWidget(player2Group2);
-        tabTeamDeathMatch->addWidget(new Slider("Fraglimit", &settings::C_fragLimit, 1, 50, Vector2f(10,150), 440, 100, true));
+        tabTeamDeathMatch->addWidget(new Slider("Pointlimit", &settings::C_pointLimitTDM, 1, 500, Vector2f(10,150), 440, 100, true));
         tabTeamDeathMatch->addWidget(new Button("Start", &kStartTDM_, Vector2f(385, 195), 70, 20));
         tabTeamDeathMatch->addWidget(new Button("Info", &kInfoTDM_, Vector2f(10,195), 70, 20));
 

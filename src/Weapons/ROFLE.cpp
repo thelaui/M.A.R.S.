@@ -23,17 +23,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void ROFLE::draw() const {
-    glLineWidth(1);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    glLineWidth(1.f);
     glBegin(GL_LINES);
-        glColor4f(1.0, 1.0, 0.2, 0);
+        glColor3f(0.0, 0.0, 0.0);
             glVertex2f(parent_->radius_,  0);
-        glColor4f(1.0, 1.0, 0.2, 0.5);
+        glColor3f(1.0, 0.4, 0.4);
             glVertex2f(parent_->radius_*3.5, 0);
             glVertex2f(parent_->radius_*3.5,  0);
-        glColor4f(1.0, 1.0, 0.2, 0);
+        glColor3f(0.0, 0.0, 0.0);
             glVertex2f(parent_->radius_*8.0, 0);
     glEnd();
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void ROFLE::fire() const {

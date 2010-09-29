@@ -29,7 +29,7 @@ namespace ammoAFK47s {
 
         setDamageSource(damageSource);
         Vector2f distortion(Vector2f::randDir());
-        velocity_ = velocity + direction*800.f + distortion*7.f;
+        velocity_ = direction*1000.f + distortion*7.f;
         location_ += velocity_*timer::frameTime()*1.2f;
     }
 

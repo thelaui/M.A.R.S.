@@ -69,7 +69,7 @@ void Home::draw() const {
 void Home::drawLife() const {
     if (visible_) {
         std::stringstream sstr;
-        sstr << static_cast<int>(ceil(life_/10.f));
+        sstr << "  " << static_cast<int>(ceil(life_/10.f)) << "  ";
         text::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
     }
 }

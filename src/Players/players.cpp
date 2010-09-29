@@ -137,9 +137,17 @@ namespace players {
         return second;
     }
 
-    void resetPoints() {
+    void resetTeamPoints() {
         for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
             (*it)->resetPoints();
+    }
+
+    void resetPlayerPoints() {
+        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it) {
+            std::vector<Player*>const& members = (*it)->members();
+            for (std::vector<Player*>::const_iterator it = members.begin(); it != members.end(); ++it)
+                (*it)->resetPoints();
+        }
     }
 
     void clear() {

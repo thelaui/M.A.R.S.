@@ -123,20 +123,19 @@ void CannonControl::draw() const {
             glVertex2f( - ship_->velocity_.x_ * 0.04f,  - ship_->velocity_.y_ * 0.004f - 43.f);
         glEnd();
 
-        glTranslatef( - ship_->velocity_.x_ * 0.042f,  - ship_->velocity_.y_ * 0.0042f - 43.f, 0.f);
         glRotatef(fmod(timer::totalTime()*-100.f, 360.f), 0.f, 0.f, 1.f);
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glEnable(GL_TEXTURE_2D);
         // atomar radiance
-        glColor4f(0.8f, 0.2f, 0.4f, 0.2f);
+        glColor4f(1.0f, 0.5f, 0.8f, 0.9f);
         glBegin(GL_QUADS);
                 const int posX = 2;
                 const int posY = 1;
-                glTexCoord2f(posX*0.15625f,     posY*0.15625f);     glVertex2f(-15, -15);
-                glTexCoord2f(posX*0.15625f,     (posY+1)*0.15625f); glVertex2f(-15, +15);
-                glTexCoord2f((posX+1)*0.15625f, (posY+1)*0.15625f); glVertex2f(+15, +15);
-                glTexCoord2f((posX+1)*0.15625f, posY*0.15625f);     glVertex2f(+15, -15);
+                glTexCoord2f(posX*0.15625f,     posY*0.15625f);     glVertex2f(-35, -35);
+                glTexCoord2f(posX*0.15625f,     (posY+1)*0.15625f); glVertex2f(-35, +35);
+                glTexCoord2f((posX+1)*0.15625f, (posY+1)*0.15625f); glVertex2f(+35, +35);
+                glTexCoord2f((posX+1)*0.15625f, posY*0.15625f);     glVertex2f(+35, -35);
         glEnd();
 
         glPopMatrix();

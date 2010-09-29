@@ -49,7 +49,8 @@ namespace settings {
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
     int         C_pointLimit =              5;
-    int         C_fragLimit =               20;
+    int         C_pointLimitDM =            50;
+    int         C_pointLimitTDM =           100;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;
@@ -110,7 +111,8 @@ namespace settings {
         outStream << "[botsRight] "             << C_botsRight << std::endl;
         outStream << "[botsDeath] "             << C_botsDeath << std::endl;
         outStream << "[pointLimit] "            << C_pointLimit << std::endl;
-        outStream << "[fragLimit] "             << C_fragLimit << std::endl;
+        outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
+        outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
         outStream << "[playerIName] "           <<  C_playerIName << std::endl;
         outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << std::endl;
         outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
@@ -296,10 +298,15 @@ namespace settings {
                         iss >> value;
                         C_pointLimit = clamp(value, 1, 20);
                     }
-                    else if (inputLine == "[fragLimit]") {
+                    else if (inputLine == "[pointLimitDM]") {
                         int value;
                         iss >> value;
-                        C_fragLimit = clamp(value, 1, 50);
+                        C_pointLimitDM = clamp(value, 1, 200);
+                    }
+                    else if (inputLine == "[pointLimitTDM]") {
+                        int value;
+                        iss >> value;
+                        C_pointLimitTDM = clamp(value, 1, 500);
                     }
                     else if (inputLine == "[playerIName]") {
                         std::string value;

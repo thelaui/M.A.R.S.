@@ -30,13 +30,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 # include "Menu/menus.hpp"
 # include "System/window.hpp"
+# include "Media/music.hpp"
 
 Game::Game(games::GameType const& type):
     type_(type),
     startTime_(timer::totalTime()) {
         switch (type_) {
-            case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit; break;
-            default:                                         pointLimit_ = settings::C_fragLimit;
+            case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit;    break;
+            case games::gDeathMatch:                         pointLimit_ = settings::C_pointLimitDM;  break;
+            default:                                         pointLimit_ = settings::C_pointLimitTDM;
         }
 
     hud::init();
@@ -56,6 +58,7 @@ Game::~Game() {
 }
 
 void Game::update() {
+    music::update();
     if ((!menus::visible()) | (type_ == games::gMenu)) {
         hud::update();
         if (players::getFirstPoints() < pointLimit_) {
@@ -100,8 +103,12 @@ void Game::restart() {
     zones::clear();
     decoObjects::clear();
     items::clear();
-    if (players::getFirstPoints() >= pointLimit_)
-        players::resetPoints();
+    if (players::getFirstPoints() >= pointLimit_) {
+        players::resetTeamPoints();
+        players::resetPlayerPoints();
+    }
+    if (games::type() == games::gCannonKeep || games::type() == games::gSpaceBall)
+        players::resetPlayerPoints();
     startTime_ = timer::totalTime();
     controllers::resetBots();
 }

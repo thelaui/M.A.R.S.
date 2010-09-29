@@ -23,17 +23,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void Burner::draw() const {
-    glLineWidth(1);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glLineWidth(5);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glBegin(GL_LINES);
-        glColor4f(1.0, 1.0, 0.2, 0);
-            glVertex2f(parent_->radius_,  0);
-        glColor4f(1.0, 1.0, 0.2, 0.5);
-            glVertex2f(parent_->radius_*1.5, 0);
-            glVertex2f(parent_->radius_*1.5,  0);
-        glColor4f(1.0, 1.0, 0.2, 0);
-            glVertex2f(parent_->radius_*4.0, 0);
+        glColor3f(1.0, 0.4, 0.0);
+            glVertex2f(parent_->radius_*0.5f, 0.f);
+        glColor3f(0.0, 0.0, 0.0);
+            glVertex2f(parent_->radius_*3.0f, 0.f);
     glEnd();
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void Burner::fire() const {

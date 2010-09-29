@@ -97,7 +97,7 @@ void Ship::update() {
         float angleRad = rotation_ * M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
         Vector2f acceleration;
-        if (up_) {
+        if (up_ && getFuel() > 0.f) {
             fuel_ -= time*2.f;
             acceleration = faceDirection * 300.f;
             particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
@@ -260,7 +260,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoAFK47:
-            amount = strength*0.0005f;
+            amount = strength*0.001f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color_);
             break;
@@ -364,11 +364,11 @@ void Ship::explode() {
     }
     else {
         ++damageSource_->frags_;
-          damageSource_->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 1);
+          damageSource_->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
           damageSource_->ship()->pointCheckTimer_ = 0.5f;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            damageSource_->team()->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 1);
+            damageSource_->team()->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
 
         ++damageSource_->ship()->fragStars_;
           damageSource_->ship()->fragStarTimer_ = 15.f;

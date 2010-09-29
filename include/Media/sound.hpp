@@ -25,7 +25,7 @@ namespace sound {
                     Particle, ShipBallCollide, BallRespawn, PlanetExplode, PumpShipCollide,
                     ShipPlanetCollide, ShipRespawn, BlubPop, Fuel, LaserCollide, NoFuel,
                     Sniper, Blub, BlubCollide, SniperShipCollide, SniperPlanetCollide, Click,
-                    Tab, Check,
+                    Tab, Check, Countdown, Start, Swish, Score,
                     COUNT};
 
     void playSound (SoundType, Vector2f const& position = Vector2f(640, 0), float volume = 100.f);

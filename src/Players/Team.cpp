@@ -36,6 +36,4 @@ void Team::setHome(Home* home) {
 
 void Team::resetPoints() {
     points_ = 0;
-    for (std::vector<Player*>::iterator it = members_.begin(); it != members_.end(); ++it)
-        (*it)->resetPoints();
 }

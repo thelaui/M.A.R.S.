@@ -81,7 +81,7 @@ namespace physics {
 
                         // if path of object crosses target object
                         if (centerDist.lengthSquare() < minDistSquared) {
-                            const Vector2f lastFrameLocation = source->location_ - source->velocity_*timer::frameTime()*0.9f;
+                            const Vector2f lastFrameLocation = source->location_ - source->velocity_*timer::frameTime()*0.6f;
                             const Vector2f chordMidPoint     = target->location_ + centerDist;
 
                             // if path of object has intersected with target within the last frame

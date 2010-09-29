@@ -49,7 +49,7 @@ namespace sound {
             if (i < CHANNELCOUNT) {
                 // play sound with random pitch
                 soundChannel_[i].SetBuffer(*sounds_[sound]);
-                if (sound != Click && sound != Tab && sound != Check)
+                if (sound != Click && sound != Tab && sound != Check && sound != Countdown && sound != Start )
                     soundChannel_[i].SetPitch(1 + static_cast<float>(rand()%100)/200.f - 0.25f);
                 soundChannel_[i].SetVolume((volume < 0.f ? -volume : volume)*static_cast<float>(settings::C_soundVolume)/100.f);
                 soundChannel_[i].SetPosition(position.x_, 0.f, 0.f);
@@ -71,7 +71,7 @@ namespace sound {
                 case BallRespawn:         loadSound_(sound, "data/wav/toon/ballRespawn.wav");           break;
                 case PlanetExplode:       loadSound_(sound, "data/wav/toon/planetExplode.wav");         break;
                 case PumpShipCollide:     loadSound_(sound, "data/wav/toon/pumpShipCollide.wav");       break;
-                case ShipPlanetCollide:   loadSound_(sound, "data/wav/toon/shipPlanetCollide.wav");     break;
+                case ShipPlanetCollide:   loadSound_(sound, "data/wav/toon/ballPlanetCollide.wav");     break;
                 case ShipRespawn:         loadSound_(sound, "data/wav/toon/shipRespawn.wav");           break;
                 case BlubPop:             loadSound_(sound, "data/wav/toon/blubPop.wav");               break;
                 case Fuel:                loadSound_(sound, "data/wav/toon/fuel.wav");                  break;
@@ -82,6 +82,10 @@ namespace sound {
                 case BlubCollide:         loadSound_(sound, "data/wav/toon/blubCollide.wav");           break;
                 case SniperShipCollide:   loadSound_(sound, "data/wav/toon/sniperShipCollide.wav");     break;
                 case SniperPlanetCollide: loadSound_(sound, "data/wav/toon/sniperPlanetCollide.wav");   break;
+                case Countdown:           loadSound_(sound, "data/wav/toon/countdown.wav");             break;
+                case Start:               loadSound_(sound, "data/wav/toon/start.wav");                 break;
+                case Swish:               loadSound_(sound, "data/wav/toon/swish.wav");                 break;
+                case Score:               loadSound_(sound, "data/wav/toon/score.wav");                 break;
                 case Click:               loadSound_(sound, "data/wav/interface/click.wav");            break;
                 case Tab:                 loadSound_(sound, "data/wav/interface/tab.wav");              break;
                 case Check:               loadSound_(sound, "data/wav/interface/check.wav");            break;

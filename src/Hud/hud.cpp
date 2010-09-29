@@ -49,7 +49,7 @@ namespace hud {
         numbers::update();
         tabStats_->update();
 
-        if (window::getMainWindow()->GetInput().IsKeyDown(sf::Key::Tab)) {
+        if (games::type() != games::gMenu && window::getMainWindow()->GetInput().IsKeyDown(sf::Key::Tab)) {
             tabStats_->display();
             gamePoints_->display();
         }

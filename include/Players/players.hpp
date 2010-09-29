@@ -35,7 +35,8 @@ namespace players {
 
     void createShips();
 
-    void resetPoints();
+    void resetTeamPoints();
+    void resetPlayerPoints();
     void clear();
 
     Player const* getPlayerI ();

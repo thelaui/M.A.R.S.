@@ -88,6 +88,8 @@ void Ball::update() {
     }
     else {
         respawnTimer_ -= time;
+        if (respawnTimer_ < 0.2f && (respawnTimer_ + time) >= 0.2f)
+            sound::playSound(sound::BallRespawn);
         if (respawnTimer_ <= 0)
             respawn();
     }

@@ -22,7 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 TeamDeathMatch::TeamDeathMatch():
     Game(games::gTeamDeathMatch) {
 
-    music::playMusic(music::Space);
+    music::playGameMusic();
 
     Color3f rand = Color3f::random();
     Color3f randInv = rand;
