@@ -32,7 +32,7 @@ namespace settings {
     bool        C_showFPS =                 false;
     bool        C_showParticleCount =       false;
     bool        C_showLatency =             false;
-    bool        C_fullScreen =              false;
+    bool        C_fullScreen =              true;
     bool        C_vsync =                   true;
     bool        C_drawAIPath =              false;
     bool        C_adaptiveParticleCount =   false;
