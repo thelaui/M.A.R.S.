@@ -1,5 +1,7 @@
 /* games.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/MenuGame.hpp"
 # include "Games/SpaceBall.hpp"
 # include "Games/TeamDeathMatch.hpp"
+# include "Games/Tutorial.hpp"
 # include "System/settings.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "System/timer.hpp"
@@ -96,6 +99,7 @@ namespace games {
                 case gDeathMatch:        currentGame_ = new DeathMatch();     break;
                 case gTeamDeathMatch:    currentGame_ = new TeamDeathMatch(); break;
                 case gCannonKeep:        currentGame_ = new CannonKeep();     break;
+                case gTutorial:          currentGame_ = new Tutorial();       break;
                 default: break;
             }
 

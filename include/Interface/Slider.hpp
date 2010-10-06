@@ -1,5 +1,7 @@
 /* Slider.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -23,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Slider: public UiElement {
     public:
-        Slider (std::string text, int* value, int min, int max, Vector2f const& topLeft, int width, int labelWidth=185, bool showValue=false, std::vector<std::string> const& sliderNames = std::vector<std::string>() );
+        Slider (std::string* text, int* value, int min, int max, Vector2f const& topLeft, int width, int labelWidth=185, bool showValue=false, std::vector<std::string> const& sliderNames = std::vector<std::string>() );
         ~Slider ();
 
         void mouseLeft(bool down);

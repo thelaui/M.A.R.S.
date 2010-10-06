@@ -1,5 +1,7 @@
 /* PlanetSign.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -18,9 +20,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Planet.hpp"
 
 PlanetSign::PlanetSign(Planet* planet):
+    texture_(texture::Sign1),
     rotation_(0.f),
-    scale_(sf::Randomizer::Random(0.5f, 1.f)),
-    texture_(texture::Sign1) {
+    scale_(sf::Randomizer::Random(0.5f, 1.f)) {
 
     if (sf::Randomizer::Random(0, 1) == 1) texture_ = texture::Sign2;
 

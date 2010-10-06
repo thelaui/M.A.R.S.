@@ -1,5 +1,7 @@
 /* Label.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -22,16 +24,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Label: public UiElement {
     public:
-        Label (std::string text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
-        Label (std::string* textRef, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
+        Label (std::string* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
 
         void mouseLeft(bool down) {}
 
         void draw() const;
 
     private:
-        std::string text_;
-        std::string* textRef_;
+        std::string* text_;
         int textAlign_;
         float fontSize_;
         Color3f color_;

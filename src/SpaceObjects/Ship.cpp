@@ -1,5 +1,7 @@
 /* Ship.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -163,7 +165,7 @@ void Ship::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
         // draw glow
-        owner_->team_->color().gl4f(0.9f);
+        owner_->team_->color().gl4f(0.7f);
         glBegin(GL_QUADS);
             glTexCoord2f(0.f, 0.f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
             glTexCoord2f(0.f, 0.125f);      glVertex2f(-radius_*3.6f, radius_*3.6f);

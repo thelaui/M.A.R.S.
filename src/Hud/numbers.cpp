@@ -1,5 +1,7 @@
 /* numbers.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -28,8 +30,8 @@ namespace numbers {
     }
 
     Number::Number(Vector2f const* location, int value):
-               sourceLocation_(location),
                value_(value),
+               sourceLocation_(location),
                lifeTime_(0.f) {
 
         if (value_ > 0)

@@ -1,5 +1,7 @@
 /* text.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -26,7 +28,7 @@ namespace text {
         void drawText(std::string const& text, Vector2f const& location, font::FontType type,
                       float size, int align, Color3f const& color) {
 
-            sf::Text drawString(text, font::getFont(type), size);
+            sf::Text drawString(text, font::getFont(font::HandelGotDLig), size);
             drawString.SetColor(color.sfColor());
 
             Vector2f loc(location);

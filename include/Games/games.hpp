@@ -1,5 +1,7 @@
 /* games.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -17,7 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define GAMES_HPP_INCLUDED
 
 namespace games {
-    enum GameType {gNoGame, gMenu, gSpaceBall, gDeathMatch, gTeamDeathMatch, gCannonKeep};
+    enum GameType {gNoGame, gMenu, gSpaceBall, gDeathMatch, gTeamDeathMatch, gCannonKeep, gTutorial};
 
     void update();
     void draw();

@@ -1,5 +1,7 @@
 /* UiElement.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -34,8 +36,9 @@ class UiElement {
 
         void setParent(UiElement* newParent);
 
-        bool isHoovered() const              {return hoovered_;}
-        bool isPressed()  const              {return pressed_; }
+        bool         isHovered() const {return hovered_;}
+        bool         isPressed() const {return pressed_; }
+        virtual bool isTopMost() const {return parent_->isTopMost();}
         virtual Vector2f getTopLeft();
 
     protected:
@@ -43,7 +46,7 @@ class UiElement {
         mutable Vector2f topLeft_;
         int width_, height_;
 
-        bool hoovered_;
+        bool hovered_;
         bool pressed_;
 };
 

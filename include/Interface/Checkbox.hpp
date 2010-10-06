@@ -1,5 +1,7 @@
 /* Checkbox.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Checkbox: public UiElement {
     public:
-        Checkbox (std::string text, bool* value, Vector2f const& topLeft, int width);
+        Checkbox (std::string* text, bool* value, Vector2f const& topLeft, int width);
         ~Checkbox ();
 
         void mouseLeft(bool down);

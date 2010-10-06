@@ -1,5 +1,7 @@
 /* TextEdit.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -25,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextEdit: public UiElement {
     public:
-        TextEdit (std::string text, std::string* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
+        TextEdit (std::string* text, std::string* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
         ~TextEdit ();
 
         void buttonPressed(sf::Key::Code keyCode);

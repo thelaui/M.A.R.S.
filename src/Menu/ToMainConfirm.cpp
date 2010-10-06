@@ -1,5 +1,7 @@
 /* ToMainConfirm.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
+# include "Locales/locales.hpp"
 
 UiWindow* ToMainConfirm::instance_(NULL);
 bool ToMainConfirm::kOk_(false);
@@ -29,9 +32,9 @@ bool ToMainConfirm::kCancel_(false);
 UiWindow* ToMainConfirm::get() {
     if (instance_ == NULL) {
         instance_ = new ToMainConfirm(280, 80);
-        instance_->addWidget(new Label("Do you really want to end the current game?", TEXT_ALIGN_LEFT, Vector2f(10, 8)));
-        instance_->addWidget(new Button("Ok", &kOk_, Vector2f(200,50), 70, 20));
-        instance_->addWidget(new Button("Cancel", &kCancel_, Vector2f(120,50), 70, 20));
+        instance_->addWidget(new Label(locales::getLocale(locales::QuitCurrentGameText), TEXT_ALIGN_LEFT, Vector2f(10, 8)));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok),     &kOk_, Vector2f(200,50), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(120,50), 70, 20));
     }
     return instance_;
 }

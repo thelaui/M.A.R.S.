@@ -1,5 +1,7 @@
 /* OptionsMenu.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -30,7 +32,7 @@ class OptionsMenu: public UiWindow {
 
         static UiWindow* instance_;
 
-        static bool kOk_;
+        static bool kOk_, kChooseLanguage_;
 
         static bool fullscreen_, vsync_;
         static int  hue1_, sat1_, val1_, hue2_, sat2_, val2_,

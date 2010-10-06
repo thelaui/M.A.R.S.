@@ -1,5 +1,7 @@
 /* Line.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -32,9 +34,11 @@ void Line::draw() const {
     glLineWidth(2.f);
 
     glBegin(GL_LINES);
-        glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+        if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+        else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
         glVertex2f(begin.x_,begin.y_);
-        glColor4f(1.f, 0.5f, 0.8f, 0.0f);
+        if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 0.0f);
+        else              glColor4f(0.4f, 0.4f, 0.4f, 0.0f);
         glVertex2f(end.x_,end.y_);
     glEnd();
 

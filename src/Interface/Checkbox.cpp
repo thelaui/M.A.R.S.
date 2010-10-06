@@ -1,5 +1,7 @@
 /* Checkbox.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Checkbox::Checkbox (std::string text, bool* value, Vector2f const& topLeft, int width):
+Checkbox::Checkbox (std::string* text, bool* value, Vector2f const& topLeft, int width):
     UiElement(topLeft, width, 20),
     value_(value) {
 
@@ -35,7 +37,7 @@ Checkbox::~Checkbox () {
 
 void Checkbox::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hoovered_) {
+    if (!pressed_ && hovered_) {
         *value_ = !*value_;
         sound::playSound(sound::Check);
     }
@@ -48,7 +50,7 @@ void Checkbox::draw() const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (hoovered_ && pressed_) {
+    if (hovered_ && pressed_) {
         if (*value_) {
             pointStyle = false;
             glColor4f(1,1,1,0.6);
@@ -60,7 +62,7 @@ void Checkbox::draw() const {
             glPointSize(3);
         }
     }
-    else if (hoovered_) {
+    else if (hovered_) {
         if (*value_) {
             pointStyle = false;
             glColor4f(1,1,1,1);

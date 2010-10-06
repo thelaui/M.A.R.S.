@@ -1,0 +1,157 @@
+// menu buttons
+
+000 Start Local Game
+105 Start Tutorial
+001 Start Network Game
+002 Join Network Game
+003 Options
+004 About
+005 Quit M.A.R.S.
+006 Continue
+007 Restart Game
+008 Hide Menu
+009 Quit current Game
+
+// standard buttons
+
+010 Start
+011 Cancel
+012 Info
+013 Close
+014 License
+015 Ok
+016 Show this Info again.
+106 Next
+
+// pregame options
+
+017 Left Team
+018 Right Team
+019 Bots Left
+020 Bots Right
+021 Bots
+022 Pointlimit
+
+// story information
+
+023 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.  \nBut outside the contemplative habitats, the GREAT WAR is raging.  \nAs a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous  \nneighbours! Fight the battle, a true hero as you are was born for: SPACEBALL. \nProtect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+024 Kick or shoot the ball to your enemy's planet!
+025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+026 Destroy as many enemies as possible!
+027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+028 Destroy es many enemies as possible!
+029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+030 Pick up the remote and keep it as long as possible!
+
+// display options
+// tabs
+
+102 Display
+103 Audio
+
+104 Window Settings
+031 Show Debug Information
+032 Bots Orientation
+033 Zones
+034 AI-Paths
+035 Show Game Information
+036 Frames per Second
+037 Particle Count
+038 Particle Count
+039 Particle Lifetime
+040 Stars
+041 Fullscreen
+042 V-Sync
+
+// audio options
+
+043 Music Volume
+044 Sound Volume
+045 Announcer Volume
+
+// player options
+
+046 Name
+047 Accelerate
+048 Turn Left
+049 Turn Right
+050 Weapon
+051 Ship
+052 Hue
+053 Saturation
+054 Value
+055 Press key while hovering!
+056 Enter text while hovering!
+
+// about
+
+057 This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage: \nhttp://www.marsshooter.org
+
+// license
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// quit
+
+059 Do you really want to quit?
+060 Do you really want to end the current game?
+
+// network information
+
+061 M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet. \n\nStay tuned!
+062 M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet. \n\nStay tuned!
+
+// hide menu
+
+063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwars by pressing ESC.
+
+// key names
+
+064 Add
+065 Back Slash
+066 Comma
+067 Dash
+068 Delete
+069 Divide
+070 Down
+071 End
+072 Equal
+073 Home
+074 Insert
+075 Left Alt
+076 Left Bracket
+077 Left Control
+078 Left
+079 Left Shift
+080 Left Super
+081 Menu
+082 Multiply
+083 Page Down
+084 Page Up
+085 Pause
+086 Period
+087 Quote
+088 Right Alt
+089 Right Bracket
+090 Right Control
+091 Return
+092 Right
+093 Right Shift
+094 Right Super
+095 Semi Colon
+096 Slash
+097 Space
+098 Subtract
+099 Tilde
+100 Tab
+101 Up
+
+// tutorialtexts
+
+107 Welcome, Space Rookie!
+108 We are glad to recruit a rising hero like you to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
+109 Basic Movement...
+110 To control your ship, use the keys
+111 Your first Task!
+112 Try to follow the path marked up by the red zones!\n\n We will contact you again, after you have mastered this. Now go for it!
+  

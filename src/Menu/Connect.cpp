@@ -1,5 +1,7 @@
 /* Connect.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/TextBox.hpp"
 # include "Interface/Line.hpp"
 # include "Media/text.hpp"
+# include "Locales/locales.hpp"
 
 UiWindow* Connect::instance_(NULL);
 bool Connect::kClose_(false);
@@ -28,11 +31,11 @@ bool Connect::kClose_(false);
 UiWindow* Connect::get() {
     if (instance_ == NULL) {
         instance_ = new Connect(320, 180);
-        instance_->addWidget(new Button("Close", &kClose_, Vector2f(240,150), 70, 20));
-        instance_->addWidget(new Label("Network Gaming", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
-        instance_->addWidget(new Label("TODO", TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
+        instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(240,150), 70, 20));
+        instance_->addWidget(new Label(locales::getLocale(locales::StartNetworkGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(new std::string("TODO"), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox("M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet. \n\nStay tuned!", Vector2f(10, 50), 300, 300));
+        instance_->addWidget(new TextBox(locales::getLocale(locales::JoinNetworkText), Vector2f(10, 50), 300, 300));
     }
     return instance_;
 }

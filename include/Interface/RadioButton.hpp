@@ -1,5 +1,7 @@
 /* RadioButton.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -24,7 +26,7 @@ class RadioGroup;
 
 class RadioButton: public UiElement {
     public:
-        RadioButton(std::string text, bool* value, Vector2f const& topLeft, int width);
+        RadioButton(std::string* text, bool* value, Vector2f const& topLeft, int width);
         ~RadioButton();
 
         void mouseLeft(bool down);

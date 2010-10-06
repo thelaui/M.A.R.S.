@@ -1,5 +1,7 @@
 /* physics.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -32,7 +34,6 @@ namespace physics {
     }
 
     void collide (MobileSpaceObject* object, int with) {
-        float frameTime = timer::frameTime();
         // collision with planets
         if (with & STATICS) {
             // check for collision with each static object
@@ -112,7 +113,7 @@ namespace physics {
 
                                         // add to orthongonal speed component of initial velocity
                                         // special case: Collision with rofle bullets is not physically correct, for improved gameplay
-                                        if (source->type() == spaceObjects::oAmmoROFLE | target->type() == spaceObjects::oAmmoROFLE)
+                                        if ((source->type() == spaceObjects::oAmmoROFLE) | (target->type() == spaceObjects::oAmmoROFLE))
                                             target-> velocity_ += (0.05f*source->velocity_*source->mass_ + (velocityTargetAfter - velocityTargetBefore) * 0.6);
                                         else {
                                             source->velocity_ += (velocitySourceAfter - velocitySourceBefore) * 0.8;

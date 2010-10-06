@@ -1,5 +1,7 @@
 /* settings.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -56,10 +58,11 @@ namespace settings {
     bool        C_showInfoDM =              true;
     bool        C_showInfoTDM =             true;
     bool        C_showInfoCK =              true;
+    std::string C_language =                "English";
 
     // player settings ----- adjustable via options menu
     std::string   C_playerIName =           "PlayerI";
-    Color3f       C_playerIColor =          Color3f(1,0.3,0.3);
+    Color3f       C_playerIColor =          Color3f(1.f, 0.3f, 0.95f);
     sf::Key::Code C_playerIup =             sf::Key::Up;
     sf::Key::Code C_playerIleft =           sf::Key::Left;
     sf::Key::Code C_playerIright =          sf::Key::Right;
@@ -68,7 +71,7 @@ namespace settings {
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           1;
     std::string   C_playerIIName =          "PlayerII";
-    Color3f       C_playerIIColor =         Color3f(0.45,0.45,1);
+    Color3f       C_playerIIColor =         Color3f(0.2f, 1.f, 0.7f);
     sf::Key::Code C_playerIIup =            sf::Key::W;
     sf::Key::Code C_playerIIleft =          sf::Key::A;
     sf::Key::Code C_playerIIright =         sf::Key::D;
@@ -133,6 +136,7 @@ namespace settings {
         outStream << "[showInfoDM] "            << (C_showInfoDM ? "true" : "false") << std::endl;
         outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
         outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
+        outStream << "[language] "              <<  C_language << std::endl;
 
         outStream.close();
     }
@@ -393,6 +397,9 @@ namespace settings {
                     }
                     else if (inputLine == "[connectPort]") {
                         iss >> C_port;
+                    }
+                    else if (inputLine == "[language]") {
+                        iss >> C_language;
                     }
                     else if (inputLine == "[networkTeamRed]") {
                         std::string value;

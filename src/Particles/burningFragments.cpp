@@ -1,5 +1,7 @@
 /* burningFragments.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -61,7 +63,7 @@ namespace burningFragments {
     void BurningFragment::onCollision(SpaceObject* with, Vector2f const& location,
                                       Vector2f const& direction, Vector2f const& velocity) {
 
-        if (with->type() == spaceObjects::oHome | with->type() == spaceObjects::oSun | with->type() == spaceObjects::oPlanet) {
+        if ((with->type() == spaceObjects::oHome | with->type() == spaceObjects::oSun) | (with->type() == spaceObjects::oPlanet)) {
             particles::spawn(particles::pMiniFlame, location_);
             particles::spawn(particles::pMiniFlame, location_);
             particles::spawn(particles::pMiniFlame, location_);

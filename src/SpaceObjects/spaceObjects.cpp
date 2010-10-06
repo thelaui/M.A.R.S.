@@ -1,5 +1,7 @@
 /* spaceObjects.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -82,7 +84,11 @@ namespace spaceObjects {
     void addPlanet() {
         int radius = (rand() % 100 + 50);
         Vector2f position = possiblePlanetLocation(radius, 100);
-        if (position != Vector2f(0,0)) objectList_.push_back(new Planet(position, radius));
+        if (position != Vector2f(0,0)) addPlanet(position, radius);
+    }
+
+    void addPlanet(Vector2f const& location, float radius) {
+        objectList_.push_back(new Planet(location, radius));
     }
 
     void addSun() {
@@ -104,7 +110,11 @@ namespace spaceObjects {
             case HOME_RIGHT: position = Vector2f(1280+50, (rand()%550) + 100); break;
             default:         position = possiblePlanetLocation(100, 100);
         }
-        Home* home = new Home(position, 100, color);
+        return addHome(position, color);
+    }
+
+    Home* addHome(Vector2f const& location, Color3f const& color) {
+        Home* home = new Home(location, 100, color);
         objectList_.push_back(home);
         homeList_.push_back(home);
         return home;

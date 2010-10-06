@@ -1,5 +1,7 @@
 /* NewGameMenu.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -33,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/InfoDM.hpp"
 # include "Menu/InfoTDM.hpp"
 # include "Menu/InfoCK.hpp"
+# include "Locales/locales.hpp"
 
 UiWindow* NewGameMenu::instance_(NULL);
 bool NewGameMenu::kStartSB_(false);
@@ -54,70 +57,70 @@ bool NewGameMenu::tCK_(false);
 UiWindow* NewGameMenu::get() {
     if (instance_ == NULL) {
         instance_ = new NewGameMenu(480, 295);
-        instance_->addWidget(new Button("Cancel", &kCancel_, Vector2f(315,260), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(315,260), 70, 20));
 
-        instance_->addWidget(new Label("Start local Game", TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
 
         TabList* tabList        = new TabList(Vector2f(10,55), 460, 220);
-        Tab* tabSpaceBall       = new Tab("SpaceBall", 70,  &tSB_);
-        Tab* tabDeathMatch      = new Tab("DeathMatch", 80, &tDM_);
-        Tab* tabTeamDeathMatch  = new Tab("Team-DeathMatch", 110, &tTDM_);
-        Tab* tabCannonKeep      = new Tab("CannonKeep", 80, &tCK_);
+        Tab* tabSpaceBall       = new Tab(new std::string("SpaceBall"), 70,  &tSB_);
+        Tab* tabDeathMatch      = new Tab(new std::string("DeathMatch"), 80, &tDM_);
+        Tab* tabTeamDeathMatch  = new Tab(new std::string("Team-DeathMatch"), 110, &tTDM_);
+        Tab* tabCannonKeep      = new Tab(new std::string("CannonKeep"), 80, &tCK_);
 
-        tabSpaceBall->addWidget(new Label("Left Team:", TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabSpaceBall->addWidget(new Label("Right Team:", TEXT_ALIGN_LEFT, Vector2f(240, 40)));
-        tabSpaceBall->addWidget(new Slider("Bots Left", &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
-        tabSpaceBall->addWidget(new Slider("Bots Right", &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
+        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
+        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(240, 40)));
+        tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
+        tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
         RadioGroup* player1Group = new RadioGroup();
-            player1Group->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamL, Vector2f(10,70), 80));
-            player1Group->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamR, Vector2f(240,70), 80));
+            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamL, Vector2f(10,70), 80));
+            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamR, Vector2f(240,70), 80));
             tabSpaceBall->addWidget(player1Group);
         RadioGroup* player2Group = new RadioGroup();
-            player2Group->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamL, Vector2f(93,70), 80));
-            player2Group->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamR, Vector2f(323,70), 80));
+            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamL, Vector2f(93,70), 80));
+            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamR, Vector2f(323,70), 80));
             tabSpaceBall->addWidget(player2Group);
-        tabSpaceBall->addWidget(new Slider("Pointlimit", &settings::C_pointLimit, 1, 20, Vector2f(10,150), 440, 100, true));
-        tabSpaceBall->addWidget(new Button("Start", &kStartSB_, Vector2f(385,195), 70, 20));
-        tabSpaceBall->addWidget(new Button("Info", &kInfoSB_, Vector2f(10,195), 70, 20));
+        tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 440, 100, true));
+        tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Start), &kStartSB_, Vector2f(385,195), 70, 20));
+        tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Info), &kInfoSB_, Vector2f(10,195), 70, 20));
 
-        tabDeathMatch->addWidget(new Slider("Bots", &settings::C_botsDeath, 0, 150, Vector2f(10,110), 440, 100, true));
-        tabDeathMatch->addWidget(new Checkbox("Player I", &playerI_, Vector2f(10,60), 100));
-        tabDeathMatch->addWidget(new Checkbox("Player II", &playerII_, Vector2f(240,60), 100));
-        tabDeathMatch->addWidget(new Slider("Pointlimit", &settings::C_pointLimitDM, 1, 200, Vector2f(10,150), 440, 100, true));
-        tabDeathMatch->addWidget(new Button("Start", &kStartDM_, Vector2f(385, 195), 70, 20));
-        tabDeathMatch->addWidget(new Button("Info", &kInfoDM_, Vector2f(10,195), 70, 20));
+        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Bots), &settings::C_botsDeath, 0, 150, Vector2f(10,110), 440, 100, true));
+        tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIName, &playerI_, Vector2f(10,60), 100));
+        tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIIName, &playerII_, Vector2f(240,60), 100));
+        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimitDM, 1, 200, Vector2f(10,150), 440, 100, true));
+        tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartDM_, Vector2f(385, 195), 70, 20));
+        tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoDM_, Vector2f(10,195), 70, 20));
 
-        tabTeamDeathMatch->addWidget(new Label("Left Team:", TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabTeamDeathMatch->addWidget(new Label("Right Team:", TEXT_ALIGN_LEFT, Vector2f(240, 40)));
-        tabTeamDeathMatch->addWidget(new Slider("Bots Left", &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
-        tabTeamDeathMatch->addWidget(new Slider("Bots Right", &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
+        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
+        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(240, 40)));
+        tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
+        tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
         RadioGroup* player1Group2 = new RadioGroup();
-            player1Group2->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamL, Vector2f(10,70), 80));
-            player1Group2->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamR, Vector2f(240,70), 80));
+            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamL, Vector2f(10,70), 80));
+            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamR, Vector2f(240,70), 80));
             tabTeamDeathMatch->addWidget(player1Group2);
         RadioGroup* player2Group2 = new RadioGroup();
-            player2Group2->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamL, Vector2f(93,70), 80));
-            player2Group2->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamR, Vector2f(323,70), 80));
+            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamL, Vector2f(93,70), 80));
+            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamR, Vector2f(323,70), 80));
             tabTeamDeathMatch->addWidget(player2Group2);
-        tabTeamDeathMatch->addWidget(new Slider("Pointlimit", &settings::C_pointLimitTDM, 1, 500, Vector2f(10,150), 440, 100, true));
-        tabTeamDeathMatch->addWidget(new Button("Start", &kStartTDM_, Vector2f(385, 195), 70, 20));
-        tabTeamDeathMatch->addWidget(new Button("Info", &kInfoTDM_, Vector2f(10,195), 70, 20));
+        tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimitTDM, 1, 500, Vector2f(10,150), 440, 100, true));
+        tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartTDM_, Vector2f(385, 195), 70, 20));
+        tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoTDM_, Vector2f(10,195), 70, 20));
 
-        tabCannonKeep->addWidget(new Label("Left Team:", TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabCannonKeep->addWidget(new Label("Right Team:", TEXT_ALIGN_LEFT, Vector2f(240, 40)));
-        tabCannonKeep->addWidget(new Slider("Bots Left", &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
-        tabCannonKeep->addWidget(new Slider("Bots Right", &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
+        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
+        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(240, 40)));
+        tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 20, Vector2f(10,100), 210, 100, true));
+        tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 20, Vector2f(240,100), 210, 100, true));
         RadioGroup* player1Group3 = new RadioGroup();
-            player1Group3->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamL, Vector2f(10,70), 80));
-            player1Group3->addRadioButton(new RadioButton("Player I", &settings::C_playerIteamR, Vector2f(240,70), 80));
+            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamL, Vector2f(10,70), 80));
+            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, &settings::C_playerIteamR, Vector2f(240,70), 80));
             tabCannonKeep->addWidget(player1Group3);
         RadioGroup* player2Group3 = new RadioGroup();
-            player2Group3->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamL, Vector2f(93,70), 80));
-            player2Group3->addRadioButton(new RadioButton("Player II", &settings::C_playerIIteamR, Vector2f(323,70), 80));
+            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamL, Vector2f(93,70), 80));
+            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamR, Vector2f(323,70), 80));
             tabCannonKeep->addWidget(player2Group3);
-        tabCannonKeep->addWidget(new Slider("Pointlimit", &settings::C_pointLimit, 1, 20, Vector2f(10,150), 440, 100, true));
-        tabCannonKeep->addWidget(new Button("Start", &kStartCK_, Vector2f(385, 195), 70, 20));
-        tabCannonKeep->addWidget(new Button("Info", &kInfoCK_, Vector2f(10,195), 70, 20));
+        tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 440, 100, true));
+        tabCannonKeep->addWidget(new Button(locales::getLocale(locales::Start), &kStartCK_, Vector2f(385, 195), 70, 20));
+        tabCannonKeep->addWidget(new Button(locales::getLocale(locales::Info), &kInfoCK_, Vector2f(10,195), 70, 20));
 
         tabList->addTab(tabSpaceBall);
         tabList->addTab(tabDeathMatch);

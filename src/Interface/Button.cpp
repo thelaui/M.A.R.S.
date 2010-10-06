@@ -1,5 +1,7 @@
 /* Button.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -21,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Button::Button (std::string text, bool* key, Vector2f const& topLeft, int width, int height):
+Button::Button (std::string* text, bool* key, Vector2f const& topLeft, int width, int height):
     UiElement(topLeft, width, height),
     key_(key) {
 
@@ -35,9 +37,9 @@ Button::~Button () {
 
 void Button::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hoovered_) {
+    if (!pressed_ && hovered_) {
         *key_ = true;
-        hoovered_ = false;
+        hovered_ = false;
         sound::playSound(sound::Click);
     }
 }
@@ -55,7 +57,7 @@ void Button::draw () const {
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
         glVertex2f(origin.x_, height_ + origin.y_);
 
-    if (pressed_ && hoovered_) {
+    if (pressed_ && hovered_) {
             glColor4f(1.0,1.0,1.0,0.02);
             glVertex2f(origin.x_, height_/2 + origin.y_);
             glVertex2f(width_ + origin.x_, height_/2 + origin.y_);
@@ -71,7 +73,7 @@ void Button::draw () const {
             glVertex2f(origin.x_,origin.y_+height_);
         glEnd();
     }
-    else if (hoovered_) {
+    else if (hovered_) {
             glColor4f(1.0,1.0,1.0,0.2);
             glVertex2f(origin.x_, origin.y_);
             glVertex2f(width_ + origin.x_, origin.y_);
@@ -99,7 +101,7 @@ void Button::draw () const {
     }
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-    if (hoovered_) glLineWidth(1.5f);
+    if (hovered_) glLineWidth(1.5f);
     else           glLineWidth(0.5f);
 
     glBegin(GL_LINE_LOOP);

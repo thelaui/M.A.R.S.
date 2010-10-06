@@ -1,5 +1,7 @@
 /* Team.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -72,9 +74,9 @@ namespace zones {
         Vector2f normalHomeConnection (homeConnection.normalize());
 
         // detect tactical zones between planets
-        for (int i=0; i<objectsLeft.size(); ++i ) {
+        for (unsigned int i=0; i<objectsLeft.size(); ++i ) {
             if (i+1 < objectsLeft.size()){
-                for (int j=i+1; j<objectsLeft.size(); ++j) {
+                for (unsigned int j=i+1; j<objectsLeft.size(); ++j) {
                     Vector2f objectConnection (objectsLeft[i]->location()-objectsLeft[j]->location());
                     float objectDistance (objectConnection.length());
                     Vector2f normalObjectConnection(objectConnection.normalize());
@@ -95,9 +97,9 @@ namespace zones {
             }
         }
 
-        for (int i=0; i<objectsRight.size(); ++i ) {
+        for (unsigned int i=0; i<objectsRight.size(); ++i ) {
             if (i+1 < objectsRight.size()){
-                for (int j=i+1; j<objectsRight.size(); ++j) {
+                for (unsigned int j=i+1; j<objectsRight.size(); ++j) {
                     Vector2f objectConnection (objectsRight[i]->location()-objectsRight[j]->location());
                     float objectDistance (objectConnection.length());
                     Vector2f normalObjectConnection(objectConnection.normalize());
@@ -124,7 +126,7 @@ namespace zones {
         if (objectsLeft.size() >= 1) {
             SpaceObject *highestL(objectsLeft[0]), *lowestL(objectsLeft[0]);
             if (objectsLeft.size() > 1) {
-                for (int i=1; i<objectsLeft.size(); ++i) {
+                for (unsigned int i=1; i<objectsLeft.size(); ++i) {
                     if (objectsLeft[i]->location().y_ > highestL->location().y_)
                         highestL = objectsLeft[i];
                     else if (objectsLeft[i]->location().y_ < lowestL->location().y_)
@@ -174,7 +176,7 @@ namespace zones {
         if (objectsRight.size() >= 1) {
             SpaceObject *highestR(objectsRight[0]), *lowestR(objectsRight[0]);
             if (objectsRight.size() > 1) {
-                for (int i=1; i<objectsRight.size(); ++i) {
+                for (unsigned int i=1; i<objectsRight.size(); ++i) {
                     if (objectsRight[i]->location().y_ > highestR->location().y_)
                         highestR = objectsRight[i];
                     else if (objectsRight[i]->location().y_ < lowestR->location().y_)
@@ -236,51 +238,54 @@ namespace zones {
 
     void update() {
         if (!tacticalZonesL_.empty())
-            for (int i = 0; i < tacticalZonesL_.size(); ++i)
+            for (unsigned int i = 0; i < tacticalZonesL_.size(); ++i)
                 tacticalZonesL_[i]->update();
         if (!tacticalZonesR_.empty())
-            for (int i = 0; i < tacticalZonesR_.size(); ++i)
+            for (unsigned int i = 0; i < tacticalZonesR_.size(); ++i)
                 tacticalZonesR_[i]->update();
         if (!rasterZones_.empty())
-            for (int i = 0; i < rasterZones_.size(); ++i)
+            for (unsigned int i = 0; i < rasterZones_.size(); ++i)
                 rasterZones_[i]->update();
     }
 
     void draw() {
-        if (teamL_) teamL_->draw();
-        if (teamR_) teamR_->draw();
-        if (homeL_) homeL_->draw();
-        if (homeR_) homeR_->draw();
+        if (games::type() != games::gDeathMatch && games::type() != games::gTutorial) {
+            if (teamL_) teamL_->draw();
+            if (teamR_) teamR_->draw();
+            if (homeL_) homeL_->draw();
+            if (homeR_) homeR_->draw();
+        }
         if (!tacticalZonesL_.empty())
-            for (int i=0; i<tacticalZonesL_.size(); ++i)
+            for (unsigned int i=0; i<tacticalZonesL_.size(); ++i)
                 tacticalZonesL_[i]->draw();
         if (!tacticalZonesR_.empty())
-            for (int i=0; i<tacticalZonesR_.size(); ++i)
+            for (unsigned int i=0; i<tacticalZonesR_.size(); ++i)
                 tacticalZonesR_[i]->draw();
         if (!rasterZones_.empty())
-            for (int i=0; i<rasterZones_.size(); ++i)
+            for (unsigned int i=0; i<rasterZones_.size(); ++i)
                 rasterZones_[i]->draw();
     }
 
     TacticalZone* toProtect(Team* checker) {
         if (checker->homeZone_ == homeL_)
-            for (int i=0; i<tacticalZonesL_.size(); ++i) {
+            for (unsigned int i=0; i<tacticalZonesL_.size(); ++i) {
                 if (!tacticalZonesL_[i]->covered())
                     return tacticalZonesL_[i];
                 else if (i == tacticalZonesL_.size()-1)
                     return tacticalZonesL_[0];
             }
         else
-            for (int i=0; i<tacticalZonesR_.size(); ++i) {
+            for (unsigned int i=0; i<tacticalZonesR_.size(); ++i) {
                 if (!tacticalZonesR_[i]->covered())
                     return tacticalZonesR_[i];
                 else if (i == tacticalZonesR_.size()-1)
                     return tacticalZonesR_[0];
             }
+        return NULL;
     }
 
     RasterZone* freeZone() {
-        int count(0), i(lastZone_);
+        unsigned int count(0), i(lastZone_);
         while (++count < rasterZones_.size() && rasterZones_[(++i)%rasterZones_.size()]->covered())
             i %= rasterZones_.size();
         i %= rasterZones_.size();

@@ -1,5 +1,7 @@
 /* UiWindow.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -24,7 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 UiWindow::UiWindow (int width, int height, Vector2f const& position):
     UiElement(position, width, height),
-    active_(false) {}
+    topMost_(false) {}
 
 UiWindow::~UiWindow() {
     for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
@@ -89,7 +91,7 @@ void UiWindow::draw () const {
     glColor3f(1.f, 1.f, 1.f);
     glEnable(GL_TEXTURE_2D);
 
-    if (active_)
+    if (topMost_)
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::WindowOn));
     else
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::WindowOff));
@@ -159,8 +161,8 @@ void UiWindow::clearWidgets () {
     widgets_.clear();
 }
 
-void UiWindow::setActive(bool active) {
-    active_ = active;
+void UiWindow::setTopMost(bool active) {
+    topMost_ = active;
 }
 
 Vector2f UiWindow::getTopLeft() {

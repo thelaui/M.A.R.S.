@@ -1,5 +1,7 @@
 /* pauseMenu.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -23,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/OptionsMenu.hpp"
 # include "Menu/InfoHide.hpp"
 # include "System/settings.hpp"
+# include "Locales/locales.hpp"
 
 UiWindow* PauseMenu::instance_(NULL);
 bool PauseMenu::kResume_(false);
@@ -34,11 +37,11 @@ bool PauseMenu::kHide_(false);
 UiWindow* PauseMenu::get() {
     if (instance_ == NULL) {
         instance_ = new PauseMenu(180, 160);
-        instance_->addWidget(new Button("Continue",     &kResume_,      Vector2f(10,10), 160, 20));
-        instance_->addWidget(new Button("Restart Game", &kNew_,         Vector2f(10,40), 160, 20));
-        instance_->addWidget(new Button("Options",            &kOptions_,     Vector2f(10,70), 160, 20));
-        instance_->addWidget(new Button("Hide Menu",            &kHide_,     Vector2f(10,100), 160, 20));
-        instance_->addWidget(new Button("Quit current Game",       &kToMainMenu_,  Vector2f(10,130), 160, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Continue),        &kResume_,      Vector2f(10,10), 160, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::RestartGame),     &kNew_,         Vector2f(10,40), 160, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Options),         &kOptions_,     Vector2f(10,70), 160, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::HideMenu),        &kHide_,     Vector2f(10,100), 160, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::QuitCurrentGame), &kToMainMenu_,  Vector2f(10,130), 160, 20));
     }
     return instance_;
 }

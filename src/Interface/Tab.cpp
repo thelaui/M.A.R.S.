@@ -1,5 +1,7 @@
 /* Tab.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -22,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Tab::Tab (std::string const& name, int width, bool* activated):
+Tab::Tab (std::string* name, int width, bool* activated):
     UiElement(Vector2f(), width, 20),
     name_(name),
     activated_(activated),
@@ -36,9 +38,9 @@ Tab::~Tab() {
 void Tab::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(parent_->getTopLeft() + topLeft_);
     if (topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
-        hoovered_ = true;
+        hovered_ = true;
     else
-        hoovered_ = false;
+        hovered_ = false;
     if (active_)
         for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
             (*i)->mouseMoved(position);
@@ -46,7 +48,7 @@ void Tab::mouseMoved(Vector2f const& position) {
 
 void Tab::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hoovered_) {
+    if (!pressed_ && hovered_) {
         dynamic_cast<TabList*>(parent_)->deactivateAll();
         active_ = true;
         if(activated_)
@@ -76,7 +78,7 @@ void Tab::draw () const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (hoovered_) {
+    if (hovered_) {
 
 
 
@@ -93,7 +95,8 @@ void Tab::draw () const {
     if (active_) {
         glLineWidth(2.f);
         glBegin(GL_LINE_STRIP);
-            glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+            if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+            else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
             glVertex2f(origin.x_,origin.y_+height_);
             glVertex2f(origin.x_,origin.y_);
             glVertex2f(origin.x_+width_,origin.y_);
@@ -112,7 +115,8 @@ void Tab::draw () const {
     else {
         glLineWidth(2.f);
         glBegin(GL_LINES);
-            glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+            if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
+            else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
             glVertex2f(origin.x_,origin.y_+height_);
             glVertex2f(origin.x_+width_,origin.y_+height_);
         glEnd();

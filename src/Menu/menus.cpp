@@ -1,5 +1,7 @@
 /*menus.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -90,15 +92,15 @@ namespace menus {
     void showWindow(UiWindow* toBeShown) {
         window::showCursor(true);
         toBeShown->onShow();
-        toBeShown->setActive(true);
-        if (visible()) windowStack_.back()->setActive(false);
+        toBeShown->setTopMost(true);
+        if (visible()) windowStack_.back()->setTopMost(false);
         windowStack_.push_back(toBeShown);
     }
 
     void hideWindow() {
         windowStack_.pop_back();
         if (!visible()) window::showCursor(false);
-        else windowStack_.back()->setActive(true);
+        else windowStack_.back()->setTopMost(true);
     }
 
     void hideMenu() {

@@ -1,5 +1,7 @@
 /* Tab.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -23,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Tab: public UiElement {
     public:
-        Tab (std::string const& name, int width, bool* activated = NULL);
+        Tab (std::string* text, int width, bool* activated = NULL);
         ~Tab();
 
         void mouseMoved(Vector2f const& position);
@@ -43,7 +45,7 @@ class Tab: public UiElement {
 
     private:
         std::vector<UiElement*> widgets_;
-        std::string name_;
+        std::string* name_;
         Label* label_;
         bool* activated_;
         bool active_;

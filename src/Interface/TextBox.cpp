@@ -1,5 +1,7 @@
 /* TextBox.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -18,53 +20,57 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 
 
-TextBox::TextBox(std::string const& text, Vector2f const& topLeft, int width, int height):
-    UiElement(topLeft, width, height) {
+TextBox::TextBox(std::string* text, Vector2f const& topLeft, int width, int height):
+    UiElement(topLeft, width, height),
+    text_(*text) {
 
     std::string word;
     std::string line;
+    int lastSpace(0);
 
-    for (int i=0; i<text.length(); ++i) {
-        if (text[i] == '\n') {
-            addLine(line);
+    for (unsigned int i=0; i<text_.length()-1; ++i) {
+        if (text_[i] == '\\' && text_[i+1] == 'n') {
+            text_[i]  = ' ';
+            text_[++i]= '\n';
+        }
+    }
+    for (unsigned int i=0; i<text_.length()-1; ++i)
+        if (text_[i] == ' ' && text_[i+1] == ' ')
+            text_.erase(i--, 1);
+
+    for (unsigned int i=0; i<text_.length(); ++i) {
+        if (text_[i] == '\n') {
             line = "";
             word = "";
         }
-        else if (text[i] != ' ') {
-            word.push_back(text[i]);
+        else if (text_[i] != ' ') {
+            word.push_back(text_[i]);
         }
         else {
             std::string tmp = line + word;
             if (text::getCharacterPos(tmp, tmp.length(), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT) < width_) {
+                lastSpace = i;
                 line.append(word + " ");
                 word = "";
             }
             else {
-                addLine(line);
+                text_[lastSpace] = '\n';
                 line = word + " ";
                 word = "";
             }
         }
     }
-    line.append(word + " ");
-    if (line.length() > 0)
-        addLine(line);
+
+    label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f));
+    label_->setParent(this);
 }
 
 TextBox::~TextBox() {
-    for (std::vector<Label*>::const_iterator it = lines_.begin(); it != lines_.end(); ++it)
-        delete *it;
+    delete label_;
 }
 
 void TextBox::draw () const {
-    for (std::vector<Label*>::const_iterator it = lines_.begin(); it != lines_.end(); ++it)
-        (*it)->draw();
-}
-
-void TextBox::addLine(std::string text) {
-    Label* newLabel = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,lines_.size()*15.f));
-    newLabel->setParent(this);
-    lines_.push_back(newLabel);
+    label_->draw();
 }
 
 

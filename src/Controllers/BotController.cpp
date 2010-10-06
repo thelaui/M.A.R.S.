@@ -1,5 +1,7 @@
 /* BotController.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -51,7 +53,7 @@ void BotController::update() {
     }
 
     int action = BOT_CHARGE;
-    for (int i=0; i<actions_.size(); ++i)
+    for (unsigned int i=0; i<actions_.size(); ++i)
         if (actions_[i] > actions_[action])
             action = i;
 
@@ -77,7 +79,7 @@ void BotController::reset() {
     weaponChangeTimer_ = sf::Randomizer::Random(0, 1);
     nextRoutePoint_ = Vector2f(FLT_MAX, FLT_MAX);
     aggroTable_.clear();
-    for(int i=0; i<actions_.size(); ++i)
+    for(unsigned int i=0; i<actions_.size(); ++i)
         actions_[i] = 0;
     for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
         it->second = 0.f;

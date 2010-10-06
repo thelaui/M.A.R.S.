@@ -1,5 +1,7 @@
 /* Slider.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -23,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <string>
 # include <sstream>
 
-Slider::Slider (std::string text, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<std::string> const& sliderNames):
+Slider::Slider (std::string* text, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<std::string> const& sliderNames):
     UiElement(topLeft, width, 20),
     value_(value),
     minValue_(minValue),
@@ -48,7 +50,7 @@ void Slider::mouseLeft(bool down) {
 
 void Slider::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
-    if (pressed_ && hoovered_) {
+    if (pressed_ && hovered_) {
         *value_ = (position.x_+(0.5f*(width_ - (labelWidth_+10)))/(maxValue_ - minValue_)-parent_->getTopLeft().x_-topLeft_.x_-(labelWidth_+5))*(maxValue_ - minValue_)/(width_ - (labelWidth_+10)) + minValue_;
         if (*value_ < minValue_) *value_ = minValue_;
         if (*value_ > maxValue_) *value_ = maxValue_;
@@ -61,8 +63,8 @@ void Slider::draw() const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
-    // Hoover effect
-    if (hoovered_)
+    // Hover effect
+    if (hovered_)
         glColor4f(1,1,1,0.5);
     else
         glColor4f(1,1,1,0.3);
@@ -73,14 +75,14 @@ void Slider::draw() const {
         glVertex2f(width_ + origin.x_, 10 + origin.y_);
     glEnd();
 
-    // Hoover effect
+    // Hover effect
     Vector2f sliderPosition(((width_-(labelWidth_+10))*(*value_- minValue_)/(maxValue_ - minValue_)) + origin.x_+(labelWidth_+5), 10 + origin.y_);
 
-    if (hoovered_ && pressed_) {
+    if (hovered_ && pressed_) {
         glColor4f(1,1,1,0.6);
         glPointSize(8);
     }
-    else if (hoovered_){
+    else if (hovered_){
         glColor4f(1,1,1,1);
         glPointSize(10);
     }

@@ -1,5 +1,7 @@
 /* UiElement.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -25,16 +27,16 @@ UiElement::UiElement(Vector2f const& topLeft, int width, int height):
     topLeft_(topLeft),
     width_(width),
     height_(height),
-    hoovered_(false),
+    hovered_(false),
     pressed_(false) {}
 
 void UiElement::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(getTopLeft());
     if (topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_) {
-        hoovered_ = true;
+        hovered_ = true;
     }
     else
-        hoovered_ = false;
+        hovered_ = false;
 }
 
 void UiElement::mouseLeft(bool down) {

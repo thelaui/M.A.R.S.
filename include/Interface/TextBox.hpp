@@ -1,5 +1,7 @@
 /* TextBox.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -23,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextBox: public UiElement {
     public:
-        TextBox (std::string const& text, Vector2f const& topLeft, int width, int height);
+        TextBox (std::string* text, Vector2f const& topLeft, int width, int height);
         ~TextBox();
 
         void mouseMoved(Vector2f const& position) {}
@@ -32,9 +34,8 @@ class TextBox: public UiElement {
         void draw () const;
 
     private:
-        void addLine(std::string text);
-
-        std::vector<Label*> lines_;
+        std::string text_;
+        Label* label_;
 };
 
 # endif

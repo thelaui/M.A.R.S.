@@ -1,5 +1,7 @@
 /* hud.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -61,7 +63,7 @@ namespace hud {
         window::setPixelView();
         numbers::draw();
         if (games::type() == games::gMenu)   logo_->draw();
-        else if (games::elapsedTime() < 6.f) countDown_->draw();
+        else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial) countDown_->draw();
         gameStats_->draw();
 
         if (!menus::visible() && games::active()) {

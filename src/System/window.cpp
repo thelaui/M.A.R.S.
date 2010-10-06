@@ -1,5 +1,7 @@
 /* window.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -20,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/texture.hpp"
 # include "Controllers/controllers.hpp"
 # include "Menu/menus.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -48,6 +51,7 @@ namespace window {
         else {
             // Create the main rendering window
             settings::load();
+            locales:: load();
             create();
             isCreated_ = true;
             return &window_;

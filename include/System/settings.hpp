@@ -1,5 +1,7 @@
 /* settings.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -55,6 +57,7 @@ namespace settings {
     extern bool           C_showInfoDM;
     extern bool           C_showInfoTDM;
     extern bool           C_showInfoCK;
+    extern std::string    C_language;
 
     // player settings ----- adjustable via options menu
     extern std::string    C_playerIName;

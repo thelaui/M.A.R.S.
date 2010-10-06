@@ -1,5 +1,7 @@
 /* main.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -17,9 +19,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "System/timer.hpp"
 
-# include <iostream>
-# include <set>
-
 void mainLoop() {
     while (window::isOpen()) {
         window::clear();
@@ -34,4 +33,6 @@ void mainLoop() {
 int main() {
     games::start(games::gMenu);
     mainLoop();
+
+    return 0;
 }

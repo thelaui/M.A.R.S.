@@ -1,5 +1,7 @@
 /* ExitConfirm.cpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -20,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Menu/menus.hpp"
 # include "Media/text.hpp"
+# include "Locales/locales.hpp"
 
 UiWindow* ExitConfirm::instance_(NULL);
 bool ExitConfirm::kOk_(false);
@@ -28,9 +31,9 @@ bool ExitConfirm::kCancel_(false);
 UiWindow* ExitConfirm::get() {
     if (instance_ == NULL) {
         instance_ = new ExitConfirm(280, 80);
-        instance_->addWidget(new Label("Do you really want to quit?", TEXT_ALIGN_LEFT, Vector2f(10, 8)));
-        instance_->addWidget(new Button("Ok", &kOk_, Vector2f(200,50), 70, 20));
-        instance_->addWidget(new Button("Cancel", &kCancel_, Vector2f(120,50), 70, 20));
+        instance_->addWidget(new Label(locales::getLocale(locales::QuitText), TEXT_ALIGN_LEFT, Vector2f(10, 8)));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(200,50), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(120,50), 70, 20));
     }
     return instance_;
 }

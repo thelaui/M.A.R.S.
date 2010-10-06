@@ -1,5 +1,7 @@
 /* spaceObjects.hpp
 
+Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation, either version 3 of the License, or (at your option)
@@ -35,9 +37,11 @@ namespace spaceObjects {
     void draw();
 
     void  addPlanet();
+    void  addPlanet(Vector2f const& location, float radius);
     void  addSun();
     void  addBlackHole();
     Home* addHome(int where, Color3f const& color);
+    Home* addHome(Vector2f const& location, Color3f const& color);
 
     SpaceObject const* getObstacle(Vector2f const& start, Vector2f const& end, bool avoidBall = false, float minDistance = 0.f);
     bool               isOnLine(Vector2f source, Vector2f direction, Vector2f target, float radius);
