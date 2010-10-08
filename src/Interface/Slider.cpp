@@ -22,10 +22,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
-# include <string>
 # include <sstream>
 
-Slider::Slider (std::string* text, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<std::string> const& sliderNames):
+Slider::Slider (sf::String* text, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<sf::String> const& sliderNames):
     UiElement(topLeft, width, 20),
     value_(value),
     minValue_(minValue),
@@ -95,20 +94,21 @@ void Slider::draw() const {
         glVertex2f(sliderPosition.x_, sliderPosition.y_);
     glEnd();
 
-
-
     if (showValue_) {
         std::stringstream sstr;
         if(!sliderNames_.empty()) {
-            if (sliderNames_.size() < *value_)
+            if (sliderNames_.size() < *value_) {
                 sstr << *value_;
+                text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+            }
             else
-                sstr << sliderNames_[*value_-1];
+                text::drawScreenText(sliderNames_[*value_-1], origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
         else {
             sstr << *value_;
+            text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
-        text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+
     }
 
     // draw Label

@@ -18,8 +18,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/locales.hpp"
 
 # include "System/settings.hpp"
+# include "Media/file.hpp"
 
-# include <fstream>
 # include <sstream>
 # include <iostream>
 # include <sys/types.h>
@@ -29,53 +29,42 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace locales {
 
     namespace {
-        std::vector<std::string> locales_(COUNT, "Error");
+        std::vector<sf::String> locales_(COUNT, "Error");
     }
 
     void load() {
         std::string fileName = "data/locales/"+settings::C_language+".txt";
-        std::ifstream inStream(fileName.c_str());
-        char line[1024];
+        std::vector<sf::String> lines = file::load(fileName);
 
-        if (inStream.good()) {
-            while(inStream.getline(line, 1024)) {
-                std::string inputLine (line);
-
-                while (inputLine[0] == ' ')
-                    inputLine.erase(inputLine.begin());
-                while (inputLine[inputLine.size()-2] == ' ')
-                    inputLine.erase(inputLine.size()-2);
-
-                // ignore comments and empty lines
-                if(inputLine.size() == 2 || (inputLine.size() > 2 && (inputLine[0] != '/' && inputLine[1] != '/'))) {
-                    std::istringstream iss (line);
-                    int type;
-                    iss >> type;
-                    if (type < COUNT)
-                        locales_[type] = std::string(iss.str(), 4);
-                    else
-                        std::cout << type << " is a bad ID in " << fileName <<"!\n";
+        if (lines.size() > 0) {
+            for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
+                std::stringstream sstr(it->ToAnsiString());
+                int id;
+                sstr >> id;
+                if (id < COUNT && it->GetSize() > 4) {
+                    sf::String tmp(*it);
+                    tmp.Erase(0, 4);
+                    locales_[id] = tmp;
                 }
             }
         }
         else {
-            std::cout << "Could not find " << fileName << "! Interface will be messed up with errors...\n";
+            std::cout << "Interface will be messed up with errors...\n";
         }
-        inStream.close();
     }
 
-    std::vector<std::string>const getLanguages() {
+    std::vector<sf::String>const getLanguages() {
         DIR* dp;
         if((dp  = opendir("data/locales/")) == NULL)
             std::cout << "Error(" << errno << ") opening data/locales/" << std::endl;
 
         struct dirent* dirp;
-        std::vector<std::string> languages;
+        std::vector<sf::String> languages;
         while ((dirp = readdir(dp)) != NULL) {
             if (dirp->d_name[0] != '.') {
                 std::string file(dirp->d_name);
                 if (file.size() > 4)
-                    languages.push_back(std::string(file, 0, file.size()-4));
+                    languages.push_back(sf::String(std::string(file, 0, file.size()-4)));
                 else
                     std::cout << "data/locales/" << file << " seems to be an invalid translation file!" << std::endl;
             }
@@ -85,7 +74,7 @@ namespace locales {
         return languages;
     }
 
-    std::string* getLocale(LocaleType type) {
+    sf::String* getLocale(LocaleType type) {
         return &locales_[type];
     }
 }

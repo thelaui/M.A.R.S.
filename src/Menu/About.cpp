@@ -30,14 +30,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 UiWindow* About::instance_(NULL);
 bool About::kClose_(false);
 bool About::kLisence_(false);
-std::string About::marsName_("");
+sf::String About::marsName_("");
 
 UiWindow* About::get() {
     if (instance_ == NULL) {
         instance_ = new About(320, 210);
         instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(240,180), 70, 20));
         instance_->addWidget(new Button(locales::getLocale(locales::License), &kLisence_, Vector2f(10,180), 70, 20));
-        instance_->addWidget(new Label(new std::string("M.A.R.S."), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(new sf::String("M.A.R.S."), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
         instance_->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 50), 300, 150));

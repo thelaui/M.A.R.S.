@@ -18,13 +18,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef GENERATENAME_HPP_INCLUDED
 # define GENERATENAME_HPP_INCLUDED
 
-# include <string>
 # include <vector>
+# include <SFML/System.hpp>
 
 namespace generateName {
-    std::string bot(int randomNumber);
-    std::string game();
-    std::vector<std::string> const& shipNames();
+    sf::String bot(int randomNumber);
+    sf::String game();
+    std::vector<sf::String> const& shipNames();
 }
 
 # endif //GENERATENAME_HPP_INCLUDED

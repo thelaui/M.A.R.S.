@@ -100,11 +100,14 @@ void Ship::update() {
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
         Vector2f acceleration;
         if (up_ && getFuel() > 0.f) {
-            fuel_ -= time*2.f;
+            fuel_ -= time*3.f;
             acceleration = faceDirection * 300.f;
             particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
         }
-        else acceleration = Vector2f();
+        else {
+            acceleration = Vector2f();
+            fuel_ += time*0.5f;
+        }
 
         // movement
         // check if docked

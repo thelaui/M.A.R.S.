@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class Player;
 
 namespace controllers {
-    enum ControlType {cDefBot, cMidBot, cAggroBot, cDMBot, cCKBot, cPlayer1, cPlayer2};
+    enum ControlType {cDefBot, cMidBot, cAggroBot, cDMBot, cCKBot, cTutBot, cTutAggroBot, cPlayer1, cPlayer2};
 
     void update();
     void singleKeyEvent(sf::Key::Code keyCode);

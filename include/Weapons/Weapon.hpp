@@ -20,13 +20,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 
-# include <string>
-
 class Ship;
 
 class Weapon {
     public:
-        Weapon(Ship* parent, std::string name):
+        Weapon(Ship* parent, sf::String name):
                parent_(parent),
                timer_(0),
                name_(name) {}
@@ -37,14 +35,14 @@ class Weapon {
         virtual void next()     = 0;
         virtual void previous() = 0;
 
-        std::string const& getName() const {return name_;}
+        sf::String const& getName() const {return name_;}
 
     protected:
         Ship* parent_;
         mutable float timer_;
 
     private:
-        std::string name_;
+        sf::String name_;
 };
 
 # endif // WEAPON_HPP_INCLUDED

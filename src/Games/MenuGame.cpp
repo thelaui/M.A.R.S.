@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/music.hpp"
 # include "Hud/hud.hpp"
 # include "Menu/menus.hpp"
+# include "Menu/ChooseLanguage.hpp"
 
 MenuGame::MenuGame():
     Game(games::gMenu) {
@@ -45,6 +46,11 @@ MenuGame::MenuGame():
     players::createShips();
 
     menus::showMain();
+
+    if (settings::C_showSelectLanguage) {
+        menus::showWindow(ChooseLanguage::get());
+        settings::C_showSelectLanguage = false;
+    }
 
     createSpace();
     zones::createRaster(4,3);

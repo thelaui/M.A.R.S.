@@ -21,7 +21,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Vector2f.hpp"
 
 # include <SFML/Window.hpp>
-# include <string>
 
 class UiElement {
     public:

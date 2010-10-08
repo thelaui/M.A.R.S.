@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class KeyEdit: public UiElement {
     public:
-        KeyEdit (std::string* text, sf::Key::Code* value, Vector2f const& topLeft, int width);
+        KeyEdit (sf::String* text, sf::Key::Code* value, Vector2f const& topLeft, int width);
         ~KeyEdit ();
 
         void buttonPressed(sf::Key::Code keyCode);

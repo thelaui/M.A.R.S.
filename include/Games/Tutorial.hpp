@@ -20,6 +20,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/Game.hpp"
 
+class Home;
+class Player;
+
 class Tutorial: public Game {
     public:
         Tutorial();
@@ -30,6 +33,12 @@ class Tutorial: public Game {
 
     private:
         int state_;
+        int savedState_;
+        Home* evilHome_;
+        Player* evilPlayer1_;
+        Player* evilPlayer2_;
+        float timer_, deadTimer_;
+        bool dead_, life_, fuel_, name_;
 };
 
 # endif // TUTORIAL_HPP_INCLUDED

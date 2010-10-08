@@ -17,61 +17,34 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/generateName.hpp"
 
+# include "Media/file.hpp"
+
 # include <cstdlib>
 # include <algorithm>
 # include <list>
-# include <fstream>
-# include <sstream>
 # include <iostream>
 # include <ctime>
 
 namespace generateName {
 
     namespace {
-
-        std::vector<std::list<std::string> > botNames_;
-        std::list<std::string> gameNames_;
-        std::vector<std::string> shipNames_;
+        std::vector<std::list<sf::String> > botNames_;
+        std::list<sf::String> gameNames_;
+        std::vector<sf::String> shipNames_;
         bool initialized_(false);
 
         void loadBotNames () {
-            std::ifstream inStream("botnames.txt");
-            char line[1024];
-
-            if (inStream.good()) {
-                while (inStream.good()) {
-                    std::list<std::string> newList;
-                    while(inStream.getline(line, 1024)) {
-                        std::string inputLine (line);
-
-                        while (inputLine[0] == ' ')
-                            inputLine.erase(inputLine.begin());
-                        while (inputLine[inputLine.size()-2] == ' ')
-                            inputLine.erase(inputLine.size()-2);
-
-                        // start new list
-                        if (inputLine[0] == '[') break;
-
-                        // ignore comments, empty lines and blank space after names
-                        if(inputLine.size() == 2 || (inputLine.size() > 2 && (inputLine[0] != '/' && inputLine[1] != '/'))) {
-                            while (inputLine[inputLine.size()-2] == ' ')
-                                inputLine.erase(inputLine.size()-2);
-                            if(inputLine.size() >= 1) {
-                                # ifdef __WIN32__
-                                    inputLine.erase(inputLine.size());
-                                # else
-                                    inputLine.erase(inputLine.size()-1);
-                                # endif
-                                newList.push_back(inputLine);
-                            }
-                        }
-                    }
-                    if (newList.size() > 0) botNames_.push_back(newList);
-                }
+            std::vector<sf::String> lines = file::load("botnames.txt");
+            std::list<sf::String> newList;
+            for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
+                if ((*it)[0] == '[' && newList.size() > 0)
+                    botNames_.push_back(newList);
+                else
+                    newList.push_back(*it);
             }
-            else {
-                std::cout << "Could not find botnames.txt! Reverting to some boring default names...\n";
-                std::list<std::string> defaultnames;
+            if (botNames_.size() == 0) {
+                std::cout << "No Botnames found! Reverting to some boring default names...\n";
+                std::list<sf::String> defaultnames;
                 defaultnames.push_back("Ernst [BOT]");
                 defaultnames.push_back("Holger [BOT]");
                 defaultnames.push_back("Jimmy [BOT]");
@@ -103,40 +76,9 @@ namespace generateName {
         }
 
         void loadShipNames () {
-            std::ifstream inStream("shipnames.txt");
-            char line[1024];
-
-            if (inStream.good()) {
-                while (inStream.good()) {
-                    std::vector<std::string> newVector;
-                    while(inStream.getline(line, 1024)) {
-                        std::string inputLine (line);
-
-                        while (inputLine[0] == ' ')
-                            inputLine.erase(inputLine.begin());
-                        while (inputLine[inputLine.size()-2] == ' ')
-                            inputLine.erase(inputLine.size()-2);
-
-                        // ignore comments, empty lines and blank space after names
-                        if(inputLine.size() == 2 || (inputLine.size() > 2 && (inputLine[0] != '/' && inputLine[1] != '/'))) {
-                            while (inputLine[inputLine.size()-2] == ' ')
-                                inputLine.erase(inputLine.size()-2);
-                            if(inputLine.size() >= 1) {
-                                # ifdef __WIN32__
-                                    inputLine.erase(inputLine.size());
-                                # else
-                                    inputLine.erase(inputLine.size()-1);
-                                # endif
-                                newVector.push_back(inputLine);
-                            }
-                        }
-                    }
-                    if (newVector.size() > 0) shipNames_.assign(newVector.begin(), newVector.end());
-                }
-            }
-            else {
-                std::cout << "Could not find shipnames.txt! Using boring numbers instead...\n";
-            }
+            shipNames_ = file::load("shipnames.txt");
+            if (shipNames_.size() == 0)
+                std::cout << "No Botnames found! Using boring numbers instead...\n";
         }
 
 
@@ -161,25 +103,25 @@ namespace generateName {
             gameNames_.push_back("Retro-Shooter");
 
             // shuffle both lists
-            std::vector<std::string> temp;
+            std::vector<sf::String> temp;
             for (unsigned int i=0; i<botNames_.size(); ++i) {
-                for (std::list<std::string>::iterator it = botNames_[i].begin(); it != botNames_[i].end(); ++it) temp.push_back(*it);
+                for (std::list<sf::String>::iterator it = botNames_[i].begin(); it != botNames_[i].end(); ++it) temp.push_back(*it);
                 std::random_shuffle(temp.begin(), temp.end());
                 botNames_[i].clear();
-                for (std::vector<std::string>::iterator it = temp.begin(); it != temp.end(); ++it) botNames_[i].push_back(*it);
+                for (std::vector<sf::String>::iterator it = temp.begin(); it != temp.end(); ++it) botNames_[i].push_back(*it);
                 temp.clear();
             }
 
-            for (std::list<std::string>::iterator it = gameNames_.begin(); it != gameNames_.end(); ++it) temp.push_back(*it);
+            for (std::list<sf::String>::iterator it = gameNames_.begin(); it != gameNames_.end(); ++it) temp.push_back(*it);
             std::random_shuffle(temp.begin(), temp.end());
             gameNames_.clear();
-            for (std::vector<std::string>::iterator it = temp.begin(); it != temp.end(); ++it) gameNames_.push_back(*it);
+            for (std::vector<sf::String>::iterator it = temp.begin(); it != temp.end(); ++it) gameNames_.push_back(*it);
 
             initialized_ = true;
         }
     }
 
-    std::string bot(int randomNumber) {
+    sf::String bot(int randomNumber) {
         if (!initialized_) init_();
         int group = randomNumber%botNames_.size();
         botNames_[group].push_front(botNames_[group].back());
@@ -187,14 +129,14 @@ namespace generateName {
         return *botNames_[group].begin();
     }
 
-    std::string game() {
+    sf::String game() {
         if (!initialized_) init_();
         gameNames_.push_front(gameNames_.back());
         gameNames_.pop_back();
         return *gameNames_.begin();
     }
 
-    std::vector<std::string> const& shipNames() {
+    std::vector<sf::String> const& shipNames() {
         return shipNames_;
     }
 }

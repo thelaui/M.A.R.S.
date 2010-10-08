@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextEdit: public UiElement {
     public:
-        TextEdit (std::string* text, std::string* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
+        TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
         ~TextEdit ();
 
         void buttonPressed(sf::Key::Code keyCode);
@@ -36,7 +36,7 @@ class TextEdit: public UiElement {
         void draw() const;
 
     private:
-        std::string* value_;
+        sf::String* value_;
         Label* label_;
         unsigned maxLength_;
         unsigned cursorPos_;

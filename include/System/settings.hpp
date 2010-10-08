@@ -57,10 +57,11 @@ namespace settings {
     extern bool           C_showInfoDM;
     extern bool           C_showInfoTDM;
     extern bool           C_showInfoCK;
-    extern std::string    C_language;
+    extern bool           C_showSelectLanguage;
+    extern sf::String     C_language;
 
     // player settings ----- adjustable via options menu
-    extern std::string    C_playerIName;
+    extern sf::String     C_playerIName;
     extern Color3f        C_playerIColor;
     extern sf::Key::Code  C_playerIup;
     extern sf::Key::Code  C_playerIleft;
@@ -69,7 +70,7 @@ namespace settings {
     extern bool           C_playerIteamL;
     extern bool           C_playerIteamR;
     extern int            C_playerIShip;
-    extern std::string    C_playerIIName;
+    extern sf::String    C_playerIIName;
     extern Color3f        C_playerIIColor;
     extern sf::Key::Code  C_playerIIup;
     extern sf::Key::Code  C_playerIIleft;
@@ -84,8 +85,8 @@ namespace settings {
     extern bool           C_drawAIPath;
 
     // network settings ----- adjustable via options menu
-    extern std::string    C_ip;
-    extern std::string    C_port;
+    extern sf::String    C_ip;
+    extern sf::String    C_port;
 };
 
 # endif //SETTINGS_HPP_INCLUDED

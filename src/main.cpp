@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "System/timer.hpp"
 
+# include "Media/file.hpp"
+
 void mainLoop() {
     while (window::isOpen()) {
         window::clear();

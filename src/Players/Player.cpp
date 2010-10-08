@@ -19,7 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/controllers.hpp"
 
-Player::Player(std::string const& name, Color3f const& color, int graphic, controllers::ControlType controlType):
+Player::Player(sf::String const& name, Color3f const& color, int graphic, controllers::ControlType controlType):
     ship_(NULL),
     name_(name),
     nameRef_(NULL),
@@ -38,7 +38,7 @@ Player::Player(std::string const& name, Color3f const& color, int graphic, contr
         controllers::addController(controlType, this);
 }
 
-Player::Player(std::string* name, Color3f* color, int* graphic, controllers::ControlType controlType):
+Player::Player(sf::String* name, Color3f* color, int* graphic, controllers::ControlType controlType):
     ship_(NULL),
     name_(*name),
     nameRef_(name),

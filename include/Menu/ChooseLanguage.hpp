@@ -35,7 +35,7 @@ class ChooseLanguage: public UiWindow {
         static UiWindow* instance_;
 
         static bool kCancel_;
-        static std::map<std::string, bool*> languageKeyMap_;
+        static std::map<sf::String, bool*> languageKeyMap_;
 };
 
 # endif // CHOOSELANGUAGE_HPP_INCLUDED

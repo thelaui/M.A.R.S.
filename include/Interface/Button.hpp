@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Button: public UiElement {
     public:
-        Button (std::string* text, bool* key, Vector2f const& topLeft, int width, int height);
+        Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height);
         ~Button ();
 
         void mouseLeft(bool down);

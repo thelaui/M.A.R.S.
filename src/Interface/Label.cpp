@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Label::Label (std::string* text, int textAlign, Vector2f const& topLeft, float fontSize, Color3f color):
+Label::Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize, Color3f color):
     UiElement(topLeft, 10, 10),
     text_(text),
     textAlign_(textAlign),

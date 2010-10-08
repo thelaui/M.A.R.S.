@@ -34,7 +34,7 @@ UiWindow* License::get() {
         instance_ = new License(400, 300);
         instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(320,270), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::License), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
-        instance_->addWidget(new Label(new std::string("GNU v3"), TEXT_ALIGN_RIGHT, Vector2f(390,18), 12.f));
+        instance_->addWidget(new Label(new sf::String("GNU v3"), TEXT_ALIGN_RIGHT, Vector2f(390,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(390, 35)));
         instance_->addWidget(new TextBox(locales::getLocale(locales::LicenseText), Vector2f(10, 50), 380, 100));
     }

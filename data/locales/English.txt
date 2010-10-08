@@ -150,8 +150,63 @@
 
 107 Welcome, Space Rookie!
 108 We are glad to recruit a rising hero like you to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
+
 109 Basic Movement...
-110 To control your ship, use the keys
-111 Your first Task!
-112 Try to follow the path marked up by the red zones!\n\n We will contact you again, after you have mastered this. Now go for it!
-  
+110 Controlling your ship is the most important task to master.\nAll movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys
+
+111 Warming Up!
+112 Reach the pink zone!\nTry not to crash your brand new ship.
+
+113 Well Done!
+114 Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet.
+
+115 Good Work!
+116 Proper landing is not a piece of cake, is it?\nYou should learn it by heart.
+
+117 Something More Difficult...
+118 Try to follow the path marked up by the pink zones!\n\nWe will contact you again, after you have mastered this. Now go for it!
+
+119 Awesome!
+120 You are the best rookie I have ever seen.\nNow prepare yourself for some explosive stuff.
+
+121 Shooting...
+122 To defeat your enemies, you have to know how to shoot them up!\nFor that purpose press
+123 Have some fun shooting around and then land your ship to continue the tutorial.
+
+124 Good Landing!
+125 You turn out to be a great pilot.\n\nNow how about some more weapons?
+
+126 The Weapons...
+127 I know you've been waiting for this. When docked you can switch through some incredibly evil weapons.\nPress
+128 to open your arsenal.\nThen use
+129 to choose a weapon! Take-off, when you're ready!
+
+130 Fight!
+131 Now let's see how you make it against a rookie from another planet.\nSeems like he is trying to improve his flying abilities.\nBeat him!
+
+132 Impressive!
+133 You did it! As you may have noticed, you gain some reputation points for each killed enemy.\nThe little green number popping up over your ship represents the amount. It will increase if you kill a lot of enemies in row.
+
+134 Beware!
+135 There is no time for rest.\nOur enemies have sent one of their real warriors for vengeance!\nThere is nothing I can do for you...
+
+136 Unbelievable!
+137 You managed all my tasks successfully. Now what to do?\nLet's have a look at the options menu. There you can adjust a lot of... well... options.\nFor example you may choose your ship style and color or change your name...
+
+138 Who's best?
+139 You can display a list of frags, points and so on via <Tab>.\nFurthermore the numbers next to your name illustrate your frag counter and your distance to the best one. 
+
+140 Congratulations!
+141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practicing, just wait for the enemy to respawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
+
+142 You Failed!
+143 Awesome, you destroyed your brand new ship! All right, we will get you a new one. Just wait some seconds...
+
+144 Did You Notice?
+145 Your life is draining! Keep an eye on the green life bar. You better land if it's too empty.
+
+146 Did You Notice?
+147 Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty.
+
+148 You Nearly Got Him!
+149 Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is.

@@ -24,14 +24,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Label: public UiElement {
     public:
-        Label (std::string* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
+        Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
 
         void mouseLeft(bool down) {}
 
         void draw() const;
 
     private:
-        std::string* text_;
+        sf::String* text_;
         int textAlign_;
         float fontSize_;
         Color3f color_;

@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Controllers/AggroBot.hpp"
 # include "Controllers/CKBot.hpp"
 # include "Controllers/DMBot.hpp"
+# include "Controllers/TutBot.hpp"
+# include "Controllers/TutAggroBot.hpp"
 # include "Controllers/KeyController.hpp"
 # include "System/settings.hpp"
 # include "System/window.hpp"
@@ -54,13 +56,15 @@ namespace controllers {
 
     void addController(ControlType type, Player* slave) {
         switch (type) {
-            case cDefBot:     botControllers_.push_back(new DefBot(slave)); break;
-            case cMidBot:     botControllers_.push_back(new MidBot(slave)); break;
-            case cAggroBot:     botControllers_.push_back(new AggroBot(slave)); break;
-            case cCKBot:     botControllers_.push_back(new CKBot(slave)); break;
-            case cDMBot:     botControllers_.push_back(new DMBot(slave)); break;
-            case cPlayer1: keyControllers1_ = new KeyController(type, slave);  break;
-            case cPlayer2: keyControllers2_ = new KeyController(type, slave);  break;
+            case cDefBot:     botControllers_.push_back(new DefBot(slave));       break;
+            case cMidBot:     botControllers_.push_back(new MidBot(slave));       break;
+            case cAggroBot:   botControllers_.push_back(new AggroBot(slave));     break;
+            case cCKBot:      botControllers_.push_back(new CKBot(slave));        break;
+            case cDMBot:      botControllers_.push_back(new DMBot(slave));        break;
+            case cTutBot:     botControllers_.push_back(new TutBot(slave));       break;
+            case cTutAggroBot:botControllers_.push_back(new TutAggroBot(slave));  break;
+            case cPlayer1:    keyControllers1_ = new KeyController(type, slave);  break;
+            case cPlayer2:    keyControllers2_ = new KeyController(type, slave);  break;
         }
     }
 

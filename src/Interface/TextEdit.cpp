@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <iostream>
 
-TextEdit::TextEdit (std::string* text, std::string* value, Vector2f const& topLeft, int width, int type, int maxLength):
+TextEdit::TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int type, int maxLength):
     UiElement(topLeft, width, 20),
     value_(value),
     maxLength_(maxLength),
@@ -48,20 +48,20 @@ void TextEdit::buttonPressed(sf::Key::Code keyCode) {
     if (hovered_) {
         // backspace
         if (keyCode == sf::Key::Back && cursorPos_ > 0) {
-            value_->erase(cursorPos_-1, 1);
+            value_->Erase(cursorPos_-1, 1);
             --cursorPos_;
             cursorTimer_ = 0;
         }
         // delete
-        else if (keyCode == sf::Key::Delete && cursorPos_ < value_->size()) {
-            value_->erase(cursorPos_, 1);
+        else if (keyCode == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
+            value_->Erase(cursorPos_, 1);
         }
         // move cursor
         else if (keyCode == sf::Key::Left && cursorPos_ > 0) {
             --cursorPos_;
             cursorTimer_ = 0;
         }
-        else if (keyCode == sf::Key::Right && cursorPos_ < value_->size()) {
+        else if (keyCode == sf::Key::Right && cursorPos_ < value_->GetSize()) {
             ++cursorPos_;
             cursorTimer_ = 0;
         }
@@ -71,22 +71,22 @@ void TextEdit::buttonPressed(sf::Key::Code keyCode) {
 void TextEdit::textEntered(int keyCode) {
     if (hovered_) {
         if (type_ == TEXT_EDIT) {
-            if (keyCode > 32 && keyCode < 126 && value_->size() < maxLength_) {
-                value_->insert(cursorPos_, 1, static_cast<char>(keyCode));
+            if (keyCode > 32 && keyCode < 126 && value_->GetSize() < maxLength_) {
+                value_->Insert(cursorPos_, static_cast<char>(keyCode));
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == IP_EDIT) {
-             if (((keyCode > 47 && keyCode < 58) || keyCode == 46) && value_->size() < maxLength_) {
-                value_->insert(cursorPos_, 1, static_cast<char>(keyCode));
+             if (((keyCode > 47 && keyCode < 58) || keyCode == 46) && value_->GetSize() < maxLength_) {
+                value_->Insert(cursorPos_, static_cast<char>(keyCode));
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == PORT_EDIT) {
-             if ((keyCode > 47 && keyCode < 58) && value_->size() < maxLength_) {
-                value_->insert(cursorPos_, 1, static_cast<char>(keyCode));
+             if ((keyCode > 47 && keyCode < 58) && value_->GetSize() < maxLength_) {
+                value_->Insert(cursorPos_, static_cast<char>(keyCode));
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }

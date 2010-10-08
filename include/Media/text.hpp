@@ -27,14 +27,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Color3f.hpp"
 
 namespace text {
-    void drawSpaceText      (std::string const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
-    void drawMobileSpaceText(std::string const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawSpaceText      (sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawMobileSpaceText(sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
 
-    void drawScreenText     (std::string const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawScreenText     (sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
 
     void drawFooText();
 
-    float getCharacterPos   (std::string const&, int pos, font::FontType, float size, int align);
+    float getCharacterPos   (sf::String const&, int pos, font::FontType, float size, int align);
 }
 
 # endif // TEXT_HPP_INCLUDED

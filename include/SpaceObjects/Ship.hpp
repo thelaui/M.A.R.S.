@@ -57,6 +57,9 @@ class Ship: public MobileSpaceObject {
         friend class CannonControl;
         friend class ShipName;
         friend class ShipHighlight;
+        friend class Tutorial;
+        friend class TutBot;
+        friend class TutAggroBot;
 
     private:
 

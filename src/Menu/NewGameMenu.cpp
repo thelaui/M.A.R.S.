@@ -62,10 +62,10 @@ UiWindow* NewGameMenu::get() {
         instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
 
         TabList* tabList        = new TabList(Vector2f(10,55), 460, 220);
-        Tab* tabSpaceBall       = new Tab(new std::string("SpaceBall"), 70,  &tSB_);
-        Tab* tabDeathMatch      = new Tab(new std::string("DeathMatch"), 80, &tDM_);
-        Tab* tabTeamDeathMatch  = new Tab(new std::string("Team-DeathMatch"), 110, &tTDM_);
-        Tab* tabCannonKeep      = new Tab(new std::string("CannonKeep"), 80, &tCK_);
+        Tab* tabSpaceBall       = new Tab(new sf::String("SpaceBall"), 70,  &tSB_);
+        Tab* tabDeathMatch      = new Tab(new sf::String("DeathMatch"), 80, &tDM_);
+        Tab* tabTeamDeathMatch  = new Tab(new sf::String("Team-DeathMatch"), 110, &tTDM_);
+        Tab* tabCannonKeep      = new Tab(new sf::String("CannonKeep"), 80, &tCK_);
 
         tabSpaceBall->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
         tabSpaceBall->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(240, 40)));

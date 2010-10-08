@@ -36,9 +36,11 @@ class RasterZone;
 namespace zones {
     Zone* addTeamZone(Vector2f const& location);
     Zone* addHomeZone(Vector2f const& location);
+    void  addTutorialZone(Vector2f const& location, float radius = 80.f);
     void detectTacticalZones();
     void createRaster(int dimX, int dimY);
     void update();
+    bool updateTutZones();
     void draw();
 
     TacticalZone* toProtect(Team* checker);

@@ -29,7 +29,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <cmath>
 
 TacticalZone::TacticalZone(Vector2f const& location, float radius) :
-    Zone(),
     radius_(radius),
     location_(location),
     covered_(false),

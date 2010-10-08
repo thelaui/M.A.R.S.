@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextBox: public UiElement {
     public:
-        TextBox (std::string* text, Vector2f const& topLeft, int width, int height);
+        TextBox (sf::String* text, Vector2f const& topLeft, int width, int height);
         ~TextBox();
 
         void mouseMoved(Vector2f const& position) {}
@@ -34,7 +34,7 @@ class TextBox: public UiElement {
         void draw () const;
 
     private:
-        std::string text_;
+        sf::String text_;
         Label* label_;
 };
 

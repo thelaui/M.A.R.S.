@@ -34,7 +34,7 @@ UiWindow* InfoTDM::get() {
     if (instance_ == NULL) {
         instance_ = new InfoTDM(320, 430);
         instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(240,400), 70, 20));
-        instance_->addWidget(new Label(new std::string("Team-DeathMatch"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(new sf::String("Team-DeathMatch"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Label(locales::getLocale(locales::Info), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
         instance_->addWidget(new Label(locales::getLocale(locales::ShortDescriptionTDM), TEXT_ALIGN_LEFT, Vector2f(10,50), 12.f, Color3f(1.f, 0.7f, 0.9f)));

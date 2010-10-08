@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Tab::Tab (std::string* name, int width, bool* activated):
+Tab::Tab (sf::String* name, int width, bool* activated):
     UiElement(Vector2f(), width, 20),
     name_(name),
     activated_(activated),

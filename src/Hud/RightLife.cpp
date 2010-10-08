@@ -46,10 +46,10 @@ void RightLife::draw() const {
         int first(players::getFirstPoints());
         if (player->team()->points() == first) {
             int second(players::getSecondPoints());
-            sstr << player->name() << " (" << player->team()->points() << "/ +" << first-second << ")";
+            sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ +" << first-second << ")";
         }
         else
-            sstr << player->name() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
+            sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
         text::drawScreenText(sstr.str(), Vector2f(port.x_-10.f,port.y_-75.f), font::HandelGotDLig, 18.f, TEXT_ALIGN_RIGHT, color);
 

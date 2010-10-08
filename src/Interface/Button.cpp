@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Button::Button (std::string* text, bool* key, Vector2f const& topLeft, int width, int height):
+Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height):
     UiElement(topLeft, width, height),
     key_(key) {
 

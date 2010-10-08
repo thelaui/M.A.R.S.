@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace text {
 
     namespace {
-        void drawText(std::string const& text, Vector2f const& location, font::FontType type,
+        void drawText(sf::String const& text, Vector2f const& location, font::FontType type,
                       float size, int align, Color3f const& color) {
 
             sf::Text drawString(text, font::getFont(font::HandelGotDLig), size);
@@ -57,20 +57,20 @@ namespace text {
 
     }
 
-    void drawSpaceText(std::string const& text, Vector2f const& location, font::FontType type,
+    void drawSpaceText(sf::String const& text, Vector2f const& location, font::FontType type,
                        float size, int align, Color3f const& color) {
 
         drawScreenText(text, window::coordToPixel(location), type, size, align, color);
     }
 
-    void drawMobileSpaceText(std::string const& text, Vector2f const& location, font::FontType type,
+    void drawMobileSpaceText(sf::String const& text, Vector2f const& location, font::FontType type,
                              float size, int align, Color3f const& color) {
 
         drawText(text, window::coordToPixel(location), type, size, align, color);
 
     }
 
-    void drawScreenText(std::string const& text, Vector2f const& location, font::FontType type,
+    void drawScreenText(sf::String const& text, Vector2f const& location, font::FontType type,
                        float size, int align, Color3f const& color) {
 
         drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), type, size, align, color);
@@ -80,7 +80,7 @@ namespace text {
         drawScreenText(".", Vector2f(0.f, 0.f), font::HandelGotDLig, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
-    float getCharacterPos(std::string const& text, int pos, font::FontType type, float size, int align) {
+    float getCharacterPos(sf::String const& text, int pos, font::FontType type, float size, int align) {
         sf::Text drawString(text, font::getFont(type), size);
         float result = drawString.GetCharacterPos(pos).x;
 

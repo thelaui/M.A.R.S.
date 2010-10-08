@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/HomeZone.hpp"
 # include "Zones/TeamZone.hpp"
 # include "Zones/TacticalZone.hpp"
+# include "Zones/TutorialZone.hpp"
 # include "Zones/RasterZone.hpp"
 # include "Players/Team.hpp"
 # include "SpaceObjects/spaceObjects.hpp"
@@ -31,6 +32,7 @@ namespace zones {
 
     namespace {
         Zone *homeL_(NULL), *homeR_(NULL), *teamL_(NULL), *teamR_(NULL);
+        std::vector<TutorialZone*> tutorialZones_  = std::vector<TutorialZone*>();
         std::vector<TacticalZone*> tacticalZonesL_ = std::vector<TacticalZone*>();
         std::vector<TacticalZone*> tacticalZonesR_ = std::vector<TacticalZone*>();
         std::vector<RasterZone*> rasterZones_ = std::vector<RasterZone*>();
@@ -52,13 +54,11 @@ namespace zones {
             return homeR_ = new HomeZone(location);
     }
 
-    void detectTacticalZones() {
-        // adding tactical zones around home planets
-        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 400.f));
-        totalTacticalAreaL_ += 160000;
-        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 400.f));
-        totalTacticalAreaR_ += 160000;
+    void addTutorialZone(Vector2f const& location, float radius) {
+        tutorialZones_.push_back(new TutorialZone(location, radius));
+    }
 
+    void detectTacticalZones() {
         // devide space objects into left and right side
         std::vector<SpaceObject*> objectsLeft = std::vector<SpaceObject*>();
         std::vector<SpaceObject*> objectsRight = std::vector<SpaceObject*>();
@@ -199,10 +199,10 @@ namespace zones {
             float distanceH((objectToBorderH.length() - highestR->radius())/2.f);
             Vector2f centerH(highestR->location() +  directionH * (highestR->radius() + distanceH));
             if (centerH.x_ > 641)
-                tacticalZonesL_.push_back(new TacticalZone(centerH, distanceH));
+                tacticalZonesR_.push_back(new TacticalZone(centerH, distanceH));
             else {
                 float newDistanceH((800.f - highestR->location().y_ - highestR->radius())/2.f);
-                tacticalZonesL_.push_back(new TacticalZone(highestR->location() + Vector2f(0.f, 1.f) * (highestR->radius() + newDistanceH), newDistanceH));
+                tacticalZonesR_.push_back(new TacticalZone(highestR->location() + Vector2f(0.f, 1.f) * (highestR->radius() + newDistanceH), newDistanceH));
             }
             totalTacticalAreaR_ += distanceH * distanceH;
 
@@ -214,13 +214,19 @@ namespace zones {
             float distanceL((objectToBorderL.length() - lowestR->radius())/2.f);
             Vector2f centerL(lowestR->location() +  directionL * (lowestR->radius() + distanceL));
             if (centerL.x_ > 641)
-                tacticalZonesL_.push_back(new TacticalZone(centerL, distanceL));
+                tacticalZonesR_.push_back(new TacticalZone(centerL, distanceL));
             else {
                 float newDistanceH((lowestR->location().y_ - lowestR->radius())/2.f);
-                tacticalZonesL_.push_back(new TacticalZone(lowestR->location() + Vector2f(0.f, -1.f) * (lowestR->radius() + newDistanceH), newDistanceH));
+                tacticalZonesR_.push_back(new TacticalZone(lowestR->location() + Vector2f(0.f, -1.f) * (lowestR->radius() + newDistanceH), newDistanceH));
             }
             totalTacticalAreaR_ += distanceL * distanceL;
         }
+
+        // adding tactical zones around home planets
+        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 400.f));
+        totalTacticalAreaL_ += 160000;
+        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 400.f));
+        totalTacticalAreaR_ += 160000;
     }
 
     void createRaster(int dimX, int dimY) {
@@ -237,15 +243,21 @@ namespace zones {
     }
 
     void update() {
-        if (!tacticalZonesL_.empty())
-            for (unsigned int i = 0; i < tacticalZonesL_.size(); ++i)
-                tacticalZonesL_[i]->update();
-        if (!tacticalZonesR_.empty())
-            for (unsigned int i = 0; i < tacticalZonesR_.size(); ++i)
-                tacticalZonesR_[i]->update();
-        if (!rasterZones_.empty())
-            for (unsigned int i = 0; i < rasterZones_.size(); ++i)
-                rasterZones_[i]->update();
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesL_.begin(); it != tacticalZonesL_.end(); ++it)
+            (*it)->update();
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesR_.begin(); it != tacticalZonesR_.end(); ++it)
+            (*it)->update();
+        for (std::vector<RasterZone*>::iterator it = rasterZones_.begin(); it != rasterZones_.end(); ++it)
+            (*it)->update();
+    }
+
+    bool updateTutZones() {
+        if (tutorialZones_.back()->isInside(*players::getPlayerI()->ship())) {
+            delete tutorialZones_.back();
+            tutorialZones_.pop_back();
+        }
+
+        return tutorialZones_.empty();
     }
 
     void draw() {
@@ -255,15 +267,15 @@ namespace zones {
             if (homeL_) homeL_->draw();
             if (homeR_) homeR_->draw();
         }
-        if (!tacticalZonesL_.empty())
-            for (unsigned int i=0; i<tacticalZonesL_.size(); ++i)
-                tacticalZonesL_[i]->draw();
-        if (!tacticalZonesR_.empty())
-            for (unsigned int i=0; i<tacticalZonesR_.size(); ++i)
-                tacticalZonesR_[i]->draw();
-        if (!rasterZones_.empty())
-            for (unsigned int i=0; i<rasterZones_.size(); ++i)
-                rasterZones_[i]->draw();
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesL_.begin(); it != tacticalZonesL_.end(); ++it)
+            (*it)->draw();
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesR_.begin(); it != tacticalZonesR_.end(); ++it)
+            (*it)->draw();
+        if (games::type() != games::gTutorial)
+            for (std::vector<RasterZone*>::iterator it = rasterZones_.begin(); it != rasterZones_.end(); ++it)
+                (*it)->draw();
+        for (std::vector<TutorialZone*>::iterator it = tutorialZones_.begin(); it != tutorialZones_.end(); ++it)
+            (*it)->draw();
     }
 
     TacticalZone* toProtect(Team* checker) {
@@ -322,12 +334,18 @@ namespace zones {
             delete teamR_;
             teamR_ = NULL;
         }
-        if (!tacticalZonesL_.empty())
-            tacticalZonesL_.clear();
-        if (!tacticalZonesR_.empty())
-            tacticalZonesR_.clear();
-        if (!rasterZones_.empty())
-            rasterZones_.clear();
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesL_.begin(); it != tacticalZonesL_.end(); ++it)
+            delete *it;
+        for (std::vector<TacticalZone*>::iterator it = tacticalZonesR_.begin(); it != tacticalZonesR_.end(); ++it)
+            delete *it;
+        for (std::vector<RasterZone*>::iterator it = rasterZones_.begin(); it != rasterZones_.end(); ++it)
+            delete *it;
+        for (std::vector<TutorialZone*>::iterator it = tutorialZones_.begin(); it != tutorialZones_.end(); ++it)
+            delete *it;
+        tacticalZonesL_.clear();
+        tacticalZonesR_.clear();
+        rasterZones_.clear();
+        tutorialZones_.clear();
     }
 
 }

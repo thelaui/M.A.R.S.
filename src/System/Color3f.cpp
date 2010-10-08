@@ -34,6 +34,42 @@ Color3f::Color3f (float red, float green, float blue):
     g_(green),
     b_(blue) {}
 
+float Color3f::r() const {
+    return r_;
+}
+
+float Color3f::g() const {
+    return g_;
+}
+
+ float Color3f::b() const {
+    return b_;
+}
+
+float Color3f::h() const {
+    if (s() > 0) {
+        float maxi = std::max(std::max(r_, g_), b_);
+        float mini = std::min(std::min(r_, g_), b_);
+
+        if (maxi == r_)
+            return fmod(60.f*((g_-b_)/(maxi-mini))+360.f, 360.f);
+        else if (maxi == g_)
+            return fmod(60.f*(2 + (b_-r_)/(maxi-mini))+360.f, 360.f);
+        else
+            return fmod(60.f*(4 + (r_-g_)/(maxi-mini))+360.f, 360.f);
+    }
+    else return 0;
+}
+
+float Color3f::s() const {
+    if (v()==0) return 0;
+    else return ((v()-std::min(std::min(r_, g_), b_)) / v());
+}
+
+float Color3f::v() const {
+    return std::max(std::max(r_, g_), b_);
+}
+
 /// setters
 
 void Color3f::r(float red) {

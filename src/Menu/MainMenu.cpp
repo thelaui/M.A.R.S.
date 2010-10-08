@@ -87,4 +87,3 @@ void MainMenu::checkWidgets() {
     }
 }
 
-

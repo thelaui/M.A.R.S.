@@ -87,8 +87,7 @@ void GameStats::draw() const {
         if (settings::C_showFPS) {
             std::stringstream sstr;
             sstr << "FPS: " << static_cast<int>(timer::fps() + 0.5f);
-            std::string textString = sstr.str();
-            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(sstr.str(), Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
         if (settings::C_showParticleCount) {
@@ -100,15 +99,13 @@ void GameStats::draw() const {
             }
             std::stringstream sstr;
             sstr << "Particles: " << particleCount_;
-            std::string textString = sstr.str();
-            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(sstr.str(), Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
         if (settings::C_showLatency) {
             std::stringstream sstr;
             sstr << "Latency: " << particles::count();
-            std::string textString = sstr.str();
-            text::drawScreenText(textString, Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
+            text::drawScreenText(sstr.str(), Vector2f(10.f,top), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.5f, 0.5f, 0.5f));
             top += 20.f;
         }
     }

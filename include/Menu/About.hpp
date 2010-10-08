@@ -33,7 +33,7 @@ class About: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_, kLisence_;
-        static std::string marsName_;
+        static sf::String marsName_;
 };
 
 # endif // ABOUT_HPP_INCLUDED

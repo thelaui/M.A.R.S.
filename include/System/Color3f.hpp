@@ -28,12 +28,12 @@ struct Color3f {
         Color3f (Color3f const& color);
         Color3f (float red, float green, float blue);
 
-        inline float r() const;
-        inline float g() const;
-        inline float b() const;
-        inline float h() const;
-        inline float s() const;
-        inline float v() const;
+        float r() const;
+        float g() const;
+        float b() const;
+        float h() const;
+        float s() const;
+        float v() const;
 
         void r(float red);
         void g(float green);
@@ -53,43 +53,5 @@ struct Color3f {
         void setHSV (float hue, float saturation, float value);
         float r_, g_ , b_;
 };
-
-/// inlined getters
-
-float Color3f::r() const {
-    return r_;
-}
-
-float Color3f::g() const {
-    return g_;
-}
-
- float Color3f::b() const {
-    return b_;
-}
-
-float Color3f::h() const {
-    if (s() > 0) {
-        float maxi = std::max(std::max(r_, g_), b_);
-        float mini = std::min(std::min(r_, g_), b_);
-
-        if (maxi == r_)
-            return fmod(60*((g_-b_)/(maxi-mini)), 360);
-        else if (maxi == g_)
-            return fmod(60*(2 + (b_-r_)/(maxi-mini)), 360);
-        else
-            return fmod(60*(4 + (r_-g_)/(maxi-mini)), 360);
-    }
-    else return 0;
-}
-
-float Color3f::s() const {
-    if (v()==0) return 0;
-    else return ((v()-std::min(std::min(r_, g_), b_)) / v());
-}
-
-float Color3f::v() const {
-    return std::max(std::max(r_, g_), b_);
-}
 
 # endif //COLOR4F_HPP_INCLUDED

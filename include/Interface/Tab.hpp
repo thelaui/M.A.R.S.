@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Tab: public UiElement {
     public:
-        Tab (std::string* text, int width, bool* activated = NULL);
+        Tab (sf::String* text, int width, bool* activated = NULL);
         ~Tab();
 
         void mouseMoved(Vector2f const& position);
@@ -45,7 +45,7 @@ class Tab: public UiElement {
 
     private:
         std::vector<UiElement*> widgets_;
-        std::string* name_;
+        sf::String* name_;
         Label* label_;
         bool* activated_;
         bool active_;

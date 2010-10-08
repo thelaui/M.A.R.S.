@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Slider: public UiElement {
     public:
-        Slider (std::string* text, int* value, int min, int max, Vector2f const& topLeft, int width, int labelWidth=185, bool showValue=false, std::vector<std::string> const& sliderNames = std::vector<std::string>() );
+        Slider (sf::String* text, int* value, int min, int max, Vector2f const& topLeft, int width, int labelWidth=185, bool showValue=false, std::vector<sf::String> const& sliderNames = std::vector<sf::String>() );
         ~Slider ();
 
         void mouseLeft(bool down);
@@ -39,7 +39,7 @@ class Slider: public UiElement {
         Label* label_;
         int labelWidth_;
         bool showValue_;
-        std::vector<std::string> sliderNames_;
+        std::vector<sf::String> sliderNames_;
 };
 
 # endif

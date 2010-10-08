@@ -18,7 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef LOCALES_HPP_INCLUDED
 # define LOCALES_HPP_INCLUDED
 
-# include <string>
+# include <SFML/System.hpp>
 # include <vector>
 
 namespace locales {
@@ -35,11 +35,14 @@ namespace locales {
                      LeftSuper, Menu, Multiply, PageDown, PageUp, Pause, Period, Quote, RightAlt, RightBracket,
                      RightControl, Return,Right, RightShift, RightSuper, SemiColon, Slash, Space, Subtract, Tilde, Tab,
                      Up, Display, Audio, WindowSettings, StartTutorial,Next, Tut01, TutText01, Tut02, TutText02, Tut03,
-                     TutText03, Tut04, TutText04, COUNT};
+                     TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
+                     TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
+                     TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
+                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, COUNT};
 
-    void                           load();
-    std::vector<std::string> const getLanguages();
-    std::string*                   getLocale(LocaleType);
+    void                          load();
+    std::vector<sf::String> const getLanguages();
+    sf::String*                   getLocale(LocaleType);
 }
 
 # endif // LOCALES_HPP_INCLUDED

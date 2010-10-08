@@ -26,7 +26,7 @@ class RadioGroup;
 
 class RadioButton: public UiElement {
     public:
-        RadioButton(std::string* text, bool* value, Vector2f const& topLeft, int width);
+        RadioButton(sf::String* text, bool* value, Vector2f const& topLeft, int width);
         ~RadioButton();
 
         void mouseLeft(bool down);

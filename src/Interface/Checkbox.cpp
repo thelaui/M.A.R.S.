@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Checkbox::Checkbox (std::string* text, bool* value, Vector2f const& topLeft, int width):
+Checkbox::Checkbox (sf::String* text, bool* value, Vector2f const& topLeft, int width):
     UiElement(topLeft, width, 20),
     value_(value) {
 

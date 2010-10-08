@@ -28,24 +28,24 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 UiWindow* ChooseLanguage::instance_(NULL);
 bool ChooseLanguage::kCancel_(false);
-std::map<std::string, bool*> ChooseLanguage::languageKeyMap_;
+std::map<sf::String, bool*> ChooseLanguage::languageKeyMap_;
 
 UiWindow* ChooseLanguage::get() {
     if (instance_ == NULL) {
-        std::vector<std::string> languages = locales::getLanguages();
+        std::vector<sf::String> languages = locales::getLanguages();
 
         instance_ = new ChooseLanguage(220, 100 + 30*languages.size());
 
         int top(50);
-        for (std::vector<std::string>::iterator it = languages.begin(); it != languages.end(); ++it) {
+        for (std::vector<sf::String>::iterator it = languages.begin(); it != languages.end(); ++it) {
             bool* key = new bool(false);
             languageKeyMap_.insert(std::make_pair(*it, key));
-            instance_->addWidget(new Button(new std::string(*it), key, Vector2f(10, top), 200, 20));
+            instance_->addWidget(new Button(new sf::String(*it), key, Vector2f(10, top), 200, 20));
             top += 30;
         }
 
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(140,top+20), 70, 20));
-        instance_->addWidget(new Label(new std::string("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(new sf::String("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(210, 35)));
     }
     return instance_;
@@ -57,7 +57,7 @@ void ChooseLanguage::checkWidgets() {
         settings::save();
         menus::hideWindow();
     }
-    for (std::map<std::string, bool*>::iterator it = languageKeyMap_.begin(); it != languageKeyMap_.end(); ++it)
+    for (std::map<sf::String, bool*>::iterator it = languageKeyMap_.begin(); it != languageKeyMap_.end(); ++it)
         if (*(it->second)) {
             *(it->second) = false;
             settings::C_language = it->first;

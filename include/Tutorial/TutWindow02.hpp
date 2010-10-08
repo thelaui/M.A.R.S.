@@ -33,7 +33,7 @@ class TutWindow02: public UiWindow {
         static UiWindow* instance_;
 
         static bool kOk_;
-        static std::string text_;
+        static sf::String text_;
 };
 
 # endif // TUTWINDOW02_HPP_INCLUDED

@@ -39,10 +39,10 @@ SpaceBall::SpaceBall():
     if      (settings::C_playerIIteamL) players::addPlayer  (myTeamL, controllers::cPlayer2);
     else if (settings::C_playerIIteamR) players::addPlayer  (myTeamR, controllers::cPlayer2);
 
-    for (int i=0; i<settings::C_botsLeft/2;  ++i)                       players::addPlayer(myTeamL, controllers::cAggroBot);
-    for (int i=settings::C_botsLeft/2; i<settings::C_botsLeft;  ++i)    players::addPlayer(myTeamL, controllers::cDefBot);
-    for (int i=0; i<settings::C_botsRight/2;  ++i)                      players::addPlayer(myTeamR, controllers::cAggroBot);
-    for (int i=settings::C_botsRight/2; i<settings::C_botsRight;  ++i)  players::addPlayer(myTeamR, controllers::cDefBot);
+    for (int i=0; i<settings::C_botsLeft/2;  ++i)                       players::addPlayer(myTeamL, controllers::cDefBot);
+    for (int i=settings::C_botsLeft/2; i<settings::C_botsLeft;  ++i)    players::addPlayer(myTeamL, controllers::cAggroBot);
+    for (int i=0; i<settings::C_botsRight/2;  ++i)                      players::addPlayer(myTeamR, controllers::cDefBot);
+    for (int i=settings::C_botsRight/2; i<settings::C_botsRight;  ++i)  players::addPlayer(myTeamR, controllers::cAggroBot);
 
     Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
     Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());

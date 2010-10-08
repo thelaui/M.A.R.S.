@@ -100,7 +100,7 @@ UiWindow* OptionsMenu::get() {
         tabGraphics->addWidget(new Label(locales::getLocale(locales::GameInformation), TEXT_ALIGN_LEFT, Vector2f(160,30), 12.f));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), &settings::C_showFPS, Vector2f(160,50), 150));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), &settings::C_showParticleCount, Vector2f(160,70), 150));
-        tabGraphics->addWidget(new Button(new std::string("Select Language"), &kChooseLanguage_, Vector2f(10,190), 120, 20));
+        tabGraphics->addWidget(new Button(new sf::String("Select Language"), &kChooseLanguage_, Vector2f(10,190), 120, 20));
 
         tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), &musicVolume_, 0, 100, Vector2f(10,30), 440, 185, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), &soundVolume_, 0, 100, Vector2f(10,50), 440, 185, true));
