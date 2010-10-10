@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 namespace timer {
-    void update();
+    void update(float frameTime);
 
     float frameTime();
     float totalTime();

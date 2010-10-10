@@ -29,7 +29,7 @@ namespace file {
         // Open the test file (contains UTF-8 encoded text)
         std::ifstream fileStream(fileName.c_str());
         if (!fileStream.is_open()) {
-            std::cout << "Could not open " << fileName << std::endl;
+            std::cout << "Could not open " << fileName << "!" << std::endl;
         }
         else {
             std::string line;

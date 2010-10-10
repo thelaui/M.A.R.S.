@@ -43,7 +43,7 @@ Slider::~Slider () {
 
 void Slider::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    const sf::Input& input(window::getMainWindow()->GetInput());
+    const sf::Input& input(window::getInput());
     mouseMoved(Vector2f(input.GetMouseX(), input.GetMouseY()));
 }
 

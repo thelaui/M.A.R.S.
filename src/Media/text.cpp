@@ -48,11 +48,7 @@ namespace text {
 
             drawString.SetPosition(loc.x_, loc.y_);
 
-            sf::RenderWindow* mainwindow = window::getMainWindow();
-
-            glEnable(GL_TEXTURE_2D);
-            mainwindow->Draw(drawString);
-            glDisable(GL_TEXTURE_2D);
+            window::draw(drawString);
         }
 
     }

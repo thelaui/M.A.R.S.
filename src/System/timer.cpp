@@ -31,8 +31,8 @@ namespace timer {
         float fpsTimer_(0.f);
     }
 
-    void update() {
-        frameTime_ =  window::getMainWindow()->GetFrameTime();
+    void update(float frameTime) {
+        frameTime_ =  frameTime;
         totalTime_ += frameTime_;
         fpsTimer_  += frameTime_;
         frameCount_+= 1;

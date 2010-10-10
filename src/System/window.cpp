@@ -23,6 +23,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Controllers/controllers.hpp"
 # include "Menu/menus.hpp"
 # include "Locales/locales.hpp"
+# include "System/timer.hpp"
+# include "Shaders/shaders.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -31,8 +33,9 @@ namespace window {
     namespace {
         // main window of the game
         sf::RenderWindow window_;
+        sf::RenderImage  backBuffer_;
+
         Vector2f         viewPort_;
-        bool             isCreated_(false);
         bool             resized_(false), resized2_(false);
         float            scale_(960.f/1280.f);
 
@@ -43,109 +46,30 @@ namespace window {
             else
                 glViewport(0, (windowHeight-viewPort_.y_)/2, viewPort_.x_, viewPort_.y_);
         }
-    }
 
-    sf::RenderWindow* getMainWindow() {
-        if (isCreated_)
-            return &window_;
-        else {
-            // Create the main rendering window
-            settings::load();
-            locales:: load();
-            create();
-            isCreated_ = true;
-            return &window_;
-        }
-    }
-
-    bool isOpen() {
-        return window_.IsOpened();
-    }
-
-    void handleEvents() {
-        sf::Event event;
-        while (window_.GetEvent(event)) {
-            if      (event.Type == sf::Event::Resized)
-                resized();
-            else if (event.Type == sf::Event::Closed)
-                window_.Close();
-            else if (event.Type == sf::Event::KeyPressed) {
-                if (!menus::visible())
-                    controllers::singleKeyEvent(event.Key.Code);
-                menus::buttonPressed(event.Key.Code);
+        void resized() {
+            int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+            // if windows aspect ration is greater than aspect ratio of space
+            if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
+                scale_ = static_cast<float>(windowHeight)/800.f;
+                viewPort_.y_ = windowHeight;
+                viewPort_.x_  = windowHeight * 1.6f;
             }
-            else if (event.Type == sf::Event::TextEntered) {
-                if (menus::visible())
-                    menus::textEntered(event.Text.Unicode);
+            else {
+                scale_ = static_cast<float>(windowWidth)/1280.f;
+                viewPort_.y_ = windowWidth / 1.6f;
+                viewPort_.x_  = windowWidth;
             }
-            else if (event.Type == sf::Event::MouseMoved) {
-                if (menus::visible())
-                    menus::mouseMoved(Vector2f(event.MouseMove.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseMove.Y - (window_.GetHeight() - viewPort_.y_)/2));
-            }
-            else if (event.Type == sf::Event::MouseButtonPressed) {
-                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
-                    menus::mouseLeft(true);
-            }
-            else if (event.Type == sf::Event::MouseButtonReleased) {
-                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
-                    menus::mouseLeft(false);
-            }
+            setViewPort();
+            resized_ = true;
         }
     }
 
-    void resized() {
-        int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-        // if windows aspect ration is greater than aspect ratio of space
-        if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
-            scale_ = static_cast<float>(windowHeight)/800.f;
-            viewPort_.y_ = windowHeight;
-            viewPort_.x_  = windowHeight * 1.6f;
-        }
-        else {
-            scale_ = static_cast<float>(windowWidth)/1280.f;
-            viewPort_.y_ = windowWidth / 1.6f;
-            viewPort_.x_  = windowWidth;
-        }
-        setViewPort();
-        resized_ = true;
-    }
-
-    void setPixelView() {
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        setViewPort();
-        gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-    }
-
-    void setSpaceView() {
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        setViewPort();
-        gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-    }
-
-    void display() {
-        window_.Display();
-    }
-
-    void clear() {
-        if (!settings::C_showStars || (resized_ && resized2_)) {
-            glClear(GL_COLOR_BUFFER_BIT);
-            resized_ = false;
-            resized2_= false;
-        }
-        if (resized_) {
-            glClear(GL_COLOR_BUFFER_BIT);
-            resized2_ = true;
-        }
-    }
-
-    void showCursor(bool show) {
-        window_.ShowMouseCursor(show);
+    void open() {
+        settings::load();
+        locales:: load();
+        shaders:: load();
+        create();
     }
 
     void create() {
@@ -181,6 +105,106 @@ namespace window {
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
+
+        //backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+        //backBuffer_.SetActive(true);
+    }
+
+    void update() {
+        timer::update(window_.GetFrameTime());
+        sf::Event event;
+        while (window_.GetEvent(event)) {
+            if      (event.Type == sf::Event::Resized)
+                resized();
+            else if (event.Type == sf::Event::Closed)
+                window_.Close();
+            else if (event.Type == sf::Event::KeyPressed) {
+                if (!menus::visible())
+                    controllers::singleKeyEvent(event.Key.Code);
+                menus::buttonPressed(event.Key.Code);
+            }
+            else if (event.Type == sf::Event::TextEntered) {
+                if (menus::visible())
+                    menus::textEntered(event.Text.Unicode);
+            }
+            else if (event.Type == sf::Event::MouseMoved) {
+                if (menus::visible())
+                    menus::mouseMoved(Vector2f(event.MouseMove.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseMove.Y - (window_.GetHeight() - viewPort_.y_)/2));
+            }
+            else if (event.Type == sf::Event::MouseButtonPressed) {
+                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                    menus::mouseLeft(true);
+            }
+            else if (event.Type == sf::Event::MouseButtonReleased) {
+                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                    menus::mouseLeft(false);
+            }
+        }
+    }
+
+    void setPixelView() {
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        setViewPort();
+        gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+    }
+
+    void setSpaceView() {
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        setViewPort();
+        gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+    }
+
+    void display() {
+        //backBuffer_.Display();
+
+        // Now we start rendering to the window, clear it first
+        //window_.Clear();
+
+        // Draw the image
+        //sf::Sprite sprite(backBuffer_.GetImage());
+        //window_.Draw(sprite);
+
+        // End the current frame and display its contents on screen
+
+        window_.Display();
+
+        //backBuffer_.SetActive(true);
+
+        /*
+        if (!settings::C_showStars || (resized_ && resized2_)) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            resized_ = false;
+            resized2_= false;
+        }
+        if (resized_) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            resized2_ = true;
+        }
+        */
+    }
+
+    void draw(sf::Drawable const& toBeDrawn) {
+        glEnable(GL_TEXTURE_2D);
+        window_.Draw(toBeDrawn);
+        glDisable(GL_TEXTURE_2D);
+    }
+
+    sf::Input const& getInput() {
+        return window_.GetInput();
+    }
+
+    bool isOpen() {
+        return window_.IsOpened();
+    }
+
+    void showCursor(bool show) {
+        window_.ShowMouseCursor(show);
     }
 
     Vector2f coordToPixel(Vector2f const& spaceCoord) {

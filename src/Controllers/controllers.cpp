@@ -34,7 +34,7 @@ namespace controllers {
         KeyController* keyControllers2_(NULL);
         std::vector<BotController*> botControllers_;
 
-        sf::Input const& input_ = window::getMainWindow()->GetInput();
+        sf::Input const& input_ = window::getInput();
     }
 
     void update() {

@@ -1,4 +1,4 @@
-/* main.cpp
+/* shaders.hpp
 
 Copyright (c) 2010 by Felix Lauer und Simon Schneegans
 
@@ -15,22 +15,19 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "System/window.hpp"
-# include "Games/games.hpp"
+# ifndef SHADERS_HPP_INCLUDED
+# define SHADERS_HPP_INCLUDED
 
-void mainLoop() {
-    while (window::isOpen()) {
-        window::update();
-        games::update();
-        games::draw();
-        window::display();
-    }
+namespace shaders {
+    enum ShaderType {Sepia, Blur, COUNT};
+
+    void activate  (ShaderType);
+    void deactivate(ShaderType);
+
+    bool supported();
+    void load();
 }
 
-int main() {
-    window::open();
-    games::start(games::gMenu);
-    mainLoop();
+# endif // SHADERS_HPP_INCLUDED
 
-    return 0;
-}
+

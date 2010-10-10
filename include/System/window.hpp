@@ -23,16 +23,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 namespace window {
-    sf::RenderWindow* getMainWindow();
+    void open();
 
-    bool isOpen();
-    void handleEvents();
-    void resized();
+    void update();
+    void display();
+
+    void draw(sf::Drawable const& toBeDrawn);
+    sf::Input const& getInput();
+
     void setPixelView();
     void setSpaceView();
-    void display();
-    void clear();
 
+    bool isOpen();
     void showCursor(bool show);
     void create();
 

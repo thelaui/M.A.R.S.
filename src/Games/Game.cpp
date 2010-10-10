@@ -70,7 +70,7 @@ void Game::update() {
             balls::update();
             spaceObjects::update();
         }
-        else if(window::getMainWindow()->GetInput().IsMouseButtonDown(sf::Mouse::Left)) {
+        else if(window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
             games::restart();
             hud::displayStats(false);
         }
