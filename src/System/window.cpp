@@ -38,6 +38,7 @@ namespace window {
         Vector2f         viewPort_;
         bool             resized_(false), resized2_(false);
         float            scale_(960.f/1280.f);
+        int              clearCount_(0);
 
         void setViewPort() {
             int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
@@ -62,6 +63,7 @@ namespace window {
             }
             setViewPort();
             resized_ = true;
+            glClear(GL_COLOR_BUFFER_BIT);
         }
     }
 
@@ -169,6 +171,7 @@ namespace window {
     }
 
     void display() {
+
         /*backBuffer_.Display();
 
         window_.Clear();
@@ -193,6 +196,10 @@ namespace window {
             resized2_ = true;
         }
         */
+        if (++clearCount_ > 30) {
+            glClear(GL_COLOR_BUFFER_BIT);
+            clearCount_ = 0;
+        }
     }
 
     void draw(sf::Drawable const& toBeDrawn) {

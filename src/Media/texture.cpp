@@ -36,7 +36,7 @@ namespace texture {
             glGenTextures(1, textures_[type]);
             glBindTexture(GL_TEXTURE_2D, *textures_[type]);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.GetWidth(), img.GetHeight(), 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);
-            if (type == WindowOff || type == WindowOn || type == Background) {
+            if (type == WindowOff || type == WindowOn || type == Stars1_large || type == Stars2_large || type == Stars1_medium || type == Stars2_medium) {
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
             }
@@ -84,7 +84,10 @@ namespace texture {
                 case Logo1off:                 loadTexture_(type, "data/tex/logos/logo1off.png");         break;
                 case Cannon:                   loadTexture_(type, "data/tex/cannon.png");                 break;
                 case CannonSocket:             loadTexture_(type, "data/tex/cannonSocket.png");           break;
-                case Background:               loadTexture_(type, "data/tex/background.jpg");             break;
+                case Stars1_large:             loadTexture_(type, "data/tex/background/starfield_1_large.jpg");    break;
+                case Stars1_medium:            loadTexture_(type, "data/tex/background/starfield_1_medium.jpg");   break;
+                case Stars2_large:             loadTexture_(type, "data/tex/background/starfield_2_large.jpg");    break;
+                case Stars2_medium:            loadTexture_(type, "data/tex/background/starfield_2_medium.jpg");   break;
                 case WindowOn:                 loadTexture_(type, "data/tex/interface/windowOn.png");     break;
                 case WindowOff:                loadTexture_(type, "data/tex/interface/windowOff.png");    break;
                 case EnergyBars:               loadTexture_(type, "data/tex/interface/energyBars.png");   break;

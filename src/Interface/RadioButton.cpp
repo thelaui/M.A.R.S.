@@ -22,9 +22,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-RadioButton::RadioButton (sf::String* text, bool* value, Vector2f const& topLeft, int width):
+RadioButton::RadioButton (sf::String* text, bool* value, Vector2f const& topLeft, int width,bool offSwitchable):
     UiElement(topLeft, width, 20),
-    value_(value) {
+    value_(value),
+    offSwitchable_(offSwitchable) {
 
     label_ = new Label(text, false, Vector2f(15,0));
     label_->setParent(this);
@@ -37,7 +38,7 @@ RadioButton::~RadioButton () {
 void RadioButton::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
     if (!pressed_ && hovered_) {
-        if (*value_)
+        if (*value_ && offSwitchable_)
             *value_ = false;
         else {
             dynamic_cast<RadioGroup*>(parent_)->allOff();

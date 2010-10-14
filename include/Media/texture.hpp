@@ -25,9 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace texture {
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6, Planet7, Planet8, Planet9, Planet10,
                       Planet11, Planet12, Planet13, Sun1, Hole1, Ball, Particles, PowerUps, Ships, MotherShip,
-                      MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Background,
-                      WindowOn, WindowOff, EnergyBars, LeftHandle, RightHandle, BottomHandle, TopHandle,
-                      CountDown4, CountDown3, CountDown2, CountDown1, CountDown0, COUNT};
+                      MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
+                      Stars1_medium, Stars2_large, Stars2_medium, WindowOn, WindowOff, EnergyBars, LeftHandle,
+                      RightHandle, BottomHandle, TopHandle, CountDown4, CountDown3, CountDown2, CountDown1,
+                      CountDown0, COUNT};
 
     GLuint const& getTexture(TextureType);
 

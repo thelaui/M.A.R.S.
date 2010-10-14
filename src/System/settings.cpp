@@ -42,7 +42,9 @@ namespace settings {
     bool        C_adaptiveParticleCount =   false;
     int         C_globalParticleCount =     50;
     int         C_globalParticleLifeTime =  50;
-    bool        C_showStars =               true;
+    bool        C_StarsHigh =               false;
+    bool        C_StarsLow =                true;
+    bool        C_StarsNo =                 false;
     bool        C_enableSlowMotion =        true;
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
@@ -99,7 +101,6 @@ namespace settings {
         outStream << "[musicVolume] "           <<  C_musicVolume << std::endl;
         outStream << "[globalParticleCount] "   <<  C_globalParticleCount << std::endl;
         outStream << "[globalParticleLifeTime] "<<  C_globalParticleLifeTime << std::endl;
-        outStream << "[showStars] "             << (C_showStars ? "true" : "false") << std::endl;
         outStream << "[showFPS] "               << (C_showFPS ? "true" : "false") << std::endl;
         outStream << "[showParticleCount] "     << (C_showParticleCount ? "true" : "false") << std::endl;
         outStream << "[showLatency] "           << (C_showLatency ? "true" : "false") << std::endl;
@@ -141,6 +142,7 @@ namespace settings {
         outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
         outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
         outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
+        outStream << "[starResolution] "        << (C_StarsHigh ? 2 : (C_StarsLow ? 1 : 0 )) << std::endl;
 
         outStream.close();
     }
@@ -176,13 +178,6 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_globalParticleLifeTime = clamp(value, 10, 300);
-                }
-                else if (inputLine == "[showStars]") {
-                    std::string value;
-                    iss >> value;
-                    if (value == "true")        C_showStars = true;
-                    else if (value == "false")  C_showStars = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else if (inputLine == "[showFPS]") {
                     std::string value;
@@ -443,6 +438,22 @@ namespace settings {
                     if (value == "true")        C_showInfoCK = true;
                     else if (value == "false")  C_showInfoCK = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                }
+                else if (inputLine == "[starResolution]") {
+                    int value;
+                    iss >> value;
+                    C_StarsNo =   false;
+                    C_StarsHigh = false;
+                    C_StarsLow =  false;
+                    switch (value) {
+                        case 0:  C_StarsNo   =  true; break;
+                        case 1:  C_StarsLow  = true; break;
+                        case 2:  C_StarsHigh = true; break;
+                        default: {
+                            std::cout << value << " is a bad value for " << inputLine << ". Use 0, 1 or 2 instead.\n";
+                            C_StarsNo = true;
+                        }
+                    }
                 }
                 else if (inputLine == "[showSelectLanguage]") {
                     std::string value;

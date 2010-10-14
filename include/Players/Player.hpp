@@ -34,7 +34,7 @@ class Player {
         Team*                    team()   const {return team_;}
         Ship*                    ship()   const {return ship_;}
         Color3f const&           color()  const {return colorRef_ == NULL ? color_ : *colorRef_;}
-        sf::String const&       name()   const {return nameRef_  == NULL ? name_  : *nameRef_ ;}
+        sf::String const&        name()   const {return nameRef_  == NULL ? name_  : *nameRef_ ;}
         int                      graphic()const {return graphicRef_  == NULL ? graphic_  : *graphicRef_ ;}
         controllers::ControlType type()   const {return controlType_;}
 
@@ -48,7 +48,7 @@ class Player {
 
         sf::String  name_;
         sf::String* nameRef_;
-        int points_, frags_, suicides_, deaths_, teamKills_;
+        int points_, frags_, suicides_, deaths_, teamKills_, reputation_;
         Color3f color_;
         Color3f* colorRef_;
         int graphic_;

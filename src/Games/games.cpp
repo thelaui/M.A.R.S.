@@ -70,7 +70,7 @@ namespace games {
     }
 
     void update() {
-        if (settings::C_showStars) stars::draw();
+        stars::draw();
         if (!fadeIn_ && !fadeOut_) currentGame_->update();
         if (restart_ && !fadeOut_) restart();
         if (newGame_ && !fadeOut_) start(newGameType_);

@@ -38,7 +38,7 @@ namespace locales {
                      TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
                      TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
-                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, COUNT};
+                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo, COUNT};
 
     void                          load();
     std::vector<sf::String> const getLanguages();

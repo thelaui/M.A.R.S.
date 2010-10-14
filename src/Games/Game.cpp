@@ -34,6 +34,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Media/music.hpp"
 # include "Shaders/postFX.hpp"
+# include "SpaceObjects/stars.hpp"
 
 Game::Game(games::GameType const& type):
     type_(type),
@@ -41,10 +42,12 @@ Game::Game(games::GameType const& type):
         switch (type_) {
             case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit;    break;
             case games::gDeathMatch:                         pointLimit_ = settings::C_pointLimitDM;  break;
+            case games::gMenu:                               pointLimit_ = 9999999;                   break;
             default:                                         pointLimit_ = settings::C_pointLimitTDM;
         }
 
     hud::init();
+    stars::init();
     }
 
 Game::~Game() {
@@ -118,6 +121,7 @@ void Game::restart() {
         players::resetPlayerPoints();
     startTime_ = timer::totalTime();
     controllers::resetBots();
+    stars::init();
 }
 
 games::GameType Game::type() const {

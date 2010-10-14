@@ -50,7 +50,7 @@ class TabStats: public HudElement {
         };
 
         bool visible_, refresh_;
-        int totalPoints_;
+        int sumPoints_;
         std::multimap<Team*, std::multiset<Player*, playerPtrCmp>, teamPtrCmp > teamMap_;
 };
 

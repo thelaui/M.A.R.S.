@@ -37,7 +37,9 @@ namespace settings {
     extern bool           C_showParticleCount;
     extern bool           C_fullScreen;
     extern bool           C_vsync;
-    extern bool           C_showStars;
+    extern bool           C_StarsHigh;
+    extern bool           C_StarsLow;
+    extern bool           C_StarsNo;
     extern bool           C_drawLocalNames;
     extern bool           C_drawRemoteNames;
     extern bool           C_drawBotNames;
@@ -70,7 +72,7 @@ namespace settings {
     extern bool           C_playerIteamL;
     extern bool           C_playerIteamR;
     extern int            C_playerIShip;
-    extern sf::String    C_playerIIName;
+    extern sf::String     C_playerIIName;
     extern Color3f        C_playerIIColor;
     extern sf::Key::Code  C_playerIIup;
     extern sf::Key::Code  C_playerIIleft;

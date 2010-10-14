@@ -351,6 +351,7 @@ void Ship::explode() {
     if (damageSource_ == owner_) {
         ++owner_->suicides_;
         --owner_->points_;
+        --owner_->reputation_;
         pointCheckTimer_ = 0.5f;
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
             --damageSource_->team()->points_;
@@ -360,6 +361,7 @@ void Ship::explode() {
     else if (damageSource_->team() == owner_->team()) {
         ++damageSource_->teamKills_;
         --damageSource_->points_;
+        --damageSource_->reputation_;
           damageSource_->ship()->pointCheckTimer_ = 0.5f;
 
           damageSource_->ship()->fragStars_ = 0;
@@ -372,11 +374,12 @@ void Ship::explode() {
     }
     else {
         ++damageSource_->frags_;
-          damageSource_->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
+        ++damageSource_->points_;
+          damageSource_->reputation_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
           damageSource_->ship()->pointCheckTimer_ = 0.5f;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            damageSource_->team()->points_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
+            ++damageSource_->team()->points_;
 
         ++damageSource_->ship()->fragStars_;
           damageSource_->ship()->fragStarTimer_ = 15.f;

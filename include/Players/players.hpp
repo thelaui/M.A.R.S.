@@ -47,7 +47,7 @@ namespace players {
     Team   const* getTeamL();
     Team   const* getTeamR();
     std::vector<Team*> const& getAllTeams();
-    Team   const* getEnemy(Team const* checker);
+    Team   const*             getEnemy(Team const* checker);
 
     int getFirstPoints();
     int getSecondPoints();

@@ -28,6 +28,7 @@ Player::Player(sf::String const& name, Color3f const& color, int graphic, contro
     suicides_(0),
     deaths_(0),
     teamKills_(0),
+    reputation_(0),
     color_(color),
     colorRef_(NULL),
     graphic_(graphic),
@@ -47,6 +48,7 @@ Player::Player(sf::String* name, Color3f* color, int* graphic, controllers::Cont
     suicides_(0),
     deaths_(0),
     teamKills_(0),
+    reputation_(0),
     color_(*color),
     colorRef_(color),
     graphic_(*graphic),
@@ -63,4 +65,5 @@ void Player::resetPoints() {
     suicides_ = 0;
     deaths_ = 0;
     teamKills_ = 0;
+    reputation_ = 0;
 }

@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define STARS_HPP_INCLUDED
 
 namespace stars {
+    void init();
     void draw();
 }
 
