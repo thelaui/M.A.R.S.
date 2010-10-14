@@ -30,27 +30,31 @@ namespace locales {
 
     namespace {
         std::vector<sf::String> locales_(COUNT, "Error");
+
+        void load(std::string const& fileName) {
+            std::vector<sf::String> lines = file::load(fileName);
+
+            if (lines.size() > 0) {
+                for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
+                    std::stringstream sstr(it->ToAnsiString());
+                    int id;
+                    sstr >> id;
+                    if (id < COUNT && it->GetSize() > 4) {
+                        sf::String tmp(*it);
+                        tmp.Erase(0, 4);
+                        locales_[id] = tmp;
+                    }
+                }
+            }
+            else {
+                std::cout << "Interface will be messed up with errors...\n";
+            }
+        }
     }
 
     void load() {
-        std::string fileName = "data/locales/"+settings::C_language+".txt";
-        std::vector<sf::String> lines = file::load(fileName);
-
-        if (lines.size() > 0) {
-            for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                std::stringstream sstr(it->ToAnsiString());
-                int id;
-                sstr >> id;
-                if (id < COUNT && it->GetSize() > 4) {
-                    sf::String tmp(*it);
-                    tmp.Erase(0, 4);
-                    locales_[id] = tmp;
-                }
-            }
-        }
-        else {
-            std::cout << "Interface will be messed up with errors...\n";
-        }
+        load ("data/locales/English.txt");
+        load ("data/locales/"+settings::C_language+".txt");
     }
 
     std::vector<sf::String>const getLanguages() {

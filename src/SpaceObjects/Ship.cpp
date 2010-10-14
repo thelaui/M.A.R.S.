@@ -106,7 +106,10 @@ void Ship::update() {
         }
         else {
             acceleration = Vector2f();
-            fuel_ += time*0.5f;
+            if (getFuel() < 100.f)
+                fuel_ += time*0.5f;
+            else
+                fuel_ = 100.f;
         }
 
         // movement

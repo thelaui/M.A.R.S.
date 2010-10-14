@@ -27,15 +27,16 @@ class SpaceObject;
 class MobileSpaceObject;
 
 namespace physics {
-    void     collide (MobileSpaceObject* source, int with);
-    Vector2f attract (MobileSpaceObject* attracted);
-    void     causeShockWave(SpaceObject* source, float strength, float radius = 300.f);
+    void     collide        (MobileSpaceObject* source, int with);
+    Vector2f attract        (MobileSpaceObject* attracted);
+    void     causeShockWave (SpaceObject* source, float strength, float radius = 300.f);
 
-    void addMobileObject (MobileSpaceObject* source);
+    void addMobileObject    (MobileSpaceObject* source);
     void removeMobileObject (MobileSpaceObject* source);
-    void addStaticObject (SpaceObject* source);
-    void addGravitySource(SpaceObject* source);
-    void clear();
+    void addStaticObject    (SpaceObject* source);
+    void removeStaticObject (SpaceObject* source);
+    void addGravitySource   (SpaceObject* source);
+    void clear              ();
 }
 
 # endif // PHYSICS_HPP_INCLUDED

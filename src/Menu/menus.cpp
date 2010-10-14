@@ -31,8 +31,8 @@ namespace menus {
     }
 
     void showMain() {
-        if (!visible())
-            showWindow(MainMenu::get());
+        windowStack_.clear();
+        showWindow(MainMenu::get());
     }
 
     void showPause() {

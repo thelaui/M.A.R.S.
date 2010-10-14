@@ -37,8 +37,12 @@ namespace generateName {
             std::vector<sf::String> lines = file::load("botnames.txt");
             std::list<sf::String> newList;
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                if ((*it)[0] == '[' && newList.size() > 0)
-                    botNames_.push_back(newList);
+                if ((*it).ToAnsiString()[0] == '[') {
+                    if (newList.size() > 0) {
+                        botNames_.push_back(newList);
+                        newList.clear();
+                    }
+                }
                 else
                     newList.push_back(*it);
             }

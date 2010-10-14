@@ -173,7 +173,7 @@ void Home::explode() {
     particles::spawnMultiple(200, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(2, particles::pBurningFragment, location_);
-    location_ = Vector2f(50000.f, 50000.f);
+    physics::removeStaticObject(this);
     visible_ = false;
     restartTimer_ = 5.f;
     players::getTeamL()->home() == this ? ++players::getTeamR()->points_ : ++players::getTeamL()->points_;

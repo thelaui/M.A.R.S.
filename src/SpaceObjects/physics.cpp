@@ -184,6 +184,14 @@ namespace physics {
         staticObjects_.push_back(object);
     }
 
+    void removeStaticObject (SpaceObject* object) {
+        for (std::vector<SpaceObject*>::iterator it = staticObjects_.begin(); it != staticObjects_.end(); ++it)
+            if(*it == object) {
+                staticObjects_.erase(it);
+                break;
+            }
+    }
+
     void addGravitySource (SpaceObject* object) {
         gravitySources_.push_back(object);
     }
