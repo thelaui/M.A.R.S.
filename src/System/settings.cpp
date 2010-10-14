@@ -31,7 +31,7 @@ namespace settings {
 
     // game settings ------ adjustable via options menu
     int         C_soundVolume =             30;
-    int         C_announcerVolume =         80;
+    int         C_announcerVolume =          0;
     int         C_musicVolume =             60;
     bool        C_showFPS =                 false;
     bool        C_showParticleCount =       false;
@@ -283,7 +283,7 @@ namespace settings {
                 else if (inputLine == "[botsDeath]") {
                     int value;
                     iss >> value;
-                    C_botsDeath = clamp(value, 0, 150);
+                    C_botsDeath = clamp(value, 0, 50);
                 }
                 else if (inputLine == "[pointLimit]") {
                     int value;
@@ -293,12 +293,12 @@ namespace settings {
                 else if (inputLine == "[pointLimitDM]") {
                     int value;
                     iss >> value;
-                    C_pointLimitDM = clamp(value, 1, 200);
+                    C_pointLimitDM = clamp(value, 1, 50);
                 }
                 else if (inputLine == "[pointLimitTDM]") {
                     int value;
                     iss >> value;
-                    C_pointLimitTDM = clamp(value, 1, 500);
+                    C_pointLimitTDM = clamp(value, 1, 100);
                 }
                 else if (inputLine == "[playerIName]") {
                     std::string value;

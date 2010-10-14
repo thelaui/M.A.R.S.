@@ -26,6 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Games/games.hpp"
 # include "SpaceObjects/ships.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -150,7 +151,7 @@ void TabStats::draw() const {
         glDisable(GL_TEXTURE_2D);
 
         text::drawFooText();
-        text::drawScreenText("Statistics", topLeft + Vector2f(10, 10), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Statistics), topLeft + Vector2f(10, 10), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f));
         std::stringstream sstr;
         int seconds = games::elapsedTime();
         sstr << std::setfill('0') << std::setw(2) << (seconds-seconds%60)/60 << " : " << std::setw(2) << seconds%60;
@@ -172,12 +173,12 @@ void TabStats::draw() const {
         height = 12;
         topLeft += Vector2f(10.f, 60.f);
 
-        text::drawScreenText("Points", topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText("Frags", topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText("TeamKills", topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText("Suicides", topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText("Deaths", topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText("Reputation", topLeft + Vector2f(445, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f(170,0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f(225, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f(280, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f(335, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f(390, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Reputation), topLeft + Vector2f(445, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
         topLeft.y_ += 15;
 
@@ -278,7 +279,7 @@ void TabStats::draw() const {
                 glEnd();
 
                 Color3f drawColor(teamColor);
-                text::drawScreenText("Total:", topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                text::drawScreenText(*locales::getLocale(locales::Total), topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
 
                 if (totalPoints > 0)      drawColor = Color3f(0.3,1,0.3);
                 else if (totalPoints < 0) drawColor = Color3f(1,0.3,0.3);

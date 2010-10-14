@@ -83,10 +83,10 @@ UiWindow* NewGameMenu::get() {
         tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Start), &kStartSB_, Vector2f(385,195), 70, 20));
         tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Info), &kInfoSB_, Vector2f(10,195), 70, 20));
 
-        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Bots), &settings::C_botsDeath, 0, 150, Vector2f(10,110), 440, 100, true));
+        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Bots), &settings::C_botsDeath, 0, 50, Vector2f(10,110), 440, 100, true));
         tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIName, &playerI_, Vector2f(10,60), 100));
         tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIIName, &playerII_, Vector2f(240,60), 100));
-        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimitDM, 1, 200, Vector2f(10,150), 440, 100, true));
+        tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Fraglimit), &settings::C_pointLimitDM, 1, 50, Vector2f(10,150), 440, 100, true));
         tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartDM_, Vector2f(385, 195), 70, 20));
         tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoDM_, Vector2f(10,195), 70, 20));
 
@@ -102,7 +102,7 @@ UiWindow* NewGameMenu::get() {
             player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
             player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, &settings::C_playerIIteamR, Vector2f(323,70), 80, true));
             tabTeamDeathMatch->addWidget(player2Group2);
-        tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimitTDM, 1, 500, Vector2f(10,150), 440, 100, true));
+        tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::Fraglimit), &settings::C_pointLimitTDM, 1, 100, Vector2f(10,150), 440, 100, true));
         tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartTDM_, Vector2f(385, 195), 70, 20));
         tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoTDM_, Vector2f(10,195), 70, 20));
 

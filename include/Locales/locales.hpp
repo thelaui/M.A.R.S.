@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace locales {
     enum LocaleType {StartLocalGame, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
-                     RightTeam, BotsLeft, BotsRight, Bots, Pointlimit, InfoSB, ShortDescriptionSB, InfoDM,
+                     RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
                      BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
                      ParticleCountSlider, ParticleLifetime, ShowStars, Fullscreen, VerticalSynchronisation, MusicVolume,
@@ -38,7 +38,8 @@ namespace locales {
                      TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
                      TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
-                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo, COUNT};
+                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo,
+                     Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, COUNT};
 
     void                          load();
     std::vector<sf::String> const getLanguages();

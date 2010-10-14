@@ -32,6 +32,7 @@
 020 Bots Rechts
 021 Bots
 022 Fraglimit
+162 Punktelimit
 
 // Hintergrundgeschichte
 
@@ -222,10 +223,10 @@
 154 Punkte
 155 Frags
 156 Teamkills
-157 Selbstmorde
+157 Suizide
 158 Tode
 159 Ruf
-160 Gesamt
+160 Gesamt:
 161 Statistik
 
-// 162
+// 163

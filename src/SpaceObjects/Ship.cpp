@@ -53,7 +53,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100),
                collectedItems_(1),
                fragStars_(0),
-               rememberedPoints_(0),
+               rememberedReputation_(0),
                fragStarTimer_(0.f),
                pointCheckTimer_(0.f) {
 
@@ -82,9 +82,9 @@ void Ship::update() {
 
     if (pointCheckTimer_ > 0.f) {
         pointCheckTimer_ -= time;
-        if (pointCheckTimer_ <= 0.f && rememberedPoints_ != owner_->points_) {
-            hud::spawnNumber(&location_, owner_->points_ - rememberedPoints_);
-            rememberedPoints_ = owner_->points_;
+        if (pointCheckTimer_ <= 0.f && rememberedReputation_ != owner_->reputation_) {
+            hud::spawnNumber(&location_, owner_->reputation_ - rememberedReputation_);
+            rememberedReputation_ = owner_->reputation_;
         }
     }
 
@@ -310,7 +310,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
-    life_ -= intensity;
+    life_ -= intensity*2.f;
 }
 
 void Ship::setDamageSource(Player* evilOne) {

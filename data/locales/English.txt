@@ -30,7 +30,8 @@
 019 Bots Left
 020 Bots Right
 021 Bots
-022 Fraglimit
+022 Frag Limit
+162 Point Limit
 
 // story information
 
@@ -219,14 +220,14 @@
 
 // tabmenu collumns
 
-154 points
-155 frags
-156 teamkills
-157 suicides
-158 deaths
-159 reputation
-160 total
-161 statistics
+154 Points
+155 Frags
+156 Teamkills
+157 Suicides
+158 Deaths
+159 Reputation
+160 Total:
+161 Statistics
 
-// 162
+// 163
 

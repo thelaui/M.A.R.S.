@@ -88,7 +88,7 @@ class Ship: public MobileSpaceObject {
 
         std::vector<bool> collectedItems_;
 
-        int fragStars_, rememberedPoints_;
+        int fragStars_, rememberedReputation_;
         float fragStarTimer_, pointCheckTimer_;
 };
 

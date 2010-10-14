@@ -19,7 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 
-# define CHANNELCOUNT 8
+# define CHANNELCOUNT 16
 
 namespace sound {
 
