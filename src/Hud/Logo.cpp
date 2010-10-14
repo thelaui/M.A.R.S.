@@ -19,14 +19,51 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/texture.hpp"
 # include "System/window.hpp"
+# include "Games/games.hpp"
 # include "System/timer.hpp"
 
-void Logo::draw() const {
-    glEnable(GL_TEXTURE_2D);
+Logo::Logo():
+    timer_(1.f),
+    on_(false),
+    flicCount_(1) {}
 
+void Logo::update() {
+    if (games::elapsedTime() < 5.f) {
+        if (sf::Randomizer::Random(15, 25)*games::elapsedTime() > 50 && sf::Randomizer::Random(0, 1000) < 990)
+            on_ = true;
+        else
+            on_ = false;
+    }
+    else {
+        if (timer_ < 0.f) {
+            on_ = !on_;
+            if (flicCount_-- == 0)
+                flicCount_ = sf::Randomizer::Random(1, 19);
+            if (on_) {
+                if (flicCount_ > 0)
+                    timer_ = sf::Randomizer::Random(0.01f, 0.05f);
+                else
+                    timer_ = sf::Randomizer::Random(0.01f, 5.f);
+            }
+            else {
+                if (flicCount_ > 0)
+                    timer_ = sf::Randomizer::Random(0.01f, 0.01f);
+                else
+                    timer_ = sf::Randomizer::Random(0.01f, 1.f);
+            }
+        }
+        else {
+            timer_ -= timer::frameTime();
+        }
+    }
+}
+
+void Logo::draw() const {
+
+    glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (sf::Randomizer::Random(15, 25)*timer::totalTime() > 50 && sf::Randomizer::Random(0, 1000) < 990)
+    if (on_)
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Logo1));
     else
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Logo1off));

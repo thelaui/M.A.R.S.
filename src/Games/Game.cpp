@@ -33,6 +33,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "System/window.hpp"
 # include "Media/music.hpp"
+# include "Shaders/postFX.hpp"
 
 Game::Game(games::GameType const& type):
     type_(type),
@@ -80,12 +81,14 @@ void Game::update() {
         zones::update();
         decoObjects::update();
         items::update();
+        //postFX::update();
     }
     else
         startTime_ += timer::frameTime();
 }
 
 void Game::draw() const {
+
     particles::drawLower();
     ships::draw();
     balls::draw();
@@ -93,6 +96,7 @@ void Game::draw() const {
     particles::drawHigher();
     decoObjects::draw();
     items::draw();
+    //postFX::draw();
     hud::draw();
     menus::draw();
 }

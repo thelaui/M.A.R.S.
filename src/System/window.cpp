@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "Locales/locales.hpp"
 # include "System/timer.hpp"
-# include "Shaders/shaders.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -33,7 +33,7 @@ namespace window {
     namespace {
         // main window of the game
         sf::RenderWindow window_;
-        sf::RenderImage  backBuffer_;
+        //sf::RenderImage  backBuffer_;
 
         Vector2f         viewPort_;
         bool             resized_(false), resized2_(false);
@@ -68,7 +68,7 @@ namespace window {
     void open() {
         settings::load();
         locales:: load();
-        shaders:: load();
+        //postFX::  load();
         create();
     }
 
@@ -96,16 +96,24 @@ namespace window {
         // Setup translation (according to left-upper corner)
         gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
 
-        glDisable(GL_DEPTH_TEST);
+        // probably improves performance...
         glDisable(GL_LIGHTING);
+        glDisable(GL_POLYGON_SMOOTH);
+        glDisable(GL_ALPHA_TEST);
+        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_SCISSOR_TEST);
+        glHint(GL_PERSPECTIVE_CORRECTION_HINT,GL_FASTEST);
+        glHint(GL_POINT_SMOOTH_HINT,GL_FASTEST);
+        glReadBuffer(GL_FRONT);
 
+        glEnable(GL_BLEND);
         glEnable(GL_LINE_SMOOTH);
         glEnable(GL_POINT_SMOOTH);
-        glEnable(GL_BLEND);
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
+        //backBuffer_.Clear();
         //backBuffer_.Create(viewPort_.x_, viewPort_.y_);
         //backBuffer_.SetActive(true);
     }
@@ -161,16 +169,14 @@ namespace window {
     }
 
     void display() {
-        //backBuffer_.Display();
+        /*backBuffer_.Display();
 
-        // Now we start rendering to the window, clear it first
-        //window_.Clear();
+        window_.Clear();
 
-        // Draw the image
-        //sf::Sprite sprite(backBuffer_.GetImage());
-        //window_.Draw(sprite);
-
-        // End the current frame and display its contents on screen
+        sf::Sprite sprite(backBuffer_.GetImage());
+        postFX::activate(postFX::Blur);
+        window_.Draw(sprite);
+        postFX::deactivate(postFX::Blur);*/
 
         window_.Display();
 

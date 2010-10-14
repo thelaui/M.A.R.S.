@@ -1,4 +1,4 @@
-/* Logo.hpp
+/* postFX.hpp
 
 Copyright (c) 2010 by Felix Lauer und Simon Schneegans
 
@@ -15,27 +15,22 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef LOGO_HPP_INCLUDED
-# define LOGO_HPP_INCLUDED
+# ifndef POSTFX_HPP_INCLUDED
+# define POSTFX_HPP_INCLUDED
 
-# include "Hud/HudElement.hpp"
+namespace postFX {
+    enum EffectType {Sepia, Blur, COUNT};
 
-class Logo: public HudElement {
-    public:
-        Logo();
+    void update();
+    void draw();
 
-        void update();
-        void draw() const;
+    void activate  (EffectType);
+    void deactivate(EffectType);
 
-    private:
-        float timer_;
-        bool  on_;
-        int flicCount_;
-};
+    bool supported();
+    void load();
+}
 
-# endif // LOGO_HPP_INCLUDED
-
-
-
+# endif // POSTFX_HPP_INCLUDED
 
 

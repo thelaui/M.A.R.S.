@@ -20,8 +20,8 @@
 013 Close
 014 License
 015 Ok
-016 Show this Info again.
 106 Next
+016 Show this Info again.
 
 // pregame options
 
@@ -210,3 +210,5 @@
 
 148 You Nearly Got Him!
 149 Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is.
+
+// 150

@@ -51,6 +51,8 @@ namespace hud {
         numbers::update();
         tabStats_->update();
 
+        if (games::type() == games::gMenu)   logo_->update();
+
         if (games::type() != games::gMenu && window::getInput().IsKeyDown(sf::Key::Tab)) {
             tabStats_->display();
             gamePoints_->display();
