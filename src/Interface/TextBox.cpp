@@ -22,8 +22,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int height):
     UiElement(topLeft, width, height),
-    text_(*text) {
+    label_(NULL){
+        setText(text);
+    }
 
+TextBox::~TextBox() {
+    delete label_;
+}
+
+void TextBox::draw () const {
+    label_->draw();
+}
+
+void TextBox::setText(sf::String* text) {
+    text_ = *text;
     sf::String word;
     sf::String line;
     int lastSpace(0);
@@ -60,19 +72,11 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
             }
         }
     }
-
+    if(label_)
+        delete label_;
     label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f));
     label_->setParent(this);
 }
-
-TextBox::~TextBox() {
-    delete label_;
-}
-
-void TextBox::draw () const {
-    label_->draw();
-}
-
 
 
 

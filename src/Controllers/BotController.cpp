@@ -28,7 +28,7 @@ BotController::BotController(Player* slave, controllers::ControlType type):
     Controller(slave, type),
     actions_(11),
     target_(NULL),
-    weaponChangeTimer_(sf::Randomizer::Random(0, 1)),
+    weaponChangeTimer_(sf::Randomizer::Random(0.f, 1.f)),
     evaluationTimer_(0.f),
     nextRoutePoint_(FLT_MAX, FLT_MAX),
     toCover_(NULL) {}

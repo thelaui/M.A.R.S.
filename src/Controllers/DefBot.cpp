@@ -57,7 +57,8 @@ void DefBot::checkBall(){
                            actions_[BOT_KICK_BALL_OH] = 100;
                            break;
             case OWN_TEAM: actions_[BOT_KICK_BALL_TE] = (actions_[BOT_KICK_BALL_TE] + 60)/2;
-                           actions_[BOT_KICK_BALL_OH] = 0; break;
+                           actions_[BOT_KICK_BALL_OH] = 0;
+                           break;
             case ENEMY_TEAM: actions_[BOT_KICK_BALL_TE] = 0; actions_[BOT_PROTECT_ZONE] = (actions_[BOT_PROTECT_ZONE] + 40)/2 ;  break;
             case ENEMY_HOME: actions_[BOT_KICK_BALL_TE] = 0; actions_[BOT_PROTECT_ZONE] = (actions_[BOT_PROTECT_ZONE] + 20)/2; break;
             case NO_ZONE:;

@@ -32,6 +32,7 @@ class TextBox: public UiElement {
         void mouseLeft(bool down) {}
 
         void draw () const;
+        void setText(sf::String* text);
 
     private:
         sf::String text_;

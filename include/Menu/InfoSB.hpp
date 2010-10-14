@@ -20,11 +20,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/UiWindow.hpp"
 
+class TextBox;
+
 class InfoSB: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
-        void onShow() {}
+        void onShow();
 
     private:
         InfoSB(int width, int height): UiWindow(width, height) {}
@@ -33,6 +35,8 @@ class InfoSB: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_;
+
+        static TextBox* infoBox_;
 };
 
 # endif // INFOSB_HPP_INCLUDED

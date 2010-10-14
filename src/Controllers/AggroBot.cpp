@@ -48,12 +48,20 @@ void AggroBot::checkEnergy() {
 void AggroBot::checkBall() {
     if (!balls::getBall()->isVisible()) {
         actions_[BOT_KICK_BALL_TE] = 0;
-        actions_[BOT_WAIT_FOR_BALL] = 10;
+        actions_[BOT_WAIT_FOR_BALL] = 1;
+        actions_[BOT_KICK_BALL_OH] = 0;
     }
     else {
         switch (zones::isInside(slave_->team(), *balls::getBall())) {
-            case OWN_HOME: actions_[BOT_KICK_BALL_TE] = actions_[BOT_KICK_BALL_TE]/2;     break;
-            case OWN_TEAM: actions_[BOT_KICK_BALL_TE] = (actions_[BOT_KICK_BALL_TE] + 30)/2;    break;
+            case OWN_HOME:
+                actions_[BOT_KICK_BALL_TE] = actions_[BOT_KICK_BALL_TE]/2;
+                if(zones::isInside(slave_->team(), *this->ship()) == OWN_HOME)
+                    actions_[BOT_KICK_BALL_OH] = 100;
+                break;
+            case OWN_TEAM:
+                actions_[BOT_KICK_BALL_TE] = (actions_[BOT_KICK_BALL_TE] + 30)/2;
+                actions_[BOT_KICK_BALL_OH] = 0;
+                break;
             case ENEMY_TEAM: actions_[BOT_KICK_BALL_TE] = (actions_[BOT_KICK_BALL_TE]+60)/2;  break;
             case ENEMY_HOME: actions_[BOT_KICK_BALL_TE] = (actions_[BOT_KICK_BALL_TE] +80)/2;  break;
             case NO_ZONE:;

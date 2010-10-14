@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <cmath>
 
 HomeZone::HomeZone(Vector2f const& location) :
-        radius_(350.f),
+        radius_(450.f),
         location_(location) {
         if (location_.x_ < 640.f)
             homeSide_ = 0;

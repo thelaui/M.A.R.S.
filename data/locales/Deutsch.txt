@@ -1,4 +1,4 @@
-// menu buttons
+﻿// Menü Knöpfe
 
 000 Lokales Spiel starten
 105 Tutorial starten
@@ -12,7 +12,8 @@
 008 Menü verstecken
 009 Spiel verlassen
 
-// standard buttons
+
+// Standard Knöpfe
 
 010 Start
 011 Abbrechen
@@ -21,30 +22,32 @@
 014 Lizenz
 015 Ok
 016 Zeige dieses Fenster wieder an
+106 Weiter
 
-// pregame options
+// Optionen vor Spielstart
 
 017 Linkes Team
 018 Rechtes Team
 019 Bots Links
 020 Bots Rechts
 021 Bots
-022 Punktlimit
+022 Fraglimit
 
-// story information
+// Hintergrundgeschichte
 
-023 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.  \nBut outside the contemplative habitats, the GREAT WAR is raging.  \nAs a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous  \nneighbours! Fight the battle, a true hero as you are was born for: SPACEBALL. \nProtect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
-024 Kick or shoot the ball to your enemy's planet!
-025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
-026 Destroy as many enemies as possible!
-027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
-028 Destroy es many enemies as possible!
-029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
-030 Pick up the remote and keep it as long as possible!
+023 3547 Anno Domini: Unzählige Zivilisationen haben das Universum bevölkert und leben in Frieden und Harmonie zusammen.\nAber außerhalb dieser beschaulichen Idylle tobt der GROßE KRIEG.\nBegib dich auf eine schicksalshafte Reise und beschütze deinen Planeten vor der zerstörerischen Wut deiner Nachbarn. Ruhm und Ehre werden deinen Weg säumen. Bereite dich auf die Schlacht vor, für die du geboren wurdest: SPACEBALL. \nAus den Tiefen der Galaxis wurde die Kugel der Verderbnis geschaffen. Als Waffe gegen deine Feinde entfaltet sie ihre Macht und vernichtet den gegnerischen Planeten. Aber in den falschen Händen wird sie dich zerschmettern...
+024 Stoße oder Schieße den Ball zum gegnerischen Planeten!
+025 Der GROßE KRIEG hat dir alles genommen, wofür du gekämpft hast: dein Zuhause, deine Familie, deine Ehre! \nBefreie dich nun aus der Misere deines alten Lebens und beginne ein neues als Gladiator in der DEATHMATCH-Arena! \nWidersetze dich den Angriffen deiner Gegner und zerstöre ihre Schiffe! Sei bereit, denn Ruhm und Ehre erwarten dich!
+026 Vernichte möglichst viele Feinde!
+027 Die Verhandlungen sind gescheitert! Trotz der enormen Verluste auf beiden Seiten ist es nicht möglich, dem GROßEN KRIEG zu entkommen. Die letzten Krieger schließen sich zusammen zu einem gewaltigen TEAM-DEATHMATCH! \nBeschütze deine Mitstreiter und attakiere deine Feinde!\nErteile ihnen eine Lektion, die sie nie vergessen werden!
+028 Vernichte möglichst viele Feinde!
+029 Als ob der GROßE KRIEG nicht schon genug wäre, hat eine neue Quelle abgrundtiefer Boshaftigkeit sein Augenmerk auf dein Planetensystem gerichtet:\nEin riesiges Schiff unbekannter Invasoren schwebt über der Galaxie und nimmt mit einer gigantischen Massenvernichtungswaffe die Heimatplaneten ins Visier!\nAls Zeichen ihres Zynismus' überlassen die Angreifer die Kontrolle über die todbringende Kanone dir und deinen Gegnern.\nErreiche sie zuerst, um den Planeten deiner Feinde in Schutt und Asche zu legen!\nSei der CANNONKEEPer. 
+030 Nimm die Fernbedienung und behalt sie möglichst lange!
 
-// display options
-// tabs
+// Anzeigeoptionen
+// Tabs
 
+150 Interface
 102 Grafik
 103 Audio
 
@@ -61,14 +64,18 @@
 040 Sterne
 041 Vollbild
 042 V-Sync
+151 Hohe Auflösung
 
-// audio options
+152 Niedrige Auflösung
+153 Aus
+
+// Audiooptionen
 
 043 Musiklautstärke
 044 Soundlautstärke
 045 Sprachlautstärke
 
-// player options
+// Spieleroptionen
 
 046 Name
 047 Beschleunigen
@@ -82,67 +89,143 @@
 055 Press key while hovering!
 056 Enter text while hovering!
 
-// about
+// Über
 
-057 This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage: \nhttp://www.marsshooter.org
+057 M.A.R.S. ist der erste Versuch, ein Spiel in OpenGL mit SFML zu erstellen. Steuer alleine oder zu zweit dein Weltraumschiff durch eine zweidimensionale Galaxis, beherrscht von den Kräften der Schwerkraft.\n\nHomepage: \nhttp://www.marsshooter.org
 
-// license
+// Lizenz
 
-058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+058 Dieses Programm ist kostenfreie Software; es kann entsprechend den Bedingungen der GNU General Public License (Version 3 oder spätere, veröffentlich von der Free Software Foundation) verbreitet und/oder verändert werden.\n\nDieses Programm soll dem Nutzen dienen, dafür übernehmen die Entwickler aber KEINE GARANTIE, insbesondere nicht die der KOMMERZIELLEN VERBREITUNG oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Für weitere Informationen und die englische Originalversion sollte die GNU General Public License unter\nhttp://www.gnu.org/licenses/gpl-3.0.html eingesehen werden.
 
-// quit
+// Beenden
 
-059 Do you really want to quit?
-060 Do you really want to end the current game?
+059 Willst du das Spiel wirklich verlassen?
+060 Willst du das laufende Spiel wirklich beenden?
 
-// network information
+// Netzwerk Informationen
 
-061 M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet. \n\nStay tuned!
-062 M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet. \n\nStay tuned!
+061 Das Spielen von M.A.R.S. via Internet oder LAN ist in Planung, bis jetzt aber noch nicht eingebaut. \n\nDranbleiben!
+062 Das Spielen von M.A.R.S. via Internet oder LAN ist in Planung, bis jetzt aber noch nicht eingebaut. \n\nDranbleiben!
 
-// hide menu
+// Menü verbergen
 
-063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwars by pressing ESC.
+063 Du hast M.A.R.S. mitten in einer Wahnsinnsschlacht angehalten?\n Wenn du einen Screenshot machen willst, erlaubt dir dieser Knopf epische Hintergrundbilder zu erstellen, indem er alle Fenster verbirgt.\n\nDanach kannst du sie einfach durch Drücken auf ESC wieder einblenden.
 
-// key names
+// Tastennamen
 
-064 Add
-065 Back Slash
-066 Comma
-067 Dash
-068 Delete
-069 Divide
-070 Down
-071 End
-072 Equal
-073 Home
-074 Insert
-075 Left Alt
-076 Left Bracket
-077 Left Control
-078 Left
-079 Left Shift
-080 Left Super
-081 Menu
-082 Multiply
-083 Page Down
-084 Page Up
+064 Plus
+065 Backslash
+066 Komma
+067 Bindestrich
+068 Entfernen
+069 Geteilt
+070 Runter
+071 Ende
+072 Gleich
+073 Pos1
+074 Einfügen
+075 Alt Links
+076 Klammer Auf
+077 Steuerung Links
+078 Links
+079 Umschalt Links
+080 Super Links
+081 Menü
+082 Mal
+083 Bild ab
+084 Bild auf
 085 Pause
-086 Period
-087 Quote
-088 Right Alt
-089 Right Bracket
-090 Right Control
-091 Return
-092 Right
-093 Right Shift
-094 Right Super
-095 Semi Colon
+086 Punkt
+087 Anführungszeichen
+088 Alt Rechts
+089 Klammer Zu
+090 Steuerung Rechts
+091 Enter
+092 Rechts
+093 Umschalt Rechts
+094 Super Rechts
+095 Semikolon
 096 Slash
-097 Space
-098 Subtract
+097 Leertaste
+098 Minus
 099 Tilde
 100 Tab
-101 Up
+101 Hoch
 
-// 106
+// Tutorial Texte
+
+107 Willkommen, Space Rookie!
+108 Wir freuen uns, einen vielversprechenden Helden wie dich im GROßEN KRIEG auf unserer Seite zu haben!\nWir glauben, dass du noch etwas Training mit deinem neuen Schiff brauchst.\nLass uns anfangen...
+
+109 Grundlegende Steuerung...
+110 Das Wichtigste ist das Kontrollieren deines Schiffs.\nJede Bewegung wird von der Gravitation beeinflusst. Zum Bremsen musst du dich in die entgegengesetzte Richtung drehen und Gas geben. Benutze zum Steuern die Tasten
+
+111 Aufwärmen!
+112 Erreiche die rosa Zone!\nFlieg' dein nagelneues Schiff nicht gleich zu Schrott.
+
+113 Gut Gemacht!
+114 Jetzt bewege dich zurück zu deinem Heimatplaneten. Schwebe dazu langsam rückwärts an deinen Planeten heran. 
+
+115 Gute Arbeit!
+116 Gutes Landen ist gar nicht so leicht, oder?\nDu solltest es bis zum Umfallen üben.
+
+117 Jetzt Wird's Etwas Schwerer...
+118 Versuche, dem durch die rosa Zonen markierten Pfad zu folgen!\n\nWir melden uns, wenn du das geschafft hast. Worauf wartest du?
+
+119 Ausgezeichnet!
+120 Du bist der beste Rookie, den wir hier jemals hatten.\nBereite dich nun auf etwas Explosives vor.
+
+121 Schießen...
+122 Um deine Feinde zu besiegen, musst du wissen, wie du sie wegpusten kannst!\nDrücke dazu auf
+123 Tob' dich etwas aus! Lande dein Schiff,\num mit dem Tutorial fortzufahren.
+
+124 Gut Gelandet!
+125 Du scheinst ein guter Pilot zu sein.\n\nWie wäre es mit ein paar mehr Waffen?
+
+126 Die Waffen...
+127 Darauf hast du sicher gewartet. Wenn du gelandet bist, kannst du zwischen ein paar wirklich fiesen Waffen wählen.\nDrücke
+128 um dein Arsenal zu öffnen.\nBenutze dann
+129 zum Auswählen einer Waffe! Flieg' los, wenn du fertig bist!
+
+130 Kämpfe!
+131 Schauen wir doch mal, wie du dich gegen einen Rookie eines anderen Planeten schlägst.\nAnscheinend versucht er, seine Flugfertigkeiten zu verbessen.\nMach' ihn fertig!
+
+132 Beeindruckend!
+133 Du hast es geschafft! Wie du vielleicht bemerkt hast, erhältst du Rufpunkte für jeden getöteten Gegner.\nDie kleine grüne Nummer, die über deinem Schiff aufpoppt, repräsentiert die Menge. Diese erhöht sich, wenn du mehrere Gegner hintereinander tötest.
+
+134 Achtung!
+135 Du hast keine Zeit zum Ausruhen.\nUnsere Feinde haben einen ihrer echten Krieger ausgesandt, um sich an dir zu rächen.\nDa musst du alleine durch...
+
+136 Unfassbar!
+137 Du hast alle meine Aufgaben erfolgreich abgeschlossen. Was nun?\nWerfen wir einmal einen Blick auf das Einstellungsmenü. Dort kannst du eine Menge... naja... einstellen.\nDu kannst zum Beispiel Schiffstil und -farbe oder deinen Namen ändern...
+
+138 Wer Ist Der Beste?
+139 Du kannst eine Liste mit Frags, Punkten usw. mit <Tab> anzeigen.\nZusätzlich zeigen die Zahlen neben deinem Namen deine Fragzahl und deinen Abstand zum Führenden an. 
+
+140 Gratulation!
+141 Du hast das Tutorial gemeistert. Jetzt bist du bereit für den Kampf im GROßEN KRIEG. Wenn du noch weiter üben willst, warte einfach, bis der Gegner wieder auftaucht. Beende das Training mit <Esc>.\n\nViel Spaß mit M.A.R.S.!
+
+142 Du Hast Versagt!
+143 Wunderbar, du hast dein brandneues Schiff geschrottet! Na schön, du kriegst ein neues. Hab' ein paar Sekunden Geduld...
+
+144 Schon Bemerkt?
+145 Du verlierst Leben! Behalte den grünen Lebensbalken im Auge. Lande lieber, wenn er zu leer ist.
+
+146 Schon Bemerkt?
+147 Du verlierst Treibstoff! Behalte den gelben Treibstoffbalken im Auge. Lande lieber, wenn er zu leer ist.
+
+148 Gleich Hast Du Ihn!
+149 Beachte den Namen deines Gegners. Seine Farbe zeigt seine Lebenspunkte. Desto intensiver das Rot wird, desto schwächer ist dein Feind.
+
+// Tabmenüspalten
+
+154 Punkte
+155 Frags
+156 Teamkills
+157 Selbstmorde
+158 Tode
+159 Ruf
+160 Gesamt
+161 Statistik
+
+// 162

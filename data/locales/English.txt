@@ -30,24 +30,24 @@
 019 Bots Left
 020 Bots Right
 021 Bots
-022 Pointlimit
+022 Fraglimit
 
 // story information
 
-023 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.  \nBut outside the contemplative habitats, the GREAT WAR is raging.  \nAs a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous  \nneighbours! Fight the battle, a true hero as you are was born for: SPACEBALL. \nProtect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+023 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.  \nBut outside the contemplative habitats, the GREAT WAR is raging.  \nAs a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous  \nneighbours! Fight the battle, a true hero as you are was born for: SPACEBALL. \nProtect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe.
 024 Kick or shoot the ball to your enemy's planet!
-025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you.
 026 Destroy as many enemies as possible!
-027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget.
 028 Destroy es many enemies as possible!
-029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer. \n \nUse the keys you configured in options menu for controlling your ship. \nTo change your weapon, land on your planet, press \nFIRE and then navigate through the weapons by pressing LEFT or RIGHT. \nUse TAB to show statistics about the current game.
+029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer.
 030 Pick up the remote and keep it as long as possible!
 
 // display options
 // tabs
 
 150 Interface
-102 Display
+102 Graphics
 103 Audio
 
 104 Window Settings
@@ -63,6 +63,7 @@
 040 Stars
 041 Fullscreen
 042 V-Sync
+
 151 High Resolution
 152 Low Resolution
 153 Off
@@ -150,7 +151,7 @@
 100 Tab
 101 Up
 
-// tutorialtexts
+// tutorial texts
 
 107 Welcome, Space Rookie!
 108 We are glad to recruit a rising hero like you to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
@@ -216,4 +217,16 @@
 148 You Nearly Got Him!
 149 Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is.
 
-// 154
+// tabmenu collumns
+
+154 points
+155 frags
+156 teamkills
+157 suicides
+158 deaths
+159 reputation
+160 total
+161 statistics
+
+// 162
+

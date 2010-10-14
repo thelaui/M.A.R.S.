@@ -70,10 +70,10 @@ class BotController: public Controller {
         void     startFight();
 
         // helper functions
-        void     turnTo(Vector2f const& location) const;
+        bool     turnTo(Vector2f const& location) const;
         Vector2f calcPath(Vector2f const& endPoint, bool avoidBall) const;
         void     shootEnemy(Ship* enemyShip = NULL) const;
-        void     shootPoint(Vector2f const& location) const;
+        void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true) const;
 
         mutable float evaluationTimer_;
         Vector2f nextRoutePoint_;

@@ -148,7 +148,7 @@ namespace zones {
             Vector2f objectToBorderH(directionH * lengthFactorH);
             float distanceH((objectToBorderH.length() - highestL->radius())/2.f);
             Vector2f centerH(highestL->location() +  directionH * (highestL->radius() + distanceH));
-            if (centerH.x_ < 640)
+            if (centerH.x_ + distanceH < 640)
                 tacticalZonesL_.push_back(new TacticalZone(centerH, distanceH));
             else {
                 float newDistanceH((800.f - highestL->location().y_ - highestL->radius())/2.f);
@@ -163,7 +163,7 @@ namespace zones {
             Vector2f objectToBorderL(directionL * lengthFactorL);
             float distanceL((objectToBorderL.length() - lowestL->radius())/2.f);
             Vector2f centerL(lowestL->location() +  directionL * (lowestL->radius() + distanceL));
-            if (centerL.x_ < 640)
+            if (centerL.x_ + distanceL < 640)
                 tacticalZonesL_.push_back(new TacticalZone(centerL, distanceL));
             else {
                 float newDistanceH((lowestL->location().y_ - lowestL->radius())/2.f);
@@ -198,7 +198,7 @@ namespace zones {
             Vector2f objectToBorderH(directionH * lengthFactorH);
             float distanceH((objectToBorderH.length() - highestR->radius())/2.f);
             Vector2f centerH(highestR->location() +  directionH * (highestR->radius() + distanceH));
-            if (centerH.x_ > 641)
+            if (centerH.x_ + distanceH > 641)
                 tacticalZonesR_.push_back(new TacticalZone(centerH, distanceH));
             else {
                 float newDistanceH((800.f - highestR->location().y_ - highestR->radius())/2.f);
@@ -213,7 +213,7 @@ namespace zones {
             Vector2f objectToBorderL(directionL * lengthFactorL);
             float distanceL((objectToBorderL.length() - lowestR->radius())/2.f);
             Vector2f centerL(lowestR->location() +  directionL * (lowestR->radius() + distanceL));
-            if (centerL.x_ > 641)
+            if (centerL.x_ + distanceL > 641)
                 tacticalZonesR_.push_back(new TacticalZone(centerL, distanceL));
             else {
                 float newDistanceH((lowestR->location().y_ - lowestR->radius())/2.f);
@@ -223,9 +223,9 @@ namespace zones {
         }
 
         // adding tactical zones around home planets
-        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 400.f));
+        tacticalZonesL_.push_back(new TacticalZone(spaceObjects::getHomes()[0]->location(), 350.f));
         totalTacticalAreaL_ += 160000;
-        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 400.f));
+        tacticalZonesR_.push_back(new TacticalZone(spaceObjects::getHomes()[1]->location(), 350.f));
         totalTacticalAreaR_ += 160000;
     }
 

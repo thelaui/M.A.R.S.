@@ -20,11 +20,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/UiWindow.hpp"
 
+class TextBox;
+
 class InfoTDM: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
-        void onShow() {}
+        void onShow();
 
     private:
         InfoTDM(int width, int height): UiWindow(width, height) {}
@@ -33,6 +35,8 @@ class InfoTDM: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_;
+
+        static TextBox* infoBox_;
 };
 
 # endif // INFOTDM_HPP_INCLUDED
