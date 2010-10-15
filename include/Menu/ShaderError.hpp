@@ -1,4 +1,4 @@
-/* window.hpp
+/* ShaderError.hpp
 
 Copyright (c) 2010 by Felix Lauer und Simon Schneegans
 
@@ -15,36 +15,30 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef WINDOW_HPP_INCLUDED
-# define WINDOW_HPP_INCLUDED
+# ifndef SHADERERROR_HPP_INCLUDED
+# define SHADERERROR_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
+# include "Interface/UiWindow.hpp"
 
-# include <SFML/Graphics.hpp>
+class ShaderError: public UiWindow {
+    public:
+        static UiWindow* get();
+        void checkWidgets();
+        void onShow() {}
 
-namespace window {
-    void open();
+    private:
+        ShaderError(int width, int height): UiWindow(width, height) {}
+        ShaderError(ShaderError const& copy);
 
-    void update();
-    void display();
+        static UiWindow* instance_;
 
-    void draw(sf::Drawable const& toBeDrawn);
-    sf::Input const& getInput();
+        static bool kOk_;
+};
 
-    void setPixelView();
-    void setSpaceView();
+# endif // SHADERERROR_HPP_INCLUDED
 
-    void drawPostFX();
 
-    bool isOpen();
-    void showCursor(bool show);
-    void create();
 
-    Vector2f coordToPixel(Vector2f const& spaceCoord);
-    Vector2f pixelToCoord(Vector2f const& pixelCoord);
-    Vector2f const& getViewPort();
 
-    void close();
-}
 
-# endif // WINDOW_HPP_INCLUDED
+

@@ -64,6 +64,8 @@
 040 Stars
 041 Fullscreen
 042 V-Sync
+163 Shader Effects
+164 Sadly, shaders are not supported by your hardware!
 
 151 High Resolution
 152 Low Resolution
@@ -229,5 +231,5 @@
 160 Total:
 161 Statistics
 
-// 163
+// 165
 

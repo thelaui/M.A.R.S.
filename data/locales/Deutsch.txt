@@ -65,7 +65,9 @@
 040 Sterne
 041 Vollbild
 042 V-Sync
+163 Shadereffekte
 151 Hohe Auflösung
+164 Shader sind auf deiner Hardware leider nicht möglich!
 
 152 Niedrige Auflösung
 153 Aus
@@ -229,4 +231,4 @@
 160 Gesamt:
 161 Statistik
 
-// 163
+// 165

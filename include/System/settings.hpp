@@ -61,6 +61,7 @@ namespace settings {
     extern bool           C_showInfoCK;
     extern bool           C_showSelectLanguage;
     extern sf::String     C_language;
+    extern bool           C_shaders;
 
     // player settings ----- adjustable via options menu
     extern sf::String     C_playerIName;

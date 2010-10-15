@@ -39,7 +39,8 @@ namespace locales {
                      TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo,
-                     Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, COUNT};
+                     Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
+                     ShaderError, COUNT};
 
     void                          load();
     std::vector<sf::String> const getLanguages();

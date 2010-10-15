@@ -84,7 +84,7 @@ void Game::update() {
         zones::update();
         decoObjects::update();
         items::update();
-        //postFX::update();
+        postFX::update();
     }
     else
         startTime_ += timer::frameTime();
@@ -99,7 +99,9 @@ void Game::draw() const {
     particles::drawHigher();
     decoObjects::draw();
     items::draw();
-    //postFX::draw();
+
+    window::drawPostFX();
+
     hud::draw();
     menus::draw();
 }

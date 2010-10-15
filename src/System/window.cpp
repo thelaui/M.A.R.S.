@@ -33,7 +33,8 @@ namespace window {
     namespace {
         // main window of the game
         sf::RenderWindow window_;
-        //sf::RenderImage  backBuffer_;
+        sf::RenderImage  backBuffer_;
+        sf::Sprite       fxImage_;
 
         Vector2f         viewPort_;
         bool             resized_(false), resized2_(false);
@@ -70,7 +71,8 @@ namespace window {
     void open() {
         settings::load();
         locales:: load();
-        //postFX::  load();
+        postFX::  load();
+        fxImage_.SetBlendMode(sf::Blend::None);
         create();
     }
 
@@ -115,9 +117,9 @@ namespace window {
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
-        //backBuffer_.Clear();
-        //backBuffer_.Create(viewPort_.x_, viewPort_.y_);
-        //backBuffer_.SetActive(true);
+        backBuffer_.Clear();
+        backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+        backBuffer_.SetActive(true);
     }
 
     void update() {
@@ -170,36 +172,36 @@ namespace window {
         glLoadIdentity();
     }
 
+    void drawPostFX() {
+        if (settings::C_shaders) {
+            backBuffer_.Display();
+
+            window_.SetActive(true);
+            setPixelView();
+
+            fxImage_.SetImage(backBuffer_.GetImage());
+
+            postFX::activate(postFX::Sepia);
+            glEnable(GL_TEXTURE_2D);
+            window_.Draw(fxImage_);
+            glDisable(GL_TEXTURE_2D);
+            postFX::deactivate(postFX::Sepia);
+
+            setSpaceView();
+        }
+    }
+
     void display() {
-
-        /*backBuffer_.Display();
-
-        window_.Clear();
-
-        sf::Sprite sprite(backBuffer_.GetImage());
-        postFX::activate(postFX::Blur);
-        window_.Draw(sprite);
-        postFX::deactivate(postFX::Blur);*/
 
         window_.Display();
 
-        //backBuffer_.SetActive(true);
-
-        /*
-        if (!settings::C_showStars || (resized_ && resized2_)) {
-            glClear(GL_COLOR_BUFFER_BIT);
-            resized_ = false;
-            resized2_= false;
-        }
-        if (resized_) {
-            glClear(GL_COLOR_BUFFER_BIT);
-            resized2_ = true;
-        }
-        */
         if (++clearCount_ > 30) {
             glClear(GL_COLOR_BUFFER_BIT);
             clearCount_ = 0;
         }
+
+        if (settings::C_shaders)
+            backBuffer_.SetActive(true);
     }
 
     void draw(sf::Drawable const& toBeDrawn) {

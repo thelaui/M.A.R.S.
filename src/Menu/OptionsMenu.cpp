@@ -38,12 +38,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "Locales/locales.hpp"
 # include "Menu/ChooseLanguage.hpp"
+# include "Menu/ShaderError.hpp"
+# include "Shaders/postFX.hpp"
 
 UiWindow* OptionsMenu::instance_(NULL);
 bool OptionsMenu::kOk_(false);
 bool OptionsMenu::kChooseLanguage_(false);
 bool OptionsMenu::fullscreen_(false);
 bool OptionsMenu::vsync_(false);
+bool OptionsMenu::shaders_(false);
 int  OptionsMenu::soundVolume_(0);
 int  OptionsMenu::musicVolume_(0);
 int  OptionsMenu::announcerVolume_(0);
@@ -95,6 +98,7 @@ UiWindow* OptionsMenu::get() {
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(10,70), 150));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(10,90), 150));
         tabGraphics->addWidget(new Label(locales::getLocale(locales::ShowStars), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f));
         RadioGroup* group = new RadioGroup();
             group->addRadioButton(new RadioButton(locales::getLocale(locales::StarsHigh), &settings::C_StarsHigh, Vector2f(210,50), 150));
@@ -143,6 +147,14 @@ void OptionsMenu::checkWidgets() {
         settings::C_vsync = vsync_;
         window::create();
     }
+    if (shaders_ != settings::C_shaders) {
+        settings::C_shaders = shaders_;
+        if (shaders_ && !postFX::supported()) {
+            shaders_ = false;
+            settings::C_shaders = false;
+            menus::showWindow(ShaderError::get());
+        }
+    }
     if ((hue1_ != settings::C_playerIColor.h()) | (sat1_ != settings::C_playerIColor.s()*255) | (val1_ != settings::C_playerIColor.v()*255)) {
         settings::C_playerIColor.h(hue1_);
         settings::C_playerIColor.s(static_cast<float>(sat1_)/255.f);
@@ -169,6 +181,7 @@ void OptionsMenu::checkWidgets() {
 void OptionsMenu::onShow() {
     fullscreen_ = settings::C_fullScreen;
     vsync_      = settings::C_vsync;
+    shaders_    = settings::C_shaders;
     soundVolume_= settings::C_soundVolume;
     musicVolume_= settings::C_musicVolume;
     announcerVolume_= settings::C_announcerVolume;

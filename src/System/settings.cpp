@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 
 # include "Media/file.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <fstream>
 # include <sstream>
@@ -64,6 +65,7 @@ namespace settings {
     bool        C_showInfoCK =              true;
     bool        C_showSelectLanguage =      true;
     sf::String  C_language =                "English";
+    bool        C_shaders =                 postFX::supported();
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
@@ -143,6 +145,7 @@ namespace settings {
         outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
         outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
         outStream << "[starResolution] "        << (C_StarsHigh ? 2 : (C_StarsLow ? 1 : 0 )) << std::endl;
+        outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
 
         outStream.close();
     }
@@ -460,6 +463,13 @@ namespace settings {
                     iss >> value;
                     if (value == "true")        C_showSelectLanguage = true;
                     else if (value == "false")  C_showSelectLanguage = false;
+                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                }
+                else if (inputLine == "[shaders]") {
+                    std::string value;
+                    iss >> value;
+                    if (value == "true")        C_shaders = true;
+                    else if (value == "false")  C_shaders = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else

@@ -22,7 +22,6 @@ namespace postFX {
     enum EffectType {Sepia, Blur, COUNT};
 
     void update();
-    void draw();
 
     void activate  (EffectType);
     void deactivate(EffectType);

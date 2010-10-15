@@ -34,7 +34,7 @@ class OptionsMenu: public UiWindow {
 
         static bool kOk_, kChooseLanguage_;
 
-        static bool fullscreen_, vsync_;
+        static bool fullscreen_, vsync_, shaders_;
         static int  hue1_, sat1_, val1_, hue2_, sat2_, val2_,
                     soundVolume_, musicVolume_, announcerVolume_;
 };
