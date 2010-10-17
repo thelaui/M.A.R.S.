@@ -18,19 +18,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Games/games.hpp"
 
-void mainLoop() {
-    while (window::isOpen()) {
-        window::update();
-        games::update();
-        games::draw();
-        window::display();
-    }
-}
-
 int main() {
     window::open();
-    games::start(games::gMenu);
-    mainLoop();
+    games:: start(games::gMenu);
+    window::mainLoop();
 
     return 0;
 }

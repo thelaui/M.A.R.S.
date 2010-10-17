@@ -33,7 +33,7 @@ void Cannon::update() {
     Player* carrier = items::getCannonControl()->getCarrier();
 
     Vector2f toTarget;
-    if (carrier)
+    if (carrier && players::getEnemy(carrier->team())->home()->getLife() > 0 && carrier->team()->home()->getLife() > 0)
         toTarget = (players::getEnemy(carrier->team())->home()->location() - Vector2f(640.f, 0.f)).normalize();
     else
         toTarget = Vector2f(0.f, -1.f);

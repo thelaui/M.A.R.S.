@@ -42,12 +42,10 @@ namespace menus {
 
     void draw() {
         if (visible() && !hidden_) {
-            window::setPixelView();
             for (std::vector<UiWindow*>::iterator it = windowStack_.begin(); it != windowStack_.end(); ++it)
                 (*it)->draw();
             Vector2f viewPort = window::getViewPort();
             text::drawScreenText("M.A.R.S. 0.5.1 - " + sf::String(__DATE__), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::HandelGotDLig, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
-            window::setSpaceView();
         }
     }
 

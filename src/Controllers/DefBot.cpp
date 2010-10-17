@@ -21,12 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/zones.hpp"
 # include "SpaceObjects/balls.hpp"
 # include "Players/Player.hpp"
+# include "Players/Team.hpp"
 
 # include <cmath>
 
 void DefBot::evaluate(){
     checkEnergy();
     checkBall();
+    checkHome();
 }
 
 void DefBot::checkEnergy(){
@@ -68,3 +70,8 @@ void DefBot::checkBall(){
     }
 }
 
+void DefBot::checkHome() {
+    if (slave_->team()->home()->getLife() == 0) {
+        actions_[BOT_PROTECT_ZONE] = 100;
+    }
+}

@@ -145,7 +145,7 @@ void OptionsMenu::checkWidgets() {
     }
     if (vsync_ != settings::C_vsync) {
         settings::C_vsync = vsync_;
-        window::create();
+        window::applyGlobalSettings();
     }
     if (shaders_ != settings::C_shaders) {
         settings::C_shaders = shaders_;
@@ -154,6 +154,8 @@ void OptionsMenu::checkWidgets() {
             settings::C_shaders = false;
             menus::showWindow(ShaderError::get());
         }
+        else
+            window::applyGlobalSettings();
     }
     if ((hue1_ != settings::C_playerIColor.h()) | (sat1_ != settings::C_playerIColor.s()*255) | (val1_ != settings::C_playerIColor.v()*255)) {
         settings::C_playerIColor.h(hue1_);

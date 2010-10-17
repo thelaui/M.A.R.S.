@@ -27,18 +27,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/TacticalZone.hpp"
 # include "Zones/RasterZone.hpp"
 
-void BotController::charge() const {
+void BotController::charge() {
     Vector2f direction = ship()->location() - slave_->team()->home()->location();
     turnTo(direction + ship()->location());
     slaveFire(false);
     slaveUp(false);
 }
 
-void BotController::land() const {
+void BotController::land() {
     moveTo(slave_->team()->home()->location(), 50.f, true, 0.f, true);
 }
 
-void BotController::kickBallToEnemy() const {
+void BotController::kickBallToEnemy() {
     Vector2f ballLocation = balls::getBall()->location_;
     if(balls::getBall()->atStart())
         moveTo(ballLocation, 0.f, false, 0.f);
@@ -77,7 +77,7 @@ void BotController::kickBallToEnemy() const {
     }
 }
 
-void BotController::kickBallOutHome() const {
+void BotController::kickBallOutHome() {
     Vector2f shipLocation = ship()->location();
     Vector2f ballLocation = balls::getBall()->location();
     float    shipRotation = ship()->rotation_*M_PI/180;
@@ -108,7 +108,7 @@ void BotController::kickBallOutHome() const {
     }
 }
 
-void BotController::waitForBall() const {
+void BotController::waitForBall() {
     Vector2f ballLocation = balls::getBall()->location_;
     Vector2f targetPlanetLocation = players::getEnemy(slave_->team())->home()->location();
     targetPlanetLocation = calcPath(targetPlanetLocation, false);

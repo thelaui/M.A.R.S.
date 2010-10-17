@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ball.hpp"
 # include "Media/announcer.hpp"
 # include "DecoObjects/decoObjects.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -338,6 +339,7 @@ void Ship::explode() {
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
     physics::causeShockWave(this, 50.f);
+    postFX::spawnExplosion(location_);
     physics::removeMobileObject(this);
     visible_ = false;
     life_ = 0.f;

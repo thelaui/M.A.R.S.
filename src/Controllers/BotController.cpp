@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
 # include "Players/Team.hpp"
+# include "System/settings.hpp"
 
 # include <cfloat>
 
@@ -71,6 +72,40 @@ void BotController::update() {
         case BOT_ESCAPE:             escape();                                              break;
         case BOT_START_FIGHT:        startFight();                                          break;
         default:;
+    }
+}
+
+void BotController::draw() {
+    const Vector2f shipLocation = ship()->location_;
+     // draw lines
+    if (settings::C_drawAIPath) {
+
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glLineWidth(1);
+
+        glBegin(GL_LINES);
+        if (nextPathPoint_ == moveToPoint_) {
+            glColor4f(0,1,0, 0.8f);
+            glVertex2f(shipLocation.x_, shipLocation.y_);
+            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
+        }
+        else {
+            glColor4f(0,1,0, 0.8f);
+            glVertex2f(shipLocation.x_, shipLocation.y_);
+            glColor4f(1,0,0, 0.8f);
+            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
+            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
+            glColor4f(0,1,0, 0.8f);
+            glVertex2f(moveToPoint_.x_, moveToPoint_.y_);
+        }
+        glEnd();
+
+        glPointSize(8);
+        glBegin(GL_POINTS);
+        glColor3f(0,1,0);
+        Vector2f temp = aimDirection_*50 + shipLocation;
+            glVertex2f(temp.x_, temp.y_);
+        glEnd();
     }
 }
 

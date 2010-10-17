@@ -17,33 +17,35 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <Shaders/postFX.hpp>
 
-# include "System/window.hpp"
+# include "System/timer.hpp"
 
-# include <SFML/OpenGL.hpp>
-# include <SFML/Graphics.hpp>
 # include <iostream>
 
 namespace postFX {
 
     namespace {
-        std::vector<sf::Shader> postFXs_(COUNT);
+        sf::Shader postFX_;
+
+        Vector2f exploLocation_;
+        float    timer_(0.f);
     }
 
     void update() {
-        if (supported()) {
-            const Vector2f viewport = window::getViewPort();
-            postFXs_[Blur].SetParameter("radial_origin", sf::Vector2f(static_cast<float>(window::getInput().GetMouseX())/viewport.x_, 1.0 - static_cast<float>(window::getInput().GetMouseY())/viewport.y_));
+        if (timer_ > 0 && supported()) {
+            timer_ -= timer::frameTime();
+            postFX_.SetParameter("radial_blur", timer_*timer_*(1-std::sin(((1.5f-timer_)*2.5f)*M_PI)));
+           // postFX_.SetParameter("radial_bright", (1.f-std::sin((1.f-timer_*2.f)*0.5f*M_PI))*2.f + 1.f);
         }
     }
 
-    void activate  (EffectType type) {
-        if (supported())
-            postFXs_[type].Bind();
+    sf::Shader* get() {
+        return (timer_ > 0.f) ? &postFX_ : NULL;
     }
 
-    void deactivate(EffectType type) {
-        if (supported())
-            postFXs_[type].Unbind();
+    void spawnExplosion(Vector2f const& location) {
+        exploLocation_ = location;
+        postFX_.SetParameter("radial_origin", sf::Vector2f(location.x_/1280.f, 1.f - location.y_/800.f));
+        timer_ = 1.5f;
     }
 
     bool supported() {
@@ -52,8 +54,9 @@ namespace postFX {
 
     void load() {
         if (supported()) {
-            postFXs_[Sepia].LoadFromFile("data/shaders/sepia.frag");
-            postFXs_[Blur].LoadFromFile("data/shaders/blur.frag");
+            postFX_.LoadFromFile("data/shaders/blur.frag");
+            postFX_.SetParameter("radial_blur", 0.f);
+          //  postFX_.SetParameter("radial_bright", 1.f);
         }
         else
             std::cout << "Shaders are not supported on your hardware! There will be no fancy graphics..." << std::endl;

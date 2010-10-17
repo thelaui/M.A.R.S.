@@ -25,6 +25,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/locales.hpp"
 # include "System/timer.hpp"
 # include "Shaders/postFX.hpp"
+# include "Games/games.hpp"
+# include "SpaceObjects/stars.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -37,19 +39,19 @@ namespace window {
         sf::Sprite       fxImage_;
 
         Vector2f         viewPort_;
-        bool             resized_(false), resized2_(false);
         float            scale_(960.f/1280.f);
         int              clearCount_(0);
 
         void setViewPort() {
-            int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+            const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
             if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
-                glViewport((windowWidth-viewPort_.x_)/2, 0, viewPort_.x_, viewPort_.y_);
+                glViewport((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_);
             else
-                glViewport(0, (windowHeight-viewPort_.y_)/2, viewPort_.x_, viewPort_.y_);
+                glViewport(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_);
         }
 
         void resized() {
+            window_.SetActive(true);
             int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
             // if windows aspect ration is greater than aspect ratio of space
             if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
@@ -62,11 +64,69 @@ namespace window {
                 viewPort_.y_ = windowWidth / 1.6f;
                 viewPort_.x_  = windowWidth;
             }
-            setViewPort();
-            resized_ = true;
             glClear(GL_COLOR_BUFFER_BIT);
+
+            setViewPort();
+
+            if (settings::C_shaders) {
+                backBuffer_.SetActive(true);
+                backBuffer_.Clear();
+                backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+                glViewport(0,0,viewPort_.x_, viewPort_.y_);
+                backBuffer_.SetSmooth(false);
+            }
         }
+
+        void update() {
+            timer::update(window_.GetFrameTime());
+            sf::Event event;
+            while (window_.GetEvent(event)) {
+                if      (event.Type == sf::Event::Resized)
+                    resized();
+                else if (event.Type == sf::Event::Closed)
+                    window_.Close();
+                else if (event.Type == sf::Event::KeyPressed) {
+                    if (!menus::visible())
+                        controllers::singleKeyEvent(event.Key.Code);
+                    menus::buttonPressed(event.Key.Code);
+                }
+                else if (event.Type == sf::Event::TextEntered) {
+                    if (menus::visible())
+                        menus::textEntered(event.Text.Unicode);
+                }
+                else if (event.Type == sf::Event::MouseMoved) {
+                    if (menus::visible())
+                        menus::mouseMoved(Vector2f(event.MouseMove.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseMove.Y - (window_.GetHeight() - viewPort_.y_)/2));
+                }
+                else if (event.Type == sf::Event::MouseButtonPressed) {
+                    if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                        menus::mouseLeft(true);
+                }
+                else if (event.Type == sf::Event::MouseButtonReleased) {
+                    if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                        menus::mouseLeft(false);
+                }
+            }
+        }
+
+        void display() {
+
+            window_.Display();
+
+            if (++clearCount_ > 30) {
+                glClear(GL_COLOR_BUFFER_BIT);
+                clearCount_ = 0;
+            }
+
+        }
+
+         bool isOpen() {
+            return window_.IsOpened();
+        }
+
     }
+
+    // "public" methodes /////////////////////////////////////////////////
 
     void open() {
         settings::load();
@@ -74,6 +134,19 @@ namespace window {
         postFX::  load();
         fxImage_.SetBlendMode(sf::Blend::None);
         create();
+    }
+
+    void close() {
+        window_.Close();
+    }
+
+    void mainLoop() {
+        while (isOpen()) {
+            update();
+            games::update();
+            games::draw();
+            display();
+        }
     }
 
     void create() {
@@ -108,100 +181,63 @@ namespace window {
         glDisable(GL_SCISSOR_TEST);
         glHint(GL_PERSPECTIVE_CORRECTION_HINT,GL_FASTEST);
         glHint(GL_POINT_SMOOTH_HINT,GL_FASTEST);
-        glReadBuffer(GL_FRONT);
 
         glEnable(GL_BLEND);
-        glEnable(GL_LINE_SMOOTH);
-        glEnable(GL_POINT_SMOOTH);
+        glDisable(GL_LINE_SMOOTH);
+        glDisable(GL_POINT_SMOOTH);
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-
-        backBuffer_.Clear();
-        backBuffer_.Create(viewPort_.x_, viewPort_.y_);
-        backBuffer_.SetActive(true);
     }
 
-    void update() {
-        timer::update(window_.GetFrameTime());
-        sf::Event event;
-        while (window_.GetEvent(event)) {
-            if      (event.Type == sf::Event::Resized)
-                resized();
-            else if (event.Type == sf::Event::Closed)
-                window_.Close();
-            else if (event.Type == sf::Event::KeyPressed) {
-                if (!menus::visible())
-                    controllers::singleKeyEvent(event.Key.Code);
-                menus::buttonPressed(event.Key.Code);
-            }
-            else if (event.Type == sf::Event::TextEntered) {
-                if (menus::visible())
-                    menus::textEntered(event.Text.Unicode);
-            }
-            else if (event.Type == sf::Event::MouseMoved) {
-                if (menus::visible())
-                    menus::mouseMoved(Vector2f(event.MouseMove.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseMove.Y - (window_.GetHeight() - viewPort_.y_)/2));
-            }
-            else if (event.Type == sf::Event::MouseButtonPressed) {
-                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
-                    menus::mouseLeft(true);
-            }
-            else if (event.Type == sf::Event::MouseButtonReleased) {
-                if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
-                    menus::mouseLeft(false);
-            }
-        }
-    }
+    void startDrawSpace() {
+        if (settings::C_shaders)
+            backBuffer_.SetActive(true);
 
-    void setPixelView() {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        setViewPort();
         gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-    }
 
-    void setSpaceView() {
+        stars::draw();
+
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        setViewPort();
         gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
     }
 
-    void drawPostFX() {
+    void startDrawHUD() {
         if (settings::C_shaders) {
             backBuffer_.Display();
 
             window_.SetActive(true);
-            setPixelView();
 
-            fxImage_.SetImage(backBuffer_.GetImage());
+            glMatrixMode(GL_PROJECTION);
+            glLoadIdentity();
+            setViewPort();
+            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
 
-            postFX::activate(postFX::Sepia);
+            fxImage_.SetImage(backBuffer_.GetImage(), true);
+
             glEnable(GL_TEXTURE_2D);
-            window_.Draw(fxImage_);
+            sf::Shader* shader = postFX::get();
+            if (shader) window_.Draw(fxImage_, *shader);
+            else        window_.Draw(fxImage_);
             glDisable(GL_TEXTURE_2D);
-            postFX::deactivate(postFX::Sepia);
-
-            setSpaceView();
         }
-    }
-
-    void display() {
-
-        window_.Display();
-
-        if (++clearCount_ > 30) {
-            glClear(GL_COLOR_BUFFER_BIT);
-            clearCount_ = 0;
+        else {
+            glMatrixMode(GL_PROJECTION);
+            glLoadIdentity();
+            setViewPort();
+            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
         }
-
-        if (settings::C_shaders)
-            backBuffer_.SetActive(true);
     }
 
     void draw(sf::Drawable const& toBeDrawn) {
@@ -214,27 +250,26 @@ namespace window {
         return window_.GetInput();
     }
 
-    bool isOpen() {
-        return window_.IsOpened();
-    }
-
     void showCursor(bool show) {
         window_.ShowMouseCursor(show);
     }
 
-    Vector2f coordToPixel(Vector2f const& spaceCoord) {
-        return spaceCoord*scale_;
+    void applyGlobalSettings() {
+        if (settings::C_shaders) {
+            backBuffer_.SetActive(true);
+            backBuffer_.Clear();
+            backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+            glViewport(0,0,viewPort_.x_, viewPort_.y_);
+            backBuffer_.SetSmooth(false);
+        }
+        window_.UseVerticalSync(settings::C_vsync);
     }
 
-    Vector2f pixelToCoord(Vector2f const& pixelCoord) {
-        return pixelCoord/scale_;
+    Vector2f const coordToPixel(Vector2f const& spaceCoord) {
+        return spaceCoord*scale_;
     }
 
     Vector2f const& getViewPort() {
         return viewPort_;
-    }
-
-    void close() {
-        window_.Close();
     }
 }

@@ -29,6 +29,7 @@ class AggroBot: public BotController {
         void evaluate();
         void checkEnergy();
         void checkBall();
+        void checkHome();
 };
 
 # endif // AGGROBOT_HPP_INCLUDED

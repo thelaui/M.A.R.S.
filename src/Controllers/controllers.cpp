@@ -54,6 +54,11 @@ namespace controllers {
             keyControllers2_->update(keyCode);
     }
 
+    void draw() {
+        for (std::vector<BotController*>::iterator it = botControllers_.begin(); it != botControllers_.end(); ++it)
+            (*it)->draw();
+    }
+
     void addController(ControlType type, Player* slave) {
         switch (type) {
             case cDefBot:     botControllers_.push_back(new DefBot(slave));       break;

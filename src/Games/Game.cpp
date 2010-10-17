@@ -91,7 +91,6 @@ void Game::update() {
 }
 
 void Game::draw() const {
-
     particles::drawLower();
     ships::draw();
     balls::draw();
@@ -99,11 +98,7 @@ void Game::draw() const {
     particles::drawHigher();
     decoObjects::draw();
     items::draw();
-
-    window::drawPostFX();
-
-    hud::draw();
-    menus::draw();
+    controllers::draw();
 }
 
 void Game::restart() {

@@ -31,6 +31,8 @@ class Home: public SpaceObject {
         void draw() const;
         void drawLife() const;
 
+        int getLife() const;
+
         void createShips(std::vector<Player*>& inhabitants) const;
 
         void onCollision(SpaceObject* with, Vector2f const& location,

@@ -28,6 +28,8 @@ namespace controllers {
     void update();
     void singleKeyEvent(sf::Key::Code keyCode);
 
+    void draw();
+
     void addController(ControlType type, Player* slave);
 
     void resetBots();

@@ -42,10 +42,11 @@ Home::Home(Vector2f const& location, float radius, Color3f const& color):
 }
 
 void Home::update() {
-    if (restartTimer_ > 0) {
+    if (restartTimer_ > 0.f) {
         restartTimer_ -= timer::frameTime();
-        if (restartTimer_ <= 0) games::restart();
+        if (restartTimer_ <= 0.f) games::restart();
     }
+    else if (life_ <= 0.f && visible_) explode();
 }
 
 void Home::draw() const {
@@ -71,9 +72,14 @@ void Home::draw() const {
 void Home::drawLife() const {
     if (visible_) {
         std::stringstream sstr;
-        sstr << "  " << static_cast<int>(ceil(life_/10.f)) << "  ";
+        sstr << "  " << getLife() << "  ";
         text::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
     }
+}
+
+int Home::getLife() const {
+    int life = static_cast<int>(ceil(life_/10.f));
+    return life < 0 ? 0 : life;
 }
 
 void Home::createShips(std::vector<Player*>& inhabitants) const {
@@ -150,7 +156,6 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oBall:
             life_ -= (strength + dynamic_cast<Ball*>(with)->heatAmount());
-            if (life_ <= 0) explode();
             break;
 
         case spaceObjects::oCannonBall:
@@ -174,6 +179,7 @@ void Home::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(2, particles::pBurningFragment, location_);
     physics::removeStaticObject(this);
+    location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;
     restartTimer_ = 5.f;
     players::getTeamL()->home() == this ? ++players::getTeamR()->points_ : ++players::getTeamL()->points_;

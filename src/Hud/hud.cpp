@@ -62,7 +62,6 @@ namespace hud {
     }
 
     void draw() {
-        window::setPixelView();
         numbers::draw();
         if (games::type() == games::gMenu)   logo_->draw();
         else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial) countDown_->draw();
@@ -80,7 +79,6 @@ namespace hud {
             leftLife_ ->draw();
         }
         tabStats_->draw();
-        window::setSpaceView();
     }
 
     void spawnNumber(Vector2f const* location, int value) {

@@ -41,7 +41,6 @@ namespace stars {
         if (settings::C_StarsNo)
             glClear(GL_COLOR_BUFFER_BIT);
         else {
-            window::setPixelView();
 
             glDisable(GL_BLEND);
             glEnable(GL_TEXTURE_2D);
@@ -74,8 +73,6 @@ namespace stars {
             glDisable(GL_TEXTURE_2D);
             glBindTexture(GL_TEXTURE_2D, 0);
             glEnable(GL_BLEND);
-
-            window::setSpaceView();
         }
     }
 }

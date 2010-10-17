@@ -18,13 +18,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef POSTFX_HPP_INCLUDED
 # define POSTFX_HPP_INCLUDED
 
-namespace postFX {
-    enum EffectType {Sepia, Blur, COUNT};
+# include "System/Vector2f.hpp"
 
+# include <SFML/Graphics.hpp>
+
+namespace postFX {
     void update();
 
-    void activate  (EffectType);
-    void deactivate(EffectType);
+    sf::Shader* get();
+    void spawnExplosion(Vector2f const& location);
 
     bool supported();
     void load();

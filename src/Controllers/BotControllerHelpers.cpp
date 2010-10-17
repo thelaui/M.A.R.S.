@@ -27,77 +27,46 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 int pathDepth = 0;
 
-bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance, bool goingToLand) const {
-    Vector2f targetPoint = calcPath(location, avoidBall);
+bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoidBall, float minDistance, bool goingToLand) {
+    moveToPoint_ = location;
+    nextPathPoint_ = calcPath(moveToPoint_, avoidBall);
 
-    Vector2f shipLocation = ship()->location_;
-    Vector2f shipVelocity = ship()->velocity_;
-    float    shipRotation = ship()->rotation_*M_PI/180.f;
-    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation));
+    const Vector2f shipLocation = ship()->location_;
+    const Vector2f shipVelocity = ship()->velocity_;
+    const float    shipRotation = ship()->rotation_*M_PI/180.f;
+    const Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation));
 
-    Vector2f aimDirection;
-    if (targetPoint == location) aimDirection = targetPoint - shipLocation - shipVelocity*stopFactor*shipVelocity.lengthSquare()*0.00003f;
-    else                         aimDirection = targetPoint - shipLocation - shipVelocity*0.8f*shipVelocity.lengthSquare()*0.00003f;
+    if (nextPathPoint_ == moveToPoint_) aimDirection_ = nextPathPoint_ - shipLocation - shipVelocity*stopFactor*shipVelocity.lengthSquare()*0.00003f;
+    else                         aimDirection_ = nextPathPoint_ - shipLocation - shipVelocity*0.8f*shipVelocity.lengthSquare()*0.00003f;
 
-    aimDirection = aimDirection.normalize();
+    aimDirection_ = aimDirection_.normalize();
 
-    turnTo(aimDirection+shipLocation);
+    turnTo(aimDirection_+shipLocation);
 
-    Vector2f velocityInAimDirection = aimDirection*(shipVelocity*aimDirection);
-    float distance = (targetPoint-shipLocation).lengthSquare();
+    Vector2f velocityInAimDirection = aimDirection_*(shipVelocity*aimDirection_);
+    float distance = (nextPathPoint_-shipLocation).lengthSquare();
 
     bool accelerate(false);
-    if (velocityInAimDirection.lengthSquare() < 90000.f || shipVelocity*aimDirection < 0.f)
-        if (distance > 2500 || (shipVelocity*aimDirection < 0.f && (distance > 250.f || !goingToLand)))
-            if (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection*50.f, 10.f))
+    if (velocityInAimDirection.lengthSquare() < 90000.f || shipVelocity*aimDirection_ < 0.f)
+        if (distance > 2500 || (shipVelocity*aimDirection_ < 0.f && (distance > 250.f || !goingToLand)))
+            if (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection_*50.f, 10.f))
                 accelerate = true;
 
     slaveUp(accelerate);
 
-    // draw lines
-    if (settings::C_drawAIPath) {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glLineWidth(1);
-
-        glBegin(GL_LINES);
-        if (targetPoint == location) {
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(shipLocation.x_, shipLocation.y_);
-            glVertex2f(targetPoint.x_, targetPoint.y_);
-        }
-        else {
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(shipLocation.x_, shipLocation.y_);
-            glColor4f(1,0,0, 0.8f);
-            glVertex2f(targetPoint.x_, targetPoint.y_);
-            glVertex2f(targetPoint.x_, targetPoint.y_);
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(location.x_, location.y_);
-        }
-        glEnd();
-
-        glPointSize(8);
-        glBegin(GL_POINTS);
-        glColor3f(0,1,0);
-        Vector2f temp = aimDirection*50 + shipLocation;
-            glVertex2f(temp.x_, temp.y_);
-        glEnd();
-    }
-
-    return ((location - shipLocation).lengthSquare() < minDistance * minDistance);
+    return ((moveToPoint_ - shipLocation).lengthSquare() < minDistance * minDistance);
 }
 
-bool BotController::turnTo(Vector2f const& location) const {
+bool BotController::turnTo(Vector2f const& location) {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
-    Vector2f aimDirection = location - ship()->location();
-    float angle = aimDirection.y_*std::cos(shipRotation)-aimDirection.x_*std::sin(shipRotation);
+    Vector2f aimDirection_ = location - ship()->location();
+    float angle = aimDirection_.y_*std::cos(shipRotation)-aimDirection_.x_*std::sin(shipRotation);
     if (angle > 0) slaveRight(true);
     else           slaveLeft (true);
     return std::abs(angle) < 1.f;
 }
 
-Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) const {
+Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) {
     // get some useful data...
     Vector2f toEndPoint  = (endPoint - ship()->location()).normalize();
     Vector2f targetPoint =  endPoint;
@@ -169,7 +138,7 @@ Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) const
     return targetPoint;
 }
 
-void BotController::shootEnemy(Ship* enemyShip) const {
+void BotController::shootEnemy(Ship* enemyShip) {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
     Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
     if (enemyShip == NULL) {
@@ -189,7 +158,7 @@ void BotController::shootEnemy(Ship* enemyShip) const {
     }
 }
 
-void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) const {
+void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) {
     float minDistance(FLT_MAX);
     if (ship()->currentWeapon_->getName() == "SHOTGUN")
         minDistance = 90000.f;

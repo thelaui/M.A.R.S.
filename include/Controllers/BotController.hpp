@@ -42,7 +42,8 @@ class BotController: public Controller {
     public:
         BotController(Player* slave, controllers::ControlType type);
 
-        /*virtual*/ void update() ;
+        /*virtual*/ void update();
+        void draw();
 
         void reset();
 
@@ -54,15 +55,15 @@ class BotController: public Controller {
         std::map<Ship*, float> aggroTable_;
         float    weaponChangeTimer_;
 
-        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false) const;
+        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false);
 
     private:
         // actions
-        void     charge() const;
-        void     land() const;
-        void     kickBallToEnemy() const;
-        void     kickBallOutHome() const;
-        void     waitForBall() const;
+        void     charge();
+        void     land();
+        void     kickBallToEnemy();
+        void     kickBallOutHome();
+        void     waitForBall();
         void     attackTarget();
         void     protectZone();
         void     switchToWeapon();
@@ -70,14 +71,19 @@ class BotController: public Controller {
         void     startFight();
 
         // helper functions
-        bool     turnTo(Vector2f const& location) const;
-        Vector2f calcPath(Vector2f const& endPoint, bool avoidBall) const;
-        void     shootEnemy(Ship* enemyShip = NULL) const;
-        void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true) const;
+        bool     turnTo(Vector2f const& location);
+        Vector2f calcPath(Vector2f const& endPoint, bool avoidBall);
+        void     shootEnemy(Ship* enemyShip = NULL);
+        void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true);
 
-        mutable float evaluationTimer_;
+        float evaluationTimer_;
         Vector2f nextRoutePoint_;
         TacticalZone* toCover_;
+
+        //path variables
+        Vector2f aimDirection_;
+        Vector2f moveToPoint_;
+        Vector2f nextPathPoint_;
 };
 
 # endif // BOTCONTROLLER_HPP_INCLUDED

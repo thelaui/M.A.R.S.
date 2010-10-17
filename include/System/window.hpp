@@ -24,27 +24,23 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace window {
     void open();
+    void close();
 
-    void update();
-    void display();
+    void mainLoop();
 
     void draw(sf::Drawable const& toBeDrawn);
     sf::Input const& getInput();
 
-    void setPixelView();
-    void setSpaceView();
+    void startDrawSpace();
+    void startDrawHUD();
 
-    void drawPostFX();
-
-    bool isOpen();
     void showCursor(bool show);
+    void applyGlobalSettings();
+
     void create();
 
-    Vector2f coordToPixel(Vector2f const& spaceCoord);
-    Vector2f pixelToCoord(Vector2f const& pixelCoord);
+    Vector2f const  coordToPixel(Vector2f const& spaceCoord);
     Vector2f const& getViewPort();
-
-    void close();
 }
 
 # endif // WINDOW_HPP_INCLUDED

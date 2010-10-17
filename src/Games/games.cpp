@@ -25,8 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/TeamDeathMatch.hpp"
 # include "Games/Tutorial.hpp"
 # include "System/settings.hpp"
-# include "SpaceObjects/stars.hpp"
 # include "System/timer.hpp"
+# include "Menu/menus.hpp"
+# include "Hud/hud.hpp"
+# include "System/window.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -57,27 +59,36 @@ namespace games {
                 }
             }
 
+            Vector2f viewPort = window::getViewPort();
+
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             glBegin(GL_QUADS);
                 glColor4f(0.0,0.0,0.0,fadeFactor_);
                 glVertex2f(0.f, 0.f);
-                glVertex2f(0.f, 800.f);
-                glVertex2f(1280.f, 800.f);
-                glVertex2f(1280.f, 0.f);
+                glVertex2f(0.f, viewPort.y_);
+                glVertex2f(viewPort.x_, viewPort.y_);
+                glVertex2f(viewPort.x_, 0.f);
             glEnd();
         }
 
     }
 
     void update() {
-        stars::draw();
         if (!fadeIn_ && !fadeOut_) currentGame_->update();
         if (restart_ && !fadeOut_) restart();
         if (newGame_ && !fadeOut_) start(newGameType_);
     }
 
     void draw() {
+        window::startDrawSpace();
+
         currentGame_->draw();
+
+        window::startDrawHUD();
+
+        hud::draw();
+        menus::draw();
+
         if (fadeIn_ || fadeOut_) fade();
     }
 

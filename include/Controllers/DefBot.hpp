@@ -29,6 +29,7 @@ class DefBot: public BotController {
         void evaluate();
         void checkEnergy();
         void checkBall();
+        void checkHome();
 };
 
 # endif // DEFBOT_HPP_INCLUDED

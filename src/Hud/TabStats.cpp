@@ -59,7 +59,6 @@ void TabStats::update() {
 void TabStats::draw() const {
     if (visible_ && !menus::visible()) {
 
-        window::setPixelView();
         //get height of list
         int height;
         if (games::type() == games::gDeathMatch)

@@ -21,12 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/zones.hpp"
 # include "SpaceObjects/balls.hpp"
 # include "Players/Player.hpp"
+# include "Players/Team.hpp"
 
 # include <cmath>
 
 void AggroBot::evaluate() {
     checkEnergy();
     checkBall();
+    checkHome();
 }
 
 void AggroBot::checkEnergy() {
@@ -68,5 +70,11 @@ void AggroBot::checkBall() {
         }
         if(balls::getBall()->atStart())
             actions_[BOT_KICK_BALL_TE] = 60;
+    }
+}
+
+void AggroBot::checkHome() {
+    if (slave_->team()->home()->getLife() == 0) {
+        actions_[BOT_PROTECT_ZONE] = 100;
     }
 }
