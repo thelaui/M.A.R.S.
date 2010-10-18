@@ -1,6 +1,6 @@
 /* miniFlames.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -58,6 +58,7 @@ namespace miniFlames {
         else {
             timer_ = 0.5f;
              particles::spawn(particles::pSmoke, location_, velocity_);
+             particles::spawn(particles::pHeat, location_, velocity_);
         }
 
         lifeTime_ += time;

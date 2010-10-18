@@ -1,6 +1,6 @@
 /* texture.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -100,6 +100,7 @@ namespace texture {
                 case CountDown2:               loadTexture_(type, "data/tex/countdown/2.png");            break;
                 case CountDown3:               loadTexture_(type, "data/tex/countdown/3.png");            break;
                 case CountDown4:               loadTexture_(type, "data/tex/countdown/4.png");            break;
+                case ShockWave:                loadTexture_(type, "data/tex/shockwave.png");              break;
                 case COUNT: std::cout << "COUNT is not a valid Texturetype..." << std::endl;
             }
             // ... return it afterwards

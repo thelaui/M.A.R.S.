@@ -1,6 +1,6 @@
-/* Smoke.cpp
+/* smokes.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -26,7 +26,7 @@ namespace smokes {
         std::list<Smoke*> activeParticles_;
     }
 
-    Smoke::Smoke(Vector2f const& location, Vector2f const& direction):
+    Smoke::Smoke(Vector2f const& location):
                Particle(spaceObjects::oSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, sf::Randomizer::Random(0.8f, 2.0f)*settings::C_globalParticleLifeTime/100.f) {
 
         color_ = Color3f(0.3, 0.3, 0.3);
@@ -57,8 +57,8 @@ namespace smokes {
     }
 
 
-    void spawn(Vector2f const& location, Vector2f const& direction) {
-        activeParticles_.push_back(new Smoke(location, direction));
+    void spawn(Vector2f const& location) {
+        activeParticles_.push_back(new Smoke(location));
     }
 
     void draw() {

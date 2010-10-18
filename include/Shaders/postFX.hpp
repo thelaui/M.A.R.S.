@@ -1,6 +1,6 @@
 /* postFX.hpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -26,7 +26,6 @@ namespace postFX {
     void update();
 
     sf::Shader* get();
-    void spawnExplosion(Vector2f const& location);
 
     bool supported();
     void load();

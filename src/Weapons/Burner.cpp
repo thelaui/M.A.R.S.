@@ -1,6 +1,6 @@
 /* Burner.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -42,8 +42,10 @@ void Burner::fire() const {
         timer_ = time;
         float angleRad = parent_->rotation_*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        for (int i=0; i<20; ++i)
+        for (int i=0; i<20; ++i) {
             particles::spawn(particles::pAmmoBurner, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+            particles::spawn(particles::pHeatBurner, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_);
+        }
         parent_->velocity_ -= faceDirection*10.f;
     }
 }

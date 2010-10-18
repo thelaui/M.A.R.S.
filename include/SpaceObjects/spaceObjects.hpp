@@ -1,6 +1,6 @@
 /* spaceObjects.hpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -31,7 +31,8 @@ class SpaceObject;
 namespace spaceObjects {
     enum ObjectType {oPlanet, oSun, oBlackHole, oHome, oShip, oBall, oFuel, oAmmoAFK47, oAmmoROFLE, oAmmoShotgun,
                      oMud, oSmoke, oEruption, oDust, oExplode, oFragment, oBurningFragment, oFragmentFlame,
-                     oMiniFlame, oAmmoFlubba, oMiniAmmoFlubba, oCannonBall, oSpark, oAmmoBurner, oAmmoH2OMG};
+                     oMiniFlame, oAmmoFlubba, oMiniAmmoFlubba, oCannonBall, oSpark, oAmmoBurner, oAmmoH2OMG, oHeat,
+                     oHeatJet, oShockWave, oHeatBurner};
 
     void update();
     void draw();

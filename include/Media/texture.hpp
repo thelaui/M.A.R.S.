@@ -1,6 +1,6 @@
 /* texture.hpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -28,7 +28,7 @@ namespace texture {
                       MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
                       Stars1_medium, Stars2_large, Stars2_medium, WindowOn, WindowOff, EnergyBars, LeftHandle,
                       RightHandle, BottomHandle, TopHandle, CountDown4, CountDown3, CountDown2, CountDown1,
-                      CountDown0, COUNT};
+                      CountDown0, ShockWave, COUNT};
 
     GLuint const& getTexture(TextureType);
 

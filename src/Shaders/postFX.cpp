@@ -1,6 +1,6 @@
 /* postFX.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -18,34 +18,34 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <Shaders/postFX.hpp>
 
 # include "System/timer.hpp"
+# include "System/settings.hpp"
+# include "Particles/particles.hpp"
+# include "Media/texture.hpp"
 
+# include <SFML/OpenGL.hpp>
 # include <iostream>
 
 namespace postFX {
 
     namespace {
-        sf::Shader postFX_;
-
-        Vector2f exploLocation_;
-        float    timer_(0.f);
+        sf::Shader      postFX_;
+        sf::RenderImage bumpMap_;
     }
 
     void update() {
-        if (timer_ > 0 && supported()) {
-            timer_ -= timer::frameTime();
-            postFX_.SetParameter("radial_blur", timer_*timer_*(1-std::sin(((1.5f-timer_)*2.5f)*M_PI)));
-           // postFX_.SetParameter("radial_bright", (1.f-std::sin((1.f-timer_*2.f)*0.5f*M_PI))*2.f + 1.f);
+        if (settings::C_shaders) {
+
+            bumpMap_.SetActive(true);
+            bumpMap_.Clear(sf::Color(127, 0, 127));
+
+            particles::drawHeat();
+
+            bumpMap_.Display();
         }
     }
 
     sf::Shader* get() {
-        return (timer_ > 0.f) ? &postFX_ : NULL;
-    }
-
-    void spawnExplosion(Vector2f const& location) {
-        exploLocation_ = location;
-        postFX_.SetParameter("radial_origin", sf::Vector2f(location.x_/1280.f, 1.f - location.y_/800.f));
-        timer_ = 1.5f;
+        return &postFX_;
     }
 
     bool supported() {
@@ -54,9 +54,12 @@ namespace postFX {
 
     void load() {
         if (supported()) {
-            postFX_.LoadFromFile("data/shaders/blur.frag");
-            postFX_.SetParameter("radial_blur", 0.f);
-          //  postFX_.SetParameter("radial_bright", 1.f);
+            postFX_.LoadFromFile("data/shaders/bump.frag");
+            bumpMap_.Create(640, 400);
+            glViewport(0,0,640,400);
+            gluOrtho2D(0, 1280, 800, 0);
+            glEnable(GL_BLEND);
+            postFX_.SetTexture("BumpMap", bumpMap_.GetImage());
         }
         else
             std::cout << "Shaders are not supported on your hardware! There will be no fancy graphics..." << std::endl;

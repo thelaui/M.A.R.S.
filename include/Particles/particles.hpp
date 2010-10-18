@@ -1,6 +1,6 @@
 /* particles.hpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -27,11 +27,13 @@ class SpaceObject;
 namespace particles {
     enum ParticleType {pFuel, pSpark, pDust, pAmmoFlubba, pExplode, pAmmoAFK47, pFragment,
                        pAmmoShotgun, pAmmoROFLE, pMiniAmmoFlubba, pMud, pAmmoBurner, pMiniFlame, pSmoke,
-                       pEruption, pFragmentFlame, pBurningFragment, pCannonBall, pAmmoH2OMG};
+                       pEruption, pFragmentFlame, pBurningFragment, pCannonBall, pAmmoH2OMG, pHeat, pHeatJet,
+                       pShockWave, pHeatBurner};
 
     void update();
     void drawLower();
     void drawHigher();
+    void drawHeat();
 
     void spawn(ParticleType const& type, Vector2f const& location, Vector2f const& direction = Vector2f(),
                Vector2f const& velocity = Vector2f(), Color3f const& color = Color3f(1.0f, 1.0f, 1.0f), Player* damageSource = NULL);

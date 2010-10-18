@@ -1,6 +1,6 @@
 /* Eruption.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -48,7 +48,12 @@ namespace eruptions {
 
     void Eruption::draw() const {
         color_.gl3f();
-        glVertex2i(static_cast<int>(location_.x_), static_cast<int>(location_.y_));
+        const int posX = 0;
+        const int posY = 1;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
 
@@ -57,15 +62,8 @@ namespace eruptions {
     }
 
     void draw() {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glPointSize(1.f);
-        glBegin(GL_POINTS);
-
         for (std::list<Eruption*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
     }
 
     void update() {

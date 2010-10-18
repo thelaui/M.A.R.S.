@@ -1,6 +1,6 @@
 /* Sun.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -38,8 +38,8 @@ void Sun::update() {
         Vector2f direction = Vector2f::randDir();
         Vector2f eruptionLocation = location_ + direction * radius_ * 0.9;
         float intensity = sf::Randomizer::Random(0.5f, 2.0f);
-        particles::spawnMultiple(intensity*20, particles::pEruption, eruptionLocation, direction, direction*intensity);
-        eruptionTimer_ = sf::Randomizer::Random(0.5f, 1.5f);
+        particles::spawnMultiple(intensity*5, particles::pEruption, eruptionLocation, direction, direction*intensity);
+        eruptionTimer_ = sf::Randomizer::Random(1.0f, 2.5f);
     }
 }
 

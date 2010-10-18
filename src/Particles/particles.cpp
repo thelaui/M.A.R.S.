@@ -1,6 +1,6 @@
 /* particles.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -39,6 +39,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/fragments.hpp"
 # include "Particles/ammoBurners.hpp"
 # include "Particles/ammoH2OMGs.hpp"
+# include "Particles/heats.hpp"
+# include "Particles/heatJets.hpp"
+# include "Particles/shockWaves.hpp"
+# include "Particles/heatBurners.hpp"
 
 namespace particles {
     void update() {
@@ -61,6 +65,10 @@ namespace particles {
         fragments::         update();
         ammoBurners::       update();
         ammoH2OMGs::        update();
+        heats::             update();
+        heatJets::          update();
+        shockWaves::        update();
+        heatBurners::       update();
     }
 
     void drawLower() {
@@ -76,13 +84,13 @@ namespace particles {
             miniAmmoFlubbas::   draw();
             miniFlames::        draw();
             ammoH2OMGs::        draw();
+            eruptions::         draw();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
         muds::              draw();
-        eruptions::         draw();
         ammoAFK47s::        draw();
         ammoROFLEs::        draw();
         ammoShotguns::      draw();
@@ -108,12 +116,38 @@ namespace particles {
         sparks::            draw();
     }
 
+    void drawHeat() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Particles));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glBegin(GL_QUADS);
+
+            heats::        draw();
+            heatJets::     draw();
+            heatBurners::  draw();
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ShockWave));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glBegin(GL_QUADS);
+
+            shockWaves::   draw();
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+    }
+
     void spawn(ParticleType const& type, Vector2f const& location, Vector2f const& direction,
                Vector2f const& velocity, Color3f const& color, Player* damageSource) {
         switch (type) {
             case pFuel:             fuels::             spawn(location, direction, velocity);               break;
             case pMud:              muds::              spawn(location, direction, velocity, color);        break;
-            case pSmoke:            smokes::            spawn(location, direction);                         break;
+            case pSmoke:            smokes::            spawn(location);                                    break;
             case pEruption:         eruptions::         spawn(location, direction, velocity);               break;
             case pAmmoAFK47:        ammoAFK47s::        spawn(location, direction, velocity, damageSource); break;
             case pAmmoROFLE:        ammoROFLEs::        spawn(location, direction, velocity, damageSource); break;
@@ -130,6 +164,10 @@ namespace particles {
             case pFragment:         fragments::         spawn(location, color);                             break;
             case pAmmoBurner:       ammoBurners::       spawn(location, direction, velocity, damageSource); break;
             case pAmmoH2OMG:        ammoH2OMGs::        spawn(location, direction, velocity, damageSource); break;
+            case pHeat:             heats::             spawn(location);                                    break;
+            case pHeatJet:          heatJets::          spawn(location, direction, velocity);               break;
+            case pShockWave:        shockWaves::        spawn(location);                                    break;
+            case pHeatBurner:       heatBurners::       spawn(location, direction, velocity);               break;
         }
     }
 
@@ -157,7 +195,8 @@ namespace particles {
                 + burningFragments::count() + fragmentFlames::count() + ammoShotguns::count()
                 + miniFlames::count() + ammoFlubbas::count() + miniAmmoFlubbas::count()
                 + cannonBalls::count() + sparks::count() + fragments::count() + ammoBurners::count()
-                + ammoH2OMGs::count();
+                + ammoH2OMGs::count() + heats::count() + heatJets::count() + shockWaves::count()
+                + heatBurners::count();
     }
 
     void clear() {
@@ -180,5 +219,9 @@ namespace particles {
         fragments::         clear();
         ammoBurners::       clear();
         ammoH2OMGs::        clear();
+        heats::             clear();
+        heatJets::          clear();
+        shockWaves::        clear();
+        heatBurners::       clear();
     }
 }

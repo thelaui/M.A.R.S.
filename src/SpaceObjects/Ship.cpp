@@ -1,6 +1,6 @@
 /* Ship.cpp
 
-Copyright (c) 2010 by Felix Lauer und Simon Schneegans
+Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -104,6 +104,7 @@ void Ship::update() {
             fuel_ -= time*3.f;
             acceleration = faceDirection * 300.f;
             particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
+            particles::spawnTimed(10.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
         }
         else {
             acceleration = Vector2f();
@@ -339,7 +340,7 @@ void Ship::explode() {
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
     physics::causeShockWave(this, 50.f);
-    postFX::spawnExplosion(location_);
+    particles::spawn(particles::pShockWave, location_);
     physics::removeMobileObject(this);
     visible_ = false;
     life_ = 0.f;
