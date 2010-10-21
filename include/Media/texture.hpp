@@ -27,7 +27,7 @@ namespace texture {
                       Planet11, Planet12, Planet13, Sun1, Hole1, Ball, Particles, PowerUps, Ships, MotherShip,
                       MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
                       Stars1_medium, Stars2_large, Stars2_medium, WindowOn, WindowOff, EnergyBars, LeftHandle,
-                      RightHandle, BottomHandle, TopHandle, CountDown4, CountDown3, CountDown2, CountDown1,
+                      RightHandle, BottomHandle, TopHandle, Widgets, CountDown4, CountDown3, CountDown2, CountDown1,
                       CountDown0, ShockWave, COUNT};
 
     GLuint const& getTexture(TextureType);

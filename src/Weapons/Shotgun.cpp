@@ -25,16 +25,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void Shotgun::draw() const {
-    glLineWidth(1);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glBegin(GL_LINES);
-        glColor4f(1.0, 1.0, 0.2, 0);
-            glVertex2f(parent_->radius_*0.2,  0);
-        glColor4f(1.0, 1.0, 0.2, 0.5);
-            glVertex2f(parent_->radius_*1.0, 0);
-            glVertex2f(parent_->radius_*1.0,  0);
-        glColor4f(1.0, 1.0, 0.2, 0);
-            glVertex2f(parent_->radius_*2.0, 0);
+    glColor3f(1.0f, 1.0f, 1.0f);
+    const int posX = 1;
+    const int posY = 31;
+    glBegin(GL_QUADS);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.3f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.3f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*3.f, -1.f*parent_->radius_*0.3f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*3.f,      parent_->radius_*0.3f);
     glEnd();
 }
 

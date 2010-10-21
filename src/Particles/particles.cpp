@@ -85,15 +85,15 @@ namespace particles {
             miniFlames::        draw();
             ammoH2OMGs::        draw();
             eruptions::         draw();
+            muds::              draw();
+            ammoShotguns::      draw();
+            ammoAFK47s::        draw();
+            ammoROFLEs::        draw();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
-        muds::              draw();
-        ammoAFK47s::        draw();
-        ammoROFLEs::        draw();
-        ammoShotguns::      draw();
         fragments::         draw();
 
     }
@@ -108,12 +108,11 @@ namespace particles {
             cannonBalls::       draw();
             ammoBurners::       draw();
             fragmentFlames::    draw();
+            sparks::            draw();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
-
-        sparks::            draw();
     }
 
     void drawHeat() {

@@ -95,6 +95,7 @@ namespace texture {
                 case RightHandle:              loadTexture_(type, "data/tex/interface/rightHandle.png");  break;
                 case BottomHandle:             loadTexture_(type, "data/tex/interface/bottomHandle.png"); break;
                 case TopHandle:                loadTexture_(type, "data/tex/interface/topHandle.png");    break;
+                case Widgets:                  loadTexture_(type, "data/tex/interface/widgets.png");      break;
                 case CountDown0:               loadTexture_(type, "data/tex/countdown/0.png");            break;
                 case CountDown1:               loadTexture_(type, "data/tex/countdown/1.png");            break;
                 case CountDown2:               loadTexture_(type, "data/tex/countdown/2.png");            break;

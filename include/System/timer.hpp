@@ -23,6 +23,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace timer {
     void update(float frameTime);
 
+    void onShipExplode();
+
     float frameTime();
     float totalTime();
     float fps();

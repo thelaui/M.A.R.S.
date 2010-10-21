@@ -47,20 +47,20 @@ namespace ammoAFK47s {
     }
 
     void AmmoAFK47::draw() const {
-        Vector2f laser0 = location_ - velocity_.normalize()*10.f*2.f;
-        Vector2f laser1 = location_ - velocity_.normalize()*10.f;
-        //Vector2f laser2 is location_
-        Vector2f laser3 = location_ + velocity_.normalize()*10.f;
+        glColor3f(1.f, 1.f, 1.f);
 
-        glColor3f(0.f, 0.f, 0.f);
-        glVertex2f(laser0.x_, laser0.y_);
-        glColor3f(0.6f, 0.6f, 1.0f);
-        glVertex2f(laser1.x_, laser1.y_);
-        glVertex2f(location_.x_, location_.y_);
-        glVertex2f(laser1.x_, laser1.y_);
-        glVertex2f(location_.x_, location_.y_);
-        glColor3f(0.f, 0.f, 0.f);
-        glVertex2f(laser3.x_, laser3.y_);
+        Vector2f direction(velocity_*0.016f);
+        Vector2f normDirection(direction.y_, -1.f*direction.x_);
+        normDirection *= 0.1f;
+
+        const Vector2f topLeft(location_ + direction + normDirection), topRight(location_ + direction - normDirection), bottomLeft(location_ - 3*direction + normDirection), bottomRight(location_ - 3*direction - normDirection);
+
+        const int posX = 0;
+        const int posY = 2;
+        glTexCoord2f(posX*0.125f,       posY*0.125f);       glVertex2f(topLeft.x_, topLeft.y_);
+        glTexCoord2f(posX*0.125f,      (posY+0.5f)*0.125f); glVertex2f(bottomLeft.x_, bottomLeft.y_);
+        glTexCoord2f((posX+3.f)*0.125f,(posY+0.5f)*0.125f); glVertex2f(bottomRight.x_, bottomRight.y_);
+        glTexCoord2f((posX+3.f)*0.125f, posY*0.125f);       glVertex2f(topRight.x_, topRight.y_);
     }
 
     void AmmoAFK47::onCollision(SpaceObject* with, Vector2f const& location,
@@ -97,15 +97,8 @@ namespace ammoAFK47s {
     }
 
     void draw() {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glLineWidth(2.f);
-        glBegin(GL_LINES);
-
         for (std::list<AmmoAFK47*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
     }
 
     void update() {

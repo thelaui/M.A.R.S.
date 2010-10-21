@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "Media/sound.hpp"
+# include "Media/texture.hpp"
+# include "Media/text.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -51,47 +53,57 @@ void RadioButton::mouseLeft(bool down) {
 void RadioButton::draw() const {
     Vector2f origin = parent_->getTopLeft() + topLeft_;
 
-
+    glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Widgets));
+
+    int x(0), y(0);
 
     if (hovered_ && pressed_) {
         if (*value_) {
-            glColor4f(1,1,1,0.6);
-            glPointSize(6);
+            x = 2;
+            y = 0;
         }
         else {
-            glColor4f(1,1,1,0.5);
-            glPointSize(3);
+            x = 2;
+            y = 1;
         }
     }
     else if (hovered_) {
         if (*value_) {
-            glColor4f(1,1,1,1);
-            glPointSize(8);
+            x = 1;
+            y = 0;
         }
         else {
-            glColor4f(1,1,1,0.7);
-            glPointSize(5);
+            x = 1;
+            y = 1;
         }
     }
     else {
         if (*value_) {
-            glColor4f(1,1,1,0.8);
-            glPointSize(8);
+            x = 0;
+            y = 0;
         }
         else {
-            glColor4f(1,1,1,0.3);
-            glPointSize(4);
+            x = 0;
+            y = 1;
         }
     }
 
-    glBegin(GL_POINTS);
-        glVertex2f(origin.x_+5, origin.y_+8);
+    glColor3f(1.f, 1.f, 1.f);
+    glBegin(GL_QUADS);
+        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(origin.x_-4.f, origin.y_-0.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(origin.x_-4.f, origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(origin.x_+12.f, origin.y_+16.f);
+        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(origin.x_+12.f, origin.y_-0.f);
     glEnd();
 
-
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
 
     // draw Label
+    text::drawFooText();
     label_->draw();
 }
 

@@ -25,14 +25,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void AFK47::draw() const {
-    glLineWidth(1);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     parent_->owner_->color().gl3f();
-    glBegin(GL_LINES);
-        glVertex2f(parent_->radius_*0.3,  parent_->radius_* 0.625);
-        glVertex2f(parent_->radius_*0.75, parent_->radius_* 0.625);
-        glVertex2f(parent_->radius_*0.3,  parent_->radius_*-0.625);
-        glVertex2f(parent_->radius_*0.75, parent_->radius_*-0.625);
+    const int posX = 0;
+    const int posY = 28;
+    glBegin(GL_QUADS);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, parent_->radius_*0.95f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, parent_->radius_*0.45f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*1.5f, parent_->radius_*0.45f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*1.5f, parent_->radius_*0.95f);
+
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, -1.f*parent_->radius_*0.95f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.45f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*1.5f, -1.f*parent_->radius_*0.45f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*1.5f, -1.f*parent_->radius_*0.95f);
     glEnd();
 }
 
@@ -42,8 +48,8 @@ void AFK47::fire() const {
         timer_ = time;
         float angleRad = parent_->rotation_*M_PI / 180;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.6 - faceDirection.y_*parent_->radius_*0.6), parent_->location_.y_+( faceDirection.x_*parent_->radius_*0.6 + faceDirection.y_*parent_->radius_*0.6)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.6 + faceDirection.y_*parent_->radius_*0.6), parent_->location_.y_+(-faceDirection.x_*parent_->radius_*0.6 + faceDirection.y_*parent_->radius_*0.6)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.9 - faceDirection.y_*parent_->radius_*0.9), parent_->location_.y_+( faceDirection.x_*parent_->radius_*0.7 + faceDirection.y_*parent_->radius_*0.7)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.9 + faceDirection.y_*parent_->radius_*0.9), parent_->location_.y_+(-faceDirection.x_*parent_->radius_*0.7 + faceDirection.y_*parent_->radius_*0.7)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
         sound::playSound(sound::Laser, parent_->location_);
     }
 }

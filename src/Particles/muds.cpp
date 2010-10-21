@@ -26,7 +26,7 @@ namespace muds {
     }
 
     Mud::Mud(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color):
-             Particle(spaceObjects::oMud, location, 1, 0, sf::Randomizer::Random(0.6f, 0.8f)),
+             Particle(spaceObjects::oMud, location, 1.f, 0.f, sf::Randomizer::Random(0.6f, 0.8f)),
              color_(color) {
 
         Vector2f distortion(Vector2f::randDirLen());
@@ -48,7 +48,12 @@ namespace muds {
 
     void Mud::draw() const {
         color_.gl3f();
-        glVertex2f(location_.x_, location_.y_);
+        const int posX = 0;
+        const int posY = 1;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
 
@@ -57,15 +62,8 @@ namespace muds {
     }
 
     void draw() {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glPointSize(1);
-        glBegin(GL_POINTS);
-
         for (std::list<Mud*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
     }
 
     void update() {

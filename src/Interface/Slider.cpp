@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/window.hpp"
 # include "Media/text.hpp"
+# include "Media/texture.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -58,8 +59,6 @@ void Slider::mouseMoved(Vector2f const& position) {
 
 void Slider::draw() const {
     Vector2f origin = parent_->getTopLeft() + topLeft_;
-
-
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
     // Hover effect
@@ -77,22 +76,38 @@ void Slider::draw() const {
     // Hover effect
     Vector2f sliderPosition(((width_-(labelWidth_+10))*(*value_- minValue_)/(maxValue_ - minValue_)) + origin.x_+(labelWidth_+5), 10 + origin.y_);
 
+    glEnable(GL_TEXTURE_2D);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Widgets));
+
+    int x(0), y(0);
+
     if (hovered_ && pressed_) {
-        glColor4f(1,1,1,0.6);
-        glPointSize(8);
+        x = 3;
+        y = 2;
     }
     else if (hovered_){
-        glColor4f(1,1,1,1);
-        glPointSize(10);
+        x = 3;
+        y = 1;
     }
     else {
-        glColor4f(1,1,1,0.8);
-        glPointSize(10);
+        x = 3;
+        y = 0;
     }
 
-    glBegin(GL_POINTS);
-        glVertex2f(sliderPosition.x_, sliderPosition.y_);
+    glColor3f(1.f, 1.f, 1.f);
+    glBegin(GL_QUADS);
+        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(sliderPosition.x_-8.f,  sliderPosition.y_-8.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(sliderPosition.x_-8.f,  sliderPosition.y_+8.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(sliderPosition.x_+8.f, sliderPosition.y_+8.f);
+        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(sliderPosition.x_+8.f, sliderPosition.y_-8.f);
     glEnd();
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    text::drawFooText();
 
     if (showValue_) {
         std::stringstream sstr;

@@ -29,19 +29,48 @@ namespace timer {
         // for fps counting:
         int frameCount_(0);
         float fpsTimer_(0.f);
+
+        // for slow-motion
+        float slowMoTimer_(0.f);
+        float exploCounterResetTimer_(0.f);
+        int   exploCounter_(0);
     }
 
     void update(float frameTime) {
-        frameTime_ =  frameTime;
+        if (slowMoTimer_ > 0.f) {
+            slowMoTimer_ -= frameTime;
+            frameTime_ =  frameTime*0.2;
+        }
+        else
+            frameTime_ =  frameTime;
+
         totalTime_ += frameTime_;
-        fpsTimer_  += frameTime_;
+
+        // fps
+        fpsTimer_  += frameTime;
         frameCount_+= 1;
+
+        // slowmo
+        if (exploCounterResetTimer_ > 0.f) {
+            exploCounterResetTimer_ -= frameTime_;
+            if (exploCounterResetTimer_ <= 0.f) {
+                exploCounter_ = 0;
+            }
+        }
+
+        if (exploCounter_ > 1)
+            slowMoTimer_ = 3.f;
 
         if (fpsTimer_ >= 0.5f) {
             fps_ = static_cast<float>(frameCount_)/fpsTimer_;
             frameCount_ = 0;
             fpsTimer_   = 0.f;
         }
+    }
+
+    void onShipExplode() {
+        ++exploCounter_;
+        exploCounterResetTimer_ = 0.1f;
     }
 
     float frameTime() { return frameTime_; }

@@ -25,18 +25,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void ROFLE::draw() const {
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-    glLineWidth(1.f);
-    glBegin(GL_LINES);
-        glColor3f(0.0, 0.0, 0.0);
-            glVertex2f(parent_->radius_,  0);
-        glColor3f(1.0, 0.4, 0.4);
-            glVertex2f(parent_->radius_*3.5, 0);
-            glVertex2f(parent_->radius_*3.5,  0);
-        glColor3f(0.0, 0.0, 0.0);
-            glVertex2f(parent_->radius_*8.0, 0);
-    glEnd();
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor3f(1.0, 0.4, 0.4);
+    const int posX = 0;
+    const int posY = 31;
+    glBegin(GL_QUADS);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.2f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.2f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*6.f, -1.f*parent_->radius_*0.2f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*6.f,      parent_->radius_*0.2f);
+    glEnd();
 }
 
 void ROFLE::fire() const {

@@ -49,7 +49,12 @@ namespace sparks {
 
     void Spark::draw() const {
         color_.gl3f();
-        glVertex2i(static_cast<int>(location_.x_), static_cast<int>(location_.y_));
+        const int posX = 0;
+        const int posY = 1;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
 
@@ -58,15 +63,8 @@ namespace sparks {
     }
 
     void draw() {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glPointSize(1.f);
-        glBegin(GL_POINTS);
-
         for (std::list<Spark*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
     }
 
     void update() {

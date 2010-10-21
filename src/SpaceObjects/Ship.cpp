@@ -185,9 +185,8 @@ void Ship::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
-        glDisable(GL_TEXTURE_2D);
+        // draw weapon
         currentWeapon_->draw();
-        glEnable(GL_TEXTURE_2D);
 
         float x, y;
 
@@ -312,7 +311,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
-    life_ -= intensity*2.f;
+    life_ -= intensity*50.f;
 }
 
 void Ship::setDamageSource(Player* evilOne) {
@@ -339,9 +338,10 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::causeShockWave(this, 50.f);
+    physics::  causeShockWave(this, 50.f);
     particles::spawn(particles::pShockWave, location_);
-    physics::removeMobileObject(this);
+    physics::  removeMobileObject(this);
+    timer::    onShipExplode();
     visible_ = false;
     life_ = 0.f;
     fuel_ = 0.f;

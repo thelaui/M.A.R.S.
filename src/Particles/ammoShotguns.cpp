@@ -51,7 +51,12 @@ namespace ammoShotguns {
 
     void AmmoShotgun::draw() const {
         color_.gl3f();
-        glVertex2f(location_.x_, location_.y_);
+        const int posX = 0;
+        const int posY = 1;
+        glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+        glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+        glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
     }
 
     void AmmoShotgun::onCollision(SpaceObject* with, Vector2f const& location,
@@ -88,15 +93,8 @@ namespace ammoShotguns {
     }
 
     void draw() {
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glPointSize(2.f);
-        glBegin(GL_POINTS);
-
         for (std::list<AmmoShotgun*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it)
             (*it)->draw();
-
-        glEnd();
     }
 
     void update() {
