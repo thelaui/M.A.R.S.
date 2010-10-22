@@ -28,14 +28,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace sound {
     /// All different sound effects.
-    /// \param COUNT contains the amount of entries in the enum.
-    ///        Keep it the last!
+
     enum SoundType {Pump, Laser, BallExplode, ShipExplode, ShipCollide,  BallPlanetCollide,
                     Particle, ShipBallCollide, BallRespawn, PlanetExplode, PumpShipCollide,
                     ShipPlanetCollide, ShipRespawn, BlubPop, Fuel, LaserCollide, NoFuel,
                     Sniper, Blub, BlubCollide, SniperShipCollide, SniperPlanetCollide, Click,
                     Tab, Check, Countdown, Start, Swish, Score,
-                    COUNT};
+                    COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
+    };
 
     /// Plays a sound file.
     /// \param type specifies the sound::SoundType

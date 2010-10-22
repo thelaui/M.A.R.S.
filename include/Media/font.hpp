@@ -24,9 +24,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace font {
     /// The different fonts included in MARS.
-    /// \param COUNT contains the amount of entries in the enum.
-    ///        Keep it the last!
-    enum FontType {HandelGotDLig, FreeSans, COUNT};
+    enum FontType {HandelGotDLig, FreeSans,
+                   COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
+    };
 
     /// Returns a const& to the SFML font.
     /// You can specify which font to return with the \a type parameter.

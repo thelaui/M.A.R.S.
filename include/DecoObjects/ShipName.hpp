@@ -22,6 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Ship;
 
+/// An object displaying the players name at his Ship.
+
 class ShipName: public DecoObject {
     public:
         ShipName(Ship* ship): ship_(ship) {}

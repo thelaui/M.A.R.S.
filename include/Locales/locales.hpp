@@ -21,7 +21,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/System.hpp>
 # include <vector>
 
+/// A namespace which handles translations for MARS.
+
 namespace locales {
+    /// The different texts included in MARS.
     enum LocaleType {StartLocalGame, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
                      RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
@@ -40,10 +43,17 @@ namespace locales {
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
-                     ShaderError, COUNT};
+                     ShaderError,
+                     COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
+    };
 
+    /// Loads the current locale, accordind to settings::C_language.
     void                          load();
+
+    /// Returns a list of all files in data/locales.
     std::vector<sf::String> const getLanguages();
+
+    /// Returns a string accordind to the current locale.
     sf::String*                   getLocale(LocaleType);
 }
 

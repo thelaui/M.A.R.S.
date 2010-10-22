@@ -21,17 +21,34 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class Planet;
 class Ship;
 
-namespace decoObjects {
+/// A namespace which handles objects in the space, which can't be interacted with.
 
+namespace decoObjects {
+    /// Updates every DecoObject.
     void update();
+
+    /// Draws every DecoObject. Except for the ShipNames.
     void draw();
+
+    /// Draws every ShipName.
     void drawNames();
 
+    /// Adds the CannonKeep Cannon.
     void addCannon();
+
+    /// Adds a random PlanetSign on the target Planet.
+    /// \param planet The Planet to be decored.
     void addPlanetSign(Planet* planet);
+
+    /// Adds a ShipName to the target Ship.
+    /// \param ship The Ship to be named.
     void addName      (Ship* ship);
+
+    /// Adds a ShipHighlight to the target Ship.
+    /// \param ship The Ship to be highlighted.
     void addHighlight (Ship* ship);
 
+    /// Deletes every DecoObject.
     void clear();
 };
 
