@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/TextBox.hpp"
 # include "Interface/Line.hpp"
 # include "Locales/locales.hpp"
-# include "System/keyNames.hpp"
+# include "System/generateName.hpp"
 # include "System/settings.hpp"
 
 UiWindow* TutWindow08::instance_(NULL);
@@ -37,7 +37,7 @@ UiWindow* TutWindow08::get() {
         instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(270,120), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Tut08), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(340, 35)));
-        text_ = *locales::getLocale(locales::TutText08) + " <" + keyNames::key(settings::C_playerIfire) + ">.\n" + *locales::getLocale(locales::TutText08b);
+        text_ = *locales::getLocale(locales::TutText08) + " <" + generateName::key(settings::C_playerIfire) + ">.\n" + *locales::getLocale(locales::TutText08b);
         instance_->addWidget(new TextBox(&text_, Vector2f(10, 50), 330, 60));
     }
     return instance_;

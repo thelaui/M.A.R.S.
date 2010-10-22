@@ -20,12 +20,23 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Audio.hpp>
 
+/// A namespace for playing music.
+/// Music is streamed from OGG files.
+
 namespace music {
+    /// Updates the music player.
+    /// If the ingame music has stopped, a new randomly
+    /// chosen track will be played.
     void update();
 
+    /// Plays a music file, suitable for the menu.
     void playMenuMusic();
+    /// Plays a music file, suitable for in-game action.
     void playGameMusic();
 
+    /// Applies the global music Volume.
+    /// Which is set in \a settings::C_musicVolume. This is useful
+    /// when this variable has been changed to apply the effect.
     void setGlobalVolume();
 }
 

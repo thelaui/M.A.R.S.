@@ -70,7 +70,7 @@ float Color3f::v() const {
     return std::max(std::max(r_, g_), b_);
 }
 
-/// setters
+// setters
 
 void Color3f::r(float red) {
     if (red > 1) r_ = 1;
@@ -160,11 +160,11 @@ void Color3f::gl4f(float alpha) const {
     glColor4f(r_, g_, b_, alpha);
 }
 
-sf::Color Color3f::sfColor() const {
+sf::Color const Color3f::sfColor() const {
     return sf::Color(r_*255, g_*255, b_*255);
 }
 
-Color3f Color3f::random() {
+Color3f const Color3f::random() {
     Color3f result(sf::Randomizer::Random(0.3f, 1.0f), sf::Randomizer::Random(0.3f, 1.0f), sf::Randomizer::Random(0.3f, 1.0f));
     result.s(result.s() + 0.4);
     return result;

@@ -169,7 +169,6 @@ void OptionsMenu::checkWidgets() {
     }
     if (soundVolume_ != settings::C_soundVolume) {
         settings::C_soundVolume = soundVolume_;
-        sound::setGlobalVolume();
     }
     if (musicVolume_ != settings::C_musicVolume) {
         settings::C_musicVolume = musicVolume_;

@@ -22,24 +22,52 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
+/// A namespace handling the main window of the game.
+
 namespace window {
+    /// Opens the window.
+    /// Should be called once at the beginning.
     void open();
-    void close();
 
-    void mainLoop();
-
-    void draw(sf::Drawable const& toBeDrawn);
-    sf::Input const& getInput();
-
-    void startDrawSpace();
-    void startDrawHUD();
-
-    void showCursor(bool show);
-    void applyGlobalSettings();
-
+    /// Recreates the window.
+    /// Can be called to apply settings::C_fullScreen.
     void create();
 
+    /// Closes the window.
+    /// Should be called once at the end.
+    void close();
+
+    /// Starts the main game loop.
+    /// Should be called, when the window is opened a game is created.
+    void mainLoop();
+
+    /// Starts a draw cycle.
+    /// The active OpenGL target is set to the window or the post effect backbuffer, depending
+    /// on the use of shaders.
+    void startDrawSpace();
+
+    /// Finishs drawing the space and starts drawing the HUD.
+    /// Applies post effects and sets the projection matrix to represent the screen in pixels.
+    void startDrawHUD();
+
+    /// Draws a SFML drawable in the window.
+    void draw(sf::Drawable const& toBeDrawn);
+
+    /// Returns a reference to the current input state of the window.
+    /// This can be used for getting pressed keys and stuff like this.
+    sf::Input const& getInput();
+
+    /// Shows or hides the mouse cursor.
+    void showCursor(bool show);
+
+    /// Can be called to apply settings::C_vsync and settings::C_shaders.
+    void applyGlobalSettings();
+
+    /// Converts the given location from space coordinates (max (1280, 800)) to pixel coordinates on the screen.
     Vector2f const  coordToPixel(Vector2f const& spaceCoord);
+
+    /// Returns a vector representing the size of the visible game area on screen.
+    /// In pixels.
     Vector2f const& getViewPort();
 }
 

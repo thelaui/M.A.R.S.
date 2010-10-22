@@ -39,7 +39,6 @@ namespace settings {
     bool        C_showLatency =             false;
     bool        C_fullScreen =              true;
     bool        C_vsync =                   true;
-    bool        C_drawAIPath =              false;
     bool        C_adaptiveParticleCount =   false;
     int         C_globalParticleCount =     50;
     int         C_globalParticleLifeTime =  50;
@@ -50,8 +49,6 @@ namespace settings {
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
     bool        C_drawBotNames =            true;
-    bool        C_drawBotOrientation =      false;
-    bool        C_drawZones =               false;
     int         C_botsLeft =                4;
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
@@ -77,7 +74,7 @@ namespace settings {
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           1;
-    sf::String   C_playerIIName =          "PlayerII";
+    sf::String    C_playerIIName =          "PlayerII";
     Color3f       C_playerIIColor =         Color3f(0.2f, 1.f, 0.7f);
     sf::Key::Code C_playerIIup =            sf::Key::W;
     sf::Key::Code C_playerIIleft =          sf::Key::A;
@@ -87,6 +84,11 @@ namespace settings {
     bool          C_playerIIteamR =         false;
     int           C_playerIIShip =          1;
     bool          C_networkPlayerI =        true;
+
+    // ai ----- adjustable via options menu
+    bool        C_drawAIPath =              false;
+    bool        C_drawBotOrientation =      false;
+    bool        C_drawZones =               false;
 
     // network settings ----- adjustable via options menu
     sf::String C_ip =                      "192.168.0.1";

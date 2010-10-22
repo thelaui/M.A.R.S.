@@ -22,7 +22,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Audio.hpp>
 
+/// A namespace for playing sound effects.
+/// It is possible to choose which sound to play,
+/// it's volume and where to play it (for stereo effects).
+
 namespace sound {
+    /// All different sound effects.
+    /// \param COUNT contains the amount of entries in the enum.
+    ///        Keep it the last!
     enum SoundType {Pump, Laser, BallExplode, ShipExplode, ShipCollide,  BallPlanetCollide,
                     Particle, ShipBallCollide, BallRespawn, PlanetExplode, PumpShipCollide,
                     ShipPlanetCollide, ShipRespawn, BlubPop, Fuel, LaserCollide, NoFuel,
@@ -30,9 +37,11 @@ namespace sound {
                     Tab, Check, Countdown, Start, Swish, Score,
                     COUNT};
 
-    void playSound (SoundType, Vector2f const& position = Vector2f(640, 0), float volume = 100.f);
-
-    void setGlobalVolume();
+    /// Plays a sound file.
+    /// \param type specifies the sound::SoundType
+    /// \param position selects the location on the screen, where the sound should be played
+    /// \param sets the volume
+    void playSound (SoundType type, Vector2f const& position = Vector2f(640, 0), float volume = 100.f);
 }
 
 # endif // SOUND_HPP_INCLUDED

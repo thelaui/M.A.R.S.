@@ -20,13 +20,25 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
+/// A namespace handling time.
+/// The entire game is timed by this namespace.
+
 namespace timer {
+    /// Updates the timer.
+    /// Has to be called every frame once.
     void update(float frameTime);
 
+    /// Notifies the timer when a ship exploded, for slow motion managing.
     void onShipExplode();
 
+    /// Returns the duration of the last frame in seconds.
     float frameTime();
+
+    /// Returns the total duration of the game in seconds.
     float totalTime();
+
+    /// Returns the current frames per second.
+    /// Calculated twice a second.
     float fps();
 }
 

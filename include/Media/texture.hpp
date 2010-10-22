@@ -22,7 +22,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
+/// A namespace for texture handling.
+/// When asked for a reference to a texture, this namespace will load the
+/// texture from file. Additionally it stores the overall colors of the
+/// planet textures.
+
 namespace texture {
+    /// All different textures.
+    /// \param COUNT contains the amount of entries in the enum.
+    ///        Keep it the last!
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6, Planet7, Planet8, Planet9, Planet10,
                       Planet11, Planet12, Planet13, Sun1, Hole1, Ball, Particles, PowerUps, Ships, MotherShip,
                       MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
@@ -30,11 +38,15 @@ namespace texture {
                       RightHandle, BottomHandle, TopHandle, Widgets, CountDown4, CountDown3, CountDown2, CountDown1,
                       CountDown0, ShockWave, COUNT};
 
-    GLuint const& getTexture(TextureType);
+    /// Returns a const& to the texture.
+    /// You can specify which font to return with the \a type parameter.
+    GLuint const& getTexture(TextureType type);
 
-    TextureType randomPlanet();
+    /// Returns a randomly chosen planet texture.
+    TextureType const randomPlanet();
 
-    Color3f getMudColor(TextureType planetTexture);
+    /// Returns the overall color of a planet texture.
+    Color3f const getMudColor(TextureType planetTexture);
 }
 
 # endif // TEXTURE_HPP_INCLUDED

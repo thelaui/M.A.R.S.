@@ -22,7 +22,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <string>
 # include <vector>
 
+/// A namespace for UTF-8 encoded text file handling.
+/// It contains function which work with
+/// UTF-8 encoded text files.
+
 namespace file {
+    /// Loads an UTF-8 encoded text file.
+    /// The lines of this file are stored in a std::vector of SFML-Strings.
+    /// Comments (//) and empty lines in this file will be ignored.
     std::vector<sf::String> const load(std::string fileName);
 }
 

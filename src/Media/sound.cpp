@@ -36,7 +36,6 @@ namespace sound {
 
         void init_() {
             sf::Listener::SetPosition(640.f, 0.f, 300.f);
-            setGlobalVolume();
             initialized_ = true;
         }
     }
@@ -97,10 +96,5 @@ namespace sound {
             if (sounds_[sound] != NULL)
                 playSound(sound, position, volume);
         }
-    }
-
-    void setGlobalVolume() {
-        for (int i=0; i<CHANNELCOUNT; ++i)
-            soundChannel_[i].SetVolume(static_cast<float>(settings::C_soundVolume));
     }
 }

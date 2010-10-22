@@ -18,10 +18,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef ANNOUNCER_HPP_INCLUDED
 # define ANNOUNCER_HPP_INCLUDED
 
+/// A namespace for the commentator of the game.
+/// The different moods which can be given to the
+/// commentator will lead to different sayings.
+
 namespace announcer {
+    /// Several categories of sayings of the commentator.
+    /// For each there are a lot of soundfiles which will
+    /// be chosen randomly.
     enum SoundMood {Affronting, Praising, Neutral,
                     COUNT};
 
+    /// Plays a soundfile based on the given mood.
+    /// For each mood there are a lot of soundfiles
+    /// which will be chosen randomly.
     void announce (SoundMood mood);
 }
 

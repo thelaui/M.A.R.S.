@@ -64,7 +64,7 @@ namespace physics {
                 if (*it != object) {
                     // get faster object
                     MobileSpaceObject *source, *target;
-                    if (object->velocity_.lengthSquare() > (*it)->velocity_.lengthSquare()) {
+                    if (object->velocity_ > (*it)->velocity_) {
                         source = object;
                         target = *it;
                     }

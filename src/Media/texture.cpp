@@ -109,7 +109,7 @@ namespace texture {
         }
     }
 
-    TextureType randomPlanet() {
+    TextureType const randomPlanet() {
         int randomInt = sf::Randomizer::Random(1, 13);
         switch (randomInt) {
             case  1: return Planet1;
@@ -128,7 +128,7 @@ namespace texture {
         }
     }
 
-    Color3f getMudColor(TextureType type) {
+    Color3f const getMudColor(TextureType type) {
         switch (type) {
             case Planet1:   return Color3f(0.3f, 0.8f, 1.f);
             case Planet2:   return Color3f(1.f, 0.1f, 0.1f);

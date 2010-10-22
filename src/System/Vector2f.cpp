@@ -47,12 +47,12 @@ float Vector2f::lengthSquare() const {
     return x_*x_+y_*y_;
 }
 
-Vector2f Vector2f::randDir() {
+Vector2f const Vector2f::randDir() {
     float random = sf::Randomizer::Random(0.0f, 2*M_PI);
     return Vector2f(std::sin(random), std::cos(random));
 }
 
-Vector2f Vector2f::randDirLen() {
+Vector2f const Vector2f::randDirLen() {
     return randDir()*sf::Randomizer::Random(0.0f, 1.0f);
 }
 
@@ -110,6 +110,14 @@ bool operator== (Vector2f const& lhs, Vector2f const& rhs) {
 
 bool operator!= (Vector2f const& lhs, Vector2f const& rhs) {
     return (lhs.x_ != rhs.x_ && lhs.y_ != rhs.y_);
+}
+
+bool operator< (Vector2f const& lhs, Vector2f const& rhs) {
+    return lhs.lengthSquare() < rhs.lengthSquare();
+}
+
+bool operator> (Vector2f const& lhs, Vector2f const& rhs) {
+    return lhs.lengthSquare() > rhs.lengthSquare();
 }
 
 std::ostream& operator<<(std::ostream& os, Vector2f const& rhs) {

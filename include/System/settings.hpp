@@ -23,11 +23,22 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <string>
 
+/// A namespace which handles the settings.
+/// All settings are stored in global variables and
+/// can be saved to and loaded from file
+
 namespace settings {
+    /// Loads all settings from the file.
+    /// All settings are stored in the file "mars.cfg".
+    /// This has to be called once at the beginning of the game. If an error
+    /// occurs, default settings are used.
     void load();
+
+    /// Saves the current state of the variables to file.
     void save();
 
-    // game settings ------ adjustable via options menu
+    /// \name Game settings
+    ///@{
     extern int            C_soundVolume;
     extern int            C_announcerVolume;
     extern int            C_musicVolume;
@@ -43,8 +54,6 @@ namespace settings {
     extern bool           C_drawLocalNames;
     extern bool           C_drawRemoteNames;
     extern bool           C_drawBotNames;
-    extern bool           C_drawBotOrientation;
-    extern bool           C_drawZones;
     extern int            C_globalParticleCount;
     extern bool           C_adaptiveParticleCount;
     extern int            C_globalParticleLifeTime;
@@ -62,8 +71,10 @@ namespace settings {
     extern bool           C_showSelectLanguage;
     extern sf::String     C_language;
     extern bool           C_shaders;
+    ///@}
 
-    // player settings ----- adjustable via options menu
+    /// \name Player settings
+    ///@{
     extern sf::String     C_playerIName;
     extern Color3f        C_playerIColor;
     extern sf::Key::Code  C_playerIup;
@@ -83,13 +94,20 @@ namespace settings {
     extern bool           C_playerIIteamR;
     extern int            C_playerIIShip;
     extern bool           C_networkPlayerI;
+    ///@}
 
-    // ai settings ------ adjustable via options menu
+    /// \name AI settings
+    ///@{
     extern bool           C_drawAIPath;
+    extern bool           C_drawBotOrientation;
+    extern bool           C_drawZones;
+    ///@}
 
-    // network settings ----- adjustable via options menu
+    /// \name Network settings
+    ///@{
     extern sf::String    C_ip;
     extern sf::String    C_port;
+    ///@}
 };
 
 # endif //SETTINGS_HPP_INCLUDED

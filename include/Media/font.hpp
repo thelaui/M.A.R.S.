@@ -20,10 +20,17 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
+/// A namespace for loading font files.
+
 namespace font {
+    /// The different fonts included in MARS.
+    /// \param COUNT contains the amount of entries in the enum.
+    ///        Keep it the last!
     enum FontType {HandelGotDLig, FreeSans, COUNT};
 
-    sf::Font const& getFont(FontType);
+    /// Returns a const& to the SFML font.
+    /// You can specify which font to return with the \a type parameter.
+    sf::Font const& getFont(FontType type);
 }
 
 # endif // FONT_HPP_INCLUDED

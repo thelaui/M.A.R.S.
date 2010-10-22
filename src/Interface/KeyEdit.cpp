@@ -20,7 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Media/text.hpp"
 # include "Locales/locales.hpp"
-# include "System/keyNames.hpp"
+# include "System/generateName.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -67,7 +67,7 @@ void KeyEdit::draw() const {
     if (pressed_ && hovered_)
         text::drawScreenText(*locales::getLocale(locales::KeyEditHover), origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        text::drawScreenText(keyNames::key(*value_), origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(generateName::key(*value_), origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
 
     //draw Label
     label_->draw();
