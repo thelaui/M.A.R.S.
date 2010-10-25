@@ -1,4 +1,4 @@
-/* Item.hpp
+/* PowerUp.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,37 +15,23 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef ITEM_HPP_INCLUDED
-# define ITEM_HPP_INCLUDED
+# include "Items/PowerUp.hpp"
 
-# include "System/Vector2f.hpp"
+# include "SpaceObjects/Ship.hpp"
+# include "System/timer.hpp"
+# include "Items/items.hpp"
 
-class Ship;
+void PowerUp::update() {
+    lifeTime_ -= timer::frameTime();
+    if (lifeTime_ > 0.f) {
+        Item::update();
+        if (ship_) {
+            ship_->collectedItems_[type_] = true;
+        }
+    }
+}
 
-class Item {
-    public:
-        Item(Vector2f const& location, float radius, Ship* ship):
-            location_(location),
-            radius_(radius),
-            ship_(ship),
-            collected_(false) {}
-
-        virtual void update();
-        virtual void draw() const = 0;
-
-        Vector2f const& location() const;
-        float           radius()   const;
-
-    protected:
-        Vector2f location_;
-        float radius_;
-        Ship* ship_;
-        bool collected_;
-};
-
-# endif // ITEM_HPP_INCLUDED
-
-
-
-
-
+PowerUp::~PowerUp() {
+    if (ship_)
+        ship_->collectedItems_[type_] = false;
+}

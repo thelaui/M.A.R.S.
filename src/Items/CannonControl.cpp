@@ -19,33 +19,32 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
+# include "Items/items.hpp"
 
 CannonControl::CannonControl(Vector2f const& location):
-    Item(location, 20.f),
-    ship_(NULL),
+    Item(location, 20.f, NULL),
     respawnLocation_(location) {}
 
-Ship* CannonControl::update() {
+void CannonControl::update() {
     if (!collected_) {
-        ship_ = Item::update();
+        Item::update();
         if (ship_ != NULL)
-            ship_->collectedItems_[0] = true;
+            ship_->collectedItems_[items::iCannonControl] = true;
     }
     else {
         if (ship_->docked_) {
             collected_ = false;
             location_ = respawnLocation_;
-            ship_->collectedItems_[0] = false;
+            ship_->collectedItems_[items::iCannonControl] = false;
             ship_ = NULL;
         }
         else if (ship_->getLife() == 0.f) {
             collected_ = false;
             location_ = ship_->location();
-            ship_->collectedItems_[0] = false;
+            ship_->collectedItems_[items::iCannonControl] = false;
             ship_ = NULL;
         }
     }
-    return NULL;
 }
 
 void CannonControl::draw() const {

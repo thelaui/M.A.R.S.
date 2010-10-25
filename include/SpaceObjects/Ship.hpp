@@ -41,8 +41,9 @@ class Ship: public MobileSpaceObject {
 
         void setDamageSource(Player* evilOne);
 
-        float  getLife() const;
-        float  getFuel() const;
+        float   getLife()  const;
+        float   getFuel()  const;
+        Player* getOwner() const;
 
         std::vector<bool> const& getCollectedItems() const;
 
@@ -55,6 +56,7 @@ class Ship: public MobileSpaceObject {
         friend class Burner;
         friend class H2OMG;
         friend class CannonControl;
+        friend class PowerUp;
         friend class ShipName;
         friend class ShipHighlight;
         friend class Tutorial;

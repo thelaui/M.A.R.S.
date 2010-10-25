@@ -51,6 +51,7 @@ Game::Game(games::GameType const& type):
     }
 
 Game::~Game() {
+    items::clear();
     ships::clear();
     balls::clear();
     physics::clear();
@@ -60,7 +61,6 @@ Game::~Game() {
     players::clear();
     zones::clear();
     decoObjects::clear();
-    items::clear();
 }
 
 void Game::update() {
@@ -102,6 +102,7 @@ void Game::draw() const {
 }
 
 void Game::restart() {
+    items::clear();
     ships::clear();
     balls::clear();
     physics::clear();
@@ -109,7 +110,6 @@ void Game::restart() {
     spaceObjects::clear();
     zones::clear();
     decoObjects::clear();
-    items::clear();
     if (players::getFirstPoints() >= pointLimit_) {
         players::resetTeamPoints();
         players::resetPlayerPoints();

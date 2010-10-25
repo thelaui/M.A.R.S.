@@ -51,6 +51,7 @@
 150 Interface
 102 Grafik
 103 Audio
+165 Gameplay
 
 104 Fenstereinstellungen
 031 Debuginformationen
@@ -71,6 +72,11 @@
 
 152 Niedrige Auflösung
 153 Aus
+
+// Gameplayoptionen
+
+166 PowerUp-Spawnrate
+167 Botstärke
 
 // Audiooptionen
 
@@ -231,4 +237,4 @@
 160 Gesamt:
 161 Statistik
 
-// 165
+// 168

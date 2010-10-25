@@ -48,6 +48,7 @@
 // tabs
 
 150 Interface
+165 Gameplay
 102 Graphics
 103 Audio
 
@@ -70,6 +71,11 @@
 151 High Resolution
 152 Low Resolution
 153 Off
+
+// gameplay options
+
+166 PowerUp Spawn Rate
+167 Bot Difficulty 
 
 // audio options
 
@@ -231,5 +237,5 @@
 160 Total:
 161 Statistics
 
-// 165
+// 168
 

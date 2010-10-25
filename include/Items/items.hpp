@@ -19,8 +19,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define ITEMS_HPP_INCLUDED
 
 class CannonControl;
+class Item;
 
 namespace items {
+    enum ItemType {iCannonControl, iShield, iReverse, iSleep, iHealth, COUNT};
+
     void update();
     void draw();
 

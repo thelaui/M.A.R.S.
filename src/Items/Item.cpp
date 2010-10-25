@@ -20,14 +20,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/ships.hpp"
 # include "SpaceObjects/Ship.hpp"
 
-Ship* Item::update() {
+void Item::update() {
     std::vector<Ship*> const& shipList = ships::getShips();
     for (std::vector<Ship*>::const_iterator it = shipList.begin(); it != shipList.end(); ++it)
         if ((*it)->getLife() > 0.f && ((*it)->location() - location_).lengthSquare() < std::pow(radius_ + (*it)->radius(),2)) {
             collected_ = true;
-            return *it;
+            ship_ = *it;
         }
-    return NULL;
 }
 
 Vector2f const& Item::location() const {

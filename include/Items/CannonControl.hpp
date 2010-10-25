@@ -26,13 +26,12 @@ class CannonControl: public Item {
     public:
         CannonControl(Vector2f const& location);
 
-        Ship* update();
+        void update();
         void draw() const;
 
         Player* getCarrier() const;
 
     private:
-        Ship* ship_;
         Vector2f respawnLocation_;
 };
 

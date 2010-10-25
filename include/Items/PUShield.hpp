@@ -1,4 +1,4 @@
-/* Item.hpp
+/* PUShield.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,35 +15,25 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef ITEM_HPP_INCLUDED
-# define ITEM_HPP_INCLUDED
+# ifndef PUSHIELD_HPP_INCLUDED
+# define PUSHIELD_HPP_INCLUDED
 
 # include "System/Vector2f.hpp"
+# include "Items/PowerUp.hpp"
 
 class Ship;
 
-class Item {
+class PUShield: public PowerUp{
     public:
-        Item(Vector2f const& location, float radius, Ship* ship):
-            location_(location),
-            radius_(radius),
-            ship_(ship),
-            collected_(false) {}
+        PUShield(Vector2f const& location, float lifeTime):
+            PowerUp(items::iShield, location, lifeTime){}
 
-        virtual void update();
-        virtual void draw() const = 0;
-
-        Vector2f const& location() const;
-        float           radius()   const;
-
-    protected:
-        Vector2f location_;
-        float radius_;
-        Ship* ship_;
-        bool collected_;
+        void draw() const;
 };
 
-# endif // ITEM_HPP_INCLUDED
+# endif // PUSHIELD_HPP_INCLUDED
+
+
 
 
 

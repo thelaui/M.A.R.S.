@@ -32,6 +32,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/announcer.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "Shaders/postFX.hpp"
+# include "Items/items.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -52,7 +53,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                currentWeapon_(new AFK47(this)),
                life_(200),
                fuel_(100),
-               collectedItems_(1),
+               collectedItems_(items::COUNT, false),
                fragStars_(0),
                rememberedReputation_(0),
                fragStarTimer_(0.f),
@@ -325,6 +326,10 @@ float Ship::getLife() const {
 
 float Ship::getFuel() const {
     return fuel_ < 0.f ? 0.f : fuel_;
+}
+
+Player* Ship::getOwner() const {
+    return owner_;
 }
 
 std::vector<bool> const& Ship::getCollectedItems() const {

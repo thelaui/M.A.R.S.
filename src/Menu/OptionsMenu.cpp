@@ -65,11 +65,12 @@ UiWindow* OptionsMenu::get() {
         instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(400,320), 70, 20));
 
         TabList* tabList  = new TabList(Vector2f(10,55), 460, 250);
-        Tab* tabInterface = new Tab(locales::getLocale(locales::Interface), 90);
-        Tab* tabGraphics  = new Tab(locales::getLocale(locales::Display), 80);
-        Tab* tabAudio     = new Tab(locales::getLocale(locales::Audio), 60);
-        Tab* tabPlayer1   = new Tab(&settings::C_playerIName, 90);
-        Tab* tabPlayer2   = new Tab(&settings::C_playerIIName, 90);
+        Tab* tabInterface = new Tab(locales::getLocale(locales::Interface), 80);
+        Tab* tabGameplay  = new Tab(locales::getLocale(locales::Gameplay), 80);
+        Tab* tabGraphics  = new Tab(locales::getLocale(locales::Display), 70);
+        Tab* tabAudio     = new Tab(locales::getLocale(locales::Audio), 50);
+        Tab* tabPlayer1   = new Tab(&settings::C_playerIName, 80);
+        Tab* tabPlayer2   = new Tab(&settings::C_playerIIName, 80);
 
         tabPlayer1->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIName, Vector2f(10,30), 440, TEXT_EDIT, 12));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), &settings::C_playerIup, Vector2f(10,50), 440));
@@ -115,11 +116,15 @@ UiWindow* OptionsMenu::get() {
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), &settings::C_showParticleCount, Vector2f(10,70), 150));
         tabInterface->addWidget(new Button(new sf::String("Select Language"), &kChooseLanguage_, Vector2f(10,130), 120, 20));
 
+        tabGameplay->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,30), 440, 185, true));
+        tabGameplay->addWidget(new Slider(locales::getLocale(locales::iDumb), &settings::C_iDumb, 0, 100, Vector2f(10,50), 440, 185, false));
+
         tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), &musicVolume_, 0, 100, Vector2f(10,30), 440, 185, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), &soundVolume_, 0, 100, Vector2f(10,50), 440, 185, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::AnnouncerVolume), &announcerVolume_, 0, 100, Vector2f(10,70), 440, 185, true));
 
         tabList->addTab(tabInterface);
+        tabList->addTab(tabGameplay);
         tabList->addTab(tabGraphics);
         tabList->addTab(tabAudio);
         tabList->addTab(tabPlayer1);
