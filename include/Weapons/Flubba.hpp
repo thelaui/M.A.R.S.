@@ -20,15 +20,27 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Weapons/Weapon.hpp"
 
+/// Weapon: Flubba.
+/// A short distance gun, populates the screen with ugly green bubbles.
+
 class Flubba: public Weapon {
     public:
+        /// Ctor which constructs the weapon.
         Flubba(Ship* parent):
               Weapon(parent, "FLUBBA") {};
 
+        /// Spawns some particles.
         void fire() const;
+
+        /// Draws the weapon.
         void draw() const;
 
+        /// Replaces this weapon by the next one.
+        /// With this method it's possible to cycle through the weapons.
         void next();
+
+        /// Replaces this weapon by the previous one.
+        /// With this method it's possible to cycle through the weapons.
         void previous();
 };
 

@@ -1,4 +1,4 @@
-/* TeamZone.hpp
+/* Spark.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,32 +15,27 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+# ifndef SPARK_HPP_INCLUDED
+# define SPARK_HPP_INCLUDED
 
-# ifndef TEAMZONE_HPP_INCLUDED
-# define TEAMZONE_HPP_INCLUDED
+# include "Particles/Particle.hpp"
 
-# include "Zone.hpp"
+# include "System/Color3f.hpp"
 
-/// Zone: TutorialZone.
-/// A very large Zone, covering half the screen.
-
-class TeamZone: public Zone {
+class Spark: public Particle<Spark> {
     public:
-        /// Ctor, which creates the Zone.
-        TeamZone(int homeSide) :
-            Zone(),
-            homeSide_(homeSide) {}
+        Spark(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
 
-        /// Returns true, if the given SpaceObject is inside this Zone.
-        bool isInside(SpaceObject const& toBeChecked) const;
-
-        /// Draws the zone.
-        /// Only for debugging information.
+        void update();
         void draw() const;
 
+        friend class Particle<Spark>;
+
     private:
-        int homeSide_;
+        Color3f color_;
+        static std::list<Spark*> activeParticles_;
 };
 
+# endif // SPARK_HPP_INCLUDED
 
-# endif // TEAMZONE_HPP_INCLUDED
+

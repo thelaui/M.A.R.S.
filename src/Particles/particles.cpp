@@ -20,55 +20,55 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/timer.hpp"
 
-# include "Particles/fuels.hpp"
-# include "Particles/muds.hpp"
-# include "Particles/smokes.hpp"
-# include "Particles/eruptions.hpp"
-# include "Particles/ammoAFK47s.hpp"
-# include "Particles/ammoROFLEs.hpp"
-# include "Particles/dusts.hpp"
-# include "Particles/explodes.hpp"
-# include "Particles/burningFragments.hpp"
-# include "Particles/fragmentFlames.hpp"
-# include "Particles/miniFlames.hpp"
-# include "Particles/ammoShotguns.hpp"
-# include "Particles/ammoFlubbas.hpp"
-# include "Particles/miniAmmoFlubbas.hpp"
-# include "Particles/cannonBalls.hpp"
-# include "Particles/sparks.hpp"
-# include "Particles/fragments.hpp"
-# include "Particles/ammoBurners.hpp"
-# include "Particles/ammoH2OMGs.hpp"
-# include "Particles/heats.hpp"
-# include "Particles/heatJets.hpp"
-# include "Particles/shockWaves.hpp"
-# include "Particles/heatBurners.hpp"
+# include "Particles/AmmoAFK47.hpp"
+# include "Particles/AmmoBurner.hpp"
+# include "Particles/AmmoFlubba.hpp"
+# include "Particles/Fuel.hpp"
+# include "Particles/Mud.hpp"
+# include "Particles/Smoke.hpp"
+# include "Particles/Eruption.hpp"
+# include "Particles/AmmoROFLE.hpp"
+# include "Particles/Dust.hpp"
+# include "Particles/Explode.hpp"
+# include "Particles/BurningFragment.hpp"
+# include "Particles/FragmentFlame.hpp"
+# include "Particles/MiniFlame.hpp"
+# include "Particles/AmmoShotgun.hpp"
+# include "Particles/MiniAmmoFlubba.hpp"
+# include "Particles/CannonBall.hpp"
+# include "Particles/Spark.hpp"
+# include "Particles/Fragment.hpp"
+# include "Particles/AmmoH2OMG.hpp"
+# include "Particles/Heat.hpp"
+# include "Particles/HeatJet.hpp"
+# include "Particles/ShockWave.hpp"
+# include "Particles/HeatBurner.hpp"
 
 namespace particles {
     void update() {
-        fuels::             update();
-        muds::              update();
-        smokes::            update();
-        eruptions::         update();
-        ammoAFK47s::        update();
-        ammoROFLEs::        update();
-        ammoShotguns::      update();
-        dusts::             update();
-        explodes::          update();
-        burningFragments::  update();
-        fragmentFlames::    update();
-        miniFlames::        update();
-        ammoFlubbas::       update();
-        miniAmmoFlubbas::   update();
-        cannonBalls::       update();
-        sparks::            update();
-        fragments::         update();
-        ammoBurners::       update();
-        ammoH2OMGs::        update();
-        heats::             update();
-        heatJets::          update();
-        shockWaves::        update();
-        heatBurners::       update();
+        AmmoAFK47::        updateAll();
+        AmmoBurner::       updateAll();
+        AmmoFlubba::       updateAll();
+        Fuel::             updateAll();
+        Mud::              updateAll();
+        Smoke::            updateAll();
+        Eruption::         updateAll();
+        AmmoROFLE::        updateAll();
+        AmmoShotgun::      updateAll();
+        Dust::             updateAll();
+        Explode::          updateAll();
+        BurningFragment::  updateAll();
+        FragmentFlame::    updateAll();
+        MiniFlame::        updateAll();
+        MiniAmmoFlubba::   updateAll();
+        CannonBall::       updateAll();
+        Spark::            updateAll();
+        Fragment::         updateAll();
+        AmmoH2OMG::        updateAll();
+        Heat::             updateAll();
+        HeatJet::          updateAll();
+        ShockWave::        updateAll();
+        HeatBurner::       updateAll();
     }
 
     void drawLower() {
@@ -77,24 +77,24 @@ namespace particles {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glBegin(GL_QUADS);
 
-            explodes::          draw();
-            ammoFlubbas::       draw();
-            smokes::            draw();
-            dusts::             draw();
-            miniAmmoFlubbas::   draw();
-            miniFlames::        draw();
-            ammoH2OMGs::        draw();
-            eruptions::         draw();
-            muds::              draw();
-            ammoShotguns::      draw();
-            ammoAFK47s::        draw();
-            ammoROFLEs::        draw();
+            AmmoAFK47::        drawAll();
+            AmmoFlubba::       drawAll();
+            Explode::          drawAll();
+            Smoke::            drawAll();
+            Dust::             drawAll();
+            MiniAmmoFlubba::   drawAll();
+            MiniFlame::        drawAll();
+            AmmoH2OMG::        drawAll();
+            Eruption::         drawAll();
+            Mud::              drawAll();
+            AmmoShotgun::      drawAll();
+            AmmoROFLE::        drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
-        fragments::         draw();
+        Fragment::         drawAll();
 
     }
 
@@ -104,11 +104,11 @@ namespace particles {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glBegin(GL_QUADS);
 
-            fuels::             draw();
-            cannonBalls::       draw();
-            ammoBurners::       draw();
-            fragmentFlames::    draw();
-            sparks::            draw();
+            AmmoBurner::       drawAll();
+            Fuel::             drawAll();
+            CannonBall::       drawAll();
+            FragmentFlame::    drawAll();
+            Spark::            drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -121,9 +121,9 @@ namespace particles {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glBegin(GL_QUADS);
 
-            heats::        draw();
-            heatJets::     draw();
-            heatBurners::  draw();
+            Heat::        drawAll();
+            HeatJet::     drawAll();
+            HeatBurner::  drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -134,7 +134,7 @@ namespace particles {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glBegin(GL_QUADS);
 
-            shockWaves::   draw();
+            ShockWave::   drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -144,29 +144,29 @@ namespace particles {
     void spawn(ParticleType const& type, Vector2f const& location, Vector2f const& direction,
                Vector2f const& velocity, Color3f const& color, Player* damageSource) {
         switch (type) {
-            case pFuel:             fuels::             spawn(location, direction, velocity);               break;
-            case pMud:              muds::              spawn(location, direction, velocity, color);        break;
-            case pSmoke:            smokes::            spawn(location);                                    break;
-            case pEruption:         eruptions::         spawn(location, direction, velocity);               break;
-            case pAmmoAFK47:        ammoAFK47s::        spawn(location, direction, velocity, damageSource); break;
-            case pAmmoROFLE:        ammoROFLEs::        spawn(location, direction, velocity, damageSource); break;
-            case pAmmoShotgun:      ammoShotguns::      spawn(location, direction, velocity, damageSource); break;
-            case pDust:             dusts::             spawn(location);                                    break;
-            case pExplode:          explodes::          spawn(location);                                    break;
-            case pBurningFragment:  burningFragments::  spawn(location);                                    break;
-            case pFragmentFlame:    fragmentFlames::    spawn(location, direction, velocity);               break;
-            case pMiniFlame:        miniFlames::        spawn(location);                                    break;
-            case pAmmoFlubba:       ammoFlubbas::       spawn(location, direction, velocity, damageSource); break;
-            case pMiniAmmoFlubba:   miniAmmoFlubbas::   spawn(location);                                    break;
-            case pCannonBall:       cannonBalls::       spawn(location, direction);                         break;
-            case pSpark:            sparks::            spawn(location, direction, velocity, color);        break;
-            case pFragment:         fragments::         spawn(location, color);                             break;
-            case pAmmoBurner:       ammoBurners::       spawn(location, direction, velocity, damageSource); break;
-            case pAmmoH2OMG:        ammoH2OMGs::        spawn(location, direction, velocity, damageSource); break;
-            case pHeat:             heats::             spawn(location);                                    break;
-            case pHeatJet:          heatJets::          spawn(location, direction, velocity);               break;
-            case pShockWave:        shockWaves::        spawn(location);                                    break;
-            case pHeatBurner:       heatBurners::       spawn(location, direction, velocity);               break;
+            case pAmmoAFK47:        AmmoAFK47::        spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoBurner:       AmmoBurner::       spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoFlubba:       AmmoFlubba::       spawn(location, direction, velocity, color, damageSource); break;
+            case pFuel:             Fuel::             spawn(location, direction, velocity, color, damageSource); break;
+            case pMud:              Mud::              spawn(location, direction, velocity, color, damageSource); break;
+            case pSmoke:            Smoke::            spawn(location, direction, velocity, color, damageSource); break;
+            case pEruption:         Eruption::         spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoROFLE:        AmmoROFLE::        spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoShotgun:      AmmoShotgun::      spawn(location, direction, velocity, color, damageSource); break;
+            case pDust:             Dust::             spawn(location, direction, velocity, color, damageSource); break;
+            case pExplode:          Explode::          spawn(location, direction, velocity, color, damageSource); break;
+            case pBurningFragment:  BurningFragment::  spawn(location, direction, velocity, color, damageSource); break;
+            case pFragmentFlame:    FragmentFlame::    spawn(location, direction, velocity, color, damageSource); break;
+            case pMiniFlame:        MiniFlame::        spawn(location, direction, velocity, color, damageSource); break;
+            case pMiniAmmoFlubba:   MiniAmmoFlubba::   spawn(location, direction, velocity, color, damageSource); break;
+            case pCannonBall:       CannonBall::       spawn(location, direction, velocity, color, damageSource); break;
+            case pSpark:            Spark::            spawn(location, direction, velocity, color, damageSource); break;
+            case pFragment:         Fragment::         spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoH2OMG:        AmmoH2OMG::        spawn(location, direction, velocity, color, damageSource); break;
+            case pHeat:             Heat::             spawn(location, direction, velocity, color, damageSource); break;
+            case pHeatJet:          HeatJet::          spawn(location, direction, velocity, color, damageSource); break;
+            case pShockWave:        ShockWave::        spawn(location, direction, velocity, color, damageSource); break;
+            case pHeatBurner:       HeatBurner::       spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -183,44 +183,44 @@ namespace particles {
     }
 
     void shockWave(SpaceObject* source, float strength, float radius) {
-        smokes::shockWave(source, strength, radius);
-        dusts:: shockWave(source, strength, radius);
-        ammoFlubbas:: shockWave(source, strength, radius);
+        Smoke::shockWave(source, strength, radius);
+        Dust:: shockWave(source, strength, radius);
+        AmmoFlubba:: shockWave(source, strength, radius);
     }
 
     int count() {
-        return fuels::count() + muds::count() + smokes::count() + eruptions::count()
-                + ammoAFK47s::count() + ammoROFLEs::count() + dusts::count() + explodes::count()
-                + burningFragments::count() + fragmentFlames::count() + ammoShotguns::count()
-                + miniFlames::count() + ammoFlubbas::count() + miniAmmoFlubbas::count()
-                + cannonBalls::count() + sparks::count() + fragments::count() + ammoBurners::count()
-                + ammoH2OMGs::count() + heats::count() + heatJets::count() + shockWaves::count()
-                + heatBurners::count();
+        return Fuel::count() + Mud::count() + Smoke::count() + Eruption::count()
+                + AmmoAFK47::count() + AmmoROFLE::count() + Dust::count() + Explode::count()
+                + BurningFragment::count() + FragmentFlame::count() + AmmoShotgun::count()
+                + MiniFlame::count() + AmmoFlubba::count() + MiniAmmoFlubba::count()
+                + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
+                + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
+                + HeatBurner::count();
     }
 
     void clear() {
-        fuels::             clear();
-        muds::              clear();
-        smokes::            clear();
-        eruptions::         clear();
-        ammoAFK47s::        clear();
-        ammoROFLEs::        clear();
-        ammoShotguns::      clear();
-        dusts::             clear();
-        explodes::          clear();
-        burningFragments::  clear();
-        fragmentFlames::    clear();
-        miniFlames::        clear();
-        ammoFlubbas::       clear();
-        miniAmmoFlubbas::   clear();
-        cannonBalls::       clear();
-        sparks::            clear();
-        fragments::         clear();
-        ammoBurners::       clear();
-        ammoH2OMGs::        clear();
-        heats::             clear();
-        heatJets::          clear();
-        shockWaves::        clear();
-        heatBurners::       clear();
+        AmmoAFK47::        clear();
+        AmmoBurner::       clear();
+        AmmoFlubba::       clear();
+        Fuel::             clear();
+        Mud::              clear();
+        Smoke::            clear();
+        Eruption::         clear();
+        AmmoROFLE::        clear();
+        AmmoShotgun::      clear();
+        Dust::             clear();
+        Explode::          clear();
+        BurningFragment::  clear();
+        FragmentFlame::    clear();
+        MiniFlame::        clear();
+        MiniAmmoFlubba::   clear();
+        CannonBall::       clear();
+        Spark::            clear();
+        Fragment::         clear();
+        AmmoH2OMG::        clear();
+        Heat::             clear();
+        HeatJet::          clear();
+        ShockWave::        clear();
+        HeatBurner::       clear();
     }
 }

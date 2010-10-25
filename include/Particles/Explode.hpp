@@ -1,4 +1,4 @@
-/* TeamZone.hpp
+/* Explode.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,32 +15,27 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+# ifndef EXPLODE_HPP_INCLUDED
+# define EXPLODE_HPP_INCLUDED
 
-# ifndef TEAMZONE_HPP_INCLUDED
-# define TEAMZONE_HPP_INCLUDED
+# include "Particles/Particle.hpp"
 
-# include "Zone.hpp"
+# include "System/Color3f.hpp"
 
-/// Zone: TutorialZone.
-/// A very large Zone, covering half the screen.
-
-class TeamZone: public Zone {
+class Explode: public Particle<Explode> {
     public:
-        /// Ctor, which creates the Zone.
-        TeamZone(int homeSide) :
-            Zone(),
-            homeSide_(homeSide) {}
+        Explode(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
 
-        /// Returns true, if the given SpaceObject is inside this Zone.
-        bool isInside(SpaceObject const& toBeChecked) const;
-
-        /// Draws the zone.
-        /// Only for debugging information.
+        void update();
         void draw() const;
 
+        friend class Particle<Explode>;
+
     private:
-        int homeSide_;
+        Color3f color_;
+        static std::list<Explode*> activeParticles_;
 };
 
+# endif // EXPLODE_HPP_INCLUDED
 
-# endif // TEAMZONE_HPP_INCLUDED
+

@@ -22,11 +22,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Zones/Zone.hpp"
 
+/// Zone: HomeZone.
+/// A large round Zone around the HomePlanet.
+
 class HomeZone: public Zone {
     public:
+        /// Ctor, which creates the Zone.
         HomeZone(Vector2f const& location);
 
+        /// Returns true, if the given SpaceObject is inside this Zone.
         bool isInside(SpaceObject const& toBeChecked) const;
+
+        /// Draws the zone.
+        /// Only for debugging information.
         void draw() const;
 
     private:

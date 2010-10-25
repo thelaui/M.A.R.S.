@@ -22,19 +22,32 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Ship;
 
+/// A virtual base class for all weapons.
+/// Provides a basic interface for all weapons, some base members and methodes.
+
 class Weapon {
     public:
+        /// Ctor which constructs the base Weapon.
         Weapon(Ship* parent, sf::String name):
                parent_(parent),
                timer_(0),
                name_(name) {}
 
+        /// This function is called whenever the weapon is fired.
         virtual void fire() const = 0;
+
+        /// Draws the weapon.
         virtual void draw() const = 0;
 
+        /// Replaces this weapon by the next one.
+        /// With this method it's possible to cycle through the weapons.
         virtual void next()     = 0;
+
+        /// Replaces this weapon by the previous one.
+        /// With this method it's possible to cycle through the weapons.
         virtual void previous() = 0;
 
+        /// Returns the name of the Weapon.
         sf::String const& getName() const {return name_;}
 
     protected:

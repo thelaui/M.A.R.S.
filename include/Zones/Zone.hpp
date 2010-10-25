@@ -22,11 +22,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class SpaceObject;
 
+/// Basic interface for all Zones.
+
 class Zone {
     public:
+        /// Returns true, if the given SpaceObject is inside this Zone.
         virtual bool isInside(SpaceObject const& toBeChecked) const = 0;
-        virtual void draw() const = 0;
 
+        /// Draws the zone.
+        /// Only for debugging information.
+        virtual void draw() const = 0;
 };
 
 # endif

@@ -20,15 +20,27 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Weapons/Weapon.hpp"
 
+/// Weapon: H2OMG.
+/// A long distance gun, which fires some icy cubes.
+
 class H2OMG: public Weapon {
     public:
+        /// Ctor which constructs the weapon.
         H2OMG(Ship* parent):
               Weapon(parent, "H2O-MG") {};
 
+        /// Spawns some particles.
         void fire() const;
+
+        /// Draws the weapon.
         void draw() const;
 
+        /// Replaces this weapon by the next one.
+        /// With this method it's possible to cycle through the weapons.
         void next();
+
+        /// Replaces this weapon by the previous one.
+        /// With this method it's possible to cycle through the weapons.
         void previous();
 };
 

@@ -21,13 +21,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Zones/Zone.hpp"
 
+/// Zone: TutorialZone.
+/// A beautiful pinkish Zone, employed in the Tutorial.
+
 class TutorialZone: public Zone {
     public:
+        /// Ctor, which creates the Zone.
         TutorialZone(Vector2f const& location, float radius);
 
+        /// Returns true, if the given SpaceObject is inside this Zone.
         bool isInside(SpaceObject const& toBeChecked) const;
-        void draw() const;
 
+        /// Draws the zone.
+        void draw() const;
 
     private:
         const float radius_;
