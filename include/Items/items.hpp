@@ -19,19 +19,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define ITEMS_HPP_INCLUDED
 
 class CannonControl;
-class Item;
 class PowerUp;
 
 namespace items {
-    enum ItemType {iCannonControl, iShield, iReverse, iSleep, iHealth, COUNT};
+    enum PowerUpType {puShield, puReverse, puSleep, puHealth, puFuel, COUNT};
 
     void update();
     void draw();
 
     void addCannonControl();
     CannonControl* getCannonControl();
-
-    void removeItem(Item* toRemove);
 
     void clear();
 }

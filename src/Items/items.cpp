@@ -24,6 +24,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/timer.hpp"
 # include "Items/PUShield.hpp"
+# include "Items/PUHealth.hpp"
+# include "Items/PUFuel.hpp"
 
 # include <list>
 
@@ -54,15 +56,17 @@ namespace items {
                 if (newPowerUpFits) break;
             }
             if(newPowerUpFits)
-                switch (sf::Randomizer::Random(static_cast<int>(iShield), static_cast<int>(COUNT))) {
-                    case iShield:
-                        powerUps_.push_back(new PUShield(position, sf::Randomizer::Random(8.f, 12.f))); break;
-                    case iReverse:
-                        powerUps_.push_back(new PUShield(position, sf::Randomizer::Random(8.f, 12.f))); break;
-                    case iSleep:
-                        powerUps_.push_back(new PUShield(position, sf::Randomizer::Random(8.f, 12.f))); break;
-                    case iHealth:
-                        powerUps_.push_back(new PUShield(position, sf::Randomizer::Random(8.f, 12.f))); break;
+                switch (sf::Randomizer::Random(static_cast<int>(puShield), static_cast<int>(COUNT))) {
+                    case puShield:
+                        powerUps_.push_back(new PUShield(position)); break;
+                    case puReverse:
+                        powerUps_.push_back(new PUShield(position)); break;
+                    case puSleep:
+                        powerUps_.push_back(new PUShield(position)); break;
+                    case puHealth:
+                        powerUps_.push_back(new PUHealth(position)); break;
+                    case puFuel:
+                        powerUps_.push_back(new PUFuel(position)); break;
                 }
         }
     }
@@ -71,18 +75,22 @@ namespace items {
             cannonControl_->update();
 
         if (settings::C_powerUpRate > 0) {
-            if (sf::Randomizer::Random(0, (101-settings::C_powerUpRate)*15 + 80) < 150.f * timer::frameTime())
+            static float spawnTimer(1.f);
+            spawnTimer -= timer::frameTime();
+            if (spawnTimer <= 0.f) {
                 spawnPowerUp();
+                spawnTimer = sf::Randomizer::Random(0.5f, 1.5f) * ((101-settings::C_powerUpRate) * 0.23f + 1.5f);
+            }
         }
 
         std::list<PowerUp*>::iterator it = powerUps_.begin();
         while (it != powerUps_.end()) {
-             (*it)->update();
-             if ((*it)->isDead()) {
+            (*it)->update();
+            if ((*it)->isDead()) {
                 delete *it;
                 it = powerUps_.erase(it);
-             }
-             else ++it;
+            }
+            else ++it;
         }
     }
 
@@ -117,21 +125,6 @@ namespace items {
 
     CannonControl* getCannonControl() {
         return cannonControl_;
-    }
-
-    void removeItem(Item* toRemove) {
-        if (toRemove == cannonControl_)
-            delete cannonControl_;
-        else {
-            std::list<PowerUp*>::iterator it = powerUps_.begin();
-            while (it != powerUps_.end()) {
-                 if (*it == toRemove) {
-                    delete *it;
-                    it = powerUps_.erase(it);
-                 }
-                 else ++it;
-            }
-        }
     }
 
     void clear() {

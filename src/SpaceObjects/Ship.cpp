@@ -33,7 +33,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/decoObjects.hpp"
 # include "Shaders/postFX.hpp"
 # include "Items/items.hpp"
-# include "Items/Item.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -52,9 +51,9 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                respawnLocation_(location),
                respawnRotation_(rotation),
                currentWeapon_(new AFK47(this)),
-               life_(200),
-               fuel_(100),
-               collectedItems_(items::COUNT, NULL),
+               life_(200.f),
+               fuel_(100.f),
+               collectedPowerUps_(items::COUNT, NULL),
                fragStars_(0),
                rememberedReputation_(0),
                fragStarTimer_(0.f),
@@ -308,13 +307,14 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         default:;
     }
-    if (!collectedItems_[items::iShield])
+    if (!collectedPowerUps_[items::puShield])
         life_ -= amount;
 }
 
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
-    life_ -= intensity*50.f;
+    if (!collectedPowerUps_[items::puShield])
+        life_ -= intensity*50.f;
 }
 
 void Ship::setDamageSource(Player* evilOne) {
@@ -334,8 +334,8 @@ Player* Ship::getOwner() const {
     return owner_;
 }
 
-std::vector<Item*> const& Ship::getCollectedItems() const {
-    return collectedItems_;
+std::vector<PowerUp*> const& Ship::getCollectedPowerUps() const {
+    return collectedPowerUps_;
 }
 
 void Ship::explode() {

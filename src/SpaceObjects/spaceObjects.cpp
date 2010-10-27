@@ -59,7 +59,7 @@ namespace spaceObjects {
                 // check for collisions with cannoncontrol
                 CannonControl* cannonControl = items::getCannonControl();
                 if (cannonControl) {
-                    if ((cannonControl->location() - position).lengthSquare() < std::pow(cannonControl->radius() + radius + 50, 2))
+                    if ((cannonControl->location() - position).lengthSquare() < std::pow(radius + 70.f, 2))
                         newPlanetFits = false;
                 }
 

@@ -1,4 +1,4 @@
-/* PUShield.hpp
+/* PUHealth.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,30 +15,18 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef PUSHIELD_HPP_INCLUDED
-# define PUSHIELD_HPP_INCLUDED
+# include "Items/PUHealth.hpp"
 
-# include "System/Vector2f.hpp"
-# include "Items/PowerUp.hpp"
+# include "SpaceObjects/Ship.hpp"
 
-# include <SFML/System.hpp>
+void PUHealth::draw() const {
+    if (!collected_) {
+        PowerUp::draw();
+    }
+}
 
-class PUShield: public PowerUp{
-    public:
-        PUShield(Vector2f const& location):
-            PowerUp(items::puShield, location, 15.f, sf::Randomizer::Random(8.f, 12.f), 4, 0, Color3f(0.3f, 0.1f, 1.0f)){}
-
-        void draw() const;
-
-    private:
-        void refreshLifeTime();
-};
-
-# endif // PUSHIELD_HPP_INCLUDED
-
-
-
-
-
-
+void PUHealth::refreshLifeTime() {
+    lifeTime_ = totalLifeTime_;
+    ship_->life_ = 200.f;
+}
 

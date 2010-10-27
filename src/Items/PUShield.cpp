@@ -20,23 +20,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
 
-void PUShield::update() {
-    PowerUp::update();
-    if (!justCollected_ && collected()) {
-        justCollected_ = true;
-        lifeTime_ = 0.f;
-        totalLifeTime_ = 10.f;
-    }
-}
-
 void PUShield::draw() const {
-    if (!collected()) {
-        Item::draw();
+    if (!collected_) {
+        PowerUp::draw();
     }
     else {
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
         glPushMatrix();
         glLoadIdentity();
-        glTranslatef(ship()->location().x_, ship()->location().y_, 0.f);
+        glTranslatef(ship_->location().x_, ship_->location().y_, 0.f);
 
         // shield bubble
         glColor4f(1.0f, 0.5f, 0.8f, 0.9f);
@@ -51,4 +44,9 @@ void PUShield::draw() const {
 
         glPopMatrix();
     }
+}
+
+void PUShield::refreshLifeTime() {
+    lifeTime_ = 0.f;
+    totalLifeTime_ = 10.f;
 }

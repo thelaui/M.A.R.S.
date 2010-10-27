@@ -1,4 +1,4 @@
-/* PowerUp.cpp
+/* Item.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -17,23 +17,107 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Items/PowerUp.hpp"
 
+# include "SpaceObjects/ships.hpp"
 # include "SpaceObjects/Ship.hpp"
-# include "System/timer.hpp"
-# include "Items/items.hpp"
+
+PowerUp::PowerUp(items::PowerUpType type, Vector2f const& location, float radius,
+        float totalLifeTime, int texX, int texY, Color3f const& bgColor):
+    location_(location),
+    radius_(radius),
+    ship_(NULL),
+    collected_(false),
+    texX_(texX),
+    texY_(texY),
+    type_(type),
+    lifeTime_(0.f),
+    totalLifeTime_(totalLifeTime),
+    bgColor_(bgColor) {}
+
+PowerUp::~PowerUp() {
+    if (ship_)
+        ship_->collectedPowerUps_[type_] = NULL;
+}
 
 void PowerUp::update() {
+
     lifeTime_ += timer::frameTime();
 
-    if (lifeTime_ < totalLifeTime_)
-        Item::update();
-    if (lifeTime_ < M_PI/4.f)
-        radius_ = std::sin(lifeTime_ * 2.f) * 15.f;
-    else if (lifeTime_ > totalLifeTime_-0.38f)
-        radius_ = -400.0*pow(lifeTime_+0.2-totalLifeTime_, 2)+25;
-    else
-        radius_ = 15.f;
+    if(!collected_) {
+        std::vector<Ship*> const& shipList = ships::getShips();
+        for (std::vector<Ship*>::const_iterator it = shipList.begin(); it != shipList.end(); ++it)
+            if ((*it)->getLife() > 0.f && ((*it)->location() - location_).lengthSquare() < std::pow(radius_ + (*it)->radius(),2)) {
+                collected_ = true;
+                ship_ = *it;
+            }
+        if (ship_) {
+            if (ship_->collectedPowerUps_[type_] != NULL) {
+                ship_->collectedPowerUps_[type_]->lifeTime_ = 0;
+                ship_ = NULL;
+                lifeTime_ = totalLifeTime_;
+            }
+            else {
+                ship_->collectedPowerUps_[type_] = this;
+                refreshLifeTime();
+            }
+        }
 
-    if (ship_ && ship_->getLife() == 0.f) {
-        totalLifeTime_ = 0.f;
+        if (lifeTime_ < M_PI/4.f)
+            radius_ = std::sin(lifeTime_ * 2.f) * 15.f;
+        else if (lifeTime_ > totalLifeTime_-0.38f)
+            radius_ = -400.0*pow(lifeTime_+0.2-totalLifeTime_, 2)+25;
+        else
+            radius_ = 15.f;
     }
+    else if (ship_ && ship_->getLife() == 0.f) {
+        lifeTime_ = totalLifeTime_;
+    }
+}
+
+void PowerUp::draw() const {
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glPushMatrix();
+    glTranslatef(location_.x_, location_.y_, 0);
+
+    bgColor_.gl4f(0.8f);
+    glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
+    // glow
+    glBegin(GL_QUADS);
+        const int posX1 = 0;
+        const int posY1 = 0;
+        glTexCoord2f(posX1*0.15625f,     posY1*0.15625f);     glVertex2f(-radius_*2.f, -radius_*2.f);
+        glTexCoord2f(posX1*0.15625f,     (posY1+1)*0.15625f); glVertex2f(-radius_*2.f, +radius_*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, (posY1+1)*0.15625f); glVertex2f(+radius_*2.f, +radius_*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, posY1*0.15625f);     glVertex2f(+radius_*2.f, -radius_*2.f);
+    glEnd();
+
+    glLoadIdentity();
+    glTranslatef(location_.x_, location_.y_, 0);
+    float scale(std::sin(timer::totalTime() *7.f) / 4.f + 1.f);
+    glScalef(scale, scale, 1.f);
+    glColor3f(1.f, 1.f, 1.f);
+    // item layer
+    glBegin(GL_QUADS);
+        const int posX2 = texX_;
+        const int posY2 = texY_;
+        glTexCoord2f(posX2*0.15625f,     posY2*0.15625f);     glVertex2f(-radius_, -radius_);
+        glTexCoord2f(posX2*0.15625f,     (posY2+1)*0.15625f); glVertex2f(-radius_, +radius_);
+        glTexCoord2f((posX2+1)*0.15625f, (posY2+1)*0.15625f); glVertex2f(+radius_, +radius_);
+        glTexCoord2f((posX2+1)*0.15625f, posY2*0.15625f);     glVertex2f(+radius_, -radius_);
+    glEnd();
+
+    glPopMatrix();
+}
+
+Vector2f const& PowerUp::location() const {
+    return location_;
+}
+
+float PowerUp::radius() const {
+    return radius_;
+}
+
+bool PowerUp::isDead() const {
+    return lifeTime_ >= totalLifeTime_;
 }

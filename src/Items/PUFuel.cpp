@@ -1,4 +1,4 @@
-/* PUShield.hpp
+/* PUFuel.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,30 +15,21 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef PUSHIELD_HPP_INCLUDED
-# define PUSHIELD_HPP_INCLUDED
+# include "Items/PUFuel.hpp"
 
-# include "System/Vector2f.hpp"
-# include "Items/PowerUp.hpp"
+# include "SpaceObjects/Ship.hpp"
+# include "Particles/particles.hpp"
 
-# include <SFML/System.hpp>
+void PUFuel::draw() const {
+    if (!collected_) {
+        PowerUp::draw();
+    }
+}
 
-class PUShield: public PowerUp{
-    public:
-        PUShield(Vector2f const& location):
-            PowerUp(items::puShield, location, 15.f, sf::Randomizer::Random(8.f, 12.f), 4, 0, Color3f(0.3f, 0.1f, 1.0f)){}
-
-        void draw() const;
-
-    private:
-        void refreshLifeTime();
-};
-
-# endif // PUSHIELD_HPP_INCLUDED
-
-
-
-
-
+void PUFuel::refreshLifeTime() {
+    lifeTime_ = totalLifeTime_;
+    ship_->fuel_ = 100.f;
+    particles::spawnMultiple(5, particles::pMud, location_, Vector2f(), Vector2f(), Color3f(1.f, 1.f, 0.f));
+}
 
 

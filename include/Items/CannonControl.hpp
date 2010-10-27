@@ -18,11 +18,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef CANNONCONTROL_HPP_INCLUDED
 # define CANNONCONTROL_HPP_INCLUDED
 
-# include "Items/Item.hpp"
+# include "System/Vector2f.hpp"
 
 class Player;
+class Ship;
 
-class CannonControl: public Item {
+class CannonControl{
     public:
         CannonControl(Vector2f const& location);
 
@@ -30,9 +31,13 @@ class CannonControl: public Item {
         void draw() const;
 
         Player* getCarrier() const;
+        Vector2f const& location() const;
 
     private:
         Vector2f respawnLocation_;
+        Vector2f location_;
+        Ship* ship_;
+        bool collected_;
 };
 
 # endif // CANNONCONTROL_HPP_INCLUDED

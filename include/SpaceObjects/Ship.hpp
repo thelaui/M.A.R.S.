@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define ITEM_CANNON_CONTROL 0
 
 class Player;
-class Item;
+class PowerUp;
 
 class Ship: public MobileSpaceObject {
     public:
@@ -46,7 +46,7 @@ class Ship: public MobileSpaceObject {
         float   getFuel()  const;
         Player* getOwner() const;
 
-        std::vector<Item*> const& getCollectedItems() const;
+        std::vector<PowerUp*> const& getCollectedPowerUps() const;
 
         friend class Controller;
         friend class BotController;
@@ -56,9 +56,10 @@ class Ship: public MobileSpaceObject {
         friend class Flubba;
         friend class Burner;
         friend class H2OMG;
-        friend class Item;
         friend class CannonControl;
         friend class PowerUp;
+        friend class PUHealth;
+        friend class PUFuel;
         friend class ShipName;
         friend class ShipHighlight;
         friend class Tutorial;
@@ -90,7 +91,7 @@ class Ship: public MobileSpaceObject {
         float life_;
         float fuel_;
 
-        std::vector<Item*> collectedItems_;
+        std::vector<PowerUp*> collectedPowerUps_;
 
         int fragStars_, rememberedReputation_;
         float fragStarTimer_, pointCheckTimer_;

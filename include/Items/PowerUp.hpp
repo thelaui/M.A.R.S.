@@ -1,4 +1,4 @@
-/* PowerUp.hpp
+/* Item.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,38 +15,46 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef POWERUP_HPP_INCLUDED
-# define POWERUP_HPP_INCLUDED
+# ifndef ITEM_HPP_INCLUDED
+# define ITEM_HPP_INCLUDED
 
 # include "System/Vector2f.hpp"
-# include "Items/Item.hpp"
+# include "System/Color3f.hpp"
+# include "Items/items.hpp"
 
 class Ship;
 
-class PowerUp: public Item{
+class PowerUp {
     public:
-        PowerUp(items::ItemType type, Vector2f const& location, float lifeTime, int texX, int texY):
-            Item(type, location, 0.f, NULL, texX, texY),
-            lifeTime_(0.f),
-            totalLifeTime_(lifeTime),
-            justCollected_(false){}
+        PowerUp(items::PowerUpType type, Vector2f const& location, float radius,
+                float totalLifeTime, int texX, int texY, Color3f const& bgColor);
+
+        ~PowerUp();
 
         virtual void update();
+        virtual void draw() const;
 
-        bool isDead()             const { return lifeTime_ >= totalLifeTime_; }
+        Vector2f const& location() const;
+        float           radius()   const;
 
-        float radius()            const { return radius_;     }
-        bool collected()          const { return collected_ ; }
-        Vector2f const location() const { return location_;   }
-        Ship* ship()              const { return ship_;       }
+        bool isDead()              const;
 
     protected:
+        virtual void refreshLifeTime() = 0;
+
+        Vector2f location_;
+        float radius_;
+        Ship* ship_;
+        bool collected_;
+        items::PowerUpType type_;
         float lifeTime_, totalLifeTime_;
-        bool  justCollected_;
+
+    private:
+        int texX_, texY_;
+        Color3f bgColor_;
 };
 
-# endif // POWERUP_HPP_INCLUDED
-
+# endif // ITEM_HPP_INCLUDED
 
 
 

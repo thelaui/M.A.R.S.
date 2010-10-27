@@ -18,30 +18,33 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/CannonControl.hpp"
 
 # include "SpaceObjects/Ship.hpp"
+# include "SpaceObjects/ships.hpp"
 # include "Players/Player.hpp"
-# include "Items/items.hpp"
 
 CannonControl::CannonControl(Vector2f const& location):
-    Item(items::iCannonControl, location, 20.f, NULL, 1, 0),
-    respawnLocation_(location) {}
+    respawnLocation_(location),
+    location_(location),
+    ship_(NULL),
+    collected_(false){}
 
 void CannonControl::update() {
     if (!collected_) {
-        Item::update();
-        if (ship_ != NULL)
-            ship_->collectedItems_[items::iCannonControl] = this;
+        std::vector<Ship*> const& shipList = ships::getShips();
+        for (std::vector<Ship*>::const_iterator it = shipList.begin(); it != shipList.end(); ++it)
+            if ((*it)->getLife() > 0.f && ((*it)->location() - location_).lengthSquare() < std::pow(20.f + (*it)->radius(),2)) {
+                collected_ = true;
+                ship_ = *it;
+            }
     }
     else {
         if (ship_->docked_) {
             collected_ = false;
             location_ = respawnLocation_;
-            ship_->collectedItems_[items::iCannonControl] = NULL;
             ship_ = NULL;
         }
         else if (ship_->getLife() == 0.f) {
             collected_ = false;
             location_ = ship_->location();
-            ship_->collectedItems_[items::iCannonControl] = NULL;
             ship_ = NULL;
         }
     }
@@ -49,7 +52,40 @@ void CannonControl::update() {
 
 void CannonControl::draw() const {
     if (!collected_) {
-        Item::draw();
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glPushMatrix();
+    glTranslatef(location_.x_, location_.y_, 0);
+
+    glColor4f(1.f, 0.6f, 0.8f, 1.f);
+    glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
+    // glow
+    glBegin(GL_QUADS);
+        const int posX1 = 0;
+        const int posY1 = 0;
+        glTexCoord2f(posX1*0.15625f,     posY1*0.15625f);     glVertex2f(-20.f*2.f, -20.f*2.f);
+        glTexCoord2f(posX1*0.15625f,     (posY1+1)*0.15625f); glVertex2f(-20.f*2.f, +20.f*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, (posY1+1)*0.15625f); glVertex2f(+20.f*2.f, +20.f*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, posY1*0.15625f);     glVertex2f(+20.f*2.f, -20.f*2.f);
+    glEnd();
+
+    glLoadIdentity();
+    glTranslatef(location_.x_, location_.y_, 0);
+    float scale(std::sin(timer::totalTime() *7.f) / 4.f + 1.f);
+    glScalef(scale, scale, 1.f);
+    glColor3f(1.f, 1.f, 1.f);
+    // item layer
+    glBegin(GL_QUADS);
+        const int posX2 = 1;
+        const int posY2 = 0;
+        glTexCoord2f(posX2*0.15625f,     posY2*0.15625f);     glVertex2f(-20.f, -20.f);
+        glTexCoord2f(posX2*0.15625f,     (posY2+1)*0.15625f); glVertex2f(-20.f, +20.f);
+        glTexCoord2f((posX2+1)*0.15625f, (posY2+1)*0.15625f); glVertex2f(+20.f, +20.f);
+        glTexCoord2f((posX2+1)*0.15625f, posY2*0.15625f);     glVertex2f(+20.f, -20.f);
+    glEnd();
+
+    glPopMatrix();
+
     }
     else {
         glPushMatrix();
@@ -116,4 +152,8 @@ Player* CannonControl::getCarrier() const {
         return ship_->owner_;
     else
         return NULL;
+}
+
+Vector2f const& CannonControl::location() const {
+    return location_;
 }
