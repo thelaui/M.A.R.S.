@@ -48,13 +48,13 @@ namespace settings {
     bool        C_enableSlowMotion =        true;
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
-    bool        C_drawBotNames =            true;
     int         C_botsLeft =                4;
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
     int         C_pointLimit =              5;
     int         C_pointLimitDM =            50;
     int         C_pointLimitTDM =           100;
+    int         C_powerUpRate =             40;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;
@@ -85,10 +85,12 @@ namespace settings {
     int           C_playerIIShip =          1;
     bool          C_networkPlayerI =        true;
 
-    // ai ----- adjustable via options menu
-    bool        C_drawAIPath =              false;
+    // ai settings ------ adjustable via options menu
+    bool        C_drawBotNames =            true;
     bool        C_drawBotOrientation =      false;
     bool        C_drawZones =               false;
+    bool        C_drawAIPath =              false;
+    int         C_iDumb =                   0;
 
     // network settings ----- adjustable via options menu
     sf::String C_ip =                      "192.168.0.1";
@@ -111,6 +113,7 @@ namespace settings {
         outStream << "[fullScreen] "            << (C_fullScreen ? "true" : "false") << std::endl;
         outStream << "[vsync] "                 << (C_vsync ? "true" : "false") << std::endl;
         outStream << "[drawAIPath] "            << (C_drawAIPath ? "true" : "false") << std::endl;
+        outStream << "[iDumb] "                 << (C_iDumb) << std::endl;
         outStream << "[adaptiveParticleCount] " << (C_adaptiveParticleCount ? "true" : "false") << std::endl;
         outStream << "[enableSlowMotion] "      << (C_enableSlowMotion ? "true" : "false") << std::endl;
         outStream << "[drawLocalNames] "        << (C_drawLocalNames ? "true" : "false") << std::endl;
@@ -124,6 +127,7 @@ namespace settings {
         outStream << "[pointLimit] "            << C_pointLimit << std::endl;
         outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
         outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
+        outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
         outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
         outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << std::endl;
         outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
@@ -226,6 +230,11 @@ namespace settings {
                     else if (value == "false")  C_drawAIPath = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
+                else if (inputLine == "[iDumb]") {
+                    int value;
+                    iss >> value;
+                    C_iDumb = clamp(value, 0, 100);
+                }
                 else if (inputLine == "[adaptiveParticleCount]") {
                     std::string value;
                     iss >> value;
@@ -304,6 +313,11 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_pointLimitTDM = clamp(value, 1, 100);
+                }
+                else if (inputLine == "[powerUpRate]") {
+                    int value;
+                    iss >> value;
+                    C_powerUpRate = clamp(value, 0, 100);
                 }
                 else if (inputLine == "[playerIName]") {
                     std::string value;

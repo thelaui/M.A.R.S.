@@ -65,7 +65,7 @@ void CKBot::checkCannonController() {
         std::vector<Player*>const& enemies = players::getEnemy(slave_->team())->members();
         if(!enemies.empty()) {
             for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it)
-                if ((*it)->ship()->getCollectedItems()[0] == true) {
+                if ((*it)->ship()->getCollectedItems()[0]) {
                     target_ = (*it)->ship();
                     actions_[BOT_ATTACK_TARGET] = 80;
                     enemyHasControl = true;

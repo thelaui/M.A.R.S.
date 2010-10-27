@@ -119,6 +119,21 @@ namespace items {
         return cannonControl_;
     }
 
+    void removeItem(Item* toRemove) {
+        if (toRemove == cannonControl_)
+            delete cannonControl_;
+        else {
+            std::list<PowerUp*>::iterator it = powerUps_.begin();
+            while (it != powerUps_.end()) {
+                 if (*it == toRemove) {
+                    delete *it;
+                    it = powerUps_.erase(it);
+                 }
+                 else ++it;
+            }
+        }
+    }
+
     void clear() {
         if (cannonControl_) {
             delete cannonControl_;

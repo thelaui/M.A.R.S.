@@ -19,19 +19,25 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define ITEM_HPP_INCLUDED
 
 # include "System/Vector2f.hpp"
+# include "Items/items.hpp"
 
 class Ship;
 
 class Item {
     public:
-        Item(Vector2f const& location, float radius, Ship* ship):
+        Item(items::ItemType type, Vector2f const& location, float radius, Ship* ship, int texX, int texY):
             location_(location),
             radius_(radius),
             ship_(ship),
-            collected_(false) {}
+            collected_(false),
+            texX_(texX),
+            texY_(texY),
+            type_(type) {}
+
+        ~Item();
 
         virtual void update();
-        virtual void draw() const = 0;
+        virtual void draw() const;
 
         Vector2f const& location() const;
         float           radius()   const;
@@ -41,6 +47,10 @@ class Item {
         float radius_;
         Ship* ship_;
         bool collected_;
+        items::ItemType type_;
+
+    private:
+        int texX_, texY_;
 };
 
 # endif // ITEM_HPP_INCLUDED

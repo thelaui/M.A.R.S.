@@ -53,7 +53,6 @@ namespace settings {
     extern bool           C_StarsNo;
     extern bool           C_drawLocalNames;
     extern bool           C_drawRemoteNames;
-    extern bool           C_drawBotNames;
     extern int            C_globalParticleCount;
     extern bool           C_adaptiveParticleCount;
     extern int            C_globalParticleLifeTime;
@@ -63,6 +62,7 @@ namespace settings {
     extern int            C_pointLimit;
     extern int            C_pointLimitDM;
     extern int            C_pointLimitTDM;
+    extern int            C_powerUpRate;
     extern bool           C_showInfoHide;
     extern bool           C_showInfoSB;
     extern bool           C_showInfoDM;
@@ -98,7 +98,11 @@ namespace settings {
 
     /// \name AI settings
     ///@{
+    extern bool           C_drawBotNames;
+    extern bool           C_drawBotOrientation;
+    extern bool           C_drawZones;
     extern bool           C_drawAIPath;
+    extern int            C_iDumb;
     extern bool           C_drawBotOrientation;
     extern bool           C_drawZones;
     ///@}

@@ -26,8 +26,9 @@ class Ship;
 class PUShield: public PowerUp{
     public:
         PUShield(Vector2f const& location, float lifeTime):
-            PowerUp(items::iShield, location, lifeTime){}
+            PowerUp(items::iShield, location, lifeTime, 4, 0){}
 
+        void update();
         void draw() const;
 };
 

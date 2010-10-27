@@ -43,8 +43,8 @@ namespace locales {
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
-                     ShaderError,
-                     COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
+                     ShaderError, Gameplay, PowerUpRate, iDumb,
+                     COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 
     /// Loads the current locale, accordind to settings::C_language.

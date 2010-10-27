@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class CannonControl;
 class Item;
+class PowerUp;
 
 namespace items {
     enum ItemType {iCannonControl, iShield, iReverse, iSleep, iHealth, COUNT};
@@ -29,6 +30,8 @@ namespace items {
 
     void addCannonControl();
     CannonControl* getCannonControl();
+
+    void removeItem(Item* toRemove);
 
     void clear();
 }

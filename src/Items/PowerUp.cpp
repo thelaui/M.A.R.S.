@@ -22,16 +22,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 
 void PowerUp::update() {
-    lifeTime_ -= timer::frameTime();
-    if (lifeTime_ > 0.f) {
-        Item::update();
-        if (ship_) {
-            ship_->collectedItems_[type_] = true;
-        }
-    }
-}
+    lifeTime_ += timer::frameTime();
 
-PowerUp::~PowerUp() {
-    if (ship_)
-        ship_->collectedItems_[type_] = false;
+    if (lifeTime_ < totalLifeTime_)
+        Item::update();
+    if (lifeTime_ < M_PI/4.f)
+        radius_ = std::sin(lifeTime_ * 2.f) * 15.f;
+    else if (lifeTime_ > totalLifeTime_-0.38f)
+        radius_ = -400.0*pow(lifeTime_+0.2-totalLifeTime_, 2)+25;
+    else
+        radius_ = 15.f;
+
+    if (ship_ && ship_->getLife() == 0.f) {
+        totalLifeTime_ = 0.f;
+    }
 }

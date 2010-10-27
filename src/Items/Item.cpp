@@ -27,6 +27,51 @@ void Item::update() {
             collected_ = true;
             ship_ = *it;
         }
+    if (ship_) {
+        if (!ship_->collectedItems_[type_])
+            ship_->collectedItems_[type_] = this;
+        else if (type_ != items::iCannonControl) {
+            //items::removeItem(this);
+            ship_->collectedItems_[type_] = this;
+        }
+    }
+}
+
+void Item::draw() const {
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glPushMatrix();
+    glTranslatef(location_.x_, location_.y_, 0);
+
+    glColor4f(1.f, 0.6f, 0.8f, 1.f);
+    glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
+    // glow
+    glBegin(GL_QUADS);
+        const int posX1 = 0;
+        const int posY1 = 0;
+        glTexCoord2f(posX1*0.15625f,     posY1*0.15625f);     glVertex2f(-radius_*2.f, -radius_*2.f);
+        glTexCoord2f(posX1*0.15625f,     (posY1+1)*0.15625f); glVertex2f(-radius_*2.f, +radius_*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, (posY1+1)*0.15625f); glVertex2f(+radius_*2.f, +radius_*2.f);
+        glTexCoord2f((posX1+1)*0.15625f, posY1*0.15625f);     glVertex2f(+radius_*2.f, -radius_*2.f);
+    glEnd();
+
+    glLoadIdentity();
+    glTranslatef(location_.x_, location_.y_, 0);
+    float scale(std::sin(timer::totalTime() *7.f) / 4.f + 1.f);
+    glScalef(scale, scale, 1.f);
+    glColor3f(1.f, 1.f, 1.f);
+    // item layer
+    glBegin(GL_QUADS);
+        const int posX2 = texX_;
+        const int posY2 = texY_;
+        glTexCoord2f(posX2*0.15625f,     posY2*0.15625f);     glVertex2f(-radius_, -radius_);
+        glTexCoord2f(posX2*0.15625f,     (posY2+1)*0.15625f); glVertex2f(-radius_, +radius_);
+        glTexCoord2f((posX2+1)*0.15625f, (posY2+1)*0.15625f); glVertex2f(+radius_, +radius_);
+        glTexCoord2f((posX2+1)*0.15625f, posY2*0.15625f);     glVertex2f(+radius_, -radius_);
+    glEnd();
+
+    glPopMatrix();
+
 }
 
 Vector2f const& Item::location() const {
@@ -35,4 +80,9 @@ Vector2f const& Item::location() const {
 
 float Item::radius() const {
     return radius_;
+}
+
+Item::~Item() {
+    if (ship_)
+        ship_->collectedItems_[type_] = false;
 }

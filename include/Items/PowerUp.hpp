@@ -20,22 +20,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Vector2f.hpp"
 # include "Items/Item.hpp"
-# include "Items/items.hpp"
 
 class Ship;
 
 class PowerUp: public Item{
     public:
-        PowerUp(items::ItemType type, Vector2f const& location, float lifeTime):
-            Item(location, 15.f, NULL),
-            type_(type),
-            lifeTime_(lifeTime){}
+        PowerUp(items::ItemType type, Vector2f const& location, float lifeTime, int texX, int texY):
+            Item(type, location, 0.f, NULL, texX, texY),
+            lifeTime_(0.f),
+            totalLifeTime_(lifeTime),
+            justCollected_(false){}
 
-        ~PowerUp();
+        virtual void update();
 
-        void update();
-
-        bool isDead()             const { return lifeTime_ <= 0.f; }
+        bool isDead()             const { return lifeTime_ >= totalLifeTime_; }
 
         float radius()            const { return radius_;     }
         bool collected()          const { return collected_ ; }
@@ -43,8 +41,8 @@ class PowerUp: public Item{
         Ship* ship()              const { return ship_;       }
 
     protected:
-        items::ItemType type_;
-        float lifeTime_;
+        float lifeTime_, totalLifeTime_;
+        bool  justCollected_;
 };
 
 # endif // POWERUP_HPP_INCLUDED

@@ -33,6 +33,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/decoObjects.hpp"
 # include "Shaders/postFX.hpp"
 # include "Items/items.hpp"
+# include "Items/Item.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -53,7 +54,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                currentWeapon_(new AFK47(this)),
                life_(200),
                fuel_(100),
-               collectedItems_(items::COUNT, false),
+               collectedItems_(items::COUNT, NULL),
                fragStars_(0),
                rememberedReputation_(0),
                fragStarTimer_(0.f),
@@ -307,7 +308,8 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         default:;
     }
-    life_ -= amount;
+    if (!collectedItems_[items::iShield])
+        life_ -= amount;
 }
 
 void Ship::onShockWave(SpaceObject* source, float intensity) {
@@ -332,7 +334,7 @@ Player* Ship::getOwner() const {
     return owner_;
 }
 
-std::vector<bool> const& Ship::getCollectedItems() const {
+std::vector<Item*> const& Ship::getCollectedItems() const {
     return collectedItems_;
 }
 

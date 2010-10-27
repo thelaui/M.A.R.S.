@@ -22,26 +22,26 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 
 CannonControl::CannonControl(Vector2f const& location):
-    Item(location, 20.f, NULL),
+    Item(items::iCannonControl, location, 20.f, NULL, 1, 0),
     respawnLocation_(location) {}
 
 void CannonControl::update() {
     if (!collected_) {
         Item::update();
         if (ship_ != NULL)
-            ship_->collectedItems_[items::iCannonControl] = true;
+            ship_->collectedItems_[items::iCannonControl] = this;
     }
     else {
         if (ship_->docked_) {
             collected_ = false;
             location_ = respawnLocation_;
-            ship_->collectedItems_[items::iCannonControl] = false;
+            ship_->collectedItems_[items::iCannonControl] = NULL;
             ship_ = NULL;
         }
         else if (ship_->getLife() == 0.f) {
             collected_ = false;
             location_ = ship_->location();
-            ship_->collectedItems_[items::iCannonControl] = false;
+            ship_->collectedItems_[items::iCannonControl] = NULL;
             ship_ = NULL;
         }
     }
@@ -49,39 +49,7 @@ void CannonControl::update() {
 
 void CannonControl::draw() const {
     if (!collected_) {
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-        glPushMatrix();
-        glTranslatef(location_.x_, location_.y_, 0);
-
-        glColor4f(1.f, 0.3f, 0.5f, 1.f);
-        glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
-        // glow
-        glBegin(GL_QUADS);
-            const int posX1 = 0;
-            const int posY1 = 0;
-            glTexCoord2f(posX1*0.15625f,     posY1*0.15625f);     glVertex2f(-radius_, -radius_);
-            glTexCoord2f(posX1*0.15625f,     (posY1+1)*0.15625f); glVertex2f(-radius_, +radius_);
-            glTexCoord2f((posX1+1)*0.15625f, (posY1+1)*0.15625f); glVertex2f(+radius_, +radius_);
-            glTexCoord2f((posX1+1)*0.15625f, posY1*0.15625f);     glVertex2f(+radius_, -radius_);
-        glEnd();
-
-        glLoadIdentity();
-        glTranslatef(location_.x_, location_.y_, 0);
-        float scale(std::sin(timer::totalTime() *7.f) / 4.f + 1.f);
-        glScalef(scale, scale, 1.f);
-        glColor3f(1.f, 1.f, 1.f);
-        // remote control
-        glBegin(GL_QUADS);
-            const int posX2 = 1;
-            const int posY2 = 0;
-            glTexCoord2f(posX2*0.15625f,     posY2*0.15625f);     glVertex2f(-radius_, -radius_);
-            glTexCoord2f(posX2*0.15625f,     (posY2+1)*0.15625f); glVertex2f(-radius_, +radius_);
-            glTexCoord2f((posX2+1)*0.15625f, (posY2+1)*0.15625f); glVertex2f(+radius_, +radius_);
-            glTexCoord2f((posX2+1)*0.15625f, posY2*0.15625f);     glVertex2f(+radius_, -radius_);
-        glEnd();
-
-        glPopMatrix();
+        Item::draw();
     }
     else {
         glPushMatrix();
