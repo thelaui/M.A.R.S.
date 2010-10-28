@@ -81,10 +81,10 @@ void Cannon::draw() const {
     glTranslatef(640.f, 0.f, 0.f);
 
     glBegin(GL_QUADS);
-        glTexCoord2i(0, 0); glVertex2f(-50.f, 0.f);
-        glTexCoord2i(0, 1); glVertex2f(-50.f, 50.f);
-        glTexCoord2i(1, 1); glVertex2f( 50.f, 50.f);
-        glTexCoord2i(1, 0); glVertex2f( 50.f, 0.f);
+        glTexCoord2f(0.f, 0.f); glVertex2f(-100.f, 0.f);
+        glTexCoord2f(0.f, 0.5f); glVertex2f(-100.f, 100.f);
+        glTexCoord2f(1.f, 0.5f); glVertex2f( 100.f, 100.f);
+        glTexCoord2f(1.f, 0.f); glVertex2f( 100.f, 0.f);
     glEnd();
 
     glRotatef(rotation_, 0.f, 0.f, 1.f);

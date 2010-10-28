@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/PlanetSign.hpp"
 # include "DecoObjects/ShipName.hpp"
 # include "DecoObjects/ShipHighlight.hpp"
+# include "DecoObjects/Evil.hpp"
 
 # include <SFML/System.hpp>
 # include <vector>
@@ -52,6 +53,7 @@ namespace decoObjects {
 
     void addCannon() {
         cannon_ = new Cannon();
+        decos_.push_back(new Evil());
     }
 
     void addPlanetSign(Planet* planet) {

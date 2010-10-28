@@ -113,11 +113,6 @@ void CannonControl::draw() const {
 
         glDisable(GL_TEXTURE_2D);
 
-        glPointSize(8.f);
-        glBegin(GL_POINTS);
-            glVertex2f( - ship_->velocity_.x_ * 0.042f,  - ship_->velocity_.y_ * 0.0042f - 43.f);
-        glEnd();
-
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         ship_->owner_->color().gl3f();
 
@@ -142,8 +137,6 @@ void CannonControl::draw() const {
                 glTexCoord2f((posX+1)*0.15625f, (posY+1)*0.15625f); glVertex2f(+35, +35);
                 glTexCoord2f((posX+1)*0.15625f, posY*0.15625f);     glVertex2f(+35, -35);
         glEnd();
-
-        glDisable(GL_TEXTURE_2D);
 
         glPopMatrix();
     }
