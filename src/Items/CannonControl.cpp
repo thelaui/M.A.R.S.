@@ -143,6 +143,8 @@ void CannonControl::draw() const {
                 glTexCoord2f((posX+1)*0.15625f, posY*0.15625f);     glVertex2f(+35, -35);
         glEnd();
 
+        glDisable(GL_TEXTURE_2D);
+
         glPopMatrix();
     }
 }

@@ -43,6 +43,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/HeatJet.hpp"
 # include "Particles/ShockWave.hpp"
 # include "Particles/HeatBurner.hpp"
+# include "Particles/MiniFlameSmoke.hpp"
 
 namespace particles {
     void update() {
@@ -69,6 +70,7 @@ namespace particles {
         HeatJet::          updateAll();
         ShockWave::        updateAll();
         HeatBurner::       updateAll();
+        MiniFlameSmoke::   updateAll();
     }
 
     void drawLower() {
@@ -89,6 +91,10 @@ namespace particles {
             Mud::              drawAll();
             AmmoShotgun::      drawAll();
             AmmoROFLE::        drawAll();
+
+        glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+
+            MiniFlameSmoke::   drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -167,6 +173,7 @@ namespace particles {
             case pHeatJet:          HeatJet::          spawn(location, direction, velocity, color, damageSource); break;
             case pShockWave:        ShockWave::        spawn(location, direction, velocity, color, damageSource); break;
             case pHeatBurner:       HeatBurner::       spawn(location, direction, velocity, color, damageSource); break;
+            case pMiniFlameSmoke:   MiniFlameSmoke::   spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -183,9 +190,10 @@ namespace particles {
     }
 
     void shockWave(SpaceObject* source, float strength, float radius) {
-        Smoke::shockWave(source, strength, radius);
-        Dust:: shockWave(source, strength, radius);
-        AmmoFlubba:: shockWave(source, strength, radius);
+        Smoke::         shockWave(source, strength, radius);
+        Dust::          shockWave(source, strength, radius);
+        AmmoFlubba::    shockWave(source, strength, radius);
+        MiniFlameSmoke::shockWave(source, strength, radius);
     }
 
     int count() {
@@ -195,7 +203,7 @@ namespace particles {
                 + MiniFlame::count() + AmmoFlubba::count() + MiniAmmoFlubba::count()
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
-                + HeatBurner::count();
+                + HeatBurner::count() + MiniFlameSmoke::count();
     }
 
     void clear() {
@@ -222,5 +230,6 @@ namespace particles {
         HeatJet::          clear();
         ShockWave::        clear();
         HeatBurner::       clear();
+        MiniFlameSmoke::   clear();
     }
 }

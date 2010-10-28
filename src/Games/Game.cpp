@@ -35,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/music.hpp"
 # include "Shaders/postFX.hpp"
 # include "SpaceObjects/stars.hpp"
+# include "TrailEffects/trailEffects.hpp"
 
 Game::Game(games::GameType const& type):
     type_(type),
@@ -85,6 +86,7 @@ void Game::update() {
         decoObjects::update();
         items::update();
         postFX::update();
+        trailEffects::update();
     }
     else
         startTime_ += timer::frameTime();
@@ -93,6 +95,7 @@ void Game::update() {
 void Game::draw() const {
     particles::drawLower();
     ships::draw();
+    trailEffects::draw();
     balls::draw();
     spaceObjects::draw();
     particles::drawHigher();

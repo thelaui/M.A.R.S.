@@ -24,11 +24,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<MiniFlame*> MiniFlame::activeParticles_;
 
 MiniFlame::MiniFlame(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<MiniFlame>(spaceObjects::oMiniFlame, location+Vector2f::randDir(), 1.f, 0.f, sf::Randomizer::Random(1.5f, 2.5f)*settings::C_globalParticleLifeTime/100.f) {
+           Particle<MiniFlame>(spaceObjects::oMiniFlame, location+Vector2f::randDir(), 1.f, 0.f, sf::Randomizer::Random(0.8f, 2.0f)) {
 
     flickerSpeed_ = sf::Randomizer::Random(0.01f, 1.f);
-    timer_        = sf::Randomizer::Random(0.f, 0.5f);
-    radius_       = sf::Randomizer::Random(2.0f, 5.0f);
+    timer_        = sf::Randomizer::Random(0.f, 1.f);
+    radius_       = sf::Randomizer::Random(3.0f, 8.0f);
 
     color_.h(60+350);
     color_.v(0.2);
@@ -52,8 +52,8 @@ void MiniFlame::update() {
     if (timer_ > 0.f)
         timer_ -= time;
     else {
-        timer_ = 0.5f;
-         particles::spawn(particles::pSmoke, location_, velocity_);
+        timer_ = 1.f;
+         particles::spawn(particles::pMiniFlameSmoke, location_, velocity_);
          particles::spawn(particles::pHeat, location_, velocity_);
     }
 
