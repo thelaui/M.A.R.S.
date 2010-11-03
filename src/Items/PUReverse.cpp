@@ -52,7 +52,7 @@ void PUReverse::draw() const {
 
 void PUReverse::refreshLifeTime() {
     lifeTime_ = 0.f;
-    totalLifeTime_ = 5.f;
+    totalLifeTime_ = 10.f;
 }
 
 

@@ -92,8 +92,14 @@ void Ship::update() {
 
     if (visible_) {
         // spin around
-        if (right_) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
-        if (left_ ) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+        if (collectedPowerUps_[items::puReverse]) {
+            if (right_) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+            if (left_ ) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+        }
+        else {
+            if (right_) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+            if (left_ ) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+        }
         if (!right_ && !left_) rotateSpeed_ = 1.0;
         else if (rotateSpeed_ < 10.f) rotateSpeed_ += time*30.f;
 
