@@ -36,7 +36,7 @@ namespace file {
             while (std::getline(fileStream, line, '\n')) {
                 ++ lineCount;
                 // remove '\r' at end of lines, when file has a CR LF EOL (windows...)
-                if (*line.rbegin() == '\r') line.erase(line.end()-1);
+                if (*(line.end()-1) == '\r') line.erase(line.end()-1);
                 // Convert it to utf-32
                 std::basic_string<sf::Uint32> utf32line;
                 sf::Utf8::ToUtf32(line.begin(), line.end(), back_inserter(utf32line));

@@ -20,32 +20,39 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Controllers/KeyController.hpp"
 # include "Controllers/BotController.hpp"
 # include "Players/Player.hpp"
+# include "Items/items.hpp"
 
 void Controller::slaveUp (bool up) const {
-    if (slave_->ship_->visible_)
+    if (slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->up_ = up;
+    else
+        slave_->ship_->up_ = false;
 }
 
 void Controller::slaveLeft (bool left) const {
-    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_) {
+    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (left && slave_->ship_->right_)
             slave_->ship_->right_ = false;
         else
             slave_->ship_->left_ = left;
     }
+    else
+        slave_->ship_->left_ = false;
 }
 
 void Controller::slaveRight (bool right) const {
-    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_) {
+    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (right && slave_->ship_->left_)
             slave_->ship_->left_ = false;
         else
             slave_->ship_->right_ = right;
     }
+    else
+        slave_->ship_->right_ = false;
 }
 
 void Controller::slaveFire (bool fire) const {
-    if (fire && !slave_->ship_->docked_ && slave_->ship_->visible_)
+    if (fire && !slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->currentWeapon_->fire();
 }
 
@@ -55,17 +62,17 @@ void Controller::slaveUp () const {
 }
 
 void Controller::slaveLeft () const {
-    if (slave_->ship_->weaponChange_ && slave_->ship_->visible_)
+    if (slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->currentWeapon_->previous();
 }
 
 void Controller::slaveRight () const {
-    if (slave_->ship_->weaponChange_ && slave_->ship_->visible_)
+    if (slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->currentWeapon_->next();
 }
 
 void Controller::slaveFire () const {
-    if (slave_->ship_->docked_ && slave_->ship_->visible_)
+    if (slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->weaponChange_ = !slave_->ship_->weaponChange_;
 }
 

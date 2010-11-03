@@ -26,6 +26,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/PUShield.hpp"
 # include "Items/PUHealth.hpp"
 # include "Items/PUFuel.hpp"
+# include "Items/PUSleep.hpp"
+# include "Items/PUReverse.hpp"
 
 # include <list>
 
@@ -60,9 +62,9 @@ namespace items {
                     case puShield:
                         powerUps_.push_back(new PUShield(position)); break;
                     case puReverse:
-                        powerUps_.push_back(new PUShield(position)); break;
+                        powerUps_.push_back(new PUReverse(position)); break;
                     case puSleep:
-                        powerUps_.push_back(new PUShield(position)); break;
+                        powerUps_.push_back(new PUSleep(position)); break;
                     case puHealth:
                         powerUps_.push_back(new PUHealth(position)); break;
                     case puFuel:

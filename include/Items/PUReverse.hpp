@@ -1,4 +1,4 @@
-/* PUFuel.cpp
+/* PUReverse.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,32 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Items/PUFuel.hpp"
+# ifndef PUREVERSE_HPP_INCLUDED
+# define PUREVERSE_HPP_INCLUDED
 
-# include "SpaceObjects/Ship.hpp"
-# include "Particles/particles.hpp"
+# include "System/Vector2f.hpp"
+# include "Items/PowerUp.hpp"
 
-void PUFuel::draw() const {
-    if (!collected_) {
-        PowerUp::draw();
-    }
-}
+# include <SFML/System.hpp>
 
-void PUFuel::refreshLifeTime() {
-    lifeTime_ = totalLifeTime_;
-    for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->fuel_ = 100.f;
-    particles::spawnMultiple(5, particles::pMud, location_, Vector2f(), Vector2f(), Color3f(1.f, 1.f, 0.f));
-}
+class PUReverse: public PowerUp{
+    public:
+        PUReverse(Vector2f const& location):
+            PowerUp(items::puReverse, location, 15.f, sf::Randomizer::Random(8.f, 12.f), 3, 0, Color3f(1.f, 0.2f, 0.8f)){}
+
+        void draw() const;
+
+    private:
+        void refreshLifeTime();
+};
+
+# endif // PUREVERSE_HPP_INCLUDED
+
+
+
+
+
+
+
 
 

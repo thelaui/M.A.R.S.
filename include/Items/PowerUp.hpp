@@ -22,6 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Color3f.hpp"
 # include "Items/items.hpp"
 
+# include <list>
+
 class Ship;
 
 class PowerUp {
@@ -44,7 +46,7 @@ class PowerUp {
 
         Vector2f location_;
         float radius_;
-        Ship* ship_;
+        std::list<Ship*> ships_;
         bool collected_;
         items::PowerUpType type_;
         float lifeTime_, totalLifeTime_;

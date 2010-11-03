@@ -27,6 +27,7 @@ void PUHealth::draw() const {
 
 void PUHealth::refreshLifeTime() {
     lifeTime_ = totalLifeTime_;
-    ship_->life_ = 200.f;
+    for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
+        (*it)->life_ = 200.f;
 }
 

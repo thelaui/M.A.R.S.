@@ -1,4 +1,4 @@
-/* PUShield.cpp
+/* PUSleep.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,12 +15,12 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Items/PUShield.hpp"
+# include "Items/PUSleep.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
 
-void PUShield::draw() const {
+void PUSleep::draw() const {
     if (!collected_) {
         PowerUp::draw();
     }
@@ -30,12 +30,13 @@ void PUShield::draw() const {
 
             glPushMatrix();
             glLoadIdentity();
-            glTranslatef((*it)->location().x_, (*it)->location().y_, 0.f);
+            glTranslatef((*it)->location().x_, (*it)->location().y_ - 40.f, 0.f);
+            glScalef(0.4f, 0.4f, 0.f);
 
-            // shield bubble
-            glColor4f(1.0f, 0.5f, 0.8f, 0.9f);
+            // sleep zzz
+            glColor3f(0.6f, 1.f, 0.4f);
             glBegin(GL_QUADS);
-                    const int posX = 5;
+                    const int posX = 2;
                     const int posY = 0;
                     glTexCoord2f(posX*0.15625f,     posY*0.15625f);     glVertex2f(-35, -35);
                     glTexCoord2f(posX*0.15625f,     (posY+1)*0.15625f); glVertex2f(-35, +35);
@@ -48,7 +49,8 @@ void PUShield::draw() const {
     }
 }
 
-void PUShield::refreshLifeTime() {
+void PUSleep::refreshLifeTime() {
     lifeTime_ = 0.f;
-    totalLifeTime_ = 10.f;
+    totalLifeTime_ = 5.f;
 }
+

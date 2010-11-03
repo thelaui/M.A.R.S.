@@ -1,4 +1,4 @@
-/* PUFuel.cpp
+/* PUSleep.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,31 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Items/PUFuel.hpp"
+# ifndef PUSLEEP_HPP_INCLUDED
+# define PUSLEEP_HPP_INCLUDED
 
-# include "SpaceObjects/Ship.hpp"
-# include "Particles/particles.hpp"
+# include "System/Vector2f.hpp"
+# include "Items/PowerUp.hpp"
 
-void PUFuel::draw() const {
-    if (!collected_) {
-        PowerUp::draw();
-    }
-}
+# include <SFML/System.hpp>
 
-void PUFuel::refreshLifeTime() {
-    lifeTime_ = totalLifeTime_;
-    for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->fuel_ = 100.f;
-    particles::spawnMultiple(5, particles::pMud, location_, Vector2f(), Vector2f(), Color3f(1.f, 1.f, 0.f));
-}
+class PUSleep: public PowerUp{
+    public:
+        PUSleep(Vector2f const& location):
+            PowerUp(items::puSleep, location, 15.f, sf::Randomizer::Random(8.f, 12.f), 2, 0, Color3f(0.6f, 1.f, 0.4f)){}
+
+        void draw() const;
+
+    private:
+        void refreshLifeTime();
+};
+
+# endif // PUSLEEP_HPP_INCLUDED
+
+
+
+
+
+
 
 
