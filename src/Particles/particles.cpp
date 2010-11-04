@@ -44,6 +44,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/ShockWave.hpp"
 # include "Particles/HeatBurner.hpp"
 # include "Particles/MiniFlameSmoke.hpp"
+# include "Particles/AmmoRocket.hpp"
+# include "Particles/PowerUpCollect.hpp"
 
 # include "TrailEffects/trailEffects.hpp"
 
@@ -73,6 +75,8 @@ namespace particles {
         ShockWave::        updateAll();
         HeatBurner::       updateAll();
         MiniFlameSmoke::   updateAll();
+        AmmoRocket::       updateAll();
+        PowerUpCollect::   updateAll();
     }
 
     void drawLower() {
@@ -93,8 +97,10 @@ namespace particles {
             Mud::              drawAll();
             AmmoShotgun::      drawAll();
             AmmoROFLE::        drawAll();
+        glEnd();
 
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+        glBegin(GL_QUADS);
 
             MiniFlameSmoke::   drawAll();
 
@@ -117,6 +123,20 @@ namespace particles {
             CannonBall::       drawAll();
             FragmentFlame::    drawAll();
             Spark::            drawAll();
+
+        glEnd();
+
+        glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+        glBegin(GL_QUADS);
+
+            AmmoRocket::       drawAll();
+
+        glEnd();
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::PowerUps));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glBegin(GL_QUADS);
+
+            PowerUpCollect::    drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);
@@ -176,6 +196,8 @@ namespace particles {
             case pShockWave:        ShockWave::        spawn(location, direction, velocity, color, damageSource); break;
             case pHeatBurner:       HeatBurner::       spawn(location, direction, velocity, color, damageSource); break;
             case pMiniFlameSmoke:   MiniFlameSmoke::   spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoRocket:       AmmoRocket::       spawn(location, direction, velocity, color, damageSource); break;
+            case pPowerUpCollect:   PowerUpCollect::   spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -205,7 +227,7 @@ namespace particles {
                 + MiniFlame::count() + AmmoFlubba::count() + MiniAmmoFlubba::count()
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
-                + HeatBurner::count() + MiniFlameSmoke::count();
+                + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count();
     }
 
     void clear() {
@@ -233,5 +255,7 @@ namespace particles {
         ShockWave::        clear();
         HeatBurner::       clear();
         MiniFlameSmoke::   clear();
+        AmmoRocket::       clear();
+        PowerUpCollect::   clear();
     }
 }

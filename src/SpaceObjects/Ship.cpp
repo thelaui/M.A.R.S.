@@ -311,6 +311,11 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             setDamageSource(with->damageSource());
             break;
 
+        case spaceObjects::oAmmoRocket:
+            amount = 20.f;
+            setDamageSource(with->damageSource());
+            break;
+
         default:;
     }
     if (!collectedPowerUps_[items::puShield])
@@ -320,7 +325,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
     if (!collectedPowerUps_[items::puShield])
-        life_ -= intensity*50.f;
+        life_ -= intensity*80.f;
 }
 
 void Ship::setDamageSource(Player* evilOne) {

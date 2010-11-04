@@ -33,7 +33,7 @@ TutorialZone::TutorialZone(Vector2f const& location, float radius) :
     location_(location) {}
 
 bool TutorialZone::isInside(SpaceObject const& toBeChecked) const {
-    return((toBeChecked.location()-location_).lengthSquare() <= radius_*radius_/3.f);
+    return((toBeChecked.location()-location_).lengthSquare() <= radius_*radius_*0.7f);
 }
 
 void TutorialZone::draw() const {

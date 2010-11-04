@@ -1,4 +1,4 @@
-/* Shotgun.cpp
+/* RocketLauncher.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -24,39 +24,40 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
-void Shotgun::draw() const {
+void RocketLauncher::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glColor3f(1.0f, 1.0f, 1.0f);
-    const int posX = 1;
-    const int posY = 31;
+    const int posX = 0;
+    const int posY = 30;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.3f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.3f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*3.f, -1.f*parent_->radius_*0.3f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*3.f,      parent_->radius_*0.3f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.5f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.5f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*2.f, -1.f*parent_->radius_*0.5f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*2.f,      parent_->radius_*0.5f);
     glEnd();
 }
 
-void Shotgun::fire() const {
+void RocketLauncher::fire() const {
     float time = timer::totalTime();
-    if (time - timer_ > 1.0) {
+    if (time - timer_ > 4.0f) {
         timer_ = time;
         float angleRad = parent_->rotation_*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        for (int i=0; i<25; ++i)
-            particles::spawn(particles::pAmmoShotgun, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        parent_->velocity_ -= faceDirection*200.f;
+        particles::spawn(particles::pAmmoRocket, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+        particles::spawnMultiple(10.f, particles::pDust,  parent_->location_ + faceDirection*parent_->radius_, parent_->velocity_);
+        parent_->velocity_ -= faceDirection*400.f;
         sound::playSound(sound::Pump, parent_->location_);
     }
 }
 
-void Shotgun::next() {
-    parent_->currentWeapon_ = new RocketLauncher(parent_);
+void RocketLauncher::next() {
+    parent_->currentWeapon_ = new Burner(parent_);
     delete this;
 }
 
-void Shotgun::previous() {
-    parent_->currentWeapon_ = new ROFLE(parent_);
+void RocketLauncher::previous() {
+    parent_->currentWeapon_ = new Shotgun(parent_);
     delete this;
 }
+
 

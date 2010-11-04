@@ -1,4 +1,4 @@
-/* AmmoROFLE.hpp
+/* AmmoRocket.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,15 +15,19 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef AMMOROFLE_HPP_INCLUDED
-# define AMMOROFLE_HPP_INCLUDED
+# ifndef AMMOROCKET_HPP_INCLUDED
+# define AMMOROCKET_HPP_INCLUDED
 
 # include "Particles/Particle.hpp"
 
-class AmmoROFLE: public Particle<AmmoROFLE> {
+# include "System/Color3f.hpp"
+
+class Ship;
+
+class AmmoRocket: public Particle<AmmoRocket> {
     public:
-        AmmoROFLE(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
-        ~AmmoROFLE();
+        AmmoRocket(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
+        ~AmmoRocket();
 
         void update();
         void draw() const;
@@ -31,11 +35,14 @@ class AmmoROFLE: public Particle<AmmoROFLE> {
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
 
-        friend class Particle<AmmoROFLE>;
+        friend class Particle<AmmoRocket>;
 
     private:
-        static std::list<AmmoROFLE*> activeParticles_;
+        Color3f color_;
+        float timer_;
+        Ship* target_;
+        Player* parent_;
+        static std::list<AmmoRocket*> activeParticles_;
 };
 
-# endif // AMMOROFLE_HPP_INCLUDED
-
+# endif // AMMOROCKET_HPP_INCLUDED

@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
+# include "Particles/particles.hpp"
 
 void PUSleep::draw() const {
     if (!collected_) {
@@ -52,5 +53,7 @@ void PUSleep::draw() const {
 void PUSleep::refreshLifeTime() {
     lifeTime_ = 0.f;
     totalLifeTime_ = 5.f;
+    // direction is abused for texture coords
+    particles::spawnMultiple(5, particles::pPowerUpCollect, location_, Vector2f(2,0));
 }
 

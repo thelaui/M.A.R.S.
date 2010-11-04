@@ -30,10 +30,10 @@ void Burner::draw() const {
     const int posX = 0;
     const int posY = 30;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.5f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.5f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*2.f, -1.f*parent_->radius_*0.5f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*2.f,      parent_->radius_*0.5f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.3f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.3f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*3.f, -1.f*parent_->radius_*0.3f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*3.f,      parent_->radius_*0.3f);
     glEnd();
 }
 
@@ -44,8 +44,8 @@ void Burner::fire() const {
         float angleRad = parent_->rotation_*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
         for (int i=0; i<20; ++i) {
-            particles::spawn(particles::pAmmoBurner, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-            particles::spawn(particles::pHeatBurner, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_);
+            particles::spawn(particles::pAmmoBurner, parent_->location_ + faceDirection*parent_->radius_*1.5f, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+            particles::spawn(particles::pHeatBurner, parent_->location_ + faceDirection*parent_->radius_*1.5f, faceDirection, parent_->velocity_);
         }
         parent_->velocity_ -= faceDirection*10.f;
     }
@@ -57,7 +57,7 @@ void Burner::next() {
 }
 
 void Burner::previous() {
-    parent_->currentWeapon_ = new Shotgun(parent_);
+    parent_->currentWeapon_ = new RocketLauncher(parent_);
     delete this;
 }
 

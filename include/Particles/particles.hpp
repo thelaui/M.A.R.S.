@@ -54,7 +54,9 @@ namespace particles {
                     pHeatJet,           ///< Spawned by the Ships exhaust
                     pShockWave,         ///< Spawned by shock waves.
                     pHeatBurner,        ///< Spawned by the Burner (for bumpmapping).
-                    pMiniFlameSmoke     ///< Spawned by MiniFlames.
+                    pMiniFlameSmoke,    ///< Spawned by MiniFlames.
+                    pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
+                    pPowerUpCollect     ///< Spawned by just collected powerUps.
     };
 
     /// Updates all particles.

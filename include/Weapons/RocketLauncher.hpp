@@ -1,4 +1,4 @@
-/* Burner.hpp
+/* RocketLauncher.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,19 +15,19 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef BURNER_HPP_INCLUDED
-# define BURNER_HPP_INCLUDED
+# ifndef ROCKETLAUNCHER_HPP_INCLUDED
+# define ROCKETLAUNCHER_HPP_INCLUDED
 
 # include "Weapons/Weapon.hpp"
 
-/// Weapon: Burner.
-/// A short distance weapon, which burns nearby enemies.
+/// Weapon: ROCK'n'LOL.
+/// A rocket launcher which aims at nearby enemies.
 
-class Burner: public Weapon {
+class RocketLauncher: public Weapon {
     public:
         /// Ctor which constructs the weapon.
-        Burner(Ship* parent):
-              Weapon(parent, "WT-Flamer") {};
+        RocketLauncher(Ship* parent):
+              Weapon(parent, "ROCK'n'LOL") {};
 
         /// Spawns some particles.
         void fire() const;
@@ -44,7 +44,8 @@ class Burner: public Weapon {
         void previous();
 };
 
-# endif // BURNER_HPP_INCLUDED
+# endif // ROCKETLAUNCHER_HPP_INCLUDED
+
 
 
 

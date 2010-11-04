@@ -31,7 +31,7 @@ AmmoShotgun::AmmoShotgun(Vector2f const& location, Vector2f const& direction, Ve
     velocity_ = direction*1000.f + Vector2f::randDirLen()*250.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    trailEffects::attach(this, 5, 0.15f, 4.f, Color3f(0.3f, 0.2f, 0.05f));
+    trailEffects::attach(this, 5, 0.3f, 4.f, Color3f(0.3f, 0.2f, 0.05f));
 }
 
 AmmoShotgun::~AmmoShotgun() {

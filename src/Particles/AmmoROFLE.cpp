@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
+# include "TrailEffects/trailEffects.hpp"
 
 std::list<AmmoROFLE*> AmmoROFLE::activeParticles_;
 
@@ -28,7 +29,14 @@ AmmoROFLE::AmmoROFLE(Vector2f const& location, Vector2f const& direction, Vector
     setDamageSource(damageSource);
     velocity_ = direction*1300.f;
     location_ += velocity_*timer::frameTime()*1.2f;
+
+    trailEffects::attach(this, 15, 0.6f, 4.f, Color3f(1.f, 0.2f, 0.f));
 }
+
+AmmoROFLE::~AmmoROFLE() {
+    trailEffects::detach(this);
+}
+
 
 void AmmoROFLE::update() {
     float time = timer::frameTime();

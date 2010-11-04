@@ -56,6 +56,7 @@ class Ship: public MobileSpaceObject {
         friend class Flubba;
         friend class Burner;
         friend class H2OMG;
+        friend class RocketLauncher;
         friend class CannonControl;
         friend class PowerUp;
         friend class PUHealth;

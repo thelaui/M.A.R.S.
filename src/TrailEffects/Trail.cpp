@@ -68,7 +68,7 @@ void Trail::draw() const {
 
             for (int i=length_; i>0; --i) {
                // glColor3f(static_cast<float>(i)/points_.size(), static_cast<float>(length_ - i - 1)/points_.size(), 0.f);
-                color_.gl4f(static_cast<float>(length_ - i)/points_.size());
+                color_.gl4f(static_cast<float>(length_ - i)/length_); //points_.size());
 
                 int index((frontIndex_-i + points_.size())%points_.size());
 
