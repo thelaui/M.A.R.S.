@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class BurningFragment: public Particle<BurningFragment> {
     public:
         BurningFragment(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
+        ~BurningFragment();
 
         void update();
         void draw() const {}

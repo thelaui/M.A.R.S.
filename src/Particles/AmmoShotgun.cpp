@@ -19,7 +19,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
-
 # include "TrailEffects/trailEffects.hpp"
 
 std::list<AmmoShotgun*> AmmoShotgun::activeParticles_;
@@ -32,11 +31,11 @@ AmmoShotgun::AmmoShotgun(Vector2f const& location, Vector2f const& direction, Ve
     velocity_ = direction*1000.f + Vector2f::randDirLen()*250.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    //trailEffects::attach(this, 10, 0.2f, 5.f, color_);
+    trailEffects::attach(this, 5, 0.15f, 4.f, Color3f(0.3f, 0.2f, 0.05f));
 }
 
 AmmoShotgun::~AmmoShotgun() {
-    //trailEffects::detach(this);
+    trailEffects::detach(this);
 }
 
 void AmmoShotgun::update() {

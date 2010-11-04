@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
+# include "TrailEffects/trailEffects.hpp"
 
 std::list<BurningFragment*> BurningFragment::activeParticles_;
 
@@ -30,6 +31,12 @@ BurningFragment::BurningFragment(Vector2f const& location, Vector2f const& direc
 
     radius_   = sf::Randomizer::Random(1.0f, 5.0f);
     velocity_ = Vector2f::randDir()*sf::Randomizer::Random(400, 600);
+
+    trailEffects::attach(this, 5, 0.5f, 10.f, Color3f(0.4f, 0.1f, 0.f));
+}
+
+BurningFragment::~BurningFragment() {
+    trailEffects::detach(this);
 }
 
 void BurningFragment::update() {
