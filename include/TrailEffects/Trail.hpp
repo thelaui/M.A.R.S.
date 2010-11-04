@@ -1,4 +1,4 @@
-/* AmmoShotgun.hpp
+/* Trail.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,31 +15,38 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef AMMOSHOTGUN_HPP_INCLUDED
-# define AMMOSHOTGUN_HPP_INCLUDED
+# ifndef TRAIL_HPP_INCLUDED
+# define TRAIL_HPP_INCLUDED
 
-# include "Particles/Particle.hpp"
-
+# include "System/Vector2f.hpp"
 # include "System/Color3f.hpp"
 
-class AmmoShotgun: public Particle<AmmoShotgun> {
+# include <vector>
+
+class SpaceObject;
+
+class Trail {
     public:
-        AmmoShotgun(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
-        ~AmmoShotgun();
+        Trail(SpaceObject* target, int resolution, float length, float width, Color3f const& color);
 
         void update();
         void draw() const;
 
-        void onCollision(SpaceObject* with, Vector2f const& location,
-                         Vector2f const& direction, Vector2f const& velocity);
+        void detach();
 
-        friend class Particle<AmmoShotgun>;
+        bool         isDead() const;
+        SpaceObject* target() const;
 
     private:
+        SpaceObject* target_;
+        std::vector<Vector2f> points_;
+        int frontIndex_;
+        int length_;
+        float timer_;
+        float timeStep_;
+        float width_;
         Color3f color_;
-        static std::list<AmmoShotgun*> activeParticles_;
 };
 
-# endif // AMMOSHOTGUN_HPP_INCLUDED
-
+# endif //TRAIL_HPP_INCLUDED
 

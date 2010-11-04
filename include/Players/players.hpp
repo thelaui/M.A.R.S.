@@ -28,7 +28,7 @@ class Player;
 namespace players {
     Team* addTeam(Color3f const& = Color3f::random());
 
-    void addPlayer (Team* team, controllers::ControlType type);
+    void addPlayer (Team* team, controllers::ControlType type, Color3f const& = Color3f::random());
 
     void assignHomes(Home* home);
     void assignHomes(Home* homeL, Home* homeR);

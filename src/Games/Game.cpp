@@ -62,6 +62,7 @@ Game::~Game() {
     players::clear();
     zones::clear();
     decoObjects::clear();
+    trailEffects::clear();
 }
 
 void Game::update() {
@@ -94,8 +95,8 @@ void Game::update() {
 
 void Game::draw() const {
     particles::drawLower();
-    ships::draw();
     trailEffects::draw();
+    ships::draw();
     balls::draw();
     spaceObjects::draw();
     particles::drawHigher();
@@ -113,6 +114,7 @@ void Game::restart() {
     spaceObjects::clear();
     zones::clear();
     decoObjects::clear();
+    trailEffects::clear();
     if (players::getFirstPoints() >= pointLimit_) {
         players::resetTeamPoints();
         players::resetPlayerPoints();

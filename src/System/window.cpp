@@ -156,6 +156,7 @@ namespace window {
             window_.Create(sf::VideoMode(960, 600, 32), "M.A.R.S. - a " + generateName::game());
 
         window_.UseVerticalSync(settings::C_vsync);
+        //window_.SetFramerateLimit(10);
 
         sf::Image icon;
         icon.LoadFromFile("data/tex/icon.png");

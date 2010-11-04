@@ -45,6 +45,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/HeatBurner.hpp"
 # include "Particles/MiniFlameSmoke.hpp"
 
+# include "TrailEffects/trailEffects.hpp"
+
 namespace particles {
     void update() {
         AmmoAFK47::        updateAll();
@@ -197,7 +199,7 @@ namespace particles {
     }
 
     int count() {
-        return Fuel::count() + Mud::count() + Smoke::count() + Eruption::count()
+        return trailEffects::count() + Fuel::count() + Mud::count() + Smoke::count() + Eruption::count()
                 + AmmoAFK47::count() + AmmoROFLE::count() + Dust::count() + Explode::count()
                 + BurningFragment::count() + FragmentFlame::count() + AmmoShotgun::count()
                 + MiniFlame::count() + AmmoFlubba::count() + MiniAmmoFlubba::count()

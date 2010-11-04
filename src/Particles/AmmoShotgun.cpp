@@ -20,15 +20,23 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
 
+# include "TrailEffects/trailEffects.hpp"
+
 std::list<AmmoShotgun*> AmmoShotgun::activeParticles_;
 
 AmmoShotgun::AmmoShotgun(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.f, 0.5f, 1.5f),
+         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.5f, 0.5f, sf::Randomizer::Random(1.2f, 1.7f)),
          color_(1.f, 0.7f, 0.2f) {
 
     setDamageSource(damageSource);
-    velocity_ = direction*900.f + Vector2f::randDirLen()*270.f;
+    velocity_ = direction*1000.f + Vector2f::randDirLen()*250.f;
     location_ += velocity_*timer::frameTime()*1.2f;
+
+    //trailEffects::attach(this, 10, 0.2f, 5.f, color_);
+}
+
+AmmoShotgun::~AmmoShotgun() {
+    //trailEffects::detach(this);
 }
 
 void AmmoShotgun::update() {
@@ -37,8 +45,8 @@ void AmmoShotgun::update() {
     physics::collide(this, STATICS | MOBILES);
     Vector2f acceleration = physics::attract(this);
 
-    location_ += velocity_*time + acceleration*time*time;
-    velocity_ += acceleration*time + velocity_*-0.5*time;
+    location_ += velocity_*time + acceleration*time*time*2.f;
+    velocity_ += acceleration*time*2.f - velocity_*time;
 
     color_.v(-1.f/totalLifeTime_*lifeTime_+1.f);
 

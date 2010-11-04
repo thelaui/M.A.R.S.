@@ -27,11 +27,14 @@ DeathMatch::DeathMatch():
     music::playGameMusic();
 
     if (settings::C_playerIteamL  | settings::C_playerIteamR)
-        players::addPlayer (players::addTeam(), controllers::cPlayer1);
+        players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer1);
     if (settings::C_playerIIteamL | settings::C_playerIIteamR)
-        players::addPlayer (players::addTeam(), controllers::cPlayer2);
+        players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer2);
 
-    for (int i=0; i<settings::C_botsDeath; ++i) players::addPlayer(players::addTeam(), controllers::cDMBot);
+    for (int i=0; i<settings::C_botsDeath; ++i) {
+        Team* newTeam = players::addTeam();
+        players::addPlayer(newTeam, controllers::cDMBot, newTeam->color());
+    }
 
     players::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
     players::createShips();

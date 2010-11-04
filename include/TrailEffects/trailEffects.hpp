@@ -18,14 +18,22 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef TRAILEFFECTS_HPP_INCLUDED
 # define TRAILEFFECTS_HPP_INCLUDED
 
+# include "System/Color3f.hpp"
+
+class SpaceObject;
+
 namespace trailEffects {
     void update();
 
     void draw();
 
-    //int  count();
+    void attach(SpaceObject* target, int resolution, float length, float width, Color3f const& color);
 
-    //void clear();
+    void detach(SpaceObject* target);
+
+    int  count();
+
+    void clear();
 }
 
 # endif // TRAILEFFECTS_HPP_INCLUDED

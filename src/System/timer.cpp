@@ -37,40 +37,55 @@ namespace timer {
     }
 
     void update(float frameTime) {
-        if (slowMoTimer_ > 0.f) {
-            slowMoTimer_ -= frameTime;
-            frameTime_ =  frameTime*0.2;
-        }
-        else
-            frameTime_ =  frameTime;
-
-        totalTime_ += frameTime_;
-
         // fps
         fpsTimer_  += frameTime;
-        frameCount_+= 1;
-
-        // slowmo
-        if (exploCounterResetTimer_ > 0.f) {
-            exploCounterResetTimer_ -= frameTime_;
-            if (exploCounterResetTimer_ <= 0.f) {
-                exploCounter_ = 0;
-            }
-        }
-
-        if (exploCounter_ > 1)
-            slowMoTimer_ = 3.f;
+        ++frameCount_;
 
         if (fpsTimer_ >= 0.5f) {
             fps_ = static_cast<float>(frameCount_)/fpsTimer_;
             frameCount_ = 0;
             fpsTimer_   = 0.f;
         }
+
+        // get frametime, occasionally with slow motion
+        if (slowMoTimer_ > 1.f) {
+            slowMoTimer_ -= frameTime;
+            frameTime_ =  frameTime*0.25f;
+            totalTime_ += frameTime_;
+        }
+        else if (slowMoTimer_ > 0.f) {
+            slowMoTimer_ -= frameTime;
+            frameTime_ =  frameTime*(1.f-0.75f*slowMoTimer_);
+            totalTime_ += frameTime_;
+        }
+        else {
+            frameTime_ =  frameTime;
+            totalTime_ += frameTime_;
+        }
+
+        // reset explosion counter
+        if (exploCounterResetTimer_ > 0.f) {
+            exploCounterResetTimer_ -= frameTime;
+            if (exploCounterResetTimer_ <= 0.f) {
+                exploCounter_ = 0;
+            }
+        }
+
+        // enable slow motion, when enough ships exploded
+        if (exploCounter_ >= 2) {
+            exploCounter_ = 0;
+            slowMoTimer_ = 3.f;
+        }
     }
 
     void onShipExplode() {
-        ++exploCounter_;
-        exploCounterResetTimer_ = 0.1f;
+        if (slowMoTimer_ > 0.f) {
+            slowMoTimer_ = 3.f;
+        }
+        else {
+            ++exploCounter_;
+            exploCounterResetTimer_ = 0.1f;
+        }
     }
 
     float frameTime() { return frameTime_; }

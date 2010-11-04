@@ -43,7 +43,7 @@ namespace players {
         return newTeam;
     }
 
-    void addPlayer (Team* team, controllers::ControlType type) {
+    void addPlayer (Team* team, controllers::ControlType type, Color3f const& color) {
         switch (type) {
             case controllers::cPlayer1:
                 if (!initialized_) initLocalPlayers();
@@ -56,7 +56,7 @@ namespace players {
                 allPlayers_.push_back(playerII_);
                 break;
             default:
-                Player* bot = new Player(generateName::bot(((long)team%INT_MAX)/97), Color3f::random(), rand()%9+1, type);
+                Player* bot = new Player(generateName::bot(((long)team%INT_MAX)/97), color, rand()%9+1, type);
                 team->addMember(bot);
                 allPlayers_.push_back(bot);
         }
