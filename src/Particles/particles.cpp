@@ -88,8 +88,6 @@ namespace particles {
             AmmoAFK47::        drawAll();
             AmmoFlubba::       drawAll();
             Explode::          drawAll();
-            Smoke::            drawAll();
-            Dust::             drawAll();
             MiniAmmoFlubba::   drawAll();
             MiniFlame::        drawAll();
             AmmoH2OMG::        drawAll();
@@ -97,12 +95,16 @@ namespace particles {
             Mud::              drawAll();
             AmmoShotgun::      drawAll();
             AmmoROFLE::        drawAll();
+            BurningFragment::  drawAll();
+
         glEnd();
 
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
         glBegin(GL_QUADS);
 
             MiniFlameSmoke::   drawAll();
+            Smoke::            drawAll();
+            Dust::             drawAll();
 
         glEnd();
         glDisable(GL_TEXTURE_2D);

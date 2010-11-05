@@ -34,7 +34,7 @@ Dust::Dust(Vector2f const& location, Vector2f const& direction, Vector2f const& 
 void Dust::update() {
     float time = timer::frameTime();
 
-    color_.v(-0.5/totalLifeTime_*lifeTime_+0.5);
+    color_.v(-0.7/totalLifeTime_*lifeTime_+0.7);
     // update Size
     radius_ = lifeTime_/totalLifeTime_*5+5;
 
@@ -45,7 +45,7 @@ void Dust::update() {
 }
 
 void Dust::draw() const {
-    color_.gl4f(0.3f);
+    color_.gl4f(-0.3/totalLifeTime_*lifeTime_+0.3);
     const int posX = 1;
     const int posY = 0;
     glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);

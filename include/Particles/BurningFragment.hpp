@@ -26,7 +26,7 @@ class BurningFragment: public Particle<BurningFragment> {
         ~BurningFragment();
 
         void update();
-        void draw() const {}
+        void draw() const;
 
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
@@ -34,6 +34,7 @@ class BurningFragment: public Particle<BurningFragment> {
         friend class Particle<BurningFragment>;
 
     private:
+        Color3f color_;
         float timer1_, timer2_;
         static std::list<BurningFragment*> activeParticles_;
 };

@@ -28,7 +28,7 @@ MiniFlame::MiniFlame(Vector2f const& location, Vector2f const& direction, Vector
 
     flickerSpeed_ = sf::Randomizer::Random(0.01f, 1.f);
     timer_        = sf::Randomizer::Random(0.f, 1.f);
-    radius_       = sf::Randomizer::Random(3.0f, 8.0f);
+    radius_       = sf::Randomizer::Random(2.0f, 5.0f);
 
     color_.h(60+350);
     color_.v(0.2);

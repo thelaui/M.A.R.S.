@@ -25,16 +25,16 @@ std::list<MiniFlameSmoke*> MiniFlameSmoke::activeParticles_;
 MiniFlameSmoke::MiniFlameSmoke(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
            Particle<MiniFlameSmoke>(spaceObjects::oMiniFlameSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, sf::Randomizer::Random(0.8f, 2.0f)) {
 
-    color_ = Color3f(0.3, 0.3, 0.3);
+    color_ = Color3f(0.9, 0.8, 0.7);
 }
 
 void MiniFlameSmoke::update() {
     float time = timer::frameTime();
     Vector2f acceleration = physics::attract(this);
 
-    color_.v(-0.5f/totalLifeTime_*lifeTime_+0.5f);
+    color_.v(-0.6f/totalLifeTime_*lifeTime_+0.9f);
     // update Size
-    radius_ = lifeTime_*5.f+2;
+    radius_ = lifeTime_*8.f;
 
     location_ = location_ + velocity_*time - 1.f*acceleration*time*time;
     velocity_ = velocity_ - 1.f*acceleration*time + velocity_*(-2)*time;
@@ -43,7 +43,7 @@ void MiniFlameSmoke::update() {
 }
 
 void MiniFlameSmoke::draw() const {
-    color_.gl4f(0.3);
+    color_.gl4f(-0.4f/totalLifeTime_*lifeTime_+0.4f);
     const int posX = 1;
     const int posY = 0;
     glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);

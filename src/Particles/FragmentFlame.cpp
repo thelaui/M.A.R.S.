@@ -29,7 +29,7 @@ FragmentFlame::FragmentFlame(Vector2f const& location, Vector2f const& direction
     location_ = location + distortion;
     velocity_ = velocity*0.5f + distortion*20.f;
 
-    radius_ = direction.x_;
+    radius_ = sf::Randomizer::Random(1.f, 3.f);
 
     color_.h(50.f);
     color_.v(0.6f);

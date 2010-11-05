@@ -26,13 +26,15 @@ std::list<BurningFragment*> BurningFragment::activeParticles_;
 
 BurningFragment::BurningFragment(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
          Particle<BurningFragment>(spaceObjects::oBurningFragment, location, 1.f, 0, sf::Randomizer::Random(4.5f, 5.5f)),
-         timer1_(0.25f),
-         timer2_(0.f) {
+         color_(sf::Randomizer::Random(0.7f, 1.f), sf::Randomizer::Random(0.7f, 1.f), 0.f),
+         timer1_(0.5f),
+         timer2_(0.25f) {
 
-    radius_   = sf::Randomizer::Random(1.0f, 5.0f);
-    velocity_ = Vector2f::randDir()*sf::Randomizer::Random(400, 600);
+    radius_   = sf::Randomizer::Random(0.5f, 5.0f);
+    velocity_ = Vector2f::randDir()*sf::Randomizer::Random(200, 600);
 
-    trailEffects::attach(this, 5, 0.5f, 10.f, Color3f(0.4f, 0.1f, 0.f));
+    trailEffects::attach(this, 10, 0.3f, 10.f, Color3f(0.5f, 0.f, 0.f));
+    trailEffects::attach(this, 5, 0.1f, 6.f, color_);
 }
 
 BurningFragment::~BurningFragment() {
@@ -45,7 +47,7 @@ void BurningFragment::update() {
     physics::collide(this, STATICS | MOBILES);
 
     location_ += velocity_*time + acceleration*time*time*2;
-    velocity_ += acceleration*time*2 + velocity_*-0.5f*time;
+    velocity_ += acceleration*time*2 + velocity_*-time;
 
     if (timer1_ > 0)
         timer1_ -= time;
@@ -57,10 +59,20 @@ void BurningFragment::update() {
         timer2_ -= time;
     else {
         timer2_ = lifeTime_/settings::C_globalParticleCount;
-        particles::spawn(particles::pFragmentFlame, location_, Vector2f(radius_,0), velocity_);
+        particles::spawn(particles::pFragmentFlame, location_, Vector2f(), velocity_);
     }
 
     lifeTime_ += time;
+}
+
+void BurningFragment::draw() const {
+    color_.gl4f(-1.0/totalLifeTime_*lifeTime_+1);
+    const int posX = 5;
+    const int posY = 0;
+    glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
+    glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
+    glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
+    glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
 }
 
 void BurningFragment::onCollision(SpaceObject* with, Vector2f const& location,
