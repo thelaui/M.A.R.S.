@@ -22,8 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class AggroBot: public BotController {
     public:
-        AggroBot(Player* slave):
-            BotController(slave, controllers::cAggroBot) {}
+        AggroBot(Player* slave, float strength):
+            BotController(slave, controllers::cAggroBot, strength) {}
 
     private:
         void evaluate();

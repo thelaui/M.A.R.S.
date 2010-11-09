@@ -22,8 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class DefBot: public BotController {
     public:
-        DefBot(Player* slave):
-            BotController(slave, controllers::cDefBot) {}
+        DefBot(Player* slave, float strength):
+            BotController(slave, controllers::cDefBot, strength) {}
 
     private:
         void evaluate();

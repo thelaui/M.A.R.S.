@@ -22,17 +22,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/CannonControl.hpp"
 # include "Players/Team.hpp"
 # include "System/settings.hpp"
+# include "Players/BotPlayer.hpp"
 
 # include <cfloat>
 
-BotController::BotController(Player* slave, controllers::ControlType type):
+BotController::BotController(Player* slave, controllers::ControlType type, float strength):
     Controller(slave, type),
     actions_(11),
     target_(NULL),
     weaponChangeTimer_(sf::Randomizer::Random(0.f, 1.f)),
     evaluationTimer_(0.f),
     nextRoutePoint_(FLT_MAX, FLT_MAX),
-    toCover_(NULL) {}
+    toCover_(NULL),
+    strength_(strength) {}
 
 void BotController::update() {
     if(aggroTable_.empty()) {

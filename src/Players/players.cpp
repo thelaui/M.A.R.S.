@@ -17,7 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Players/players.hpp"
 
-# include "Players/Player.hpp"
+# include "Players/LocalPlayer.hpp"
+# include "Players/BotPlayer.hpp"
 # include "System/settings.hpp"
 # include "System/generateName.hpp"
 # include "Players/Team.hpp"
@@ -31,8 +32,8 @@ namespace players {
         bool initialized_(false);
 
         void initLocalPlayers() {
-            playerI_  = new Player(&settings::C_playerIName,  &settings::C_playerIColor , &settings::C_playerIShip, controllers::cPlayer1);
-            playerII_ = new Player(&settings::C_playerIIName, &settings::C_playerIIColor, &settings::C_playerIIShip, controllers::cPlayer2);
+            playerI_  = new LocalPlayer(controllers::cPlayer1);
+            playerII_ = new LocalPlayer(controllers::cPlayer2);
             initialized_ = true;
         }
     }
@@ -56,7 +57,7 @@ namespace players {
                 allPlayers_.push_back(playerII_);
                 break;
             default:
-                Player* bot = new Player(generateName::bot(((long)team%INT_MAX)/97), color, rand()%9+1, type);
+                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%9+1, type);
                 team->addMember(bot);
                 allPlayers_.push_back(bot);
         }

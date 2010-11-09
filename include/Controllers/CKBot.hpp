@@ -22,8 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class CKBot: public BotController {
     public:
-        CKBot(Player* slave):
-            BotController(slave, controllers::cCKBot) {}
+        CKBot(Player* slave, float strength):
+            BotController(slave, controllers::cCKBot, strength) {}
 
     private:
         void evaluate();

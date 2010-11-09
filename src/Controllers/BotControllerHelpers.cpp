@@ -170,7 +170,7 @@ void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) 
             std::vector<Player*>const& teamMates = slave_->team()->members();
             for (std::vector<Player*>::const_iterator it = teamMates.begin(); it != teamMates.end(); ++it) {
                 if (*it != slave_)
-                    if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), location, 20.f)
+                    if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), location, 20.f + (1.f-strength_)*80.f)
                        && ((location - ship()->location()) > ((*it)->ship()->location() - ship()->location()))) {
                         doShoot = false;
                         break;

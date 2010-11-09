@@ -27,8 +27,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TutAggroBot: public BotController {
     public:
-        TutAggroBot(Player* slave):
-            BotController(slave, controllers::cTutAggroBot),
+        TutAggroBot(Player* slave, float strength):
+            BotController(slave, controllers::cTutAggroBot, strength),
             lastFrameLife_(0) {}
 
     private:

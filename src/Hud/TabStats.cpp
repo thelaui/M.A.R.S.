@@ -200,8 +200,8 @@ void TabStats::draw() const {
 
                 Color3f drawColor((*currentPlayer)->color());
                 // draw name, shadowed
-                text::drawScreenText((*currentPlayer)->name_, topLeft + Vector2f(3, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText((*currentPlayer)->name_, topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                text::drawScreenText((*currentPlayer)->name(), topLeft + Vector2f(3, 1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText((*currentPlayer)->name(), topLeft + Vector2f(2, 0), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, drawColor);
                 // draw [BOT]
                 if ((*currentPlayer)->controlType_ != controllers::cPlayer1 && (*currentPlayer)->controlType_ != controllers::cPlayer2) {
                     text::drawScreenText("[BOT]", topLeft+Vector2f(81,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));

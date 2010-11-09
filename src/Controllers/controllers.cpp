@@ -16,7 +16,6 @@ You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/DefBot.hpp"
-# include "Controllers/MidBot.hpp"
 # include "Controllers/AggroBot.hpp"
 # include "Controllers/CKBot.hpp"
 # include "Controllers/DMBot.hpp"
@@ -59,15 +58,14 @@ namespace controllers {
             (*it)->draw();
     }
 
-    void addController(ControlType type, Player* slave) {
+    void addController(ControlType type, Player* slave, float strength) {
         switch (type) {
-            case cDefBot:     botControllers_.push_back(new DefBot(slave));       break;
-            case cMidBot:     botControllers_.push_back(new MidBot(slave));       break;
-            case cAggroBot:   botControllers_.push_back(new AggroBot(slave));     break;
-            case cCKBot:      botControllers_.push_back(new CKBot(slave));        break;
-            case cDMBot:      botControllers_.push_back(new DMBot(slave));        break;
-            case cTutBot:     botControllers_.push_back(new TutBot(slave));       break;
-            case cTutAggroBot:botControllers_.push_back(new TutAggroBot(slave));  break;
+            case cDefBot:     botControllers_.push_back(new DefBot(slave, strength));       break;
+            case cAggroBot:   botControllers_.push_back(new AggroBot(slave, strength));     break;
+            case cCKBot:      botControllers_.push_back(new CKBot(slave, strength));        break;
+            case cDMBot:      botControllers_.push_back(new DMBot(slave, strength));        break;
+            case cTutBot:     botControllers_.push_back(new TutBot(slave, strength));       break;
+            case cTutAggroBot:botControllers_.push_back(new TutAggroBot(slave, strength));  break;
             case cPlayer1:    keyControllers1_ = new KeyController(type, slave);  break;
             case cPlayer2:    keyControllers2_ = new KeyController(type, slave);  break;
         }

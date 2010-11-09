@@ -19,45 +19,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/controllers.hpp"
 
-Player::Player(sf::String const& name, Color3f const& color, int graphic, controllers::ControlType controlType):
+Player::Player(controllers::ControlType controlType):
     ship_(NULL),
-    name_(name),
-    nameRef_(NULL),
+    team_(NULL),
     points_(0),
     frags_(0),
     suicides_(0),
     deaths_(0),
     teamKills_(0),
     reputation_(0),
-    color_(color),
-    colorRef_(NULL),
-    graphic_(graphic),
-    graphicRef_(NULL),
-    team_(NULL),
-    controlType_(controlType) {
-
-        controllers::addController(controlType, this);
-}
-
-Player::Player(sf::String* name, Color3f* color, int* graphic, controllers::ControlType controlType):
-    ship_(NULL),
-    name_(*name),
-    nameRef_(name),
-    points_(0),
-    frags_(0),
-    suicides_(0),
-    deaths_(0),
-    teamKills_(0),
-    reputation_(0),
-    color_(*color),
-    colorRef_(color),
-    graphic_(*graphic),
-    graphicRef_(graphic),
-    team_(NULL),
-    controlType_(controlType) {
-
-        controllers::addController(controlType, this);
-}
+    controlType_(controlType) {}
 
 void Player::resetPoints() {
     points_ = 0;

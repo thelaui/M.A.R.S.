@@ -30,7 +30,7 @@ namespace controllers {
 
     void draw();
 
-    void addController(ControlType type, Player* slave);
+    void addController(ControlType type, Player* slave, float strength = 1.f);
 
     void resetBots();
     void clear();

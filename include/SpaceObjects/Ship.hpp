@@ -89,8 +89,8 @@ class Ship: public MobileSpaceObject {
 
         Weapon* currentWeapon_;
 
-        float life_;
-        float fuel_;
+        float life_, maxLife_;
+        float fuel_, maxFuel_;
 
         std::vector<PowerUp*> collectedPowerUps_;
 

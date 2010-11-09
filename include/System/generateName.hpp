@@ -27,15 +27,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 /// stores the names for the ships.
 
 namespace generateName {
-    /// Returns a random bot name.
+    /// Returns a random bot name and its associated strength.
     /// The name is loaded from the file "botnames.txt".
     /// \param randomNumber chooses the group of names from which the returned
     ///        name will be chosen. For bots in the same team, use the same number.
-    sf::String bot(int randomNumber);
+    std::pair<sf::String, int> const& bot(int randomNumber);
 
     /// Returns a random name for the game.
     /// For instance "Retarded Shooter" or "Rude Shooter".
-    sf::String game();
+    sf::String const& game();
 
     /// Returns a reference to a vector containing the ship names.
     /// they are loaded from the file "shipnames.txt"

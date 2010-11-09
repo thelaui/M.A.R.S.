@@ -24,8 +24,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TutBot: public BotController {
     public:
-        TutBot(Player* slave):
-            BotController(slave, controllers::cTutBot),
+        TutBot(Player* slave, float strength):
+            BotController(slave, controllers::cTutBot, strength),
             lastFrameLife_(0) {}
 
     private:

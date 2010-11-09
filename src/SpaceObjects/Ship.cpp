@@ -52,7 +52,9 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                respawnRotation_(rotation),
                currentWeapon_(new AFK47(this)),
                life_(200.f),
+               maxLife_(life_),
                fuel_(100.f),
+               maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
                fragStars_(0),
                rememberedReputation_(0),
@@ -60,8 +62,14 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                pointCheckTimer_(0.f) {
 
     decoObjects::addName(this);
+
     if  ((owner_->controlType_ == controllers::cPlayer1) | (owner_->controlType_ == controllers::cPlayer2))
         decoObjects::addHighlight(this);
+    else {
+        life_ = 50 + static_cast<float>(settings::C_iDumb)*2.5f;
+        maxLife_ = life_;
+    }
+
     physics::addMobileObject(this);
     owner->ship_ = this;
     damageSource_ = owner_;
@@ -115,10 +123,10 @@ void Ship::update() {
         }
         else {
             acceleration = Vector2f();
-            if (getFuel() < 100.f)
+            if (getFuel() < maxFuel_)
                 fuel_ += time*0.5f;
             else
-                fuel_ = 100.f;
+                fuel_ = maxFuel_;
         }
 
         // movement
@@ -129,8 +137,8 @@ void Ship::update() {
         if (!up_ && velocity_.lengthSquare() < 5000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
             docked_ = true;
             velocity_ = Vector2f();
-            if (fuel_ < 100.f) fuel_ += time*20; else fuel_ = 100.f;
-            if (life_ < 200.f) life_ += time*40; else life_ = 200.f;
+            if (fuel_ < maxFuel_) fuel_ += time*maxFuel_*0.2; else fuel_ = maxFuel_;
+            if (life_ < maxLife_) life_ += time*maxLife_*0.2; else life_ = maxLife_;
         }
         else {
             docked_ = false;
@@ -271,26 +279,26 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oBall:
             amount =  dynamic_cast<Ball*>(with)->heatAmount()*0.1f;
-            particles::spawnMultiple(2, particles::pSpark, location, direction*100.f, velocity_, owner_->color_);
+            particles::spawnMultiple(2, particles::pSpark, location, direction*100.f, velocity_, owner_->color());
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
             break;
 
         case spaceObjects::oAmmoAFK47:
             amount = strength*0.001f;
             setDamageSource(with->damageSource());
-            particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color_);
+            particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color());
             break;
 
         case spaceObjects::oAmmoROFLE:
             amount = strength*0.04f;
             setDamageSource(with->damageSource());
-            particles::spawnMultiple(20, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.5f, velocity_, owner_->color_);
+            particles::spawnMultiple(20, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.5f, velocity_, owner_->color());
             break;
 
         case spaceObjects::oAmmoShotgun:
             amount = strength*0.002f;
             setDamageSource(with->damageSource());
-            particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, owner_->color_);
+            particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, owner_->color());
             break;
 
         case spaceObjects::oAmmoFlubba:
@@ -325,7 +333,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
     if (!collectedPowerUps_[items::puShield])
-        life_ -= intensity*80.f;
+        life_ -= intensity*(20.f + settings::C_iDumb);
 }
 
 void Ship::setDamageSource(Player* evilOne) {
@@ -334,7 +342,7 @@ void Ship::setDamageSource(Player* evilOne) {
 }
 
 float Ship::getLife() const {
-    return life_ < 0.f ? 0.f : life_/2.f;
+    return life_ < 0.f ? 0.f : life_/maxLife_*100.f;
 }
 
 float Ship::getFuel() const {
@@ -351,7 +359,7 @@ std::vector<PowerUp*> const& Ship::getCollectedPowerUps() const {
 
 void Ship::explode() {
     sound::playSound(sound::ShipExplode, location_, 100.f);
-    particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, owner_->color_);
+    particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, owner_->color());
     particles::spawnMultiple(50, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);

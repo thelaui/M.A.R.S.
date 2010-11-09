@@ -26,17 +26,17 @@ class Team;
 
 class Player {
     public:
-        Player(sf::String const& name, Color3f const& color, int  graphic, controllers::ControlType controlType);
-        Player(sf::String*       name, Color3f*       color, int* graphic, controllers::ControlType controlType);
+        Player(controllers::ControlType controlType);
 
-        void                resetPoints();
+        void                      resetPoints();
 
-        Team*                    team()   const {return team_;}
-        Ship*                    ship()   const {return ship_;}
-        Color3f const&           color()  const {return colorRef_ == NULL ? color_ : *colorRef_;}
-        sf::String const&        name()   const {return nameRef_  == NULL ? name_  : *nameRef_ ;}
-        int                      graphic()const {return graphicRef_  == NULL ? graphic_  : *graphicRef_ ;}
-        controllers::ControlType type()   const {return controlType_;}
+        Team*                     team()    const {return team_;}
+        Ship*                     ship()    const {return ship_;}
+        controllers::ControlType  type()    const {return controlType_;}
+
+        virtual Color3f const&    color()   const = 0;
+        virtual sf::String const& name()    const = 0;
+        virtual int               graphic() const = 0;
 
         friend class Team;
         friend class Ship;
@@ -45,15 +45,8 @@ class Player {
 
     private:
         Ship* ship_;
-
-        sf::String  name_;
-        sf::String* nameRef_;
-        int points_, frags_, suicides_, deaths_, teamKills_, reputation_;
-        Color3f color_;
-        Color3f* colorRef_;
-        int graphic_;
-        int* graphicRef_;
         Team* team_;
+        int points_, frags_, suicides_, deaths_, teamKills_, reputation_;
         controllers::ControlType controlType_;
 };
 

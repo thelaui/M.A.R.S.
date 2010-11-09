@@ -6,89 +6,91 @@
 // place its name in [brackets]
 // please avoid lines, longer than 1024 characters...
 [german_presidents]
-Theodor
-Heinrich
-Gustav
-Walter
-Karl
-Richard
-Roman
-Johannes
-Horst
-Christian
-Konrad
-Ludwig
-Kurt
-Willy
-Helmut
-Gehard
-Angela
-Erich
-Willi
-Egon
-Manfred
+Theodor		80
+Heinrich	85
+Gustav 		95
+Walter 		42
+Karl 		70
+Richard 	78
+Roman 		25
+Johannes 	98
+Horst 		18
+Christian 	36
+Konrad 		81
+Ludwig 		90
+Kurt 		100
+Willy 		89
+Helmut 		92
+Gerhard 	81 
+Angela 		45
+Erich 		90
+Willi 		94
+Egon 		76
+Manfred 	100
 
 [starwars]
-Luke
-Lea
-Anakin
-Yoda
-Obi-Wan
-Chewbacca
-Han
-Lando
-Jabba
-Jarjar
-Imperator
-Padme
-R2D2
-C3PO
-Maul
-Vader
-Sebulba
-Boba
-Jango
+Luke 		100
+Lea 		50
+Anakin 		89
+Yoda 		100
+Obi-Wan 	100
+Chewbacca 	78
+Han 		82
+Lando 		75
+Jabba 		20
+Jarjar 		23
+Imperator 	100
+Padme 		68
+R2D2 		94
+C3PO 		35
+Maul 		95
+Vader 		100
+Sebulba 	15
+Boba 		86
+Jango 		91
 
 [gurus]
-Steve
-Bill
-Linus
-Larry
-Sergei
-David
-Jerry
-Jimmy
-Rick
-Pierre
-Jeff
-Mark
-Bjarne
-Konrad
-Claude
-Barbara
+Steve 		48
+Bill 		35
+Linus 		100
+Larry 		95
+Sergei 		85
+David 		74
+Jerry 		62
+Jimmy 		20
+Rick 		70
+Pierre 		62
+Jeff 		98
+Mark 		96
+Bjarne 		100
+Konrad 		80
+Claude 		84
+Barbara 	92
 
 [lotr]
-Bilbo
-Frodo
-Sam
-Gandalf
-Merry
-Pippin
-Sauron
-Aragorn
-Glorfindel
-Galadriel
-Elrond
-Boromir
-Legolas
-Gimli
-Celeborn
-Baumbart
-Grima
-Theoden
-Saruman
-Gollum
-Faramir
-Eowyn
-Arwen
-Eomer
+Bilbo 		67
+Frodo 		86
+Sam 		51
+Gandalf 	100
+Merry 		54
+Pippin 		60
+Sauron 		100
+Aragorn 	100
+Glorfindel 	78
+Galadriel 	94
+Elrond 		100
+Boromir 	34
+Legolas 	98
+Gimli 		97
+Celeborn 	85
+Baumbart 	90
+Grima 		10
+Theoden 	64
+Saruman 	82
+Gollum 		79
+Faramir 	93
+Eowyn 		47
+Arwen 		56
+Eomer 		78
+
+[end]

@@ -25,18 +25,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <list>
 # include <iostream>
 # include <ctime>
+# include <sstream>
 
 namespace generateName {
 
     namespace {
-        std::vector<std::list<sf::String> > botNames_;
+        std::vector<std::list<std::pair<sf::String, int> > > botNames_;
         std::list<sf::String> gameNames_;
         std::vector<sf::String> shipNames_;
         bool initialized_(false);
 
         void loadBotNames () {
             std::vector<sf::String> lines = file::load("botnames.txt");
-            std::list<sf::String> newList;
+            std::list<std::pair<sf::String, int> > newList;
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
                 if ((*it).ToAnsiString()[0] == '[') {
                     if (newList.size() > 0) {
@@ -44,38 +45,45 @@ namespace generateName {
                         newList.clear();
                     }
                 }
-                else
-                    newList.push_back(*it);
+                else {
+                    std::stringstream strengthStream(std::string((*it).ToAnsiString(), (*it).GetSize()-3));
+                    int strength;
+                    strengthStream >> strength;
+                    (*it).Erase((*it).GetSize()-3, 3);
+                    while ((*it)[(*it).GetSize()-1] == ' ' || (*it)[(*it).GetSize()-1] == '\t')
+                        (*it).Erase((*it).GetSize()-1);
+                    newList.push_back(std::make_pair(*it, strength));
+                }
             }
             if (botNames_.size() == 0) {
                 std::cout << "No Botnames found! Reverting to some boring default names...\n";
-                std::list<sf::String> defaultnames;
-                defaultnames.push_back("Ernst [BOT]");
-                defaultnames.push_back("Holger [BOT]");
-                defaultnames.push_back("Jimmy [BOT]");
-                defaultnames.push_back("Arnold [BOT]");
-                defaultnames.push_back("Ute [BOT]");
-                defaultnames.push_back("John [BOT]");
-                defaultnames.push_back("Matt [BOT]");
-                defaultnames.push_back("Gudrun [BOT]");
-                defaultnames.push_back("Ringo [BOT]");
-                defaultnames.push_back("Elvis [BOT]");
-                defaultnames.push_back("Bertold [BOT]");
-                defaultnames.push_back("Karl [BOT]");
-                defaultnames.push_back("Joe [BOT]");
-                defaultnames.push_back("Tom [BOT]");
-                defaultnames.push_back("Hilde [BOT]");
-                defaultnames.push_back("Herbert [BOT]");
-                defaultnames.push_back("Lars [BOT]");
-                defaultnames.push_back("Jeremy [BOT]");
-                defaultnames.push_back("Thomas [BOT]");
-                defaultnames.push_back("Jenny [BOT]");
-                defaultnames.push_back("James [BOT]");
-                defaultnames.push_back("Erwin [BOT]");
-                defaultnames.push_back("Thompson [BOT]");
-                defaultnames.push_back("August [BOT]");
-                defaultnames.push_back("Thorben [BOT]");
-                defaultnames.push_back("Tony [BOT]");
+                std::list<std::pair<sf::String, int> > defaultnames;
+                defaultnames.push_back(std::make_pair("Ernst", 90));
+                defaultnames.push_back(std::make_pair("Holger", 50));
+                defaultnames.push_back(std::make_pair("Jimmy", 78));
+                defaultnames.push_back(std::make_pair("Arnold", 100));
+                defaultnames.push_back(std::make_pair("Ute", 92));
+                defaultnames.push_back(std::make_pair("John", 94));
+                defaultnames.push_back(std::make_pair("Matt", 20));
+                defaultnames.push_back(std::make_pair("Gudrun", 67));
+                defaultnames.push_back(std::make_pair("Ringo", 82));
+                defaultnames.push_back(std::make_pair("Elvis", 98));
+                defaultnames.push_back(std::make_pair("Bertold", 100));
+                defaultnames.push_back(std::make_pair("Karl", 87));
+                defaultnames.push_back(std::make_pair("Joe", 41));
+                defaultnames.push_back(std::make_pair("Tom", 95));
+                defaultnames.push_back(std::make_pair("Hilde", 84));
+                defaultnames.push_back(std::make_pair("Herbert", 85));
+                defaultnames.push_back(std::make_pair("Lars", 99));
+                defaultnames.push_back(std::make_pair("Jeremy", 36));
+                defaultnames.push_back(std::make_pair("Thomas", 57));
+                defaultnames.push_back(std::make_pair("Jenny", 99));
+                defaultnames.push_back(std::make_pair("James", 66));
+                defaultnames.push_back(std::make_pair("Erwin", 92));
+                defaultnames.push_back(std::make_pair("Thompson", 90));
+                defaultnames.push_back(std::make_pair("August", 30));
+                defaultnames.push_back(std::make_pair("Thorben", 77));
+                defaultnames.push_back(std::make_pair("Tony", 80));
                 botNames_.push_back(defaultnames);
             }
         }
@@ -108,25 +116,26 @@ namespace generateName {
             gameNames_.push_back("Retro-Shooter");
 
             // shuffle both lists
-            std::vector<sf::String> temp;
+            std::vector<std::pair<sf::String, int> > temp;
             for (unsigned int i=0; i<botNames_.size(); ++i) {
-                for (std::list<sf::String>::iterator it = botNames_[i].begin(); it != botNames_[i].end(); ++it) temp.push_back(*it);
+                for (std::list<std::pair<sf::String, int> >::iterator it = botNames_[i].begin(); it != botNames_[i].end(); ++it) temp.push_back(*it);
                 std::random_shuffle(temp.begin(), temp.end());
                 botNames_[i].clear();
-                for (std::vector<sf::String>::iterator it = temp.begin(); it != temp.end(); ++it) botNames_[i].push_back(*it);
+                for (std::vector<std::pair<sf::String, int> >::iterator it = temp.begin(); it != temp.end(); ++it) botNames_[i].push_back(*it);
                 temp.clear();
             }
 
-            for (std::list<sf::String>::iterator it = gameNames_.begin(); it != gameNames_.end(); ++it) temp.push_back(*it);
-            std::random_shuffle(temp.begin(), temp.end());
+            std::vector<sf::String> temp2;
+            for (std::list<sf::String>::iterator it = gameNames_.begin(); it != gameNames_.end(); ++it) temp2.push_back(*it);
+            std::random_shuffle(temp2.begin(), temp2.end());
             gameNames_.clear();
-            for (std::vector<sf::String>::iterator it = temp.begin(); it != temp.end(); ++it) gameNames_.push_back(*it);
+            for (std::vector<sf::String>::iterator it = temp2.begin(); it != temp2.end(); ++it) gameNames_.push_back(*it);
 
             initialized_ = true;
         }
     }
 
-    sf::String bot(int randomNumber) {
+    std::pair<sf::String, int> const& bot(int randomNumber) {
         if (!initialized_) init_();
         int group = randomNumber%botNames_.size();
         botNames_[group].push_front(botNames_[group].back());
@@ -134,7 +143,7 @@ namespace generateName {
         return *botNames_[group].begin();
     }
 
-    sf::String game() {
+    sf::String const& game() {
         if (!initialized_) init_();
         gameNames_.push_front(gameNames_.back());
         gameNames_.pop_back();

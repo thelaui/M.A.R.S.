@@ -40,7 +40,7 @@ class TacticalZone;
 
 class BotController: public Controller {
     public:
-        BotController(Player* slave, controllers::ControlType type);
+        BotController(Player* slave, controllers::ControlType type, float strength);
 
         /*virtual*/ void update();
         void draw();
@@ -79,6 +79,7 @@ class BotController: public Controller {
         float evaluationTimer_;
         Vector2f nextRoutePoint_;
         TacticalZone* toCover_;
+        const float strength_;
 
         //path variables
         Vector2f aimDirection_;

@@ -1,4 +1,4 @@
-/* DMBot.hpp
+/* BotPlayer.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,29 +15,17 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DMBOT_HPP_INCLUDED
-# define DMBOT_HPP_INCLUDED
+# include "Players/BotPlayer.hpp"
 
-# include "Controllers/BotController.hpp"
+# include "Controllers/controllers.hpp"
+# include "System/settings.hpp"
 
-# include "Players/Player.hpp"
-# include "SpaceObjects/Ship.hpp"
+BotPlayer::BotPlayer(std::pair<sf::String, int>const& nameStrength, Color3f const& color, int  graphic, controllers::ControlType controlType):
+    Player(controlType),
+    name_(nameStrength.first),
+    color_(color),
+    graphic_(graphic) {
 
-# include <cfloat>
+        controllers::addController(controlType, this, static_cast<float>(nameStrength.second+settings::C_iDumb)*0.005f);
+}
 
-class DMBot: public BotController {
-    public:
-        DMBot(Player* slave, float strength):
-            BotController(slave, controllers::cDMBot, strength),
-            lastFrameLife_(FLT_MAX) {}
-
-    private:
-        void evaluate();
-        void checkAggro();
-        void checkEnergy();
-        void checkEnemies();
-
-        float lastFrameLife_;
-};
-
-# endif // DMBOT_HPP_INCLUDED
