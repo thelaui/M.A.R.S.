@@ -20,7 +20,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Controllers/CKBot.hpp"
 # include "Controllers/DMBot.hpp"
 # include "Controllers/TutBot.hpp"
-# include "Controllers/TutAggroBot.hpp"
 # include "Controllers/KeyController.hpp"
 # include "System/settings.hpp"
 # include "System/window.hpp"
