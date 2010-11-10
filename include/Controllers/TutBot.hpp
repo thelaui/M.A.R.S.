@@ -25,14 +25,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class TutBot: public BotController {
     public:
         TutBot(Player* slave, float strength):
-            BotController(slave, controllers::cTutBot, strength),
-            lastFrameLife_(0) {}
+            BotController(slave, controllers::cTutBot, strength) {}
 
     private:
         void evaluate();
         void checkEnergy();
-
-        float lastFrameLife_;
 };
 
 # endif // TUTBOT_HPP_INCLUDED

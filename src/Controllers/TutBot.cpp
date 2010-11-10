@@ -30,10 +30,6 @@ void TutBot::evaluate() {
 }
 
 void TutBot::checkEnergy() {
-    if(lastFrameLife_ - ship()->getLife() > 0.f)
-        slave_->ship()->life_ -= lastFrameLife_ - ship()->getLife();
-    if(lastFrameLife_ != ship()->getLife())
-        lastFrameLife_ = ship()->getLife();
     if(shipDocked()) {
         actions_[BOT_LAND] = 0;
         actions_[BOT_CHARGE] = std::max(100 - ship()->getLife(), 100 - ship()->getFuel());  // max 100, min 0

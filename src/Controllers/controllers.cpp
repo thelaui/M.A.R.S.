@@ -64,10 +64,10 @@ namespace controllers {
             case cAggroBot:   botControllers_.push_back(new AggroBot(slave, strength));     break;
             case cCKBot:      botControllers_.push_back(new CKBot(slave, strength));        break;
             case cDMBot:      botControllers_.push_back(new DMBot(slave, strength));        break;
-            case cTutBot:     botControllers_.push_back(new TutBot(slave, strength));       break;
-            case cTutAggroBot:botControllers_.push_back(new TutAggroBot(slave, strength));  break;
-            case cPlayer1:    keyControllers1_ = new KeyController(type, slave);  break;
-            case cPlayer2:    keyControllers2_ = new KeyController(type, slave);  break;
+            case cTutBot:     botControllers_.push_back(new TutBot(slave, 0.f));            break;
+            case cTutAggroBot:botControllers_.push_back(new DMBot(slave, 0.f));             break;
+            case cPlayer1:    keyControllers1_ = new KeyController(type, slave);            break;
+            case cPlayer2:    keyControllers2_ = new KeyController(type, slave);            break;
         }
     }
 
