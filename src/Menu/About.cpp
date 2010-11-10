@@ -21,26 +21,37 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Button.hpp"
 # include "Menu/menus.hpp"
 # include "Interface/TextBox.hpp"
-# include "Interface/Line.hpp"
+# include "Interface/TabList.hpp"
 # include "System/generateName.hpp"
-# include "Menu/License.hpp"
 # include "Media/text.hpp"
 # include "Locales/locales.hpp"
 
 UiWindow* About::instance_(NULL);
 bool About::kClose_(false);
-bool About::kLisence_(false);
 sf::String About::marsName_("");
 
 UiWindow* About::get() {
     if (instance_ == NULL) {
-        instance_ = new About(320, 210);
-        instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(240,180), 70, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::License), &kLisence_, Vector2f(10,180), 70, 20));
+        instance_ = new About(420, 310);
+        instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(340,280), 70, 20));
         instance_->addWidget(new Label(new sf::String("M.A.R.S."), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
-        instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f));
-        instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 50), 300, 150));
+        instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(410,18), 12.f));
+
+        TabList* tabs = new TabList(Vector2f(10, 50), 400, 250);
+
+        Tab* about = new Tab(locales::getLocale(locales::About), 90);
+        Tab* license = new Tab(locales::getLocale(locales::License), 90);
+        Tab* credits = new Tab(locales::getLocale(locales::About), 90);
+
+        about->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 30), 380, 230));
+        license->addWidget(new TextBox(locales::getLocale(locales::LicenseText), Vector2f(10, 30), 380, 230));
+        credits->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 30), 380, 230));
+
+        tabs->addTab(about);
+        tabs->addTab(license);
+        tabs->addTab(credits);
+
+        instance_->addWidget(tabs);
     }
     return instance_;
 }
@@ -49,10 +60,6 @@ void About::checkWidgets() {
     if (kClose_) {
         kClose_ = false;
         menus::hideWindow();
-    }
-    if (kLisence_) {
-        kLisence_ = false;
-        menus::showWindow(License::get());
     }
 }
 

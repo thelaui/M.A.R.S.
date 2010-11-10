@@ -32,7 +32,7 @@ class About: public UiWindow {
 
         static UiWindow* instance_;
 
-        static bool kClose_, kLisence_;
+        static bool kClose_;
         static sf::String marsName_;
 };
 

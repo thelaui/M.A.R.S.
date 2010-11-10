@@ -1,0 +1,236 @@
+/ / Botones de menú
+
+000 Iniciar Juego Local
+105 Iniciar Escuela MARS
+001 Iniciar Juego Red
+002 Unir Juego Red
+003 Opciones
+004 Acerca de
+005 Salir M.A.R.S.
+006 Continuar
+007 Reiniciar Juego
+008 Ocultar Menú
+009 Salir del juego
+
+/ / Botones estándar
+
+010 Iniciar
+011 Cancelar
+012 Información
+013 Cerrar
+014 Licencia
+015 Ok
+106 Siguiente
+016 Mostrar otra vez?
+
+/ / Opciones antes del partido
+
+017 Equipo de la Izquierda
+018 Equipo de la Derecha
+019 Robotes I
+020 Robotes D
+021 Robotes
+022 Límite de destrucciones
+162 Límite de puntos
+
+/ / Historia de la información
+
+023 En el año 3547, las civilizaciones de toda la galaxia se han establecido sus propios planetas, que viven en paz y armonía con su entorno. \nPero fuera de los hábitats contemplativa, la GRAN GUERRA está furioso.\nComo un luchador famoso en su manera de honrar sin fin y la prosperidad, tiene que proteger su planeta de la ruina inminente de su celosa neighbours! Pelear la batalla, un verdadero héroe como tú nació para: SPACEBALL.\nProtect su planeta de la esfera de la muerte y derrotar a tus enemigos por dejar que se aplaste en su mundo ridículo.
+024 patear o tirar la bola al planeta de tu enemigo!
+025 Como resultado de la gran Guerra que lo han perdido todo: su casa, su familia y La autoestima. \nLa última oportunidad para salir de la miserable vida que están atrapados en, es convertirse en un gladiador en la gloriosa DEATHMATCH-arena. \nResist los combatientes de otros y ganar puntos mediante la destrucción de la cáscara de nuez, que llaman los buques. \ Mismo nPrepare! \nDeath y la gloria le espera.
+026 Destruir tantos enemigos como sea posible!
+027 Las negociaciones han fracasado! \nAmbos de usted y sus vecinos tuvieron que registrar enormes pérdidas en la celebración del respetuosos de la Gran Guerra. AS en un último intento de ganar la mano superior, se le ordena diezmar a los recursos de tu enemigo y proteger a su ser propio. La única manera de hacerlo es una epopeya TEAMDEATHMATCH. \nProtect sus compañeros y destruir a tus enemigos! \ Ellos nTeach una lección, que nunca olvidarán.
+028 Destruye enemigos es la mayor cantidad posible!
+029 Como si la GRAN GUERRA no fuera suficiente, su sistema planetario se ve amenazada por una nueva fuente de maldad increíble: Un barco gigante de invasores desconocidos está levitando por encima de su galaxia, con el objetivo de los planetas a casa con un arma de destrucción en masa monolítica. \nComo una muestra de cinismo, los atacantes cayó un control remoto para ajustar la procedencia de la muerte y el miedo. \nReach en primer lugar, a su vez planeta de tu enemigo en casa en un lugar de desolación! el CANNONKEEPer.
+030 Tome el control remoto y mantenerlo el mayor tiempo posible!
+
+/ / Opciones de visualización
+/ / Etiquetas
+
+150 Interfaz
+102 Gráficos
+103 Audio
+
+104 Configuración de la ventana
+031 Mostrar información de depuración
+032 Orientación de Robotes
+033 Zonas
+034 Caminos de Robotes
+035 Ver Información del Juego
+036 Cuadros por Segundo
+037 Cuenta de Partículas
+038 Cuenta de Partículas
+039 Vida de Partículas
+040 Estrellas
+041 Pantalla Completa
+042 V-Sync
+
+151 Alta Resolución
+152 Baja Resolución
+153 Apagarlas
+
+/ / Opciones de audio
+
+043 Volumen de Música
+044 Volumen del Sonido
+045 Volumen del Presentador
+
+/ / Opciones del jugador
+
+046 Nombre
+047 Acelerar
+048 Vuelta a la Izquierda
+049 Vuelta a la Derecha
+050 Armas
+051 Nave
+052 Tono
+053 Saturación
+054 Valor
+055 Pulse la tecla ahora!
+056 Escriba el texto, no deje de aprensar el boton!
+
+/ / Sobre
+
+057 Este es un primer intento de crear un juego en OpenGL con SFML. Es un juego para dos jugadores, con las naves que vuelan en espacios de dos dimensiones, que se rige por las leyes de la gravedad. \n\n Mi casa: \nwww.marsshooter.org
+
+/ / Licencia
+
+058 Este programa es software libre, puede redistribuirlo y / o modificarlo bajo los términos de la GNU General Public License publicada por la Free Software Foundation, bien de la versión 3 de la Licencia, o (a su elección) cualquier versión posterior. programa Esto se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, incluso sin la garantía implícita de COMERCIALIZACIÓN o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulte la GNU General Public License para más detalles. Internet Available en: \nhttp: / / www.gnu.org/licenses/gpl-3.0.html
+
+/ / Quit, irse, dejar el juego
+
+059 ¿Estás seguro que quieres dejar el juego?
+060 ¿Estás seguro que quieres terminar el juego?
+
+/ / Red de información
+
+061 Jugar M.A.R.S. en el World Wide Web o una red de área local es una característica querida, pero aún no implementada. \nQuedense atentos!
+062 Jugar M.A.R.S. en el World Wide Web o una red de área local es una característica querida, pero aún no implementada. \nQuedense atentos!
+
+/ / Ocultar el menú
+
+063 Detuviste M.A.R.S. justo en medio de una batalla loca? \nSi desea tomar una captura de pantalla, este botón le \n permite generar fondos de pantalla épica, al ocultar todas las ventanas. \n\n Aprense ESC para salir de este modo
+
+/ / Nombres de las teclas
+
+064 Add
+065 Back Slash
+066 Comma
+067 Dash
+068 Delete
+069 Divide
+070 Down
+071 End
+072 Equal
+073 Home
+074 Insert
+075 Left Alt
+076 Left Bracket
+077 Left Control
+078 Left
+079 Left Shift
+080 Left Super
+081 Menu
+082 Multiply
+083 Page Down
+084 Page Up
+085 Pause
+086 Period
+087 Quote
+088 Right Alt
+089 Right Bracket
+090 Right Control
+091 Return
+092 Right
+093 Right Shift
+094 Right Super
+095 Semi Colon
+096 Slash
+097 Space
+098 Subtract
+099 Tilde
+100 Tab
+101 Up
+
+
+/ / Textos tutorial
+
+107 Bienvenido, Espacio novato!
+108 Estamos contentos de contratar a un héroe como el aumento a que nos acompañen en la GRAN GUERRA! \nSe descubrió que necesitaba un poco de práctica con su nuevo barco. \nLet la formación de comenzar ...
+
+109 Movimiento de base ...
+110 El control de su nave es la tarea más importante de dominar. \nTodos movimiento se rige por las leyes de la gravedad. Para desacelerar tienes que girar y acelerar en la dirección opuesta. Controle su nave, usando las teclas
+
+111 Calentamiento!
+112 Llegar a la zona rosa! \nIntente no se bloquee su marca nuevo barco.
+
+113 Bien Hecho!
+114 Ahora regresa a su planeta de origen y tratar de aterrizar su nave lentamente flotando de nuevo al acercarse a su planeta.
+
+115 Buen Trabajo!
+116 de aterrizaje adecuada no es un pedazo de pastel, ¿no? \nNo debería aprender de memoria.
+
+117 Algo más difícil ...
+118 Trate de seguir el camino marcado por las zonas de color rosa! 
+ 
+Se pondremos en contacto contigo de nuevo, después de haber dominado esta. Ahora ir a por ello!
+
+119 ¡Impresionante!
+120 Tú eres el mejor novato que he visto. \nAhora prepararse para un poco de materia explosiva.
+
+121 de disparo ...
+122 Para derrotar a tus enemigos, tienes que saber cómo se disparan! \nPara que la prensa objetivo
+123 Diviértete disparando alrededor y luego la tierra de tu nave para continuar el tutorial.
+
+124 Aterrizaje bueno!
+125 Es llegar a ser un gran piloto. \n\nAhora ¿qué hay de algunas armas más?
+
+126 Las armas ...
+127 Sé que has estado esperando por esto. Cuando se acopla puede cambiar a través de algunas armas muy mal. \nPresione
+128 para abrir su arsenal. \n Uso nThen
+129 a elegir un arma! El despegue, cuando esté listo!
+
+130 Lucha!
+131 Ahora vamos a ver cómo lo hacen contra un novato de otro planeta. \nparece como él está tratando de mejorar sus habilidades de vuelo. \nBeat él!
+
+132 Impresionante!
+133 ¡Lo lograste! Como te habrás dado cuenta, a ganar algunos puntos de reputación por cada enemigo muerto. \nEl número verde poco apareciendo a lo largo de su barco representa la cantidad. Esto aumentará si matar a un montón de enemigos en fila.
+
+134 ¡Cuidado!
+135 No hay tiempo para el descanso. \ Enemigos Nour ha enviado uno de sus guerreros reales para la venganza! \nNo hay nada que pueda hacer por usted ...
+
+136 Increíble!
+
+137 Se logró todos mis tareas con éxito. Ahora, ¿qué hacer? \nLet a echar un vistazo en el menú de opciones. No se puede ajustar un montón de ... así ... opciones. \nPor ejemplo, usted puede elegir su estilo de barco y color o cambiar su nombre ...
+
+138 ¿Quién es mejor?
+139 Se puede visualizar una lista de fragmentos, los puntos y así sucesivamente a través de <Tab>. \nFurthermore los números al lado de su nombre ilustrar sus fragmentos contador y la distancia a la mejor.
+
+140 Felicidades!
+141 Has terminado este tutorial. Ahora está listo para luchar en la gran guerra. Si quieres seguir practicando, sólo tiene que esperar al enemigo para reaparecer. Usted puede terminar su formación con <Esc>. \ntenga un gran momento con MARS!
+
+142 Usted destruio su nave!
+143 impresionante, que destruyó su nave! Muy bien, vamos a obtener una nueva. Sólo tiene que esperar unos segundos ...
+
+144 ¿Te diste cuenta?
+145 Su vida está agotando! Mantenga un ojo en la barra de vida verde. Es mejor que la tierra si es demasiado vacía.
+
+146 ¿Te diste cuenta?
+147 Su combustible es el drenaje! Mantenga un ojo en la barra amarilla de combustible. Es mejor que la tierra si es demasiado vacía.
+
+148 Casi lo tuviste!
+149 Ve el nombre de su oponente. Su color indica su puntos de vida. Cuanto más se convierte en rojo, el más débil es su enemigo.
+
+/ / Collumns tabmenu
+
+154 Puntos
+155 Destrucciones
+156 Auto destrucciones
+157 Suicidios
+158 Muertes
+159 Reputación
+160 Total:
+161 Estadísticas
+
+/ / 163
+
