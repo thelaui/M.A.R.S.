@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Media/sound.hpp"
 # include "Particles/particles.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <cmath>
 
@@ -223,6 +224,7 @@ void Ball::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(8, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
+    postFX::   onExplosion();
     location_ = respawnLocation_;
     rotation_ = respawnRotation_;
     velocity_ = Vector2f();

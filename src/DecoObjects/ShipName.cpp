@@ -46,12 +46,6 @@ void ShipName::draw() const {
                         else
                             text::drawMobileSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
                         break;
-                    case controllers::cMidBot:
-                        if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name() + " [MID]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
-                        else
-                            text::drawMobileSpaceText(ship_->owner_->name() + " [MID]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
-                        break;
                     default:
                         if (ship_->docked_)
                             text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);

@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <cfloat>
 
@@ -124,6 +125,7 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
+    postFX::onExplosion();
     setDamageSource(parent_);
     physics::  causeShockWave(this, 50.f);
     particles::spawn(particles::pShockWave, location_);

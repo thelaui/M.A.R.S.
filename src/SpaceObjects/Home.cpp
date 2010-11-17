@@ -28,6 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "Players/Team.hpp"
 # include "SpaceObjects/Ball.hpp"
+# include "Shaders/postFX.hpp"
 
 # include <sstream>
 
@@ -178,6 +179,7 @@ void Home::explode() {
     particles::spawnMultiple(200, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(2, particles::pBurningFragment, location_);
+    postFX::   onExplosion();
     physics::removeStaticObject(this);
     location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;

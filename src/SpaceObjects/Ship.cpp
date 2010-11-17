@@ -346,7 +346,7 @@ float Ship::getLife() const {
 }
 
 float Ship::getFuel() const {
-    return fuel_ < 0.f ? 0.f : fuel_;
+    return fuel_ < 0.f ? 0.f : fuel_/maxFuel_*100.f;
 }
 
 Player* Ship::getOwner() const {
@@ -368,6 +368,7 @@ void Ship::explode() {
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();
+    postFX::   onExplosion();
     visible_ = false;
     life_ = 0.f;
     fuel_ = 0.f;
@@ -424,8 +425,8 @@ void Ship::respawn() {
     rotation_ = respawnRotation_;
     velocity_ = Vector2f();
     rotateSpeed_ = (1.f);
-    life_ = 200.f;
-    fuel_ = 100.f;
+    life_ = maxLife_;
+    fuel_ = maxFuel_;
     fragStars_ = 0;
     fragStarTimer_ = 0.f;
     visible_ = true;

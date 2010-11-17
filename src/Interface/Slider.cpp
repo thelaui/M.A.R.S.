@@ -112,12 +112,12 @@ void Slider::draw() const {
     if (showValue_) {
         std::stringstream sstr;
         if(!sliderNames_.empty()) {
-            if (sliderNames_.size() < *value_) {
+            if (sliderNames_.size() <= *value_-minValue_) {
                 sstr << *value_;
                 text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
             }
             else
-                text::drawScreenText(sliderNames_[*value_-1], origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+                text::drawScreenText(sliderNames_[*value_-minValue_], origin + Vector2f(labelWidth_-10,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
         else {
             sstr << *value_;

@@ -18,6 +18,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 
 # include "System/window.hpp"
+# include "System/settings.hpp"
+# include "Menu/menus.hpp"
 
 namespace timer {
 
@@ -49,8 +51,9 @@ namespace timer {
 
         // get frametime, occasionally with slow motion
         if (slowMoTimer_ > 1.f) {
-            slowMoTimer_ -= frameTime;
-            frameTime_ =  frameTime*0.25f;
+            if (!menus::visible())
+                slowMoTimer_ -= frameTime;
+            frameTime_ =  frameTime*0.15f;
             totalTime_ += frameTime_;
         }
         else if (slowMoTimer_ > 0.f) {
@@ -63,24 +66,26 @@ namespace timer {
             totalTime_ += frameTime_;
         }
 
-        // reset explosion counter
-        if (exploCounterResetTimer_ > 0.f) {
-            exploCounterResetTimer_ -= frameTime;
-            if (exploCounterResetTimer_ <= 0.f) {
-                exploCounter_ = 0;
+        if (settings::C_slowMoKickIn > 0) {
+            // reset explosion counter
+            if (exploCounterResetTimer_ > 0.f) {
+                exploCounterResetTimer_ -= frameTime;
+                if (exploCounterResetTimer_ <= 0.f) {
+                    exploCounter_ = 0;
+                }
             }
-        }
 
-        // enable slow motion, when enough ships exploded
-        if (exploCounter_ >= 2) {
-            exploCounter_ = 0;
-            slowMoTimer_ = 3.f;
+            // enable slow motion, when enough ships exploded
+            if (exploCounter_ >= settings::C_slowMoKickIn && !menus::visible()) {
+                exploCounter_ = 0;
+                slowMoTimer_ = 5.f;
+            }
         }
     }
 
     void onShipExplode() {
         if (slowMoTimer_ > 0.f) {
-            slowMoTimer_ = 3.f;
+            slowMoTimer_ = 4.5f;
         }
         else {
             ++exploCounter_;
@@ -91,6 +96,8 @@ namespace timer {
     float frameTime() { return frameTime_; }
 
     float totalTime() { return totalTime_; }
+
+    float slowMoTime() { return slowMoTimer_ < 0.f ? 0.f : slowMoTimer_*0.2f; }
 
     float fps()       { return fps_; }
 }

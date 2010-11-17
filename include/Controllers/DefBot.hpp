@@ -20,15 +20,35 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/BotController.hpp"
 
+/// An defensive bot for SpaceBall.
+/// This bot tries to prevent the enemies smashing the ball into
+/// it's Home.
+
 class DefBot: public BotController {
     public:
+        /// Constructs an defensive BotController, attached to a Player.
+        /// \param slave The Player, controlled by this bot.
+        /// \param strength The individual strength of the bot. From 0 to 100.
         DefBot(Player* slave, float strength):
             BotController(slave, controllers::cDefBot, strength) {}
 
     private:
+        /// Evaluates the situation of the bot.
+        /// Calls all other private member methods for this purpose.
         void evaluate();
+
+        /// Checks life and fuel.
+        /// Changes the priority of BOT_LAND.
         void checkEnergy();
+
+        /// Checks the position of the ball.
+        /// Changes the priority of BOT_KICK_BALL_TE, BOT_KICK_BALL_OH
+        /// and BOT_PROTECT_ZONE.
         void checkBall();
+
+        /// Checks, whether the Home has been destroyed already.
+        /// If so, BOT_PROTECT_ZONE is set to 100, which prevents the
+        /// bot from trying to land.
         void checkHome();
 };
 

@@ -77,6 +77,8 @@
 
 166 PowerUp-Spawnrate
 167 Botstärke
+168 Explosionen für Slow-Motion
+169 Aus
 
 // Audiooptionen
 
@@ -105,6 +107,12 @@
 // Lizenz
 
 058 Dieses Programm ist kostenfreie Software; es kann entsprechend den Bedingungen der GNU General Public License (Version 3 oder spätere, veröffentlich von der Free Software Foundation) verbreitet und/oder verändert werden.\n\nDieses Programm soll dem Nutzen dienen, dafür übernehmen die Entwickler aber KEINE GARANTIE, insbesondere nicht die der KOMMERZIELLEN VERBREITUNG oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Für weitere Informationen und die englische Originalversion sollte die GNU General Public License unter\nhttp://www.gnu.org/licenses/gpl-3.0.html eingesehen werden.
+
+// Credits
+
+170 Credits
+171 Besonderer Dank geht an:
+172 Übersetzungen:\n    Spanisch: Hugo alias Agent G\n    Deutsch: Sandra\n\nTests und kreative Ideen:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // Beenden
 
@@ -237,4 +245,4 @@
 160 Gesamt:
 161 Statistik
 
-// 168
+// 171

@@ -22,17 +22,44 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Player;
 
-namespace controllers {
-    enum ControlType {cDefBot, cMidBot, cAggroBot, cDMBot, cCKBot, cTutBot, cTutAggroBot, cPlayer1, cPlayer2};
+/// A namespace which controls all Ships.
+/// Local Player's Ships are controlled by KeyControllers, Bots
+/// are controlled by BotControllers.
 
+namespace controllers {
+    /// A list of all supported control types.
+    enum ControlType {
+        cDefBot,        ///< Defensive SpaceBall bots.
+        cAggroBot,      ///< Aggressive SpaceBall bots.
+        cDMBot,         ///< DeathMatch bots.
+        cCKBot,         ///< CannonKeep bots.
+        cTutBot,        ///< A dumb tutorial bot.
+        cTutAggroBot,   ///< A better tutorial bot.
+        cPlayer1,       ///< Local player one.
+        cPlayer2        ///< Local player two.
+    };
+
+    /// Updates all controllers.
     void update();
+
+    /// Notifies KeyControllers of single key events.
     void singleKeyEvent(sf::Key::Code keyCode);
 
+    /// Draws some debugging stuff.
+    /// Like lines, showing where the bot heads.
     void draw();
 
+    /// Adds a controller to the game.
+    /// \param slave The Player, controlled by this bot.
+    /// \param type The type of the Controller.
+    /// \param strength The individual strength of the bot. From 0 to 100.
     void addController(ControlType type, Player* slave, float strength = 1.f);
 
+    /// Resets Controllers.
+    /// Should be called, when a game restarts.
     void resetBots();
+
+    /// Deletes all Controllers.
     void clear();
 }
 

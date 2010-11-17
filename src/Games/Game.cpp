@@ -32,6 +32,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 # include "Menu/menus.hpp"
 # include "System/window.hpp"
+# include "Media/announcer.hpp"
 # include "Media/music.hpp"
 # include "Shaders/postFX.hpp"
 # include "SpaceObjects/stars.hpp"
@@ -67,6 +68,7 @@ Game::~Game() {
 
 void Game::update() {
     music::update();
+    announcer::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
         hud::update();
         if (players::getFirstPoints() < pointLimit_) {

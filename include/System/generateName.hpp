@@ -29,7 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace generateName {
     /// Returns a random bot name and its associated strength.
     /// The name is loaded from the file "botnames.txt".
-    /// \param randomNumber chooses the group of names from which the returned
+    /// \param randomNumber Chooses the group of names from which the returned
     ///        name will be chosen. For bots in the same team, use the same number.
     std::pair<sf::String, int> const& bot(int randomNumber);
 

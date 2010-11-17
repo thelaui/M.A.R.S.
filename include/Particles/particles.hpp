@@ -31,32 +31,32 @@ class SpaceObject;
 namespace particles {
     /// A list of all supported particle types.
     enum ParticleType {
-                    pFuel,              ///< Spawned by the Ships exhaust.
-                    pSpark,             ///< Spawned when a Particle collides with a Ship, or a Ship with another Ship.
-                    pDust,              ///< Spawned by explosions - they form the ring.
-                    pAmmoFlubba,        ///< Spawned by the Flubba.
-                    pExplode,           ///< Spawned by explosions (the yellowish glow).
-                    pAmmoAFK47,         ///< Spawned by the AFK47.
-                    pFragment,          ///< Spawned by explosions.
-                    pAmmoShotgun,       ///< Spawned by the Shotgun.
-                    pAmmoROFLE,         ///< Spawned by the ROFLE.
-                    pMiniAmmoFlubba,    ///< Spawned by the pAmmoFlubba.
-                    pMud,               ///< Spawned by particles colliding with planets.
-                    pAmmoBurner,        ///< Spawned by the Burner.
-                    pMiniFlame,         ///< Spawned by a BurningFragment when it hits a Planet.
-                    pSmoke,             ///< Spawned by a BurningFragment.
-                    pEruption,          ///< Spawned by a Sun.
-                    pFragmentFlame,     ///< Spawned by a BurningFragment
-                    pBurningFragment,   ///< Spawned by explosions.
-                    pCannonBall,        ///< Spawned by the Cannon of CannonKeep.
-                    pAmmoH2OMG,         ///< Spawned by the H2OMG.
-                    pHeat,              ///< Spawned by a MiniFlame.
-                    pHeatJet,           ///< Spawned by the Ships exhaust
-                    pShockWave,         ///< Spawned by shock waves.
-                    pHeatBurner,        ///< Spawned by the Burner (for bumpmapping).
-                    pMiniFlameSmoke,    ///< Spawned by MiniFlames.
-                    pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
-                    pPowerUpCollect     ///< Spawned by just collected powerUps.
+        pFuel,              ///< Spawned by the Ships exhaust.
+        pSpark,             ///< Spawned when a Particle collides with a Ship, or a Ship with another Ship.
+        pDust,              ///< Spawned by explosions - they form the ring.
+        pAmmoFlubba,        ///< Spawned by the Flubba.
+        pExplode,           ///< Spawned by explosions (the yellowish glow).
+        pAmmoAFK47,         ///< Spawned by the AFK47.
+        pFragment,          ///< Spawned by explosions.
+        pAmmoShotgun,       ///< Spawned by the Shotgun.
+        pAmmoROFLE,         ///< Spawned by the ROFLE.
+        pMiniAmmoFlubba,    ///< Spawned by the pAmmoFlubba.
+        pMud,               ///< Spawned by particles colliding with planets.
+        pAmmoBurner,        ///< Spawned by the Burner.
+        pMiniFlame,         ///< Spawned by a BurningFragment when it hits a Planet.
+        pSmoke,             ///< Spawned by a BurningFragment.
+        pEruption,          ///< Spawned by a Sun.
+        pFragmentFlame,     ///< Spawned by a BurningFragment
+        pBurningFragment,   ///< Spawned by explosions.
+        pCannonBall,        ///< Spawned by the Cannon of CannonKeep.
+        pAmmoH2OMG,         ///< Spawned by the H2OMG.
+        pHeat,              ///< Spawned by a MiniFlame.
+        pHeatJet,           ///< Spawned by the Ships exhaust
+        pShockWave,         ///< Spawned by shock waves.
+        pHeatBurner,        ///< Spawned by the Burner (for bumpmapping).
+        pMiniFlameSmoke,    ///< Spawned by MiniFlames.
+        pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
+        pPowerUpCollect     ///< Spawned by just collected powerUps.
     };
 
     /// Updates all particles.

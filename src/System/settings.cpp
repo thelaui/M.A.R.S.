@@ -45,7 +45,6 @@ namespace settings {
     bool        C_StarsHigh =               false;
     bool        C_StarsLow =                true;
     bool        C_StarsNo =                 false;
-    bool        C_enableSlowMotion =        true;
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
     int         C_botsLeft =                4;
@@ -55,6 +54,7 @@ namespace settings {
     int         C_pointLimitDM =            50;
     int         C_pointLimitTDM =           100;
     int         C_powerUpRate =             40;
+    int         C_slowMoKickIn =            2;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;
@@ -115,7 +115,6 @@ namespace settings {
         outStream << "[drawAIPath] "            << (C_drawAIPath ? "true" : "false") << std::endl;
         outStream << "[iDumb] "                 << (C_iDumb) << std::endl;
         outStream << "[adaptiveParticleCount] " << (C_adaptiveParticleCount ? "true" : "false") << std::endl;
-        outStream << "[enableSlowMotion] "      << (C_enableSlowMotion ? "true" : "false") << std::endl;
         outStream << "[drawLocalNames] "        << (C_drawLocalNames ? "true" : "false") << std::endl;
         outStream << "[drawRemoteNames] "       << (C_drawRemoteNames ? "true" : "false") << std::endl;
         outStream << "[drawBotNames] "          << (C_drawBotNames ? "true" : "false") << std::endl;
@@ -128,6 +127,7 @@ namespace settings {
         outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
         outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
         outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
+        outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
         outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
         outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << std::endl;
         outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
@@ -242,13 +242,6 @@ namespace settings {
                     else if (value == "false")  C_adaptiveParticleCount = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
-                else if (inputLine == "[enableSlowMotion]") {
-                    std::string value;
-                    iss >> value;
-                    if (value == "true")        C_enableSlowMotion = true;
-                    else if (value == "false")  C_enableSlowMotion = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
-                }
                 else if (inputLine == "[drawLocalNames]") {
                     std::string value;
                     iss >> value;
@@ -318,6 +311,11 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_powerUpRate = clamp(value, 0, 100);
+                }
+                else if (inputLine == "[slowMoKickIn]") {
+                    int value;
+                    iss >> value;
+                    C_slowMoKickIn = clamp(value, 0, 10);
                 }
                 else if (inputLine == "[playerIName]") {
                     std::string value;

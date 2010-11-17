@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/announcer.hpp"
 
 # include "System/settings.hpp"
+# include "System/timer.hpp"
 
 # include <iostream>
 # include <SFML/Audio.hpp>
@@ -53,13 +54,13 @@ namespace announcer {
             else {
                 // load it from file and...
                 switch (sound) {
-                    case Bam:                 loadSound_(sound, "data/wav/announcer/bam.wav");              break;
-                    case Impressive:          loadSound_(sound, "data/wav/announcer/impressive.wav");       break;
-                    case NiceOne:             loadSound_(sound, "data/wav/announcer/niceOne.wav");          break;
-                    case NotFunny:            loadSound_(sound, "data/wav/announcer/notFunny.wav");         break;
-                    case ThatWasGreat:        loadSound_(sound, "data/wav/announcer/thatWasGreat.wav");     break;
-                    case WellDone:            loadSound_(sound, "data/wav/announcer/wellDone.wav");         break;
-                    case YouSuck:             loadSound_(sound, "data/wav/announcer/youSuck.wav");          break;
+                    case Bam:                 loadSound_(sound, "data/audio/announcer/bam.wav");              break;
+                    case Impressive:          loadSound_(sound, "data/audio/announcer/impressive.wav");       break;
+                    case NiceOne:             loadSound_(sound, "data/audio/announcer/niceOne.wav");          break;
+                    case NotFunny:            loadSound_(sound, "data/audio/announcer/notFunny.wav");         break;
+                    case ThatWasGreat:        loadSound_(sound, "data/audio/announcer/thatWasGreat.wav");     break;
+                    case WellDone:            loadSound_(sound, "data/audio/announcer/wellDone.wav");         break;
+                    case YouSuck:             loadSound_(sound, "data/audio/announcer/youSuck.wav");          break;
                     case COUNT: std::cout << "COUNT is not a valid Soundtype..." << std::endl;
                 }
                 // ... play it afterwards
@@ -67,6 +68,20 @@ namespace announcer {
                     playSound(sound);
             }
         }
+    }
+
+    void update() {
+        float slowMoTime(timer::slowMoTime());
+        if (slowMoTime > 0.75f) {
+            soundChannel_.SetPitch(slowMoTime*0.666f);
+        }
+        else if (slowMoTime > 0.25f) {
+            soundChannel_.SetPitch(0.5f);
+        }
+        else if (slowMoTime > 0.0f) {
+            soundChannel_.SetPitch(1.f-slowMoTime*2.f);
+        }
+        else soundChannel_.SetPitch(1.f);
     }
 
     void announce (SoundMood mood) {

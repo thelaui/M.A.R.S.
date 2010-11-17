@@ -44,7 +44,6 @@ namespace settings {
     extern int            C_musicVolume;
     extern bool           C_showFPS;
     extern bool           C_showLatency;
-    extern bool           C_enableSlowMotion;
     extern bool           C_showParticleCount;
     extern bool           C_fullScreen;
     extern bool           C_vsync;
@@ -63,6 +62,7 @@ namespace settings {
     extern int            C_pointLimitDM;
     extern int            C_pointLimitTDM;
     extern int            C_powerUpRate;
+    extern int            C_slowMoKickIn;
     extern bool           C_showInfoHide;
     extern bool           C_showInfoSB;
     extern bool           C_showInfoDM;

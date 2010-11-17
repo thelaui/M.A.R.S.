@@ -22,13 +22,24 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <cfloat>
 
+/// A very dumb bot for the tutorial.
+/// It just floats around.
+
 class TutBot: public BotController {
     public:
+        /// Constructs a dumb BotController, attached to a Player.
+        /// \param slave The Player, controlled by this bot.
+        /// \param strength The individual strength of the bot. From 0 to 100.
         TutBot(Player* slave, float strength):
             BotController(slave, controllers::cTutBot, strength) {}
 
     private:
+        /// Evaluates the situation of the bot.
+        /// Calls all other private member methods for this purpose.
         void evaluate();
+
+        /// Checks life and fuel.
+        /// Changes the priority of BOT_LAND.
         void checkEnergy();
 };
 

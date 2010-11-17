@@ -22,29 +22,57 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Ship;
 
+/// A base class which controls a Player's Ship.
+/// It provides some basic functionallity which directly
+/// interacts with the Ship.
+
 class Controller {
     public:
+        /// Constructs an Controller, attached to a Player.
+        /// \param slave The controlled Player.
+        /// \param type The type of the Controller.
         Controller(Player* slave, controllers::ControlType type):
                 type_(type),
                 slave_(slave) {}
 
+        /// Returns the Ship of the controlled PLayer.
         Ship const* ship() const;
+
+        /// Returns true, if the associated Ship is docked.
         bool shipDocked()  const;
+
+        /// Returns the type of the Controller.
         controllers::ControlType type() const;
 
     protected:
+        /// Accelerates the Ship. (continous action)
         void slaveUp    (bool up)    const;
+
+        /// Turns the Ship left. (continous action)
         void slaveLeft  (bool left)  const;
+
+        /// Turns the Ship right. (continous action)
         void slaveRight (bool right) const;
+
+        /// Fires the Ship's Weapon. (continous action)
         void slaveFire  (bool fire)  const;
 
+        /// "Presses" the Up-key. (single action)
         void slaveUp    () const;
+
+        /// "Presses" the Left-key. (single action)
         void slaveLeft  () const;
+
+        /// "Presses" the Right-key. (single action)
         void slaveRight () const;
+
+        /// "Presses" the Fire-key. (single action)
         void slaveFire  () const;
 
+        /// The type of the controller.
         controllers::ControlType type_;
 
+        /// The controlled Player.
         Player* slave_;
 };
 

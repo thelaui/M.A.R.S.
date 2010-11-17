@@ -30,6 +30,8 @@ namespace postFX {
     namespace {
         sf::Shader      postFX_;
         sf::RenderImage bumpMap_;
+        float           exposure_(1.f);
+        float           flashTimer_(0.f);
     }
 
     void update() {
@@ -41,7 +43,23 @@ namespace postFX {
             particles::drawHeat();
 
             bumpMap_.Display();
+
+            if (flashTimer_ > 0) {
+                flashTimer_ -= timer::frameTime();
+                if (flashTimer_ > 0.4f)
+                    exposure_ = (0.5f-flashTimer_)*5.f + 1.f;
+                else if (flashTimer_ > 0)
+                    exposure_ = (flashTimer_*1.25f) + 1;
+                else
+                    exposure_ = 1.f;
+            }
+
+            postFX_.SetParameter("Exposure", exposure_);
         }
+    }
+
+    void onExplosion() {
+        flashTimer_ = 0.5f;
     }
 
     sf::Shader* get() {
@@ -60,6 +78,7 @@ namespace postFX {
             gluOrtho2D(0, 1280, 800, 0);
             glEnable(GL_BLEND);
             postFX_.SetTexture("BumpMap", bumpMap_.GetImage());
+            postFX_.SetParameter("Exposure", exposure_);
         }
         else
             std::cout << "Shaders are not supported on your hardware! There will be no fancy graphics..." << std::endl;

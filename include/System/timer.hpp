@@ -37,6 +37,9 @@ namespace timer {
     /// Returns the total duration of the game in seconds.
     float totalTime();
 
+    /// Returns the remaining Slow-Mo-time.
+    float slowMoTime();
+
     /// Returns the current frames per second.
     /// Calculated twice a second.
     float fps();

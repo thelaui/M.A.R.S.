@@ -47,7 +47,7 @@ bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoi
     float distance = (nextPathPoint_-shipLocation).lengthSquare();
 
     bool accelerate(false);
-    if (velocityInAimDirection.lengthSquare() < 90000.f || shipVelocity*aimDirection_ < 0.f)
+    if (velocityInAimDirection.lengthSquare() < 15000.f + strength_* 75000.f || shipVelocity*aimDirection_ < 0.f)
         if (distance > 2500 || (shipVelocity*aimDirection_ < 0.f && (distance > 250.f || !goingToLand)))
             if (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection_*50.f, 10.f))
                 accelerate = true;

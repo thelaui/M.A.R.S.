@@ -29,6 +29,10 @@ namespace postFX {
     /// It will not do so, when settings::C_shaders is set to false.
     void update();
 
+    /// Notifies the shader of explosions.
+    /// For flash effects.
+    void onExplosion();
+
     /// Returns a pointer to the active shader.
     /// If an error occured, it will return NULL.
     sf::Shader* get();

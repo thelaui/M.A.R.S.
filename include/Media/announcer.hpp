@@ -30,6 +30,10 @@ namespace announcer {
                     COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 
+    /// Updates the announcer.
+    /// On slow motion it's pitch is changed.
+    void update();
+
     /// Plays a soundfile based on the given mood.
     /// For each mood there are a lot of soundfiles
     /// which will be chosen randomly.

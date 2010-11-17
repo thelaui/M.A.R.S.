@@ -36,7 +36,7 @@ namespace generateName {
         bool initialized_(false);
 
         void loadBotNames () {
-            std::vector<sf::String> lines = file::load("botnames.txt");
+            std::vector<sf::String> lines = file::load("data/botnames.txt");
             std::list<std::pair<sf::String, int> > newList;
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
                 if ((*it).ToAnsiString()[0] == '[') {
@@ -89,7 +89,7 @@ namespace generateName {
         }
 
         void loadShipNames () {
-            shipNames_ = file::load("shipnames.txt");
+            shipNames_ = file::load("data/shipnames.txt");
             if (shipNames_.size() == 0)
                 std::cout << "No Botnames found! Using boring numbers instead...\n";
         }

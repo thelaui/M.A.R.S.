@@ -61,35 +61,35 @@ namespace sound {
         else {
             // load it from file and...
             switch (sound) {
-                case Pump:                loadSound_(sound, "data/wav/toon/pump.wav");                  break;
-                case Laser:               loadSound_(sound, "data/wav/toon/laser.wav");                 break;
-                case BallExplode:         loadSound_(sound, "data/wav/toon/ballExplode.wav");           break;
-                case ShipExplode:         loadSound_(sound, "data/wav/toon/shipExplode.wav");           break;
-                case ShipCollide:         loadSound_(sound, "data/wav/toon/shipCollide.wav");           break;
-                case BallPlanetCollide:   loadSound_(sound, "data/wav/toon/ballPlanetCollide.wav");     break;
-                case Particle:            loadSound_(sound, "data/wav/toon/particle.wav");              break;
-                case ShipBallCollide:     loadSound_(sound, "data/wav/toon/shipBallCollide.wav");       break;
-                case BallRespawn:         loadSound_(sound, "data/wav/toon/ballRespawn.wav");           break;
-                case PlanetExplode:       loadSound_(sound, "data/wav/toon/planetExplode.wav");         break;
-                case PumpShipCollide:     loadSound_(sound, "data/wav/toon/pumpShipCollide.wav");       break;
-                case ShipPlanetCollide:   loadSound_(sound, "data/wav/toon/ballPlanetCollide.wav");     break;
-                case ShipRespawn:         loadSound_(sound, "data/wav/toon/shipRespawn.wav");           break;
-                case BlubPop:             loadSound_(sound, "data/wav/toon/blubPop.wav");               break;
-                case Fuel:                loadSound_(sound, "data/wav/toon/fuel.wav");                  break;
-                case LaserCollide:        loadSound_(sound, "data/wav/toon/laserCollide.wav");          break;
-                case NoFuel:              loadSound_(sound, "data/wav/toon/noFuel.wav");                break;
-                case Sniper:              loadSound_(sound, "data/wav/toon/sniper.wav");                break;
-                case Blub:                loadSound_(sound, "data/wav/toon/blub.wav");                  break;
-                case BlubCollide:         loadSound_(sound, "data/wav/toon/blubCollide.wav");           break;
-                case SniperShipCollide:   loadSound_(sound, "data/wav/toon/sniperShipCollide.wav");     break;
-                case SniperPlanetCollide: loadSound_(sound, "data/wav/toon/sniperPlanetCollide.wav");   break;
-                case Countdown:           loadSound_(sound, "data/wav/toon/countdown.wav");             break;
-                case Start:               loadSound_(sound, "data/wav/toon/start.wav");                 break;
-                case Swish:               loadSound_(sound, "data/wav/toon/swish.wav");                 break;
-                case Score:               loadSound_(sound, "data/wav/toon/score.wav");                 break;
-                case Click:               loadSound_(sound, "data/wav/interface/click.wav");            break;
-                case Tab:                 loadSound_(sound, "data/wav/interface/tab.wav");              break;
-                case Check:               loadSound_(sound, "data/wav/interface/check.wav");            break;
+                case Pump:                loadSound_(sound, "data/audio/toon/pump.wav");                  break;
+                case Laser:               loadSound_(sound, "data/audio/toon/laser.wav");                 break;
+                case BallExplode:         loadSound_(sound, "data/audio/toon/ballExplode.wav");           break;
+                case ShipExplode:         loadSound_(sound, "data/audio/toon/shipExplode.wav");           break;
+                case ShipCollide:         loadSound_(sound, "data/audio/toon/shipCollide.wav");           break;
+                case BallPlanetCollide:   loadSound_(sound, "data/audio/toon/ballPlanetCollide.wav");     break;
+                case Particle:            loadSound_(sound, "data/audio/toon/particle.wav");              break;
+                case ShipBallCollide:     loadSound_(sound, "data/audio/toon/shipBallCollide.wav");       break;
+                case BallRespawn:         loadSound_(sound, "data/audio/toon/ballRespawn.wav");           break;
+                case PlanetExplode:       loadSound_(sound, "data/audio/toon/planetExplode.wav");         break;
+                case PumpShipCollide:     loadSound_(sound, "data/audio/toon/pumpShipCollide.wav");       break;
+                case ShipPlanetCollide:   loadSound_(sound, "data/audio/toon/ballPlanetCollide.wav");     break;
+                case ShipRespawn:         loadSound_(sound, "data/audio/toon/shipRespawn.wav");           break;
+                case BlubPop:             loadSound_(sound, "data/audio/toon/blubPop.wav");               break;
+                case Fuel:                loadSound_(sound, "data/audio/toon/fuel.wav");                  break;
+                case LaserCollide:        loadSound_(sound, "data/audio/toon/laserCollide.wav");          break;
+                case NoFuel:              loadSound_(sound, "data/audio/toon/noFuel.wav");                break;
+                case Sniper:              loadSound_(sound, "data/audio/toon/sniper.wav");                break;
+                case Blub:                loadSound_(sound, "data/audio/toon/blub.wav");                  break;
+                case BlubCollide:         loadSound_(sound, "data/audio/toon/blubCollide.wav");           break;
+                case SniperShipCollide:   loadSound_(sound, "data/audio/toon/sniperShipCollide.wav");     break;
+                case SniperPlanetCollide: loadSound_(sound, "data/audio/toon/sniperPlanetCollide.wav");   break;
+                case Countdown:           loadSound_(sound, "data/audio/toon/countdown.wav");             break;
+                case Start:               loadSound_(sound, "data/audio/toon/start.wav");                 break;
+                case Swish:               loadSound_(sound, "data/audio/toon/swish.wav");                 break;
+                case Score:               loadSound_(sound, "data/audio/toon/score.wav");                 break;
+                case Click:               loadSound_(sound, "data/audio/interface/click.wav");            break;
+                case Tab:                 loadSound_(sound, "data/audio/interface/tab.wav");              break;
+                case Check:               loadSound_(sound, "data/audio/interface/check.wav");            break;
                 case COUNT: std::cout << "COUNT is not a valid Soundtype..." << std::endl;
             }
             // ... play it afterwards

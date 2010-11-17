@@ -38,24 +38,55 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TacticalZone;
 
+/// A basic controller with artificial intelligence.
+/// It provides some basic actions for bots, like landing,
+/// kicking the ball, switching weapons, attacking enemies
+/// and so on. Each BotController has got a value from 0 to 100
+/// for each of these actions, describing it's priority. It will
+/// perform the action with the highest priority.
+/// Twice a second the pure virtual protected member function
+/// evaluate is called, which will change the priorities.
+/// Furthermore, each BotController has got an aggro-table which
+/// stores a threat-value for each opponent. Enemies gain threat
+/// when they attack tha Player controlled by this bot. The enemiy
+/// with the highest threat is most likely to be attacked.
+
 class BotController: public Controller {
     public:
+        /// Constructs the BotController, initializing it's members.
+        /// \param slave The Player, controlled by this bot.
+        /// \param type The type of the Controller.
+        /// \param strength The individual strength of the bot. From 0 to 100.
         BotController(Player* slave, controllers::ControlType type, float strength);
 
+        /// Performs the action with the highest priority.
+        /// And calls evaluate twice a second.
         /*virtual*/ void update();
+
+        /// Draws some debugging stuff.
+        /// Like lines, showing where the bot heads.
         void draw();
 
+        /// Resets private members.
+        /// Should be called, when a game restarts.
         void reset();
 
     protected:
+        /// Changes the priorities.
+        /// Derived bots should implements this in different ways.
         virtual void evaluate() = 0;
 
+        /// A vector storing all priorities.
         std::vector<int> actions_;
-        Ship* target_;
-        std::map<Ship*, float> aggroTable_;
-        float    weaponChangeTimer_;
 
-        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false);
+        /// The current target of attacks.
+        Ship* target_;
+
+        /// Stores a threat-value for each opponent.
+        std::map<Ship*, float> aggroTable_;
+
+        /// Stores time until weapons may be changed.
+        float    weaponChangeTimer_;
 
     private:
         // actions
@@ -72,6 +103,7 @@ class BotController: public Controller {
 
         // helper functions
         bool     turnTo(Vector2f const& location);
+        bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false);
         Vector2f calcPath(Vector2f const& endPoint, bool avoidBall);
         void     shootEnemy(Ship* enemyShip = NULL);
         void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true);

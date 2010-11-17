@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/UiWindow.hpp"
 
+class TextBox;
+
 class About: public UiWindow {
     public:
         static UiWindow* get();
@@ -34,6 +36,7 @@ class About: public UiWindow {
 
         static bool kClose_;
         static sf::String marsName_;
+        static TextBox *aboutBox_, *licenseBox_, *creditsBox_;
 };
 
 # endif // ABOUT_HPP_INCLUDED

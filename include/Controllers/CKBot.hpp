@@ -20,14 +20,29 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Controllers/BotController.hpp"
 
+/// A bot for CannonKeep.
+/// This bot tries to gain control of the remote control of the Cannon.
+
 class CKBot: public BotController {
     public:
+        /// Constructs an BotController, attached to a Player.
+        /// \param slave The Player, controlled by this bot.
+        /// \param strength The individual strength of the bot. From 0 to 100.
         CKBot(Player* slave, float strength):
             BotController(slave, controllers::cCKBot, strength) {}
 
     private:
+        /// Evaluates the situation of the bot.
+        /// Calls all other private member methods for this purpose.
         void evaluate();
+
+        /// Checks life and fuel.
+        /// Changes the priority of BOT_LAND.
         void checkEnergy();
+
+        /// Checks the position of the CannonControl.
+        /// Changes the priority of BOT_GET_CANNON_CONTROL,
+        /// BOT_ESCAPE and BOT_ATTACK_TARGET.
         void checkCannonController();
 };
 
