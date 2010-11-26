@@ -51,7 +51,7 @@ void Shotgun::fire() const {
 }
 
 void Shotgun::next() {
-    parent_->currentWeapon_ = new RocketLauncher(parent_);
+    parent_->currentWeapon_ = new Fist(parent_);
     delete this;
 }
 

@@ -56,7 +56,7 @@ void RocketLauncher::next() {
 }
 
 void RocketLauncher::previous() {
-    parent_->currentWeapon_ = new Shotgun(parent_);
+    parent_->currentWeapon_ = new Fist(parent_);
     delete this;
 }
 

@@ -56,7 +56,8 @@ namespace particles {
         pHeatBurner,        ///< Spawned by the Burner (for bumpmapping).
         pMiniFlameSmoke,    ///< Spawned by MiniFlames.
         pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
-        pPowerUpCollect     ///< Spawned by just collected powerUps.
+        pPowerUpCollect,    ///< Spawned by just collected powerUps.
+        pAmmoFist           ///< Spawned by the Fist.
     };
 
     /// Updates all particles.

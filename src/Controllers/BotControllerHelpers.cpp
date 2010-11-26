@@ -162,8 +162,10 @@ void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) 
     float minDistance(FLT_MAX);
     if (ship()->currentWeapon_->getName() == "SHOTGUN")
         minDistance = 90000.f;
-    else if(ship()->currentWeapon_->getName() == "BURNER")
+    else if(ship()->currentWeapon_->getName() == "WT-Flamer")
         minDistance = 40000.f;
+    else if(ship()->currentWeapon_->getName() == "FIST OF ALI")
+        minDistance = 2500.f;
     if((location - ship()->location()).lengthSquare() < minDistance) {
         bool doShoot(true);
         if(avoidTeamMembers) {

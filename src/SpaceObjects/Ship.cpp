@@ -324,6 +324,11 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             setDamageSource(with->damageSource());
             break;
 
+        case spaceObjects::oAmmoFist:
+            amount = 25.f;
+            setDamageSource(with->damageSource());
+            break;
+
         default:;
     }
     if (!collectedPowerUps_[items::puShield])

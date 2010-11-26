@@ -46,6 +46,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/MiniFlameSmoke.hpp"
 # include "Particles/AmmoRocket.hpp"
 # include "Particles/PowerUpCollect.hpp"
+# include "Particles/AmmoFist.hpp"
 
 # include "TrailEffects/trailEffects.hpp"
 
@@ -77,6 +78,7 @@ namespace particles {
         MiniFlameSmoke::   updateAll();
         AmmoRocket::       updateAll();
         PowerUpCollect::   updateAll();
+        AmmoFist::         updateAll();
     }
 
     void drawLower() {
@@ -111,7 +113,6 @@ namespace particles {
         glBindTexture(GL_TEXTURE_2D, 0);
 
         Fragment::         drawAll();
-
     }
 
     void drawHigher() {
@@ -200,6 +201,7 @@ namespace particles {
             case pMiniFlameSmoke:   MiniFlameSmoke::   spawn(location, direction, velocity, color, damageSource); break;
             case pAmmoRocket:       AmmoRocket::       spawn(location, direction, velocity, color, damageSource); break;
             case pPowerUpCollect:   PowerUpCollect::   spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoFist:         AmmoFist::         spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -229,7 +231,8 @@ namespace particles {
                 + MiniFlame::count() + AmmoFlubba::count() + MiniAmmoFlubba::count()
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
-                + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count();
+                + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count()
+                + AmmoFist::count();
     }
 
     void clear() {
@@ -259,5 +262,6 @@ namespace particles {
         MiniFlameSmoke::   clear();
         AmmoRocket::       clear();
         PowerUpCollect::   clear();
+        AmmoFist::         clear();
     }
 }
