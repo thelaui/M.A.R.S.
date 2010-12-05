@@ -72,6 +72,7 @@ namespace settings {
     extern int            C_resY;
     extern int            C_colorDepth;
     extern bool           C_shaders;
+    extern sf::Key::Code  C_screenShotKey;
     ///@}
 
     /// \name Player settings

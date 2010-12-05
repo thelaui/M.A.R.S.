@@ -29,6 +29,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/stars.hpp"
 
 # include <SFML/OpenGL.hpp>
+# include <sstream>
+# include <time.h>
 
 namespace window {
 
@@ -48,6 +50,25 @@ namespace window {
                 glViewport((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_);
             else
                 glViewport(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_);
+        }
+
+        void screenShot() {
+            sf::Image shot;
+            const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+            if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
+                shot.CopyScreen(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
+            else
+                shot.CopyScreen(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));
+
+            time_t rawtime;
+            struct tm* timeinfo;
+            time (&rawtime);
+            timeinfo = localtime(&rawtime);
+
+            std::stringstream filename;
+            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".png";
+
+            shot.SaveToFile(filename.str());
         }
 
         void resized() {
@@ -86,7 +107,9 @@ namespace window {
                 else if (event.Type == sf::Event::Closed)
                     window_.Close();
                 else if (event.Type == sf::Event::KeyPressed) {
-                    if (!menus::visible())
+                    if (event.Key.Code == settings::C_screenShotKey)
+                        screenShot();
+                    else if (!menus::visible())
                         controllers::singleKeyEvent(event.Key.Code);
                     menus::buttonPressed(event.Key.Code);
                 }

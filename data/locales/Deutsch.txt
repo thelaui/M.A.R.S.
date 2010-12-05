@@ -60,6 +60,7 @@
 035 Zeige Spielinformationen
 036 Bilder pro Sekunde
 152 Sprache
+153 Taste für Screenshots
 037 Partikelzahl
 038 Partikelzahl
 039 Partikellebensdauer
@@ -70,7 +71,6 @@
 164 Shader sind mit deiner Hardware leider nicht möglich!
 
 151 Hochauflösende Sterne
-153 ####
 173 Auflösung
 174 Farbtiefe
 

@@ -64,6 +64,7 @@ namespace settings {
     int         C_resY =                    sf::VideoMode::GetDesktopMode().Height;
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 postFX::supported();
+    sf::Key::Code  C_screenShotKey =        sf::Key::F12;
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
@@ -156,6 +157,7 @@ namespace settings {
         outStream << "[resolutionX] "           << C_resX << std::endl;
         outStream << "[resolutionY] "           << C_resY << std::endl;
         outStream << "[colorDepth] "            << C_colorDepth << std::endl;
+        outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
 
         outStream.close();
     }
@@ -495,6 +497,11 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_colorDepth = value;
+                }
+                else if (inputLine == "[screenShotKey]") {
+                    int value;
+                    iss >> value;
+                    C_screenShotKey = (sf::Key::Code)value;
                 }
                 else
                     std::cout << inputLine << " is a bad option in mars.cfg!\n";

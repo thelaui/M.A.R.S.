@@ -140,7 +140,8 @@ UiWindow* OptionsMenu::get() {
         tabInterface->addWidget(new Label(locales::getLocale(locales::GameInformation), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), &settings::C_showFPS, Vector2f(10,50), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), &settings::C_showParticleCount, Vector2f(10,70), 150));
-        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::Language), &language_, locales::getLanguages(), Vector2f(10,130), 360, 185));
+        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::Language), &language_, locales::getLanguages(), Vector2f(10,130), 450, 187));
+        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), &settings::C_screenShotKey, Vector2f(10,150), 450));
 
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));

@@ -60,6 +60,7 @@
 035 Show Game Information
 036 Frames per Second
 152 Language
+153 Hotkey for Screenshots
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
@@ -70,7 +71,6 @@
 164 Sadly, shaders are not supported by your hardware!
 
 151 High Starfield Resolution
-153 #############
 173 Resolution
 174 Color Depth
 
