@@ -30,7 +30,7 @@ namespace locales {
                      RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
                      BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
-                     ParticleCountSlider, ParticleLifetime, ShowStars, Fullscreen, VerticalSynchronisation, MusicVolume,
+                     ParticleCountSlider, ParticleLifetime, GameSettings, Fullscreen, VerticalSynchronisation, MusicVolume,
                      SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Weapon, ShipName, Hue,
                      Saturation, Value, KeyEditHover, TextEditHover, AboutText, LicenseText, QuitText,
                      QuitCurrentGameText, StartNetworkText, JoinNetworkText, HideMenuText, Add, BackSlash, Comma, Dash,
@@ -41,9 +41,10 @@ namespace locales {
                      TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
                      TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
-                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, StarsLow, StarsNo,
+                     Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, $$$$ ,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
+                     Resolution, ColorDepth,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

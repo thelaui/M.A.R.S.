@@ -1,4 +1,4 @@
-/* Button.cpp
+/* ComboBox.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,93 +15,103 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Interface/Button.hpp"
+# include "Interface/ComboBox.hpp"
 
 # include "System/settings.hpp"
-# include "Media/sound.hpp"
+# include "System/window.hpp"
 # include "Media/text.hpp"
+# include "Media/texture.hpp"
+# include "Locales/locales.hpp"
+# include "Media/sound.hpp"
+# include "Menu/menus.hpp"
+# include "Interface/DropDownWindow.hpp"
+# include "Interface/Button.hpp"
 
 # include <SFML/OpenGL.hpp>
+# include <iostream>
 
-Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height):
-    UiElement(topLeft, width, height),
-    key_(key) {
+ComboBox::ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> values, Vector2f const& topLeft, int width, int labelWidth):
+    UiElement(topLeft, width, 16),
+    dropBox_(NULL),
+    labelWidth_(labelWidth),
+    currentValue_(value),
+    opened_(false) {
 
-    label_ = new Label(text, TEXT_ALIGN_CENTER, Vector2f(width*0.5f, 2));
+    label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
+
+    dropBox_ = new DropDownWindow(width-labelWidth, this, values);
 }
 
-Button::~Button () {
+ComboBox::~ComboBox () {
     delete label_;
+    delete dropBox_;
 }
 
-void Button::mouseLeft(bool down) {
+void ComboBox::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
     if (!pressed_ && hovered_) {
-        *key_ = true;
-        hovered_ = false;
         sound::playSound(sound::Click);
+        menus::showWindow(dropBox_);
     }
 }
 
-void Button::draw () const {
+void ComboBox::draw() const {
     Vector2f origin = parent_->getTopLeft() + topLeft_;
-    // draw Button
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glBegin(GL_QUADS);
         // dark background
         glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(origin.x_, origin.y_);
+        glVertex2f(labelWidth_+origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
-        glVertex2f(origin.x_, height_*0.7f + origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_*0.7f + origin.y_);
         glVertex2f(width_ + origin.x_, height_*0.7f + origin.y_);
         glColor4f(1.0,1.0,1.0,0.06);
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
 
     if (pressed_ && hovered_) {
         // bottom glow
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(origin.x_,origin.y_);
+        glVertex2f(labelWidth_+origin.x_,origin.y_);
         glVertex2f(origin.x_+width_,origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
         glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(origin.x_,origin.y_+height_);
+        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
     }
     else if (hovered_) {
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(origin.x_,height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_+origin.x_,height_*0.5f + origin.y_);
         glVertex2f(origin.x_+width_,height_*0.5f + origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
         glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(origin.x_,origin.y_+height_);
+        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
 
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(origin.x_, origin.y_);
+        glVertex2f(labelWidth_+origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
         glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
     }
     else {
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(origin.x_, origin.y_);
+        glVertex2f(labelWidth_+origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
         glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
     }
     glEnd();
-
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glLineWidth(1.f);
@@ -109,12 +119,33 @@ void Button::draw () const {
     else           glColor4f(1.0,0.4,0.8,0.4);
 
     glBegin(GL_LINE_LOOP);
-        glVertex2f(origin.x_,origin.y_+height_);
-        glVertex2f(origin.x_,origin.y_);
+        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
+        glVertex2f(labelWidth_+origin.x_,origin.y_);
         glVertex2f(origin.x_+width_,origin.y_);
         glVertex2f(origin.x_+width_,origin.y_+height_);
     glEnd();
 
+    glEnable(GL_TEXTURE_2D);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Widgets));
+
+    int x(3), y(3);
+    glColor3f(1.f, 1.f, 1.f);
+    glBegin(GL_QUADS);
+        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(origin.x_-18.f+width_, origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(origin.x_-2.f+width_, origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(origin.x_-2.f+width_, origin.y_-0.f);
+        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(origin.x_-18.f+width_, origin.y_-0.f);
+    glEnd();
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    text::drawFooText();
+    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
+
     // draw Label
     label_->draw();
 }
+
+

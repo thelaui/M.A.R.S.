@@ -1,4 +1,4 @@
-/* UiWindow.hpp
+/* ComboBox.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,41 +15,33 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef UIWINDOW_HPP_INCLUDED
-# define UIWINDOW_HPP_INCLUDED
+# ifndef COMBOBOX_HPP_INCLUDED
+# define COMBOBOX_HPP_INCLUDED
 
 # include "Interface/UiElement.hpp"
+# include "Interface/Label.hpp"
 
-# include <vector>
+class UiWindow;
 
-class UiWindow: public UiElement {
+class ComboBox: public UiElement {
     public:
-        UiWindow (int width, int height, Vector2f const& position = Vector2f());
-        ~UiWindow();
+        ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> values, Vector2f const& topLeft, int width, int labelWidth=185);
+        ~ComboBox ();
 
-        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
-        void buttonPressed(sf::Key::Code keyCode);
-        void textEntered(int keyCode);
 
-        void draw () const;
+        void draw() const;
 
-        virtual void checkWidgets() = 0;
-        virtual void onShow() = 0;
-
-        void addWidget (UiElement* toBeAdded);
-        void clearWidgets ();
-
-        void setTopMost(bool);
-        bool isTopMost() const {return topMost_;}
-
-        virtual Vector2f getTopLeft();
-
-    protected:
-        std::vector<UiElement*> widgets_;
+        friend class DropDownWindow;
 
     private:
-        bool topMost_;
+        UiWindow* dropBox_;
+
+        sf::String* currentValue_;
+        Label* label_;
+        int labelWidth_;
+        bool opened_;
 };
 
-# endif
+# endif // COMBOBOX_HPP_INCLUDED
+

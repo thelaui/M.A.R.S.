@@ -56,4 +56,5 @@ void InfoTDM::checkWidgets() {
 
 void InfoTDM::onShow() {
     infoBox_->setText(locales::getLocale(locales::InfoTDM));
+    settings::C_showInfoTDM = false;
 }

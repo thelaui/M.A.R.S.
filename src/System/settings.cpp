@@ -40,21 +40,19 @@ namespace settings {
     bool        C_fullScreen =              true;
     bool        C_vsync =                   true;
     bool        C_adaptiveParticleCount =   false;
-    int         C_globalParticleCount =     50;
-    int         C_globalParticleLifeTime =  50;
-    bool        C_StarsHigh =               false;
-    bool        C_StarsLow =                true;
-    bool        C_StarsNo =                 false;
+    int         C_globalParticleCount =     100;
+    int         C_globalParticleLifeTime =  100;
+    bool        C_StarsHigh =               true;
     bool        C_drawLocalNames =          true;
     bool        C_drawRemoteNames =         true;
     int         C_botsLeft =                4;
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
     int         C_pointLimit =              5;
-    int         C_pointLimitDM =            50;
-    int         C_pointLimitTDM =           100;
+    int         C_pointLimitDM =            20;
+    int         C_pointLimitTDM =           50;
     int         C_powerUpRate =             40;
-    int         C_slowMoKickIn =            2;
+    int         C_slowMoKickIn =            3;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;
@@ -62,6 +60,9 @@ namespace settings {
     bool        C_showInfoCK =              true;
     bool        C_showSelectLanguage =      true;
     sf::String  C_language =                "English";
+    int         C_resX =                    sf::VideoMode::GetDesktopMode().Width;
+    int         C_resY =                    sf::VideoMode::GetDesktopMode().Height;
+    int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 postFX::supported();
 
     // player settings ----- adjustable via options menu
@@ -150,8 +151,11 @@ namespace settings {
         outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
         outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
         outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
-        outStream << "[starResolution] "        << (C_StarsHigh ? 2 : (C_StarsLow ? 1 : 0 )) << std::endl;
+        outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
         outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
+        outStream << "[resolutionX] "           << C_resX << std::endl;
+        outStream << "[resolutionY] "           << C_resY << std::endl;
+        outStream << "[colorDepth] "            << C_colorDepth << std::endl;
 
         outStream.close();
     }
@@ -456,21 +460,12 @@ namespace settings {
                     else if (value == "false")  C_showInfoCK = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
-                else if (inputLine == "[starResolution]") {
-                    int value;
+                else if (inputLine == "[highStarResolution]") {
+                    std::string value;
                     iss >> value;
-                    C_StarsNo =   false;
-                    C_StarsHigh = false;
-                    C_StarsLow =  false;
-                    switch (value) {
-                        case 0:  C_StarsNo   =  true; break;
-                        case 1:  C_StarsLow  = true; break;
-                        case 2:  C_StarsHigh = true; break;
-                        default: {
-                            std::cout << value << " is a bad value for " << inputLine << ". Use 0, 1 or 2 instead.\n";
-                            C_StarsNo = true;
-                        }
-                    }
+                    if (value == "true")        C_StarsHigh = true;
+                    else if (value == "false")  C_StarsHigh = false;
+                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else if (inputLine == "[showSelectLanguage]") {
                     std::string value;
@@ -485,6 +480,21 @@ namespace settings {
                     if (value == "true")        C_shaders = true;
                     else if (value == "false")  C_shaders = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                }
+                else if (inputLine == "[resolutionX]") {
+                    int value;
+                    iss >> value;
+                    C_resX = value;
+                }
+                else if (inputLine == "[resolutionY]") {
+                    int value;
+                    iss >> value;
+                    C_resY = value;
+                }
+                else if (inputLine == "[colorDepth]") {
+                    int value;
+                    iss >> value;
+                    C_colorDepth = value;
                 }
                 else
                     std::cout << inputLine << " is a bad option in mars.cfg!\n";

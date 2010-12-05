@@ -32,11 +32,12 @@ class OptionsMenu: public UiWindow {
 
         static UiWindow* instance_;
 
-        static bool kOk_, kChooseLanguage_;
+        static bool kOk_;
 
-        static bool fullscreen_, vsync_, shaders_;
-        static int  hue1_, sat1_, val1_, hue2_, sat2_, val2_,
-                    soundVolume_, musicVolume_, announcerVolume_;
+        static bool       fullscreen_, vsync_, shaders_;
+        static sf::String resolution_, colorDepth_, language_;
+        static int        hue1_, sat1_, val1_, hue2_, sat2_, val2_,
+                          soundVolume_, musicVolume_, announcerVolume_;
 };
 
 # endif // OPTIONSMENU_HPP_INCLUDED

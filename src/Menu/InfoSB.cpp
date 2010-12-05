@@ -56,4 +56,5 @@ void InfoSB::checkWidgets() {
 
 void InfoSB::onShow() {
     infoBox_->setText(locales::getLocale(locales::InfoSB));
+    settings::C_showInfoSB = false;
 }

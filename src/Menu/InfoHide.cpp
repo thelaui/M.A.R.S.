@@ -55,4 +55,5 @@ void InfoHide::checkWidgets() {
 
 void InfoHide::onShow() {
     infoBox_->setText(locales::getLocale(locales::HideMenuText));
+    settings::C_showInfoHide = false;
 }

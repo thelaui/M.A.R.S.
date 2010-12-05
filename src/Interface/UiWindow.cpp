@@ -140,7 +140,6 @@ void UiWindow::draw () const {
         glTexCoord2f(1.f, 96.f/200.f);        glVertex2i(origin.x_-36+width_, origin.y_-36+height_);
     glEnd();
 
-
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
 

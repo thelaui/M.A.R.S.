@@ -38,41 +38,36 @@ namespace stars {
     }
 
     void draw() {
-        if (settings::C_StarsNo)
-            glClear(GL_COLOR_BUFFER_BIT);
-        else {
+        glDisable(GL_BLEND);
+        glEnable(GL_TEXTURE_2D);
 
-            glDisable(GL_BLEND);
-            glEnable(GL_TEXTURE_2D);
+        if (settings::C_StarsHigh)
+            switch (tex_) {
+                case 0: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars1_large)); break;
+                case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars2_large)); break;
+            }
+        else
+            switch (tex_) {
+                case 0: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars1_medium)); break;
+                case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars2_medium)); break;
+            }
 
-            if (settings::C_StarsHigh)
-                switch (tex_) {
-                    case 0: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars1_large)); break;
-                    case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars2_large)); break;
-                }
-            else
-                switch (tex_) {
-                    case 0: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars1_medium)); break;
-                    case 1: glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Stars2_medium)); break;
-                }
+        glBegin(GL_QUADS);
 
-            glBegin(GL_QUADS);
+        Vector2f const& viewport = window::getViewPort();
 
-            Vector2f const& viewport = window::getViewPort();
+        const float res = settings::C_StarsHigh ? 1.f/2048.f : 1.f/1024.f;
 
-            const float res = settings::C_StarsHigh ? 1.f/2048.f : 1.f/1024.f;
+        glColor3f(1.f, 1.0f, 1.0f);
+        glTexCoord2f(left_,                   top_);                   glVertex2f(0, 0);
+        glTexCoord2f(left_,                   top_ + res*viewport.y_); glVertex2f(0, viewport.y_);
+        glTexCoord2f(left_ + res*viewport.x_, top_ + res*viewport.y_); glVertex2f(viewport.x_, viewport.y_);
+        glTexCoord2f(left_ + res*viewport.x_, top_);                   glVertex2f(viewport.x_, 0);
 
-            glColor3f(1.f, 1.0f, 1.0f);
-            glTexCoord2f(left_,                   top_);                   glVertex2f(0, 0);
-            glTexCoord2f(left_,                   top_ + res*viewport.y_); glVertex2f(0, viewport.y_);
-            glTexCoord2f(left_ + res*viewport.x_, top_ + res*viewport.y_); glVertex2f(viewport.x_, viewport.y_);
-            glTexCoord2f(left_ + res*viewport.x_, top_);                   glVertex2f(viewport.x_, 0);
+        glEnd();
 
-            glEnd();
-
-            glDisable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, 0);
-            glEnable(GL_BLEND);
-        }
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+        glEnable(GL_BLEND);
     }
 }

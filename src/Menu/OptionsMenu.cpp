@@ -30,6 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Line.hpp"
 # include "Interface/RadioGroup.hpp"
 # include "Interface/RadioButton.hpp"
+# include "Interface/ComboBox.hpp"
 # include "System/window.hpp"
 # include "System/settings.hpp"
 # include "Menu/menus.hpp"
@@ -41,12 +42,17 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/ShaderError.hpp"
 # include "Shaders/postFX.hpp"
 
+# include <SFML/Window.hpp>
+# include <sstream>
+
 UiWindow* OptionsMenu::instance_(NULL);
 bool OptionsMenu::kOk_(false);
-bool OptionsMenu::kChooseLanguage_(false);
 bool OptionsMenu::fullscreen_(false);
 bool OptionsMenu::vsync_(false);
 bool OptionsMenu::shaders_(false);
+sf::String OptionsMenu::resolution_("");
+sf::String OptionsMenu::colorDepth_("");
+sf::String OptionsMenu::language_("");
 int  OptionsMenu::soundVolume_(0);
 int  OptionsMenu::musicVolume_(0);
 int  OptionsMenu::announcerVolume_(0);
@@ -94,18 +100,38 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat2_, 0, 255, Vector2f(60,190), 500, 135, true));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Value), &val2_, 0, 255, Vector2f(60,210), 500, 135, true));
 
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,130), 560));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,150), 560));
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));
-        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(10,70), 150));
-        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(10,90), 150));
-        tabGraphics->addWidget(new Label(locales::getLocale(locales::ShowStars), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f));
-        RadioGroup* group = new RadioGroup();
-            group->addRadioButton(new RadioButton(locales::getLocale(locales::StarsHigh), &settings::C_StarsHigh, Vector2f(210,50), 150));
-            group->addRadioButton(new RadioButton(locales::getLocale(locales::StarsLow), &settings::C_StarsLow, Vector2f(210,70), 150));
-            group->addRadioButton(new RadioButton(locales::getLocale(locales::StarsNo), &settings::C_StarsNo, Vector2f(210,90), 150));
-        tabGraphics->addWidget(group);
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(210,50), 150));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(410,50), 150));
+
+        std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
+        std::vector<sf::String> resolutions;
+        std::vector<sf::String> colorDepths;
+        for (std::vector<sf::VideoMode>::iterator it = modes.begin(); it != modes.end(); ++it) {
+            if (it->Width >= 800 && it->BitsPerPixel >= 8) {
+                std::stringstream res, depth;
+                res << it->Width << " x " << it->Height;
+                depth << it->BitsPerPixel;
+                sf::String resString(res.str()), depthString(depth.str());
+
+                bool newDepth(true), newRes(true);
+                for (std::vector<sf::String>::iterator it = resolutions.begin(); it != resolutions.end(); ++it)
+                    if (*it == resString) newRes = false;
+                for (std::vector<sf::String>::iterator it = colorDepths.begin(); it != colorDepths.end(); ++it)
+                    if (*it == depthString) newDepth = false;
+                if (newRes)
+                    resolutions.push_back(res.str());
+                if (newDepth)
+                    colorDepths.push_back(depth.str());
+            }
+        }
+        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), &resolution_, resolutions, Vector2f(10,70), 360, 185));
+        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::ColorDepth), &colorDepth_, colorDepths, Vector2f(10,90), 360, 185));
+        tabGraphics->addWidget(new Label(locales::getLocale(locales::GameSettings), TEXT_ALIGN_LEFT, Vector2f(10,130), 12.f));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), &settings::C_StarsHigh, Vector2f(10,150), 150));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,170), 560));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,190), 560));
 
         tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
@@ -114,10 +140,8 @@ UiWindow* OptionsMenu::get() {
         tabInterface->addWidget(new Label(locales::getLocale(locales::GameInformation), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), &settings::C_showFPS, Vector2f(10,50), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), &settings::C_showParticleCount, Vector2f(10,70), 150));
-        tabInterface->addWidget(new Button(new sf::String("Select Language"), &kChooseLanguage_, Vector2f(10,130), 120, 20));
+        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::Language), &language_, locales::getLanguages(), Vector2f(10,130), 360, 185));
 
-        tabGameplay->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,30), 560, 210, true));
-        tabGameplay->addWidget(new Slider(locales::getLocale(locales::iDumb), &settings::C_iDumb, 0, 100, Vector2f(10,50), 560, 210, true));
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));
         tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(10,70), 560, 210, true, off));
@@ -140,30 +164,42 @@ UiWindow* OptionsMenu::get() {
 void OptionsMenu::checkWidgets() {
     if (kOk_) {
         kOk_ = false;
+
+        int resX, resY, depth;
+        std::stringstream sstr1(resolution_);
+        sstr1 >> resX;
+        char x; sstr1 >> x;
+        sstr1 >> resY;
+
+        std::stringstream sstr2(colorDepth_);
+        sstr2 >> depth;
+
+        if (fullscreen_ != settings::C_fullScreen || vsync_ != settings::C_vsync || shaders_ != settings::C_shaders
+            || resX != settings::C_resX || resY != settings::C_resY || depth != settings::C_colorDepth) {
+
+            settings::C_resX = resX;
+            settings::C_resY = resY;
+            settings::C_colorDepth = depth;
+            settings::C_fullScreen = fullscreen_;
+            settings::C_vsync = vsync_;
+            settings::C_shaders = shaders_;
+            window::create();
+        }
+
+        if (language_ != settings::C_language) {
+            settings::C_language = language_;
+            locales::load();
+        }
+
         settings::save();
         menus::hideWindow();
     }
-    if (kChooseLanguage_) {
-        kChooseLanguage_ = false;
-        menus::showWindow(ChooseLanguage::get());
-    }
-    if (fullscreen_ != settings::C_fullScreen) {
-        settings::C_fullScreen = fullscreen_;
-        window::create();
-    }
-    if (vsync_ != settings::C_vsync) {
-        settings::C_vsync = vsync_;
-        window::applyGlobalSettings();
-    }
     if (shaders_ != settings::C_shaders) {
-        settings::C_shaders = shaders_;
         if (shaders_ && !postFX::supported()) {
             shaders_ = false;
             settings::C_shaders = false;
             menus::showWindow(ShaderError::get());
         }
-        else
-            window::applyGlobalSettings();
     }
     if ((hue1_ != settings::C_playerIColor.h()) | (sat1_ != settings::C_playerIColor.s()*255) | (val1_ != settings::C_playerIColor.v()*255)) {
         settings::C_playerIColor.h(hue1_);
@@ -188,12 +224,21 @@ void OptionsMenu::checkWidgets() {
 }
 
 void OptionsMenu::onShow() {
-    fullscreen_ = settings::C_fullScreen;
-    vsync_      = settings::C_vsync;
-    shaders_    = settings::C_shaders;
-    soundVolume_= settings::C_soundVolume;
-    musicVolume_= settings::C_musicVolume;
-    announcerVolume_= settings::C_announcerVolume;
+    fullscreen_      = settings::C_fullScreen;
+    vsync_           = settings::C_vsync;
+    shaders_         = settings::C_shaders;
+    soundVolume_     = settings::C_soundVolume;
+    musicVolume_     = settings::C_musicVolume;
+    announcerVolume_ = settings::C_announcerVolume;
+    language_        = settings::C_language;
+
+    std::stringstream sstr1;
+    sstr1 << settings::C_resX << " x " << settings::C_resY;
+    resolution_ = sstr1.str();
+
+    std::stringstream sstr2;
+    sstr2 << settings::C_colorDepth;
+    colorDepth_ = sstr2.str();
 
     hue1_ = settings::C_playerIColor.h();
     sat1_ = settings::C_playerIColor.s()*255;

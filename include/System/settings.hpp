@@ -48,8 +48,6 @@ namespace settings {
     extern bool           C_fullScreen;
     extern bool           C_vsync;
     extern bool           C_StarsHigh;
-    extern bool           C_StarsLow;
-    extern bool           C_StarsNo;
     extern bool           C_drawLocalNames;
     extern bool           C_drawRemoteNames;
     extern int            C_globalParticleCount;
@@ -70,6 +68,9 @@ namespace settings {
     extern bool           C_showInfoCK;
     extern bool           C_showSelectLanguage;
     extern sf::String     C_language;
+    extern int            C_resX;
+    extern int            C_resY;
+    extern int            C_colorDepth;
     extern bool           C_shaders;
     ///@}
 

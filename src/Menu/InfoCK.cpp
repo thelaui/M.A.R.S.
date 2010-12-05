@@ -56,4 +56,5 @@ void InfoCK::checkWidgets() {
 
 void InfoCK::onShow() {
     infoBox_->setText(locales::getLocale(locales::InfoCK));
+    settings::C_showInfoCK = false;
 }

@@ -150,10 +150,12 @@ namespace window {
     }
 
     void create() {
-        if (settings::C_fullScreen)
-            window_.Create(sf::VideoMode::GetFullscreenModes()[0], "M.A.R.S. - a " + generateName::game(), sf::Style::Fullscreen);
+        sf::VideoMode mode(settings::C_resX, settings::C_resY, settings::C_colorDepth);
+
+        if (settings::C_fullScreen && mode.IsValid())
+            window_.Create(mode, "M.A.R.S. - a " + generateName::game(), sf::Style::Fullscreen);
         else
-            window_.Create(sf::VideoMode(960, 600, 32), "M.A.R.S. - a " + generateName::game());
+            window_.Create(mode, "M.A.R.S. - a " + generateName::game());
 
         window_.UseVerticalSync(settings::C_vsync);
         //window_.SetFramerateLimit(10);
@@ -189,6 +191,16 @@ namespace window {
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
+
+        if (settings::C_shaders) {
+            backBuffer_.SetActive(true);
+            backBuffer_.Clear();
+            backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+            glViewport(0,0,viewPort_.x_, viewPort_.y_);
+            backBuffer_.SetSmooth(false);
+        }
+        window_.SetActive(true);
+
     }
 
     void startDrawSpace() {
@@ -253,17 +265,6 @@ namespace window {
 
     void showCursor(bool show) {
         window_.ShowMouseCursor(show);
-    }
-
-    void applyGlobalSettings() {
-        if (settings::C_shaders) {
-            backBuffer_.SetActive(true);
-            backBuffer_.Clear();
-            backBuffer_.Create(viewPort_.x_, viewPort_.y_);
-            glViewport(0,0,viewPort_.x_, viewPort_.y_);
-            backBuffer_.SetSmooth(false);
-        }
-        window_.UseVerticalSync(settings::C_vsync);
     }
 
     Vector2f const coordToPixel(Vector2f const& spaceCoord) {

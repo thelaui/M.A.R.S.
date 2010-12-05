@@ -10,7 +10,7 @@
 006 Continue
 007 Restart Game
 008 Hide Menu
-009 Quit current Game
+009 Return to Main Menu
 
 // standard buttons
 
@@ -59,18 +59,20 @@
 034 AI-Paths
 035 Show Game Information
 036 Frames per Second
+152 Language
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
-040 Stars
+040 Game Settings
 041 Fullscreen
 042 V-Sync
 163 Shader Effects
 164 Sadly, shaders are not supported by your hardware!
 
-151 High Resolution
-152 Low Resolution
-153 Off
+151 High Starfield Resolution
+153 #############
+173 Resolution
+174 Color Depth
 
 // gameplay options
 
@@ -245,5 +247,5 @@
 160 Total:
 161 Statistics
 
-// 171
+// 175
 

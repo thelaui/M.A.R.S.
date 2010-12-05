@@ -60,11 +60,8 @@ namespace window {
     /// Shows or hides the mouse cursor.
     void showCursor(bool show);
 
-    /// Can be called to apply settings::C_vsync and settings::C_shaders.
-    void applyGlobalSettings();
-
     /// Converts the given location from space coordinates (max (1280, 800)) to pixel coordinates on the screen.
-    Vector2f const  coordToPixel(Vector2f const& spaceCoord);
+    Vector2f const coordToPixel(Vector2f const& spaceCoord);
 
     /// Returns a vector representing the size of the visible game area on screen.
     /// In pixels.

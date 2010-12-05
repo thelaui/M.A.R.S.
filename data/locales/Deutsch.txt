@@ -10,8 +10,7 @@
 006 Spiel fortsetzen
 007 Spiel neu starten
 008 Menü verstecken
-009 Spiel verlassen
-
+009 Zurück zum Hauptmenü
 
 // Standard Knöpfe
 
@@ -60,18 +59,20 @@
 034 KI-Pfade
 035 Zeige Spielinformationen
 036 Bilder pro Sekunde
+152 Sprache
 037 Partikelzahl
 038 Partikelzahl
 039 Partikellebensdauer
-040 Sterne
+040 Spieleinstellungen
 041 Vollbild
 042 V-Sync
 163 Shadereffekte
-151 Hohe Auflösung
-164 Shader sind auf deiner Hardware leider nicht möglich!
+164 Shader sind mit deiner Hardware leider nicht möglich!
 
-152 Niedrige Auflösung
-153 Aus
+151 Hochauflösende Sterne
+153 ####
+173 Auflösung
+174 Farbtiefe
 
 // Gameplayoptionen
 
@@ -245,4 +246,4 @@
 160 Gesamt:
 161 Statistik
 
-// 171
+// 175
