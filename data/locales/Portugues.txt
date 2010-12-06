@@ -1,0 +1,259 @@
+// Botões do menu
+
+000 Iniciar Jogo Local
+105 Iniciar Tutorial
+001 Iniciar Jogo em Rede
+002 Entrar num Jogo em Rede   
+003 Opções
+004 Sobre
+005 Sair do M.A.R.S.
+006 Continuar
+007 Reiniciar jogo
+008 Esconder Menu
+009 Sair do Jogo Atual
+
+// Botões por padrão
+
+010 Iniciar
+011 Cancelar
+012 Info
+013 Fechar
+014 Licença
+015 Ok
+106 Próximo
+016 Mostrar esta informação novamente.
+
+// pregame options
+
+017 Time da Esquerda
+018 Time da Direita
+019 Robôs da Esquerda
+020 Robôs da Direita
+021 Robôs
+022 Limite de Extermínios  
+162 Limite de Pontos
+
+// story information
+
+023 No ano de 3547, civilizações por toda a galáxia colonizaram seus próprios planetas, vivendo em paz e harmonia neste ambiente. \nMas fora dos habitats contemplativos, a GRANDE GUERRA está crescendo. \nComo um famoso lutador em seu caminho para honra e prosperidade eternas, você deve proteger o seu planeta da destruição trazida pelos seus invejosos \nvizinhos! Lute, um verdadeiro herói como você nasceu para:  \nproteger o seu planeta da esfera de morte e derrotar seus inimigos fazendo-os bater em seu globo ridículo.
+
+024 Empurre ou atire a bola ao planeta inimigo!
+
+025 Como resultado da GRANDE GUERRA você perdeu tudo: sua casa, sua família e \nsua autoestima. \nSua última chance de sair desta vida miserável em que se encontra agora, é se tornar um gladiador na gloriosa \nArena da morte. \nResistir aos outros lutadores e ganhar pontos destruindo as cascas de noz que eles chamam de naves. \n Se prepare! \nMorte e glória te aguardam.
+
+026 Destrua quantos inimigos conseguir!
+
+027 As negociações falharam! \nTanto você quanto seus vizinhos tiveram de arcar com grandes perdas decorrentes da constante GRANDE GUERRA. \nComo última tentativa de ganhar vantagem, você ordenou a destruição dos suprimentos inimigos e a proteção de seus próprios suprimentos. A única maneira de fazer isso é uma épica BATALHA EM TIMES. \nProteja seus colegas e destrua seus inimigos! \nEnsine-os uma lição que eles nunca vão se esquecer.
+
+028 Destrua quantos inimigos for possível!
+
+029 Como se a GRANDE GUERRA não fosse o suficiente, seu sistema planetário esté ameaçado por uma fonte de incrível perversidade: Uma nave gigante de invasores desconhecidos está levitando sobre sua galáxia, mirando em planetas natais com uma arma monolítica de destruição em massa. \nComo um sinal de sarcasmo, os atacantes deixaram cair um controle remoto que ajusta esta fonte de morte e medo. \nAlcance-a primeiro para tornar o planeta natal de seu inimigo em um lugar desolado! \nSeja o DONO DO CANHÃO.
+
+030 Pegue o controle remoto e segure-o o máximo possível!
+
+// display options
+// tabs
+
+150 Interface
+165 Jogabilidade
+102 Gráficos
+103 Áudio
+
+104 Configurações da Janela
+031 Mostrar Informação de Debug
+032 Orientação dos Robôs
+033 Zonas
+034 Caminhos da IA 
+035 Mostrar Informações do Jogo
+036 Quadros por Segundo
+152 Language
+153 Hotkey for Screenshots
+037 Contagem de Partículas
+038 Contagem de Partículas
+039 Tempo de Vida das Partículas
+040 Game Settings
+041 Tela Cheia
+042 V-Sync
+163 Efeitos de Sombra
+164 Infelizmente a sua máquina não suporta os efeitos de Sombra!
+
+151 High Starfield Resolution
+173 Resolution
+174 Color Depth
+
+// gameplay options
+
+166 Taxa de Aparecimento de Bônus 
+167 Dificuldade dos Robôs
+168 Explosões para Câmera Lenta
+169 Desligado
+
+// audio options
+
+043 Volume da Música
+044 Volume do Som
+045 Volume dos Anúncios
+
+// player options
+
+046 Nome
+047 Acelerar
+048 Virar à Esquerda
+049 Virar à Direita
+050 Arma
+051 Nave
+052 Tonalidade
+053 Saturação
+054 Valor
+055 Presione uma tecla enquanto Segura o botão! 
+056 Digite um texto enquanto Segura o botão!   
+
+
+// about
+
+057 Esta é a primeira tentativa de criar um jogo em OpenGL com SFML. É um jogo para dois jogadores, controlando naves em uma configuração de espaço bidimensional, governada pelas leis da gravidade. \n\nSite: \nhttp://www.marsshooter.org
+
+// license
+
+058 Este programa é um software livre; você pode redistribuí-lo e/ou midificá-lo sob os termos da Licença Pública Geral GPL como publicado pela Free Software Foundation; seja a versão 3 da licença, ou (na sua opinião) alguma versão posterior. \n\nEste programa é distribuído na esperança de ser útil, mas SEM QUALQUER GARANTIA; inclusive sem a garantia implícita de COMERCIALIZAÇÃO ou APTIDÃO A UM FIM PARTICULAR. Veja a Licença Pública Geral GNU para mais detalhes. \n\nDisponível online em:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Créditos
+171 Agradecimentos especiais para:
+172 Traduções:\n   Alemão: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Realmente deseja sair?
+060 Realmente deseja terminar o jogo atual?
+
+// network information
+
+061 Jogar M.A.R.S pela internet ou rede local é uma função planejada, mas não implementada ainda. \n\nFique ligado!
+062 Jogar M.A.R.S pela internet ou rede local é uma função planejada, mas não implementada ainda. \n\nFique ligado!
+
+// hide menu
+
+063 Você pausou M.A.R.S. justo no meio de uma batalha insana? \nSe você quiser tirar uma foto, este botão permite gerar papéis de parede épicos, escondendo todas as janelas. \n\nPara trazê-las de volta basta pressionar ESC.
+
+// key names
+
+//064 Add
+064 Mais
+065 Barra invertida
+066 vírgula
+067 Barra
+068 Delete
+069 Divisão
+070 Baixo
+071 End
+072 Igual
+073 Home
+074 Insert
+075 Alt Esquerdo
+076 Parênteses Esquerdo
+077 Control Esquerdo
+078 Esquerda
+079 Shift Esquerdo
+080 Super Esquerdo
+081 Menu
+082 Multiplicação
+083 Page Down
+084 Page Up
+085 Pause
+086 Ponto
+087 Aspas
+088 Alt Direito
+089 Parênteses Direito
+090 Control Direito
+091 Return
+092 Direita
+093 Shift Direito
+094 Super Direito
+095 Ponto-e-vírgula
+096 Barra
+097 Espaço
+098 Menos
+099 Til
+100 Tab
+
+// tutorial texts
+
+107 Bem Vindo Cadete Espacial!
+108 Estamos felizes em recrutar um heroi em ascensão como você para se unir à GRANDE GUERRA!\nNós observamos que você precisa de um pouco de prática com sua nava.\nVamos começar o treinamento...
+
+109 Movimentação Básica
+110 Controlar a sua nave é a tarefa mais importante para dominar.\nTodos os movimentos são governados pelas leis da gravidade. Para desacelerar você deve se virar e acelerar na posição contrária. Controle sua nave, utilizando as teclas
+
+111 Aquecendo!
+112 Alcance a zona rosada!\nTente não bater sua tão nova espaçonave.
+
+113 Muito Bem!
+114 Agora volte ao seu planeta natal e tente aterrisar flutuando de costas levemente enquanto se aproxima.
+
+115 Bom Trabalho!
+116 Aterrisar corretamente não é uma tarefa fácil, não é?\nVocê deve aprender com seu coração.
+
+117 Algo mais difícil...
+118 Tente seguir o caminho marcado pelas áreas rosadas!\n\nEntraremos em contato novamente, quando você já dominar esta prática. Agora vá!
+
+119 Incrível
+120 Você é o melhor recruta que já vi.\nAgora se prepare para algo mais explosivo.
+
+121 Atirando...
+122 Para derrotar seus inimigos, você deve saber como atirar!\n para isso pressione
+123 Divirta-se enquanto atira por aí e então aterrise sua nave para continuar o tutorial.
+
+124 Boa Aterrisagem!
+125 Você parece ser um ótimo piloto.\n\nAgora que tal mais algumas armas?
+
+126 As Armas...
+127 Eu sei que você estava esperando por isso. Quando estiver pousado você pode alternar entre incríveis armas maléficas.\npressione
+128 para abrir seu arsenal.\nEntão use
+129 para escolher sua arma! Levante voo quando estiver pronto!
+
+130 Batalha!
+131 Agora vamos ver como você se sai contra um recruta de outro planeta.\nParece que ele está tentando melhorar suas habilidades de voo.\nDestrua-o!
+
+132 Impressionante!
+133 você consegiu! Como já deve ter percebido, você ganha pontos de reputação para cada inimigo morto.\nO número verde pequeno aparecendo sobre sua nave representa a quantidade. Ele aumentará se você matar vários inimigos de vez.
+
+134 Cuidado!
+135 Não há tempo para descanso.\nNossos inimigos enviaram um de seus guerreiros de verdade!\nNão há nada que eu possa fazer por você...
+
+136 Inacreditável!
+
+137 Vovê consegiu cumprir todas as tarefas sucessivamente. Agora o que vamos fazer?\nVamos dar uma olhada nas opções do menu. Nele você pode ajustar um monte de... bem... opções.\nPor exemplo você pode escolher o seu estilo de nave e sua cor ou mudar o seu nome...
+
+138 Quem é melhor?
+139 Você pode mostrar uma lista de extermínios, pontos e outros via <tab>.\nAlém disso os números próximos ao seu nome ilustram seu contador de extermínios e distância ao melhor alvo.
+
+140 Parabéns!
+141 Você terminou o tutorial. Agora deve estar pronto para lutar na GRANDE GUERRA. Se deseja continuar praticando, apenas espere até o inimigo voltar. Você pode encerrar o treinamento com <Esc>.\n\nTenha bons momentos com M.A.R.S.! 
+
+142 Você falhou!
+143 Incrível, você destruiu sua nave! Tudo bem, vamos te dar uma nova. Apenas espere um pouco...
+
+144 Percebeu?
+145 Sua vida está diminuindo! Fique de olho na barra verde. Você deve aterrisar se esta decair muito.
+
+146 Percebeu? 
+147 Seu combustível está acabando! Fique de olho na barra amarela. Você deve aterrisar se esta decair muito.
+
+148 Você quase o pegou!
+149 Observe o nome se seu inimigo. Sua cor indica os pontos de vida. quanto mais vermelho, mais fraco ele está.
+
+// tabmenu collumns
+
+154 Pontos
+155 Extermínios
+156 Extermínios em time
+157 Suicídios
+158 Mortes
+159 Reputação
+160 Total:
+161 Estatísticas
+
+// 175
+

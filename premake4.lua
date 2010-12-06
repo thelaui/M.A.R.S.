@@ -4,7 +4,7 @@ solution "MarsProject"
 project "Mars"
   language "C++"
   kind     "ConsoleApp"
-  files  { "**.hpp", "**.cpp", "data/shaders/*" }
+  files  { "include/**.hpp", "src/**.cpp", "data/shaders/*" }
   includedirs { "include/" }
  
   configuration { "Release*" }
@@ -15,8 +15,8 @@ project "Mars"
     elseif os.get() == "macosx" then
       links { "sfml-graphics.framework", "sfml-audio.framework", "sfml-system.framework", "sfml-window.framework", "opengl.framework" }
     else
-      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window" }
-      libdirs { "/usr/lib" }
+      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "Xrandr" }
+      libdirs { "/usr/lib", "/usr/local/lib" }
     end
     
   configuration { "Debug*" }
@@ -27,6 +27,6 @@ project "Mars"
     elseif os.get() == "macosx" then
       links { "sfml-graphics.framework", "sfml-audio.framework", "sfml-system.framework", "sfml-window.framework", "opengl.framework" }
     else
-      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window" }
-      libdirs { "/usr/lib" }
+      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "Xrandr" }
+      libdirs { "/usr/lib", "/usr/local/lib" }
     end

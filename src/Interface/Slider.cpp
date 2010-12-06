@@ -45,7 +45,7 @@ Slider::~Slider () {
 void Slider::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
     const sf::Input& input(window::getInput());
-    mouseMoved(Vector2f(input.GetMouseX(), input.GetMouseY()));
+    mouseMoved(window::PixelToCoord(Vector2f(input.GetMouseX(), input.GetMouseY())));
 }
 
 void Slider::mouseMoved(Vector2f const& position) {

@@ -63,6 +63,9 @@ namespace window {
     /// Converts the given location from space coordinates (max (1280, 800)) to pixel coordinates on the screen.
     Vector2f const coordToPixel(Vector2f const& spaceCoord);
 
+    /// Converts the given location on screen to space coordinates (max (1280, 800)).
+    Vector2f const PixelToCoord(Vector2f const& screenCoord);
+
     /// Returns a vector representing the size of the visible game area on screen.
     /// In pixels.
     Vector2f const& getViewPort();

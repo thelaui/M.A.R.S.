@@ -1,6 +1,101 @@
+
+#####################################################################
+# Actually compile the executable
+#####################################################################
+
+# determine source and header files
 file(GLOB MARS_SOURCES */*.cpp)
 file(GLOB MARS_HEADERS ${MARS_SOURCE_DIR}/include/*/*.hpp)
+file(GLOB MARS_RESOURCES ${MARS_SOURCE_DIR}/mars.cfg)
 
-add_executable(mars main.cpp ${MARS_SOURCES} ${MARS_HEADERS})
+# create executable
+if(APPLE)
+	add_executable(
+		mars MACOSX_BUNDLE
+			main.cpp
+			${MARS_SOURCES}
+			${MARS_HEADERS}
+			${MARS_RESOURCES}
+	)
 
-target_link_libraries (mars sfml-system sfml-window sfml-graphics sfml-audio)
+	# Mac OS X bundle specific settings
+	set(MACOSX_BUNDLE true)
+	set(MACOSX_BUNDLE_BUNDLE_NAME mars)
+	set(MACOSX_BUNDLE_INFO_STRING "M.A.R.S. ${mars_VERSION}")
+	set(MACOSX_BUNDLE_LONG_VERSION_STRING "${mars_VERSION}")
+	set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${mars_VERSION}")
+	set(MACOSX_BUNDLE_BUNDLE_VERSION "${mars_VERSION}")
+  set(MACOSX_BUNDLE_ICON_FILE ${MARS_SOURCE_DIR}/data/tex/icon.icns)
+
+	# Let gcc 4.0 compile the executable even on Mac OS X 10.6
+	# so that the executable also runs on Mac OS X 10.4
+	# only valid for xcode not for command line version of gcc
+	set(CMAKE_XCODE_ATTRIBUTE_GCC_VERSION "4.0")
+  
+  # paths for data files in bundle
+  set_source_files_properties(
+    ${MARS_RESOURCES}
+    PROPERTIES
+      MACOSX_PACKAGE_LOCATION Resources
+  )
+else(APPLE)
+	add_executable(
+		mars
+			main.cpp 
+			${MARS_SOURCES}
+			${MARS_HEADERS}
+	)
+endif(APPLE)
+
+# link SFML and other libraries
+target_link_libraries(
+	mars
+		${FOUNDATION_LIBRARY}
+		${SFML_LIBRARIES}
+		${OPENGL_LIBRARIES}
+		${XRANDR_LIBRARIES}
+)
+
+#####################################################################
+# Installation
+#####################################################################
+
+# executable
+install(
+	TARGETS mars
+		RUNTIME DESTINATION .
+		BUNDLE DESTINATION .
+)
+
+# install license and credits as well
+install(
+	FILES
+		${MARS_SOURCE_DIR}/credits.txt
+		${MARS_SOURCE_DIR}/license.txt
+	DESTINATION
+		.
+)
+
+if(APPLE)
+	# install data directory
+	install(
+		DIRECTORY ${CMAKE_SOURCE_DIR}/data
+			DESTINATION mars.app/Contents/Resources
+			FILES_MATCHING
+				PATTERN "*.*"
+	)
+	
+	# copy sndfile framework into app bundle for Mac OS X
+	install(
+		DIRECTORY /Library/Frameworks/sndfile.framework
+			DESTINATION mars.app/Contents/Frameworks
+		)
+
+	# fixup bundle, copy dynamic libraries into app bundle
+	set(APPS "\${CMAKE_INSTALL_PREFIX}/mars.app")  # paths to executables
+	set(DIRS "${SFML_INCLUDE_DIR}/../lib")   # directories to search for prerequisites
+	INSTALL(CODE "
+  	include(BundleUtilities)
+   	fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+   	")
+endif(APPLE)

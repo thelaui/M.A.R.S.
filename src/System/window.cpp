@@ -294,6 +294,10 @@ namespace window {
         return spaceCoord*scale_;
     }
 
+    Vector2f const PixelToCoord(Vector2f const& screenCoord) {
+        return Vector2f(screenCoord.x_ - (window_.GetWidth() - viewPort_.x_)/2, screenCoord.y_ - (window_.GetHeight() - viewPort_.y_)/2);
+    }
+
     Vector2f const& getViewPort() {
         return viewPort_;
     }

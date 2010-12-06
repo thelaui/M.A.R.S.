@@ -1,0 +1,251 @@
+// Interface du Menu Principal
+
+000 Démarrer une partie locale
+105 Lancer le Tutoriel
+001 Créer une partie en réseau
+002 Rejoindre une partie
+003 Options
+004 À propos
+005 Quitter M.A.R.S.
+006 Continuer
+007 Relancer la partie
+008 Cacher le menu
+009 Quitter la partie actuelle
+
+// standard buttons
+
+010 Lancer
+011 Annuler
+012 Infos
+013 Fermer
+014 Licence
+015 Ok
+106 Suivant
+016 Afficher les infobulles.
+
+// pregame options
+
+017 Équipe Gauche
+018 Équipe Droite
+019 Alliés Gauche
+020 Alliés Droite
+021 Bots
+022 Limite de Frags
+162 Limite de Points
+
+// story information
+
+023 En l'année 3547, les civilisations de toute la galaxie ont fini de coloniser leurs propres planètes, vivant ainsi en paix et en harmonie avec leur environnement.  \nMais outre cela, la GRANDE GUERRE fait rage.  \nEn tant que combattant reconnu, se battant pour l'honneur et la prosperité, vous devez protéger votre planète d'une attaque mortelle de la part de vos \nvoisins ! Combattez avec courage, pour la raison pour laquelle vous êtes né: le SPACEBALL.  \nProtégez votre planète de la mort, et anéantissez vos ennemis sans ménagement.
+024 Envoyez la balle sur la planète de votre ennemi !
+025 Au terme de la GRANDE GUERRE vous avez tout perdu: votre maison, votre famille \net votre propre estime de soi. \nVotre dernière chance de vous sortir de cette vie misérable dans laquelle vous vous trouvez, est de devenir un gladiateur dans la fameuse arène du \nDEATHMATCH. \nRésistez aux attaques des autres combattants et accumulez les points en détruisant ces coquilles qu'ils nomment des vaisseaux. \nPréparez-vous ! \nMort et Gloire vous attendent.
+026 Détruisez autant d'ennemis que possible !
+027 Les négociations ont échoué ! \nVous, comme vos voisins, devez déplorer d'immenses pertes suite à cette GRANDE GUERRE interminable. \nEn tant qu'ultime tentative de reprendre la suprématie, vous avez ordre de décimer les ressources de votre ennemi, mais aussi de défendre les vôtres. La seule façon d'agir efficacement est un TEAMDEATHMATCH. \nProtégez vos camarades et détruisez vos ennemis ! \nDonnez-leur une leçon qu'ils n'oublieront pas de si tôt.
+028 Détruisez autant d'ennemis que possible !
+029 Comme si la GRANDE GUERRE n'était pas suffisante, votre système planétaire est menacé par un nouvel ennemi maléfique: Un vaisseau géant d'origine inconnue est en vol stationnaire au-dessus de votre galaxie, menaçant les planètes-mères d'une arme de destruction massive monolithique. \nÉtrangement, les envahisseurs ont laissé tomber le dispositif permettant d'ajuster la puissance de cette arme titanesque. \nAtteingnez ce dispositif avant les autres afin de transformer la planète-mère de vos ennemis en lieu de désolation ! \nSoyez le CANNONKEEPer.
+030 Prenez le dispositif et gardez-le coûte que coûte !
+
+// display options
+// tabs
+
+150 Interface
+165 Jouabilité
+102 Graphismes
+103 Audio
+
+104 Options de fenêtre
+031 Afficher Informations de débogage
+032 Orientation des Alliés
+033 Zones
+034 Chemins de l'IA
+035 Afficher Informations du jeu
+036 Images par seconde
+152 Langue
+153 Hotkey for Screenshots
+037 Compteur de particules
+038 Compteur de particules
+039 Durée de vie des particules
+040 Game Settings
+041 Plein-écran
+042 Synchronisation verticale
+163 Effets Shaders
+164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
+
+151 High Starfield Resolution
+173 Resolution
+174 Color Depth
+
+// gameplay options
+
+166 Taux d'apparition des Objets
+167 Difficulté des Alliés
+168 Explosions au ralenti
+169 Désactivé
+
+// audio options
+
+043 Volume de la musique
+044 Volume du son
+045 Volume du présentateur
+
+// player options
+
+046 Nom
+047 Accélérer
+048 Tourner à gauche
+049 Tourner à droite
+050 Arme
+051 Vaisseau
+052 Teinte
+053 Saturation
+054 Valeur
+055 Appuyez sur une touche !
+056 Entrez un texte !
+
+// about
+
+057 Ceci est une première ébauche dans la création d'un jeu en OpenGL avec SFML. C'est un jeu pour deux joueurs, pilotant des vaisseaux dans une configuration spatiale en deux dimensions, régie par les lois de la gravité. \n\nPage d'acceuil: \nhttp://www.marsshooter.org
+
+// licence
+
+058 Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le modifier suivant les termes de la “GNU General Public License” telle que publiée par la Free Software Foundation : soit la version 3 de cette licence, soit (à votre gré) toute version ultérieure. \n\nCe programme est distribué dans l’espoir qu’il vous sera utile, mais SANS AUCUNE GARANTIE : sans même la garantie implicite de COMMERCIALISABILITÉ ni d’ADÉQUATION À UN OBJECTIF PARTICULIER. Consultez la Licence Générale Publique GNU pour plus de détails. \n\nÉgalement disponible en ligne sur:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Crédits
+171 Remerciements particuliers à:
+172 Traductions:\n   Allemand: Sandra\n   Français: Astohan\n   Spanish: Gastón\n   Portuguese: Vitor\n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quitter
+
+059 Voulez-vous vraiment quitter ?
+060 Voulez-vous vraiment quitter la partie en cours ?
+
+// network information
+
+061 Jouer à M.A.R.S. à travers le monde ou via un réseau local est une fonction non implémentée, mais prévue. \n\nRestez informé !
+062 Jouer à M.A.R.S. à travers le monde ou via un réseau local est une fonction non implémentée, mais prévue. \n\nRestez informé !
+
+// hide menu
+
+063 Vous avez mis M.A.R.S. en pause en plein milieu d'une bataille épique ? \nSi vous désirez prendre une capture d'écran, ce bouton vous permet de générer des fonds d'écrans splendides, en cachant toutes les autres fenêtres. \n\nVous les réafficherez en appuyant sur la touche ECHAP.
+
+// key names
+
+064 Ajouter
+065 Anti slash
+066 Virgule
+067 Dash
+068 Supprimer
+069 Diviser
+070 Bas
+071 Fin
+072 Égal
+073 Home
+074 Insérer
+075 Alt Gauche
+076 Parenthèse Gauche
+077 Control Gauche
+078 Gauche
+079 Shift Gauche
+080 Super Gauche
+081 Menu
+082 Multiplier
+083 Page Bas
+084 Page Haut
+085 Pause
+086 Point
+087 Guillemet
+088 Alt Droit
+089 Parenthèse Droit
+090 Control Droit
+091 Retour
+092 Droit
+093 Shift Droit
+094 Super Droit
+095 Point virgule
+096 Slash
+097 Espace
+098 Soustraire
+099 Tilde
+100 Tab
+101 Haut
+
+// tutorial texts
+
+107 Bienvenue, bleu de l'espace !
+108 Nous sommes fiers de recruter dans nos rangs un futur héros de la GRANDE GUERRE !\nNous avons compris que vous aviez besoin d'un peu d'entraînement à bord de votre nouveau vaisseau.\nCommençons l'entraînement...
+
+109 Mouvements basiques...
+110 Contrôler votre vaisseau est la chose la plus importante à maîtriser.\nTout mouvement est gouverné par la loi de la gravité. Pour décélérer, vous devez tourner puis accélérer dans la direction opposée. Contrôlez votre vaisseau avec les touches
+
+111 L'échauffement !
+112 Atteignez la zone rose !\nEssayez de na pas faire s'écraser votre tout nouveau vaisseau.
+
+113 Bravo !
+114 Maintenant retournez à votre planète-mère et essayez d'y faire atterrir votre vaisseau en inversant la poussée des moteurs, une fois arrivé proche de la planète.
+
+115 Beau travail !
+116 L'aterrissage n'est pas une chose aisée, n'est-ce pas ?\nVous devriez apprendre cette manoeuvre par coeur.
+
+117 Un peu plus difficile...
+118 Essayez de suivre le chemin suivant, marqué de zones roses!\n\nNous vous recontacterons une fois que vous aurez maîtrisé cette manoeuvre !
+
+119 Formidable !
+120 Vous êtes le meilleur bleu que je n'ai jamais vu.\nPréparez-vous maintenant à maîtriser l'art des explosions.
+
+121 Tirer...
+122 Pour détruire vos ennemis, vous devez savoir comment leur tirer dessus !\nPour cela, appuyez sur
+123 Amusez-vous à tirer un peu partout, puis faîtes atterrir votre vaisseau pour continuer le tutoriel.
+
+124 Bel atterrissage !
+125 Vous devenez bon pilote !\n\nQue diriez-vous d'essayer d'autres armes ?
+
+126 Les armes...
+127 Je sais que vous n'attendiez que ça. Une fois posé, vous pourrez changer d'armement.\nAppuyez sur
+128 pour ouvrir votre arsenal.\nPuis utilisez
+129 pour choisir une arme ! Quittez cette fenêtre quand vous êtes prêt !
+
+130 Combattez !
+131 Voyons maintenant comment vous vous débrouillez face à un bleu d'une autre planète.\nOn dirait qu'il essaie d'améliorer ses techniques de vol.\nBattez-le !
+
+132 Impressionnant !
+133 Vous l'avez fait ! Comme vous l'aurez remarqué, vous obtenez quelques points de récompense à chaque ennemi abattu.\nLe petit chiffre vert qui apparaît au-dessus de votre vaisseau représente le montant des points. Il augmentera si vous tuez plusieurs ennemis d'affilée.
+
+134 Attention !
+135 Il n' y a pas de temps pour le repos.\nNos ennemis ont envoyé l'un de leurs meilleurs combattants pour se venger !\nJe ne peux rien faire pour vous...
+
+136 Incroyable !
+
+137 Vous avez suivi tous mes conseils avec succès. Que faire à présent ?\nRegardons un peu dans le menu des options. Ici vous pouvez ajuster un paquet de... comment dire... d'options.\nPar example, vous pouvez modifier l'apparence de votre vaisseau, ou bien changer votre nom...
+
+138 Qui est le meilleur ?
+139 Vous pouvez afficher une liste de frags, points et autres via la touche <Tab>.\nLes chiffres accolés à votre nom illustrent votre compteur de frag et la différence qui vous sépare du meilleur score. 
+
+140 Félicitations !
+141 Vous avez terminé ce tutoriel. Vous êtes à présent prêt à combattre dans la GRANDE GUERRE. Si vous désirez continuer à vous entraîner, attendez simplement que l'ennemi réapparaisse. Vous pouvez quitter votre entraînement par la touche <Esc>.\n\nAmusez-vous bien sur M.A.R.S.!
+
+142 Echec complet !
+143 Merveilleux, vous venez de détruire votre tout nouveau vaisseau ! Bien, nous allons vous en fournir un autre. Attendez un instant...
+
+144 Avez-vous remarqué ?
+145 Votre santé diminue ! Gardez un oeil sur la barre verte. Vous feriez mieux d'atterrir si celle-ci est trop vide.
+
+146 Avez-vous remarqué ?
+147 Votre carburant se vide ! Gardez un oeil sur la barre jaune. Vous feriez mieux d'atterrir si celle-ci est trop vide.
+
+148 Vous l'avez presque eu !
+149 Regardez le nom de votre adversaire. Sa couleur indique ses points de vie restants. Plus elle tourne au rouge, plus votre ennemi est faible.
+
+// tabmenu collumns
+
+154 Points
+155 Frags
+156 Teamkills
+157 Suicides
+158 Morts
+159 Réputation
+160 Total:
+161 Statistiques
+
+// 175
+

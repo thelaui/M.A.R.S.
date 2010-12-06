@@ -44,6 +44,7 @@
 029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer.
 030 Pick up the remote and keep it as long as possible!
 
+
 // display options
 // tabs
 
@@ -113,7 +114,7 @@
 
 170 Credits
 171 Special Thanks to:
-172 Translations:\n    Spanish: Hugo alias Agent G\n    German: Sandra\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Translations:\n   German: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

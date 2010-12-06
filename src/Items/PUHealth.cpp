@@ -29,7 +29,7 @@ void PUHealth::draw() const {
 void PUHealth::refreshLifeTime() {
     lifeTime_ = totalLifeTime_;
     for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->life_ = 200.f;
+        (*it)->life_ = (*it)->maxLife_;
     // direction is abused for texture coords
     particles::spawnMultiple(5, particles::pPowerUpCollect, location_, Vector2f(0,1));
 }
