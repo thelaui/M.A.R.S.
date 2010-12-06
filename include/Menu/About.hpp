@@ -28,6 +28,8 @@ class About: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         About(int width, int height): UiWindow(width, height) {}
         About(About const& copy);
@@ -36,7 +38,6 @@ class About: public UiWindow {
 
         static bool kClose_;
         static sf::String marsName_;
-        static TextBox *aboutBox_, *licenseBox_, *creditsBox_;
 };
 
 # endif // ABOUT_HPP_INCLUDED

@@ -26,6 +26,8 @@ class ToMainConfirm: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         ToMainConfirm(int width, int height): UiWindow(width, height) {}
         ToMainConfirm(ToMainConfirm const& copy);

@@ -26,6 +26,8 @@ class OptionsMenu: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         OptionsMenu(int width, int height): UiWindow(width, height) {}
         OptionsMenu(OptionsMenu const& copy);

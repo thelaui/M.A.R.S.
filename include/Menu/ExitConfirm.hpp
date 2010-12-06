@@ -26,6 +26,8 @@ class ExitConfirm: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         ExitConfirm(int width, int height): UiWindow(width, height) {}
         ExitConfirm(ExitConfirm const& copy);

@@ -40,6 +40,33 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/locales.hpp"
 # include "Menu/ChooseLanguage.hpp"
 # include "Menu/ShaderError.hpp"
+# include "Menu/About.hpp"
+# include "Menu/Connect.hpp"
+# include "Menu/InfoCK.hpp"
+# include "Menu/InfoSB.hpp"
+# include "Menu/InfoDM.hpp"
+# include "Menu/InfoTDM.hpp"
+# include "Menu/InfoHide.hpp"
+# include "Tutorial/TutWindow01.hpp"
+# include "Tutorial/TutWindow02.hpp"
+# include "Tutorial/TutWindow03.hpp"
+# include "Tutorial/TutWindow04.hpp"
+# include "Tutorial/TutWindow05.hpp"
+# include "Tutorial/TutWindow06.hpp"
+# include "Tutorial/TutWindow07.hpp"
+# include "Tutorial/TutWindow08.hpp"
+# include "Tutorial/TutWindow09.hpp"
+# include "Tutorial/TutWindow10.hpp"
+# include "Tutorial/TutWindow11.hpp"
+# include "Tutorial/TutWindow12.hpp"
+# include "Tutorial/TutWindow13.hpp"
+# include "Tutorial/TutWindow14.hpp"
+# include "Tutorial/TutWindow15.hpp"
+# include "Tutorial/TutWindow16.hpp"
+# include "Tutorial/TutWindow17.hpp"
+# include "Tutorial/TutWindow18.hpp"
+# include "Tutorial/TutWindow19.hpp"
+# include "Tutorial/TutWindow20.hpp"
 # include "Shaders/postFX.hpp"
 
 # include <SFML/Window.hpp>
@@ -189,6 +216,35 @@ void OptionsMenu::checkWidgets() {
 
         if (language_ != settings::C_language) {
             settings::C_language = language_;
+
+            About::reset();
+            Connect::reset();
+            InfoCK::reset();
+            InfoDM::reset();
+            InfoHide::reset();
+            InfoSB::reset();
+            InfoTDM::reset();
+            TutWindow01::reset();
+            TutWindow02::reset();
+            TutWindow03::reset();
+            TutWindow04::reset();
+            TutWindow05::reset();
+            TutWindow06::reset();
+            TutWindow07::reset();
+            TutWindow08::reset();
+            TutWindow09::reset();
+            TutWindow10::reset();
+            TutWindow11::reset();
+            TutWindow12::reset();
+            TutWindow13::reset();
+            TutWindow14::reset();
+            TutWindow15::reset();
+            TutWindow16::reset();
+            TutWindow17::reset();
+            TutWindow18::reset();
+            TutWindow19::reset();
+            TutWindow20::reset();
+
             locales::load();
         }
 
@@ -249,5 +305,9 @@ void OptionsMenu::onShow() {
     val2_ = settings::C_playerIIColor.v()*255;
 }
 
-
+void OptionsMenu::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 

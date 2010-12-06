@@ -28,6 +28,8 @@ class ChooseLanguage: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         ChooseLanguage(int width, int height): UiWindow(width, height) {}
         ChooseLanguage(ChooseLanguage const& copy);

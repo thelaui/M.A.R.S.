@@ -32,6 +32,8 @@ class DropDownWindow: public UiWindow {
         void checkWidgets();
         void onShow() {};
 
+        void reset() {};
+
     private:
         ComboBox*                                  parent_;
         std::vector<std::pair<sf::String, bool> >  elements_;

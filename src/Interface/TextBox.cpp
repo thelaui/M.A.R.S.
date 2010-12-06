@@ -20,36 +20,29 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 
 
-TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int height):
+TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int height, Color3f const& color):
     UiElement(topLeft, width, height),
-    label_(NULL){
-        setText(text);
-    }
+    label_(NULL) {
 
-TextBox::~TextBox() {
-    delete label_;
-}
-
-void TextBox::draw () const {
-    label_->draw();
-}
-
-void TextBox::setText(sf::String* text) {
     text_ = *text;
     sf::String word;
     sf::String line;
     int lastSpace(0);
 
+    // search for "\n" and replace them with '\n'
     for (unsigned int i=0; i<text_.GetSize()-1; ++i) {
         if (text_[i] == '\\' && text_[i+1] == 'n') {
             text_[i]  = ' ';
             text_[++i]= '\n';
         }
     }
+
+    // remove doubled spaces
     for (unsigned int i=0; i<text_.GetSize()-1; ++i)
         if (text_[i] == ' ' && text_[i+1] == ' ')
             text_.Erase(i--, 1);
 
+    // break lines
     for (unsigned int i=0; i<text_.GetSize(); ++i) {
         if (text_[i] == '\n') {
             line = "";
@@ -74,8 +67,17 @@ void TextBox::setText(sf::String* text) {
     }
     if(label_)
         delete label_;
-    label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f));
+    label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f), 12.f, color);
     label_->setParent(this);
+
+    }
+
+TextBox::~TextBox() {
+    delete label_;
+}
+
+void TextBox::draw () const {
+    label_->draw();
 }
 
 

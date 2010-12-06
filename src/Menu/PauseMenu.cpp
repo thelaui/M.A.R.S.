@@ -72,5 +72,9 @@ void PauseMenu::checkWidgets() {
     }
 }
 
-
+void PauseMenu::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 

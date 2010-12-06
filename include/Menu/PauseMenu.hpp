@@ -26,6 +26,8 @@ class PauseMenu: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         PauseMenu(int width, int height): UiWindow(width, height) {}
         PauseMenu(PauseMenu const& copy);

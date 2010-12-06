@@ -26,6 +26,8 @@ class TutWindow04: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         TutWindow04(int width, int height): UiWindow(width, height) {}
         TutWindow04(TutWindow04 const& copy);

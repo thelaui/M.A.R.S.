@@ -28,6 +28,8 @@ class InfoHide: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         InfoHide(int width, int height): UiWindow(width, height) {}
         InfoHide(InfoHide const& copy);
@@ -35,8 +37,6 @@ class InfoHide: public UiWindow {
         static UiWindow* instance_;
 
         static bool kOk_;
-
-        static TextBox* infoBox_;
 };
 
 # endif // INFOHIDE_HPP_INCLUDED

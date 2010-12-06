@@ -46,7 +46,11 @@ void TutWindow05::checkWidgets() {
     }
 }
 
-
+void TutWindow05::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 
 

@@ -26,6 +26,8 @@ class NewGameMenu: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         NewGameMenu(int width, int height): UiWindow(width, height) {}
         NewGameMenu(NewGameMenu const& copy);

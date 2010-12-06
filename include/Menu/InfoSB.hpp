@@ -28,6 +28,8 @@ class InfoSB: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         InfoSB(int width, int height): UiWindow(width, height) {}
         InfoSB(InfoSB const& copy);
@@ -35,8 +37,6 @@ class InfoSB: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_;
-
-        static TextBox* infoBox_;
 };
 
 # endif // INFOSB_HPP_INCLUDED

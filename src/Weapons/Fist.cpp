@@ -21,17 +21,21 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "Players/Player.hpp"
 # include "Particles/particles.hpp"
+# include "Menu/menus.hpp"
+# include "Games/games.hpp"
 
 # include <SFML/Graphics.hpp>
 
 void Fist::draw() const {
-    float time = timer::totalTime();
-    if (time - timer_ < 0.1f)
-        position_ = (time - timer_)*20.f;
-    else if (time - timer_ < 0.5f)
-        position_ = (0.5f - (time - timer_))*5.f;
-    else
-        position_ = 0.f;
+    if (!menus::visible() || games::type() == games::gMenu) {
+        float time = timer::totalTime();
+        if (time - timer_ < 0.1f)
+            position_ = (time - timer_)*20.f;
+        else if (time - timer_ < 0.5f)
+            position_ = (0.5f - (time - timer_))*5.f;
+        else
+            position_ = 0.f;
+    }
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glColor3f(1.0f, 1.0f, 1.0f);

@@ -66,7 +66,7 @@ namespace window {
             timeinfo = localtime(&rawtime);
 
             std::stringstream filename;
-            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".png";
+            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".jpg";
 
             shot.SaveToFile(filename.str());
         }

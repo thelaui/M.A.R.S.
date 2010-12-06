@@ -28,6 +28,8 @@ class InfoCK: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         InfoCK(int width, int height): UiWindow(width, height){}
         InfoCK(InfoCK const& copy);
@@ -35,8 +37,6 @@ class InfoCK: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_;
-
-        static TextBox* infoBox_;
 };
 
 # endif // INFOCK_HPP_INCLUDED

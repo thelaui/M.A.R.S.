@@ -52,7 +52,11 @@ void TutWindow10::checkWidgets() {
     }
 }
 
-
+void TutWindow10::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 
 

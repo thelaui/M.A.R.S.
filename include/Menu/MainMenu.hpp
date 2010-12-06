@@ -26,6 +26,8 @@ class MainMenu: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         MainMenu(int width, int height, Vector2f const& position): UiWindow(width, height, position) {}
         MainMenu(MainMenu const& copy);

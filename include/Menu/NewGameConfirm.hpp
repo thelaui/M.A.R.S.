@@ -26,6 +26,8 @@ class NewGameConfirm: public UiWindow {
         void checkWidgets();
         void onShow() {}
 
+        static void reset();
+
     private:
         NewGameConfirm(int width, int height): UiWindow(width, height) {}
         NewGameConfirm(NewGameConfirm const& copy);

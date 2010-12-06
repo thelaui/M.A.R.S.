@@ -52,4 +52,9 @@ void NewGameConfirm::checkWidgets() {
     }
 }
 
+void NewGameConfirm::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 

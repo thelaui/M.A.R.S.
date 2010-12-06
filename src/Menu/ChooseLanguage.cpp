@@ -68,7 +68,11 @@ void ChooseLanguage::checkWidgets() {
         }
 }
 
-
+void ChooseLanguage::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 
 

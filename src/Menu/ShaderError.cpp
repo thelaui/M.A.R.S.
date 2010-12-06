@@ -44,7 +44,11 @@ void ShaderError::checkWidgets() {
     }
 }
 
-
+void ShaderError::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 
 

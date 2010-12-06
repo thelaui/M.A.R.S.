@@ -29,9 +29,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 UiWindow* About::instance_(NULL);
 bool About::kClose_(false);
 sf::String About::marsName_("");
-TextBox* About::aboutBox_(NULL);
-TextBox* About::licenseBox_(NULL);
-TextBox* About::creditsBox_(NULL);
 
 UiWindow* About::get() {
     if (instance_ == NULL) {
@@ -46,13 +43,10 @@ UiWindow* About::get() {
         Tab* license = new Tab(locales::getLocale(locales::License), 90);
         Tab* credits = new Tab(locales::getLocale(locales::Credits), 90);
 
-        aboutBox_ = new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 30), 380, 230);
-        about->addWidget(aboutBox_);
-        licenseBox_ = new TextBox(locales::getLocale(locales::LicenseText), Vector2f(10, 30), 380, 230);
-        license->addWidget(licenseBox_);
+        about->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 30), 380, 230));
+        license->addWidget(new TextBox(locales::getLocale(locales::LicenseText), Vector2f(10, 30), 380, 230));
         credits->addWidget(new Label(locales::getLocale(locales::SpecialThanks), TEXT_ALIGN_LEFT, Vector2f(10,30), 20.f));
-        creditsBox_ = new TextBox(locales::getLocale(locales::CreditText), Vector2f(10, 60), 380, 230);
-        credits->addWidget(creditsBox_);
+        credits->addWidget(new TextBox(locales::getLocale(locales::CreditText), Vector2f(10, 60), 380, 230));
 
         tabs->addTab(about);
         tabs->addTab(license);
@@ -72,9 +66,12 @@ void About::checkWidgets() {
 
 void About::onShow() {
     marsName_ = "A " + generateName::game();
-    aboutBox_->setText(locales::getLocale(locales::AboutText));
-    licenseBox_->setText(locales::getLocale(locales::LicenseText));
-    creditsBox_->setText(locales::getLocale(locales::CreditText));
+}
+
+void About::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
 }
 
 

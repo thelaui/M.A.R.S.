@@ -47,7 +47,11 @@ void Connect::checkWidgets() {
     }
 }
 
-
+void Connect::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 
 

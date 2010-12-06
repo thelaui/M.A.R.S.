@@ -25,14 +25,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextBox: public UiElement {
     public:
-        TextBox (sf::String* text, Vector2f const& topLeft, int width, int height);
+        TextBox (sf::String* text, Vector2f const& topLeft, int width, int height, Color3f const& color = Color3f(1.f, 1.f, 1.f));
         ~TextBox();
 
         void mouseMoved(Vector2f const& position) {}
         void mouseLeft(bool down) {}
 
         void draw () const;
-        void setText(sf::String* text);
 
     private:
         sf::String text_;

@@ -49,6 +49,10 @@ void ExitConfirm::checkWidgets() {
     }
 }
 
-
+void ExitConfirm::reset() {
+    if (instance_)
+        delete instance_;
+    instance_ = NULL;
+}
 
 

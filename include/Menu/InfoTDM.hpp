@@ -28,6 +28,8 @@ class InfoTDM: public UiWindow {
         void checkWidgets();
         void onShow();
 
+        static void reset();
+
     private:
         InfoTDM(int width, int height): UiWindow(width, height) {}
         InfoTDM(InfoTDM const& copy);
@@ -35,8 +37,6 @@ class InfoTDM: public UiWindow {
         static UiWindow* instance_;
 
         static bool kClose_;
-
-        static TextBox* infoBox_;
 };
 
 # endif // INFOTDM_HPP_INCLUDED
