@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace font {
     /// The different fonts included in MARS.
-    enum FontType {HandelGotDLig, FreeSans,
+    enum FontType {Ubuntu, FreeSans,
                    COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

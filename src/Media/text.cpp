@@ -28,7 +28,7 @@ namespace text {
         void drawText(sf::String const& text, Vector2f const& location, font::FontType type,
                       float size, int align, Color3f const& color) {
 
-            sf::Text drawString(text, font::getFont(font::HandelGotDLig), size);
+            sf::Text drawString(text, font::getFont(font::Ubuntu), size);
             drawString.SetColor(color.sfColor());
 
             Vector2f loc(location);
@@ -73,7 +73,7 @@ namespace text {
     }
 
     void drawFooText() {
-        drawScreenText(".", Vector2f(0.f, 0.f), font::HandelGotDLig, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+        drawScreenText(".", Vector2f(0.f, 0.f), font::Ubuntu, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
     float getCharacterPos(sf::String const& text, int pos, font::FontType type, float size, int align) {

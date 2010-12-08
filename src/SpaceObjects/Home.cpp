@@ -74,7 +74,7 @@ void Home::drawLife() const {
     if (visible_) {
         std::stringstream sstr;
         sstr << "  " << getLife() << "  ";
-        text::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::HandelGotDLig, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
+        text::drawSpaceText(sstr.str(), location_ + Vector2f(0.f, -20), font::Ubuntu, 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
     }
 }
 

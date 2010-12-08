@@ -28,7 +28,7 @@ void ShipName::draw() const {
     if (ship_->visible_) {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         if (ship_->weaponChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2)))
-            text::drawSpaceText(ship_->currentWeapon_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
+            text::drawSpaceText(ship_->currentWeapon_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
         else {
             Color3f color(1.f, 0.f, 0.f);
             color.h(color.h() + ship_->getLife());
@@ -36,27 +36,27 @@ void ShipName::draw() const {
                 switch (ship_->owner_->type()) {
                     case controllers::cAggroBot:
                         if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                         else
-                            text::drawMobileSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawMobileSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                         break;
                     case controllers::cDefBot:
                         if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                         else
-                            text::drawMobileSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawMobileSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                         break;
                     default:
                         if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                         else
-                            text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                            text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                 }
             else {
                 if (ship_->docked_)
-                    text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                    text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
                 else
-                    text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, color);
+                    text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, color);
             }
         }
 
@@ -80,9 +80,9 @@ void ShipName::draw() const {
             for (int i=0; i<showAmount; ++i)
                 sstr << "*";
             if (ship_->docked_)
-                text::drawSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::HandelGotDLig, 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
             else
-                text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::HandelGotDLig, 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
         }
     }
 }

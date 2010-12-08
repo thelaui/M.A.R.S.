@@ -142,7 +142,7 @@ void ComboBox::draw() const {
     glBindTexture(GL_TEXTURE_2D, 0);
 
     text::drawFooText();
-    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
+    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
 
     // draw Label
     label_->draw();

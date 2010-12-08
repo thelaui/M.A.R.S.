@@ -31,13 +31,13 @@ Label::Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fo
 void Label::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     if (parent_->isPressed() && parent_->isHovered()) {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft() + Vector2f(1,1), font::HandelGotDLig, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
+        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft() + Vector2f(1,1), font::Ubuntu, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
     }
     else if (parent_->isHovered()) {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::HandelGotDLig, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
+        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::Ubuntu, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
     }
     else {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::HandelGotDLig, fontSize_, textAlign_, Color3f(0.7*color_.r(),0.7*color_.g(),0.7*color_.b()));
+        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::Ubuntu, fontSize_, textAlign_, Color3f(0.7*color_.r(),0.7*color_.g(),0.7*color_.b()));
     }
 }
 

@@ -27,3 +27,9 @@ Fonts
  - HandelGotLig: Be careful with this one...
    You can get it for free everywhere on the internet, but I wasn't
    able to figure out it's correct license
+
+Translations
+ - German: Sandra
+ - Frensh: Astohan
+ - Portuguese: Vitor
+ - Spanish: Gaston

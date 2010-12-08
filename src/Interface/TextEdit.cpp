@@ -119,13 +119,13 @@ void TextEdit::draw() const {
     glColor4f(1,1,1,0.7);
 
     if (pressed_ && hovered_)
-        text::drawScreenText(*locales::getLocale(locales::TextEditHover), origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*locales::getLocale(locales::TextEditHover), origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
 
     // draw cursor
     if (hovered_ && cursorTimer_ < 30) {
-        int pos = text::getCharacterPos(*value_, cursorPos_, font::HandelGotDLig, 12.f, TEXT_ALIGN_CENTER);
+        int pos = text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER);
         glColor4f(1,0.8,0.9,0.5);
         glLineWidth(0.5f);
         glBegin(GL_LINES);

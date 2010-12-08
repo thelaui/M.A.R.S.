@@ -36,8 +36,8 @@ namespace font {
         else {
             // load it from file and...
             switch (type) {
-                case HandelGotDLig:  loadFont_(type, "data/fonts/HandelGotDLig.ttf");   break;
-                case FreeSans:       loadFont_(type, "data/fonts/FreeSans.ttf");        break;
+                case Ubuntu:         loadFont_(type, "data/fonts/Ubuntu-R.ttf");   break;
+                case FreeSans:       loadFont_(type, "data/fonts/FreeSans.ttf");   break;
 
                 case COUNT: std::cout << "COUNT is not a valid Texturetype..." << std::endl;
             }

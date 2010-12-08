@@ -53,7 +53,7 @@ void LeftLife::draw() const {
         else
             sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
-        text::drawScreenText(sstr.str(), Vector2f(10, port.y_-75), font::HandelGotDLig, 18.f, TEXT_ALIGN_LEFT, color);
+        text::drawScreenText(sstr.str(), Vector2f(10, port.y_-75), font::Ubuntu, 18.f, TEXT_ALIGN_LEFT, color);
 
         float life = player->ship()->getLife();
         float fuel = player->ship()->getFuel();
