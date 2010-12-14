@@ -1,0 +1,252 @@
+// menu buttons
+
+000 Spela lokalt
+105 Övningsspela
+001 Starta ett nätverksspel
+002 Anslut till nätverksspel
+003 Inställningar
+004 Om
+005 Avsluta M.A.R.S.
+006 Fortsätt
+007 Starta om spel
+008 Göm menyn
+009 Återvänd till huvudmenyn
+
+// standard buttons
+
+010 Starta
+011 Avbryt
+012 Information
+013 Stäng
+014 Licens
+015 Ok
+106 Nästa
+016 Visa den här informationen igen.
+
+// pregame options
+
+017 Vänster lag
+018 Höger lag
+019 Vänster bottar
+020 Höger bottar
+021 Bottar
+022 Frag-gräns
+162 Poänggräns
+
+// story information
+
+023 Vid år 3547, har galaxens alla civilisationer slätt sig ner på sina egna planeter, där de lever i fred och harmoni med sin omgivning.  \nMen utanför de kontemplativa miljöerna, rasar det STORA KRIGET.  \nSom en känd kämpe på din väg mot rikedom och evig ära, så måste du skydda din planet från dess mötande undergång av dina avundsjuka  \ngrannar! Kämpa i slaget, som du som en sann hjälte föddes för: RYMDBOLL. \nSkydda din planet från dödssfären, och besegra dina fiender genom att låta den krossa deras löjliga lilla glob.
+024 Sparka eller skjut bollen till din fiendes planet!
+025 Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj och \ndin självkänsla. \nDin sista chans att komma bort från det miserabla liv du fastnat i, är att bli en gladiator på den ärorika DÖDSMATCH-arenan. \nMotstå de andra kämparna och tjäna poäng genom att förstöra det skrot som de kallar skepp. \Stålsätt dig! \nDöd och ära väntar dig.
+026 Förgör så många fiender som möjligt!
+027 Förhandlingar har brutit samman! \nBåde du och dina grannar fick utstå enorma förluster i slutakten av det bestående STORA KRIGET. \nI ett sista försök att få övertaget, så förpliktas du att decimera fiendens resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH. \nSkydda dina kamrater och förgör dina fiender! \nLär dem en läxa som de aldrig glömmer.
+028 Förgör så många fiender som möjligt!
+029 Som om det inte vore nog med det STORA KRIGET, nu hotas hela ditt planetsystem av en källa av otrolig ondska: Ett gigantiskt skepp av okänt ursprung svävar över din galax, med sina massförstörelsevapen inriktade på hemplaneterna. \nSom ett tecken på cynism, så har angriparna släppt en fjärrstyrningsanordning som justerar härkomsten av död och rädsla. \nNå den först för att förvandla din fiendes hemplanet till ett ödsligt ställe! \nBli CANNONKEEPer.
+030 Fånga fjärrstyrningsanordningen och behåll den så länge som möjligt!
+
+
+// display options
+// tabs
+
+150 Gränssnitt
+165 Spelsätt
+102 Grafik
+103 Ljud
+
+104 Fönsterinställningar
+031 Visa felsökningsinformation
+032 Bottarnas orientering
+033 Zoner
+034 AI-Spår
+035 Visa spelinformation
+036 Bilder per sekund
+152 Språk
+153 Kortkommando för skärmdump
+037 Antal partiklar
+038 Antal partiklar
+039 Partiklarnas livslängd
+040 Spelinställningar
+041 Fullskärm
+042 V-Sync
+163 Shader-effekter
+164 Tyvärr så stödjer inte din hårdvara shaders!
+
+151 Hög upplösning på stjärnfältet
+173 Upplösning
+174 Färgdjup
+
+// gameplay options
+
+166 Spawn rate för PowerUps
+167 Bottarnas svårighetsgrad
+168 Antal explosioner för slowmotion
+169 Av
+
+// audio options
+
+043 Musik
+044 Ljudeffekter
+045 Annonsör
+
+// player options
+
+046 Namn
+047 Accelerera
+048 Sväng vänster
+049 Sväng höger
+050 Vapen
+051 Skepp
+052 Nyans
+053 Mättnad
+054 Värde
+055 Tryck på en tangent medan du svävar!
+056 Skriv text medan du svävar!
+
+// about
+
+057 Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som styrs av gravitationslagen. \n\nHemsida: \nhttp://www.marsshooter.org
+
+// license
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Medverkande
+171 Särskilt tack till:
+172 Översättningar:\n   Tyska: Sandra\n   Spanish: Gastón\n   Portugisiska: Vitor\n   Franska: Astohan\n\nTestning och kreativt stöd:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Vill du verkligen avsluta?
+060 Vill du verkligen avsluta det pågående spelet?
+
+// network information
+
+061 Att spela M.A.R.S. över Internet eller LAN är en planerad funktion som tyvärr inte är implementerad än. \n\nHåll ögonen öppna!
+062 Att spela M.A.R.S. över Internet eller LAN är en planerad funktion som tyvärr inte är implementerad än. \n\nHåll ögonen öppna!
+
+// hide menu
+
+063 Du pausade M.A.R.S. mitt under en tokintensiv strid? \nOm du vill ta en skärmdump, så kan denna knappen hjälpa dig att göra episka bakgrundsbilder genom att dölja alla fönster. \n\nDu får tillbaka dem efteråt genom att trycka på Espace.
+
+// key names
+
+064 Plus
+065 Omvänt snedstreck
+066 Komma
+067 Bindestreck
+068 Delete
+069 Division
+070 Piltangent ned
+071 End
+072 Likamedtecken
+073 Home
+074 Insert
+075 Vänster Alt
+076 Vänster parantes
+077 Vänster Control
+078 Piltangent vänster
+079 Vänster skift
+080 Vänster meta
+081 Meny
+082 Multiplikationstecken
+083 Page Down
+084 Page Up
+085 Pause
+086 Kommatecken
+087 Citattecken
+088 Höger Alt
+089 Höger parentes
+090 Höger Control
+091 Return
+092 Piltangent höger
+093 Höger skift
+094 Höger meta
+095 Semikolon
+096 Snedstreck
+097 Mellanslag
+098 Minus
+099 Tilde
+100 Tabb
+101 Piltangent upp
+
+// tutorial texts
+
+107 Välkommen, Space Rookie!
+108 Vi glädjer oss över att ha rekryterat en blivande hjälte som du, som valt att bistå oss i det STORA KRIGET!\nVi antog att du behövde lite träning med ditt nya skepp.\nLåt oss börja med träningen...
+
+109 Grundläggande rörelser...
+110 Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.\nAlla rörelser styrs av gravitationslagen. För att minska farten måste du vända dig om och accelerera i motsatt riktning. Styr ditt skepp med tangenterna
+
+111 Uppvärmning!
+112 Nå den rosa zonen!\nFörsök att inte krascha ditt helt nya skepp.
+
+113 Bra gjort!
+114 Styr nu tillbaka till din hemplanet och försök att landa ditt skepp genom att sakta sväva baklänges medan du närmar dig planeten.
+
+115 Bra jobbat!
+116 Att landa korrekt är inte lätt som en plätt, eller?\nDu skall lära dig det utantill.
+
+117 Någonting lite mer svårt...
+118 Försök att följa vägen som är markerad med de rosa zonerna!\n\nVi kommer att kontakta dig igen, efter att du har bemästrat detta. Sätt igång!
+
+119 Kanonbra!
+120 Du är den bästa nybörjaren jag någonsin sett.\nFörbered dig för lite explosiva saker.
+
+121 Att skjuta...
+122 För att besegra dina fiender så måste du veta hur du skjuter på dem!\nFör det ändamålet, tryck
+123 Ha nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo att fortsätta med övningarna.
+
+124 Bra landning!
+125 Du visar dig ju vara en bra pilot.\n\nSå, hur skulle vet smaka med lite vapen?
+
+126 Vapenarsenalen...
+127 Jag vet att du har väntat på det här. När du har dockat kan du byta mellan några otroligt ondskefulla vapen.\nTryck
+128 för att öppna din arsenal.\nAnvänd sen
+129 för att välja ett vapen! Starta när du är redo!
+
+130 Kämpa!
+131 Nu ska vi se hur du klarar av en nybörjare från en annan planet.\nSer ut som att han försöker förbättra sin flygförmåga.\nBesegra honom!
+
+132 Imponerande!
+133 Du gjorde det! Som du kanske har märkt, så får du sk ryktespoäng för varje dödad fiende.\nDen lilla gröna siffran som poppar upp ovanför ditt skepp visar antalet. Det kommer att öka om du dödar en massa fiender på raken.
+
+134 Se upp!
+135 Det finns ingen tid åt vila.\nVåra fiender har skickat ut en av deras riktiga krigare för hämnd!\nDet finns inget som jag kan göra för dig...
+
+136 Otroligt!
+
+137 Du klarade av alla uppdragen med framgång. Så vad göra nu?\nLåt oss ta en titt på inställningsmenyn. Där kan man justera en massa... tja... inställningar.\nTill exempel så kan du välja stil och färg på skeppet, eller kanske ändra ditt namn...
+
+138 Vem är bäst?
+139 Du kan visa en lista med frags, poäng osv med <Tab>.\nDessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och avståndet till den bästa.
+
+140 Gratulerar!
+141 Du har klarat samtliga övningar. Du är nu reda att kämpa i det STORA KRIGET. Om du vill fortsätta att öva, så behöver du bara vänta tills fienden återskapas. Du kan sluta din övning med <Esc>.\n\nHa en fantastisk stund med M.A.R.S.!
+
+142 Du misslyckades!
+143 Skitbra, du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. Vänta bara några sekunder...
+
+144 Såg du?
+145 Din hälsa håller på att ta slut! Håll ett öga på den gröna hälsomätaren. Det är bäst att landa när den är för låg.
+
+146 Såg du?
+147 Ditt bränsle håller på att ta slut! Håll ett öga på den gula bränslemätaren. Det är bäst att landa när den är för låg.
+
+148 Du fick honom nästan!
+149 Titta på din motståndares namn. Färgen indikerar hans hälsa. Ju rödare namnet blir, desto svagare är han.
+
+// tabmenu collumns
+
+154 Poäng
+155 Frags
+156 Vådaskott
+157 Självmord
+158 Dödsfall
+159 Rykte
+160 Totalt:
+161 Statistik
+
+// 175
+
