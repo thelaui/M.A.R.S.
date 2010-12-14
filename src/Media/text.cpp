@@ -31,6 +31,8 @@ namespace text {
             sf::Text drawString(text, font::getFont(font::Ubuntu), size);
             drawString.SetColor(color.sfColor());
 
+            drawString.SetBlendMode(sf::Blend::Add);
+
             Vector2f loc(location);
             sf::FloatRect boundingBox = drawString.GetRect();
 

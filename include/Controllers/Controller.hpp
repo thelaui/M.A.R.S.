@@ -57,6 +57,9 @@ class Controller {
         /// Fires the Ship's Weapon. (continous action)
         void slaveFire  (bool fire)  const;
 
+        /// "Presses" the Special-key. (single action)
+        void slaveSpecial (bool special) const;
+
         /// "Presses" the Up-key. (single action)
         void slaveUp    () const;
 
@@ -68,6 +71,9 @@ class Controller {
 
         /// "Presses" the Fire-key. (single action)
         void slaveFire  () const;
+
+        /// "Presses" the Special-key. (single action)
+        void slaveSpecial () const;
 
         /// The type of the controller.
         controllers::ControlType type_;

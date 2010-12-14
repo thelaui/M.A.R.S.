@@ -83,6 +83,7 @@ namespace settings {
     extern sf::Key::Code  C_playerIleft;
     extern sf::Key::Code  C_playerIright;
     extern sf::Key::Code  C_playerIfire;
+    extern sf::Key::Code  C_playerIspecial;
     extern bool           C_playerIteamL;
     extern bool           C_playerIteamR;
     extern int            C_playerIShip;
@@ -92,6 +93,7 @@ namespace settings {
     extern sf::Key::Code  C_playerIIleft;
     extern sf::Key::Code  C_playerIIright;
     extern sf::Key::Code  C_playerIIfire;
+    extern sf::Key::Code  C_playerIIspecial;
     extern bool           C_playerIIteamL;
     extern bool           C_playerIIteamR;
     extern int            C_playerIIShip;

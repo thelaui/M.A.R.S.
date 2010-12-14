@@ -29,6 +29,7 @@ void KeyController::update(sf::Input const& input) const {
         slaveLeft (input.IsKeyDown(settings::C_playerIleft));
         slaveRight(input.IsKeyDown(settings::C_playerIright));
         slaveFire (input.IsKeyDown(settings::C_playerIfire));
+        slaveSpecial (input.IsKeyDown(settings::C_playerIspecial));
     }
 
     else if (type_ == controllers::cPlayer2) {
@@ -36,6 +37,7 @@ void KeyController::update(sf::Input const& input) const {
         slaveLeft (input.IsKeyDown(settings::C_playerIIleft));
         slaveRight(input.IsKeyDown(settings::C_playerIIright));
         slaveFire (input.IsKeyDown(settings::C_playerIIfire));
+        slaveSpecial (input.IsKeyDown(settings::C_playerIIspecial));
     }
 }
 
@@ -45,6 +47,7 @@ void KeyController::update(sf::Key::Code keyCode) const {
         else if (keyCode == settings::C_playerIleft)  slaveLeft();
         else if (keyCode == settings::C_playerIright) slaveRight();
         else if (keyCode == settings::C_playerIfire)  slaveFire();
+        else if (keyCode == settings::C_playerIspecial)  slaveSpecial();
     }
 
     else if (type_ == controllers::cPlayer2) {
@@ -52,5 +55,6 @@ void KeyController::update(sf::Key::Code keyCode) const {
         else if (keyCode == settings::C_playerIIleft)  slaveLeft();
         else if (keyCode == settings::C_playerIIright) slaveRight();
         else if (keyCode == settings::C_playerIIfire)  slaveFire();
+        else if (keyCode == settings::C_playerIIspecial)  slaveSpecial();
     }
 }

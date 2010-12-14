@@ -29,6 +29,8 @@ void ShipName::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         if (ship_->weaponChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2)))
             text::drawSpaceText(ship_->currentWeapon_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
+        else if (ship_->specialChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2)))
+            text::drawSpaceText(ship_->currentSpecial_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
         else {
             Color3f color(1.f, 0.f, 0.f);
             color.h(color.h() + ship_->getLife());
@@ -61,23 +63,11 @@ void ShipName::draw() const {
         }
 
         if (ship_->fragStars_ > 0) {
-            Color3f color;
-            int showAmount;
-            if (ship_->fragStars_ > 10) {
-                color = Color3f(1.f, 0.8f, 0.f);
-                showAmount = ship_->fragStars_ -10;
-            }
-            else if (ship_->fragStars_ > 5) {
-                color = Color3f(0.8f, 0.8f, 0.8f);
-                showAmount = ship_->fragStars_-5;
-            }
-            else {
-                color = Color3f(1.0f, 0.5f, 0.7f);
-                showAmount = ship_->fragStars_;
-            }
+
+            Color3f color(1.0f, 0.5f, 0.7f);
 
             std::stringstream sstr;
-            for (int i=0; i<showAmount; ++i)
+            for (int i=0; i<ship_->fragStars_; ++i)
                 sstr << "*";
             if (ship_->docked_)
                 text::drawSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);

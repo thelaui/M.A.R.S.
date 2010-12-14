@@ -1,4 +1,4 @@
-/* Player.cpp
+/* specials.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,24 +15,10 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Players/Player.hpp"
+# ifndef SPECIALS_HPP_INCLUDED
+# define SPECIALS_HPP_INCLUDED
 
-# include "Controllers/controllers.hpp"
+# include "Specials/Heal.hpp"
 
-Player::Player(controllers::ControlType controlType):
-    ship_(NULL),
-    team_(NULL),
-    points_(0),
-    frags_(0),
-    suicides_(0),
-    deaths_(0),
-    teamKills_(0),
-    controlType_(controlType) {}
+# endif // SPECIALS_HPP_INCLUDED
 
-void Player::resetPoints() {
-    points_ = 0;
-    frags_ = 0;
-    suicides_ = 0;
-    deaths_ = 0;
-    teamKills_ = 0;
-}

@@ -105,7 +105,7 @@ namespace window {
                 if      (event.Type == sf::Event::Resized)
                     resized();
                 else if (event.Type == sf::Event::Closed)
-                    window_.Close();
+                    close();
                 else if (event.Type == sf::Event::KeyPressed) {
                     if (event.Key.Code == settings::C_screenShotKey)
                         screenShot();
@@ -166,9 +166,11 @@ namespace window {
     void mainLoop() {
         while (isOpen()) {
             update();
-            games::update();
-            games::draw();
-            display();
+            if (isOpen()) {
+                games::update();
+                games::draw();
+                display();
+            }
         }
     }
 
@@ -214,16 +216,6 @@ namespace window {
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-
-        if (settings::C_shaders) {
-            backBuffer_.SetActive(true);
-            backBuffer_.Clear();
-            backBuffer_.Create(viewPort_.x_, viewPort_.y_);
-            glViewport(0,0,viewPort_.x_, viewPort_.y_);
-            backBuffer_.SetSmooth(false);
-        }
-        window_.SetActive(true);
-
     }
 
     void startDrawSpace() {

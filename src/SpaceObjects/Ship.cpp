@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
 # include "Weapons/weapons.hpp"
+# include "Specials/specials.hpp"
 # include "Media/sound.hpp"
 # include "Hud/hud.hpp"
 # include "Media/text.hpp"
@@ -45,21 +46,22 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                up_(false), left_(false), right_(false),
                docked_(true),
                weaponChange_(false),
+               specialChange_(false),
                visible_(true),
                respawnTimer_(0.f),
                damageSourceResetTimer_(0.f),
                respawnLocation_(location),
                respawnRotation_(rotation),
                currentWeapon_(new AFK47(this)),
+               currentSpecial_(new Heal(this)),
                life_(200.f),
                maxLife_(life_),
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
                fragStars_(0),
-               rememberedReputation_(0),
-               fragStarTimer_(0.f),
-               pointCheckTimer_(0.f) {
+               rememberedLife_(100.f),
+               damageCheckTimer_(0.f) {
 
     decoObjects::addName(this);
 
@@ -84,17 +86,11 @@ void Ship::update() {
             damageSource_ = owner_;
     }
 
-    if (fragStarTimer_ > 0.f) {
-        fragStarTimer_ -= time;
-        if (fragStarTimer_ <= 0.f)
-            fragStars_ = 0;
-    }
-
-    if (pointCheckTimer_ > 0.f) {
-        pointCheckTimer_ -= time;
-        if (pointCheckTimer_ <= 0.f && rememberedReputation_ != owner_->reputation_) {
-            hud::spawnNumber(&location_, owner_->reputation_ - rememberedReputation_);
-            rememberedReputation_ = owner_->reputation_;
+    if (damageCheckTimer_ > 0.f) {
+        damageCheckTimer_ -= time;
+        if (damageCheckTimer_ <= 0.f && rememberedLife_ != getLife()) {
+            hud::spawnNumber(&location_, (getLife()- rememberedLife_)*M_PI*5.f);
+            rememberedLife_ = getLife();
         }
     }
 
@@ -139,10 +135,13 @@ void Ship::update() {
             velocity_ = Vector2f();
             if (fuel_ < maxFuel_) fuel_ += time*maxFuel_*0.2; else fuel_ = maxFuel_;
             if (life_ < maxLife_) life_ += time*maxLife_*0.2; else life_ = maxLife_;
+            if (damageCheckTimer_ <= 0.f)
+                damageCheckTimer_ = 0.6f;
         }
         else {
             docked_ = false;
             weaponChange_ = false;
+            specialChange_ = false;
             acceleration += physics::attract(this);
         }
 
@@ -202,6 +201,9 @@ void Ship::draw() const {
 
         // draw weapon
         currentWeapon_->draw();
+
+        // draw special
+        currentSpecial_->draw();
 
         float x, y;
 
@@ -331,19 +333,32 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         default:;
     }
-    if (!collectedPowerUps_[items::puShield])
+    if (!collectedPowerUps_[items::puShield]) {
         life_ -= amount;
+        if (damageCheckTimer_ <= 0.f && amount > 0.f)
+            damageCheckTimer_ = 0.3f;
+    }
 }
 
 void Ship::onShockWave(SpaceObject* source, float intensity) {
     setDamageSource(source->damageSource());
-    if (!collectedPowerUps_[items::puShield])
+    if (!collectedPowerUps_[items::puShield]) {
         life_ -= intensity*(20.f + settings::C_iDumb);
+        if (damageCheckTimer_ <= 0.f)
+            damageCheckTimer_ = 0.3f;
+    }
 }
 
 void Ship::setDamageSource(Player* evilOne) {
     damageSource_ = evilOne;
     damageSourceResetTimer_ = 1.5f;
+}
+
+void Ship::heal(int amount) {
+    float healValue((maxLife_/100.f)*amount);
+    (life_ + healValue) > maxLife_ ? life_ = maxLife_ : life_ += healValue;
+    if (damageCheckTimer_ <= 0.f)
+        damageCheckTimer_ = 0.3f;
 }
 
 float Ship::getLife() const {
@@ -386,8 +401,6 @@ void Ship::explode() {
     if (damageSource_ == owner_) {
         ++owner_->suicides_;
         --owner_->points_;
-        --owner_->reputation_;
-        pointCheckTimer_ = 0.5f;
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
             --damageSource_->team()->points_;
 
@@ -396,11 +409,8 @@ void Ship::explode() {
     else if (damageSource_->team() == owner_->team()) {
         ++damageSource_->teamKills_;
         --damageSource_->points_;
-        --damageSource_->reputation_;
-          damageSource_->ship()->pointCheckTimer_ = 0.5f;
 
           damageSource_->ship()->fragStars_ = 0;
-          damageSource_->ship()->fragStarTimer_ = 0.f;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
             --damageSource_->team()->points_;
@@ -410,14 +420,11 @@ void Ship::explode() {
     else {
         ++damageSource_->frags_;
         ++damageSource_->points_;
-          damageSource_->reputation_ += (fragStars_ + damageSource_->ship()->fragStars_ + 5);
-          damageSource_->ship()->pointCheckTimer_ = 0.5f;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
             ++damageSource_->team()->points_;
 
         ++damageSource_->ship()->fragStars_;
-          damageSource_->ship()->fragStarTimer_ = 15.f;
 
         announcer::announce(announcer::Praising);
     }
@@ -433,8 +440,8 @@ void Ship::respawn() {
     life_ = maxLife_;
     fuel_ = maxFuel_;
     fragStars_ = 0;
-    fragStarTimer_ = 0.f;
     visible_ = true;
+    rememberedLife_ = 100.f;
     sound::playSound(sound::ShipRespawn, location_, 100.f);
 }
 

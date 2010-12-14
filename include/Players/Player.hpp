@@ -46,7 +46,7 @@ class Player {
     private:
         Ship* ship_;
         Team* team_;
-        int points_, frags_, suicides_, deaths_, teamKills_, reputation_;
+        int points_, frags_, suicides_, deaths_, teamKills_;
         controllers::ControlType controlType_;
 };
 

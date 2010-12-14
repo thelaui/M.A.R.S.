@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "SpaceObjects/MobileSpaceObject.hpp"
 # include "Weapons/Weapon.hpp"
+# include "Specials/Special.hpp"
 
 # define ITEM_CANNON_CONTROL 0
 
@@ -41,6 +42,8 @@ class Ship: public MobileSpaceObject {
         void onShockWave(SpaceObject* source, float intensity);
 
         void setDamageSource(Player* evilOne);
+
+        void heal(int amount);
 
         float   getLife()  const;
         float   getFuel()  const;
@@ -67,6 +70,7 @@ class Ship: public MobileSpaceObject {
         friend class Tutorial;
         friend class TutBot;
         friend class TutAggroBot;
+        friend class Heal;
 
     private:
 
@@ -80,6 +84,7 @@ class Ship: public MobileSpaceObject {
         bool up_, left_, right_;
         bool docked_;
         bool weaponChange_;
+        bool specialChange_;
 
         bool visible_;
         float respawnTimer_;
@@ -89,14 +94,16 @@ class Ship: public MobileSpaceObject {
         float respawnRotation_;
 
         Weapon* currentWeapon_;
+        Special* currentSpecial_;
 
         float life_, maxLife_;
         float fuel_, maxFuel_;
 
         std::vector<PowerUp*> collectedPowerUps_;
 
-        int fragStars_, rememberedReputation_;
-        float fragStarTimer_, pointCheckTimer_;
+        int fragStars_;
+        float rememberedLife_;
+        float damageCheckTimer_;
 };
 
 # endif // SHIP_HPP_INCLUDED
