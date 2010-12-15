@@ -62,7 +62,7 @@ void Blast::activate() const {
 }
 
 void Blast::next() {
-    parent_->currentSpecial_ = new Heal(parent_);
+    parent_->currentSpecial_ = new RocketLauncher(parent_);
     delete this;
 }
 

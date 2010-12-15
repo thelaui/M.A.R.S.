@@ -74,7 +74,7 @@ void Heal::next() {
 }
 
 void Heal::previous() {
-    parent_->currentSpecial_ = new Blast(parent_);
+    parent_->currentSpecial_ = new RocketLauncher(parent_);
     delete this;
 }
 

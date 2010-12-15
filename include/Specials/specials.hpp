@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Specials/Heal.hpp"
 # include "Specials/Blast.hpp"
+# include "Specials/RocketLauncher.hpp"
 
 # endif // SPECIALS_HPP_INCLUDED
 

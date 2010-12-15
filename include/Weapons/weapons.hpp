@@ -25,7 +25,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Weapons/Flubba.hpp"
 # include "Weapons/Burner.hpp"
 # include "Weapons/H2OMG.hpp"
-# include "Weapons/RocketLauncher.hpp"
 # include "Weapons/Fist.hpp"
 
 # endif // WEAPONS_HPP_INCLUDED

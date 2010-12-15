@@ -74,7 +74,7 @@ void Fist::fire() const {
 }
 
 void Fist::next() {
-    parent_->currentWeapon_ = new RocketLauncher(parent_);
+    parent_->currentWeapon_ = new Burner(parent_);
     delete this;
 }
 
