@@ -42,10 +42,10 @@ void AmmoShotgun::update() {
     float time = timer::frameTime();
 
     physics::collide(this, STATICS | MOBILES);
-    Vector2f acceleration = physics::attract(this);
+    Vector2f acceleration = physics::attract(this)*10;
 
-    location_ += velocity_*time + acceleration*time*time*2.f;
-    velocity_ += acceleration*time*2.f - velocity_*time;
+    location_ += velocity_*time + acceleration*time*time;
+    velocity_ += acceleration*time - velocity_*time;
 
     color_.v(-1.f/totalLifeTime_*lifeTime_+1.f);
 

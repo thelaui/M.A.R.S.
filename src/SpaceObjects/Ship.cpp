@@ -39,7 +39,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 
 Ship::Ship(Vector2f const& location, float rotation, Player* owner):
-               MobileSpaceObject(spaceObjects::oShip, location, 12.f, 10.f),
+               MobileSpaceObject(spaceObjects::oShip, location, 15.f, 10.f),
                owner_(owner),
                rotation_(rotation),
                rotateSpeed_(1.f),
@@ -190,7 +190,7 @@ void Ship::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
         // draw glow
-        owner_->team_->color().gl4f(0.7f);
+        owner_->team_->color().gl4f(0.5f);
         glBegin(GL_QUADS);
             glTexCoord2f(0.f, 0.75f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
             glTexCoord2f(0.f, 0.875f);      glVertex2f(-radius_*3.6f, radius_*3.6f);

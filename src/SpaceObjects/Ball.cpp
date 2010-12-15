@@ -213,6 +213,7 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
 }
 
 void Ball::onShockWave(SpaceObject* source, float intensity) {
+    sticky_ = false;
     setDamageSource(source->damageSource());
 }
 

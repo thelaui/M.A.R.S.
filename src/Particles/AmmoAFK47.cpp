@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoAFK47*> AmmoAFK47::activeParticles_;
 
 AmmoAFK47::AmmoAFK47(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoAFK47>(spaceObjects::oAmmoAFK47, location, 1.f, 0.3f, 5.0f) {
+         Particle<AmmoAFK47>(spaceObjects::oAmmoAFK47, location, 1.f, 0.3f, 2.5f) {
 
     setDamageSource(damageSource);
     Vector2f distortion(Vector2f::randDir());
@@ -34,9 +34,9 @@ AmmoAFK47::AmmoAFK47(Vector2f const& location, Vector2f const& direction, Vector
 void AmmoAFK47::update() {
     float time = timer::frameTime();
     physics::collide(this, STATICS | MOBILES);
-    Vector2f acceleration = physics::attract(this)*2.f;
+    Vector2f acceleration = physics::attract(this)*10.f;
 
-    location_ += velocity_*time + acceleration*0.5f*time*time;
+    location_ += velocity_*time + acceleration*time*time;
     velocity_ += acceleration*time;
 
     lifeTime_ += time;
