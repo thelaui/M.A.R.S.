@@ -76,7 +76,7 @@ namespace settings {
     sf::Key::Code C_playerIspecial =        sf::Key::RShift;
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
-    int           C_playerIShip =           1;
+    int           C_playerIShip =           0;
     sf::String    C_playerIIName =          "PlayerII";
     Color3f       C_playerIIColor =         Color3f(0.2f, 1.f, 0.7f);
     sf::Key::Code C_playerIIup =            sf::Key::W;
@@ -86,7 +86,7 @@ namespace settings {
     sf::Key::Code C_playerIIspecial =       sf::Key::LShift;
     bool          C_playerIIteamL =         true;
     bool          C_playerIIteamR =         false;
-    int           C_playerIIShip =          1;
+    int           C_playerIIShip =          0;
     bool          C_networkPlayerI =        true;
 
     // ai settings ------ adjustable via options menu

@@ -33,7 +33,10 @@ DeathMatch::DeathMatch():
 
     for (int i=0; i<settings::C_botsDeath; ++i) {
         Team* newTeam = players::addTeam();
-        players::addPlayer(newTeam, controllers::cDMBot, newTeam->color());
+        Color3f color(newTeam->color());
+        color.h(newTeam->color().h()+10*sf::Randomizer::Random(-5, 5));
+        color.v(newTeam->color().v()+sf::Randomizer::Random(-0.5f, 0.5f));
+        players::addPlayer(newTeam, controllers::cDMBot, color);
     }
 
     players::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));

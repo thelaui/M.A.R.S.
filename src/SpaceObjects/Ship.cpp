@@ -59,7 +59,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
-               fragStars_(5),
+               fragStars_(0),
                rememberedLife_(100.f),
                damageCheckTimer_(0.f) {
 
@@ -192,10 +192,10 @@ void Ship::draw() const {
         // draw glow
         owner_->team_->color().gl4f(0.7f);
         glBegin(GL_QUADS);
-            glTexCoord2f(0.f, 0.f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
-            glTexCoord2f(0.f, 0.125f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.125f);   glVertex2f( radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.75f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.875f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.875f);   glVertex2f( radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.75f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
         glEnd();
 
         // draw ship
@@ -204,8 +204,8 @@ void Ship::draw() const {
 
         float x, y;
 
-        x = static_cast<float>(owner_->graphic()%4)*0.25f + 0.125f;
-        y = static_cast<float>(std::floor(owner_->graphic()*0.25f))*0.125f;
+        x = static_cast<float>(owner_->graphic()%8)*0.125f;
+        y = static_cast<float>(std::floor(owner_->graphic()*0.125f))*0.375f;
 
         glColor3f(1.f, 1.f, 1.f);
         glBegin(GL_QUADS);
@@ -215,7 +215,17 @@ void Ship::draw() const {
             glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
         glEnd();
 
-        x -= 0.125f;
+        y += 0.125f;
+
+        owner_->team()->color().gl3f();
+        glBegin(GL_QUADS);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
+            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
+        glEnd();
+
+        y += 0.125f;
 
         owner_->color().gl3f();
         glBegin(GL_QUADS);
@@ -237,10 +247,10 @@ void Ship::draw() const {
         // draw glow
         owner_->team_->color().gl4f((respawnTimer_ - 6.f)*0.25f);
         glBegin(GL_QUADS);
-            glTexCoord2f(0.f, 0.f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
-            glTexCoord2f(0.f, 0.125f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.125f);   glVertex2f( radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.75f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
+            glTexCoord2f(0.f, 0.875f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.875f);   glVertex2f( radius_*3.6f, radius_*3.6f);
+            glTexCoord2f(0.125f, 0.75f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
         glEnd();
 
         glPopMatrix();
@@ -404,7 +414,7 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::  causeShockWave(damageSource(), location_, 400.f, 500.f);
+    physics::  causeShockWave(damageSource(), location_, 250.f, 400.f);
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();

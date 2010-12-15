@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "System/settings.hpp"
 # include "Menu/menus.hpp"
+# include "Games/games.hpp"
 
 namespace timer {
 
@@ -51,7 +52,7 @@ namespace timer {
 
         // get frametime, occasionally with slow motion
         if (slowMoTimer_ > 1.f) {
-            if (!menus::visible())
+            if (!menus::visible() || games::type() == games::gMenu)
                 slowMoTimer_ -= frameTime;
             frameTime_ =  frameTime*0.15f;
             totalTime_ += frameTime_;

@@ -46,10 +46,10 @@ void ShipPreview::draw() const {
     if (bg.v() < 0.5f) bg.v(0.5f);
     bg.gl4f(0.6f);
     glBegin(GL_QUADS);
-        glTexCoord2f(0, 0); glVertex2f(-16.f*3.2f,-16.f*3.2f);
-        glTexCoord2f(0, 0.125f); glVertex2f(-16.f*3.2f, 16.f*3.2f);
-        glTexCoord2f(0.125f, 0.125f); glVertex2f( 16.f*3.2f, 16.f*3.2f);
-        glTexCoord2f(0.125f, 0); glVertex2f( 16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0, 0.75f); glVertex2f(-16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0, 0.875f); glVertex2f(-16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(0.125f, 0.875f); glVertex2f( 16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(0.125f, 0.75f); glVertex2f( 16.f*3.2f,-16.f*3.2f);
     glEnd();
 
     // draw ship
@@ -58,25 +58,35 @@ void ShipPreview::draw() const {
 
     float x, y;
 
-    x = static_cast<float>((*graphic_)%4)*0.25f + 0.125f;
-    y = static_cast<float>(std::floor((*graphic_)*0.25f))*0.125f;
+    x = static_cast<float>(*graphic_%8)*0.125f;
+    y = static_cast<float>(std::floor(*graphic_*0.125f))*0.375f;
 
     glColor3f(1.f, 1.f, 1.f);
     glBegin(GL_QUADS);
-        glTexCoord2f(x, y+0.125f);          glVertex2f(-16.f, -16.f);
-        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-16.f,  16.f);
-        glTexCoord2f(x+0.125f, y);          glVertex2f( 16.f,  16.f);
-        glTexCoord2f(x, y);                 glVertex2f( 16.f, -16.f);
+        glTexCoord2f(x, y+0.125f);          glVertex2f(-32.f, -32.f);
+        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-32.f,  32.f);
+        glTexCoord2f(x+0.125f, y);          glVertex2f( 32.f,  32.f);
+        glTexCoord2f(x, y);                 glVertex2f( 32.f, -32.f);
     glEnd();
 
-    x -= 0.125f;
+    y += 0.125f;
+
+    glColor3f(0.6f, 0.6f, 0.6f);
+    glBegin(GL_QUADS);
+        glTexCoord2f(x, y+0.125f);          glVertex2f(-32.f, -32.f);
+        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-32.f,  32.f);
+        glTexCoord2f(x+0.125f, y);          glVertex2f( 32.f,  32.f);
+        glTexCoord2f(x, y);                 glVertex2f( 32.f, -32.f);
+    glEnd();
+
+    y += 0.125f;
 
     color_->gl3f();
     glBegin(GL_QUADS);
-        glTexCoord2f(x, y+0.125f);          glVertex2f(-16.f, -16.f);
-        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-16.f,  16.f);
-        glTexCoord2f(x+0.125f, y);          glVertex2f( 16.f,  16.f);
-        glTexCoord2f(x, y);                 glVertex2f( 16.f, -16.f);
+        glTexCoord2f(x, y+0.125f);          glVertex2f(-32.f, -32.f);
+        glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-32.f,  32.f);
+        glTexCoord2f(x+0.125f, y);          glVertex2f( 32.f,  32.f);
+        glTexCoord2f(x, y);                 glVertex2f( 32.f, -32.f);
     glEnd();
 
     glDisable(GL_TEXTURE_2D);

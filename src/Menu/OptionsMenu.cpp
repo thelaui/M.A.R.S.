@@ -112,7 +112,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIfire, Vector2f(10,110), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIspecial, Vector2f(10,130), 560));
         tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerIShip, Vector2f(20,200)));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 1, 11, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 0, 10, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
         tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Hue), &hue1_, 0, 360, Vector2f(60,190), 500, 135, true));
         tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat1_, 0, 255, Vector2f(60,210), 500, 135, true));
         tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Value), &val1_, 0, 255, Vector2f(60,230), 500, 135, true));
@@ -124,7 +124,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIIfire, Vector2f(10,110), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIIspecial, Vector2f(10,130), 560));
         tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIIShip, Vector2f(20,200)));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 1, 11, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 0, 10, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Hue), &hue2_, 0, 360, Vector2f(60,190), 500, 135, true));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat2_, 0, 255, Vector2f(60,210), 500, 135, true));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Value), &val2_, 0, 255, Vector2f(60,230), 500, 135, true));
