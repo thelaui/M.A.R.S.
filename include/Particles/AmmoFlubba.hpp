@@ -30,7 +30,7 @@ class AmmoFlubba: public Particle<AmmoFlubba> {
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
 
-        static void shockWave(SpaceObject* evilOne, float strength, float radius);
+        static void shockWave(Vector2f const& location, float strength, float radius);
 
         friend class Particle<AmmoFlubba>;
 

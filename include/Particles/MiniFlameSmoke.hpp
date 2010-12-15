@@ -27,7 +27,7 @@ class MiniFlameSmoke: public Particle<MiniFlameSmoke> {
         void update();
         void draw() const;
 
-        static void shockWave(SpaceObject* evilOne, float strength, float radius);
+        static void shockWave(Vector2f const& location, float strength, float radius);
 
         friend class Particle<MiniFlameSmoke>;
 

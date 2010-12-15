@@ -65,10 +65,10 @@ UiWindow* NewGameMenu::get() {
         instance_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,255), 540, 270, true));
 
         TabList* tabList        = new TabList(Vector2f(10,55), 560, 220);
-        Tab* tabSpaceBall       = new Tab(new sf::String("SpaceBall"), 70,  &tSB_);
-        Tab* tabDeathMatch      = new Tab(new sf::String("DeathMatch"), 80, &tDM_);
-        Tab* tabTeamDeathMatch  = new Tab(new sf::String("Team-DeathMatch"), 110, &tTDM_);
-        Tab* tabCannonKeep      = new Tab(new sf::String("CannonKeep"), 80, &tCK_);
+        Tab* tabSpaceBall       = new Tab(new sf::String("SpaceBall"), 90,  &tSB_);
+        Tab* tabDeathMatch      = new Tab(new sf::String("DeathMatch"), 100, &tDM_);
+        Tab* tabTeamDeathMatch  = new Tab(new sf::String("Team-DeathMatch"), 130, &tTDM_);
+        Tab* tabCannonKeep      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
 
         tabSpaceBall->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
         tabSpaceBall->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
@@ -84,14 +84,14 @@ UiWindow* NewGameMenu::get() {
             tabSpaceBall->addWidget(player2Group);
         tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 540, 270, true));
         tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Start), &kStartSB_, Vector2f(485,235), 70, 20));
-        tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Info), &kInfoSB_, Vector2f(10,235), 70, 20));
+        tabSpaceBall->addWidget(new Button(locales::getLocale(locales::Info), &kInfoSB_, Vector2f(10,235), 90, 20));
 
         tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Bots), &settings::C_botsDeath, 0, 50, Vector2f(10,110), 540, 270, true));
         tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIName, &playerI_, Vector2f(10,60), 100));
         tabDeathMatch->addWidget(new Checkbox(&settings::C_playerIIName, &playerII_, Vector2f(290,60), 100));
         tabDeathMatch->addWidget(new Slider(locales::getLocale(locales::Fraglimit), &settings::C_pointLimitDM, 1, 50, Vector2f(10,150), 540, 270, true));
         tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartDM_, Vector2f(485, 235), 70, 20));
-        tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoDM_, Vector2f(10,235), 70, 20));
+        tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoDM_, Vector2f(10,235), 90, 20));
 
         tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
         tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
@@ -107,7 +107,7 @@ UiWindow* NewGameMenu::get() {
             tabTeamDeathMatch->addWidget(player2Group2);
         tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::Fraglimit), &settings::C_pointLimitTDM, 1, 100, Vector2f(10,150), 540, 270, true));
         tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartTDM_, Vector2f(485, 235), 70, 20));
-        tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoTDM_, Vector2f(10,235), 70, 20));
+        tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoTDM_, Vector2f(10,235), 90, 20));
 
         tabCannonKeep->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
         tabCannonKeep->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
@@ -123,7 +123,7 @@ UiWindow* NewGameMenu::get() {
             tabCannonKeep->addWidget(player2Group3);
         tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::Pointlimit), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 540, 270, true));
         tabCannonKeep->addWidget(new Button(locales::getLocale(locales::Start), &kStartCK_, Vector2f(485, 235), 70, 20));
-        tabCannonKeep->addWidget(new Button(locales::getLocale(locales::Info), &kInfoCK_, Vector2f(10,235), 70, 20));
+        tabCannonKeep->addWidget(new Button(locales::getLocale(locales::Info), &kInfoCK_, Vector2f(10,235), 90, 20));
 
         tabList->addTab(tabSpaceBall);
         tabList->addTab(tabDeathMatch);

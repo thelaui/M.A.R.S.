@@ -30,7 +30,7 @@ class MobileSpaceObject: public SpaceObject {
 
         friend Vector2f physics::attract(MobileSpaceObject*);
         friend void     physics::collide(MobileSpaceObject*, int);
-        friend void     physics::causeShockWave(SpaceObject* evilOne, float strength, float radius);
+        friend void     physics::causeShockWave(Player* damageSource, Vector2f const& location, float strength, float radius);
 
     protected:
         Vector2f velocity_;

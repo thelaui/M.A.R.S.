@@ -71,14 +71,14 @@ void AmmoFlubba::draw() const {
 
 void AmmoFlubba::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
-    physics::causeShockWave(this, 150.f, 200.f);
+    physics::causeShockWave(damageSource(), location_, 150.f, 200.f);
     sound::playSound(sound::BlubCollide, location_);
     killMe();
 }
 
-void AmmoFlubba::shockWave(SpaceObject* source, float strength, float radius) {
+void AmmoFlubba::shockWave(Vector2f const& location, float strength, float radius) {
     for (std::list<AmmoFlubba*>::iterator it = activeParticles_.begin(); it != activeParticles_.end(); ++it) {
-        Vector2f direction((*it)->location_ - source->location());
+        Vector2f direction((*it)->location_ - location);
         float distance = direction.length();
         if (distance < radius && direction != Vector2f()) {
             float intensity = radius-distance;

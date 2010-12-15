@@ -112,7 +112,7 @@ namespace particles {
                Vector2f const& velocity = Vector2f(), Color3f const& color = Color3f(1.0f, 1.0f, 1.0f), Player* damageSource = NULL);
 
     /// Particles, which are affected by shock waves are noticed with this function, that there are any.
-    void shockWave(SpaceObject* source, float strength, float radius);
+    void shockWave(Vector2f const& location, float strength, float radius);
 
     /// Returns the total amount of particles.
     int  count();

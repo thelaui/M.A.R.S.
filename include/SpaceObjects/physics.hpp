@@ -25,11 +25,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class SpaceObject;
 class MobileSpaceObject;
+class Player;
 
 namespace physics {
     void     collide        (MobileSpaceObject* source, int with);
     Vector2f attract        (MobileSpaceObject* attracted);
-    void     causeShockWave (SpaceObject* source, float strength, float radius);
+    void     causeShockWave (Player* damageSource, Vector2f const& location, float strength, float radius);
 
     void addMobileObject    (MobileSpaceObject* source);
     void removeMobileObject (MobileSpaceObject* source);

@@ -26,35 +26,38 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 
 void Blast::draw() const {
-    /*if (timer_ > 0.f) {
+    if (timer_ > 0.f) {
         float alpha(0.f);
         if(timer_ > 0.4f)
             alpha = std::pow(0.5f-timer_,2)*100.f;
         else
             alpha = -2.5f*(0.5f-timer_)+1.25f;
 
+        float scale(1.f-timer_);
+
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glColor4f(1.0f, 1.0f, 1.0f, alpha);
 
         const int posX = 3;
-        const int posY = 3;
+        const int posY = 2;
 
         glBegin(GL_QUADS);
-            glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-radius_,-radius_);
-            glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-radius_, radius_);
-            glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( radius_, radius_);
-            glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( radius_,-radius_);
+            glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-radius_*scale,-radius_*scale);
+            glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-radius_*scale, radius_*scale);
+            glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( radius_*scale, radius_*scale);
+            glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( radius_*scale,-radius_*scale);
         glEnd();
 
         timer_ -= timer::frameTime();
-    }*/
+    }
 }
 
 void Blast::activate() const {
     if (parent_->fragStars_ > 0) {
-        physics::causeShockWave(parent_, parent_->fragStars_*200.f, parent_->fragStars_*150.f);
-        timer_ = 0.5f;
+        radius_ = parent_->fragStars_*100.f;
         parent_->fragStars_ = 0;
+        physics::causeShockWave(parent_->owner_, parent_->location_, radius_*2.f, radius_*1.5f);
+        timer_ = 0.5f;
     }
 }
 

@@ -59,7 +59,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
-               fragStars_(0),
+               fragStars_(5),
                rememberedLife_(100.f),
                damageCheckTimer_(0.f) {
 
@@ -356,8 +356,8 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     }
 }
 
-void Ship::onShockWave(SpaceObject* source, float intensity) {
-    setDamageSource(source->damageSource());
+void Ship::onShockWave(Player* damageSource, float intensity) {
+    setDamageSource(damageSource);
     if (!collectedPowerUps_[items::puShield]) {
         life_ -= intensity*(20.f + settings::C_iDumb);
         if (damageCheckTimer_ <= 0.f)
@@ -404,7 +404,7 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::  causeShockWave(this, 400.f, 500.f);
+    physics::  causeShockWave(damageSource(), location_, 400.f, 500.f);
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();

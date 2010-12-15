@@ -38,7 +38,7 @@ class Ship: public MobileSpaceObject {
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
 
-        void onShockWave(SpaceObject* source, float intensity);
+        void onShockWave(Player* damageSource, float intensity);
 
         void setDamageSource(Player* evilOne);
 

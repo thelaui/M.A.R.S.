@@ -40,7 +40,7 @@ class SpaceObject {
         virtual void onCollision(SpaceObject* source, Vector2f const& location,
                                  Vector2f const& direction, Vector2f const& velocity) {};
 
-        virtual void onShockWave(SpaceObject* source, float intensity) {};
+        virtual void onShockWave(Player* damageSource, float intensity) {};
 
         virtual void setDamageSource(Player* evilOne) {damageSource_ = evilOne;}
         Player*      damageSource() const             {return damageSource_;}
@@ -51,7 +51,7 @@ class SpaceObject {
 
         friend Vector2f          physics::attract(MobileSpaceObject*);
         friend void              physics::collide(MobileSpaceObject*, int);
-        friend void              physics::causeShockWave(SpaceObject* evilOne, float strength, float radius);
+        friend void              physics::causeShockWave(Player* damageSource, Vector2f const& location, float strength, float radius);
 
     protected:
         Vector2f location_;

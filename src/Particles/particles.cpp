@@ -217,11 +217,12 @@ namespace particles {
             spawn(type, location, direction, velocity, color, damageSource);
     }
 
-    void shockWave(SpaceObject* source, float strength, float radius) {
-        Smoke::         shockWave(source, strength, radius);
-        Dust::          shockWave(source, strength, radius);
-        AmmoFlubba::    shockWave(source, strength, radius);
-        MiniFlameSmoke::shockWave(source, strength, radius);
+    void shockWave(Vector2f const& location, float strength, float radius) {
+        Smoke::         shockWave(location, strength, radius);
+        Dust::          shockWave(location, strength, radius);
+        AmmoFlubba::    shockWave(location, strength, radius);
+        MiniAmmoFlubba::    shockWave(location, strength, radius);
+        MiniFlameSmoke::shockWave(location, strength, radius);
     }
 
     int count() {

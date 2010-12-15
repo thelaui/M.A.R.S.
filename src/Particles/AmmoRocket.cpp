@@ -127,7 +127,7 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
     postFX::onExplosion();
     setDamageSource(parent_);
-    physics::  causeShockWave(this, 50.f, 300.f);
+    physics::  causeShockWave(damageSource(), location_, 50.f, 300.f);
     particles::spawn(particles::pShockWave, location_);
     killMe();
 }
