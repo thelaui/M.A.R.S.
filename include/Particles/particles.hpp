@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Player;
 class SpaceObject;
+class MobileSpaceObject;
 
 /// A namespace which handles everything related to particles.
 /// The functions in this namespace can spawn, draw, count and
@@ -110,6 +111,9 @@ namespace particles {
     /// \param damageSource The player who spawned the particle.
     void spawnTimed   (float amount, ParticleType const& type, Vector2f const& location, Vector2f const& direction = Vector2f(),
                Vector2f const& velocity = Vector2f(), Color3f const& color = Color3f(1.0f, 1.0f, 1.0f), Player* damageSource = NULL);
+
+    /// Collides all particles with the target.
+    void collideWith(MobileSpaceObject* target);
 
     /// Particles, which are affected by shock waves are noticed with this function, that there are any.
     void shockWave(Vector2f const& location, float strength, float radius);

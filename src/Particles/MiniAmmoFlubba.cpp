@@ -29,6 +29,8 @@ MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& directi
 
     velocity_ = Vector2f::randDirLen()*400;
 
+    location_ += Vector2f::randDir()*5.f;
+
     radius_ = sf::Randomizer::Random(2.f, 3.f);
 
     color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
@@ -37,7 +39,7 @@ MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& directi
 void MiniAmmoFlubba::update() {
     float time = timer::frameTime();
 
-    physics::collide(this, STATICS | MOBILES);
+    physics::collide(this, STATICS | MOBILES | PARTICLES);
 
     // update Size
     if (lifeTime_ > totalLifeTime_-0.2f)

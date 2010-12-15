@@ -42,6 +42,7 @@ class AmmoRocket: public Particle<AmmoRocket> {
         float timer_;
         Ship* target_;
         Player* parent_;
+        float life_;
         static std::list<AmmoRocket*> activeParticles_;
 };
 

@@ -37,12 +37,12 @@ void ShipHighlight::draw() const {
 
         Color3f color = ship_->owner_->color();
         if (color.v() < 0.5f) color.v(0.5f);
-        color.gl4f(0.3f);
+        color.gl4f(0.6f);
         glBegin(GL_QUADS);
-            glTexCoord2f(0.f, 0.875f);   glVertex2f(-ship_->radius_*3.2f,-ship_->radius_*3.2f);
-            glTexCoord2f(0.f, 1.f);      glVertex2f(-ship_->radius_*3.2f, ship_->radius_*3.2f);
-            glTexCoord2f(0.125f,  1.f);      glVertex2f( ship_->radius_*3.2f, ship_->radius_*3.2f);
-            glTexCoord2f(0.125f,  0.875f);   glVertex2f( ship_->radius_*3.2f,-ship_->radius_*3.2f);
+            glTexCoord2f(0.f, 0.875f);   glVertex2f(-ship_->radius_*2.7f,-ship_->radius_*2.7f);
+            glTexCoord2f(0.f, 1.f);      glVertex2f(-ship_->radius_*2.7f, ship_->radius_*2.7f);
+            glTexCoord2f(0.125f,  1.f);      glVertex2f( ship_->radius_*2.7f, ship_->radius_*2.7f);
+            glTexCoord2f(0.125f,  0.875f);   glVertex2f( ship_->radius_*2.7f,-ship_->radius_*2.7f);
         glEnd();
 
         glPopMatrix();

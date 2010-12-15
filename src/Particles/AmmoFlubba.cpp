@@ -28,7 +28,7 @@ AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vect
          Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 0.4f, sf::Randomizer::Random(9.f, 11.f)) {
 
     setDamageSource(damageSource);
-    velocity_ = velocity + direction*400;
+    velocity_ = velocity + direction*800;
     location_ += velocity_*timer::frameTime()*1.2f;
 
     radius_ = sf::Randomizer::Random(6.f, 8.f);
@@ -39,7 +39,7 @@ AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vect
 void AmmoFlubba::update() {
     float time = timer::frameTime();
 
-    physics::collide(this, STATICS | MOBILES);
+    physics::collide(this, STATICS | MOBILES | PARTICLES);
 
     // update Size
     if (lifeTime_ > totalLifeTime_-0.3f)
@@ -71,9 +71,11 @@ void AmmoFlubba::draw() const {
 
 void AmmoFlubba::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
-    physics::causeShockWave(damageSource(), location_, 150.f, 200.f);
-    sound::playSound(sound::BlubCollide, location_);
-    killMe();
+    if (!isDead()) {
+        physics::causeShockWave(damageSource(), location_, 150.f, 200.f);
+        sound::playSound(sound::BlubCollide, location_);
+        killMe();
+    }
 }
 
 void AmmoFlubba::shockWave(Vector2f const& location, float strength, float radius) {

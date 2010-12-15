@@ -26,11 +26,7 @@ class MobileSpaceObject: public SpaceObject {
                           SpaceObject(type, location, radius, mass),
                           velocity_(0.f, 0.f) {}
 
-        Vector2f const& velocity() {return velocity_;}
-
-        friend Vector2f physics::attract(MobileSpaceObject*);
-        friend void     physics::collide(MobileSpaceObject*, int);
-        friend void     physics::causeShockWave(Player* damageSource, Vector2f const& location, float strength, float radius);
+        Vector2f& velocity() {return velocity_;}
 
     protected:
         Vector2f velocity_;

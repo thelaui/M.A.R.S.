@@ -50,7 +50,7 @@ AmmoRocket::~AmmoRocket() {
 
 void AmmoRocket::update() {
     float const time = timer::frameTime();
-    physics::collide(this, STATICS | MOBILES);
+    physics::collide(this, STATICS | MOBILES | PARTICLES);
 
     if (target_) {
         if (target_->getLife() == 0.f)
@@ -121,14 +121,24 @@ void AmmoRocket::draw() const {
 
 void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
-    particles::spawnMultiple(50, particles::pDust, location_);
-    particles::spawnMultiple(20, particles::pExplode, location_);
-    particles::spawnMultiple(5, particles::pBurningFragment, location_);
-    particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    postFX::onExplosion();
-    setDamageSource(parent_);
-    physics::  causeShockWave(damageSource(), location_, 50.f, 300.f);
-    particles::spawn(particles::pShockWave, location_);
-    killMe();
+
+    switch (with->type()) {
+        case spaceObjects::oAmmoFist:
+            target_ = NULL;
+            timer_ = 0.5f;
+            break;
+        default:
+            if (!isDead()) {
+                particles::spawnMultiple(50, particles::pDust, location_);
+                particles::spawnMultiple(20, particles::pExplode, location_);
+                particles::spawnMultiple(5, particles::pBurningFragment, location_);
+                particles::spawnMultiple(1, particles::pMiniFlame, location_);
+                postFX::onExplosion();
+                setDamageSource(parent_);
+                physics::  causeShockWave(damageSource(), location_, 50.f, 300.f);
+                particles::spawn(particles::pShockWave, location_);
+                killMe();
+            }
+    }
 }
 

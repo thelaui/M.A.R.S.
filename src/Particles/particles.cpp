@@ -217,6 +217,16 @@ namespace particles {
             spawn(type, location, direction, velocity, color, damageSource);
     }
 
+    void collideWith(MobileSpaceObject* target) {
+        AmmoShotgun::collideWith(target);
+        AmmoRocket::collideWith(target);
+        AmmoROFLE::collideWith(target);
+        AmmoAFK47::collideWith(target);
+        AmmoFist::collideWith(target);
+        AmmoBurner::collideWith(target);
+        AmmoFlubba::collideWith(target);
+    }
+
     void shockWave(Vector2f const& location, float strength, float radius) {
         Smoke::         shockWave(location, strength, radius);
         Dust::          shockWave(location, strength, radius);
