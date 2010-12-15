@@ -37,6 +37,11 @@ namespace ships {
 
     void draw() {
         glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Weapons));
+
+        for (std::vector<Ship*>::iterator it = shipList_.begin(); it != shipList_.end(); ++it)
+            (*it)->drawWeapon();
+
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
 
         for (std::vector<Ship*>::iterator it = shipList_.begin(); it != shipList_.end(); ++it)

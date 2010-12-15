@@ -40,8 +40,12 @@ void BotController::land() {
 
 void BotController::kickBallToEnemy() {
     Vector2f ballLocation = balls::getBall()->location_;
-    if(balls::getBall()->atStart())
+    if(balls::getBall()->atStart()) {
         moveTo(ballLocation, 0.f, false, 0.f);
+        ballLocation = calcPath(ballLocation, false);
+        if (ballLocation == balls::getBall()->location_)
+            shootPoint(ballLocation);
+    }
     else {
         Vector2f shipLocation = ship()->location();
         Vector2f ballVelocity = balls::getBall()->velocity_;
@@ -59,7 +63,7 @@ void BotController::kickBallToEnemy() {
                 // kick ball
                 moveTo(targetPlanetLocation, 0.f, false);
 
-                if (ballLocation == balls::getBall()->location_ && !balls::getBall()->atStart())
+                if (ballLocation == balls::getBall()->location_)
                     shootPoint(ballLocation);
             }
             else {

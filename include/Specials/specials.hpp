@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define SPECIALS_HPP_INCLUDED
 
 # include "Specials/Heal.hpp"
+# include "Specials/Blast.hpp"
 
 # endif // SPECIALS_HPP_INCLUDED
 

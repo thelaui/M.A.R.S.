@@ -40,3 +40,8 @@ void Team::setHome(Home* home) {
 void Team::resetPoints() {
     points_ = 0;
 }
+
+void Team::addStars() const {
+    for(std::vector<Player*>::const_iterator it=members_.begin(); it!=members_.end(); ++it)
+        ++(*it)->ship()->fragStars_;
+}

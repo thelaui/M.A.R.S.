@@ -152,6 +152,7 @@ void Ball::draw() const {
 
 void Ball::onCollision(SpaceObject* with, Vector2f const& location,
                        Vector2f const& direction, Vector2f const& velocity) {
+    sticky_ = false;
     float strength = velocity.length();
 
     setDamageSource(with->damageSource());
@@ -167,7 +168,6 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oShip:
             setDamageSource(with->damageSource());
             particles::spawnMultiple(1, particles::pSpark, location, direction, velocity_, Color3f(0.3f, 0.3f, 0.3f));
-            sticky_ = false;
             if (strength > 50) {
                 sound::playSound(sound::ShipBallCollide, location, (strength-50)/3);
             }
@@ -218,7 +218,7 @@ void Ball::onShockWave(SpaceObject* source, float intensity) {
 
 void Ball::explode() {
     sound::playSound(sound::BallExplode, location_, 100.f);
-    physics::causeShockWave(this, 50.f);
+    physics::causeShockWave(this, 50.f, 300.f);
     particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
     particles::spawnMultiple(70, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);

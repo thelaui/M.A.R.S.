@@ -76,6 +76,7 @@ namespace texture {
                 case Particles:                loadTexture_(type, "data/tex/particles.png");              break;
                 case PowerUps:                 loadTexture_(type, "data/tex/powerUps.png");               break;
                 case Ships:                    loadTexture_(type, "data/tex/ships.png");                  break;
+                case Weapons:                  loadTexture_(type, "data/tex/weapons.png");                break;
                 case MotherShip:               loadTexture_(type, "data/tex/motherShip.png");             break;
                 case MotherShipPlayerLayer:    loadTexture_(type, "data/tex/motherShipPlayerLayer.png");  break;
                 case Sign1:                    loadTexture_(type, "data/tex/signs/sign1.png");            break;

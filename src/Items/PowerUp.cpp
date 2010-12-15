@@ -139,6 +139,10 @@ float PowerUp::radius() const {
     return radius_;
 }
 
+items::PowerUpType PowerUp::type() const {
+    return type_;
+}
+
 bool PowerUp::isDead() const {
     return lifeTime_ >= totalLifeTime_;
 }

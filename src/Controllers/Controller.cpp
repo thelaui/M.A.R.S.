@@ -30,7 +30,7 @@ void Controller::slaveUp (bool up) const {
 }
 
 void Controller::slaveLeft (bool left) const {
-    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
+    if (!slave_->ship_->weaponChange_ && !slave_->ship_->specialChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (left && slave_->ship_->right_)
             slave_->ship_->right_ = false;
         else
@@ -41,7 +41,7 @@ void Controller::slaveLeft (bool left) const {
 }
 
 void Controller::slaveRight (bool right) const {
-    if (!slave_->ship_->weaponChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
+    if (!slave_->ship_->weaponChange_ && !slave_->ship_->specialChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (right && slave_->ship_->left_)
             slave_->ship_->left_ = false;
         else

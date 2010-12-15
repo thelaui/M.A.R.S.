@@ -18,6 +18,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef ITEMS_HPP_INCLUDED
 # define ITEMS_HPP_INCLUDED
 
+# include "System/Vector2f.hpp"
+
+# include <utility>
+
 class CannonControl;
 class PowerUp;
 
@@ -29,6 +33,8 @@ namespace items {
 
     void addCannonControl();
     CannonControl* getCannonControl();
+
+    std::pair<PowerUp*, float> const findClosest(Vector2f const& location, PowerUpType type);
 
     void clear();
 }

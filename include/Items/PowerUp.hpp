@@ -38,6 +38,7 @@ class PowerUp {
 
         Vector2f const& location() const;
         float           radius()   const;
+        items::PowerUpType type()  const;
 
         bool isDead()              const;
 

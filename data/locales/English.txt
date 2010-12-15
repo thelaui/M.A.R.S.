@@ -1,4 +1,4 @@
-// menu buttons
+﻿// menu buttons
 
 000 Start Local Game
 105 Start Tutorial
@@ -95,6 +95,7 @@
 048 Turn Left
 049 Turn Right
 050 Weapon
+175 Special
 051 Ship
 052 Hue
 053 Saturation
@@ -248,5 +249,5 @@
 160 Total:
 161 Statistics
 
-// 175
+// 176
 

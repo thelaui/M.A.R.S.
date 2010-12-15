@@ -133,20 +133,22 @@ namespace spaceObjects {
         float closestDistance = FLT_MAX;
 
         for (std::vector<SpaceObject*>::const_iterator it = objectList_.begin(); it != objectList_.end(); ++it) {
-            float checkRadius = (*it)->radius();
-            // increase radius, when start and end aren't close to object
-            if ((start - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2)
-             && (end   - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2))
-                checkRadius += minDistance;
+            if ((*it)->type()!=oBlackHole) {
+                float checkRadius = (*it)->radius();
+                // increase radius, when start and end aren't close to object
+                if ((start - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2)
+                 && (end   - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2))
+                    checkRadius += minDistance;
 
-            if (isOnLine(start, end-start, (*it)->location(), checkRadius)) {
-                // check if object is in between or endpoint inside of obstacle
-                if ((end - start)*(end - (*it)->location()) >= 0.f || (end - (*it)->location()).lengthSquare() < std::pow((*it)->radius(), 2)) {
-                    // hacky... should check for distańce to impactlocation, but does not...
-                    float distance = (start - (*it)->location()).lengthSquare();
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
-                        closest = *it;
+                if (isOnLine(start, end-start, (*it)->location(), checkRadius)) {
+                    // check if object is in between or endpoint inside of obstacle
+                    if ((end - start)*(end - (*it)->location()) >= 0.f || (end - (*it)->location()).lengthSquare() < std::pow((*it)->radius(), 2)) {
+                        // hacky... should check for distańce to impactlocation, but does not...
+                        float distance = (start - (*it)->location()).lengthSquare();
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closest = *it;
+                        }
                     }
                 }
             }

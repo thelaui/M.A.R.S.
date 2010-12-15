@@ -110,22 +110,24 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), &settings::C_playerIleft, Vector2f(10,70), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), &settings::C_playerIright, Vector2f(10,90), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIfire, Vector2f(10,110), 560));
-        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerIShip, Vector2f(20,180)));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 1, 11, Vector2f(60,150), 500, 135, true, generateName::shipNames()));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Hue), &hue1_, 0, 360, Vector2f(60,170), 500, 135, true));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat1_, 0, 255, Vector2f(60,190), 500, 135, true));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Value), &val1_, 0, 255, Vector2f(60,210), 500, 135, true));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIspecial, Vector2f(10,130), 560));
+        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerIShip, Vector2f(20,200)));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 1, 11, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Hue), &hue1_, 0, 360, Vector2f(60,190), 500, 135, true));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat1_, 0, 255, Vector2f(60,210), 500, 135, true));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Value), &val1_, 0, 255, Vector2f(60,230), 500, 135, true));
 
         tabPlayer2->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIIName, Vector2f(10,30), 560, TEXT_EDIT, 12));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), &settings::C_playerIIup, Vector2f(10,50), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), &settings::C_playerIIleft, Vector2f(10,70), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), &settings::C_playerIIright, Vector2f(10,90), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIIfire, Vector2f(10,110), 560));
-        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIIShip, Vector2f(20,180)));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 1, 11, Vector2f(60,150), 500, 135, true, generateName::shipNames()));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Hue), &hue2_, 0, 360, Vector2f(60,170), 500, 135, true));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat2_, 0, 255, Vector2f(60,190), 500, 135, true));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Value), &val2_, 0, 255, Vector2f(60,210), 500, 135, true));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIIspecial, Vector2f(10,130), 560));
+        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIIShip, Vector2f(20,200)));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 1, 11, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Hue), &hue2_, 0, 360, Vector2f(60,190), 500, 135, true));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat2_, 0, 255, Vector2f(60,210), 500, 135, true));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Value), &val2_, 0, 255, Vector2f(60,230), 500, 135, true));
 
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));

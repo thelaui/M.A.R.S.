@@ -1,4 +1,4 @@
-/* Heal.cpp
+/* Blast.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -21,12 +21,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/ships.hpp"
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
+# include "SpaceObjects/physics.hpp"
 
 # include <SFML/Graphics.hpp>
-# include <vector>
 
-void Heal::draw() const {
-    if (timer_ > 0.f) {
+void Blast::draw() const {
+    /*if (timer_ > 0.f) {
         float alpha(0.f);
         if(timer_ > 0.4f)
             alpha = std::pow(0.5f-timer_,2)*100.f;
@@ -47,35 +47,26 @@ void Heal::draw() const {
         glEnd();
 
         timer_ -= timer::frameTime();
-    }
+    }*/
 }
 
-void Heal::activate() const {
+void Blast::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*50.f;
-        std::vector<Ship*> const& ships = ships::getShips();
-        for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-            if ((*it)!=parent_) {
-                float distance(((*it)->location_-parent_->location_).length());
-                if (parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_)
-                    (*it)->heal(((radius_/distance)-0.8f)*parent_->fragStars_*10);
-            }
-            else
-                parent_->heal(parent_->fragStars_*10);
-        }
+        physics::causeShockWave(parent_, parent_->fragStars_*200.f, parent_->fragStars_*150.f);
         timer_ = 0.5f;
         parent_->fragStars_ = 0;
     }
 }
 
-void Heal::next() {
-    parent_->currentSpecial_ = new Blast(parent_);
+void Blast::next() {
+    parent_->currentSpecial_ = new Heal(parent_);
     delete this;
 }
 
-void Heal::previous() {
-    parent_->currentSpecial_ = new Blast(parent_);
+void Blast::previous() {
+    parent_->currentSpecial_ = new Heal(parent_);
     delete this;
 }
+
 
 

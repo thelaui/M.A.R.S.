@@ -61,7 +61,7 @@ void CannonBall::update() {
         if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2)) {
             (*it)->onCollision(this, Vector2f(), Vector2f(), Vector2f());
             sound::playSound(sound::BallExplode, location_, 100.f);
-            physics::causeShockWave(this, 100.f);
+            physics::causeShockWave(this, 100.f, 300.f);
             particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
             particles::spawnMultiple(70, particles::pDust, location_);
             particles::spawnMultiple(20, particles::pExplode, location_);

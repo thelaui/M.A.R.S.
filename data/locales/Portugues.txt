@@ -1,4 +1,4 @@
-// Botões do menu
+﻿// Botões do menu
 
 000 Iniciar Jogo Local
 105 Iniciar Tutorial
@@ -39,7 +39,7 @@
 
 024 Empurre ou atire a bola ao planeta inimigo!
 
-025 Como resultado da GRANDE GUERRA você perdeu tudo: sua casa, sua família e \nsua autoestima. \nSua última chance de sair desta vida miserável em que se encontra agora, é se tornar um gladiador na gloriosa \nArena da morte. \nResistir aos outros lutadores e ganhar pontos destruindo as cascas de noz que eles chamam de naves. \n Se prepare! \nMorte e glória te aguardam.
+025 Como resultado da GRANDE GUERRA você perdeu tudo: sua casa, sua família e \nsua autoestima. \nSua última chance de sair desta vida miserável em que se encontra agora, é se tornar um gladiador na gloriosa \nArena da morte. \nResistir aos outros lutadores e ganhar pontos destruindo as cascas de noz que eles chamam de naves. \n Se prepare! \nmorte e glória te aguardam.
 
 026 Destrua quantos inimigos conseguir!
 
@@ -66,20 +66,18 @@
 034 Caminhos da IA 
 035 Mostrar Informações do Jogo
 036 Quadros por Segundo
-152 Language
-153 Hotkey for Screenshots
 037 Contagem de Partículas
 038 Contagem de Partículas
 039 Tempo de Vida das Partículas
-040 Game Settings
+040 Estrelas
 041 Tela Cheia
 042 V-Sync
 163 Efeitos de Sombra
 164 Infelizmente a sua máquina não suporta os efeitos de Sombra!
 
-151 High Starfield Resolution
-173 Resolution
-174 Color Depth
+151 Alta Resolução
+152 Baixa Resolução
+153 Desligado 
 
 // gameplay options
 
@@ -101,6 +99,7 @@
 048 Virar à Esquerda
 049 Virar à Direita
 050 Arma
+175 Special
 051 Nave
 052 Tonalidade
 053 Saturação
@@ -121,7 +120,7 @@
 
 170 Créditos
 171 Agradecimentos especiais para:
-172 Traduções:\n   Alemão: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traduções:\n    Alemão: Sandra\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
@@ -255,5 +254,5 @@
 160 Total:
 161 Estatísticas
 
-// 175
+// 176
 

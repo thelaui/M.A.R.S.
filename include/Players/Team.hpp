@@ -31,10 +31,11 @@ class Team {
 
         void resetPoints();
 
-        std::vector<Player*> const& members() const {return members_;}
-        Home                 const* home()    const {return home_;}
-        Color3f              const& color()   const {return color_;}
-        int                         points()  const {return points_;}
+        std::vector<Player*> const& members()  const {return members_;}
+        Home                 const* home()     const {return home_;}
+        Color3f              const& color()    const {return color_;}
+        int                         points()   const {return points_;}
+        void                        addStars() const;
 
         friend short zones::isInside(Team* checker, SpaceObject const& toBeChecked);
         friend TacticalZone* zones::toProtect(Team* checker);

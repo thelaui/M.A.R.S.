@@ -94,6 +94,7 @@
 048 Links
 049 Rechts
 050 Schießen
+175 Spezial
 051 Schiff
 052 Farbton
 053 Sättigung
@@ -246,4 +247,4 @@
 160 Gesamt:
 161 Statistik
 
-// 175
+// 176

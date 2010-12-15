@@ -29,7 +29,7 @@ class MobileSpaceObject;
 namespace physics {
     void     collide        (MobileSpaceObject* source, int with);
     Vector2f attract        (MobileSpaceObject* attracted);
-    void     causeShockWave (SpaceObject* source, float strength, float radius = 300.f);
+    void     causeShockWave (SpaceObject* source, float strength, float radius);
 
     void addMobileObject    (MobileSpaceObject* source);
     void removeMobileObject (MobileSpaceObject* source);

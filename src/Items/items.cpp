@@ -129,6 +129,17 @@ namespace items {
         return cannonControl_;
     }
 
+   std::pair<PowerUp*, float> const findClosest(Vector2f const& location, PowerUpType type) {
+        float minDistance(FLT_MAX);
+        PowerUp* closest(NULL);
+        for(std::list<PowerUp*>::iterator it=powerUps_.begin(); it!=powerUps_.end(); ++it)
+            if((*it)->type() == type && (((*it)->location()-location).lengthSquare() < minDistance)) {
+                minDistance = ((*it)->location()-location).lengthSquare();
+                closest = *it;
+            }
+        return std::make_pair(closest, minDistance);
+    }
+
     void clear() {
         if (cannonControl_) {
             delete cannonControl_;

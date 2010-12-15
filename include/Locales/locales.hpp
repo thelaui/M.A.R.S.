@@ -44,7 +44,7 @@ namespace locales {
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
-                     Resolution, ColorDepth,
+                     Resolution, ColorDepth, Special,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

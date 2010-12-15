@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Particles/particles.hpp"
 # include "Menu/menus.hpp"
+# include "Menu/menus.hpp"
 # include "Games/games.hpp"
 
 # include <SFML/Graphics.hpp>

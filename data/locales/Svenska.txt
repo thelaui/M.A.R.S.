@@ -1,4 +1,4 @@
-// menu buttons
+﻿// menu buttons
 
 000 Spela lokalt
 105 Övningsspela
@@ -95,6 +95,7 @@
 048 Sväng vänster
 049 Sväng höger
 050 Vapen
+175 Special
 051 Skepp
 052 Nyans
 053 Mättnad
@@ -248,5 +249,5 @@
 160 Totalt:
 161 Statistik
 
-// 175
+// 176
 

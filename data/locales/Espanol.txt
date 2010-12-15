@@ -93,6 +93,7 @@
 048 Girar a la izquierda
 049 Girar a la derecha
 050 Arma
+175 Special
 051 Nave
 052 Tono
 053 Saturación
@@ -246,4 +247,4 @@
 160 Total:
 161 Estadísticas
 
-//175
+//176

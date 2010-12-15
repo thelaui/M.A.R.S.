@@ -1,4 +1,4 @@
-// Interface du Menu Principal
+﻿// Interface du Menu Principal
 
 000 Démarrer une partie locale
 105 Lancer le Tutoriel
@@ -59,20 +59,18 @@
 034 Chemins de l'IA
 035 Afficher Informations du jeu
 036 Images par seconde
-152 Langue
-153 Hotkey for Screenshots
 037 Compteur de particules
 038 Compteur de particules
 039 Durée de vie des particules
-040 Game Settings
+040 Étoiles
 041 Plein-écran
 042 Synchronisation verticale
 163 Effets Shaders
 164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
 
-151 High Starfield Resolution
-173 Resolution
-174 Color Depth
+151 Haute résolution
+152 Basse résolution
+153 Désactivé
 
 // gameplay options
 
@@ -94,6 +92,7 @@
 048 Tourner à gauche
 049 Tourner à droite
 050 Arme
+175 Special
 051 Vaisseau
 052 Teinte
 053 Saturation
@@ -113,7 +112,7 @@
 
 170 Crédits
 171 Remerciements particuliers à:
-172 Traductions:\n   Allemand: Sandra\n   Français: Astohan\n   Spanish: Gastón\n   Portuguese: Vitor\n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traductions:\n    Allemand: Sandra  \nFrançais: Astohan \n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quitter
 
@@ -247,5 +246,5 @@
 160 Total:
 161 Statistiques
 
-// 175
+// 176
 

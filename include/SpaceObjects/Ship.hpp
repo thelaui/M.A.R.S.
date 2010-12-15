@@ -33,8 +33,7 @@ class Ship: public MobileSpaceObject {
 
         void update();
         void draw() const;
-        void drawName() const;
-        void drawHighLight() const;
+        void drawWeapon() const;
 
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
@@ -71,6 +70,8 @@ class Ship: public MobileSpaceObject {
         friend class TutBot;
         friend class TutAggroBot;
         friend class Heal;
+        friend class Blast;
+        friend class Team;
 
     private:
 

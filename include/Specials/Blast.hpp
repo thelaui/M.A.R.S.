@@ -1,4 +1,4 @@
-/* Heal.hpp
+/* Blast.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,22 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HEAL_HPP_INCLUDED
-# define HEAL_HPP_INCLUDED
+# ifndef BLAST_HPP_INCLUDED
+# define BLAST_HPP_INCLUDED
 
 # include "Specials/Special.hpp"
 
-/// Special: Heal.
-/// A healing wave.
+/// Special: Blast.
+/// A blast wave.
 
-class Heal: public Special {
+class Blast: public Special {
     public:
         /// Ctor which constructs the special.
-        Heal(Ship* parent):
-              Special(parent, "HEAL"),
+        Blast(Ship* parent):
+              Special(parent, "BLAST"),
               radius_(0.f) {};
 
-        /// Heals nearby friends.
+        /// Blasts away nearby ships.
         void activate() const;
 
         /// Draws the special.
@@ -48,7 +48,8 @@ class Heal: public Special {
         mutable float radius_;
 };
 
-# endif // HEAL_HPP_INCLUDED
+# endif // BLAST_HPP_INCLUDED
+
 
 
 

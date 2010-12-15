@@ -158,8 +158,8 @@ namespace physics {
             Vector2f direction((*it)->location_ - source->location());
             float distance = direction.length();
             if (distance < radius && direction != Vector2f()) {
-                float intensity = radius-distance;
-                direction = direction.normalize();
+                float intensity = ((radius-distance)/radius)*strength;
+                direction /= distance;
                 direction *= intensity;
                 (*it)->velocity_ += direction;
                 (*it)->onShockWave(source, intensity/1000.f);

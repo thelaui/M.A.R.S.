@@ -89,8 +89,11 @@ void Ship::update() {
     if (damageCheckTimer_ > 0.f) {
         damageCheckTimer_ -= time;
         if (damageCheckTimer_ <= 0.f && rememberedLife_ != getLife()) {
-            hud::spawnNumber(&location_, (getLife()- rememberedLife_)*M_PI*5.f);
-            rememberedLife_ = getLife();
+            float difference((getLife()- rememberedLife_)*M_PI*5.f);
+            if (std::abs(difference) > 4.f) {
+                hud::spawnNumber(&location_, difference);
+                rememberedLife_ = getLife();
+            }
         }
     }
 
@@ -199,12 +202,6 @@ void Ship::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
-        // draw weapon
-        currentWeapon_->draw();
-
-        // draw special
-        currentSpecial_->draw();
-
         float x, y;
 
         x = static_cast<float>(owner_->graphic()%4)*0.25f + 0.125f;
@@ -248,6 +245,25 @@ void Ship::draw() const {
 
         glPopMatrix();
     }
+}
+
+void Ship::drawWeapon() const {
+     if (visible_) {
+        glPushMatrix();
+        glLoadIdentity();
+        glTranslatef(location_.x_, location_.y_, 0.f);
+
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glRotatef(rotation_, 0.f, 0.f, 1.f);
+
+        // draw weapon
+        currentWeapon_->draw();
+
+        // draw special
+        currentSpecial_->draw();
+
+        glPopMatrix();
+     }
 }
 
 void Ship::onCollision(SpaceObject* with, Vector2f const& location,
@@ -335,7 +351,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     }
     if (!collectedPowerUps_[items::puShield]) {
         life_ -= amount;
-        if (damageCheckTimer_ <= 0.f && amount > 0.f)
+        if (damageCheckTimer_ <= 0.f)
             damageCheckTimer_ = 0.3f;
     }
 }
@@ -355,8 +371,12 @@ void Ship::setDamageSource(Player* evilOne) {
 }
 
 void Ship::heal(int amount) {
-    float healValue((maxLife_/100.f)*amount);
-    (life_ + healValue) > maxLife_ ? life_ = maxLife_ : life_ += healValue;
+    float lifeAmount((maxLife_/100.f)*amount);
+    (life_ + lifeAmount) > maxLife_ ? life_ = maxLife_ : life_ += lifeAmount;
+
+    float fuelAmount((maxFuel_/100.f)*amount);
+    (fuel_ + fuelAmount) > maxFuel_ ? fuel_ = maxFuel_ : fuel_ += fuelAmount;
+
     if (damageCheckTimer_ <= 0.f)
         damageCheckTimer_ = 0.3f;
 }
@@ -384,7 +404,7 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::  causeShockWave(this, 50.f);
+    physics::  causeShockWave(this, 400.f, 500.f);
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();
@@ -410,7 +430,7 @@ void Ship::explode() {
         ++damageSource_->teamKills_;
         --damageSource_->points_;
 
-          damageSource_->ship()->fragStars_ = 0;
+        (damageSource_->ship()->fragStars_-1 < 0) ? damageSource_->ship()->fragStars_=0 : --damageSource_->ship()->fragStars_;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
             --damageSource_->team()->points_;
