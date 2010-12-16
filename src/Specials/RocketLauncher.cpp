@@ -29,7 +29,6 @@ void RocketLauncher::draw() const {
 
 void RocketLauncher::activate() const {
     if (parent_->fragStars_ > 0) {
-        float angleRad = parent_->rotation_*M_PI / 180.f;
         if (parent_->fragStars_ == 1) {
             float angleRad = parent_->rotation_*M_PI / 180.f;
             Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
@@ -41,11 +40,11 @@ void RocketLauncher::activate() const {
         else {
             float angleRad = (parent_->rotation_ -22.5f)*M_PI / 180.f;
             for (int i=parent_->fragStars_; i!=0; --i) {
-                    angleRad += M_PI_4/parent_->fragStars_;
-                    Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-                    particles::spawn(particles::pAmmoRocket, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-                    particles::spawnMultiple(10.f, particles::pDust,  parent_->location_ + faceDirection*parent_->radius_, parent_->velocity_);
-                    parent_->velocity_ -= faceDirection*100.f/i;
+                Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
+                particles::spawn(particles::pAmmoRocket, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+                particles::spawnMultiple(10.f, particles::pDust,  parent_->location_ + faceDirection*parent_->radius_, parent_->velocity_);
+                parent_->velocity_ -= faceDirection*100.f/i;
+                angleRad += M_PI_4/parent_->fragStars_;
             }
             sound::playSound(sound::Pump, parent_->location_);
         }

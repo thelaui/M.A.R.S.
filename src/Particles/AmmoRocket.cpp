@@ -50,7 +50,10 @@ AmmoRocket::~AmmoRocket() {
 
 void AmmoRocket::update() {
     float const time = timer::frameTime();
-    physics::collide(this, STATICS | MOBILES | PARTICLES);
+    if (timer_ <= 0.5)
+        physics::collide(this, STATICS | MOBILES | PARTICLES);
+    else
+        physics::collide(this, STATICS | MOBILES);
 
     if (target_) {
         if (target_->getLife() == 0.f)
