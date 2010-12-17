@@ -38,8 +38,7 @@ namespace players {
         }
     }
 
-    Team* addTeam(Color3f const& color) {
-        Team* newTeam = new Team(color);
+    Team* addTeam(Team* newTeam) {
         allTeams_.push_back(newTeam);
         return newTeam;
     }

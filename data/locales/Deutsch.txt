@@ -96,9 +96,9 @@
 050 Schießen
 175 Spezial
 051 Schiff
-052 Farbton
-053 Sättigung
-054 Helligkeit
+052 Spielerfarbe
+053 Teamfarbe
+054 #######
 055 Press key while hovering!
 056 Enter text while hovering!
 

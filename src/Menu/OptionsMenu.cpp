@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/RadioGroup.hpp"
 # include "Interface/RadioButton.hpp"
 # include "Interface/ComboBox.hpp"
+# include "Interface/ColorPicker.hpp"
 # include "System/window.hpp"
 # include "System/settings.hpp"
 # include "Menu/menus.hpp"
@@ -83,19 +84,13 @@ sf::String OptionsMenu::language_("");
 int  OptionsMenu::soundVolume_(0);
 int  OptionsMenu::musicVolume_(0);
 int  OptionsMenu::announcerVolume_(0);
-int  OptionsMenu::hue1_(0);
-int  OptionsMenu::sat1_(0);
-int  OptionsMenu::val1_(0);
-int  OptionsMenu::hue2_(0);
-int  OptionsMenu::sat2_(0);
-int  OptionsMenu::val2_(0);
 
 UiWindow* OptionsMenu::get() {
     if (instance_ == NULL) {
-        instance_ = new OptionsMenu(600, 350);
+        instance_ = new OptionsMenu(600, 370);
 
         instance_->addWidget(new Label(locales::getLocale(locales::Options), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(520,320), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(520,340), 70, 20));
 
         TabList* tabList  = new TabList(Vector2f(10,55), 580, 250);
         Tab* tabInterface = new Tab(locales::getLocale(locales::Interface), 90);
@@ -111,11 +106,10 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), &settings::C_playerIright, Vector2f(10,90), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIfire, Vector2f(10,110), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIspecial, Vector2f(10,130), 560));
-        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerIShip, Vector2f(20,200)));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 0, 10, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Hue), &hue1_, 0, 360, Vector2f(60,190), 500, 135, true));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat1_, 0, 255, Vector2f(60,210), 500, 135, true));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::Value), &val1_, 0, 255, Vector2f(60,230), 500, 135, true));
+        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(500,200)));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
+        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(10,200), 420, 185));
+        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerITeamColor, Vector2f(10,230), 420, 185));
 
         tabPlayer2->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIIName, Vector2f(10,30), 560, TEXT_EDIT, 12));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), &settings::C_playerIIup, Vector2f(10,50), 560));
@@ -123,11 +117,10 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), &settings::C_playerIIright, Vector2f(10,90), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), &settings::C_playerIIfire, Vector2f(10,110), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Special), &settings::C_playerIIspecial, Vector2f(10,130), 560));
-        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIIShip, Vector2f(20,200)));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 0, 10, Vector2f(60,170), 500, 135, true, generateName::shipNames()));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Hue), &hue2_, 0, 360, Vector2f(60,190), 500, 135, true));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Saturation), &sat2_, 0, 255, Vector2f(60,210), 500, 135, true));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::Value), &val2_, 0, 255, Vector2f(60,230), 500, 135, true));
+        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(500,200)));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), &settings::C_playerIIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
+        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(10,200), 420, 185));
+        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerIITeamColor, Vector2f(10,230), 420, 185));
 
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));
@@ -184,8 +177,8 @@ UiWindow* OptionsMenu::get() {
         tabList->addTab(tabGameplay);
         tabList->addTab(tabGraphics);
         tabList->addTab(tabAudio);
-        tabList->addTab(tabPlayer1);
         tabList->addTab(tabPlayer2);
+        tabList->addTab(tabPlayer1);
         instance_->addWidget(tabList);
     }
     return instance_;
@@ -260,16 +253,6 @@ void OptionsMenu::checkWidgets() {
             menus::showWindow(ShaderError::get());
         }
     }
-    if ((hue1_ != settings::C_playerIColor.h()) | (sat1_ != settings::C_playerIColor.s()*255) | (val1_ != settings::C_playerIColor.v()*255)) {
-        settings::C_playerIColor.h(hue1_);
-        settings::C_playerIColor.s(static_cast<float>(sat1_)/255.f);
-        settings::C_playerIColor.v(static_cast<float>(val1_)/255.f);
-    }
-    if ((hue2_ != settings::C_playerIIColor.h()) | (sat2_ != settings::C_playerIIColor.s()*255) | (val2_ != settings::C_playerIIColor.v()*255)) {
-        settings::C_playerIIColor.h(hue2_);
-        settings::C_playerIIColor.s(static_cast<float>(sat2_)/255.f);
-        settings::C_playerIIColor.v(static_cast<float>(val2_)/255.f);
-    }
     if (soundVolume_ != settings::C_soundVolume) {
         settings::C_soundVolume = soundVolume_;
     }
@@ -298,13 +281,6 @@ void OptionsMenu::onShow() {
     std::stringstream sstr2;
     sstr2 << settings::C_colorDepth;
     colorDepth_ = sstr2.str();
-
-    hue1_ = settings::C_playerIColor.h();
-    sat1_ = settings::C_playerIColor.s()*255;
-    val1_ = settings::C_playerIColor.v()*255;
-    hue2_ = settings::C_playerIIColor.h();
-    sat2_ = settings::C_playerIIColor.s()*255;
-    val2_ = settings::C_playerIIColor.v()*255;
 }
 
 void OptionsMenu::reset() {

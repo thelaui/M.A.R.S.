@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Team {
     public:
-        Team(Color3f const& color);
+        Team(Color3f const& color = Color3f::random());
 
         void addMember(Player* player);
         void setHome(Home* home);

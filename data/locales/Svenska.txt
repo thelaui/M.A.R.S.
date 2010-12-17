@@ -97,9 +97,9 @@
 050 Vapen
 175 Special
 051 Skepp
-052 Nyans
-053 Mättnad
-054 Värde
+052 Player Color
+053 Team Color
+054 ####
 055 Tryck på en tangent medan du svävar!
 056 Skriv text medan du svävar!
 

@@ -62,12 +62,12 @@ Tutorial::Tutorial():
 
     music::playGameMusic();
 
-    players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer1);
+    players::addPlayer (players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
     settings::C_playerIIteamL = false;
     settings::C_playerIIteamR = false;
     settings::C_playerIteamL = false;
     settings::C_playerIteamR = true;
-    players::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
+    players::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerITeamColor));
     players::createShips();
 
     evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), Color3f(0.5f, 0.f, 0.5f));
@@ -192,7 +192,7 @@ void Tutorial::update() {
             if (!players::getPlayerI()->ship()->docked_) {
                 zones::createRaster(4, 3);
                 menus::showWindow(TutWindow11::get());
-                Team* evilTeam = players::addTeam(Color3f(0.5f, 0.f, 0.5f));
+                Team* evilTeam = players::addTeam(new Team(Color3f(0.5f, 0.f, 0.5f)));
                 players::addPlayer(evilTeam, controllers::cTutBot);
                 evilTeam->setHome(evilHome_);
                 std::vector<Player*> evilPlayer(evilTeam->members());
@@ -312,7 +312,7 @@ void Tutorial::restart() {
     evilPlayer2_ = NULL;
 
 
-    players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer1);
+    players::addPlayer(players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
     players::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
     players::createShips();
 

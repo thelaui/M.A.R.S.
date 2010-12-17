@@ -33,8 +33,8 @@ MenuGame::MenuGame():
     Color3f randInv = rand;
     rand.h(rand.h() + 180.f);
 
-    Team* myTeamL = players::addTeam(rand);
-    Team* myTeamR = players::addTeam(randInv);
+    Team* myTeamL = players::addTeam(new Team(rand));
+    Team* myTeamR = players::addTeam(new Team(randInv));
 
     for (int i=0; i<5;  ++i)    players::addPlayer(myTeamL, controllers::cDMBot);
     for (int i=0; i<5; ++i)     players::addPlayer(myTeamR, controllers::cDMBot);

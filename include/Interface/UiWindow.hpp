@@ -32,7 +32,7 @@ class UiWindow: public UiElement {
         void buttonPressed(sf::Key::Code keyCode);
         void textEntered(int keyCode);
 
-        void draw () const;
+        virtual void draw () const;
 
         virtual void checkWidgets() = 0;
         virtual void onShow() = 0;

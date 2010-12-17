@@ -23,9 +23,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-ShipPreview::ShipPreview (Color3f* value, int* graphic, Vector2f const& topLeft):
+ShipPreview::ShipPreview (Color3f* color, Color3f* teamColor, int* graphic, Vector2f const& topLeft):
     UiElement(topLeft, 20, 20),
-    color_(value),
+    color_(color),
+    teamColor_(teamColor),
     graphic_(graphic) {}
 
 void ShipPreview::draw() const {
@@ -42,8 +43,9 @@ void ShipPreview::draw() const {
 
     // draw glow
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
-    Color3f bg = *color_;
-    if (bg.v() < 0.5f) bg.v(0.5f);
+    Color3f bg = *teamColor_;
+    if (bg.v() < 0.4f) bg.v(0.4f);
+    if (bg.s() < 0.5f) bg.s(0.5f);
     bg.gl4f(0.6f);
     glBegin(GL_QUADS);
         glTexCoord2f(0, 0.75f); glVertex2f(-16.f*3.2f,-16.f*3.2f);
@@ -54,7 +56,7 @@ void ShipPreview::draw() const {
 
     // draw ship
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glRotatef(timer::totalTime()*160, 0.f, 0.f, 1.f);
+    glRotatef(timer::totalTime()*100, 0.f, 0.f, 1.f);
 
     float x, y;
 
@@ -71,7 +73,7 @@ void ShipPreview::draw() const {
 
     y += 0.125f;
 
-    glColor3f(0.6f, 0.6f, 0.6f);
+    teamColor_->gl3f();
     glBegin(GL_QUADS);
         glTexCoord2f(x, y+0.125f);          glVertex2f(-32.f, -32.f);
         glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-32.f,  32.f);

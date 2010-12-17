@@ -68,7 +68,8 @@ namespace settings {
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
-    Color3f       C_playerIColor =          Color3f(1.f, 0.3f, 0.95f);
+    Color3f       C_playerIColor =          Color3f(1.f, 0.87f, 0.0125f);
+    Color3f       C_playerITeamColor =      Color3f(0.94f, 0.24f, 1.f);
     sf::Key::Code C_playerIup =             sf::Key::Up;
     sf::Key::Code C_playerIleft =           sf::Key::Left;
     sf::Key::Code C_playerIright =          sf::Key::Right;
@@ -78,7 +79,8 @@ namespace settings {
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
     sf::String    C_playerIIName =          "PlayerII";
-    Color3f       C_playerIIColor =         Color3f(0.2f, 1.f, 0.7f);
+    Color3f       C_playerIIColor =         Color3f(0.1f, 0.f, 0.62f);
+    Color3f       C_playerIITeamColor =     Color3f(0.05f, 1.f, 0.785f);
     sf::Key::Code C_playerIIup =            sf::Key::W;
     sf::Key::Code C_playerIIleft =          sf::Key::A;
     sf::Key::Code C_playerIIright =         sf::Key::D;
@@ -135,12 +137,14 @@ namespace settings {
         outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
         outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerIspecial << std::endl;
         outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
+        outStream << "[playerITeamColor] "      <<  C_playerITeamColor.r() << " "<< C_playerITeamColor.g() << " " << C_playerITeamColor.b() << std::endl;
         outStream << "[playerITeamL] "          << (C_playerIteamL ? "true" : "false") << std::endl;
         outStream << "[playerITeamR] "          << (C_playerIteamR ? "true" : "false") << std::endl;
         outStream << "[playerIShip] "           <<  C_playerIShip << std::endl;
         outStream << "[playerIIName] "          <<  C_playerIIName.ToAnsiString() << std::endl;
         outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIIspecial <<  std::endl;
         outStream << "[playerIIColor] "         <<  C_playerIIColor.r() << " "<< C_playerIIColor.g() << " " << C_playerIIColor.b() << std::endl;
+        outStream << "[playerIITeamColor] "     <<  C_playerIITeamColor.r() << " "<< C_playerIITeamColor.g() << " " << C_playerIITeamColor.b() << std::endl;
         outStream << "[playerIITeamL] "         << (C_playerIIteamL ? "true" : "false") << std::endl;
         outStream << "[playerIITeamR] "         << (C_playerIIteamR ? "true" : "false") << std::endl;
         outStream << "[playerIIShip] "          <<  C_playerIIShip << std::endl;
@@ -376,6 +380,20 @@ namespace settings {
                     iss >> g;
                     iss >> b;
                     C_playerIIColor = Color3f(r,g,b);
+                }
+                else if (inputLine == "[playerITeamColor]") {
+                    float r, g, b;
+                    iss >> r;
+                    iss >> g;
+                    iss >> b;
+                    C_playerITeamColor = Color3f(r,g,b);
+                }
+                else if (inputLine == "[playerIITeamColor]") {
+                    float r, g, b;
+                    iss >> r;
+                    iss >> g;
+                    iss >> b;
+                    C_playerIITeamColor = Color3f(r,g,b);
                 }
                 else if (inputLine == "[playerITeamL]") {
                     std::string value;

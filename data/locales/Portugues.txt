@@ -101,9 +101,9 @@
 050 Arma
 175 Special
 051 Nave
-052 Tonalidade
-053 Saturação
-054 Valor
+052 Player Color
+053 Team Color
+054 ####
 055 Presione uma tecla enquanto Segura o botão! 
 056 Digite um texto enquanto Segura o botão!   
 

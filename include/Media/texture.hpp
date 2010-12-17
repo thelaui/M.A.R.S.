@@ -34,7 +34,7 @@ namespace texture {
                       MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
                       Stars1_medium, Stars2_large, Stars2_medium, WindowOn, WindowOff, EnergyBars, LeftHandle,
                       RightHandle, BottomHandle, TopHandle, Widgets, CountDown4, CountDown3, CountDown2, CountDown1,
-                      CountDown0, ShockWave,
+                      CountDown0, ShockWave, ColorPicker1, ColorPicker2, ColorPicker3,
                       COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

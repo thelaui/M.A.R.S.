@@ -1,4 +1,4 @@
-/* ShipPreview.hpp
+/* ColorPicker.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,23 +15,33 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef COLORPREVIEW_HPP_INCLUDED
-# define COLORPREVIEW_HPP_INCLUDED
+# ifndef COLORPICKER_HPP_INCLUDED
+# define COLORPICKER_HPP_INCLUDED
 
 # include "Interface/UiElement.hpp"
-# include "System/Color3f.hpp"
+# include "Interface/Label.hpp"
 
-class ShipPreview: public UiElement {
+class UiWindow;
+
+class ColorPicker: public UiElement {
     public:
-        ShipPreview (Color3f* color, Color3f* teamColor, int* graphic, Vector2f const& topLeft);
+        ColorPicker (sf::String* text, Color3f* value, Vector2f const& topLeft, int width, int labelWidth=185);
+        ~ColorPicker ();
+
+        void mouseLeft(bool down);
 
         void draw() const;
 
+        friend class ColorPickerWindow;
+
     private:
-        Color3f* color_;
-        Color3f* teamColor_;
-        int*     graphic_;
+        UiWindow* colorWindow_;
+
+        Color3f* currentValue_;
+        Label* label_;
+        int labelWidth_;
+        bool opened_;
 };
 
-# endif
+# endif // COLORPICKER_HPP_INCLUDED
 

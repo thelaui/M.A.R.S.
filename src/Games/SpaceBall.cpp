@@ -27,17 +27,48 @@ SpaceBall::SpaceBall():
 
     music::playGameMusic();
 
-    Color3f rand = Color3f::random();
-    Color3f randInv = rand;
-    rand.h(rand.h() + 180.f);
+    Team* myTeamL = NULL;
+    Team* myTeamR = NULL;
 
-    Team* myTeamL = players::addTeam(rand);
-    Team* myTeamR = players::addTeam(randInv);
+    if (settings::C_playerIteamL) {
+        myTeamL = new Team(settings::C_playerITeamColor);
+        players::addPlayer(myTeamL, controllers::cPlayer1);
+    }
+    else if (settings::C_playerIteamR) {
+        myTeamR = new Team(settings::C_playerITeamColor);
+        players::addPlayer(myTeamR, controllers::cPlayer1);
+    }
 
-    if      (settings::C_playerIteamL)  players::addPlayer  (myTeamL, controllers::cPlayer1);
-    else if (settings::C_playerIteamR)  players::addPlayer  (myTeamR, controllers::cPlayer1);
-    if      (settings::C_playerIIteamL) players::addPlayer  (myTeamL, controllers::cPlayer2);
-    else if (settings::C_playerIIteamR) players::addPlayer  (myTeamR, controllers::cPlayer2);
+    if (settings::C_playerIIteamL) {
+        if (!myTeamL) myTeamL = new Team(settings::C_playerIITeamColor);
+        players::addPlayer(myTeamL, controllers::cPlayer2);
+    }
+    else if (settings::C_playerIIteamR) {
+        if (!myTeamR) myTeamR = new Team(settings::C_playerIITeamColor);
+        players::addPlayer(myTeamR, controllers::cPlayer2);
+    }
+
+    if (!myTeamR && !myTeamL) {
+        Color3f rand = Color3f::random();
+        Color3f randInv = rand;
+        rand.h(rand.h() + 180.f);
+        myTeamL = new Team(randInv);
+        myTeamR = new Team(rand);
+
+    }
+    else if (!myTeamL) {
+        Color3f other = myTeamR->color();
+        other.h(other.h() + 180.f);
+        myTeamL = new Team(other);
+    }
+    else if (!myTeamR) {
+        Color3f other = myTeamL->color();
+        other.h(other.h() + 180.f);
+        myTeamR = new Team(other);
+    }
+
+    players::addTeam(myTeamL);
+    players::addTeam(myTeamR);
 
     for (int i=0; i<settings::C_botsLeft/2;  ++i)                       players::addPlayer(myTeamL, controllers::cDefBot);
     for (int i=settings::C_botsLeft/2; i<settings::C_botsLeft;  ++i)    players::addPlayer(myTeamL, controllers::cAggroBot);

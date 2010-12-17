@@ -38,6 +38,10 @@ Home::Home(Vector2f const& location, float radius, Color3f const& color):
                life_(1000.f),
                visible_(true),
                restartTimer_(0.f) {
+
+    if (color_.v() < 0.4f) color_.v(0.4f);
+    if (color_.s() < 0.5f) color_.s(0.5f);
+
     physics::addStaticObject(this);
     physics::addGravitySource(this);
 }
@@ -96,7 +100,7 @@ void Home::createShips(std::vector<Player*>& inhabitants) const {
          for (std::vector<Player*>::iterator it = inhabitants.begin(); it != inhabitants.end(); ++it) {
             // calc location of ship
             angle += deltaAngle*shipCounter*std::pow(-1.0, shipCounter);
-            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+10)+location_;
+            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+16)+location_;
             float    rotation = angle*180/M_PI;
             ships::addShip(location, rotation, *it);
             ++shipCounter;
@@ -112,7 +116,7 @@ void Home::createShips(std::vector<Player*>& inhabitants) const {
         for (std::vector<Player*>::iterator it = inhabitants.begin(); it != inhabitants.end(); ++it) {
             // calc location of ship
             angle += deltaAngle*shipCounter*std::pow(-1.0, shipCounter);
-            Vector2f location = Vector2f(-std::cos(angle), std::sin(angle)) * (radius_+10)+location_;
+            Vector2f location = Vector2f(-std::cos(angle), std::sin(angle)) * (radius_+16)+location_;
             float    rotation = 180-angle*180/M_PI;
             ships::addShip(location, rotation, *it);
             ++shipCounter;
@@ -126,7 +130,7 @@ void Home::createShips(std::vector<Player*>& inhabitants) const {
         for (std::vector<Player*>::iterator it = inhabitants.begin(); it != inhabitants.end(); ++it) {
             // calc location of ship
             angle += deltaAngle;
-            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+10)+location_;
+            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+16)+location_;
             float    rotation = angle*180/M_PI;
             ships::addShip(location, rotation, *it);
         }

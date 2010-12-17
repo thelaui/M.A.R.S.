@@ -27,12 +27,12 @@ DeathMatch::DeathMatch():
     music::playGameMusic();
 
     if (settings::C_playerIteamL  | settings::C_playerIteamR)
-        players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer1);
+        players::addPlayer (players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
     if (settings::C_playerIIteamL | settings::C_playerIIteamR)
-        players::addPlayer (players::addTeam(settings::C_playerIColor), controllers::cPlayer2);
+        players::addPlayer (players::addTeam(new Team(settings::C_playerIITeamColor)), controllers::cPlayer2);
 
     for (int i=0; i<settings::C_botsDeath; ++i) {
-        Team* newTeam = players::addTeam();
+        Team* newTeam = players::addTeam(new Team());
         Color3f color(newTeam->color());
         color.h(newTeam->color().h()+10*sf::Randomizer::Random(-5, 5));
         color.v(newTeam->color().v()+sf::Randomizer::Random(-0.5f, 0.5f));

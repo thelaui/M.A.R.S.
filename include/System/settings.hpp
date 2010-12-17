@@ -79,6 +79,7 @@ namespace settings {
     ///@{
     extern sf::String     C_playerIName;
     extern Color3f        C_playerIColor;
+    extern Color3f        C_playerITeamColor;
     extern sf::Key::Code  C_playerIup;
     extern sf::Key::Code  C_playerIleft;
     extern sf::Key::Code  C_playerIright;
@@ -89,6 +90,7 @@ namespace settings {
     extern int            C_playerIShip;
     extern sf::String     C_playerIIName;
     extern Color3f        C_playerIIColor;
+    extern Color3f        C_playerIITeamColor;
     extern sf::Key::Code  C_playerIIup;
     extern sf::Key::Code  C_playerIIleft;
     extern sf::Key::Code  C_playerIIright;

@@ -39,7 +39,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 
 Ship::Ship(Vector2f const& location, float rotation, Player* owner):
-               MobileSpaceObject(spaceObjects::oShip, location, 15.f, 10.f),
+               MobileSpaceObject(spaceObjects::oShip, location, 16.f, 10.f),
                owner_(owner),
                rotation_(rotation),
                rotateSpeed_(1.f),
@@ -59,8 +59,8 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
-               fragStars_(5),
-               rememberedLife_(100.f),
+               fragStars_(0),
+               damageByLocalPlayer_(0.f),
                damageCheckTimer_(0.f) {
 
     decoObjects::addName(this);
@@ -88,11 +88,11 @@ void Ship::update() {
 
     if (damageCheckTimer_ > 0.f) {
         damageCheckTimer_ -= time;
-        if (damageCheckTimer_ <= 0.f && rememberedLife_ != getLife()) {
-            float difference((getLife()- rememberedLife_)*M_PI*5.f);
-            if (std::abs(difference) > 4.f) {
-                hud::spawnNumber(&location_, difference);
-                rememberedLife_ = getLife();
+        if (damageCheckTimer_ <= 0.f && damageByLocalPlayer_ != 0) {
+            float damage(damageByLocalPlayer_*M_PI*5.f);
+            if (std::abs(damage) > 4.f) {
+                hud::spawnNumber(&location_, damage);
+                damageByLocalPlayer_ = 0;
             }
         }
     }
@@ -133,7 +133,7 @@ void Ship::update() {
         Home const* home = owner_->team()->home();
         Vector2f toHome = home->location()-location_;
         bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
-        if (!up_ && velocity_.lengthSquare() < 5000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
+        if (!up_ && velocity_.lengthSquare() < 10000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
             docked_ = true;
             velocity_ = Vector2f();
             if (fuel_ < maxFuel_) fuel_ += time*maxFuel_*0.2; else fuel_ = maxFuel_;
@@ -190,7 +190,10 @@ void Ship::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
         // draw glow
-        owner_->team_->color().gl4f(0.5f);
+        Color3f tmp = owner_->team_->color();
+        if (tmp.v() < 0.4f) tmp.v(0.4f);
+        if (tmp.s() < 0.5f) tmp.s(0.5f);
+        tmp.gl4f(0.5f);
         glBegin(GL_QUADS);
             glTexCoord2f(0.f, 0.75f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
             glTexCoord2f(0.f, 0.875f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
@@ -209,30 +212,30 @@ void Ship::draw() const {
 
         glColor3f(1.f, 1.f, 1.f);
         glBegin(GL_QUADS);
-            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
-            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
-            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
-            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( radius_,  radius_);
+            glTexCoord2f(x, y);                 glVertex2f( radius_, -radius_);
         glEnd();
 
         y += 0.125f;
 
         owner_->team()->color().gl3f();
         glBegin(GL_QUADS);
-            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
-            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
-            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
-            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( radius_,  radius_);
+            glTexCoord2f(x, y);                 glVertex2f( radius_, -radius_);
         glEnd();
 
         y += 0.125f;
 
         owner_->color().gl3f();
         glBegin(GL_QUADS);
-            glTexCoord2f(x, y+0.125f);          glVertex2f(-14.f, -14.f);
-            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-14.f,  14.f);
-            glTexCoord2f(x+0.125f, y);          glVertex2f( 14.f,  14.f);
-            glTexCoord2f(x, y);                 glVertex2f( 14.f, -14.f);
+            glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
+            glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
+            glTexCoord2f(x+0.125f, y);          glVertex2f( radius_,  radius_);
+            glTexCoord2f(x, y);                 glVertex2f( radius_, -radius_);
         glEnd();
 
         glPopMatrix();
@@ -361,17 +364,26 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     }
     if (!collectedPowerUps_[items::puShield]) {
         life_ -= amount;
-        if (damageCheckTimer_ <= 0.f)
-            damageCheckTimer_ = 0.3f;
+         if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2
+            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2)) {
+            damageByLocalPlayer_ -= amount;
+            if (damageCheckTimer_ <= 0.f)
+                damageCheckTimer_ = 0.3f;
+        }
     }
 }
 
 void Ship::onShockWave(Player* damageSource, float intensity) {
     setDamageSource(damageSource);
     if (!collectedPowerUps_[items::puShield]) {
-        life_ -= intensity*(20.f + settings::C_iDumb);
-        if (damageCheckTimer_ <= 0.f)
-            damageCheckTimer_ = 0.3f;
+        float damage(intensity*(20.f + settings::C_iDumb));
+        life_ -= damage;
+        if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2
+            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2)) {
+            damageByLocalPlayer_ -= damage;
+            if (damageCheckTimer_ <= 0.f)
+                damageCheckTimer_ = 0.3f;
+        }
     }
 }
 
@@ -380,15 +392,18 @@ void Ship::setDamageSource(Player* evilOne) {
     damageSourceResetTimer_ = 1.5f;
 }
 
-void Ship::heal(int amount) {
+void Ship::heal(Player* source, int amount) {
     float lifeAmount((maxLife_/100.f)*amount);
     (life_ + lifeAmount) > maxLife_ ? life_ = maxLife_ : life_ += lifeAmount;
 
     float fuelAmount((maxFuel_/100.f)*amount);
     (fuel_ + fuelAmount) > maxFuel_ ? fuel_ = maxFuel_ : fuel_ += fuelAmount;
 
-    if (damageCheckTimer_ <= 0.f)
-        damageCheckTimer_ = 0.3f;
+    if (source->controlType_ == controllers::cPlayer1 || source->controlType_ == controllers::cPlayer2) {
+        damageByLocalPlayer_ += lifeAmount;
+        if (damageCheckTimer_ <= 0.f)
+            damageCheckTimer_ = 0.3f;
+    }
 }
 
 float Ship::getLife() const {
@@ -471,7 +486,7 @@ void Ship::respawn() {
     fuel_ = maxFuel_;
     fragStars_ = 0;
     visible_ = true;
-    rememberedLife_ = 100.f;
+    damageByLocalPlayer_ = 0.f;
     sound::playSound(sound::ShipRespawn, location_, 100.f);
 }
 

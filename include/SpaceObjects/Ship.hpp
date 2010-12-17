@@ -42,7 +42,7 @@ class Ship: public MobileSpaceObject {
 
         void setDamageSource(Player* evilOne);
 
-        void heal(int amount);
+        void heal(Player* source, int amount);
 
         float   getLife()  const;
         float   getFuel()  const;
@@ -103,7 +103,7 @@ class Ship: public MobileSpaceObject {
         std::vector<PowerUp*> collectedPowerUps_;
 
         int fragStars_;
-        float rememberedLife_;
+        float damageByLocalPlayer_;
         float damageCheckTimer_;
 };
 

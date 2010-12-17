@@ -58,10 +58,10 @@ void Heal::activate() const {
             if ((*it)!=parent_) {
                 float distance(((*it)->location_-parent_->location_).length());
                 if (parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_)
-                    (*it)->heal(((radius_/distance)-0.8f)*parent_->fragStars_*10);
+                    (*it)->heal(parent_->owner_, ((radius_/distance)-0.8f)*parent_->fragStars_*10);
             }
             else
-                parent_->heal(parent_->fragStars_*10);
+                parent_->heal(parent_->owner_, parent_->fragStars_*10);
         }
         timer_ = 0.5f;
         parent_->fragStars_ = 0;

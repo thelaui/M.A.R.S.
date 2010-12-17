@@ -95,9 +95,9 @@
 050 Arma
 175 Special
 051 Nave
-052 Tono
-053 Saturación
-054 Valor
+052 Player Color
+053 Team Color
+054 ####
 055 ¡Pulsa la tecla mientras pasas por encima!
 056 ¡Introduce el texto mientras pasas por encima!
 
@@ -204,6 +204,7 @@
 127 Sé que has estado esperando por esto. Cuando acoplado, puedes cambiar entre algunas armas increíblemente malvadas.\n Presiona
 128 para abrir tu arsenal.\n¡Luego usa
 129 para elegir un arma! ¡Despega cuando estés listo!
+
 
 130 ¡Lucha!
 131 Ahora vamos a ver cómo lo haces contra un novato de otro planeta.\nParece que él está tratando de mejorar sus habilidades de vuelo.\n¡Golpéalo!
