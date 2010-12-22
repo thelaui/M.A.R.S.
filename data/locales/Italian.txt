@@ -1,4 +1,4 @@
-// menu buttons
+﻿// menu buttons
 
 000 Inizia Una Partita In Locale
 105 Inizia Il Tutorial
@@ -115,7 +115,7 @@
 
 170 Crediti
 171 Ringraziamenti speciali a:
-172 Traduzione:\n   Tedesco: Sandra\n   Spagnolo: Gastón\n   Portoghese: Vitor\n   Francese: Astohan\n\nTest e supporto creativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traduzione:\n   Tedesco: Sandra\n   Spagnolo: Gastón\n   Portoghese: Vitor\n   Francese: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTest e supporto creativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

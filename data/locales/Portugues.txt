@@ -120,7 +120,7 @@
 
 170 Créditos
 171 Agradecimentos especiais para:
-172 Traduções:\n    Alemão: Sandra\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traduções:\n    Alemão: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

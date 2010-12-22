@@ -1,4 +1,4 @@
-// Botones de menú
+﻿// Botones de menú
 
 000 Empezar Juego Local
 105 Empezar Tutorial
@@ -113,7 +113,7 @@
 
 170 Créditos
 171 Gracias especiales a:
-172 Traducciones: \n   Alemán: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n\nTests und creative support:\n   Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traducciones: \n   Alemán: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests und creative support:\n   Heinrich, Martin, Bastian, Sandra, Diana.
 
 // Abandonar
 

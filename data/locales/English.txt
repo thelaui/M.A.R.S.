@@ -115,7 +115,7 @@
 
 170 Credits
 171 Special Thanks to:
-172 Translations:\n   German: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Translations:\n   German: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

@@ -116,7 +116,7 @@
 
 170 Титры
 171 Особые благодарности:
-172 Переводы:\n   Германский: Sandra\n   Испанский: Gastón\n   Португальский: Vitor\n   Французский: Astohan\n Русский: Drakmail\n\nТестирование и творческая поддержка:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Переводы:\n   Германский: Sandra\n   Испанский: Gastón\n   Португальский: Vitor\n   Французский: Astohan\n Русский: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nТестирование и творческая поддержка:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

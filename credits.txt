@@ -30,6 +30,9 @@ Fonts
 
 Translations
  - German: Sandra
- - Frensh: Astohan
+ - French: Astohan
  - Portuguese: Vitor
  - Spanish: Gaston
+ - Russian: Drakmail
+ - Italian: Proch
+ - Swedish: Henrik

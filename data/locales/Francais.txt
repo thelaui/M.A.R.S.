@@ -112,7 +112,7 @@
 
 170 Crédits
 171 Remerciements particuliers à:
-172 Traductions:\n    Allemand: Sandra  \nFrançais: Astohan \n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traductions:\n    Allemand: Sandra  \n   Français: Astohan \n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quitter
 

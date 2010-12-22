@@ -114,7 +114,7 @@
 
 170 Credits
 171 Besonderer Dank geht an:
-172 Übersetzungen:\n   Deutsch: Sandra\n   Spanisch: Gastón\n   Portugisisch: Vitor\n   Französisch: Astohan\n\nTests und kreative Ideen:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Übersetzungen:\n   Deutsch: Sandra\n   Spanisch: Gastón\n   Portugiesisch: Vitor\n   Französisch: Astohan\n   Russisch: Drakmail\n   Italienisch: Proch\n   Schwedisch: Henrik\n\nTests und kreative Ideen:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // Beenden
 

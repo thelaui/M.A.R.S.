@@ -115,7 +115,7 @@
 
 170 Medverkande
 171 Särskilt tack till:
-172 Översättningar:\n   Tyska: Sandra\n   Spanish: Gastón\n   Portugisiska: Vitor\n   Franska: Astohan\n\nTestning och kreativt stöd:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Översättningar:\n   Tyska: Sandra\n   Spanish: Gastón\n   Portugisiska: Vitor\n   Franska: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTestning och kreativt stöd:\n    Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
