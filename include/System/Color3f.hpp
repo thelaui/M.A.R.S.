@@ -69,6 +69,9 @@ struct Color3f {
         void v(float value);
         ///@}
 
+        /// Inverts the color.
+        Color3f const inverted() const;
+
         /// Calls glColor3f() with the values of this color.
         void gl3f() const;
 

@@ -71,6 +71,7 @@ namespace texture {
                 case Planet12:                 loadTexture_(type, "data/tex/spaceObjects/planet12.png");  break;
                 case Planet13:                 loadTexture_(type, "data/tex/spaceObjects/planet13.png");  break;
                 case Sun1:                     loadTexture_(type, "data/tex/spaceObjects/sun1.png");      break;
+                case SunHeat:                  loadTexture_(type, "data/tex/spaceObjects/sunHeat.png");   break;
                 case Hole1:                    loadTexture_(type, "data/tex/spaceObjects/hole1.png");     break;
                 case Ball:                     loadTexture_(type, "data/tex/ball.png");                   break;
                 case Particles:                loadTexture_(type, "data/tex/particles.png");              break;

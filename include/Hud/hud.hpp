@@ -26,7 +26,6 @@ namespace hud {
     void update();
     void draw();
 
-    void spawnNumber(Vector2f const* location, int value);
     void displayPoints();
     void displayStats(bool show = true);
 }

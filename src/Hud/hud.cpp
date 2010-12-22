@@ -28,9 +28,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/GameStats.hpp"
 # include "Hud/GamePoints.hpp"
 # include "Hud/TabStats.hpp"
-# include "Hud/numbers.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "Hud/CountDown.hpp"
+# include "Particles/particles.hpp"
 
 # include <sstream>
 
@@ -48,7 +48,6 @@ namespace hud {
 
     void update() {
         gamePoints_->update();
-        numbers::update();
         tabStats_->update();
 
         if (games::type() == games::gMenu)   logo_->update();
@@ -62,7 +61,7 @@ namespace hud {
     }
 
     void draw() {
-        numbers::draw();
+        particles::drawNumbers();
         if (games::type() == games::gMenu)   logo_->draw();
         else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial) countDown_->draw();
         gameStats_->draw();
@@ -81,10 +80,6 @@ namespace hud {
         tabStats_->draw();
     }
 
-    void spawnNumber(Vector2f const* location, int value) {
-        numbers::spawn(location, value);
-    }
-
     void displayPoints() {
         gamePoints_->display();
     }
@@ -95,7 +90,6 @@ namespace hud {
     }
 
     void init() {
-        numbers::clear();
         tabStats_->refresh();
     }
 }

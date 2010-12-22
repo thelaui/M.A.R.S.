@@ -27,10 +27,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 
 ColorPickerWindow::ColorPickerWindow (ColorPicker* parent, Color3f* color):
-    UiWindow(190, 175),
+    UiWindow(190, 185),
     parent_(parent),
     color_(color),
-    Ok_(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(110, 145), 70, 20)),
+    Ok_(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(110, 155), 70, 20)),
     kOk_(false) {
 
     addWidget(Ok_);

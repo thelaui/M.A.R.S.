@@ -43,6 +43,7 @@ class Ship: public MobileSpaceObject {
         void setDamageSource(Player* evilOne);
 
         void heal(Player* source, int amount);
+        void refuel(Player* source, int amount);
 
         float   getLife()  const;
         float   getFuel()  const;
@@ -105,6 +106,8 @@ class Ship: public MobileSpaceObject {
         int fragStars_;
         float damageByLocalPlayer_;
         float damageCheckTimer_;
+        Vector2f damageDirection_;
+        int collisionCount_;
 };
 
 # endif // SHIP_HPP_INCLUDED

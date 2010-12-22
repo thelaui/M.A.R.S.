@@ -29,7 +29,7 @@ void PUFuel::draw() const {
 void PUFuel::refreshLifeTime() {
     lifeTime_ = totalLifeTime_;
     for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->fuel_ = 100.f;
+        (*it)->refuel((*it)->owner_, 100);
     // direction is abused for texture coords
     particles::spawnMultiple(5, particles::pPowerUpCollect, location_, Vector2f(3,1));
 }

@@ -61,7 +61,9 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                collectedPowerUps_(items::COUNT, NULL),
                fragStars_(0),
                damageByLocalPlayer_(0.f),
-               damageCheckTimer_(0.f) {
+               damageCheckTimer_(0.f),
+               damageDirection_(0.f, 0.f),
+               collisionCount_(0) {
 
     decoObjects::addName(this);
 
@@ -88,11 +90,13 @@ void Ship::update() {
 
     if (damageCheckTimer_ > 0.f) {
         damageCheckTimer_ -= time;
-        if (damageCheckTimer_ <= 0.f && damageByLocalPlayer_ != 0) {
-            float damage(damageByLocalPlayer_*M_PI*5.f);
-            if (std::abs(damage) > 4.f) {
-                hud::spawnNumber(&location_, damage);
+        if (damageCheckTimer_ <= 0.f) {
+            float damage(damageByLocalPlayer_*20.f);
+            if (std::abs(damage) >= 1.f) {
+                particles::spawn(particles::pNumber, location_+Vector2f(0.f, -20.f), Vector2f(damage, 20.f + std::abs(damage)*0.02f), (damageDirection_/collisionCount_+velocity_)*0.5f);
+                damageDirection_ = Vector2f();
                 damageByLocalPlayer_ = 0;
+                collisionCount_ = 0;
             }
         }
     }
@@ -138,8 +142,16 @@ void Ship::update() {
             velocity_ = Vector2f();
             if (fuel_ < maxFuel_) fuel_ += time*maxFuel_*0.2; else fuel_ = maxFuel_;
             if (life_ < maxLife_) life_ += time*maxLife_*0.2; else life_ = maxLife_;
-            if (damageCheckTimer_ <= 0.f)
-                damageCheckTimer_ = 0.6f;
+
+            if (owner_->controlType_ == controllers::cPlayer1 || owner_->controlType_ == controllers::cPlayer2) {
+                if (life_ < maxLife_) {
+                    damageByLocalPlayer_ += time*maxLife_*0.2;
+                    collisionCount_ = 1;
+                    damageDirection_ = Vector2f(0.f, -250.f);
+                }
+                if (damageCheckTimer_ <= 0.f)
+                    damageCheckTimer_ = 0.6f;
+            }
         }
         else {
             docked_ = false;
@@ -284,6 +296,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     float strength = velocity.length();
     // damage
     float amount(0.f);
+    float waitForOtherDamage(0.001f);
 
     switch (with->type()) {
         case spaceObjects::oSun:
@@ -316,6 +329,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oAmmoAFK47:
             amount = strength*0.001f;
+            waitForOtherDamage = 0.15f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color());
             break;
@@ -328,6 +342,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oAmmoShotgun:
             amount = strength*0.002f;
+            waitForOtherDamage = 0.1f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, owner_->color());
             break;
@@ -344,6 +359,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oAmmoBurner:
             amount = timer::frameTime()*0.5f;
+            waitForOtherDamage = 0.15f;
             velocity_ += velocity*0.03f*timer::frameTime();
             // chance to spawn smoke
             if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
@@ -356,7 +372,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFist:
-            amount = 25.f;
+            amount = 25.f+sf::Randomizer::Random(-3.f, 3.f);
             setDamageSource(with->damageSource());
             break;
 
@@ -364,11 +380,17 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     }
     if (!collectedPowerUps_[items::puShield]) {
         life_ -= amount;
-         if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2
-            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2)) {
-            damageByLocalPlayer_ -= amount;
-            if (damageCheckTimer_ <= 0.f)
-                damageCheckTimer_ = 0.3f;
+         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
+            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
+                if (damageCheckTimer_ <= 0.f)
+                    damageCheckTimer_ = waitForOtherDamage;
+                damageByLocalPlayer_ -= amount;
+                MobileSpaceObject* target = dynamic_cast<MobileSpaceObject*>(with);
+                if (target)
+                    damageDirection_ += target->velocity();
+                else
+                    damageDirection_ = Vector2f();
+                ++collisionCount_;
         }
     }
 }
@@ -378,11 +400,12 @@ void Ship::onShockWave(Player* damageSource, float intensity) {
     if (!collectedPowerUps_[items::puShield]) {
         float damage(intensity*(20.f + settings::C_iDumb));
         life_ -= damage;
-        if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2
-            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2)) {
+        if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
+            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
             damageByLocalPlayer_ -= damage;
+            ++collisionCount_;
             if (damageCheckTimer_ <= 0.f)
-                damageCheckTimer_ = 0.3f;
+                damageCheckTimer_ = 0.01f;
         }
     }
 }
@@ -394,16 +417,22 @@ void Ship::setDamageSource(Player* evilOne) {
 
 void Ship::heal(Player* source, int amount) {
     float lifeAmount((maxLife_/100.f)*amount);
-    (life_ + lifeAmount) > maxLife_ ? life_ = maxLife_ : life_ += lifeAmount;
+    if (life_ + lifeAmount > maxLife_)
+        lifeAmount = maxLife_-life_;
+    life_+=lifeAmount;
 
+    if (source->controlType_ == controllers::cPlayer1 || source->controlType_ == controllers::cPlayer2
+            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
+        damageByLocalPlayer_ += lifeAmount;
+        ++collisionCount_;
+        if (damageCheckTimer_ <= 0.f)
+            damageCheckTimer_ = 0.01f;
+    }
+}
+
+void Ship::refuel(Player* source, int amount) {
     float fuelAmount((maxFuel_/100.f)*amount);
     (fuel_ + fuelAmount) > maxFuel_ ? fuel_ = maxFuel_ : fuel_ += fuelAmount;
-
-    if (source->controlType_ == controllers::cPlayer1 || source->controlType_ == controllers::cPlayer2) {
-        damageByLocalPlayer_ += lifeAmount;
-        if (damageCheckTimer_ <= 0.f)
-            damageCheckTimer_ = 0.3f;
-    }
 }
 
 float Ship::getLife() const {
@@ -487,6 +516,8 @@ void Ship::respawn() {
     fragStars_ = 0;
     visible_ = true;
     damageByLocalPlayer_ = 0.f;
+    damageDirection_ = Vector2f();
+    collisionCount_ = 0;
     sound::playSound(sound::ShipRespawn, location_, 100.f);
 }
 

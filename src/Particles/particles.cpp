@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/timer.hpp"
 
+# include "Media/text.hpp"
 # include "Particles/AmmoAFK47.hpp"
 # include "Particles/AmmoBurner.hpp"
 # include "Particles/AmmoFlubba.hpp"
@@ -47,6 +48,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/AmmoRocket.hpp"
 # include "Particles/PowerUpCollect.hpp"
 # include "Particles/AmmoFist.hpp"
+# include "Particles/Number.hpp"
 
 # include "TrailEffects/trailEffects.hpp"
 
@@ -79,6 +81,7 @@ namespace particles {
         AmmoRocket::       updateAll();
         PowerUpCollect::   updateAll();
         AmmoFist::         updateAll();
+        Number::           updateAll();
     }
 
     void drawLower() {
@@ -172,6 +175,12 @@ namespace particles {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
+    void drawNumbers() {
+        text::drawFooText();
+        Number::drawAll();
+        text::drawFooText();
+    }
+
     void spawn(ParticleType const& type, Vector2f const& location, Vector2f const& direction,
                Vector2f const& velocity, Color3f const& color, Player* damageSource) {
         switch (type) {
@@ -202,6 +211,7 @@ namespace particles {
             case pAmmoRocket:       AmmoRocket::       spawn(location, direction, velocity, color, damageSource); break;
             case pPowerUpCollect:   PowerUpCollect::   spawn(location, direction, velocity, color, damageSource); break;
             case pAmmoFist:         AmmoFist::         spawn(location, direction, velocity, color, damageSource); break;
+            case pNumber:           Number::           spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -243,7 +253,7 @@ namespace particles {
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
                 + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count()
-                + AmmoFist::count();
+                + AmmoFist::count() + Number::count();
     }
 
     void clear() {
@@ -274,5 +284,6 @@ namespace particles {
         AmmoRocket::       clear();
         PowerUpCollect::   clear();
         AmmoFist::         clear();
+        Number::           clear();
     }
 }

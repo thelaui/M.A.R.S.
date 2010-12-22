@@ -58,7 +58,8 @@ namespace particles {
         pMiniFlameSmoke,    ///< Spawned by MiniFlames.
         pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
         pPowerUpCollect,    ///< Spawned by just collected powerUps.
-        pAmmoFist           ///< Spawned by the Fist.
+        pAmmoFist,          ///< Spawned by the Fist.
+        pNumber             ///< Spawned when damage is done.
     };
 
     /// Updates all particles.
@@ -73,6 +74,9 @@ namespace particles {
     /// Draws postFX particles.
     /// Should be called, when a bumpmap is the active rendering content.
     void drawHeat();
+
+    /// Draws damage Numbers.
+    void drawNumbers();
 
     /// Spawns a new Particle.
     /// All the following parameters can be set, but some will be ignored, depending on the ParticleType.

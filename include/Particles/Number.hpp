@@ -1,4 +1,4 @@
-/* PUHealth.cpp
+/* Number.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,29 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Items/PUHealth.hpp"
+# ifndef NUMBER_HPP_INCLUDED
+# define NUMBER_HPP_INCLUDED
 
-# include "SpaceObjects/Ship.hpp"
-# include "Particles/particles.hpp"
+# include "Particles/Particle.hpp"
 
-void PUHealth::draw() const {
-    if (!collected_) {
-        PowerUp::draw();
-    }
-}
+# include "System/Color3f.hpp"
 
-void PUHealth::refreshLifeTime() {
-    lifeTime_ = totalLifeTime_;
-    for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->heal((*it)->owner_, 100);
-    // direction is abused for texture coords
-    particles::spawnMultiple(5, particles::pPowerUpCollect, location_, Vector2f(0,1));
-}
+class Number: public Particle<Number> {
+    public:
+        Number(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
+
+        void update();
+        void draw() const;
+
+        friend class Particle<Number>;
+
+    private:
+        Color3f color_;
+        int     value_;
+        static std::list<Number*> activeParticles_;
+};
+
+# endif // NUMBER_HPP_INCLUDED
+
+
 

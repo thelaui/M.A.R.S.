@@ -57,11 +57,15 @@ void Heal::activate() const {
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
             if ((*it)!=parent_) {
                 float distance(((*it)->location_-parent_->location_).length());
-                if (parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_)
+                if (parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_) {
                     (*it)->heal(parent_->owner_, ((radius_/distance)-0.8f)*parent_->fragStars_*10);
+                    (*it)->refuel(parent_->owner_, ((radius_/distance)-0.8f)*parent_->fragStars_*10);
+                }
             }
-            else
+            else {
                 parent_->heal(parent_->owner_, parent_->fragStars_*10);
+                parent_->refuel(parent_->owner_, parent_->fragStars_*10);
+            }
         }
         timer_ = 0.5f;
         parent_->fragStars_ = 0;

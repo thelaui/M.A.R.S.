@@ -49,21 +49,15 @@ TeamDeathMatch::TeamDeathMatch():
 
     if (!myTeamR && !myTeamL) {
         Color3f rand = Color3f::random();
-        Color3f randInv = rand;
-        rand.h(rand.h() + 180.f);
-        myTeamL = new Team(randInv);
+        myTeamL = new Team(rand.inverted());
         myTeamR = new Team(rand);
 
     }
     else if (!myTeamL) {
-        Color3f other = myTeamR->color();
-        other.h(other.h() + 180.f);
-        myTeamL = new Team(other);
+        myTeamL = new Team(myTeamR->color().inverted());
     }
     else if (!myTeamR) {
-        Color3f other = myTeamL->color();
-        other.h(other.h() + 180.f);
-        myTeamR = new Team(other);
+        myTeamR = new Team(myTeamL->color().inverted());
     }
 
     players::addTeam(myTeamL);

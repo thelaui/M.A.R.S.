@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/balls.hpp"
 # include "Items/CannonControl.hpp"
 # include "Items/items.hpp"
+# include "DecoObjects/decoObjects.hpp"
 
 # include <vector>
 
@@ -94,7 +95,11 @@ namespace spaceObjects {
     void addSun() {
         int radius = (rand() % 100 + 50);
         Vector2f position = possiblePlanetLocation(radius, 200);
-        if (position != Vector2f(0,0)) objectList_.push_back(new Sun(position, radius));
+        if (position != Vector2f(0,0)) {
+            Sun* newSun = new Sun(position, radius);
+            objectList_.push_back(newSun);
+            decoObjects::addSunHeat(newSun);
+        }
     }
 
     void addBlackHole() {

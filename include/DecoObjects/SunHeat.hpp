@@ -1,4 +1,4 @@
-/* PUHealth.cpp
+/* SunHeat.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,30 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Items/PUHealth.hpp"
+# ifndef SUNHEAT_HPP_INCLUDED
+# define SUNHEAT_HPP_INCLUDED
 
-# include "SpaceObjects/Ship.hpp"
-# include "Particles/particles.hpp"
+# include "DecoObjects/DecoObject.hpp"
 
-void PUHealth::draw() const {
-    if (!collected_) {
-        PowerUp::draw();
-    }
-}
+# include "Media/texture.hpp"
 
-void PUHealth::refreshLifeTime() {
-    lifeTime_ = totalLifeTime_;
-    for (std::list<Ship*>::iterator it = ships_.begin(); it != ships_.end(); ++it)
-        (*it)->heal((*it)->owner_, 100);
-    // direction is abused for texture coords
-    particles::spawnMultiple(5, particles::pPowerUpCollect, location_, Vector2f(0,1));
-}
+class Sun;
+
+/// A heat texture on a Sun.
+/// Very decorative.
+
+class SunHeat: public DecoObject {
+    public:
+        /// Creates a heat texture on the target Sun.
+        SunHeat(Sun* sun);
+
+        /// Draws the texture.
+        void draw() const;
+
+    private:
+        Vector2f location_;
+        float radius_;
+};
+
+# endif // SUNHEAT_HPP_INCLUDED
 

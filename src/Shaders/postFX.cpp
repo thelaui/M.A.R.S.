@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
+# include "DecoObjects/decoObjects.hpp"
 # include "Media/texture.hpp"
 
 # include <SFML/OpenGL.hpp>
@@ -41,6 +42,7 @@ namespace postFX {
             bumpMap_.Clear(sf::Color(127, 0, 127));
 
             particles::drawHeat();
+            decoObjects::drawHeat();
 
             bumpMap_.Display();
 
@@ -77,6 +79,7 @@ namespace postFX {
             glViewport(0,0,640,400);
             gluOrtho2D(0, 1280, 800, 0);
             glEnable(GL_BLEND);
+            glMatrixMode(GL_MODELVIEW);
             postFX_.SetTexture("BumpMap", bumpMap_.GetImage());
             postFX_.SetParameter("Exposure", exposure_);
         }

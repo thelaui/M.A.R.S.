@@ -152,6 +152,14 @@ void Color3f::setHSV(float hue, float saturation, float value) {
 	}
 }
 
+Color3f const Color3f::inverted() const {
+    Color3f inverted(*this);
+    inverted.h(inverted.h() + 180.f);
+    if (v() < 0.5f)
+        inverted.v(1.f - inverted.v());
+    return inverted;
+}
+
 void Color3f::gl3f() const {
     glColor3f(r_, g_, b_);
 }
@@ -165,7 +173,8 @@ sf::Color const Color3f::sfColor() const {
 }
 
 Color3f const Color3f::random() {
-    Color3f result(sf::Randomizer::Random(0.3f, 1.0f), sf::Randomizer::Random(0.3f, 1.0f), sf::Randomizer::Random(0.3f, 1.0f));
-    result.s(result.s() + 0.4);
+    Color3f result(sf::Randomizer::Random(0.0f, 1.0f), sf::Randomizer::Random(0.0f, 1.0f), sf::Randomizer::Random(0.0f, 1.0f));
+    result.s(result.s() + 0.5);
+    result.v(result.v() + 0.5);
     return result;
 }

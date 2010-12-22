@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "DecoObjects/Cannon.hpp"
 # include "DecoObjects/PlanetSign.hpp"
+# include "DecoObjects/SunHeat.hpp"
 # include "DecoObjects/ShipName.hpp"
 # include "DecoObjects/ShipHighlight.hpp"
 # include "DecoObjects/Evil.hpp"
@@ -31,6 +32,7 @@ namespace decoObjects {
     namespace {
         Cannon* cannon_(NULL);
         std::vector<DecoObject*> decos_;
+        std::vector<DecoObject*> heats_;
         std::vector<DecoObject*> names_;
     }
 
@@ -46,10 +48,17 @@ namespace decoObjects {
             (*it)->draw();
     }
 
+    void drawHeat() {
+        for (std::vector<DecoObject*>::iterator it = heats_.begin(); it != heats_.end(); ++it)
+            (*it)->draw();
+    }
+
     void drawNames() {
         for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
             (*it)->draw();
     }
+
+
 
     void addCannon() {
         cannon_ = new Cannon();
@@ -59,6 +68,11 @@ namespace decoObjects {
     void addPlanetSign(Planet* planet) {
         decos_.push_back(new PlanetSign(planet));
     }
+
+    void addSunHeat(Sun* sun) {
+        heats_.push_back(new SunHeat(sun));
+    }
+
 
     void addName(Ship* ship) {
         names_.push_back(new ShipName(ship));
@@ -75,9 +89,12 @@ namespace decoObjects {
         }
         for (std::vector<DecoObject*>::iterator it = decos_.begin(); it != decos_.end(); ++it)
             delete *it;
+        for (std::vector<DecoObject*>::iterator it = heats_.begin(); it != heats_.end(); ++it)
+            delete *it;
         for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
             delete *it;
         decos_.clear();
+        heats_.clear();
         names_.clear();
     }
 }

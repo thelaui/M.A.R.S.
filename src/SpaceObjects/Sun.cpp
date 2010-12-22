@@ -74,7 +74,4 @@ void Sun::onCollision(SpaceObject* with, Vector2f const& location,
         particles::spawnMultiple(strength*0.1, particles::pEruption, eruptionLocation, direction, direction*strength*0.00005);
         eruptionTimer_ = sf::Randomizer::Random(0.5f, 1.5f);
     }
-
-     if (with->type() ==  spaceObjects::oAmmoBurner)
-        particles::spawn(particles::pMiniFlame, location);
 }
