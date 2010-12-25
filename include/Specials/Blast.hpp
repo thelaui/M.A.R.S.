@@ -27,7 +27,7 @@ class Blast: public Special {
     public:
         /// Ctor which constructs the special.
         Blast(Ship* parent):
-              Special(parent, "BLAST"),
+              Special(parent, sf::String("BLAST")),
               radius_(0.f) {};
 
         /// Blasts away nearby ships.

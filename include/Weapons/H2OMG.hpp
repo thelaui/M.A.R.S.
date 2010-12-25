@@ -27,7 +27,7 @@ class H2OMG: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         H2OMG(Ship* parent):
-              Weapon(parent, "H2O-MG") {};
+              Weapon(parent, sf::String("H2O-MG")) {};
 
         /// Spawns some particles.
         void fire() const;

@@ -27,7 +27,7 @@ class Fist: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Fist(Ship* parent):
-              Weapon(parent, "FIST OF ALI"),
+              Weapon(parent, sf::String("FIST OF ALI")),
               position_(1.f) {};
 
         /// Spawns some particles.

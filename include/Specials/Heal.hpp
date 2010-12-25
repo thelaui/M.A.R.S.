@@ -27,7 +27,7 @@ class Heal: public Special {
     public:
         /// Ctor which constructs the special.
         Heal(Ship* parent):
-              Special(parent, "HEAL"),
+              Special(parent, sf::String("HEAL")),
               radius_(0.f) {};
 
         /// Heals nearby friends.

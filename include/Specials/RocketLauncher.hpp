@@ -27,7 +27,7 @@ class RocketLauncher: public Special {
     public:
         /// Ctor which constructs the weapon.
         RocketLauncher(Ship* parent):
-              Special(parent, "ROCK'n'LOL") {};
+              Special(parent, sf::String("ROCK'n'LOL")) {};
 
         /// Spawns some particles.
         void activate() const;
