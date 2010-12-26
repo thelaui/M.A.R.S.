@@ -114,14 +114,14 @@ void Slider::draw() const {
         if(!sliderNames_.empty()) {
             if (sliderNames_.size() <= *value_-minValue_) {
                 sstr << *value_;
-                text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::Ubuntu, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+                text::drawScreenText(sf::String(sstr.str()), origin + Vector2f(labelWidth_-10,1), font::Ubuntu, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
             }
             else
                 text::drawScreenText(sliderNames_[*value_-minValue_], origin + Vector2f(labelWidth_-10,1), font::Ubuntu, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
         else {
             sstr << *value_;
-            text::drawScreenText(sstr.str(), origin + Vector2f(labelWidth_-10,1), font::Ubuntu, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+            text::drawScreenText(sf::String(sstr.str()), origin + Vector2f(labelWidth_-10,1), font::Ubuntu, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
 
     }

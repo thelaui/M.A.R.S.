@@ -154,7 +154,7 @@ void TabStats::draw() const {
         std::stringstream sstr;
         int seconds = games::elapsedTime();
         sstr << std::setfill('0') << std::setw(2) << (seconds-seconds%60)/60 << " : " << std::setw(2) << seconds%60;
-        text::drawScreenText(sstr.str(), topLeft + Vector2f(width-10, 18), font::FreeSans, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(width-10, 18), font::FreeSans, 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7f, 0.7f, 0.7f));
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glLineWidth(2.f);
@@ -203,8 +203,8 @@ void TabStats::draw() const {
                 text::drawScreenText((*currentPlayer)->name(), topLeft + Vector2f(2, 0), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, drawColor);
                 // draw [BOT]
                 if ((*currentPlayer)->controlType_ != controllers::cPlayer1 && (*currentPlayer)->controlType_ != controllers::cPlayer2) {
-                    text::drawScreenText("[BOT]", topLeft+Vector2f(81,1), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
-                    text::drawScreenText("[BOT]", topLeft+Vector2f(80,0), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, drawColor);
+                    text::drawScreenText(sf::String("[BOT]"), topLeft+Vector2f(81,1), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+                    text::drawScreenText(sf::String("[BOT]"), topLeft+Vector2f(80,0), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, drawColor);
                 }
                 // draw points
                 int value = (*currentPlayer)->points_;
@@ -214,8 +214,8 @@ void TabStats::draw() const {
                 totalPoints += value;
                 std::stringstream sstr;
                 sstr << value;
-                text::drawScreenText(sstr.str(), topLeft+Vector2f(171,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sstr.str(), topLeft+Vector2f(170,0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f(171,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f(170,0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw frags
                 value = (*currentPlayer)->frags_;
                 if (value > 0)      drawColor = Color3f(0.3,1,0.3);
@@ -223,8 +223,8 @@ void TabStats::draw() const {
                 totalFrags += value;
                 sstr.str("");
                 sstr << value;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(236, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(235, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(236, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(235, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw teamKills
                 value = (*currentPlayer)->teamKills_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -232,8 +232,8 @@ void TabStats::draw() const {
                 totalTeamKills += value;
                 sstr.str("");
                 sstr << value;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(301, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(300, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(301, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(300, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw suicides
                 value = (*currentPlayer)->suicides_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -241,8 +241,8 @@ void TabStats::draw() const {
                 totalSuicides += value;
                 sstr.str("");
                 sstr << value;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(366, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(365, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(366, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(365, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw deaths
                 value = (*currentPlayer)->deaths_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
@@ -250,8 +250,8 @@ void TabStats::draw() const {
                 totalDeaths += value;
                 sstr.str("");
                 sstr << value;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(431, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(430, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(431, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(430, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 topLeft.y_ += 12;
             }
@@ -274,31 +274,31 @@ void TabStats::draw() const {
                 else                              drawColor = Color3f(1,1,0.3);
                 std::stringstream sstr;
                 sstr << totalPoints;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(170, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(170, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalFrags > 0)     drawColor = Color3f(0.3,1,0.3);
                 else                    drawColor = Color3f(1,1,0.3);
                 sstr.str("");
                 sstr << totalFrags;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(235, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(235, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalTeamKills > 0) drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalTeamKills;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(300, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(300, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalSuicides > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalSuicides;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(365, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(365, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 if (totalDeaths > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
                 sstr.str("");
                 sstr << totalDeaths;
-                text::drawScreenText(sstr.str(), topLeft + Vector2f(430, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
+                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(430, 0), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 topLeft.y_ += 18;
             }

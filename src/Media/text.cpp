@@ -75,7 +75,7 @@ namespace text {
     }
 
     void drawFooText() {
-        drawScreenText(".", Vector2f(0.f, 0.f), font::Ubuntu, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+        drawScreenText(sf::String("."), Vector2f(0.f, 0.f), font::Ubuntu, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
     float getCharacterPos(sf::String const& text, int pos, font::FontType type, float size, int align) {

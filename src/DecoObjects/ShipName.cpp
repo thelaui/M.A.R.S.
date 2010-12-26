@@ -70,9 +70,9 @@ void ShipName::draw() const {
             for (int i=0; i<ship_->fragStars_; ++i)
                 sstr << "*";
             if (ship_->docked_)
-                text::drawSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
             else
-                text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawMobileSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), font::Ubuntu, 25.f, TEXT_ALIGN_CENTER, color);
         }
     }
 }
