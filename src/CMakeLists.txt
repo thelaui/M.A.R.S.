@@ -5,7 +5,7 @@
 
 # determine source and header files
 file(GLOB MARS_SOURCES */*.cpp)
-file(GLOB MARS_HEADERS ${MARS_SOURCE_DIR}/include/*/*.hpp)
+file(GLOB MARS_HEADERS ${MARS_SOURCE_DIR}/include/*/*.hpp ${MARS_SOURCE_DIR}/include/*.hpp)
 file(GLOB MARS_RESOURCES ${MARS_SOURCE_DIR}/mars.cfg)
 
 # create executable
@@ -53,7 +53,7 @@ target_link_libraries(
 		${FOUNDATION_LIBRARY}
 		${SFML_LIBRARIES}
 		${OPENGL_LIBRARIES}
-		${XRANDR_LIBRARIES}
+		${XRANDR_LIBRARY}
 )
 
 #####################################################################

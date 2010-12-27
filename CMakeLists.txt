@@ -7,7 +7,7 @@
 # version number
 set(mars_MAJOR 0)
 set(mars_MINOR 6)
-set(mars_PATCH 1)
+set(mars_PATCH 9)
 set(mars_VERSION ${mars_MAJOR}.${mars_MINOR}.${mars_PATCH})
 set(mars_DESCRIPTION "M.A.R.S. - a ridiculous Shooter")
 set(mars_HOMEPAGE "http://www.marsshooter.org")
@@ -39,7 +39,7 @@ endif(APPLE)
 
 # Xrandr library needed for unix
 
-	find_library(XRANDR Xrandr)
+	find_library(XRANDR_LIBRARY Xrandr)
 
 
 # set the executable output path
@@ -97,6 +97,7 @@ message( "  SFML_INCLUDE_DIR = ${SFML_INCLUDE_DIR}" )
 message( "  SFML_LIBRARIES = ${SFML_LIBRARIES}" )
 message( "  OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}" )
 message( "  OPENGL_LIBRARIES = ${OPENGL_LIBRARIES}" )
+message( "  XRANDR_LIBRARY = ${XRANDR_LIBRARY}" )
 message( "" )
 
 
