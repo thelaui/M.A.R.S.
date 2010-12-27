@@ -1,4 +1,4 @@
-/* file.hpp
+/* defines.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,24 +15,11 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef FILE_HPP_INCLUDED
-# define FILE_HPP_INCLUDED
+# ifndef DEFINES_HPP_INCLUDED
+# define DEFINES_HPP_INCLUDED
 
-# include <SFML/System.hpp>
-# include <string>
-# include <vector>
+# define VERSION_MAJOR      "0"
+# define VERSION_MINOR      "6"
+# define VERSION_SUBMINOR   "9"
 
-/// A namespace for UTF-8 encoded text file handling.
-/// It contains function which work with
-/// UTF-8 encoded text files.
-
-namespace file {
-    /// Loads an UTF-8 encoded text file.
-    /// The lines of this file are stored in a std::vector of SFML-Strings.
-    /// Comments (//) and empty lines in this file will be ignored.
-    bool load(std::string fileName, std::vector<sf::String>& strings);
-}
-
-# endif // FILE_HPP_INCLUDED
-
-
+# endif //DEFINES_HPP_INCLUDED

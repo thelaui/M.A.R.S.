@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Shaders/postFX.hpp"
 # include "Games/games.hpp"
 # include "SpaceObjects/stars.hpp"
+# include "Media/music.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -160,6 +161,7 @@ namespace window {
     }
 
     void close() {
+        music::stop();
         window_.Close();
     }
 
@@ -186,7 +188,7 @@ namespace window {
         //window_.SetFramerateLimit(10);
 
         sf::Image icon;
-        icon.LoadFromFile("data/tex/icon.png");
+        icon.LoadFromFile(settings::C_dataPath + "/tex/icon.png");
         window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
 
         resized();

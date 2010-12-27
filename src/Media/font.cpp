@@ -17,6 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/font.hpp"
 
+# include "System/settings.hpp"
+
 # include <iostream>
 
 namespace font {
@@ -36,8 +38,8 @@ namespace font {
         else {
             // load it from file and...
             switch (type) {
-                case Ubuntu:         loadFont_(type, "data/fonts/Ubuntu-R.ttf");   break;
-                case FreeSans:       loadFont_(type, "data/fonts/FreeSans.ttf");   break;
+                case Ubuntu:         loadFont_(type, settings::C_dataPath + "/fonts/Ubuntu-R.ttf");   break;
+                case FreeSans:       loadFont_(type, settings::C_dataPath + "/fonts/FreeSans.ttf");   break;
 
                 case COUNT: std::cout << "COUNT is not a valid Texturetype..." << std::endl;
             }

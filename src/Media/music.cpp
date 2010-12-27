@@ -38,10 +38,10 @@ namespace music {
         void playMusic(MusicType music) {
             if (!initialized_) init();
             switch (music) {
-                case Technodog:        musicChannel_.OpenFromFile("data/audio/music/technodog.ogg");      break;
-                case Thisistheday:     musicChannel_.OpenFromFile("data/audio/music/thisistheday.ogg");   break;
-                case Midnightride:     musicChannel_.OpenFromFile("data/audio/music/midnightride.ogg");   break;
-                case Dancezone:        musicChannel_.OpenFromFile("data/audio/music/dancezone.ogg");      break;
+                case Technodog:        musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/technodog.ogg");      break;
+                case Thisistheday:     musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/thisistheday.ogg");   break;
+                case Midnightride:     musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/midnightride.ogg");   break;
+                case Dancezone:        musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/dancezone.ogg");      break;
             }
             musicChannel_.Play();
         }
@@ -72,6 +72,10 @@ namespace music {
     void playGameMusic() {
         musicChannel_.SetLoop(false);
         playMusic(static_cast<MusicType>(sf::Randomizer::Random(0, Thisistheday-1)));
+    }
+
+    void stop() {
+        musicChannel_.Stop();
     }
 
     void setGlobalVolume() {

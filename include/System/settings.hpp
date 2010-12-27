@@ -29,13 +29,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace settings {
     /// Loads all settings from the file.
-    /// All settings are stored in the file "mars.cfg".
+    /// All settings are stored in the file C_configFile.
     /// This has to be called once at the beginning of the game. If an error
     /// occurs, default settings are used.
-    void load();
+    bool load();
 
     /// Saves the current state of the variables to file.
-    void save();
+    bool save();
 
     /// \name Game settings
     ///@{
@@ -73,6 +73,8 @@ namespace settings {
     extern int            C_colorDepth;
     extern bool           C_shaders;
     extern sf::Key::Code  C_screenShotKey;
+    extern std::string    C_configFile;
+    extern std::string    C_dataPath;
     ///@}
 
     /// \name Player settings

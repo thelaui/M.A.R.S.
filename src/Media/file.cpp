@@ -22,12 +22,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 
 namespace file {
-    std::vector<sf::String> const load(std::string fileName) {
-        std::vector<sf::String> strings;
+    bool load(std::string fileName, std::vector<sf::String>& strings) {
         // Open the test file (contains UTF-8 encoded text)
         std::ifstream fileStream(fileName.c_str());
         if (!fileStream.is_open()) {
-            std::cout << "Could not open " << fileName << "!" << std::endl;
+            return false;
         }
         else {
             std::string line;
@@ -47,7 +46,7 @@ namespace file {
             }
             fileStream.close();
         }
-        return strings;
+        return true;
     }
 }
 

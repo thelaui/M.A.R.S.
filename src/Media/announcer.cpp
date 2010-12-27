@@ -54,13 +54,13 @@ namespace announcer {
             else {
                 // load it from file and...
                 switch (sound) {
-                    case Bam:                 loadSound_(sound, "data/audio/announcer/bam.wav");              break;
-                    case Impressive:          loadSound_(sound, "data/audio/announcer/impressive.wav");       break;
-                    case NiceOne:             loadSound_(sound, "data/audio/announcer/niceOne.wav");          break;
-                    case NotFunny:            loadSound_(sound, "data/audio/announcer/notFunny.wav");         break;
-                    case ThatWasGreat:        loadSound_(sound, "data/audio/announcer/thatWasGreat.wav");     break;
-                    case WellDone:            loadSound_(sound, "data/audio/announcer/wellDone.wav");         break;
-                    case YouSuck:             loadSound_(sound, "data/audio/announcer/youSuck.wav");          break;
+                    case Bam:                 loadSound_(sound, settings::C_dataPath + "/audio/announcer/bam.wav");              break;
+                    case Impressive:          loadSound_(sound, settings::C_dataPath + "/audio/announcer/impressive.wav");       break;
+                    case NiceOne:             loadSound_(sound, settings::C_dataPath + "/audio/announcer/niceOne.wav");          break;
+                    case NotFunny:            loadSound_(sound, settings::C_dataPath + "/audio/announcer/notFunny.wav");         break;
+                    case ThatWasGreat:        loadSound_(sound, settings::C_dataPath + "/audio/announcer/thatWasGreat.wav");     break;
+                    case WellDone:            loadSound_(sound, settings::C_dataPath + "/audio/announcer/wellDone.wav");         break;
+                    case YouSuck:             loadSound_(sound, settings::C_dataPath + "/audio/announcer/youSuck.wav");          break;
                     case COUNT: std::cout << "COUNT is not a valid Soundtype..." << std::endl;
                 }
                 // ... play it afterwards

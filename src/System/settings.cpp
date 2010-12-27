@@ -65,6 +65,8 @@ namespace settings {
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 postFX::supported();
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
+    std::string  C_configFile =             "";
+    std::string  C_dataPath =               "";
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
@@ -102,75 +104,103 @@ namespace settings {
     sf::String C_ip =                      "192.168.0.1";
     sf::String C_port =                    "12345";
 
-    void save() {
-        std::ofstream outStream("mars.cfg");
+    bool save() {
+        std::ofstream outStream(C_configFile.c_str());
 
-        outStream << "// mars config file" << std::endl;
-        outStream << "// all these options can be changed with the in-game menu, too." << std::endl << std::endl;
+        if (outStream) {
 
-        outStream << "[soundVolume] "           <<  C_soundVolume << std::endl;
-        outStream << "[announcerVolume] "       <<  C_announcerVolume << std::endl;
-        outStream << "[musicVolume] "           <<  C_musicVolume << std::endl;
-        outStream << "[globalParticleCount] "   <<  C_globalParticleCount << std::endl;
-        outStream << "[globalParticleLifeTime] "<<  C_globalParticleLifeTime << std::endl;
-        outStream << "[showFPS] "               << (C_showFPS ? "true" : "false") << std::endl;
-        outStream << "[showParticleCount] "     << (C_showParticleCount ? "true" : "false") << std::endl;
-        outStream << "[showLatency] "           << (C_showLatency ? "true" : "false") << std::endl;
-        outStream << "[fullScreen] "            << (C_fullScreen ? "true" : "false") << std::endl;
-        outStream << "[vsync] "                 << (C_vsync ? "true" : "false") << std::endl;
-        outStream << "[drawAIPath] "            << (C_drawAIPath ? "true" : "false") << std::endl;
-        outStream << "[iDumb] "                 << (C_iDumb) << std::endl;
-        outStream << "[adaptiveParticleCount] " << (C_adaptiveParticleCount ? "true" : "false") << std::endl;
-        outStream << "[drawLocalNames] "        << (C_drawLocalNames ? "true" : "false") << std::endl;
-        outStream << "[drawRemoteNames] "       << (C_drawRemoteNames ? "true" : "false") << std::endl;
-        outStream << "[drawBotNames] "          << (C_drawBotNames ? "true" : "false") << std::endl;
-        outStream << "[drawBotOrientation] "    << (C_drawBotOrientation ? "true" : "false") << std::endl;
-        outStream << "[drawZones] "             << (C_drawZones ? "true" : "false") << std::endl;
-        outStream << "[botsLeft] "              << C_botsLeft << std::endl;
-        outStream << "[botsRight] "             << C_botsRight << std::endl;
-        outStream << "[botsDeath] "             << C_botsDeath << std::endl;
-        outStream << "[pointLimit] "            << C_pointLimit << std::endl;
-        outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
-        outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
-        outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
-        outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
-        outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
-        outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerIspecial << std::endl;
-        outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
-        outStream << "[playerITeamColor] "      <<  C_playerITeamColor.r() << " "<< C_playerITeamColor.g() << " " << C_playerITeamColor.b() << std::endl;
-        outStream << "[playerITeamL] "          << (C_playerIteamL ? "true" : "false") << std::endl;
-        outStream << "[playerITeamR] "          << (C_playerIteamR ? "true" : "false") << std::endl;
-        outStream << "[playerIShip] "           <<  C_playerIShip << std::endl;
-        outStream << "[playerIIName] "          <<  C_playerIIName.ToAnsiString() << std::endl;
-        outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIIspecial <<  std::endl;
-        outStream << "[playerIIColor] "         <<  C_playerIIColor.r() << " "<< C_playerIIColor.g() << " " << C_playerIIColor.b() << std::endl;
-        outStream << "[playerIITeamColor] "     <<  C_playerIITeamColor.r() << " "<< C_playerIITeamColor.g() << " " << C_playerIITeamColor.b() << std::endl;
-        outStream << "[playerIITeamL] "         << (C_playerIIteamL ? "true" : "false") << std::endl;
-        outStream << "[playerIITeamR] "         << (C_playerIIteamR ? "true" : "false") << std::endl;
-        outStream << "[playerIIShip] "          <<  C_playerIIShip << std::endl;
-        outStream << "[connectIP] "             <<  C_ip.ToAnsiString() << std::endl;
-        outStream << "[connectPort] "           <<  C_port.ToAnsiString() << std::endl;
-        outStream << "[networkTeamRed] "        << (C_networkPlayerI ? "true" : "false") << std::endl;
-        outStream << "[showInfoHide] "          << (C_showInfoHide ? "true" : "false") << std::endl;
-        outStream << "[showInfoSB] "            << (C_showInfoSB ? "true" : "false") << std::endl;
-        outStream << "[showInfoDM] "            << (C_showInfoDM ? "true" : "false") << std::endl;
-        outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
-        outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
-        outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
-        outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
-        outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
-        outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
-        outStream << "[resolutionX] "           << C_resX << std::endl;
-        outStream << "[resolutionY] "           << C_resY << std::endl;
-        outStream << "[colorDepth] "            << C_colorDepth << std::endl;
-        outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
+            outStream << "// mars config file" << std::endl;
+            outStream << "// nearly all these options can be changed with the in-game menu, too." << std::endl << std::endl;
 
-        outStream.close();
+            outStream << "[soundVolume] "           <<  C_soundVolume << std::endl;
+            outStream << "[announcerVolume] "       <<  C_announcerVolume << std::endl;
+            outStream << "[musicVolume] "           <<  C_musicVolume << std::endl;
+            outStream << "[globalParticleCount] "   <<  C_globalParticleCount << std::endl;
+            outStream << "[globalParticleLifeTime] "<<  C_globalParticleLifeTime << std::endl;
+            outStream << "[showFPS] "               << (C_showFPS ? "true" : "false") << std::endl;
+            outStream << "[showParticleCount] "     << (C_showParticleCount ? "true" : "false") << std::endl;
+            outStream << "[showLatency] "           << (C_showLatency ? "true" : "false") << std::endl;
+            outStream << "[fullScreen] "            << (C_fullScreen ? "true" : "false") << std::endl;
+            outStream << "[vsync] "                 << (C_vsync ? "true" : "false") << std::endl;
+            outStream << "[drawAIPath] "            << (C_drawAIPath ? "true" : "false") << std::endl;
+            outStream << "[iDumb] "                 << (C_iDumb) << std::endl;
+            outStream << "[adaptiveParticleCount] " << (C_adaptiveParticleCount ? "true" : "false") << std::endl;
+            outStream << "[drawLocalNames] "        << (C_drawLocalNames ? "true" : "false") << std::endl;
+            outStream << "[drawRemoteNames] "       << (C_drawRemoteNames ? "true" : "false") << std::endl;
+            outStream << "[drawBotNames] "          << (C_drawBotNames ? "true" : "false") << std::endl;
+            outStream << "[drawBotOrientation] "    << (C_drawBotOrientation ? "true" : "false") << std::endl;
+            outStream << "[drawZones] "             << (C_drawZones ? "true" : "false") << std::endl;
+            outStream << "[botsLeft] "              << C_botsLeft << std::endl;
+            outStream << "[botsRight] "             << C_botsRight << std::endl;
+            outStream << "[botsDeath] "             << C_botsDeath << std::endl;
+            outStream << "[pointLimit] "            << C_pointLimit << std::endl;
+            outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
+            outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
+            outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
+            outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
+            outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
+            outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerIspecial << std::endl;
+            outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
+            outStream << "[playerITeamColor] "      <<  C_playerITeamColor.r() << " "<< C_playerITeamColor.g() << " " << C_playerITeamColor.b() << std::endl;
+            outStream << "[playerITeamL] "          << (C_playerIteamL ? "true" : "false") << std::endl;
+            outStream << "[playerITeamR] "          << (C_playerIteamR ? "true" : "false") << std::endl;
+            outStream << "[playerIShip] "           <<  C_playerIShip << std::endl;
+            outStream << "[playerIIName] "          <<  C_playerIIName.ToAnsiString() << std::endl;
+            outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIIspecial <<  std::endl;
+            outStream << "[playerIIColor] "         <<  C_playerIIColor.r() << " "<< C_playerIIColor.g() << " " << C_playerIIColor.b() << std::endl;
+            outStream << "[playerIITeamColor] "     <<  C_playerIITeamColor.r() << " "<< C_playerIITeamColor.g() << " " << C_playerIITeamColor.b() << std::endl;
+            outStream << "[playerIITeamL] "         << (C_playerIIteamL ? "true" : "false") << std::endl;
+            outStream << "[playerIITeamR] "         << (C_playerIIteamR ? "true" : "false") << std::endl;
+            outStream << "[playerIIShip] "          <<  C_playerIIShip << std::endl;
+            outStream << "[connectIP] "             <<  C_ip.ToAnsiString() << std::endl;
+            outStream << "[connectPort] "           <<  C_port.ToAnsiString() << std::endl;
+            outStream << "[networkTeamRed] "        << (C_networkPlayerI ? "true" : "false") << std::endl;
+            outStream << "[showInfoHide] "          << (C_showInfoHide ? "true" : "false") << std::endl;
+            outStream << "[showInfoSB] "            << (C_showInfoSB ? "true" : "false") << std::endl;
+            outStream << "[showInfoDM] "            << (C_showInfoDM ? "true" : "false") << std::endl;
+            outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
+            outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
+            outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
+            outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
+            outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
+            outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
+            outStream << "[resolutionX] "           << C_resX << std::endl;
+            outStream << "[resolutionY] "           << C_resY << std::endl;
+            outStream << "[colorDepth] "            << C_colorDepth << std::endl;
+            outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
+
+            outStream.close();
+
+            return true;
+        }
+        else {
+            std::cout << "Faild to save configuration file " << C_configFile << "!" << std::endl;
+            return false;
+        }
     }
 
-    void load() {
-        std::vector<sf::String> lines = file::load("mars.cfg");
-        if (lines.size() > 0) {
+    bool load() {
+
+        if (C_configFile == "") {
+            # ifdef __linux__
+                C_configFile = std::string(getenv("HOME")) + "/.mars";
+            # endif
+            # ifdef __WIN32__
+                C_configFile = "mars.cfg";
+            # endif
+        }
+
+        if (C_dataPath == "") {
+            # ifdef __linux__
+                C_dataPath = "data/";
+            # endif
+            # ifdef __WIN32__
+                C_dataPath = "data/";
+            # endif
+        }
+
+        std::vector<sf::String> lines;
+        if (file::load(C_configFile, lines)) {
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
                 std::istringstream iss (it->ToAnsiString());
                 std::string inputLine;
@@ -528,11 +558,15 @@ namespace settings {
                     C_screenShotKey = (sf::Key::Code)value;
                 }
                 else
-                    std::cout << inputLine << " is a bad option in mars.cfg!\n";
+                    std::cout << inputLine << " is a bad option in " << C_configFile << "!\n";
             }
+            return true;
         }
         else {
-            std::cout << "Using default settings...\n";
+            std::cout << "Could not find configuration file " << C_configFile << "!\n";
+            if (save())
+                std::cout << "Created it, using default settings.\n";
+            return false;
         }
     }
 }

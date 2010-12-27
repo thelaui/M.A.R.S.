@@ -33,6 +33,8 @@ namespace music {
     void playMenuMusic();
     /// Plays a music file, suitable for in-game action.
     void playGameMusic();
+    /// Stops playing Music.
+    void stop();
 
     /// Applies the global music Volume.
     /// Which is set in \a settings::C_musicVolume. This is useful

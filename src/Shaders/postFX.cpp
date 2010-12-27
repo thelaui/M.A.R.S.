@@ -74,7 +74,7 @@ namespace postFX {
 
     void load() {
         if (supported()) {
-            postFX_.LoadFromFile("data/shaders/bump.frag");
+            postFX_.LoadFromFile(settings::C_dataPath + "/shaders/bump.frag");
             bumpMap_.Create(640, 400);
             glViewport(0,0,640,400);
             gluOrtho2D(0, 1280, 800, 0);

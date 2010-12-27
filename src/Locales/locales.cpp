@@ -32,9 +32,8 @@ namespace locales {
         std::vector<sf::String> locales_(COUNT, "Error");
 
         void load(std::string const& fileName) {
-            std::vector<sf::String> lines = file::load(fileName);
-
-            if (lines.size() > 0) {
+            std::vector<sf::String> lines;
+            if (file::load(fileName, lines)) {
                 for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
                     std::stringstream sstr(it->ToAnsiString());
                     int id;
@@ -47,19 +46,19 @@ namespace locales {
                 }
             }
             else {
-                std::cout << "Interface will be messed up with errors...\n";
+                std::cout << "Failed to open locale " << fileName << "! Interface will be messed up with errors...\n";
             }
         }
     }
 
     void load() {
-        load ("data/locales/English.txt");
-        load ("data/locales/"+settings::C_language+".txt");
+        load (settings::C_dataPath + "/locales/English.txt");
+        load (settings::C_dataPath + "/locales/"+settings::C_language+".txt");
     }
 
     std::vector<sf::String>const getLanguages() {
         DIR* dp;
-        if((dp  = opendir("data/locales/")) == NULL)
+        if((dp  = opendir((settings::C_dataPath + "/locales/").c_str())) == NULL)
             std::cout << "Error(" << errno << ") opening data/locales/" << std::endl;
 
         struct dirent* dirp;
@@ -70,7 +69,7 @@ namespace locales {
                 if (file.size() > 4)
                     languages.push_back(sf::String(std::string(file, 0, file.size()-4)));
                 else
-                    std::cout << "data/locales/" << file << " seems to be an invalid translation file!" << std::endl;
+                    std::cout << settings::C_dataPath + "/locales/" << file << " seems to be an invalid translation file!" << std::endl;
             }
         }
         closedir(dp);

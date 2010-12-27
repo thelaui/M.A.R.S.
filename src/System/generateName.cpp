@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/file.hpp"
 # include "Locales/locales.hpp"
+# include "System/settings.hpp"
 
 # include <cstdlib>
 # include <algorithm>
@@ -36,27 +37,29 @@ namespace generateName {
         bool initialized_(false);
 
         void loadBotNames () {
-            std::vector<sf::String> lines = file::load("data/botnames.txt");
-            std::list<std::pair<sf::String, int> > newList;
-            for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                if ((*it).ToAnsiString()[0] == '[') {
-                    if (newList.size() > 0) {
-                        botNames_.push_back(newList);
-                        newList.clear();
+            std::vector<sf::String> lines;
+            if (file::load(settings::C_dataPath + "/botnames.txt", lines)) {
+                std::list<std::pair<sf::String, int> > newList;
+                for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
+                    if ((*it).ToAnsiString()[0] == '[') {
+                        if (newList.size() > 0) {
+                            botNames_.push_back(newList);
+                            newList.clear();
+                        }
                     }
-                }
-                else {
-                    std::stringstream strengthStream(std::string((*it).ToAnsiString(), (*it).GetSize()-3));
-                    int strength;
-                    strengthStream >> strength;
-                    (*it).Erase((*it).GetSize()-3, 3);
-                    while ((*it)[(*it).GetSize()-1] == ' ' || (*it)[(*it).GetSize()-1] == '\t')
-                        (*it).Erase((*it).GetSize()-1);
-                    newList.push_back(std::make_pair(*it, strength));
+                    else {
+                        std::stringstream strengthStream(std::string((*it).ToAnsiString(), (*it).GetSize()-3));
+                        int strength;
+                        strengthStream >> strength;
+                        (*it).Erase((*it).GetSize()-3, 3);
+                        while ((*it)[(*it).GetSize()-1] == ' ' || (*it)[(*it).GetSize()-1] == '\t')
+                            (*it).Erase((*it).GetSize()-1);
+                        newList.push_back(std::make_pair(*it, strength));
+                    }
                 }
             }
             if (botNames_.size() == 0) {
-                std::cout << "No Botnames found! Reverting to some boring default names...\n";
+                std::cout << "Failed to open botnames.txt! Reverting to some boring default names...\n";
                 std::list<std::pair<sf::String, int> > defaultnames;
                 defaultnames.push_back(std::make_pair("Ernst", 90));
                 defaultnames.push_back(std::make_pair("Holger", 50));
@@ -89,8 +92,7 @@ namespace generateName {
         }
 
         void loadShipNames () {
-            shipNames_ = file::load("data/shipnames.txt");
-            if (shipNames_.size() == 0)
+            if (!file::load(settings::C_dataPath + "/shipnames.txt", shipNames_))
                 std::cout << "No Botnames found! Using boring numbers instead...\n";
         }
 
