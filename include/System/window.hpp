@@ -27,7 +27,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace window {
     /// Opens the window.
     /// Should be called once at the beginning.
-    void open();
+    /// Returns false, if something went wrong.
+    bool open();
 
     /// Recreates the window.
     /// Can be called to apply settings::C_fullScreen.

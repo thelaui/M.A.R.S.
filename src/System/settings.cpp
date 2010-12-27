@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/file.hpp"
 # include "Shaders/postFX.hpp"
 
+# include <sys/stat.h>
+
 # include <fstream>
 # include <sstream>
 # include <iostream>
@@ -65,7 +67,7 @@ namespace settings {
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 postFX::supported();
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
-    std::string  C_configFile =             "";
+    std::string  C_configPath =             "";
     std::string  C_dataPath =               "";
 
     // player settings ----- adjustable via options menu
@@ -105,7 +107,7 @@ namespace settings {
     sf::String C_port =                    "12345";
 
     bool save() {
-        std::ofstream outStream(C_configFile.c_str());
+        std::ofstream outStream((C_configPath + "mars.cfg").c_str());
 
         if (outStream) {
 
@@ -174,33 +176,84 @@ namespace settings {
             return true;
         }
         else {
-            std::cout << "Faild to save configuration file " << C_configFile << "!" << std::endl;
+            std::cout << "Faild to save configuration file " << C_configPath << "!" << std::endl;
             return false;
         }
     }
 
     bool load() {
+        // check whether application directory in the home diretory exists, if not create it
+        # ifdef __linux__
+            mkdir((std::string(getenv("HOME")) + "/.marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            mkdir((std::string(getenv("HOME")) + "/.marsshooter/screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+        # endif
 
-        if (C_configFile == "") {
+        # ifdef __WIN32__
+
+        # endif
+
+        // search for config file
+        if (C_configPath == "") {
+            bool success(false);
+            std::cout << "Searching for configuration file... " << std::flush;
+            C_configPath = "./";
+
             # ifdef __linux__
-                C_configFile = std::string(getenv("HOME")) + "/.mars";
+                if (std::ifstream((C_configPath + "mars.cfg").c_str()))
+                    success = true;
+                else if (std::ifstream((std::string(getenv("HOME")) + "/.marsshooter/mars.cfg").c_str())) {
+                    C_configPath =      std::string(getenv("HOME")) + "/.marsshooter/";
+                    success = true;
+                }
+                else {
+                    C_configPath =      std::string(getenv("HOME")) + "/.marsshooter/";
+                }
             # endif
+
             # ifdef __WIN32__
-                C_configFile = "mars.cfg";
+                if (std::ifstream((C_configPath + "mars.cfg").c_str()))
+                    success = true;
             # endif
+
+            if (success) std::cout << "Found " << C_configPath << "mars.cfg"  << std::endl;
+            else         std::cout << "Found nothing. Will create a new one." << std::endl;
         }
 
+        // search for data files
         if (C_dataPath == "") {
+            bool success(false);
+            std::cout << "Searching for data files... " << std::flush;
+            C_dataPath = "./data/";
+
             # ifdef __linux__
-                C_dataPath = "data/";
+                if (std::ifstream((C_dataPath + "/locales/English.txt").c_str()))
+                    success = true;
+                else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {
+                    C_dataPath = "/usr/share/marsshooter/";
+                    success = true;
+                } else if (std::ifstream("/usr/local/share/marsshooter/locales/English.txt")) {
+                    C_dataPath = "/usr/local/share/marsshooter/";
+                    success = true;
+                } else if (std::ifstream("/usr/local/games/marsshooter/locales/English.txt")) {
+                    C_dataPath = "/usr/local/games/marsshooter/";
+                    success = true;
+                }
             # endif
+
             # ifdef __WIN32__
-                C_dataPath = "data/";
+                if (std::ifstream((C_dataPath + "/locales/English.txt").c_str()))
+                    success = true;
             # endif
+
+            if (success) std::cout << "Found " << C_dataPath << std::endl;
+            else {
+                std::cout << "Found nothing. Aborting." << std::endl;
+                return false;
+            }
         }
 
         std::vector<sf::String> lines;
-        if (file::load(C_configFile, lines)) {
+        if (file::load(C_configPath + "mars.cfg", lines)) {
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
                 std::istringstream iss (it->ToAnsiString());
                 std::string inputLine;
@@ -558,15 +611,14 @@ namespace settings {
                     C_screenShotKey = (sf::Key::Code)value;
                 }
                 else
-                    std::cout << inputLine << " is a bad option in " << C_configFile << "!\n";
+                    std::cout << inputLine << " is a bad option in " << C_configPath << "mars.cfg!\n";
             }
-            return true;
+
         }
         else {
-            std::cout << "Could not find configuration file " << C_configFile << "!\n";
             if (save())
-                std::cout << "Created it, using default settings.\n";
-            return false;
+                std::cout << "Created " << C_configPath << "mars.cfg, using default settings.\n";
         }
+        return true;
     }
 }

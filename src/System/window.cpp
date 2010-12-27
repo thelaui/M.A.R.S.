@@ -69,7 +69,11 @@ namespace window {
             std::stringstream filename;
             filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".jpg";
 
-            shot.SaveToFile(filename.str());
+            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+            } else {
+                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+            }
         }
 
         void resized() {
@@ -152,12 +156,16 @@ namespace window {
 
     // "public" methodes /////////////////////////////////////////////////
 
-    void open() {
-        settings::load();
-        locales:: load();
-        postFX::  load();
-        fxImage_.SetBlendMode(sf::Blend::None);
-        create();
+    bool open() {
+        if (settings::load()) {
+            locales:: load();
+            postFX::  load();
+            fxImage_.SetBlendMode(sf::Blend::None);
+            create();
+
+            return true;
+        }
+        else return false;
     }
 
     void close() {

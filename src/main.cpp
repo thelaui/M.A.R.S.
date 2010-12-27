@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
         if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "-help" || std::string(argv[i]) == "--help") {
             std::cout << "Usage:               mars [Options]"                                                                          << std::endl;
             std::cout << "Basic Options:"                                                                                               << std::endl;
-            std::cout << "    -cfg  <File>     Sets the absolute path to the config file of the game."                                  << std::endl;
+            std::cout << "    -cfg  <Path>     Sets the absolute path to the configuration directory of the game."                      << std::endl;
             std::cout << "    -data <Path>     Sets the absolute path to the data directory of the game,"                               << std::endl;
             std::cout << "                     which contains the folders sound/, tex/ and so on."                                      << std::endl;
             std::cout                                                                                                                   << std::endl;
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
             return 0;
         }
         else if (std::string(argv[i]) == "-cfg") {
-            settings::C_configFile = argv[++i];
+            settings::C_configPath = argv[++i];
         }
         else if (std::string(argv[i]) == "-data") {
             settings::C_dataPath = argv[++i];
@@ -72,9 +72,12 @@ int main(int argc, char* argv[]) {
     }
 
     // start the game
-    window::open();
-    games:: start(games::gMenu);
-    window::mainLoop();
+    if (window::open()) {
+        games:: start(games::gMenu);
 
+        std::cout << "Happy Gaming..." << std::endl;
+
+        window::mainLoop();
+    }
     return 0;
 }
