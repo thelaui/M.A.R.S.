@@ -34,7 +34,7 @@ class Player;
 namespace physics {
     void     collide        (MobileSpaceObject* source, int with);
     Vector2f attract        (MobileSpaceObject* attracted);
-    void     causeShockWave (Player* damageSource, Vector2f const& location, float strength, float radius);
+    void     causeShockWave (Player* damageSource, Vector2f const& location, float strength, float radius, float damage);
 
     void addMobileObject    (MobileSpaceObject* source);
     void removeMobileObject (MobileSpaceObject* source);

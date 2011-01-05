@@ -37,6 +37,11 @@ RadioButton::~RadioButton () {
     delete label_;
 }
 
+void RadioButton::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
+
 void RadioButton::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
     if (!pressed_ && hovered_) {

@@ -30,13 +30,15 @@ class Tab: public UiElement {
 
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
-        void buttonPressed(sf::Key::Code keyCode);
+        void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
+        bool allWidgetsFocused() const;
 
         void draw () const;
 
+        void setFocus (bool focus);
+
         void addWidget (UiElement* toBeAdded);
-        void clearWidgets ();
 
         /* virtual */
         Vector2f getTopLeft();
@@ -45,6 +47,7 @@ class Tab: public UiElement {
 
     private:
         std::vector<UiElement*> widgets_;
+        UiElement* focusedWidget_;
         sf::String* name_;
         Label* label_;
         bool* activated_;

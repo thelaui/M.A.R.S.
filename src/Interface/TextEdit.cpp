@@ -44,8 +44,13 @@ TextEdit::~TextEdit () {
     delete label_;
 }
 
-void TextEdit::buttonPressed(sf::Key::Code keyCode) {
-    if (hovered_) {
+void TextEdit::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
+
+void TextEdit::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (hovered_ && down) {
         // backspace
         if (keyCode == sf::Key::Back && cursorPos_ > 0) {
             value_->Erase(cursorPos_-1, 1);

@@ -21,11 +21,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Interface/TabList.hpp"
 # include "Media/sound.hpp"
+# include "Menu/menus.hpp"
 
 # include <SFML/OpenGL.hpp>
 
 Tab::Tab (sf::String* name, int width, bool* activated):
     UiElement(Vector2f(), width, 20),
+    focusedWidget_(NULL),
     name_(name),
     activated_(activated),
     active_(false) {}
@@ -37,18 +39,23 @@ Tab::~Tab() {
 
 void Tab::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(parent_->getTopLeft() + topLeft_);
-    if (topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
+    if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
         hovered_ = true;
     else
         hovered_ = false;
     if (active_)
         for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
             (*i)->mouseMoved(position);
+    label_->mouseMoved(position);
 }
 
 void Tab::mouseLeft(bool down) {
-    UiElement::mouseLeft(down);
-    if (!pressed_ && hovered_) {
+    pressed_ = hovered_ && down;
+    if (hovered_ && !down) {
+        menus::clearFocus();
+        this->setFocus(true);
+    }
+    if (!pressed_ && hovered_ && focused_) {
         dynamic_cast<TabList*>(parent_)->deactivateAll();
         active_ = true;
         if(activated_)
@@ -60,16 +67,65 @@ void Tab::mouseLeft(bool down) {
             (*i)->mouseLeft(down);
 }
 
-void Tab::buttonPressed(sf::Key::Code keyCode) {
-    if (active_)
-        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-            (*i)->buttonPressed(keyCode);
+void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (active_ && focusedWidget_)
+        focusedWidget_->keyEvent(down, keyCode);
+
+    if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
+         || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
+         || (keyCode == sf::Key::Up))) {
+            if (focusedWidget_ && focusedWidget_->allWidgetsFocused()) {
+                int i(widgets_.size()-1);
+                while ( widgets_[i] != focusedWidget_ && i>0) --i;
+                if (i > 0) --i;
+                while (!widgets_[i]->isTabable() && i>0)      --i;
+
+                if (widgets_[i]->isTabable() && widgets_[i] != focusedWidget_) {
+                    focusedWidget_->setFocus(false);
+                    focusedWidget_ = widgets_[i];
+                    focusedWidget_->setFocus(true);
+                }
+                else {
+                    focusedWidget_->setFocus(false);
+                    focusedWidget_ = NULL;
+                }
+            }
+        }
+        else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
+            if (!focusedWidget_ && widgets_.size() > 0) {
+                int i(0);
+                while (!widgets_[i]->isTabable() && i<widgets_.size()-1) ++i;
+                if (i<widgets_.size()-1) {
+                    focusedWidget_ = widgets_[0];
+                    focusedWidget_->setFocus(true);
+                }
+            }
+            else if (focusedWidget_->allWidgetsFocused()) {
+                int i(0);
+                while ( widgets_[i] != focusedWidget_ && i<widgets_.size()-1) ++i;
+                if (i<widgets_.size()-1) ++i;
+                while (!widgets_[i]->isTabable() && i<widgets_.size()-1)      ++i;
+
+                if (widgets_[i]->isTabable() && widgets_[i] != focusedWidget_) {
+                    focusedWidget_->setFocus(false);
+                    focusedWidget_ = widgets_[i];
+                    focusedWidget_->setFocus(true);
+                }
+                else {
+                    focusedWidget_->setFocus(false);
+                    focusedWidget_ = NULL;
+                }
+            }
+        }
 }
 
 void Tab::textEntered(int keyCode) {
-    if (active_)
-        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-            (*i)->textEntered(keyCode);
+    if (active_ && focusedWidget_)
+        focusedWidget_->textEntered(keyCode);
+}
+
+bool Tab::allWidgetsFocused() const {
+    return !focusedWidget_;
 }
 
 void Tab::draw () const {
@@ -78,21 +134,29 @@ void Tab::draw () const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (hovered_) {
-
-
-
-        /*glBegin(GL_QUADS);
+    if (!focusedWidget_ && focused_ && isTopMost()) {
+        glBegin(GL_QUADS);
+            glColor4f(1,0.5,0.8,0.7);
+            glVertex2f(origin.x_+width_,origin.y_);
+            glVertex2f(origin.x_,origin.y_);
             glColor4f(0.5,0.25,0.4,0.0);
-            glVertex2f(origin.x_,origin.y_+height_*0.5);
-            glVertex2f(origin.x_+width_,origin.y_+height_*0.5);
-            glColor4f(1,0.5,0.8,0.2);
-            glVertex2f(origin.x_+width_,origin.y_+height_);
             glVertex2f(origin.x_,origin.y_+height_);
-        glEnd();*/
+            glVertex2f(origin.x_+width_,origin.y_+height_);
+        glEnd();
     }
 
     if (active_) {
+        if (isTopMost()) {
+            glBegin(GL_QUADS);
+                glColor4f(1,0.5,0.8,0.7);
+                glVertex2f(origin.x_+width_,origin.y_);
+                glVertex2f(origin.x_,origin.y_);
+                glColor4f(0.5,0.25,0.4,0.0);
+                glVertex2f(origin.x_,origin.y_+height_*0.5);
+                glVertex2f(origin.x_+width_,origin.y_+height_*0.5);
+            glEnd();
+        }
+
         glLineWidth(2.f);
         glBegin(GL_LINE_STRIP);
             if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
@@ -102,15 +166,6 @@ void Tab::draw () const {
             glVertex2f(origin.x_+width_,origin.y_);
             glVertex2f(origin.x_+width_,origin.y_+height_);
         glEnd();
-
-        /*glBegin(GL_QUADS);
-            glColor4f(0.5,0.25,0.4,0.0);
-            glVertex2f(origin.x_,origin.y_+height_*0.5);
-            glVertex2f(origin.x_+width_,origin.y_+height_*0.5);
-            glColor4f(1,0.5,0.8,0.4);
-            glVertex2f(origin.x_+width_,origin.y_+height_);
-            glVertex2f(origin.x_,origin.y_+height_);
-        glEnd();*/
     }
     else {
         glLineWidth(2.f);
@@ -123,8 +178,6 @@ void Tab::draw () const {
 
     }
 
-
-
     // draw Label
     label_->draw();
 
@@ -133,15 +186,17 @@ void Tab::draw () const {
             (*i)->draw();
 }
 
+void Tab::setFocus (bool focus) {
+    UiElement::setFocus(focus);
+    if (!focus) {
+        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
+            (*i)->setFocus(false);
+    }
+}
+
 void Tab::addWidget(UiElement* toBeAdded) {
     toBeAdded->setParent(this);
     widgets_.push_back(toBeAdded);
-}
-
-void Tab::clearWidgets () {
-    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-        delete *i;
-    widgets_.clear();
 }
 
 Vector2f Tab::getTopLeft() {

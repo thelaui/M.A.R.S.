@@ -56,7 +56,7 @@ void Blast::activate() const {
     if (parent_->fragStars_ > 0) {
         radius_ = parent_->fragStars_*100.f;
         parent_->fragStars_ = 0;
-        physics::causeShockWave(parent_->owner_, parent_->location_, radius_*2.f, radius_*1.5f);
+        physics::causeShockWave(parent_->owner_, parent_->location_, radius_*2.f, radius_*1.5f, 10.f);
         timer_ = 0.5f;
     }
 }

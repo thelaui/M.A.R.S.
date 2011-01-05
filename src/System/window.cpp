@@ -32,6 +32,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <sstream>
 # include <time.h>
+# include <sys/stat.h>
 
 namespace window {
 
@@ -69,6 +70,7 @@ namespace window {
             std::stringstream filename;
             filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".jpg";
 
+            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
             if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
             } else {
@@ -116,7 +118,10 @@ namespace window {
                         screenShot();
                     else if (!menus::visible())
                         controllers::singleKeyEvent(event.Key.Code);
-                    menus::buttonPressed(event.Key.Code);
+                    menus::keyEvent(true, event.Key.Code);
+                }
+                else if (event.Type == sf::Event::KeyReleased) {
+                    menus::keyEvent(false, event.Key.Code);
                 }
                 else if (event.Type == sf::Event::TextEntered) {
                     if (menus::visible())
@@ -192,7 +197,7 @@ namespace window {
         else
             window_.Create(mode, "M.A.R.S. - a " + generateName::game());
 
-        window_.UseVerticalSync(settings::C_vsync);
+        window_.EnableVerticalSync(settings::C_vsync);
         //window_.SetFramerateLimit(10);
 
         sf::Image icon;

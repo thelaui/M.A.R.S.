@@ -185,7 +185,6 @@ namespace settings {
         // check whether application directory in the home diretory exists, if not create it
         # ifdef __linux__
             mkdir((std::string(getenv("HOME")) + "/.marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            mkdir((std::string(getenv("HOME")) + "/.marsshooter/screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
         # ifdef __WIN32__

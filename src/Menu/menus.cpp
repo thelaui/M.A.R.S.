@@ -45,6 +45,7 @@ namespace menus {
         if (visible() && !hidden_) {
             for (std::vector<UiWindow*>::iterator it = windowStack_.begin(); it != windowStack_.end(); ++it)
                 (*it)->draw();
+
             Vector2f viewPort = window::getViewPort();
             text::drawScreenText(sf::String("M.A.R.S. " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_SUBMINOR)
                                             + " - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::Ubuntu, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
@@ -65,9 +66,9 @@ namespace menus {
         }
     }
 
-    void buttonPressed(sf::Key::Code keyCode) {
+    void keyEvent(bool down, sf::Key::Code keyCode) {
         if (visible()) {
-            if (keyCode == sf::Key::Escape) {
+            if (down && keyCode == sf::Key::Escape) {
                 if (hidden_) {
                     hidden_ = false;
                     window::showCursor(true);
@@ -77,10 +78,12 @@ namespace menus {
                 else
                     hideWindow();
             }
-            else
-                windowStack_.back()->buttonPressed(keyCode);
+            else {
+                windowStack_.back()->keyEvent(down, keyCode);
+                windowStack_.back()->checkWidgets();
+            }
         }
-        else if (keyCode == sf::Key::Escape)
+        else if (down && keyCode == sf::Key::Escape)
             showPause();
     }
 
@@ -106,6 +109,10 @@ namespace menus {
     void hideMenu() {
         window::showCursor(false);
         hidden_ = true;
+    }
+
+    void clearFocus() {
+        if (visible()) windowStack_.back()->setFocus(false);
     }
 
     bool visible() {

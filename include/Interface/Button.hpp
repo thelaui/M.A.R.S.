@@ -26,9 +26,13 @@ class Button: public UiElement {
         Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height);
         ~Button ();
 
+        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
+        void keyEvent(bool down, sf::Key::Code keyCode);
 
         void draw() const;
+
+        void setFocus (bool focus);
 
     private:
         bool* key_;

@@ -30,6 +30,7 @@ class Slider: public UiElement {
 
         void mouseLeft(bool down);
         void mouseMoved(Vector2f const& position);
+        void keyEvent(bool down, sf::Key::Code keyCode);
 
         void draw() const;
 

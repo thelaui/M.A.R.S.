@@ -86,7 +86,6 @@ namespace games {
 
         window::startDrawHUD();
 
-
         hud::draw();
         menus::draw();
 

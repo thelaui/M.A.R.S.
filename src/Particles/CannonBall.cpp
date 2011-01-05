@@ -60,13 +60,6 @@ void CannonBall::update() {
     for (std::vector<Home*>::const_iterator it = homes.begin(); it != homes.end(); ++it) {
         if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2)) {
             (*it)->onCollision(this, Vector2f(), Vector2f(), Vector2f());
-            sound::playSound(sound::BallExplode, location_, 100.f);
-            physics::causeShockWave(damageSource(), location_, 100.f, 300.f);
-            particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
-            particles::spawnMultiple(70, particles::pDust, location_);
-            particles::spawnMultiple(20, particles::pExplode, location_);
-            particles::spawnMultiple(8, particles::pBurningFragment, location_);
-            particles::spawnMultiple(1, particles::pMiniFlame, location_);
             killMe();
         }
     }
@@ -74,8 +67,20 @@ void CannonBall::update() {
     // check for collisions with ships
     std::vector<Ship*>const& shipsList = ships::getShips();
     for (std::vector<Ship*>::const_iterator it = shipsList.begin(); it != shipsList.end(); ++it)
-        if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2))
+        if ((location_ - (*it)->location()).lengthSquare() < std::pow(radius_ + (*it)->radius(), 2) && (*it)->getLife() > 0.f) {
             (*it)->onCollision(this, Vector2f(), Vector2f(), Vector2f());
+            killMe();
+        }
+
+    if (isDead()) {
+        sound::playSound(sound::BallExplode, location_, 100.f);
+        physics::causeShockWave(damageSource(), location_, 100.f, 300.f, 10.f);
+        particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
+        particles::spawnMultiple(70, particles::pDust, location_);
+        particles::spawnMultiple(20, particles::pExplode, location_);
+        particles::spawnMultiple(8, particles::pBurningFragment, location_);
+        particles::spawnMultiple(1, particles::pMiniFlame, location_);
+    }
 }
 
 void CannonBall::draw() const {

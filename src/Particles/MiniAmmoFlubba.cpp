@@ -25,7 +25,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<MiniAmmoFlubba*> MiniAmmoFlubba::activeParticles_;
 
 MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 1.8f, sf::Randomizer::Random(5.f, 7.f)) {
+           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 1.8f, sf::Randomizer::Random(10.f, 17.f)) {
+
+    setDamageSource(damageSource);
 
     velocity_ = Vector2f::randDirLen()*400;
 
@@ -40,13 +42,14 @@ void MiniAmmoFlubba::update() {
     float time = timer::frameTime();
 
     physics::collide(this, STATICS | MOBILES | PARTICLES);
+    Vector2f acceleration = physics::attract(this)*3.f;
 
     // update Size
     if (lifeTime_ > totalLifeTime_-0.2f)
         radius_ = -200.0*pow(lifeTime_+0.1-totalLifeTime_, 2)+4;
 
-    location_ = location_ + velocity_*time;
-    velocity_ = velocity_ + velocity_*(-8.f)*time;
+    location_ += velocity_*time + acceleration*time*time;
+    velocity_ += acceleration*time - 8*velocity_*time;
 
     lifeTime_ += time;
 

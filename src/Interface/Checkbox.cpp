@@ -36,11 +36,26 @@ Checkbox::~Checkbox () {
     delete label_;
 }
 
+void Checkbox::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
+
 void Checkbox::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hovered_) {
+    if (!pressed_ && hovered_ && focused_) {
         *value_ = !*value_;
         sound::playSound(sound::Check);
+    }
+}
+
+void Checkbox::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+        UiElement::mouseLeft(down);
+        if (!pressed_) {
+            *value_ = !*value_;
+            sound::playSound(sound::Click);
+        }
     }
 }
 

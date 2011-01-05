@@ -29,19 +29,21 @@ class UiWindow: public UiElement {
 
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
-        void buttonPressed(sf::Key::Code keyCode);
+        void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
 
         virtual void draw () const;
+
+        void setFocus (bool focus);
 
         virtual void checkWidgets() = 0;
         virtual void onShow() = 0;
 
         void addWidget (UiElement* toBeAdded);
-        void clearWidgets ();
 
         void setTopMost(bool);
         bool isTopMost() const {return topMost_;}
+        bool isTabable() const {return false;}
 
         virtual Vector2f getTopLeft();
 
@@ -50,6 +52,7 @@ class UiWindow: public UiElement {
 
     private:
         bool topMost_;
+        UiElement* focusedWidget_;
 };
 
 # endif

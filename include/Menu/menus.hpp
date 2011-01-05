@@ -31,7 +31,7 @@ namespace menus {
     // events
     void mouseMoved(Vector2f const& position);
     void mouseLeft(bool down);
-    void buttonPressed(sf::Key::Code keyCode);
+    void keyEvent(bool down, sf::Key::Code keyCode);
     void textEntered(int keyCode);
 
     void showMain();
@@ -40,6 +40,8 @@ namespace menus {
     void showWindow(UiWindow* toBeShown);
     void hideWindow();
     void hideMenu();
+
+    void clearFocus();
 
     bool visible();
 }

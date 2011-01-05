@@ -21,23 +21,30 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Label::Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize, Color3f color):
+Label::Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize, Color3f color, bool interactive):
     UiElement(topLeft, 10, 10),
     text_(text),
     textAlign_(textAlign),
     fontSize_(fontSize),
-    color_(color) {}
+    color_(color),
+    interactive_(interactive) {}
+
+void Label::mouseMoved(Vector2f const& position) {
+    hovered_ = parent_->isHovered();
+    focused_ = parent_->isFocused();
+}
 
 void Label::draw() const {
+    UiElement::draw();
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-    if (parent_->isPressed() && parent_->isHovered()) {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft() + Vector2f(1,1), font::Ubuntu, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
+    Vector2f position(topLeft_ + parent_->getTopLeft());
+    if (interactive_) {
+        if (parent_->isPressed())
+            position += Vector2f(1, 1);
+        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, (color_*(0.7f+hoveredFadeTime_*0.3f))*(1-focusedFadeTime_) + focusedFadeTime_*Color3f(1.f, 0.5f, 0.9f));
     }
-    else if (parent_->isHovered()) {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::Ubuntu, fontSize_, textAlign_, Color3f(1*color_.r(),0.8*color_.g(),0.9*color_.b()));
-    }
-    else {
-        text::drawScreenText(*text_, topLeft_ + parent_->getTopLeft(), font::Ubuntu, fontSize_, textAlign_, Color3f(0.7*color_.r(),0.7*color_.g(),0.7*color_.b()));
-    }
+    else
+        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, color_);
 }
 

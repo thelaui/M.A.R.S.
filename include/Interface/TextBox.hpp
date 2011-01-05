@@ -33,6 +33,8 @@ class TextBox: public UiElement {
 
         void draw () const;
 
+        bool isTabable() const {return false;}
+
     private:
         sf::String text_;
         Label* label_;

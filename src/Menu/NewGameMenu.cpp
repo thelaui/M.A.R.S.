@@ -59,7 +59,7 @@ UiWindow* NewGameMenu::get() {
         instance_ = new NewGameMenu(580, 335);
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(415,300), 70, 20));
 
-        instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 
         instance_->addWidget(new Slider(locales::getLocale(locales::iDumb), &settings::C_iDumb, 0, 100, Vector2f(20,235), 540, 270, true));
         instance_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,255), 540, 270, true));
@@ -70,8 +70,8 @@ UiWindow* NewGameMenu::get() {
         Tab* tabTeamDeathMatch  = new Tab(new sf::String("Team-DeathMatch"), 130, &tTDM_);
         Tab* tabCannonKeep      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
 
-        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
+        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabSpaceBall->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
         tabSpaceBall->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
         RadioGroup* player1Group = new RadioGroup();
@@ -93,8 +93,8 @@ UiWindow* NewGameMenu::get() {
         tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartDM_, Vector2f(485, 235), 70, 20));
         tabDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoDM_, Vector2f(10,235), 90, 20));
 
-        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
+        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabTeamDeathMatch->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
         tabTeamDeathMatch->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
         RadioGroup* player1Group2 = new RadioGroup();
@@ -109,8 +109,8 @@ UiWindow* NewGameMenu::get() {
         tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Start), &kStartTDM_, Vector2f(485, 235), 70, 20));
         tabTeamDeathMatch->addWidget(new Button(locales::getLocale(locales::Info), &kInfoTDM_, Vector2f(10,235), 90, 20));
 
-        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40)));
-        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40)));
+        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabCannonKeep->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::BotsLeft), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
         tabCannonKeep->addWidget(new Slider(locales::getLocale(locales::BotsRight), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
         RadioGroup* player1Group3 = new RadioGroup();

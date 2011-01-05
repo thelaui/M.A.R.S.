@@ -25,10 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoFlubba*> AmmoFlubba::activeParticles_;
 
 AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 0.4f, sf::Randomizer::Random(9.f, 11.f)) {
+         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 0.4f, sf::Randomizer::Random(12.f, 15.f)) {
 
     setDamageSource(damageSource);
-    velocity_ = velocity + direction*800;
+    velocity_ = velocity + direction*700;
     location_ += velocity_*timer::frameTime()*1.2f;
 
     radius_ = sf::Randomizer::Random(6.f, 8.f);
@@ -40,22 +40,23 @@ void AmmoFlubba::update() {
     float time = timer::frameTime();
 
     physics::collide(this, STATICS | MOBILES | PARTICLES);
+    Vector2f acceleration = physics::attract(this)*0.8f;
 
     // update Size
     if (lifeTime_ > totalLifeTime_-0.3f)
         radius_ = -400.0*pow(lifeTime_+0.2-totalLifeTime_, 2)+12;
 
-    location_ = location_ + velocity_*time;
-    velocity_ = velocity_ + velocity_*(-8.f)*time;
+    location_ += velocity_*time + acceleration*time*time;
+    velocity_ += acceleration*time - 2.5f*velocity_*time;
 
     lifeTime_ += time;
 
     if (lifeTime_ > totalLifeTime_) {
         particles::spawnMultiple(2, particles::pMud, location_, Vector2f(), Vector2f(), color_);
-        int rand = sf::Randomizer::Random(5, 10);
+        int rand = sf::Randomizer::Random(8, 20);
         sound::playSound(sound::BlubCollide, location_);
         for (int i=0; i<rand; ++i)
-            particles::spawn(particles::pMiniAmmoFlubba, location_);
+            particles::spawn(particles::pMiniAmmoFlubba, location_, Vector2f(), Vector2f(), Color3f(), damageSource_);
     }
 }
 
@@ -72,7 +73,7 @@ void AmmoFlubba::draw() const {
 void AmmoFlubba::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
     if (!isDead()) {
-        physics::causeShockWave(damageSource(), location_, 150.f, 200.f);
+        physics::causeShockWave(damageSource(), location_, 350.f, 100.f, 0.f);
         sound::playSound(sound::BlubCollide, location_);
         killMe();
     }

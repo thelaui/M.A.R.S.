@@ -28,7 +28,9 @@ class ColorPicker: public UiElement {
         ColorPicker (sf::String* text, Color3f* value, Vector2f const& topLeft, int width, int labelWidth=185);
         ~ColorPicker ();
 
+        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
+        void keyEvent(bool down, sf::Key::Code keyCode);
 
         void draw() const;
 

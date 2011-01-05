@@ -24,17 +24,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Label: public UiElement {
     public:
-        Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1));
+        Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(1,1,1), bool interactive = true);
 
-        void mouseLeft(bool down) {}
+        void mouseMoved(Vector2f const& position);
 
         void draw() const;
+
+        bool isTabable() const {return false;}
 
     private:
         sf::String* text_;
         int textAlign_;
         float fontSize_;
         Color3f color_;
+        bool interactive_;
 };
 
 # endif

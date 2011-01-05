@@ -65,8 +65,7 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
             }
         }
     }
-    if(label_)
-        delete label_;
+
     label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f), 12.f, color);
     label_->setParent(this);
 

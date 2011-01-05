@@ -26,7 +26,8 @@ class KeyEdit: public UiElement {
         KeyEdit (sf::String* text, sf::Key::Code* value, Vector2f const& topLeft, int width);
         ~KeyEdit ();
 
-        void buttonPressed(sf::Key::Code keyCode);
+        void mouseMoved(Vector2f const& position);
+        void keyEvent(bool down, sf::Key::Code keyCode);
 
         void draw() const;
 

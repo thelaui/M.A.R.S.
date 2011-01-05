@@ -178,3 +178,31 @@ Color3f const Color3f::random() {
     result.v(result.v() + 0.5);
     return result;
 }
+
+Color3f operator*  (float const& lhs, Color3f rhs) {
+    return Color3f(rhs.r()*lhs, rhs.g()*lhs, rhs.b()*lhs);
+}
+
+Color3f operator*  (Color3f const& lhs, float rhs) {
+    return rhs*lhs;
+}
+
+Color3f operator/  (Color3f const& lhs, float rhs) {
+    return Color3f(lhs.r()/rhs, lhs.g()/rhs, lhs.b()/rhs);
+}
+
+Color3f operator+  (Color3f const& lhs, Color3f const& rhs) {
+    Color3f result;
+    result.r(lhs.r() + rhs.r());
+    result.g(lhs.g() + rhs.g());
+    result.b(lhs.b() + rhs.b());
+    return result;
+}
+
+Color3f operator-  (Color3f const& lhs, Color3f const& rhs) {
+    Color3f result;
+    result.r(lhs.r() - rhs.r());
+    result.g(lhs.g() - rhs.g());
+    result.b(lhs.b() - rhs.b());
+    return result;
+}

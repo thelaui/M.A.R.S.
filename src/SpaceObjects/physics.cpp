@@ -157,16 +157,16 @@ namespace physics {
         return totalAcceleration;
     }
 
-    void causeShockWave(Player* damageSource, Vector2f const& location, float strength, float radius) {
+    void causeShockWave(Player* damageSource, Vector2f const& location, float strength, float radius, float damage) {
         for (std::vector<MobileSpaceObject*>::iterator it = mobileObjects_.begin(); it != mobileObjects_.end(); ++it) {
             Vector2f direction((*it)->location_ - location);
             float distance = direction.length();
             if (distance < radius && direction != Vector2f()) {
-                float intensity = ((radius-distance)/radius)*strength;
+                float intensity = ((radius-distance)/radius);
                 direction /= distance;
-                direction *= intensity;
+                direction *= (intensity*strength);
                 (*it)->velocity() += direction;
-                (*it)->onShockWave(damageSource, intensity/1000.f);
+                (*it)->onShockWave(damageSource, intensity*damage);
             }
         }
         particles::shockWave(location, strength, radius);

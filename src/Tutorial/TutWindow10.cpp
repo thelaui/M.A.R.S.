@@ -33,14 +33,14 @@ sf::String TutWindow10::text_("");
 
 UiWindow* TutWindow10::get() {
     if (instance_ == NULL) {
-        instance_ = new TutWindow10(350, 150);
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(270,120), 70, 20));
+        instance_ = new TutWindow10(400, 200);
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(320,170), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Tut10), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(340, 35)));
         text_ = *locales::getLocale(locales::TutText10) + " <" + generateName::key(settings::C_playerIfire) + "> "
                 + *locales::getLocale(locales::TutText10b) + " <" + generateName::key(settings::C_playerIleft) + "> , <"
                 + generateName::key(settings::C_playerIright) +"> " + *locales::getLocale(locales::TutText10c);
-        instance_->addWidget(new TextBox(&text_, Vector2f(10, 50), 330, 60));
+        instance_->addWidget(new TextBox(&text_, Vector2f(10, 50), 380, 110));
     }
     return instance_;
 }

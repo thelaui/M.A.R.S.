@@ -25,6 +25,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 TabList::TabList (Vector2f const& topLeft, int width, int height):
     UiElement(topLeft, width, height),
+    focusedTab_(NULL),
+    contentFocused_(false),
     lastTabEnd_(0) {}
 
 TabList::~TabList() {
@@ -42,14 +44,54 @@ void TabList::mouseLeft(bool down) {
         (*i)->mouseLeft(down);
 }
 
-void TabList::buttonPressed(sf::Key::Code keyCode) {
-    for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
-        (*i)->buttonPressed(keyCode);
+void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (focusedTab_) {
+        focusedTab_->keyEvent(down, keyCode);
+
+        if (down && keyCode == sf::Key::Left) {
+            if (!contentFocused_) {
+                int i(0);
+                while ( tabs_[i] != focusedTab_) i = (i-1 + tabs_.size())%tabs_.size();
+                i = (i-1 + tabs_.size())%tabs_.size();
+                while (!tabs_[i]->isTabable())      i = (i-1 + tabs_.size())%tabs_.size();
+
+                focusedTab_->setFocus(false);
+                focusedTab_->active_=false;
+                focusedTab_ = tabs_[i];
+                focusedTab_->setFocus(true);
+                focusedTab_->active_=true;
+            }
+        }
+        else if (down && keyCode == sf::Key::Right) {
+            if (!contentFocused_) {
+                int i(0);
+                while ( tabs_[i] != focusedTab_) i = (i+1)%tabs_.size();
+                i = (i+1)%tabs_.size();
+                while (!tabs_[i]->isTabable())      i = (i+1)%tabs_.size();
+
+                focusedTab_->setFocus(false);
+                focusedTab_->active_=false;
+                focusedTab_ = tabs_[i];
+                focusedTab_->setFocus(true);
+                focusedTab_->active_=true;
+            }
+        }
+        else if (down && (keyCode == sf::Key::Down || keyCode == sf::Key::Tab))
+            contentFocused_ = !focusedTab_->allWidgetsFocused();
+    }
 }
 
 void TabList::textEntered(int keyCode) {
-    for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
-        (*i)->textEntered(keyCode);
+    if (focusedTab_)
+        focusedTab_->textEntered(keyCode);
+}
+
+bool TabList::allWidgetsFocused() const {
+    bool result(true);
+    if (contentFocused_ && !focusedTab_->allWidgetsFocused())
+        result = false;
+    contentFocused_ = !focusedTab_->allWidgetsFocused();
+    return result;
 }
 
 void TabList::draw () const {
@@ -79,6 +121,14 @@ void TabList::draw () const {
         (*i)->draw();
 }
 
+void TabList::setFocus(bool focus) {
+    UiElement::setFocus(focus);
+    if (!focus) {
+        for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
+            (*i)->setFocus(false);
+    }
+}
+
 void TabList::addTab(Tab* toBeAdded) {
     toBeAdded->setParent(this);
 
@@ -93,6 +143,9 @@ void TabList::addTab(Tab* toBeAdded) {
     tabs_.push_back(toBeAdded);
 
     lastTabEnd_ += toBeAdded->width_;
+
+    if (!focusedTab_)
+        focusedTab_ = toBeAdded;
 }
 
 void TabList::deactivateAll() {

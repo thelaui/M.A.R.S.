@@ -21,12 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Media/texture.hpp"
 # include "Media/text.hpp"
+# include "Menu/menus.hpp"
 
 # include <SFML/OpenGL.hpp>
 
 UiWindow::UiWindow (int width, int height, Vector2f const& position):
     UiElement(position, width, height),
-    topMost_(false) {}
+    topMost_(false),
+    focusedWidget_(NULL) {}
 
 UiWindow::~UiWindow() {
     for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
@@ -43,14 +45,42 @@ void UiWindow::mouseLeft(bool down) {
         (*i)->mouseLeft(down);
 }
 
-void UiWindow::buttonPressed(sf::Key::Code keyCode) {
-    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-        (*i)->buttonPressed(keyCode);
+void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (focusedWidget_) {
+        focusedWidget_->keyEvent(down, keyCode);
+
+        if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
+         || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
+         || (keyCode == sf::Key::Up))) {
+            if (focusedWidget_->allWidgetsFocused()) {
+                int i(0);
+                while ( widgets_[i] != focusedWidget_) i = (i-1 + widgets_.size())%widgets_.size();
+                i = (i-1 + widgets_.size())%widgets_.size();
+                while (!widgets_[i]->isTabable())      i = (i-1 + widgets_.size())%widgets_.size();
+
+                menus::clearFocus();
+                focusedWidget_ = widgets_[i];
+                focusedWidget_->setFocus(true);
+            }
+        }
+        else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
+            if (focusedWidget_->allWidgetsFocused()) {
+                int i(0);
+                while ( widgets_[i] != focusedWidget_) i = (i+1)%widgets_.size();
+                i = (i+1)%widgets_.size();
+                while (!widgets_[i]->isTabable())      i = (i+1)%widgets_.size();
+
+                menus::clearFocus();
+                focusedWidget_ = widgets_[i];
+                focusedWidget_->setFocus(true);
+            }
+        }
+    }
 }
 
 void UiWindow::textEntered(int keyCode) {
-    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-        (*i)->textEntered(keyCode);
+    if (focusedWidget_)
+        focusedWidget_->textEntered(keyCode);
 }
 
 void UiWindow::draw () const {
@@ -149,15 +179,21 @@ void UiWindow::draw () const {
         (*i)->draw();
 }
 
+void UiWindow::setFocus (bool focus) {
+    UiElement::setFocus(focus);
+    if (!focus) {
+        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
+            (*i)->setFocus(false);
+    }
+}
+
 void UiWindow::addWidget(UiElement* toBeAdded) {
     toBeAdded->setParent(this);
     widgets_.push_back(toBeAdded);
-}
-
-void UiWindow::clearWidgets () {
-    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-        delete *i;
-    widgets_.clear();
+    if (!focusedWidget_) {
+        focusedWidget_ = toBeAdded;
+        focusedWidget_->setFocus(true);
+    }
 }
 
 void UiWindow::setTopMost(bool active) {

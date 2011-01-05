@@ -140,11 +140,19 @@ void Ship::update() {
         if (!up_ && velocity_.lengthSquare() < 10000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
             docked_ = true;
             velocity_ = Vector2f();
-            if (fuel_ < maxFuel_) fuel_ += time*maxFuel_*0.2; else fuel_ = maxFuel_;
-            if (life_ < maxLife_) life_ += time*maxLife_*0.2; else life_ = maxLife_;
+
+            if (fuel_ < maxFuel_) {
+                if (fuel_ > 0) fuel_ += time*maxFuel_*0.2;
+            }
+            else fuel_ = maxFuel_;
+
+            if (life_ < maxLife_) {
+                if (life_ > 0) life_ += time*maxLife_*0.2;
+            }
+            else life_ = maxLife_;
 
             if (owner_->controlType_ == controllers::cPlayer1 || owner_->controlType_ == controllers::cPlayer2) {
-                if (life_ < maxLife_) {
+                if (life_ < maxLife_ && life_ > 0) {
                     damageByLocalPlayer_ += time*maxLife_*0.2;
                     collisionCount_ = 1;
                     damageDirection_ = Vector2f(0.f, -250.f);
@@ -348,7 +356,13 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFlubba:
-            amount = strength*0.1f+3.f;
+            amount = sf::Randomizer::Random(2.5f, 3.f);
+            setDamageSource(with->damageSource());
+            break;
+
+        case spaceObjects::oMiniAmmoFlubba:
+            amount = sf::Randomizer::Random(0.7f, 1.f);
+            waitForOtherDamage = 0.3f;
             setDamageSource(with->damageSource());
             break;
 
@@ -398,7 +412,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 void Ship::onShockWave(Player* damageSource, float intensity) {
     setDamageSource(damageSource);
     if (!collectedPowerUps_[items::puShield]) {
-        float damage(intensity*(20.f + settings::C_iDumb));
+        float damage(intensity*0.1f*(20.f + settings::C_iDumb));
         life_ -= damage;
         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
             || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
@@ -458,7 +472,7 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::  causeShockWave(damageSource(), location_, 250.f, 400.f);
+    physics::  causeShockWave(damageSource(), location_, 300.f, 200.f, 5.f);
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();

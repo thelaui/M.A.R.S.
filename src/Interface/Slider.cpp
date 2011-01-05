@@ -43,29 +43,38 @@ Slider::~Slider () {
 }
 
 void Slider::mouseLeft(bool down) {
-    UiElement::mouseLeft(down);
+    UiElement::mouseLeft(hovered_ && down);
     const sf::Input& input(window::getInput());
     mouseMoved(window::PixelToCoord(Vector2f(input.GetMouseX(), input.GetMouseY())));
 }
 
 void Slider::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
-    if (pressed_ && hovered_) {
+    if (pressed_ && focused_) {
         *value_ = (position.x_+(0.5f*(width_ - (labelWidth_+10)))/(maxValue_ - minValue_)-parent_->getTopLeft().x_-topLeft_.x_-(labelWidth_+5))*(maxValue_ - minValue_)/(width_ - (labelWidth_+10)) + minValue_;
         if (*value_ < minValue_) *value_ = minValue_;
         if (*value_ > maxValue_) *value_ = maxValue_;
     }
+    label_->mouseMoved(position);
+}
+
+void Slider::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (down) {
+        if (keyCode == sf::Key::Left && *value_ > minValue_)
+            --(*value_);
+        else if (keyCode == sf::Key::Right && *value_ < maxValue_)
+            ++(*value_);
+    }
 }
 
 void Slider::draw() const {
+    UiElement::draw();
+
     Vector2f origin = parent_->getTopLeft() + topLeft_;
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
     // Hover effect
-    if (hovered_)
-        glColor4f(1,1,1,0.5);
-    else
-        glColor4f(1,1,1,0.3);
+    glColor4f(1,1,1,0.3+hoveredFadeTime_*0.3);
 
     glLineWidth(2);
     glBegin(GL_LINES);

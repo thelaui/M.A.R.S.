@@ -18,6 +18,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/UiElement.hpp"
 
 # include "Media/sound.hpp"
+# include "Menu/menus.hpp"
+# include "System/timer.hpp"
+# include "System/window.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
@@ -28,11 +31,14 @@ UiElement::UiElement(Vector2f const& topLeft, int width, int height):
     width_(width),
     height_(height),
     hovered_(false),
-    pressed_(false) {}
+    focused_(false),
+    pressed_(false),
+    hoveredFadeTime_(0.f),
+    focusedFadeTime_(0.f) {}
 
 void UiElement::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(getTopLeft());
-    if (topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_) {
+    if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_) {
         hovered_ = true;
     }
     else
@@ -40,12 +46,29 @@ void UiElement::mouseMoved(Vector2f const& position) {
 }
 
 void UiElement::mouseLeft(bool down) {
-    if (down)   pressed_ = true;
-    else        pressed_ = false;
+    pressed_ = down && hovered_;
+    if (isTabable() && down && hovered_) {
+        menus::clearFocus();
+        this->setFocus(true);
+    }
+}
+
+void UiElement::draw() const {
+    if      (hovered_)             hoveredFadeTime_ = 1.f;
+    else if (hoveredFadeTime_ > 0) hoveredFadeTime_ -= timer::frameTime()*5.f;
+    if      (hoveredFadeTime_ < 0) hoveredFadeTime_ = 0.f;
+    if      (focused_)             focusedFadeTime_ = 1.f;
+    else if (focusedFadeTime_ > 0) focusedFadeTime_ -= timer::frameTime()*5.f;
+    if      (focusedFadeTime_ < 0) focusedFadeTime_ = 0.f;
 }
 
 void UiElement::setParent(UiElement* newParent) {
     parent_ = newParent;
+}
+
+void UiElement::setFocus (bool focus) {
+    if (focus && parent_) parent_->setFocus(true);
+    focused_ = focus;
 }
 
 Vector2f UiElement::getTopLeft() {

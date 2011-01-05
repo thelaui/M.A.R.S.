@@ -5,6 +5,98 @@
 // names of one group will be used in a match) simply
 // place its name in [brackets]
 // please avoid lines, longer than 1024 characters...
+// The number behind each name describes the individual strength
+// of each bot
+
+[famous scientists NEW]
+Albert		99
+Isaac		85
+Galileo		95
+Johannes	42
+Nikola 		70
+Edwin	 	78
+Marie		25
+Louis	 	98
+Archimedes	18
+Thomas	 	36
+Max 		81
+Niels 		90
+Chandrasekhara	100
+Alessandro	89
+Robert		92
+Blaise	 	81 
+Julius 		45
+Alfred		90
+
+[various Canadian musicians NEW]
+Lee		80
+Bryan		85
+Chuckie		95
+Coco		42
+Toya 		70
+Barbra	 	78
+Jann		25
+Gary	 	98
+Malcolm		18
+Leonard	 	36
+D'Ari 		81
+Ian 		90
+Damhnait	100
+Andre 		89
+Barry		92
+Sarah	 	81 
+Marc 		45
+Tegan		90
+Jay 		94
+Vaï		76
+Nikki		100
+
+[mexican_presidents NEW]
+Theodor		80
+Agustín		85
+Anastasio	95
+Melchor		42
+Manuel 		70
+Valentín 	78
+Antonio		25
+Miguel	 	98
+Valentín	18
+Nicolás 	36
+Juan 		81
+Benito 		90
+Agustín		100
+Félix 		89
+Fernando	92
+Eulalio 	81 
+Álvaro 		45
+Pascual		90
+Emilio 		94
+Gustavo		76
+Emilio		100
+
+[Bollywood movie stars NEW]
+Katrina		80
+Madhuri		85
+Anil		95
+Shabhana	42
+Rekha 		70
+Kirron	 	78
+Asrani		25
+Bharath	 	98
+Charuhasan	18
+Dino	 	36
+Erick 		81
+Freida 		90
+Farhan		100
+Ganesh 		89
+Hiren		92
+Isha	 	81 
+Jayam 		45
+Senthil		90
+Uday 		94
+Vijayakumar	76
+Zayed		100
+
 [german_presidents]
 Theodor		80
 Heinrich	85
@@ -50,9 +142,9 @@ Boba 		86
 Jango 		91
 
 [gurus]
+Linus 		100
 Steve 		48
 Bill 		35
-Linus 		100
 Larry 		95
 Sergei 		85
 David 		74

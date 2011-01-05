@@ -30,11 +30,11 @@ bool TutWindow12::kOk_(false);
 
 UiWindow* TutWindow12::get() {
     if (instance_ == NULL) {
-        instance_ = new TutWindow12(350, 150);
-        instance_->addWidget(new Button(locales::getLocale(locales::Next), &kOk_, Vector2f(270,120), 70, 20));
+        instance_ = new TutWindow12(400, 200);
+        instance_->addWidget(new Button(locales::getLocale(locales::Next), &kOk_, Vector2f(320,170), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Tut12), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(340, 35)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::TutText12), Vector2f(10, 50), 330, 60));
+        instance_->addWidget(new TextBox(locales::getLocale(locales::TutText12), Vector2f(10, 50), 380, 110));
     }
     return instance_;
 }

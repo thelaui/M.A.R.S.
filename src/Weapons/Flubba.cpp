@@ -39,11 +39,12 @@ void Flubba::draw() const {
 
 void Flubba::fire() const {
     float time = timer::totalTime();
-    if (time - timer_ > 0.3f) {
+    if (time - timer_ > 0.2f) {
         timer_ = time;
         float angleRad = parent_->rotation_*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
         particles::spawn(particles::pAmmoFlubba, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+        parent_->velocity_ -= faceDirection*10.f;
         sound::playSound(sound::Blub, parent_->location_);
     }
 }

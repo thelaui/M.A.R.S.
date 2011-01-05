@@ -34,8 +34,8 @@ UiWindow* About::get() {
     if (instance_ == NULL) {
         instance_ = new About(420, 310);
         instance_->addWidget(new Button(locales::getLocale(locales::Close), &kClose_, Vector2f(340,280), 70, 20));
-        instance_->addWidget(new Label(new sf::String("M.A.R.S."), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
-        instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(410,18), 12.f));
+        instance_->addWidget(new Label(new sf::String("M.A.R.S."), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+        instance_->addWidget(new Label(&marsName_, TEXT_ALIGN_RIGHT, Vector2f(410,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
 
         TabList* tabs = new TabList(Vector2f(10, 50), 400, 250);
 
@@ -45,7 +45,7 @@ UiWindow* About::get() {
 
         about->addWidget(new TextBox(locales::getLocale(locales::AboutText), Vector2f(10, 30), 380, 230));
         license->addWidget(new TextBox(locales::getLocale(locales::LicenseText), Vector2f(10, 30), 380, 230));
-        credits->addWidget(new Label(locales::getLocale(locales::SpecialThanks), TEXT_ALIGN_LEFT, Vector2f(10,30), 20.f));
+        credits->addWidget(new Label(locales::getLocale(locales::SpecialThanks), TEXT_ALIGN_LEFT, Vector2f(10,30), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         credits->addWidget(new TextBox(locales::getLocale(locales::CreditText), Vector2f(10, 60), 380, 230));
 
         tabs->addTab(about);

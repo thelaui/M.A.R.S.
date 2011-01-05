@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Media/sound.hpp"
 # include "Media/text.hpp"
+# include "Menu/menus.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -35,16 +36,34 @@ Button::~Button () {
     delete label_;
 }
 
+void Button::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
+
 void Button::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hovered_) {
+    if (!pressed_ && hovered_ && focused_) {
         *key_ = true;
         hovered_ = false;
         sound::playSound(sound::Click);
     }
 }
 
+void Button::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+        pressed_ = down;
+        if (!pressed_) {
+            *key_ = true;
+            hovered_ = false;
+            sound::playSound(sound::Click);
+        }
+    }
+}
+
 void Button::draw () const {
+    UiElement::draw();
+
     Vector2f origin = parent_->getTopLeft() + topLeft_;
     // draw Button
 
@@ -52,7 +71,8 @@ void Button::draw () const {
 
     glBegin(GL_QUADS);
         // dark background
-        glColor4f(0.0,0.0,0.0,0.8);
+        if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
+        else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
@@ -66,7 +86,7 @@ void Button::draw () const {
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
         glVertex2f(origin.x_, height_ + origin.y_);
 
-    if (pressed_ && hovered_) {
+    if (pressed_ && (hovered_ || focused_)) {
         // bottom glow
         glColor4f(0.5,0.25,0.4,0.0);
         glVertex2f(origin.x_,origin.y_);
@@ -105,9 +125,8 @@ void Button::draw () const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glLineWidth(1.f);
-    if (hovered_)  glColor4f(1.0,0.4,0.8,0.9);
-    else           glColor4f(1.0,0.4,0.8,0.4);
 
+    glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
         glVertex2f(origin.x_,origin.y_+height_);
         glVertex2f(origin.x_,origin.y_);
@@ -117,4 +136,11 @@ void Button::draw () const {
 
     // draw Label
     label_->draw();
+}
+
+void Button::setFocus (bool focus) {
+    UiElement::setFocus(focus);
+    if (!focus) {
+        label_->setFocus(false);
+    }
 }

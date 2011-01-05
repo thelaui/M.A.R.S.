@@ -59,7 +59,7 @@ void Cannon::update() {
         timer_ += timer::frameTime();
         Vector2f direction(-std::sin(rotation_*M_PI/180), std::cos(rotation_*M_PI/180));
         Vector2f location(Vector2f(640.f, 0.f) + direction*180.f);
-        if (timer_ > 3.f) {
+        if (timer_ > 2.f) {
             timer_ = 0.f;
             particles::spawn(particles::pCannonBall, location, direction);
         }

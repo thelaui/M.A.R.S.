@@ -96,4 +96,17 @@ struct Color3f {
         ///@}
 };
 
+/// Multiplication of a color with a float.
+Color3f      operator*  (float const& lhs, Color3f rhs);
+Color3f      operator*  (Color3f const& lhs, float rhs);
+
+/// Addition of two colors. Clamped.
+Color3f      operator+  (Color3f const& lhs, Color3f const& rhs);
+
+/// Subtraction of two colors. Clamped.
+Color3f      operator-  (Color3f const& lhs, Color3f const& rhs);
+
+/// Division of a color by a float.
+Color3f      operator/  (Color3f const& lhs, float rhs);
+
 # endif //COLOR4F_HPP_INCLUDED

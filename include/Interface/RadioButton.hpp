@@ -29,6 +29,7 @@ class RadioButton: public UiElement {
         RadioButton(sf::String* text, bool* value, Vector2f const& topLeft, int width, bool offSwitchable = false);
         ~RadioButton();
 
+        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
         void draw() const;
 

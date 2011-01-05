@@ -30,7 +30,8 @@ class TextEdit: public UiElement {
         TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
         ~TextEdit ();
 
-        void buttonPressed(sf::Key::Code keyCode);
+        void mouseMoved(Vector2f const& position);
+        void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
 
         void draw() const;

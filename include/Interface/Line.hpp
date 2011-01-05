@@ -26,6 +26,8 @@ class Line: public UiElement {
 
         void draw() const;
 
+        bool isTabable() const {return false;}
+
     private:
         Vector2f begin_;
         Vector2f end_;

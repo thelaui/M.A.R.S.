@@ -48,15 +48,34 @@ ColorPicker::~ColorPicker () {
     delete colorWindow_;
 }
 
+void ColorPicker::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
+
 void ColorPicker::mouseLeft(bool down) {
-    UiElement::mouseLeft(down);
-    if (!pressed_ && hovered_) {
+    UiElement::mouseLeft(hovered_ && down);
+    if (!pressed_ && hovered_ && focused_) {
+        hovered_ = false;
         sound::playSound(sound::Click);
         menus::showWindow(colorWindow_);
     }
 }
 
+void ColorPicker::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+        pressed_ = down;
+        if (!pressed_) {
+            hovered_ = false;
+            sound::playSound(sound::Click);
+            menus::showWindow(colorWindow_);
+        }
+    }
+}
+
 void ColorPicker::draw() const {
+    UiElement::draw();
+
     Vector2f origin = parent_->getTopLeft() + topLeft_;
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -115,9 +134,8 @@ void ColorPicker::draw() const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glLineWidth(1.f);
-    if (hovered_)  glColor4f(1.0,0.4,0.8,0.9);
-    else           glColor4f(1.0,0.4,0.8,0.4);
 
+    glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
         glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
         glVertex2f(labelWidth_+origin.x_,origin.y_);

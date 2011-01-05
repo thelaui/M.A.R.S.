@@ -28,16 +28,20 @@ class UiElement {
 
         virtual void mouseMoved(Vector2f const& position);
         virtual void mouseLeft(bool down);
-        virtual void buttonPressed(sf::Key::Code keyCode) {}
+        virtual void keyEvent(bool down, sf::Key::Code keyCode) {}
         virtual void textEntered(int keyCode) {}
+        virtual bool allWidgetsFocused() const {return true;}
 
-        virtual void draw () const = 0;
+        virtual void draw() const;
 
         void setParent(UiElement* newParent);
+        virtual void setFocus (bool focus);
 
         bool         isHovered() const {return hovered_;}
-        bool         isPressed() const {return pressed_; }
+        bool         isPressed() const {return pressed_;}
+        bool         isFocused() const {return focused_;}
         virtual bool isTopMost() const {return parent_->isTopMost();}
+        virtual bool isTabable() const {return true;}
         virtual Vector2f getTopLeft();
 
     protected:
@@ -46,7 +50,11 @@ class UiElement {
         int width_, height_;
 
         bool hovered_;
+        bool focused_;
         bool pressed_;
+
+        mutable float hoveredFadeTime_;
+        mutable float focusedFadeTime_;
 };
 
 # endif

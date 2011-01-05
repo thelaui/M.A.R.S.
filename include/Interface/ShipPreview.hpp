@@ -27,6 +27,8 @@ class ShipPreview: public UiElement {
 
         void draw() const;
 
+        bool isTabable() const {return false;}
+
     private:
         Color3f* color_;
         Color3f* teamColor_;

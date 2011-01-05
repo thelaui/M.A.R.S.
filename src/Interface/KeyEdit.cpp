@@ -36,9 +36,13 @@ KeyEdit::~KeyEdit () {
     delete label_;
 }
 
+void KeyEdit::mouseMoved(Vector2f const& position) {
+    UiElement::mouseMoved(position);
+    label_->mouseMoved(position);
+}
 
-void KeyEdit::buttonPressed(sf::Key::Code keyCode) {
-    if (hovered_ && keyCode != 0 && keyCode != 128) {
+void KeyEdit::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (down && hovered_ && keyCode != 0 && keyCode != 128) {
         *value_ = keyCode;
     }
 }

@@ -28,7 +28,9 @@ class ComboBox: public UiElement {
         ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> values, Vector2f const& topLeft, int width, int labelWidth=185);
         ~ComboBox ();
 
+        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
+        void keyEvent(bool down, sf::Key::Code keyCode);
 
         void draw() const;
 
