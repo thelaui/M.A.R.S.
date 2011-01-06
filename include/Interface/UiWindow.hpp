@@ -34,7 +34,8 @@ class UiWindow: public UiElement {
 
         virtual void draw () const;
 
-        void setFocus (bool focus);
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
 
         virtual void checkWidgets() = 0;
         virtual void onShow() = 0;

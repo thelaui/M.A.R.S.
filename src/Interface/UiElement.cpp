@@ -49,7 +49,7 @@ void UiElement::mouseLeft(bool down) {
     pressed_ = down && hovered_;
     if (isTabable() && down && hovered_) {
         menus::clearFocus();
-        this->setFocus(true);
+        setFocus(this);
     }
 }
 
@@ -66,9 +66,13 @@ void UiElement::setParent(UiElement* newParent) {
     parent_ = newParent;
 }
 
-void UiElement::setFocus (bool focus) {
-    if (focus && parent_) parent_->setFocus(true);
-    focused_ = focus;
+void UiElement::setFocus (UiElement* toBeFocused) {
+    if (parent_) parent_->setFocus(toBeFocused);
+    focused_ = true;
+}
+
+void UiElement::clearFocus() {
+    focused_ = false;
 }
 
 Vector2f UiElement::getTopLeft() {

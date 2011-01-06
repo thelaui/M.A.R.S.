@@ -60,7 +60,7 @@ void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
 
                 menus::clearFocus();
                 focusedWidget_ = widgets_[i];
-                focusedWidget_->setFocus(true);
+                focusedWidget_->setFocus(focusedWidget_);
             }
         }
         else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
@@ -72,7 +72,7 @@ void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
 
                 menus::clearFocus();
                 focusedWidget_ = widgets_[i];
-                focusedWidget_->setFocus(true);
+                focusedWidget_->setFocus(focusedWidget_);
             }
         }
     }
@@ -179,12 +179,15 @@ void UiWindow::draw () const {
         (*i)->draw();
 }
 
-void UiWindow::setFocus (bool focus) {
-    UiElement::setFocus(focus);
-    if (!focus) {
-        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
-            (*i)->setFocus(false);
-    }
+void UiWindow::setFocus(UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    focusedWidget_ = toBeFocused;
+}
+
+void UiWindow::clearFocus() {
+    UiElement::clearFocus();
+    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
+        (*i)->clearFocus();
 }
 
 void UiWindow::addWidget(UiElement* toBeAdded) {
@@ -192,7 +195,7 @@ void UiWindow::addWidget(UiElement* toBeAdded) {
     widgets_.push_back(toBeAdded);
     if (!focusedWidget_) {
         focusedWidget_ = toBeAdded;
-        focusedWidget_->setFocus(true);
+        focusedWidget_->setFocus(focusedWidget_);
     }
 }
 

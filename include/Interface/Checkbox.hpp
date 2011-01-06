@@ -32,6 +32,9 @@ class Checkbox: public UiElement {
 
         void draw() const;
 
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
+
     private:
         bool* value_;
         Label* label_;

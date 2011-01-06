@@ -77,3 +77,12 @@ void KeyEdit::draw() const {
     label_->draw();
 }
 
+void KeyEdit::setFocus (UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    label_->setFocus(this);
+}
+
+void KeyEdit::clearFocus() {
+    UiElement::clearFocus();
+    label_->clearFocus();
+}

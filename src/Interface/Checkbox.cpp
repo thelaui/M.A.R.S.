@@ -51,7 +51,7 @@ void Checkbox::mouseLeft(bool down) {
 
 void Checkbox::keyEvent(bool down, sf::Key::Code keyCode) {
     if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
-        UiElement::mouseLeft(down);
+        pressed_ = down;
         if (!pressed_) {
             *value_ = !*value_;
             sound::playSound(sound::Click);
@@ -116,3 +116,12 @@ void Checkbox::draw() const {
     label_->draw();
 }
 
+void Checkbox::setFocus (UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    label_->setFocus(this);
+}
+
+void Checkbox::clearFocus() {
+    UiElement::clearFocus();
+    label_->clearFocus();
+}

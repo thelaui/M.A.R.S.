@@ -145,3 +145,12 @@ void TextEdit::draw() const {
     label_->draw();
 }
 
+void TextEdit::setFocus (UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    label_->setFocus(this);
+}
+
+void TextEdit::clearFocus() {
+    UiElement::clearFocus();
+    label_->clearFocus();
+}

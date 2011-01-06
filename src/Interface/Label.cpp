@@ -31,7 +31,6 @@ Label::Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fo
 
 void Label::mouseMoved(Vector2f const& position) {
     hovered_ = parent_->isHovered();
-    focused_ = parent_->isFocused();
 }
 
 void Label::draw() const {
@@ -42,9 +41,16 @@ void Label::draw() const {
     if (interactive_) {
         if (parent_->isPressed())
             position += Vector2f(1, 1);
-        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, (color_*(0.7f+hoveredFadeTime_*0.3f))*(1-focusedFadeTime_) + focusedFadeTime_*Color3f(1.f, 0.5f, 0.9f));
+        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, (color_*(1-focusedFadeTime_) + focusedFadeTime_*Color3f(1.f, 0.5f, 0.9f))*(0.7f+hoveredFadeTime_*0.3f));
     }
     else
         text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, color_);
 }
 
+void Label::setFocus(UiElement* toBeFocused) {
+    focused_ = true;
+}
+
+void Label::clearFocus() {
+    focused_ = false;
+}

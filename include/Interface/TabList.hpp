@@ -34,7 +34,8 @@ class TabList: public UiElement {
         void textEntered(int keyCode);
         bool allWidgetsFocused() const;
 
-        void setFocus(bool focus);
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
 
         void draw() const;
 

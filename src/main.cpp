@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
             return 0;
         }
         else if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "-version" || std::string(argv[i]) == "--version" ) {
-            std::cout << "M.A.R.S. - a ridiculous shooter " << VERSION_MAJOR << "." << VERSION_MINOR << "." << VERSION_SUBMINOR << " (C) 2010-2011 by Felix Lauer and Simon Schneegans.\n";
+            std::cout << "M.A.R.S. - a ridiculous shooter " << VERSION_MAJOR << "." << VERSION_MINOR << "." << VERSION_PATCH << " (C) 2010-2011 by Felix Lauer and Simon Schneegans.\n";
             return 0;
         }
         else if (std::string(argv[i]) == "-cfg") {

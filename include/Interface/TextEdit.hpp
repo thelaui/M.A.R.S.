@@ -36,6 +36,9 @@ class TextEdit: public UiElement {
 
         void draw() const;
 
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
+
     private:
         sf::String* value_;
         Label* label_;

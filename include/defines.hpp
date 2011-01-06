@@ -20,6 +20,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # define VERSION_MAJOR      "0"
 # define VERSION_MINOR      "6"
-# define VERSION_SUBMINOR   "9"
+# define VERSION_PATCH      "9"
 
 # endif //DEFINES_HPP_INCLUDED

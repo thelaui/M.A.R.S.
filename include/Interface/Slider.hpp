@@ -34,6 +34,9 @@ class Slider: public UiElement {
 
         void draw() const;
 
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
+
     private:
         int* value_;
         int minValue_, maxValue_;

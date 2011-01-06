@@ -31,6 +31,9 @@ class KeyEdit: public UiElement {
 
         void draw() const;
 
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
+
     private:
         sf::Key::Code* value_;
         Label* label_;

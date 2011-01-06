@@ -35,7 +35,8 @@ class UiElement {
         virtual void draw() const;
 
         void setParent(UiElement* newParent);
-        virtual void setFocus (bool focus);
+        virtual void setFocus  (UiElement* toBeFocused);
+        virtual void clearFocus();
 
         bool         isHovered() const {return hovered_;}
         bool         isPressed() const {return pressed_;}

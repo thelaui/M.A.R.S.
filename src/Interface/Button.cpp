@@ -74,9 +74,16 @@ void Button::draw () const {
         if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
         else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(origin.x_, origin.y_);
+        glVertex2f(origin.x_, height_ + origin.y_);
+        glColor4f(0.0,0.0,0.0,0.8);
+        glVertex2f(width_*0.5f + origin.x_, height_ + origin.y_);
+        glVertex2f(width_*0.5f + origin.x_, origin.y_);
+        glVertex2f(width_*0.5f + origin.x_, height_ + origin.y_);
+        glVertex2f(width_*0.5f + origin.x_, origin.y_);
+        if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
+        else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(width_ + origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(origin.x_, height_ + origin.y_);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
@@ -138,9 +145,12 @@ void Button::draw () const {
     label_->draw();
 }
 
-void Button::setFocus (bool focus) {
-    UiElement::setFocus(focus);
-    if (!focus) {
-        label_->setFocus(false);
-    }
+void Button::setFocus (UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    label_->setFocus(this);
+}
+
+void Button::clearFocus() {
+    UiElement::clearFocus();
+    label_->clearFocus();
 }

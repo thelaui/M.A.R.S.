@@ -36,7 +36,8 @@ class Tab: public UiElement {
 
         void draw () const;
 
-        void setFocus (bool focus);
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
 
         void addWidget (UiElement* toBeAdded);
 

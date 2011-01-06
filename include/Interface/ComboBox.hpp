@@ -34,6 +34,9 @@ class ComboBox: public UiElement {
 
         void draw() const;
 
+        void setFocus  (UiElement* toBeFocused);
+        void clearFocus();
+
         friend class DropDownWindow;
 
     private:

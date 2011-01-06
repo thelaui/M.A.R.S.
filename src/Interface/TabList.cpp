@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/window.hpp"
 # include "Media/text.hpp"
+# include "Menu/menus.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -48,31 +49,29 @@ void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
     if (focusedTab_) {
         focusedTab_->keyEvent(down, keyCode);
 
-        if (down && keyCode == sf::Key::Left) {
-            if (!contentFocused_) {
+        if (!contentFocused_) {
+            if (down && keyCode == sf::Key::Left) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i-1 + tabs_.size())%tabs_.size();
                 i = (i-1 + tabs_.size())%tabs_.size();
                 while (!tabs_[i]->isTabable())      i = (i-1 + tabs_.size())%tabs_.size();
 
-                focusedTab_->setFocus(false);
+                menus::clearFocus();
                 focusedTab_->active_=false;
                 focusedTab_ = tabs_[i];
-                focusedTab_->setFocus(true);
+                focusedTab_->setFocus(focusedTab_);
                 focusedTab_->active_=true;
             }
-        }
-        else if (down && keyCode == sf::Key::Right) {
-            if (!contentFocused_) {
+            else if (down && keyCode == sf::Key::Right) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i+1)%tabs_.size();
                 i = (i+1)%tabs_.size();
                 while (!tabs_[i]->isTabable())      i = (i+1)%tabs_.size();
 
-                focusedTab_->setFocus(false);
+                menus::clearFocus();
                 focusedTab_->active_=false;
                 focusedTab_ = tabs_[i];
-                focusedTab_->setFocus(true);
+                focusedTab_->setFocus(focusedTab_);
                 focusedTab_->active_=true;
             }
         }
@@ -121,12 +120,20 @@ void TabList::draw () const {
         (*i)->draw();
 }
 
-void TabList::setFocus(bool focus) {
-    UiElement::setFocus(focus);
-    if (!focus) {
-        for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
-            (*i)->setFocus(false);
+void TabList::setFocus(UiElement* toBeFocused) {
+    UiElement::setFocus(this);
+    Tab* toFocus = dynamic_cast<Tab*>(toBeFocused);
+    if (toFocus) {
+        focusedTab_ = toFocus;
+        if (toFocus->allWidgetsFocused())
+            contentFocused_ = false;
     }
+}
+
+void TabList::clearFocus() {
+    UiElement::clearFocus();
+    for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
+        (*i)->clearFocus();
 }
 
 void TabList::addTab(Tab* toBeAdded) {
