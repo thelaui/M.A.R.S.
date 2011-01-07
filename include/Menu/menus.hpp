@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Window.hpp>
 
 class UiWindow;
+class UiElement;
 
 namespace menus {
 
@@ -42,6 +43,8 @@ namespace menus {
     void hideMenu();
 
     void clearFocus();
+    void fixKeyboardOn(UiElement* target);
+    void unFixKeyboard();
 
     bool visible();
 }

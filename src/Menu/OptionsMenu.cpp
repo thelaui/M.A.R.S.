@@ -122,8 +122,8 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(10,200), 420, 185));
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerIITeamColor, Vector2f(10,230), 420, 185));
 
-        tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));
+        tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(210,50), 150));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(410,50), 150));
 
@@ -155,8 +155,8 @@ UiWindow* OptionsMenu::get() {
         tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,170), 560));
         tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,190), 560));
 
-        tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
+        tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), &settings::C_drawZones, Vector2f(210,70), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), &settings::C_drawAIPath, Vector2f(210,90), 150));
         tabInterface->addWidget(new Label(locales::getLocale(locales::GameInformation), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));

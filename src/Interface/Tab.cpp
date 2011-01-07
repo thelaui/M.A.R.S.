@@ -86,6 +86,7 @@ void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
             else {
                 menus::clearFocus();
                 focusedWidget_ = NULL;
+                setFocus(this);
             }
         }
     }
@@ -93,7 +94,7 @@ void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
         if (!focusedWidget_ && widgets_.size() > 0) {
             int i(0);
             while (!widgets_[i]->isTabable() && i<widgets_.size()-1) ++i;
-            if (i<widgets_.size()-1) {
+            if (i<widgets_.size()) {
                 focusedWidget_ = widgets_[0];
                 focusedWidget_->setFocus(focusedWidget_);
             }
@@ -112,6 +113,7 @@ void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
             else {
                 menus::clearFocus();
                 focusedWidget_ = NULL;
+                setFocus(this);
             }
         }
     }

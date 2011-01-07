@@ -29,6 +29,7 @@ namespace menus {
     namespace {
         std::vector<UiWindow*> windowStack_;
         bool hidden_(false);
+        UiElement* keyboardFixTarget(NULL);
     }
 
     void showMain() {
@@ -68,7 +69,11 @@ namespace menus {
 
     void keyEvent(bool down, sf::Key::Code keyCode) {
         if (visible()) {
-            if (down && keyCode == sf::Key::Escape) {
+            if (keyboardFixTarget) {
+                keyboardFixTarget->keyEvent(down, keyCode);
+                windowStack_.back()->checkWidgets();
+            }
+            else if (down && keyCode == sf::Key::Escape) {
                 if (hidden_) {
                     hidden_ = false;
                     window::showCursor(true);
@@ -113,6 +118,14 @@ namespace menus {
 
     void clearFocus() {
         if (visible()) windowStack_.back()->clearFocus();
+    }
+
+    void fixKeyboardOn(UiElement* target) {
+        keyboardFixTarget = target;
+    }
+
+    void unFixKeyboard() {
+        keyboardFixTarget = NULL;
     }
 
     bool visible() {

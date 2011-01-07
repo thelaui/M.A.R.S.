@@ -21,6 +21,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Media/text.hpp"
 # include "Locales/locales.hpp"
+# include "Menu/menus.hpp"
+# include "Media/sound.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
@@ -47,34 +49,66 @@ TextEdit::~TextEdit () {
 void TextEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+    if (pressed_ && window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
+        cursorPos_ = 0;
+        cursorTimer_ = 0;
+        while (text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+            ++ cursorPos_;
+    }
+}
+
+void TextEdit::mouseLeft(bool down) {
+    if (down && hovered_) {
+        menus::clearFocus();
+        setFocus(this);
+        pressed_ = true;
+        menus::fixKeyboardOn(this);
+        sound::playSound(sound::Click);
+    }
+    if (pressed_) {
+        cursorPos_ = 0;
+        cursorTimer_ = 0;
+        while (text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+            ++ cursorPos_;
+    }
 }
 
 void TextEdit::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (hovered_ && down) {
-        // backspace
-        if (keyCode == sf::Key::Back && cursorPos_ > 0) {
-            value_->Erase(cursorPos_-1, 1);
-            --cursorPos_;
-            cursorTimer_ = 0;
+    if (pressed_) {
+        if (down) {
+            // backspace
+            if (keyCode == sf::Key::Back && cursorPos_ > 0) {
+                value_->Erase(cursorPos_-1, 1);
+                --cursorPos_;
+                cursorTimer_ = 0;
+            }
+            // delete
+            else if (keyCode == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
+                value_->Erase(cursorPos_, 1);
+            }
+            // move cursor
+            else if (keyCode == sf::Key::Left && cursorPos_ > 0) {
+                --cursorPos_;
+                cursorTimer_ = 0;
+            }
+            else if (keyCode == sf::Key::Right && cursorPos_ < value_->GetSize()) {
+                ++cursorPos_;
+                cursorTimer_ = 0;
+            }
+            else if (keyCode == sf::Key::Escape || keyCode == sf::Key::Up || keyCode == sf::Key::Down || keyCode == sf::Key::Return) {
+                menus::unFixKeyboard();
+            pressed_ = false;
+            }
         }
-        // delete
-        else if (keyCode == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
-            value_->Erase(cursorPos_, 1);
-        }
-        // move cursor
-        else if (keyCode == sf::Key::Left && cursorPos_ > 0) {
-            --cursorPos_;
-            cursorTimer_ = 0;
-        }
-        else if (keyCode == sf::Key::Right && cursorPos_ < value_->GetSize()) {
-            ++cursorPos_;
-            cursorTimer_ = 0;
-        }
+    }
+    else if (down && (keyCode == sf::Key::Return || keyCode == sf::Key::Space)) {
+        menus::fixKeyboardOn(this);
+        pressed_ = true;
     }
 }
 
 void TextEdit::textEntered(int keyCode) {
-    if (hovered_) {
+    if (pressed_) {
         if (type_ == TEXT_EDIT) {
             if (keyCode > 32 && keyCode < 126 && value_->GetSize() < maxLength_) {
                 value_->Insert(cursorPos_, static_cast<char>(keyCode));
@@ -100,6 +134,8 @@ void TextEdit::textEntered(int keyCode) {
 }
 
 void TextEdit::draw() const {
+    UiElement::draw();
+
     if (++cursorTimer_ > 50) cursorTimer_ = 0;
 
     Vector2f origin = parent_->getTopLeft() + topLeft_;
@@ -107,30 +143,56 @@ void TextEdit::draw() const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    // Hover effect
-    if (hovered_)
-        glColor4f(1,0.7,0.9,0.4);
-    else
-        glColor4f(1,1,1,0.1);
+    // draw Button
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glBegin(GL_QUADS);
+        if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
+        else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(origin.x_+185, origin.y_+2);
         glVertex2f(width_ + origin.x_, origin.y_+2);
-        glColor4f(1,1,1,0.2);
+        glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185, height_ + origin.y_-2);
+
+        // glossy bottom
+        glColor4f(1.0,1.0,1.0,0.0);
+        glVertex2f(origin.x_+185, origin.y_+2);
+        glVertex2f(width_ + origin.x_, origin.y_+2);
+        if (pressed_)   glColor4f(1.0,1.0,1.0,0.1);
+        else            glColor4f(1.0,1.0,1.0,0.06);
+        glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185, height_ + origin.y_-2);
+
+        if (!pressed_) {
+            // glossy top
+            glColor4f(1.0,1.0,1.0,0.2);
+            glVertex2f(origin.x_+185, origin.y_+2);
+            glVertex2f(width_ + origin.x_, origin.y_+2);
+            glColor4f(1.0,1.0,1.0,0.05);
+            glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
+            glVertex2f(origin.x_+185, height_*0.5f + origin.y_);
+        }
+    glEnd();
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    glLineWidth(1.f);
+
+    glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
+    glBegin(GL_LINE_LOOP);
+        glVertex2f(origin.x_+185, origin.y_+2);
+        glVertex2f(width_ + origin.x_, origin.y_+2);
         glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
         glVertex2f(origin.x_+185, height_ + origin.y_-2);
     glEnd();
 
-    glColor4f(1,1,1,0.7);
-
-    if (pressed_ && hovered_)
-        text::drawScreenText(*locales::getLocale(locales::TextEditHover), origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+    if (pressed_)
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
 
     // draw cursor
-    if (hovered_ && cursorTimer_ < 30) {
-        int pos = text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER);
+    if (pressed_ && cursorTimer_ < 30) {
+        int pos = text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2;
         glColor4f(1,0.8,0.9,0.5);
         glLineWidth(0.5f);
         glBegin(GL_LINES);
@@ -138,8 +200,6 @@ void TextEdit::draw() const {
             glVertex2f(origin.x_ + pos +(width_+185)/2, origin.y_+height_-3);
         glEnd();
     }
-
-
 
     // draw Label
     label_->draw();
@@ -152,5 +212,7 @@ void TextEdit::setFocus (UiElement* toBeFocused) {
 
 void TextEdit::clearFocus() {
     UiElement::clearFocus();
+    pressed_ = false;
+    menus::unFixKeyboard();
     label_->clearFocus();
 }

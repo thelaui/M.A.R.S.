@@ -41,7 +41,7 @@ void Label::draw() const {
     if (interactive_) {
         if (parent_->isPressed())
             position += Vector2f(1, 1);
-        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, (color_*(1-focusedFadeTime_) + focusedFadeTime_*Color3f(1.f, 0.5f, 0.9f))*(0.7f+hoveredFadeTime_*0.3f));
+        text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, (color_*(1-hoveredFadeTime_) + hoveredFadeTime_*Color3f(1.f, 0.8f, 0.9f))*(0.7f+focusedFadeTime_*0.3f));
     }
     else
         text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, color_);

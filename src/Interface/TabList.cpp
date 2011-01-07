@@ -86,11 +86,7 @@ void TabList::textEntered(int keyCode) {
 }
 
 bool TabList::allWidgetsFocused() const {
-    bool result(true);
-    if (contentFocused_ && !focusedTab_->allWidgetsFocused())
-        result = false;
-    contentFocused_ = !focusedTab_->allWidgetsFocused();
-    return result;
+    return false;
 }
 
 void TabList::draw () const {
@@ -125,6 +121,7 @@ void TabList::setFocus(UiElement* toBeFocused) {
     Tab* toFocus = dynamic_cast<Tab*>(toBeFocused);
     if (toFocus) {
         focusedTab_ = toFocus;
+        contentFocused_ = true;
         if (toFocus->allWidgetsFocused())
             contentFocused_ = false;
     }
