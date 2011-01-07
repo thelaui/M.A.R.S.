@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/MobileSpaceObject.hpp"
 # include "Weapons/Weapon.hpp"
 # include "Specials/Special.hpp"
+# include "DecoObjects/Ice.hpp"
 
 # define ITEM_CANNON_CONTROL 0
 
@@ -72,6 +73,8 @@ class Ship: public MobileSpaceObject {
         friend class TutAggroBot;
         friend class Heal;
         friend class Blast;
+        friend class Freezer;
+        template <typename Object> friend class Ice;
         friend class Team;
 
     private:
@@ -89,6 +92,7 @@ class Ship: public MobileSpaceObject {
         bool specialChange_;
 
         bool visible_;
+        float frozen_;
         float respawnTimer_;
         float damageSourceResetTimer_;
 

@@ -1,4 +1,4 @@
-/* Blast.cpp
+/* Freezer.cpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -19,13 +19,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
+# include "SpaceObjects/balls.hpp"
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
-# include "SpaceObjects/physics.hpp"
+# include "DecoObjects/decoObjects.hpp"
 
 # include <SFML/Graphics.hpp>
+# include <vector>
 
-void Blast::draw() const {
+void Freezer::draw() const {
     if (timer_ > 0.f) {
         float alpha(0.f);
         if(timer_ > 0.4f)
@@ -39,7 +41,7 @@ void Blast::draw() const {
         glColor4f(1.0f, 1.0f, 1.0f, alpha);
 
         const int posX = 3;
-        const int posY = 2;
+        const int posY = 1;
 
         glBegin(GL_QUADS);
             glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-radius_*scale,-radius_*scale);
@@ -52,22 +54,45 @@ void Blast::draw() const {
     }
 }
 
-void Blast::activate() const {
+void Freezer::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*100.f;
-        parent_->fragStars_ = 0;
-        physics::causeShockWave(parent_->owner_, parent_->location_, radius_*2.f, radius_*1.5f, 10.f);
+        radius_ = parent_->fragStars_*50.f+25.f;
+        std::vector<Ship*> const& ships = ships::getShips();
+        for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
+            if ((*it)!=parent_ && (*it)->visible_) {
+                float distance(((*it)->location_-parent_->location_).length());
+                if (distance <= radius_) {
+                    (*it)->setDamageSource(parent_->getOwner());
+                    (*it)->frozen_=40;
+                    (*it)->velocity_=Vector2f();
+                    (*it)->mass_=9999999999.f;
+                    decoObjects::addShipIce(*it);
+                }
+            }
+        }
+        Ball* ball = balls::getBall();
+
+        if(ball && ball->visible_) {
+            float distance((ball->location_-parent_->location_).length());
+                if (distance <= radius_) {
+                    ball->frozen_=40;
+                    ball->velocity_=Vector2f();
+                    ball->mass_=9999999999.f;
+                    decoObjects::addBallIce(ball);
+            }
+        }
         timer_ = 0.5f;
+        parent_->fragStars_ = 0;
     }
 }
 
-void Blast::next() {
-    parent_->currentSpecial_ = new Heal(parent_);
+void Freezer::next() {
+    parent_->currentSpecial_ = new Blast(parent_);
     delete this;
 }
 
-void Blast::previous() {
-    parent_->currentSpecial_ = new Freezer(parent_);
+void Freezer::previous() {
+    parent_->currentSpecial_ = new Heal(parent_);
     delete this;
 }
 

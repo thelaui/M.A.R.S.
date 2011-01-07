@@ -37,12 +37,15 @@ class Ball: public MobileSpaceObject {
         float heatAmount() const {return heatTimer_*5.f;}
 
         friend class BotController;
+        friend class Freezer;
+        template <typename Object> friend class Ice;
 
     private:
         void explode();
         void respawn();
         float rotation_;
         float rotateSpeed_;
+        float frozen_;
         bool  sticky_, visible_;
 
         Vector2f respawnLocation_;

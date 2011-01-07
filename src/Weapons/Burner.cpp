@@ -57,7 +57,7 @@ void Burner::next() {
 }
 
 void Burner::previous() {
-    parent_->currentWeapon_ = new Fist(parent_);
+    parent_->currentWeapon_ = new RocketLauncher(parent_);
     delete this;
 }
 

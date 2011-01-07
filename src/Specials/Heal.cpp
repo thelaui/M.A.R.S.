@@ -73,12 +73,12 @@ void Heal::activate() const {
 }
 
 void Heal::next() {
-    parent_->currentSpecial_ = new Blast(parent_);
+    parent_->currentSpecial_ = new Freezer(parent_);
     delete this;
 }
 
 void Heal::previous() {
-    parent_->currentSpecial_ = new RocketLauncher(parent_);
+    parent_->currentSpecial_ = new Blast(parent_);
     delete this;
 }
 

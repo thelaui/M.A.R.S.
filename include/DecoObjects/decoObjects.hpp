@@ -20,7 +20,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Planet;
 class Ship;
+class Ball;
+class pAmmoRocket;
 class Sun;
+class DecoObject;
 
 /// A namespace which handles objects in the space, which can't be interacted with.
 
@@ -47,6 +50,22 @@ namespace decoObjects {
     /// Adds a heat texture on the target Sun.
     /// \param sun The Sun to be decored.
     void addSunHeat(Sun* sun);
+
+    /// Adds an ice block at the ship's position.
+    /// \param ship The ship to be frozen.
+    void addShipIce(Ship* ship);
+
+    /// Adds an ice block at the ball's position.
+    /// \param ball The ball to be frozen.
+    void addBallIce(Ball* ball);
+
+    /// Adds an ice block on the rocket's position.
+    /// \param rocket The rocket to be frozen.
+    void addRocketIce(pAmmoRocket* rocket);
+
+    /// Removes an ice block from the list.
+    /// \param toBeRemoved The ice block to be removed.
+    void removeIce(DecoObject const* toBeRemoved);
 
     /// Adds a ShipName to the target Ship.
     /// \param ship The Ship to be named.

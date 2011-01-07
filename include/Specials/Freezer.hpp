@@ -1,4 +1,4 @@
-/* RocketLauncher.hpp
+/* Freezer.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,36 +15,40 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef ROCKETLAUNCHER_HPP_INCLUDED
-# define ROCKETLAUNCHER_HPP_INCLUDED
+# ifndef FREEZER_HPP_INCLUDED
+# define FREEZER_HPP_INCLUDED
 
 # include "Specials/Special.hpp"
 
-/// Special: ROCK'n'LOL.
-/// A rocket launcher which aims at nearby enemies.
+/// Special: Freezer.
+/// A Freezing wave.
 
-class RocketLauncher: public Special {
+class Freezer: public Special {
     public:
-        /// Ctor which constructs the weapon.
-        RocketLauncher(Ship* parent):
-              Special(parent, sf::String("ROCK'n'LOL")) {};
+        /// Ctor which constructs the special.
+        Freezer(Ship* parent):
+              Special(parent, sf::String("FREEZER")),
+              radius_(0.f) {};
 
-        /// Spawns some particles.
+        /// Freezes nearby ships.
         void activate() const;
 
-        /// Draws the weapon.
+        /// Draws the special.
         void draw() const;
 
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
+        /// Replaces this special by the next one.
+        /// With this method it's possible to cycle through the specials.
         void next();
 
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
+        /// Replaces this special by the previous one.
+        /// With this method it's possible to cycle through the specials.
         void previous();
+
+    private:
+        mutable float radius_;
 };
 
-# endif // ROCKETLAUNCHER_HPP_INCLUDED
+# endif // FREEZER_HPP_INCLUDED
 
 
 

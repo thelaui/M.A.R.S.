@@ -70,12 +70,22 @@ namespace window {
             std::stringstream filename;
             filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".jpg";
 
-            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-            } else {
-                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-            }
+            # ifdef __linux__
+                mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+                if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                    std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                } else {
+                    std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                }
+            # endif
+
+            # ifdef __WIN32__
+                if (shot.SaveToFile(settings::C_configPath + filename.str())) {
+                    std::cout << "Saved screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+                } else {
+                    std::cout << "Failed saving screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+                }
+            # endif
         }
 
         void resized() {
@@ -197,7 +207,7 @@ namespace window {
         else
             window_.Create(mode, "M.A.R.S. - a " + generateName::game());
 
-        window_.EnableVerticalSync(settings::C_vsync);
+        window_.UseVerticalSync(settings::C_vsync);
         //window_.SetFramerateLimit(10);
 
         sf::Image icon;

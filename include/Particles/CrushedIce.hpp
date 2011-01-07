@@ -1,4 +1,4 @@
-/* weapons.hpp
+/* CrushedIce.hpp
 
 Copyright (c) 2010 by Felix Lauer and Simon Schneegans
 
@@ -15,17 +15,30 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef WEAPONS_HPP_INCLUDED
-# define WEAPONS_HPP_INCLUDED
+# ifndef CRUSHEDICE_HPP_INCLUDED
+# define CRUSHEDICE_HPP_INCLUDED
 
-# include "Weapons/Weapon.hpp"
-# include "Weapons/AFK47.hpp"
-# include "Weapons/ROFLE.hpp"
-# include "Weapons/Shotgun.hpp"
-# include "Weapons/Flubba.hpp"
-# include "Weapons/Burner.hpp"
-# include "Weapons/H2OMG.hpp"
-# include "Weapons/Fist.hpp"
-# include "Weapons/RocketLauncher.hpp"
+# include "Particles/Particle.hpp"
 
-# endif // WEAPONS_HPP_INCLUDED
+# include "System/Color3f.hpp"
+
+class CrushedIce: public Particle<CrushedIce> {
+    public:
+        CrushedIce(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
+
+        void update();
+        void draw() const;
+
+        static void shockWave(Vector2f const& location, float strength, float radius);
+
+        friend class Particle<CrushedIce>;
+
+    private:
+        Color3f color_;
+        static std::list<CrushedIce*> activeParticles_;
+};
+
+# endif // CRUSHEDICE_HPP_INCLUDED
+
+
+

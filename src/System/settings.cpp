@@ -83,7 +83,7 @@ namespace settings {
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
     sf::String    C_playerIIName =          "PlayerII";
-    Color3f       C_playerIIColor =         Color3f(0.1f, 0.f, 0.62f);
+    Color3f       C_playerIIColor =         Color3f(0.5f, 0.4f, 0.82f);
     Color3f       C_playerIITeamColor =     Color3f(0.05f, 1.f, 0.785f);
     sf::Key::Code C_playerIIup =            sf::Key::W;
     sf::Key::Code C_playerIIleft =          sf::Key::A;

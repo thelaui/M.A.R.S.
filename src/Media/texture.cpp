@@ -74,6 +74,7 @@ namespace texture {
                 case Planet13:                 loadTexture_(type, settings::C_dataPath + "/tex/spaceObjects/planet13.png");  break;
                 case Sun1:                     loadTexture_(type, settings::C_dataPath + "/tex/spaceObjects/sun1.png");      break;
                 case SunHeat:                  loadTexture_(type, settings::C_dataPath + "/tex/spaceObjects/sunHeat.png");   break;
+                case Ice:                      loadTexture_(type, settings::C_dataPath + "/tex/Ice.png");                break;
                 case Hole1:                    loadTexture_(type, settings::C_dataPath + "/tex/spaceObjects/hole1.png");     break;
                 case Ball:                     loadTexture_(type, settings::C_dataPath + "/tex/ball.png");                   break;
                 case Particles:                loadTexture_(type, settings::C_dataPath + "/tex/particles.png");              break;

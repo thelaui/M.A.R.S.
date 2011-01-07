@@ -23,9 +23,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/ShipName.hpp"
 # include "DecoObjects/ShipHighlight.hpp"
 # include "DecoObjects/Evil.hpp"
+# include "DecoObjects/Ice.hpp"
 
 # include <SFML/System.hpp>
 # include <vector>
+# include <list>
 
 namespace decoObjects {
 
@@ -34,6 +36,7 @@ namespace decoObjects {
         std::vector<DecoObject*> decos_;
         std::vector<DecoObject*> heats_;
         std::vector<DecoObject*> names_;
+        std::list<DecoObject*> ices_ ;
     }
 
     void update() {
@@ -46,6 +49,13 @@ namespace decoObjects {
             cannon_->draw();
         for (std::vector<DecoObject*>::iterator it = decos_.begin(); it != decos_.end(); ++it)
             (*it)->draw();
+
+        for(std::list<DecoObject*>::iterator it=ices_.begin(); it!=ices_.end(); ++it) {
+            if(*it!=NULL)
+                (*it)->draw();
+            else
+               it = ices_.erase(it);
+        }
     }
 
     void drawHeat() {
@@ -57,7 +67,6 @@ namespace decoObjects {
         for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
             (*it)->draw();
     }
-
 
 
     void addCannon() {
@@ -73,6 +82,22 @@ namespace decoObjects {
         heats_.push_back(new SunHeat(sun));
     }
 
+    void addShipIce(Ship* ship) {
+        ices_.push_back(new Ice<Ship>(ship));
+    }
+
+    void addBallIce(Ball* ball) {
+        ices_.push_back(new Ice<Ball>(ball));
+    }
+
+    void removeIce(DecoObject const* toBeRemoved) {
+        for(std::list<DecoObject*>::iterator it=ices_.begin(); it!=ices_.end(); ++it)
+            if(*it==toBeRemoved) {
+                delete *it;
+                *it=NULL;
+                break;
+            }
+    }
 
     void addName(Ship* ship) {
         names_.push_back(new ShipName(ship));
@@ -96,5 +121,6 @@ namespace decoObjects {
         decos_.clear();
         heats_.clear();
         names_.clear();
+        ices_.clear();
     }
 }

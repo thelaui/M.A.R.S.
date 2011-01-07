@@ -49,6 +49,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/PowerUpCollect.hpp"
 # include "Particles/AmmoFist.hpp"
 # include "Particles/Number.hpp"
+# include "Particles/CrushedIce.hpp"
 
 # include "TrailEffects/trailEffects.hpp"
 
@@ -82,6 +83,7 @@ namespace particles {
         PowerUpCollect::   updateAll();
         AmmoFist::         updateAll();
         Number::           updateAll();
+        CrushedIce::       updateAll();
     }
 
     void drawLower() {
@@ -129,6 +131,7 @@ namespace particles {
             CannonBall::       drawAll();
             FragmentFlame::    drawAll();
             Spark::            drawAll();
+            CrushedIce::       drawAll();
 
         glEnd();
 
@@ -212,6 +215,7 @@ namespace particles {
             case pPowerUpCollect:   PowerUpCollect::   spawn(location, direction, velocity, color, damageSource); break;
             case pAmmoFist:         AmmoFist::         spawn(location, direction, velocity, color, damageSource); break;
             case pNumber:           Number::           spawn(location, direction, velocity, color, damageSource); break;
+            case pCrushedIce:       CrushedIce::       spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -285,5 +289,6 @@ namespace particles {
         PowerUpCollect::   clear();
         AmmoFist::         clear();
         Number::           clear();
+        CrushedIce::       clear();
     }
 }
