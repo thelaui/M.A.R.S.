@@ -32,7 +32,7 @@ class TabList: public UiElement {
         void mouseLeft(bool down);
         void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
-        bool allWidgetsFocused() const;
+        bool allWidgetsFocused(bool tabNext) const;
 
         void setFocus  (UiElement* toBeFocused);
         void clearFocus();

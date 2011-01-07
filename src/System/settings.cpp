@@ -39,7 +39,7 @@ namespace settings {
     bool        C_showFPS =                 false;
     bool        C_showParticleCount =       false;
     bool        C_showLatency =             false;
-    bool        C_fullScreen =              true;
+    bool        C_fullScreen =              false;
     bool        C_vsync =                   true;
     bool        C_adaptiveParticleCount =   false;
     int         C_globalParticleCount =     100;
@@ -62,10 +62,10 @@ namespace settings {
     bool        C_showInfoCK =              true;
     bool        C_showSelectLanguage =      true;
     sf::String  C_language =                "English";
-    int         C_resX =                    sf::VideoMode::GetDesktopMode().Width;
-    int         C_resY =                    sf::VideoMode::GetDesktopMode().Height;
+    int         C_resX =                    960;
+    int         C_resY =                    600;
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
-    bool        C_shaders =                 postFX::supported();
+    bool        C_shaders =                 false;
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
     std::string  C_configPath =             "";
     std::string  C_dataPath =               "";

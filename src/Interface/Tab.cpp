@@ -72,7 +72,7 @@ void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
     if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
      || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
      || (keyCode == sf::Key::Up))) {
-        if (focusedWidget_ && focusedWidget_->allWidgetsFocused()) {
+        if (focusedWidget_ && focusedWidget_->allWidgetsFocused(false)) {
             int i(widgets_.size()-1);
             while ( widgets_[i] != focusedWidget_ && i>0) --i;
             if (i > 0) --i;
@@ -99,7 +99,7 @@ void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
                 focusedWidget_->setFocus(focusedWidget_);
             }
         }
-        else if (focusedWidget_->allWidgetsFocused()) {
+        else if (focusedWidget_->allWidgetsFocused(true)) {
             int i(0);
             while ( widgets_[i] != focusedWidget_ && i<widgets_.size()-1) ++i;
             if (i<widgets_.size()-1) ++i;
@@ -124,7 +124,7 @@ void Tab::textEntered(int keyCode) {
         focusedWidget_->textEntered(keyCode);
 }
 
-bool Tab::allWidgetsFocused() const {
+bool Tab::allWidgetsFocused(bool tabNext) const {
     return !focusedWidget_;
 }
 

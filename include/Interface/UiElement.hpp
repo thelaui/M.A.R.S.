@@ -30,7 +30,7 @@ class UiElement {
         virtual void mouseLeft(bool down);
         virtual void keyEvent(bool down, sf::Key::Code keyCode) {}
         virtual void textEntered(int keyCode) {}
-        virtual bool allWidgetsFocused() const {return true;}
+        virtual bool allWidgetsFocused(bool tabNext) const {return true;}
 
         virtual void draw() const;
 

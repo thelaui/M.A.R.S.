@@ -52,7 +52,7 @@ void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
         if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
          || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
          || (keyCode == sf::Key::Up))) {
-            if (focusedWidget_->allWidgetsFocused()) {
+            if (focusedWidget_->allWidgetsFocused(false)) {
                 int i(0);
                 while ( widgets_[i] != focusedWidget_) i = (i-1 + widgets_.size())%widgets_.size();
                 i = (i-1 + widgets_.size())%widgets_.size();
@@ -64,7 +64,7 @@ void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
             }
         }
         else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
-            if (focusedWidget_->allWidgetsFocused()) {
+            if (focusedWidget_->allWidgetsFocused(true)) {
                 int i(0);
                 while ( widgets_[i] != focusedWidget_) i = (i+1)%widgets_.size();
                 i = (i+1)%widgets_.size();

@@ -76,7 +76,7 @@ void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
             }
         }
         else if (down && (keyCode == sf::Key::Down || keyCode == sf::Key::Tab))
-            contentFocused_ = !focusedTab_->allWidgetsFocused();
+            contentFocused_ = !focusedTab_->allWidgetsFocused(true);
     }
 }
 
@@ -85,7 +85,7 @@ void TabList::textEntered(int keyCode) {
         focusedTab_->textEntered(keyCode);
 }
 
-bool TabList::allWidgetsFocused() const {
+bool TabList::allWidgetsFocused(bool tabNext) const {
     return false;
 }
 
@@ -122,7 +122,7 @@ void TabList::setFocus(UiElement* toBeFocused) {
     if (toFocus) {
         focusedTab_ = toFocus;
         contentFocused_ = true;
-        if (toFocus->allWidgetsFocused())
+        if (toFocus->allWidgetsFocused(true))
             contentFocused_ = false;
     }
 }

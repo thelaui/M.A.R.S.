@@ -136,6 +136,7 @@ namespace players {
             else if ((*it)->points() > second) {
                 second = (*it)->points();
             }
+        if (second == INT_MIN) second = 0;
         return second;
     }
 
