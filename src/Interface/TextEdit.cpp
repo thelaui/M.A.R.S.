@@ -60,7 +60,7 @@ void TextEdit::mouseMoved(Vector2f const& position) {
 void TextEdit::mouseLeft(bool down) {
     if (down && hovered_) {
         menus::clearFocus();
-        setFocus(this);
+        setFocus(this, false);
         pressed_ = true;
         menus::fixKeyboardOn(this);
         sound::playSound(sound::Click);
@@ -205,9 +205,9 @@ void TextEdit::draw() const {
     label_->draw();
 }
 
-void TextEdit::setFocus (UiElement* toBeFocused) {
-    UiElement::setFocus(this);
-    label_->setFocus(this);
+void TextEdit::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
 }
 
 void TextEdit::clearFocus() {

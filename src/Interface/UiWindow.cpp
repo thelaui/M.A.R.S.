@@ -46,36 +46,36 @@ void UiWindow::mouseLeft(bool down) {
 }
 
 void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (focusedWidget_) {
+    if (focusedWidget_)
         focusedWidget_->keyEvent(down, keyCode);
+}
 
-        if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
-         || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
-         || (keyCode == sf::Key::Up))) {
-            if (focusedWidget_->allWidgetsFocused(false)) {
-                int i(0);
-                while ( widgets_[i] != focusedWidget_) i = (i-1 + widgets_.size())%widgets_.size();
-                i = (i-1 + widgets_.size())%widgets_.size();
-                while (!widgets_[i]->isTabable())      i = (i-1 + widgets_.size())%widgets_.size();
+bool UiWindow::tabNext() {
+    if (focusedWidget_->tabNext()) {
+        int i(0);
+        while ( widgets_[i] != focusedWidget_) i = (i+1)%widgets_.size();
+        i = (i+1)%widgets_.size();
+        while (!widgets_[i]->isTabable())      i = (i+1)%widgets_.size();
 
-                menus::clearFocus();
-                focusedWidget_ = widgets_[i];
-                focusedWidget_->setFocus(focusedWidget_);
-            }
-        }
-        else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
-            if (focusedWidget_->allWidgetsFocused(true)) {
-                int i(0);
-                while ( widgets_[i] != focusedWidget_) i = (i+1)%widgets_.size();
-                i = (i+1)%widgets_.size();
-                while (!widgets_[i]->isTabable())      i = (i+1)%widgets_.size();
-
-                menus::clearFocus();
-                focusedWidget_ = widgets_[i];
-                focusedWidget_->setFocus(focusedWidget_);
-            }
-        }
+        menus::clearFocus();
+        focusedWidget_ = widgets_[i];
+        focusedWidget_->setFocus(focusedWidget_, false);
     }
+    return false;
+}
+
+bool UiWindow::tabPrevious() {
+    if (focusedWidget_->tabPrevious()) {
+        int i(0);
+        while ( widgets_[i] != focusedWidget_) i = (i-1 + widgets_.size())%widgets_.size();
+        i = (i-1 + widgets_.size())%widgets_.size();
+        while (!widgets_[i]->isTabable())      i = (i-1 + widgets_.size())%widgets_.size();
+
+        menus::clearFocus();
+        focusedWidget_ = widgets_[i];
+        focusedWidget_->setFocus(focusedWidget_, true);
+    }
+    return false;
 }
 
 void UiWindow::textEntered(int keyCode) {
@@ -179,8 +179,8 @@ void UiWindow::draw () const {
         (*i)->draw();
 }
 
-void UiWindow::setFocus(UiElement* toBeFocused) {
-    UiElement::setFocus(this);
+void UiWindow::setFocus(UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
     focusedWidget_ = toBeFocused;
 }
 
@@ -195,7 +195,7 @@ void UiWindow::addWidget(UiElement* toBeAdded) {
     widgets_.push_back(toBeAdded);
     if (!focusedWidget_) {
         focusedWidget_ = toBeAdded;
-        focusedWidget_->setFocus(focusedWidget_);
+        focusedWidget_->setFocus(focusedWidget_, false);
     }
 }
 

@@ -145,9 +145,9 @@ void Button::draw () const {
     label_->draw();
 }
 
-void Button::setFocus (UiElement* toBeFocused) {
-    UiElement::setFocus(this);
-    label_->setFocus(this);
+void Button::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
 }
 
 void Button::clearFocus() {

@@ -83,6 +83,14 @@ namespace menus {
                 else
                     hideWindow();
             }
+            else if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
+             || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
+             || (keyCode == sf::Key::Up))) {
+                windowStack_.back()->tabPrevious();
+            }
+            else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
+                windowStack_.back()->tabNext();
+            }
             else {
                 windowStack_.back()->keyEvent(down, keyCode);
                 windowStack_.back()->checkWidgets();

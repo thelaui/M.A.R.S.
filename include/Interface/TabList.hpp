@@ -32,21 +32,21 @@ class TabList: public UiElement {
         void mouseLeft(bool down);
         void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
-        bool allWidgetsFocused(bool tabNext) const;
 
-        void setFocus  (UiElement* toBeFocused);
+        bool tabNext();
+        bool tabPrevious();
+
+        void setFocus  (UiElement* toBeFocused, bool isPrevious);
         void clearFocus();
 
         void draw() const;
 
         void addTab(Tab* toBeAdded);
-        void deactivateAll();
-        void clearTabs();
+        void activate(Tab* toBeActivated);
 
     private:
         std::vector<Tab*> tabs_;
         Tab* focusedTab_;
-        mutable bool contentFocused_;
         int lastTabEnd_;
 };
 

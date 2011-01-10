@@ -139,9 +139,9 @@ void Slider::draw() const {
     label_->draw();
 }
 
-void Slider::setFocus (UiElement* toBeFocused) {
-    UiElement::setFocus(this);
-    label_->setFocus(this);
+void Slider::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
 }
 
 void Slider::clearFocus() {

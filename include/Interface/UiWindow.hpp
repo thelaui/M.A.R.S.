@@ -32,9 +32,12 @@ class UiWindow: public UiElement {
         void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
 
+        bool tabNext();
+        bool tabPrevious();
+
         virtual void draw () const;
 
-        void setFocus  (UiElement* toBeFocused);
+        void setFocus  (UiElement* toBeFocused, bool isPrevious);
         void clearFocus();
 
         virtual void checkWidgets() = 0;

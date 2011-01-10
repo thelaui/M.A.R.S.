@@ -174,9 +174,9 @@ void ComboBox::draw() const {
     label_->draw();
 }
 
-void ComboBox::setFocus (UiElement* toBeFocused) {
-    UiElement::setFocus(this);
-    label_->setFocus(this);
+void ComboBox::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
 }
 
 void ComboBox::clearFocus() {

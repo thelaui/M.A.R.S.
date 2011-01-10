@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/UiWindow.hpp"
 
+class Tab;
+
 class NewGameMenu: public UiWindow {
     public:
         static UiWindow* get();
@@ -34,9 +36,10 @@ class NewGameMenu: public UiWindow {
 
         static UiWindow* instance_;
 
-        static bool kStartSB_, kStartDM_, kStartTDM_, kStartCK_, kInfoSB_,
-                    kInfoDM_,  kInfoTDM_, kInfoCK_,   kCancel_, playerI_, playerII_,
+        static bool kStart_, kInfo_, kCancel_, playerI_, playerII_,
                     tSB_, tDM_, tTDM_, tCK_;
+
+        static Tab *tabSpaceBall_, *tabDeathMatch_, *tabTeamDeathMatch_, *tabCannonKeep_;
 };
 
 # endif // NEWGAMEMENU_HPP_INCLUDED

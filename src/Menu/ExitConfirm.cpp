@@ -31,8 +31,8 @@ bool ExitConfirm::kCancel_(false);
 UiWindow* ExitConfirm::get() {
     if (instance_ == NULL) {
         instance_ = new ExitConfirm(280, 80);
-        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(120,50), 70, 20));
         instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(200,50), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(120,50), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::QuitText), TEXT_ALIGN_LEFT, Vector2f(10, 8)));
     }
     return instance_;

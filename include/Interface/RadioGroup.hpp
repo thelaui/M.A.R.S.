@@ -32,6 +32,13 @@ class RadioGroup: public UiElement {
 
             void mouseMoved(Vector2f const& position);
             void mouseLeft(bool down);
+            void keyEvent(bool down, sf::Key::Code keyCode);
+
+            bool tabNext();
+            bool tabPrevious();
+
+            void setFocus  (UiElement* toBeFocused, bool isPrevious);
+            void clearFocus();
 
             void draw() const;
 
@@ -41,6 +48,7 @@ class RadioGroup: public UiElement {
 
         private:
             std::vector<RadioButton*> radioButtons_;
+            RadioButton* focusedButton_;
 };
 
 # endif

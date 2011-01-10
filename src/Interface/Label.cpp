@@ -47,7 +47,7 @@ void Label::draw() const {
         text::drawScreenText(*text_, position, font::Ubuntu, fontSize_, textAlign_, color_);
 }
 
-void Label::setFocus(UiElement* toBeFocused) {
+void Label::setFocus(UiElement* toBeFocused, bool isPrevious) {
     focused_ = true;
 }
 

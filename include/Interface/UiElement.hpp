@@ -30,12 +30,13 @@ class UiElement {
         virtual void mouseLeft(bool down);
         virtual void keyEvent(bool down, sf::Key::Code keyCode) {}
         virtual void textEntered(int keyCode) {}
-        virtual bool allWidgetsFocused(bool tabNext) const {return true;}
+        virtual bool tabNext() {return true;}
+        virtual bool tabPrevious() {return true;}
 
         virtual void draw() const;
 
         void setParent(UiElement* newParent);
-        virtual void setFocus  (UiElement* toBeFocused);
+        virtual void setFocus  (UiElement* toBeFocused, bool isPrevious);
         virtual void clearFocus();
 
         bool         isHovered() const {return hovered_;}

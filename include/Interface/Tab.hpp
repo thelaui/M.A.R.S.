@@ -32,17 +32,20 @@ class Tab: public UiElement {
         void mouseLeft(bool down);
         void keyEvent(bool down, sf::Key::Code keyCode);
         void textEntered(int keyCode);
-        bool allWidgetsFocused(bool tabNext) const;
+
+        bool tabNext();
+        bool tabPrevious();
 
         void draw () const;
 
-        void setFocus  (UiElement* toBeFocused);
+        void setFocus  (UiElement* toBeFocused, bool isPrevious);
         void clearFocus();
 
         void addWidget (UiElement* toBeAdded);
 
         /* virtual */
         Vector2f getTopLeft();
+        bool isActive() const {return active_;}
 
         friend class TabList;
 

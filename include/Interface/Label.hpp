@@ -32,7 +32,7 @@ class Label: public UiElement {
 
         bool isTabable() const {return false;}
 
-        void setFocus  (UiElement* toBeFocused);
+        void setFocus  (UiElement* toBeFocused, bool isPrevious);
         void clearFocus();
 
     private:

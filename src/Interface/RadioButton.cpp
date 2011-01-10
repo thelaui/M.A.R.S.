@@ -44,7 +44,7 @@ void RadioButton::mouseMoved(Vector2f const& position) {
 
 void RadioButton::mouseLeft(bool down) {
     UiElement::mouseLeft(down);
-    if (!pressed_ && hovered_) {
+    if (!pressed_ && hovered_ && focused_) {
         if (*value_ && offSwitchable_)
             *value_ = false;
         else {
@@ -52,6 +52,21 @@ void RadioButton::mouseLeft(bool down) {
             *value_ = true;
         }
         sound::playSound(sound::Check);
+    }
+}
+
+void RadioButton::keyEvent(bool down, sf::Key::Code keyCode) {
+    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+        pressed_ = down;
+        if (!pressed_) {
+            if (*value_ && offSwitchable_)
+                *value_ = false;
+            else {
+                dynamic_cast<RadioGroup*>(parent_)->allOff();
+                *value_ = true;
+            }
+            sound::playSound(sound::Check);
+        }
     }
 }
 
@@ -112,3 +127,12 @@ void RadioButton::draw() const {
     label_->draw();
 }
 
+void RadioButton::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
+}
+
+void RadioButton::clearFocus() {
+    UiElement::clearFocus();
+    label_->clearFocus();
+}

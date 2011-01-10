@@ -34,7 +34,7 @@ class Slider: public UiElement {
 
         void draw() const;
 
-        void setFocus  (UiElement* toBeFocused);
+        void setFocus  (UiElement* toBeFocused, bool isPrevious);
         void clearFocus();
 
     private:

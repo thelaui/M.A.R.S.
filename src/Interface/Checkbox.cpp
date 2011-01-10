@@ -116,9 +116,9 @@ void Checkbox::draw() const {
     label_->draw();
 }
 
-void Checkbox::setFocus (UiElement* toBeFocused) {
-    UiElement::setFocus(this);
-    label_->setFocus(this);
+void Checkbox::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    UiElement::setFocus(this, isPrevious);
+    label_->setFocus(this, isPrevious);
 }
 
 void Checkbox::clearFocus() {

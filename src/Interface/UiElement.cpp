@@ -49,7 +49,7 @@ void UiElement::mouseLeft(bool down) {
     pressed_ = down && hovered_;
     if (isTabable() && down && hovered_) {
         menus::clearFocus();
-        setFocus(this);
+        setFocus(this, false);
     }
 }
 
@@ -66,8 +66,8 @@ void UiElement::setParent(UiElement* newParent) {
     parent_ = newParent;
 }
 
-void UiElement::setFocus (UiElement* toBeFocused) {
-    if (parent_) parent_->setFocus(toBeFocused);
+void UiElement::setFocus (UiElement* toBeFocused, bool isPrevious) {
+    if (parent_) parent_->setFocus(toBeFocused, isPrevious);
     focused_ = true;
 }
 
