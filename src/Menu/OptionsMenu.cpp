@@ -124,8 +124,8 @@ UiWindow* OptionsMenu::get() {
 
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), &fullscreen_, Vector2f(10,50), 150));
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(210,50), 150));
-        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(410,50), 150));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), &vsync_, Vector2f(10,70), 150));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), &shaders_, Vector2f(10,90), 150));
 
         std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
         std::vector<sf::String> resolutions;
@@ -148,26 +148,26 @@ UiWindow* OptionsMenu::get() {
                     colorDepths.push_back(depth.str());
             }
         }
-        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), &resolution_, resolutions, Vector2f(10,70), 360, 185));
-        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::ColorDepth), &colorDepth_, colorDepths, Vector2f(10,90), 360, 185));
-        tabGraphics->addWidget(new Label(locales::getLocale(locales::GameSettings), TEXT_ALIGN_LEFT, Vector2f(10,130), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), &settings::C_StarsHigh, Vector2f(10,150), 150));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,170), 560));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,190), 560));
+        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), &resolution_, resolutions, Vector2f(10,110), 360, 185));
+        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::ColorDepth), &colorDepth_, colorDepths, Vector2f(10,130), 360, 185));
+        tabGraphics->addWidget(new Label(locales::getLocale(locales::GameSettings), TEXT_ALIGN_LEFT, Vector2f(10,170), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), &settings::C_StarsHigh, Vector2f(10,190), 150));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,210), 560));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(10,230), 560));
 
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
-        tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), &settings::C_drawZones, Vector2f(210,70), 150));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), &settings::C_drawAIPath, Vector2f(210,90), 150));
         tabInterface->addWidget(new Label(locales::getLocale(locales::GameInformation), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), &settings::C_showFPS, Vector2f(10,50), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), &settings::C_showParticleCount, Vector2f(10,70), 150));
+        tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), &settings::C_drawZones, Vector2f(210,70), 150));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), &settings::C_drawAIPath, Vector2f(210,90), 150));
         tabInterface->addWidget(new ComboBox(locales::getLocale(locales::Language), &language_, locales::getLanguages(), Vector2f(10,130), 450, 187));
         tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), &settings::C_screenShotKey, Vector2f(10,150), 450));
 
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));
-        tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(10,70), 560, 210, true, off));
+        tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(10,30), 560, 210, true, off));
 
         tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), &musicVolume_, 0, 100, Vector2f(10,30), 560, 210, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), &soundVolume_, 0, 100, Vector2f(10,50), 560, 210, true));
