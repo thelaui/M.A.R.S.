@@ -52,7 +52,7 @@ void TextEdit::mouseMoved(Vector2f const& position) {
     if (pressed_ && window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
-        while (text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -68,7 +68,7 @@ void TextEdit::mouseLeft(bool down) {
     if (pressed_) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
-        while (text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -186,13 +186,13 @@ void TextEdit::draw() const {
     glEnd();
 
     if (pressed_)
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
 
     // draw cursor
     if (pressed_ && cursorTimer_ < 30) {
-        int pos = text::getCharacterPos(*value_, cursorPos_, font::Ubuntu, 12.f, TEXT_ALIGN_CENTER) + 2;
+        int pos = text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2;
         glColor4f(1,0.8,0.9,0.5);
         glLineWidth(0.5f);
         glBegin(GL_LINES);

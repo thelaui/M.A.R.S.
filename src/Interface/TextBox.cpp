@@ -53,7 +53,7 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         }
         else {
             sf::String tmp = line + word;
-            if (text::getCharacterPos(tmp, tmp.GetSize(), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT) < width_) {
+            if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) < width_) {
                 lastSpace = i;
                 line += word + " ";
                 word = "";

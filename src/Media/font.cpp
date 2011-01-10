@@ -18,33 +18,37 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/font.hpp"
 
 # include "System/settings.hpp"
+# include "Locales/locales.hpp"
 
 # include <iostream>
 
 namespace font {
     namespace {
-        std::vector<sf::Font*> fonts_(COUNT);
+        sf::Font   *font_;
 
-        void loadFont_(FontType type, std::string fileName) {
-            fonts_[type] = new sf::Font;
-            fonts_[type]->LoadFromFile(fileName);
+        void setFont(sf::String const& fileName) {
+            if (!font_)
+                font_ = new sf::Font();
+            font_->LoadFromFile(settings::C_dataPath + "/fonts/" + fileName);
         }
     }
 
-    sf::Font const& getFont(FontType type) {
-        if (fonts_[type] != NULL) {
-            return *fonts_[type];
+    sf::Font const& getFont() {
+        if (font_ != NULL) {
+            return *font_;
         }
         else {
             // load it from file and...
-            switch (type) {
-                case Ubuntu:         loadFont_(type, settings::C_dataPath + "/fonts/Ubuntu-R.ttf");   break;
-                case FreeSans:       loadFont_(type, settings::C_dataPath + "/fonts/FreeSans.ttf");   break;
-
-                case COUNT: std::cout << "COUNT is not a valid Texturetype..." << std::endl;
-            }
+            setFont(*locales::getLocale(locales::FontName));
             // ... return it afterwards
-            return *fonts_[type];
+            return *font_;
         }
+    }
+
+    void reload() {
+        if (font_)
+            delete font_;
+        font_ = NULL;
+        setFont(*locales::getLocale(locales::FontName));
     }
 }

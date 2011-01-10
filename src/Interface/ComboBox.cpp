@@ -30,7 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <iostream>
 
-ComboBox::ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> values, Vector2f const& topLeft, int width, int labelWidth):
+ComboBox::ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 16),
     dropBox_(NULL),
     labelWidth_(labelWidth),
@@ -168,7 +168,7 @@ void ComboBox::draw() const {
     glBindTexture(GL_TEXTURE_2D, 0);
 
     text::drawFooText();
-    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), font::Ubuntu, 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
+    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
 
     // draw Label
     label_->draw();

@@ -25,10 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace text {
 
     namespace {
-        void drawText(sf::String const& text, Vector2f const& location, font::FontType type,
+        void drawText(sf::String const& text, Vector2f const& location,
                       float size, int align, Color3f const& color) {
 
-            sf::Text drawString(text, font::getFont(font::Ubuntu), size);
+            sf::Text drawString(text, font::getFont(), size);
             drawString.SetColor(color.sfColor());
 
             drawString.SetBlendMode(sf::Blend::Add);
@@ -55,31 +55,31 @@ namespace text {
 
     }
 
-    void drawSpaceText(sf::String const& text, Vector2f const& location, font::FontType type,
+    void drawSpaceText(sf::String const& text, Vector2f const& location,
                        float size, int align, Color3f const& color) {
 
-        drawScreenText(text, window::coordToPixel(location), type, size, align, color);
+        drawScreenText(text, window::coordToPixel(location), size, align, color);
     }
 
-    void drawMobileSpaceText(sf::String const& text, Vector2f const& location, font::FontType type,
+    void drawMobileSpaceText(sf::String const& text, Vector2f const& location,
                              float size, int align, Color3f const& color) {
 
-        drawText(text, window::coordToPixel(location), type, size, align, color);
+        drawText(text, window::coordToPixel(location), size, align, color);
 
     }
 
-    void drawScreenText(sf::String const& text, Vector2f const& location, font::FontType type,
+    void drawScreenText(sf::String const& text, Vector2f const& location,
                        float size, int align, Color3f const& color) {
 
-        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), type, size, align, color);
+        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), size, align, color);
     }
 
     void drawFooText() {
-        drawScreenText(sf::String("."), Vector2f(0.f, 0.f), font::Ubuntu, 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+        drawScreenText(sf::String("."), Vector2f(0.f, 0.f), 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
-    float getCharacterPos(sf::String const& text, int pos, font::FontType type, float size, int align) {
-        sf::Text drawString(text, font::getFont(type), size);
+    float getCharacterPos(sf::String const& text, int pos, float size, int align) {
+        sf::Text drawString(text, font::getFont(), size);
         float result = drawString.GetCharacterPos(pos).x;
 
         switch (align) {

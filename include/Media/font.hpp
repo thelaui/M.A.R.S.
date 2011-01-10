@@ -23,14 +23,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 /// A namespace for loading font files.
 
 namespace font {
-    /// The different fonts included in MARS.
-    enum FontType {Ubuntu, FreeSans,
-                   COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
-    };
-
     /// Returns a const& to the SFML font.
-    /// You can specify which font to return with the \a type parameter.
-    sf::Font const& getFont(FontType type);
+    /// The returned font is based on the current locale.
+    sf::Font const& getFont();
+
+    /// Reloads the font
+    void reload();
 }
 
 # endif // FONT_HPP_INCLUDED

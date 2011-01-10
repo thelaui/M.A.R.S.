@@ -241,6 +241,7 @@ void OptionsMenu::checkWidgets() {
             TutWindow20::reset();
 
             locales::load();
+            font::reload();
         }
 
         settings::save();

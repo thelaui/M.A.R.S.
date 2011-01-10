@@ -62,17 +62,20 @@ namespace locales {
             std::cout << "Error(" << errno << ") opening data/locales/" << std::endl;
 
         struct dirent* dirp;
-        std::vector<sf::String> languages;
+        std::set<sf::String> languageSet;
         while ((dirp = readdir(dp)) != NULL) {
             if (dirp->d_name[0] != '.') {
                 std::string file(dirp->d_name);
                 if (file.size() > 4)
-                    languages.push_back(sf::String(std::string(file, 0, file.size()-4)));
+                    languageSet.insert(sf::String(std::string(file, 0, file.size()-4)));
                 else
                     std::cout << settings::C_dataPath + "/locales/" << file << " seems to be an invalid translation file!" << std::endl;
             }
         }
         closedir(dp);
+
+        std::vector<sf::String> languages(languageSet.begin(), languageSet.end());
+
 
         return languages;
     }

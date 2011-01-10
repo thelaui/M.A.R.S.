@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace locales {
     /// The different texts included in MARS.
-    enum LocaleType {StartLocalGame, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
+    enum LocaleType {FontName, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
                      RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
@@ -44,7 +44,7 @@ namespace locales {
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
-                     Resolution, ColorDepth, Special,
+                     Resolution, ColorDepth, Special, StartLocalGame,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

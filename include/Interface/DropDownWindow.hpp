@@ -30,7 +30,7 @@ class DropDownWindow: public UiWindow {
         DropDownWindow (int width, ComboBox* parent, std::vector<sf::String> elements);
 
         void checkWidgets();
-        void onShow() {};
+        void onShow();
 
         void reset() {};
 

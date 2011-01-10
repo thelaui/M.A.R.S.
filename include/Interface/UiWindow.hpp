@@ -53,10 +53,10 @@ class UiWindow: public UiElement {
 
     protected:
         std::vector<UiElement*> widgets_;
+        UiElement* focusedWidget_;
 
     private:
         bool topMost_;
-        UiElement* focusedWidget_;
 };
 
 # endif

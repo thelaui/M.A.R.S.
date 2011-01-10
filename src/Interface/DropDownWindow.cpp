@@ -48,3 +48,14 @@ void DropDownWindow::checkWidgets() {
             menus::hideWindow();
         }
 }
+
+void DropDownWindow::onShow() {
+    for (int i=0; i<elements_.size(); ++i) {
+        if (elements_[i].first == *parent_->currentValue_) {
+            if (focusedWidget_)
+                focusedWidget_->clearFocus();
+            focusedWidget_ = widgets_[i];
+            focusedWidget_->setFocus(focusedWidget_, false);
+        }
+    }
+}

@@ -49,7 +49,7 @@ namespace menus {
 
             Vector2f viewPort = window::getViewPort();
             text::drawScreenText(sf::String("M.A.R.S. " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH)
-                                            + " - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , font::Ubuntu, 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+                                            + " - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
         }
     }
 

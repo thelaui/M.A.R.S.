@@ -1,6 +1,9 @@
+// The font to use for this locale. Has to be in data/fonts/
+000 Ubuntu-R.ttf
+
 ﻿// menu buttons
 
-000 Spela lokalt
+176 Spela lokalt
 105 Övningsspela
 001 Starta ett nätverksspel
 002 Anslut till nätverksspel
@@ -249,5 +252,5 @@
 160 Totalt:
 161 Statistik
 
-// 176
+// 177
 

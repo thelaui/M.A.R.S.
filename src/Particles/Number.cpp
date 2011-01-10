@@ -54,7 +54,7 @@ void Number::update() {
 void Number::draw() const {
     std::stringstream sstr;
     sstr << value_;
-    text::drawMobileSpaceText(sf::String(sstr.str()), location_, font::Ubuntu, radius_, TEXT_ALIGN_CENTER, color_);
+    text::drawMobileSpaceText(sf::String(sstr.str()), location_, radius_, TEXT_ALIGN_CENTER, color_);
 }
 
 

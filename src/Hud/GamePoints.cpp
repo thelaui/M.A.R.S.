@@ -97,7 +97,7 @@ void GamePoints::draw() const {
         std::stringstream sstr;
         sstr << players::getTeamL()->points_ << " : " << players::getTeamR()->points_;
         text::drawFooText();
-        text::drawScreenText(sf::String(sstr.str()), Vector2f(midPoint, viewPort.y_-60.f-top), font::Ubuntu, 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
+        text::drawScreenText(sf::String(sstr.str()), Vector2f(midPoint, viewPort.y_-60.f-top), 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
     }
 }
 

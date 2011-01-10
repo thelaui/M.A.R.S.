@@ -1,6 +1,9 @@
+// The font to use for this locale. Has to be in data/fonts/
+000 Ubuntu-R.ttf
+
 ﻿// menu buttons
 
-000 Start Local Game
+176 Start Local Game
 105 Start Tutorial
 001 Start Network Game
 002 Join Network Game
@@ -249,5 +252,5 @@
 160 Total:
 161 Statistics
 
-// 176
+// 177
 

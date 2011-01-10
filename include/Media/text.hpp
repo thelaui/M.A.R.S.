@@ -36,7 +36,7 @@ namespace text {
     /// This function draws the the text exactly on pixels so it won't look blurred due to being drawn
     /// between two pixels. This looks a bit choppy with  moving texts - for those use text::drawMobileSpaceText
     /// instead.
-    void drawSpaceText      (sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawSpaceText      (sf::String const&, Vector2f const&, float size, int align, Color3f const&);
 
     /// Draws text to the given space coordinates.
     /// Internally the given space location (from upper left (0, 0) to lower right (1280, 800))
@@ -44,11 +44,11 @@ namespace text {
     /// The given location is clamped to the screen resolution, so every text will stay inside the screen.
     /// This function won't snap the text to pixels, therefore it can be "in between" two pixels. This will
     /// look blurry, which is fine for moving texts. For static texts use text::drawSpaceText instead.
-    void drawMobileSpaceText(sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawMobileSpaceText(sf::String const&, Vector2f const&, float size, int align, Color3f const&);
 
     /// Draws text to the given screen coordinates.
     /// The given location is clamped to the screen resolution, so every text will stay inside the screen.
-    void drawScreenText     (sf::String const&, Vector2f const&, font::FontType, float size, int align, Color3f const&);
+    void drawScreenText     (sf::String const&, Vector2f const&, float size, int align, Color3f const&);
 
     /// Fixes strange SFML-OpenGL behaviour.
     /// Sometimes, when drawing text on screen, some OpenGL states are messed up, which will lead to non
@@ -59,7 +59,7 @@ namespace text {
     void drawFooText();
 
     /// Returns the position of a character in a string relatively to it's location.
-    float getCharacterPos   (sf::String const&, int pos, font::FontType, float size, int align);
+    float getCharacterPos   (sf::String const&, int pos, float size, int align);
 }
 
 # endif // TEXT_HPP_INCLUDED

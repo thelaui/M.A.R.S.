@@ -25,7 +25,7 @@ class UiWindow;
 
 class ComboBox: public UiElement {
     public:
-        ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> values, Vector2f const& topLeft, int width, int labelWidth=185);
+        ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth=185);
         ~ComboBox ();
 
         void mouseMoved(Vector2f const& position);

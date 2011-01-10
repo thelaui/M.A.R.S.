@@ -1,6 +1,9 @@
+// The font to use for this locale. Has to be in data/fonts/
+000 Ubuntu-R.ttf
+
 ﻿// Menü Knöpfe
 
-000 Lokales Spiel starten
+176 Lokales Spiel starten
 105 Tutorial starten
 001 Netzwerkspiel starten
 002 Netzwerkspiel beitreten
@@ -247,4 +250,4 @@
 160 Gesamt:
 161 Statistik
 
-// 176
+// 177

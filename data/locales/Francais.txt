@@ -1,6 +1,9 @@
+// The font to use for this locale. Has to be in data/fonts/
+000 Ubuntu-R.ttf
+
 ﻿// Interface du Menu Principal
 
-000 Démarrer une partie locale
+176 Démarrer une partie locale
 105 Lancer le Tutoriel
 001 Créer une partie en réseau
 002 Rejoindre une partie
@@ -246,5 +249,5 @@
 160 Total:
 161 Statistiques
 
-// 176
+// 177
 

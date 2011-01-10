@@ -118,9 +118,9 @@ void KeyEdit::draw() const {
     glEnd();
 
     if (pressed_)
-        text::drawScreenText("...", origin + Vector2f((width_+185)/2,1)+Vector2f(1, 1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText("...", origin + Vector2f((width_+185)/2,1)+Vector2f(1, 1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
     else
-        text::drawScreenText(generateName::key(*value_), origin + Vector2f((width_+185)/2,1), font::Ubuntu, 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
+        text::drawScreenText(generateName::key(*value_), origin + Vector2f((width_+185)/2,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
 
     //draw Label
     label_->draw();
