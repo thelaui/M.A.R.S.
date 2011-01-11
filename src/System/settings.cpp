@@ -522,8 +522,8 @@ namespace settings {
                     C_port = sf::String(tmp);
                 }
                 else if (inputLine == "[language]") {
-                    std::string tmp;
-                    iss >> tmp;
+                    std::string tmp(iss.str());
+                    tmp.erase(0, inputLine.size()+1);
                     C_language = sf::String(tmp);
                 }
                 else if (inputLine == "[networkTeamRed]") {

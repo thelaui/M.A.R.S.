@@ -37,8 +37,8 @@ UiWindow* InfoDM::get() {
         instance_->addWidget(new Label(new sf::String("DeathMatch"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Label(locales::getLocale(locales::Info), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::ShortDescriptionDM), Vector2f(10,40), 280, 300, Color3f(1.f, 0.7f, 0.9f)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::InfoDM), Vector2f(10, 80), 280, 300));
+        instance_->addWidget(new TextBox(locales::getLocale(locales::ShortDescriptionDM), Vector2f(10,40), 300, 300, Color3f(1.f, 0.7f, 0.9f)));
+        instance_->addWidget(new TextBox(locales::getLocale(locales::InfoDM), Vector2f(10, 80), 300, 300));
         instance_->addWidget(new Checkbox(locales::getLocale(locales::ShowAgainButton), &settings::C_showInfoDM, Vector2f(10,350), 170));
     }
     return instance_;

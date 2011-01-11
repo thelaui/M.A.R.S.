@@ -50,19 +50,25 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         }
         else if (text_[i] != ' ') {
             word += text_[i];
+            sf::String tmp(line + word);
+            if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
+                if (lastSpace == 0) {
+                    text_.Insert(i-1, '\n');
+                    line = "";
+                    word = text_[i];
+                    ++i;
+                }
+                else {
+                    text_[lastSpace] = '\n';
+                    line = word;
+                    lastSpace = 0;
+                }
+            }
         }
         else {
-            sf::String tmp = line + word;
-            if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) < width_) {
-                lastSpace = i;
-                line += word + " ";
-                word = "";
-            }
-            else {
-                text_[lastSpace] = '\n';
-                line = word + " ";
-                word = "";
-            }
+            lastSpace = i;
+            line += word + " ";
+            word = "";
         }
     }
 
