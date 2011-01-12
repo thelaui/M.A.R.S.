@@ -124,7 +124,7 @@ void TextEdit::textEntered(int keyCode) {
             }
         }
         else if (type_ == PORT_EDIT) {
-             if ((keyCode > 47 && keyCode < 58) && value_->GetSize() < maxLength_) {
+             if (value_->GetSize() < maxLength_) {
                 value_->Insert(cursorPos_, static_cast<char>(keyCode));
                 ++cursorPos_;
                 cursorTimer_ = 0;

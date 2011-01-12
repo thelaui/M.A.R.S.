@@ -412,16 +412,14 @@ namespace settings {
                     C_slowMoKickIn = clamp(value, 0, 10);
                 }
                 else if (inputLine == "[playerIName]") {
-                    std::string value;
-                    iss >> value;
-                    std::string tmp(value, 0, 12);
-                    C_playerIName = sf::String(tmp);
+                    std::string tmp(iss.str());
+                    tmp.erase(0, inputLine.size()+1);
+                    C_playerIName = sf::String(std::string(tmp, 0, 12));
                 }
                 else if (inputLine == "[playerIIName]") {
-                    std::string value;
-                    iss >> value;
-                    std::string tmp(value, 0, 12);
-                    C_playerIIName = sf::String(tmp);
+                    std::string tmp(iss.str());
+                    tmp.erase(0, inputLine.size()+1);
+                    C_playerIIName = sf::String(std::string(tmp, 0, 12));
                 }
                 else if (inputLine == "[playerIKeys]") {
                     int temp;

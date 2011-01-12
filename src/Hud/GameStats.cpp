@@ -66,18 +66,18 @@ void GameStats::draw() const {
 
         glEnable(GL_TEXTURE_2D);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::TopHandle));
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Interface));
         glBegin(GL_QUADS);
             glColor3f(1.0,1.0,1.0);
-            glTexCoord2i(0, 0); glVertex2f(20.f, 0.f);
-            glTexCoord2i(0, 1); glVertex2f(20.f, 24.f);
-            glTexCoord2i(1, 1); glVertex2f(28.f, 24.f);
-            glTexCoord2i(1, 0); glVertex2f(28.f, 0.f);
+            glTexCoord2f(0.8203125f, 0.03125f);  glVertex2f(20.f, 0.f);
+            glTexCoord2f(0.8203125f, 0.078125f); glVertex2f(20.f, 24.f);
+            glTexCoord2f(0.8359375f, 0.078125f); glVertex2f(28.f, 24.f);
+            glTexCoord2f(0.8359375f, 0.03125f);  glVertex2f(28.f, 0.f);
 
-            glTexCoord2i(0, 0); glVertex2f(82.f, 0.f);
-            glTexCoord2i(0, 1); glVertex2f(82.f, 24.f);
-            glTexCoord2i(1, 1); glVertex2f(90.f, 24.f);
-            glTexCoord2i(1, 0); glVertex2f(90.f, 0.f);
+            glTexCoord2f(0.8203125f, 0.03125f);  glVertex2f(82.f, 0.f);
+            glTexCoord2f(0.8203125f, 0.078125f); glVertex2f(82.f, 24.f);
+            glTexCoord2f(0.8359375f, 0.078125f); glVertex2f(90.f, 24.f);
+            glTexCoord2f(0.8359375f, 0.03125f);  glVertex2f(90.f, 0.f);
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);

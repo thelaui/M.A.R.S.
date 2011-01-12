@@ -81,18 +81,16 @@ void ColorPickerWindow::draw() const {
     glEnd();
 
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ColorPicker1));
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Interface));
 
     // draw multicolored stripe
     glColor3f(1.f, 1.f, 1.f);
     glBegin(GL_QUADS);
-        glTexCoord2f(0, 0); glVertex2f(origin.x_+150.f, origin.y_+10.f);
-        glTexCoord2f(0, 1); glVertex2f(origin.x_+150.f, origin.y_+130.f);
-        glTexCoord2f(1, 1); glVertex2f(origin.x_+180.f, origin.y_+130.f);
-        glTexCoord2f(1, 0); glVertex2f(origin.x_+180.f, origin.y_+10.f);
+        glTexCoord2f(0.234375f, 0.390625f);   glVertex2f(origin.x_+150.f, origin.y_+10.f);
+        glTexCoord2f(0.234375f, 0.625f);      glVertex2f(origin.x_+150.f, origin.y_+130.f);
+        glTexCoord2f(0.29296875f, 0.625f);    glVertex2f(origin.x_+180.f, origin.y_+130.f);
+        glTexCoord2f(0.29296875f, 0.390625f); glVertex2f(origin.x_+180.f, origin.y_+10.f);
     glEnd();
-
-    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ColorPicker2));
 
     // draw colored edge
     Color3f tmp(*color_);
@@ -100,28 +98,16 @@ void ColorPickerWindow::draw() const {
     tmp.v(1.f);
     tmp.gl3f();
     glBegin(GL_QUADS);
-        glTexCoord2f(0, 0); glVertex2f(origin.x_+10.f, origin.y_+10.f);
-        glTexCoord2f(0, 1); glVertex2f(origin.x_+10.f, origin.y_+130.f);
-        glTexCoord2f(1, 1); glVertex2f(origin.x_+130.f, origin.y_+130.f);
-        glTexCoord2f(1, 0); glVertex2f(origin.x_+130.f, origin.y_+10.f);
+        glTexCoord2f(0, 0.390625f);      glVertex2f(origin.x_+10.f, origin.y_+10.f);
+        glTexCoord2f(0, 0.625f);         glVertex2f(origin.x_+10.f, origin.y_+130.f);
+        glTexCoord2f(0.234375f, 0.625f); glVertex2f(origin.x_+130.f, origin.y_+130.f);
+        glTexCoord2f(0.234375f, 0.390625f);      glVertex2f(origin.x_+130.f, origin.y_+10.f);
     glEnd();
 
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-
+    // draw color selector
     float hue = color_->h();
     float sat = color_->s();
     float val = color_->v();
-
-    glColor3f(1.f, 1.f, 1.f);
-    glLineWidth(2.f);
-    glBegin(GL_LINES);
-        glVertex2f(origin.x_+148.f, origin.y_+hue/3+10);
-        glVertex2f(origin.x_+182.f, origin.y_+hue/3+10);
-    glEnd();
-
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::ColorPicker3));
 
     tmp = *color_;
     tmp.s(1.f - sat);
@@ -129,14 +115,21 @@ void ColorPickerWindow::draw() const {
     tmp.gl3f();
     Vector2f pickerLocation(origin + Vector2f(10.f + val*120.f, 130.f-sat*120.f));
     glBegin(GL_QUADS);
-        glTexCoord2f(0, 0); glVertex2f(pickerLocation.x_+8.f, pickerLocation.y_+8.f);
-        glTexCoord2f(0, 1); glVertex2f(pickerLocation.x_+8.f, pickerLocation.y_-8.f);
-        glTexCoord2f(1, 1); glVertex2f(pickerLocation.x_-8.f, pickerLocation.y_-8.f);
-        glTexCoord2f(1, 0); glVertex2f(pickerLocation.x_-8.f, pickerLocation.y_+8.f);
+        glTexCoord2f(0.8359375f, 0.06640625f); glVertex2f(pickerLocation.x_+8.f, pickerLocation.y_+8.f);
+        glTexCoord2f(0.8359375f, 0.09765625f); glVertex2f(pickerLocation.x_+8.f, pickerLocation.y_-8.f);
+        glTexCoord2f(0.8671875f, 0.09765625f); glVertex2f(pickerLocation.x_-8.f, pickerLocation.y_-8.f);
+        glTexCoord2f(0.8671875f, 0.06640625f); glVertex2f(pickerLocation.x_-8.f, pickerLocation.y_+8.f);
     glEnd();
 
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
+
+    glColor3f(1.f, 1.f, 1.f);
+    glLineWidth(2.f);
+    glBegin(GL_LINES);
+        glVertex2f(origin.x_+148.f, origin.y_+hue/3+10);
+        glVertex2f(origin.x_+182.f, origin.y_+hue/3+10);
+    glEnd();
 }
 
 void ColorPickerWindow::checkWidgets() {

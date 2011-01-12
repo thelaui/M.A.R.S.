@@ -63,10 +63,10 @@ void Logo::draw() const {
     glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (on_)
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Logo1));
-    else
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Logo1off));
+    float offset(0.f);
+    if (!on_) offset = 350.f/1024.f;
+
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Logo1));
 
     int mid(window::getViewPort().x_/2);
     int height(0);
@@ -74,10 +74,10 @@ void Logo::draw() const {
         height = (window::getViewPort().y_ - 800)*0.3;
     glBegin(GL_QUADS);
         glColor3f(1.0,1.0,1.0);
-        glTexCoord2i(0, 0); glVertex2f(mid-400, 0+height);
-        glTexCoord2i(0, 1); glVertex2f(mid-400, 350+height);
-        glTexCoord2i(1, 1); glVertex2f(mid+400, 350+height);
-        glTexCoord2i(1, 0); glVertex2f(mid+400, 0+height);
+        glTexCoord2f(0, 0 + offset);                   glVertex2f(mid-400, 0+height);
+        glTexCoord2f(0, 0.341796875f + offset);        glVertex2f(mid-400, 350+height);
+        glTexCoord2f(0.78125f, 0.341796875f + offset); glVertex2f(mid+400, 350+height);
+        glTexCoord2f(0.78125f, 0 + offset);            glVertex2f(mid+400, 0+height);
     glEnd();
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);

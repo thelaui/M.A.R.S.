@@ -38,7 +38,7 @@ namespace texture {
             glGenTextures(1, textures_[type]);
             glBindTexture(GL_TEXTURE_2D, *textures_[type]);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.GetWidth(), img.GetHeight(), 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);
-            if (type == WindowOff || type == WindowOn || type == Stars1_large || type == Stars2_large || type == Stars1_medium || type == Stars2_medium) {
+            if (type == Interface || type == Stars1_large || type == Stars2_large || type == Stars1_medium || type == Stars2_medium) {
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
             }
@@ -86,24 +86,15 @@ namespace texture {
                 case Sign1:                    loadTexture_(type, settings::C_dataPath + "/tex/signs/sign1.png");            break;
                 case Sign2:                    loadTexture_(type, settings::C_dataPath + "/tex/signs/sign2.png");            break;
                 case Logo1:                    loadTexture_(type, settings::C_dataPath + "/tex/logos/logo1.png");            break;
-                case Logo1off:                 loadTexture_(type, settings::C_dataPath + "/tex/logos/logo1off.png");         break;
                 case Cannon:                   loadTexture_(type, settings::C_dataPath + "/tex/cannon.png");                 break;
                 case CannonSocket:             loadTexture_(type, settings::C_dataPath + "/tex/cannonSocket.png");           break;
                 case Stars1_large:             loadTexture_(type, settings::C_dataPath + "/tex/background/starfield_1_large.jpg");    break;
                 case Stars1_medium:            loadTexture_(type, settings::C_dataPath + "/tex/background/starfield_1_medium.jpg");   break;
                 case Stars2_large:             loadTexture_(type, settings::C_dataPath + "/tex/background/starfield_2_large.jpg");    break;
                 case Stars2_medium:            loadTexture_(type, settings::C_dataPath + "/tex/background/starfield_2_medium.jpg");   break;
-                case WindowOn:                 loadTexture_(type, settings::C_dataPath + "/tex/interface/windowOn.png");     break;
-                case WindowOff:                loadTexture_(type, settings::C_dataPath + "/tex/interface/windowOff.png");    break;
                 case EnergyBars:               loadTexture_(type, settings::C_dataPath + "/tex/interface/energyBars.png");   break;
-                case LeftHandle:               loadTexture_(type, settings::C_dataPath + "/tex/interface/leftHandle.png");   break;
-                case RightHandle:              loadTexture_(type, settings::C_dataPath + "/tex/interface/rightHandle.png");  break;
-                case BottomHandle:             loadTexture_(type, settings::C_dataPath + "/tex/interface/bottomHandle.png"); break;
-                case TopHandle:                loadTexture_(type, settings::C_dataPath + "/tex/interface/topHandle.png");    break;
                 case Widgets:                  loadTexture_(type, settings::C_dataPath + "/tex/interface/widgets.png");      break;
-                case ColorPicker1:             loadTexture_(type, settings::C_dataPath + "/tex/interface/colorPicker1.png"); break;
-                case ColorPicker2:             loadTexture_(type, settings::C_dataPath + "/tex/interface/colorPicker2.png"); break;
-                case ColorPicker3:             loadTexture_(type, settings::C_dataPath + "/tex/interface/colorPicker3.png"); break;
+                case Interface:                loadTexture_(type, settings::C_dataPath + "/tex/interface/interface.png");    break;
                 case CountDown0:               loadTexture_(type, settings::C_dataPath + "/tex/countdown/0.png");            break;
                 case CountDown1:               loadTexture_(type, settings::C_dataPath + "/tex/countdown/1.png");            break;
                 case CountDown2:               loadTexture_(type, settings::C_dataPath + "/tex/countdown/2.png");            break;

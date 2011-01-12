@@ -99,50 +99,50 @@ void TabStats::draw() const {
 
         glColor3f(1.f, 1.f, 1.f);
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::WindowOn));
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Interface));
 
         glBegin(GL_QUADS);
             // topleft
-            glTexCoord2f(0, 0);                   glVertex2i(topLeft.x_-60, topLeft.y_-60);
-            glTexCoord2f(0, 96.f/200.f);          glVertex2i(topLeft.x_-60, topLeft.y_+36);
-            glTexCoord2f(96.f/200.f, 96.f/200.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
-            glTexCoord2f(96.f/200.f, 0);          glVertex2i(topLeft.x_+36, topLeft.y_-60);
-            // topRight
-            glTexCoord2f(96.f/200.f, 0);          glVertex2i(topLeft.x_-36+width, topLeft.y_-60);
-            glTexCoord2f(96.f/200.f, 96.f/200.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
-            glTexCoord2f(96.f/100.f, 96.f/200.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+36);
-            glTexCoord2f(96.f/100.f, 0);          glVertex2i(topLeft.x_+60+width, topLeft.y_-60);
-            // bottomleft
-            glTexCoord2f(0, 96.f/200.f);          glVertex2i(topLeft.x_-60, topLeft.y_-36+height);
-            glTexCoord2f(0, 96.f/100.f);          glVertex2i(topLeft.x_-60, topLeft.y_+60+height);
-            glTexCoord2f(96.f/200.f, 96.f/100.f); glVertex2i(topLeft.x_+36, topLeft.y_+60+height);
-            glTexCoord2f(96.f/200.f, 96.f/200.f); glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
-            // bottomRight
-            glTexCoord2f(96.f/200.f, 96.f/200.f); glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
-            glTexCoord2f(96.f/200.f, 96.f/100.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+60+height);
-            glTexCoord2f(96.f/100.f, 96.f/100.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+60+height);
-            glTexCoord2f(96.f/100.f, 96.f/200.f); glVertex2i(topLeft.x_+60+width, topLeft.y_-36+height);
+        glTexCoord2f(0, 0);                   glVertex2i(topLeft.x_-60, topLeft.y_-60);
+        glTexCoord2f(0, 96.f/512.f);          glVertex2i(topLeft.x_-60, topLeft.y_+36);
+        glTexCoord2f(96.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
+        glTexCoord2f(96.f/512.f, 0);          glVertex2i(topLeft.x_+36, topLeft.y_-60);
+        // topRight
+        glTexCoord2f(96.f/512.f, 0);          glVertex2i(topLeft.x_-36+width, topLeft.y_-60);
+        glTexCoord2f(96.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
+        glTexCoord2f(96.f/256.f, 96.f/512.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+36);
+        glTexCoord2f(96.f/256.f, 0);          glVertex2i(topLeft.x_+60+width, topLeft.y_-60);
+        // bottomleft
+        glTexCoord2f(0, 96.f/512.f);          glVertex2i(topLeft.x_-60, topLeft.y_-36+height);
+        glTexCoord2f(0, 96.f/256.f);          glVertex2i(topLeft.x_-60, topLeft.y_+60+height);
+        glTexCoord2f(96.f/512.f, 96.f/256.f); glVertex2i(topLeft.x_+36, topLeft.y_+60+height);
+        glTexCoord2f(96.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
+        // bottomRight
+        glTexCoord2f(96.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
+        glTexCoord2f(96.f/512.f, 96.f/256.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+60+height);
+        glTexCoord2f(96.f/256.f, 96.f/256.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+60+height);
+        glTexCoord2f(96.f/256.f, 96.f/512.f); glVertex2i(topLeft.x_+60+width, topLeft.y_-36+height);
 
-            // top
-            glTexCoord2f(96.f/100.f, 0);          glVertex2i(topLeft.x_+36, topLeft.y_-60);
-            glTexCoord2f(96.f/100.f, 96.f/200.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
-            glTexCoord2f(1.f, 96.f/200.f);        glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
-            glTexCoord2f(1.f, 0);                 glVertex2i(topLeft.x_-36+width, topLeft.y_-60);
-            // right
-            glTexCoord2f(96.f/200.f, 96.f/100.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
-            glTexCoord2f(96.f/200.f, 1.f);        glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
-            glTexCoord2f(96.f/100.f, 1.f);        glVertex2i(topLeft.x_+60+width, topLeft.y_-36+height);
-            glTexCoord2f(96.f/100.f, 96.f/100.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+36);
-            // left
-            glTexCoord2f(0, 96.f/100.f);          glVertex2i(topLeft.x_-60, topLeft.y_+36);
-            glTexCoord2f(0, 1.f);                 glVertex2i(topLeft.x_-60, topLeft.y_-36+height);
-            glTexCoord2f(96.f/200.f, 1.f);        glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
-            glTexCoord2f(96.f/200.f, 96.f/100.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
-            // bottom
-            glTexCoord2f(96.f/100.f, 96.f/200.f); glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
-            glTexCoord2f(96.f/100.f, 96.f/100.f); glVertex2i(topLeft.x_+36, topLeft.y_+60+height);
-            glTexCoord2f(1.f, 96.f/100.f);        glVertex2i(topLeft.x_-36+width, topLeft.y_+60+height);
-            glTexCoord2f(1.f, 96.f/200.f);        glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
+        // top
+        glTexCoord2f(193.f/512.f, 0);          glVertex2i(topLeft.x_+36, topLeft.y_-60);
+        glTexCoord2f(193.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
+        glTexCoord2f(199.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
+        glTexCoord2f(199.f/512.f, 0);          glVertex2i(topLeft.x_-36+width, topLeft.y_-60);
+        // right
+        glTexCoord2f(96.f/512.f, 193.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+36);
+        glTexCoord2f(96.f/512.f, 199.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
+        glTexCoord2f(96.f/256.f, 199.f/512.f); glVertex2i(topLeft.x_+60+width, topLeft.y_-36+height);
+        glTexCoord2f(96.f/256.f, 193.f/512.f); glVertex2i(topLeft.x_+60+width, topLeft.y_+36);
+        // left
+        glTexCoord2f(0, 193.f/512.f);          glVertex2i(topLeft.x_-60, topLeft.y_+36);
+        glTexCoord2f(0, 199.f/512.f);          glVertex2i(topLeft.x_-60, topLeft.y_-36+height);
+        glTexCoord2f(96.f/512.f, 199.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
+        glTexCoord2f(96.f/512.f, 193.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_+36);
+        // bottom
+        glTexCoord2f(193.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_+36, topLeft.y_-36+height);
+        glTexCoord2f(193.f/512.f, 96.f/256.f); glVertex2i(topLeft.x_+36, topLeft.y_+60+height);
+        glTexCoord2f(199.f/512.f, 96.f/256.f); glVertex2i(topLeft.x_-36+width, topLeft.y_+60+height);
+        glTexCoord2f(199.f/512.f, 96.f/512.f); glVertex2i(topLeft.x_-36+width, topLeft.y_-36+height);
         glEnd();
 
 

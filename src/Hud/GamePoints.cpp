@@ -78,18 +78,18 @@ void GamePoints::draw() const {
 
         glEnable(GL_TEXTURE_2D);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::BottomHandle));
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Interface));
         glBegin(GL_QUADS);
             glColor3f(1.0,1.0,1.0);
-            glTexCoord2i(0, 0); glVertex2f(midPoint-31.f, viewPort.y_-35.f-top);
-            glTexCoord2i(0, 1); glVertex2f(midPoint-31.f, viewPort.y_-top+15.f);
-            glTexCoord2i(1, 1); glVertex2f(midPoint-11.f, viewPort.y_-top+15.f);
-            glTexCoord2i(1, 0); glVertex2f(midPoint-11.f, viewPort.y_-35.f-top);
+            glTexCoord2f(0.78125f, 0.f);           glVertex2f(midPoint-31.f, viewPort.y_-35.f-top);
+            glTexCoord2f(0.78125f, 0.09765625f);   glVertex2f(midPoint-31.f, viewPort.y_-top+15.f);
+            glTexCoord2f(0.8203125f, 0.09765625f); glVertex2f(midPoint-11.f, viewPort.y_-top+15.f);
+            glTexCoord2f(0.8203125f, 0.f);         glVertex2f(midPoint-11.f, viewPort.y_-35.f-top);
 
-            glTexCoord2i(0, 0); glVertex2f(midPoint+11.f, viewPort.y_-35.f-top);
-            glTexCoord2i(0, 1); glVertex2f(midPoint+11.f, viewPort.y_-top+15.f);
-            glTexCoord2i(1, 1); glVertex2f(midPoint+31.f, viewPort.y_-top+15.f);
-            glTexCoord2i(1, 0); glVertex2f(midPoint+31.f, viewPort.y_-35.f-top);
+            glTexCoord2f(0.78125f, 0.f);           glVertex2f(midPoint+11.f, viewPort.y_-35.f-top);
+            glTexCoord2f(0.78125f, 0.09765625f);   glVertex2f(midPoint+11.f, viewPort.y_-top+15.f);
+            glTexCoord2f(0.8203125f, 0.09765625f); glVertex2f(midPoint+31.f, viewPort.y_-top+15.f);
+            glTexCoord2f(0.8203125f, 0.f);         glVertex2f(midPoint+31.f, viewPort.y_-35.f-top);
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);

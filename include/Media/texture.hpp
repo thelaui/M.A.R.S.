@@ -31,10 +31,9 @@ namespace texture {
     /// All different textures.
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6, Planet7, Planet8, Planet9, Planet10,
                       Planet11, Planet12, Planet13, Sun1, SunHeat,Ice, Hole1, Ball, Particles, PowerUps, Ships, Weapons, MotherShip,
-                      MotherShipPlayerLayer, Sign1, Sign2, Logo1, Logo1off, Cannon, CannonSocket, Stars1_large,
-                      Stars1_medium, Stars2_large, Stars2_medium, WindowOn, WindowOff, EnergyBars, LeftHandle,
-                      RightHandle, BottomHandle, TopHandle, Widgets, CountDown4, CountDown3, CountDown2, CountDown1,
-                      CountDown0, ShockWave, ColorPicker1, ColorPicker2, ColorPicker3,
+                      MotherShipPlayerLayer, Sign1, Sign2, Logo1, Cannon, CannonSocket, Stars1_large,
+                      Stars1_medium, Stars2_large, Stars2_medium, EnergyBars, Widgets, CountDown4, CountDown3,
+                      CountDown2, CountDown1, CountDown0, ShockWave, Interface,
                       COUNT ///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 
