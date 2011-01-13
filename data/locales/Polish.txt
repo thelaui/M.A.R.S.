@@ -65,6 +65,7 @@
 036 Klatki Na Sekundę
 152 Język
 153 Klawisz Zrzutu Ekranu
+054 File Format for Screenshots
 037 Liczba Cząstek
 038 Liczba Cząstek
 039 Długość Życia Cząstki
@@ -102,9 +103,6 @@
 051 Pojazd
 052 Kolor Gracza
 053 Kolor Drużyny
-054 ####
-055 Naciśnij Klawisz, Kiedy Kursor Myszki Jest Nad Polem!
-056 Wprowadź Tekst, Kiedy Kursor Myszki Jest Nad Polem!
 
 // about
 
@@ -252,5 +250,5 @@
 160 W sumie:
 161 Statystyki
 
-// 177
+// 177 (055, 056)
 

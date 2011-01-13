@@ -69,6 +69,7 @@ namespace settings {
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
     std::string  C_configPath =             "";
     std::string  C_dataPath =               "";
+    std::string  C_screenShotFormat =       "jpg";
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
@@ -170,6 +171,7 @@ namespace settings {
             outStream << "[resolutionY] "           << C_resY << std::endl;
             outStream << "[colorDepth] "            << C_colorDepth << std::endl;
             outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
+            outStream << "[screenShotFormat] "      << C_screenShotFormat << std::endl;
 
             outStream.close();
 
@@ -606,6 +608,9 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_screenShotKey = (sf::Key::Code)value;
+                }
+                else if (inputLine == "[screenShotFormat]") {
+                    iss >> C_screenShotFormat;
                 }
                 else
                     std::cout << inputLine << " is a bad option in " << C_configPath << "mars.cfg!\n";

@@ -167,8 +167,11 @@ void ComboBox::draw() const {
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
+    float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
+    Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
+
     text::drawFooText();
-    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), 12.f, TEXT_ALIGN_LEFT, Color3f(0.7, 0.7, 0.7));
+    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), 12.f, TEXT_ALIGN_LEFT, color);
 
     // draw Label
     label_->draw();

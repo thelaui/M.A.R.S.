@@ -62,6 +62,9 @@
 034 Chemins de l'IA
 035 Afficher Informations du jeu
 036 Images par seconde
+152 Language
+153 Hotkey for Screenshots
+054 File Format for Screenshots
 037 Compteur de particules
 038 Compteur de particules
 039 Durée de vie des particules
@@ -71,9 +74,9 @@
 163 Effets Shaders
 164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
 
-151 Haute résolution
-152 Basse résolution
-153 Désactivé
+151 High Starfield Resolution
+173 Resolution
+174 Color Depth
 
 // gameplay options
 
@@ -99,9 +102,6 @@
 051 Vaisseau
 052 Player Color
 053 Team Color
-054 #####
-055 Appuyez sur une touche !
-056 Entrez un texte !
 
 // about
 
@@ -249,5 +249,5 @@
 160 Total:
 161 Statistiques
 
-// 177
+// 177 (055, 056)
 

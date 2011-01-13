@@ -64,6 +64,7 @@
 036 Bilder pro Sekunde
 152 Sprache
 153 Taste für Screenshots
+054 Dateiformat für Screenshots
 037 Partikelzahl
 038 Partikelzahl
 039 Partikellebensdauer
@@ -101,9 +102,6 @@
 051 Schiff
 052 Spielerfarbe
 053 Teamfarbe
-054 #######
-055 Press key while hovering!
-056 Enter text while hovering!
 
 // Über
 
@@ -250,4 +248,4 @@
 160 Gesamt:
 161 Statistik
 
-// 177
+// 177 (055, 056)

@@ -65,6 +65,7 @@
 036 Frames per Second
 152 Language
 153 Hotkey for Screenshots
+054 File Format for Screenshots
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
@@ -102,9 +103,6 @@
 051 Ship
 052 Player Color
 053 Team Color
-054 ####
-055 Press key while hovering!
-056 Enter text while hovering!
 
 // about
 
@@ -252,5 +250,5 @@
 160 Total:
 161 Statistics
 
-// 177
+// 177 (055, 056)
 

@@ -65,6 +65,7 @@
 036 Bilder per sekund
 152 Språk
 153 Kortkommando för skärmdump
+054 File Format for Screenshots
 037 Antal partiklar
 038 Antal partiklar
 039 Partiklarnas livslängd
@@ -102,9 +103,6 @@
 051 Skepp
 052 Player Color
 053 Team Color
-054 ####
-055 Tryck på en tangent medan du svävar!
-056 Skriv text medan du svävar!
 
 // about
 
@@ -252,5 +250,5 @@
 160 Totalt:
 161 Statistik
 
-// 177
+// 177 (055, 056)
 

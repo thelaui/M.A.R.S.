@@ -69,6 +69,9 @@
 034 Caminhos da IA 
 035 Mostrar Informações do Jogo
 036 Quadros por Segundo
+152 Language
+153 Hotkey for Screenshots
+054 File Format for Screenshots
 037 Contagem de Partículas
 038 Contagem de Partículas
 039 Tempo de Vida das Partículas
@@ -78,9 +81,9 @@
 163 Efeitos de Sombra
 164 Infelizmente a sua máquina não suporta os efeitos de Sombra!
 
-151 Alta Resolução
-152 Baixa Resolução
-153 Desligado 
+151 High Starfield Resolution
+173 Resolution
+174 Color Depth
 
 // gameplay options
 
@@ -105,11 +108,7 @@
 175 Special
 051 Nave
 052 Player Color
-053 Team Color
-054 ####
-055 Presione uma tecla enquanto Segura o botão! 
-056 Digite um texto enquanto Segura o botão!   
-
+053 Team Color  
 
 // about
 
@@ -257,5 +256,5 @@
 160 Total:
 161 Estatísticas
 
-// 177
+// 177 (055, 056)
 

@@ -20,10 +20,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/UiElement.hpp"
 # include "Interface/Label.hpp"
+# include "Media/text.hpp"
 
 class Button: public UiElement {
     public:
-        Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height);
+        Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align = TEXT_ALIGN_CENTER);
         ~Button ();
 
         void mouseMoved(Vector2f const& position);

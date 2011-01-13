@@ -32,7 +32,7 @@ namespace locales {
                      BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
                      ParticleCountSlider, ParticleLifetime, GameSettings, Fullscreen, VerticalSynchronisation, MusicVolume,
                      SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Weapon, ShipName, PlayerColor,
-                     TeamColor, SPACESPACE, KeyEditHover, TextEditHover, AboutText, LicenseText, QuitText,
+                     TeamColor, ScreenShotFormat, SSSSSSSSSSSS, SSSSSSSS, AboutText, LicenseText, QuitText,
                      QuitCurrentGameText, StartNetworkText, JoinNetworkText, HideMenuText, Add, BackSlash, Comma, Dash,
                      Delete, Divide, Down, End, Equal, Home, Insert, LeftAlt, LeftBracket, LeftControl, Left, LeftShift,
                      LeftSuper, Menu, Multiply, PageDown, PageUp, Pause, Period, Quote, RightAlt, RightBracket,

@@ -65,6 +65,7 @@
 036 Frame per Secondo
 152 Lingua
 153 Scorciatoia Per Lo Screenshots
+054 File Format for Screenshots
 037 Contatore Particolari
 038 Contatore Particolari
 039 Tempo Di Svanimento Particolari
@@ -102,9 +103,6 @@
 051 Navicella
 052 Player Color
 053 Team Color
-054 #####
-055 Premi il tasto mentre passi sopra con il cursore!
-056 Scrivi mentre passi sopra con il cursore!
 
 // about
 
@@ -252,5 +250,5 @@
 160 Totale:
 161 Statistiche
 
-// 177
+// 177 (055, 056)
 

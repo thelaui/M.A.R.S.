@@ -185,10 +185,13 @@ void TextEdit::draw() const {
         glVertex2f(origin.x_+185, height_ + origin.y_-2);
     glEnd();
 
+    float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
+    Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
+
     if (pressed_)
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7, 0.7, 0.7));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), 12.f, TEXT_ALIGN_CENTER, color);
     else
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.5, 0.5, 0.5));
+        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), 12.f, TEXT_ALIGN_CENTER, color);
 
     // draw cursor
     if (pressed_ && cursorTimer_ < 30) {

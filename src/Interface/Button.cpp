@@ -24,11 +24,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height):
+Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align):
     UiElement(topLeft, width, height),
     key_(key) {
 
-    label_ = new Label(text, TEXT_ALIGN_CENTER, Vector2f(width*0.5f, 2));
+    switch (align) {
+        case TEXT_ALIGN_LEFT:  label_ = new Label(text, align, Vector2f(4, 2));          break;
+        case TEXT_ALIGN_RIGHT: label_ = new Label(text, align, Vector2f(width-4, 2));    break;
+        default:               label_ = new Label(text, align, Vector2f(width*0.5f, 2));
+    }
+
     label_->setParent(this);
 }
 

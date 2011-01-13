@@ -63,6 +63,7 @@
 036 Cuadros Por Segundo (FPS)
 152 Language
 153 Hotkey for Screenshots
+054 File Format for Screenshots
 037 Conteo de Partículas
 038 Conteo de Partículas
 039 Duración de Partículas
@@ -100,9 +101,6 @@
 051 Nave
 052 Player Color
 053 Team Color
-054 ####
-055 ¡Pulsa la tecla mientras pasas por encima!
-056 ¡Introduce el texto mientras pasas por encima!
 
 // Sobre
 
@@ -251,4 +249,4 @@
 160 Total:
 161 Estadísticas
 
-//177
+// 177 (055, 056)

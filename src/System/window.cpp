@@ -68,7 +68,7 @@ namespace window {
             timeinfo = localtime(&rawtime);
 
             std::stringstream filename;
-            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << ".jpg";
+            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
 
             # ifdef __linux__
                 mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
@@ -124,7 +124,7 @@ namespace window {
                 else if (event.Type == sf::Event::Closed)
                     close();
                 else if (event.Type == sf::Event::KeyPressed) {
-                    if (event.Key.Code == settings::C_screenShotKey)
+                    if (event.Key.Code == settings::C_screenShotKey && !menus::keyboardFixed())
                         screenShot();
                     else if (!menus::visible())
                         controllers::singleKeyEvent(event.Key.Code);

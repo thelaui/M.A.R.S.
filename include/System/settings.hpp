@@ -75,6 +75,7 @@ namespace settings {
     extern sf::Key::Code  C_screenShotKey;
     extern std::string    C_configPath;
     extern std::string    C_dataPath;
+    extern std::string    C_screenShotFormat;
     ///@}
 
     /// \name Player settings

@@ -45,6 +45,7 @@ namespace menus {
     void clearFocus();
     void fixKeyboardOn(UiElement* target);
     void unFixKeyboard();
+    bool keyboardFixed();
 
     bool visible();
 }
