@@ -27,7 +27,7 @@ class Flubba: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Flubba(Ship* parent):
-              Weapon(parent, sf::String("FLUBBA")) {};
+              Weapon(Weapon::wFlubba, parent, sf::String("FLUBBA")) {};
 
         /// Spawns some particles.
         void fire() const;

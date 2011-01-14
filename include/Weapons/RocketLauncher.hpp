@@ -27,7 +27,7 @@ class RocketLauncher: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         RocketLauncher(Ship* parent):
-              Weapon(parent, "ROCK'n'LOL") {};
+              Weapon(Weapon::wRocketLauncher, parent, "ROCK'n'LOL") {};
 
         /// Spawns some particles.
         void fire() const;

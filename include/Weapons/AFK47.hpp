@@ -27,7 +27,7 @@ class AFK47: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         AFK47(Ship* parent):
-              Weapon(parent, sf::String("AFK-47")) {};
+              Weapon(Weapon::wAFK47, parent, sf::String("AFK-47")) {};
 
         /// Spawns some particles.
         void fire() const;

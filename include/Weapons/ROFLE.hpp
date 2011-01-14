@@ -27,7 +27,7 @@ class ROFLE: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         ROFLE(Ship* parent):
-              Weapon(parent, sf::String("ROFLE")) {};
+              Weapon(Weapon::wROFLE, parent, sf::String("ROFLE")) {};
 
         /// Spawns some particles.
         void fire() const;

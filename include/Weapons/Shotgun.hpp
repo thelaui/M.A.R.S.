@@ -27,7 +27,7 @@ class Shotgun: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Shotgun(Ship* parent):
-              Weapon(parent, sf::String("SHOTGUN")) {};
+              Weapon(Weapon::wShotgun, parent, sf::String("SHOTGUN")) {};
 
         /// Spawns some particles.
         void fire() const;

@@ -176,7 +176,7 @@ void BotController::protectZone() {
 void BotController::switchToWeapon() {
     slaveFire();
     slaveLeft();
-    if(ship()->currentWeapon_->getName() == "FLUBBA")
+    if(ship()->currentWeapon_->getType() == Weapon::wFlubba)
         slaveLeft();
     slaveFire();
     actions_[BOT_CHANGE_WEAPON] = 0;

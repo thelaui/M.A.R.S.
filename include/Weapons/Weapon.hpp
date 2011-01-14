@@ -27,10 +27,13 @@ class Ship;
 
 class Weapon {
     public:
+        enum WeaponType {wAFK47, wBurner, wFist, wFlubba, wShotgun, wRocketLauncher, wROFLE, wH2OMG};
+
         /// Ctor which constructs the base Weapon.
-        Weapon(Ship* parent, sf::String name):
+        Weapon(WeaponType type, Ship* parent, sf::String name):
                parent_(parent),
                timer_(0),
+               type_(type),
                name_(name) {}
 
         /// This function is called whenever the weapon is fired.
@@ -50,12 +53,16 @@ class Weapon {
         /// Returns the name of the Weapon.
         sf::String const& getName() const {return name_;}
 
+        /// Returns the type of the Weapon.
+        WeaponType getType() const {return type_;}
+
     protected:
         Ship* parent_;
         mutable float timer_;
 
     private:
         sf::String name_;
+        WeaponType type_;
 };
 
 # endif // WEAPON_HPP_INCLUDED
