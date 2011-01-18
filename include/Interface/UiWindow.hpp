@@ -49,7 +49,7 @@ class UiWindow: public UiElement {
         bool isTopMost() const {return topMost_;}
         bool isTabable() const {return false;}
 
-        virtual Vector2f getTopLeft();
+        virtual Vector2f getTopLeft() const;
 
     protected:
         std::vector<UiElement*> widgets_;

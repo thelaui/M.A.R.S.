@@ -1,4 +1,4 @@
-/* ColorPicker.cpp
+/* LanguageButton.cpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,65 +15,58 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Interface/ColorPicker.hpp"
+# include "Interface/LanguageButton.hpp"
 
 # include "System/settings.hpp"
 # include "System/window.hpp"
 # include "Media/text.hpp"
+# include "Menu/ChooseLanguage.hpp"
 # include "Media/texture.hpp"
 # include "Locales/locales.hpp"
 # include "Media/sound.hpp"
 # include "Menu/menus.hpp"
-# include "Interface/ColorPickerWindow.hpp"
-# include "Interface/Button.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
 
-ColorPicker::ColorPicker (sf::String* text, Color3f* value, Vector2f const& topLeft, int width, int labelWidth):
+LanguageButton::LanguageButton (sf::String* text, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 16),
-    colorWindow_(NULL),
-    labelWidth_(labelWidth),
-    currentValue_(value),
-    opened_(false) {
+    labelWidth_(labelWidth) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
-
-    colorWindow_ = new ColorPickerWindow(this, currentValue_);
 }
 
-ColorPicker::~ColorPicker () {
+LanguageButton::~LanguageButton () {
     delete label_;
-    delete colorWindow_;
 }
 
-void ColorPicker::mouseMoved(Vector2f const& position) {
+void LanguageButton::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
 }
 
-void ColorPicker::mouseLeft(bool down) {
+void LanguageButton::mouseLeft(bool down) {
     UiElement::mouseLeft(hovered_ && down);
     if (!pressed_ && hovered_ && focused_) {
         hovered_ = false;
         sound::playSound(sound::Click);
-        menus::showWindow(colorWindow_);
+        menus::showWindow(ChooseLanguage::get());
     }
 }
 
-void ColorPicker::keyEvent(bool down, sf::Key::Code keyCode) {
+void LanguageButton::keyEvent(bool down, sf::Key::Code keyCode) {
     if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
         pressed_ = down;
         if (!pressed_) {
             hovered_ = false;
             sound::playSound(sound::Click);
-            menus::showWindow(colorWindow_);
+            menus::showWindow(ChooseLanguage::get());
         }
     }
 }
 
-void ColorPicker::draw() const {
+void LanguageButton::draw() const {
     UiElement::draw();
 
     Vector2f origin = getTopLeft();
@@ -82,11 +75,19 @@ void ColorPicker::draw() const {
 
     glBegin(GL_QUADS);
         // dark background
-        currentValue_->gl3f();
+        if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
+        else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(labelWidth_+origin.x_, origin.y_);
+        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
+        glColor4f(0.0,0.0,0.0,0.8);
+        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, origin.y_);
+        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, origin.y_);
+        if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
+        else               glColor4f(0.0,0.0,0.0,0.8);
         glVertex2f(width_ + origin.x_, origin.y_);
         glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
@@ -143,18 +144,38 @@ void ColorPicker::draw() const {
         glVertex2f(origin.x_+width_,origin.y_+height_);
     glEnd();
 
+    glEnable(GL_TEXTURE_2D);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Widgets));
+
+    int x(3), y(3);
+    glColor3f(1.f, 1.f, 1.f);
+    glBegin(GL_QUADS);
+        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(origin.x_-18.f+width_, origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(origin.x_-2.f+width_, origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(origin.x_-2.f+width_, origin.y_-0.f);
+        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(origin.x_-18.f+width_, origin.y_-0.f);
+    glEnd();
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
+    Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
+
     text::drawFooText();
+    text::drawScreenText(locales::getCurrentLocale().name_, origin + Vector2f((width_+labelWidth_)*0.5f,1), 12.f, TEXT_ALIGN_CENTER, color);
+
     // draw Label
     label_->draw();
 }
 
-void ColorPicker::setFocus (UiElement* toBeFocused, bool isPrevious) {
+void LanguageButton::setFocus (UiElement* toBeFocused, bool isPrevious) {
     UiElement::setFocus(this, isPrevious);
     label_->setFocus(this, isPrevious);
 }
 
-void ColorPicker::clearFocus() {
+void LanguageButton::clearFocus() {
     UiElement::clearFocus();
     label_->clearFocus();
 }
-

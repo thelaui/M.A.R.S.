@@ -54,6 +54,7 @@ target_link_libraries(
 		${SFML_LIBRARIES}
 		${OPENGL_LIBRARIES}
 		${XRANDR_LIBRARY}
+		${FRIBIDI_LIBRARY}
 )
 
 #####################################################################

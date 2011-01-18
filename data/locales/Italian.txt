@@ -1,9 +1,6 @@
-// The font to use for this locale. Has to be in data/fonts/
-000 Ubuntu-R.ttf
-
 ﻿// menu buttons
 
-176 Inizia Una Partita In Locale
+000 Inizia Una Partita In Locale
 105 Inizia Il Tutorial
 001 Inizia Una Partita In Rete
 002 Gioca In Una Partita In Rete
@@ -250,5 +247,5 @@
 160 Totale:
 161 Statistiche
 
-// 177 (055, 056)
+// 176 (055, 056)
 

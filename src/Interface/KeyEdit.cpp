@@ -73,7 +73,7 @@ void KeyEdit::keyEvent(bool down, sf::Key::Code keyCode) {
 
 void KeyEdit::draw() const {
     UiElement::draw();
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
 
     // draw Button
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

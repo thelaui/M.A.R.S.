@@ -28,20 +28,29 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 UiWindow* ChooseLanguage::instance_(NULL);
 bool ChooseLanguage::kCancel_(false);
-std::map<sf::String, bool*> ChooseLanguage::languageKeyMap_;
+std::map<int, bool*> ChooseLanguage::languageKeyMap_;
 
 UiWindow* ChooseLanguage::get() {
     if (instance_ == NULL) {
-        std::vector<sf::String> languages = locales::getLanguages();
+        std::vector<Locale>const& localeList = locales::getLocales();
 
-        instance_ = new ChooseLanguage(220, 100 + 30*languages.size());
+        instance_ = new ChooseLanguage(220, 100 + 24*localeList.size());
+
+        std::map   <sf::String, int> sortedLocales;
+        for (int i=0; i<localeList.size(); ++i)
+            sortedLocales.insert(std::make_pair(localeList[i].name_, i));
 
         int top(50);
-        for (std::vector<sf::String>::iterator it = languages.begin(); it != languages.end(); ++it) {
+        for (std::map<sf::String, int>::iterator it=sortedLocales.begin(); it!=sortedLocales.end(); ++it) {
             bool* key = new bool(false);
-            languageKeyMap_.insert(std::make_pair(*it, key));
-            instance_->addWidget(new Button(new sf::String(*it), key, Vector2f(10, top), 200, 20));
-            top += 30;
+            languageKeyMap_.insert(std::make_pair(it->second, key));
+            Button* newButton(new Button(new sf::String(it->first), key, Vector2f(10, top), 200, 20, TEXT_ALIGN_CENTER, font::getFont(it->second)));
+            instance_->addWidget(newButton);
+            if (it->first == locales::getCurrentLocale().name_) {
+                instance_->clearFocus();
+                newButton->setFocus(newButton, false);
+            }
+            top += 24;
         }
 
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), &kCancel_, Vector2f(140,top+20), 70, 20));
@@ -54,14 +63,14 @@ UiWindow* ChooseLanguage::get() {
 void ChooseLanguage::checkWidgets() {
     if (kCancel_) {
         kCancel_ = false;
-        settings::save();
         menus::hideWindow();
     }
-    for (std::map<sf::String, bool*>::iterator it = languageKeyMap_.begin(); it != languageKeyMap_.end(); ++it)
+    for (std::map<int, bool*>::iterator it = languageKeyMap_.begin(); it != languageKeyMap_.end(); ++it)
         if (*(it->second)) {
             *(it->second) = false;
-            settings::C_language = it->first;
+            settings::C_languageID = it->first;
             locales::load();
+            menus::reload();
             settings::save();
             menus::hideWindow();
             break;

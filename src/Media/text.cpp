@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 
 # include "System/window.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <SFML/OpenGL.hpp>
@@ -26,9 +27,9 @@ namespace text {
 
     namespace {
         void drawText(sf::String const& text, Vector2f const& location,
-                      float size, int align, Color3f const& color) {
+                      float size, int align, Color3f const& color, sf::Font* font) {
 
-            sf::Text drawString(text, font::getFont(), size);
+            sf::Text drawString(text, font ? *font : *font::getFont(), size);
             drawString.SetColor(color.sfColor());
 
             drawString.SetBlendMode(sf::Blend::Add);
@@ -38,7 +39,7 @@ namespace text {
 
             if (align == TEXT_ALIGN_CENTER)
                 loc.x_ -= static_cast<int>(boundingBox.Width*0.5f);
-            else if (align == TEXT_ALIGN_RIGHT)
+            else if ((align == TEXT_ALIGN_RIGHT && locales::getCurrentLocale().LTR_) || (align == TEXT_ALIGN_LEFT && !locales::getCurrentLocale().LTR_))
                 loc.x_ -= static_cast<int>(boundingBox.Width);
 
             // prevent text from being outside of screen
@@ -52,34 +53,33 @@ namespace text {
 
             window::draw(drawString);
         }
-
     }
 
     void drawSpaceText(sf::String const& text, Vector2f const& location,
-                       float size, int align, Color3f const& color) {
+                       float size, int align, Color3f const& color, sf::Font* font) {
 
-        drawScreenText(text, window::coordToPixel(location), size, align, color);
+        drawScreenText(text, window::coordToPixel(location), size, align, color, font);
     }
 
     void drawMobileSpaceText(sf::String const& text, Vector2f const& location,
-                             float size, int align, Color3f const& color) {
+                             float size, int align, Color3f const& color, sf::Font* font) {
 
-        drawText(text, window::coordToPixel(location), size, align, color);
+        drawText(text, window::coordToPixel(location), size, align, color, font);
 
     }
 
     void drawScreenText(sf::String const& text, Vector2f const& location,
-                       float size, int align, Color3f const& color) {
+                       float size, int align, Color3f const& color, sf::Font* font) {
 
-        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), size, align, color);
+        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), size, align, color, font);
     }
 
     void drawFooText() {
         drawScreenText(sf::String("."), Vector2f(0.f, 0.f), 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
-    float getCharacterPos(sf::String const& text, int pos, float size, int align) {
-        sf::Text drawString(text, font::getFont(), size);
+    float getCharacterPos(sf::String const& text, int pos, float size, int align, sf::Font* font) {
+        sf::Text drawString(text, font ? *font : *font::getFont(), size);
         float result = drawString.GetCharacterPos(pos).x;
 
         switch (align) {

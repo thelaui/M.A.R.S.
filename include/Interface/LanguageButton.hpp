@@ -1,4 +1,4 @@
-/* Button.hpp
+/* LanguageButton.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,17 +15,18 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef BUTTON_HPP_INCLUDED
-# define BUTTON_HPP_INCLUDED
+# ifndef LANGUAGEBUTTON_HPP_INCLUDED
+# define LANGUAGEBUTTON_HPP_INCLUDED
 
 # include "Interface/UiElement.hpp"
 # include "Interface/Label.hpp"
-# include "Media/text.hpp"
 
-class Button: public UiElement {
+class UiWindow;
+
+class LanguageButton: public UiElement {
     public:
-        Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align = TEXT_ALIGN_CENTER, sf::Font* font = NULL);
-        ~Button ();
+        LanguageButton (sf::String* text, Vector2f const& topLeft, int width, int labelWidth=185);
+        ~LanguageButton ();
 
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
@@ -37,8 +38,12 @@ class Button: public UiElement {
         void clearFocus();
 
     private:
-        bool* key_;
+        sf::String* currentValue_;
         Label* label_;
+        int labelWidth_;
+        bool opened_;
 };
 
-# endif
+# endif // LANGUAGEBUTTON_HPP_INCLUDED
+
+

@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/RadioGroup.hpp"
 # include "Interface/RadioButton.hpp"
 # include "Interface/ComboBox.hpp"
+# include "Interface/LanguageButton.hpp"
 # include "Interface/ColorPicker.hpp"
 # include "System/window.hpp"
 # include "System/settings.hpp"
@@ -80,7 +81,6 @@ bool OptionsMenu::vsync_(false);
 bool OptionsMenu::shaders_(false);
 sf::String OptionsMenu::resolution_("");
 sf::String OptionsMenu::colorDepth_("");
-sf::String OptionsMenu::language_("");
 sf::String OptionsMenu::format_("");
 int  OptionsMenu::soundVolume_(0);
 int  OptionsMenu::musicVolume_(0);
@@ -108,7 +108,7 @@ UiWindow* OptionsMenu::get() {
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), &settings::C_drawZones, Vector2f(210,70), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), &settings::C_drawAIPath, Vector2f(210,90), 150));
-        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::Language), &language_, locales::getLanguages(), Vector2f(10,130), 350, 185));
+        tabInterface->addWidget(new LanguageButton(locales::getLocale(locales::Language), Vector2f(10,130), 350, 185));
         std::vector<sf::String> fileFormats;
             fileFormats.push_back("BITMAP (*.bmp)");
             fileFormats.push_back("GIF (*.gif)");
@@ -216,41 +216,6 @@ void OptionsMenu::checkWidgets() {
             window::create();
         }
 
-        if (language_ != settings::C_language) {
-            settings::C_language = language_;
-
-            About::reset();
-            Connect::reset();
-            InfoCK::reset();
-            InfoDM::reset();
-            InfoHide::reset();
-            InfoSB::reset();
-            InfoTDM::reset();
-            TutWindow01::reset();
-            TutWindow02::reset();
-            TutWindow03::reset();
-            TutWindow04::reset();
-            TutWindow05::reset();
-            TutWindow06::reset();
-            TutWindow07::reset();
-            TutWindow08::reset();
-            TutWindow09::reset();
-            TutWindow10::reset();
-            TutWindow11::reset();
-            TutWindow12::reset();
-            TutWindow13::reset();
-            TutWindow14::reset();
-            TutWindow15::reset();
-            TutWindow16::reset();
-            TutWindow17::reset();
-            TutWindow18::reset();
-            TutWindow19::reset();
-            TutWindow20::reset();
-
-            locales::load();
-            font::reload();
-        }
-
         if      (format_ == "BITMAP (*.bmp)") settings::C_screenShotFormat = "bmp";
         else if (format_ == "GIF (*.gif)")    settings::C_screenShotFormat = "gif";
         else if (format_ == "TARGA (*.tga)")  settings::C_screenShotFormat = "tga";
@@ -286,7 +251,6 @@ void OptionsMenu::onShow() {
     soundVolume_     = settings::C_soundVolume;
     musicVolume_     = settings::C_musicVolume;
     announcerVolume_ = settings::C_announcerVolume;
-    language_        = settings::C_language;
 
     if      (settings::C_screenShotFormat == "bmp") format_ = "BITMAP (*.bmp)";
     else if (settings::C_screenShotFormat == "gif") format_ = "GIF (*.gif)";

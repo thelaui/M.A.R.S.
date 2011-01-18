@@ -1,9 +1,6 @@
-// The font to use for this locale. Has to be in data/fonts/
-000 Ubuntu-R.ttf
-
 ﻿// menu buttons
 
-176 Gra Lokalna
+000 Gra Lokalna
 105 Samouczek
 001 Gra Sieciowa
 002 Dołącz Do Gry Sieciowej
@@ -250,5 +247,5 @@
 160 W sumie:
 161 Statystyki
 
-// 177 (055, 056)
+// 176 (055, 056)
 

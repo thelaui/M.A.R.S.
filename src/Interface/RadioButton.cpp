@@ -71,7 +71,7 @@ void RadioButton::keyEvent(bool down, sf::Key::Code keyCode) {
 }
 
 void RadioButton::draw() const {
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
 
     glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

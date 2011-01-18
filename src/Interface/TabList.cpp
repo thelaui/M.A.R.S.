@@ -114,7 +114,7 @@ void TabList::textEntered(int keyCode) {
 }
 
 void TabList::draw () const {
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
 
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);

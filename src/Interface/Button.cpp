@@ -24,14 +24,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align):
+Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align, sf::Font* font):
     UiElement(topLeft, width, height),
     key_(key) {
 
     switch (align) {
-        case TEXT_ALIGN_LEFT:  label_ = new Label(text, align, Vector2f(4, 2));          break;
-        case TEXT_ALIGN_RIGHT: label_ = new Label(text, align, Vector2f(width-4, 2));    break;
-        default:               label_ = new Label(text, align, Vector2f(width*0.5f, 2));
+        case TEXT_ALIGN_LEFT:  label_ = new Label(text, align, Vector2f(4, 2), 12.f, Color3f(0.75f,0.75f,0.75f), true, font);          break;
+        case TEXT_ALIGN_RIGHT: label_ = new Label(text, align, Vector2f(width-4, 2), 12.f, Color3f(0.75f,0.75f,0.75f), true, font);    break;
+        default:               label_ = new Label(text, align, Vector2f(width*0.5f, 2), 12.f, Color3f(0.75f,0.75f,0.75f), true, font);
     }
 
     label_->setParent(this);
@@ -69,7 +69,7 @@ void Button::keyEvent(bool down, sf::Key::Code keyCode) {
 void Button::draw () const {
     UiElement::draw();
 
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
     // draw Button
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

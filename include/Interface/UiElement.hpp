@@ -44,7 +44,7 @@ class UiElement {
         bool         isFocused() const {return focused_;}
         virtual bool isTopMost() const {return parent_->isTopMost();}
         virtual bool isTabable() const {return true;}
-        virtual Vector2f getTopLeft();
+        virtual Vector2f getTopLeft() const;
 
     protected:
         UiElement* parent_;

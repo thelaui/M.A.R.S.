@@ -48,10 +48,12 @@ namespace window {
 
         void setViewPort() {
             const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-            if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
+            if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
                 glViewport((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_);
-            else
+            }
+            else {
                 glViewport(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_);
+            }
         }
 
         void screenShot() {
@@ -271,7 +273,9 @@ namespace window {
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             setViewPort();
+
             gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
@@ -282,18 +286,34 @@ namespace window {
             if (shader) window_.Draw(fxImage_, *shader);
             else        window_.Draw(fxImage_);
             glDisable(GL_TEXTURE_2D);
+
+            glMatrixMode(GL_PROJECTION);
+            glLoadIdentity();
+            setViewPort();
+
+           /* if (*locales::getLocale(locales::LTRorRTL) == "RTL")
+                gluOrtho2D(viewPort_.x_, 0.f, viewPort_.y_, 0.f);
+            else*/
+                gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
         }
         else {
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             setViewPort();
-            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+         /*   if (*locales::getLocale(locales::LTRorRTL) == "RTL")
+                gluOrtho2D(viewPort_.x_, 0.f, viewPort_.y_, 0.f);
+            else*/
+                gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
         }
     }
 
     void draw(sf::Drawable const& toBeDrawn) {
+        window_.SetActive(true);
         glEnable(GL_TEXTURE_2D);
         window_.Draw(toBeDrawn);
         glDisable(GL_TEXTURE_2D);

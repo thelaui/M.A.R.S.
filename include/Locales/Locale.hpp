@@ -1,4 +1,4 @@
-/* font.hpp
+/* Locale.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,20 +15,22 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef FONT_HPP_INCLUDED
-# define FONT_HPP_INCLUDED
+# ifndef LOCALE_HPP_INCLUDED
+# define LOCALE_HPP_INCLUDED
 
-# include "System/settings.hpp"
+# include <SFML/System.hpp>
 
-# include <SFML/Graphics.hpp>
+struct Locale {
+    Locale():
+        name_("NULL"),
+        fileName_("NULL"),
+        font_("Ubuntu-R.ttf"),
+        LTR_(true) {}
 
-/// A namespace for loading font files.
+    sf::String  name_;
+    sf::String fileName_;
+    sf::String font_;
+    bool        LTR_;
+};
 
-namespace font {
-    /// Returns a const& to the SFML font.
-    /// The returned font is based on the current locale.
-    sf::Font* getFont(int languageID = settings::C_languageID);
-}
-
-# endif // FONT_HPP_INCLUDED
-
+# endif // LOCALE_HPP_INCLUDED

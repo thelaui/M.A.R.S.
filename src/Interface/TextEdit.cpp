@@ -138,7 +138,7 @@ void TextEdit::draw() const {
 
     if (++cursorTimer_ > 50) cursorTimer_ = 0;
 
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
 
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

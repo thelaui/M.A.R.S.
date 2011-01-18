@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "System/timer.hpp"
 # include "System/window.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
@@ -75,9 +76,13 @@ void UiElement::clearFocus() {
     focused_ = false;
 }
 
-Vector2f UiElement::getTopLeft() {
+Vector2f UiElement::getTopLeft() const {
+    Vector2f topLeft(topLeft_);
+    if (!locales::getCurrentLocale().LTR_)
+        topLeft.x_ *= -1.f;
+
     if (parent_ != NULL)
-        return topLeft_ + parent_->getTopLeft();
+        return topLeft + parent_->getTopLeft();
     else
-        return topLeft_;
+        return topLeft;
 }

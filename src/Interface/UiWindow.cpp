@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/texture.hpp"
 # include "Media/text.hpp"
 # include "Menu/menus.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -203,12 +204,18 @@ void UiWindow::setTopMost(bool active) {
     topMost_ = active;
 }
 
-Vector2f UiWindow::getTopLeft() {
+Vector2f UiWindow::getTopLeft() const {
     Vector2f viewPort = window::getViewPort();
     Vector2f origin;
 
-    origin.x_ = topLeft_.x_ + (viewPort.x_ - width_)/2;
-    origin.y_ = topLeft_.y_ + (viewPort.y_ - height_)/2;
+    if (locales::getCurrentLocale().LTR_) {
+        origin.x_ = topLeft_.x_ + (viewPort.x_ - width_)/2;
+        origin.y_ = topLeft_.y_ + (viewPort.y_ - height_)/2;
+    }
+    else {
+        origin.x_ = topLeft_.x_ + (viewPort.x_ + width_)/2;
+        origin.y_ = topLeft_.y_ + (viewPort.y_ - height_)/2;
+    }
 
     return origin;
 }

@@ -70,7 +70,7 @@ void Slider::keyEvent(bool down, sf::Key::Code keyCode) {
 void Slider::draw() const {
     UiElement::draw();
 
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
     // Hover effect

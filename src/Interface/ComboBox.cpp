@@ -76,7 +76,7 @@ void ComboBox::keyEvent(bool down, sf::Key::Code keyCode) {
 void ComboBox::draw() const {
     UiElement::draw();
 
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    Vector2f origin = getTopLeft();
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -171,7 +171,7 @@ void ComboBox::draw() const {
     Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
 
     text::drawFooText();
-    text::drawScreenText(*currentValue_, origin + Vector2f(labelWidth_+1,1), 12.f, TEXT_ALIGN_LEFT, color);
+    text::drawScreenText(*currentValue_, origin + Vector2f((width_+labelWidth_)*0.5f,1), 12.f, TEXT_ALIGN_CENTER, color);
 
     // draw Label
     label_->draw();

@@ -44,7 +44,7 @@ class Tab: public UiElement {
         void addWidget (UiElement* toBeAdded);
 
         /* virtual */
-        Vector2f getTopLeft();
+        Vector2f getTopLeft() const;
         bool isActive() const {return active_;}
 
         friend class TabList;

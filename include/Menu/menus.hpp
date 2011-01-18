@@ -47,6 +47,8 @@ namespace menus {
     void unFixKeyboard();
     bool keyboardFixed();
 
+    void reload();
+
     bool visible();
 }
 

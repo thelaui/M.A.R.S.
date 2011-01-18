@@ -18,14 +18,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef LOCALES_HPP_INCLUDED
 # define LOCALES_HPP_INCLUDED
 
-# include <SFML/System.hpp>
+# include "Locales/Locale.hpp"
+
 # include <vector>
 
 /// A namespace which handles translations for MARS.
 
 namespace locales {
     /// The different texts included in MARS.
-    enum LocaleType {FontName, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
+    enum LocaleType {StartLocalGame, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
                      RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
@@ -44,18 +45,21 @@ namespace locales {
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
-                     Resolution, ColorDepth, Special, StartLocalGame,
+                     Resolution, ColorDepth, Special,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 
-    /// Loads the current locale, accordind to settings::C_language.
-    void                          load();
+    /// Loads the current locale, accordind to settings::C_languageID.
+    void                       load();
 
     /// Returns a list of all files in data/locales.
-    std::vector<sf::String> const getLanguages();
+    std::vector<Locale> const& getLocales();
 
     /// Returns a string accordind to the current locale.
-    sf::String*                   getLocale(LocaleType);
+    sf::String*                getLocale(LocaleType);
+
+    Locale const&              getCurrentLocale();
+    void                       setCurrentLocale();
 }
 
 # endif // LOCALES_HPP_INCLUDED

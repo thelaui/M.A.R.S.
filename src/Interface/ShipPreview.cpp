@@ -30,7 +30,7 @@ ShipPreview::ShipPreview (Color3f* color, Color3f* teamColor, int* graphic, Vect
     graphic_(graphic) {}
 
 void ShipPreview::draw() const {
-    Vector2f origin = parent_->getTopLeft() + topLeft_ + Vector2f(10.f, 10.f);
+    Vector2f origin = getTopLeft() + Vector2f(10.f, 10.f);
 
     glPushAttrib(GL_ALL_ATTRIB_BITS);
     glPushMatrix();

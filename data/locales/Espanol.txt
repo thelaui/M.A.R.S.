@@ -1,9 +1,6 @@
-// The font to use for this locale. Has to be in data/fonts/
-000 Ubuntu-R.ttf
-
 ﻿// Botones de menú
 
-176 Empezar Juego Local
+000 Empezar Juego Local
 105 Empezar Tutorial
 001 Empezar Juego en Red
 002 Unirse a Juego en Red
@@ -249,4 +246,4 @@
 160 Total:
 161 Estadísticas
 
-// 177 (055, 056)
+// 176 (055, 056)

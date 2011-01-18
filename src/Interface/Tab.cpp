@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Interface/TabList.hpp"
 # include "Menu/menus.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -209,6 +210,13 @@ void Tab::addWidget(UiElement* toBeAdded) {
     widgets_.push_back(toBeAdded);
 }
 
-Vector2f Tab::getTopLeft() {
-    return UiElement::getTopLeft() - topLeft_ + Vector2f(0.f, 10.f);
+Vector2f Tab::getTopLeft() const {
+    if (locales::getCurrentLocale().LTR_)
+        return UiElement::getTopLeft() - topLeft_ + Vector2f(0.f, 10.f);
+    else {
+        Vector2f topLeft(UiElement::getTopLeft());
+        topLeft.x_ = topLeft.x_ + topLeft_.x_;
+        topLeft.y_ = topLeft.y_ - topLeft_.y_ + 10.f;
+        return topLeft;
+    }
 }

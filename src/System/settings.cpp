@@ -61,7 +61,7 @@ namespace settings {
     bool        C_showInfoTDM =             true;
     bool        C_showInfoCK =              true;
     bool        C_showSelectLanguage =      true;
-    sf::String  C_language =                "English";
+    int         C_languageID =              0;
     int         C_resX =                    960;
     int         C_resY =                    600;
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
@@ -164,7 +164,7 @@ namespace settings {
             outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
             outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
             outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
-            outStream << "[language] "              <<  C_language.ToAnsiString() << std::endl;
+            outStream << "[languageID] "            <<  C_languageID << std::endl;
             outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
             outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
             outStream << "[resolutionX] "           << C_resX << std::endl;
@@ -521,10 +521,10 @@ namespace settings {
                     iss >> tmp;
                     C_port = sf::String(tmp);
                 }
-                else if (inputLine == "[language]") {
-                    std::string tmp(iss.str());
-                    tmp.erase(0, inputLine.size()+1);
-                    C_language = sf::String(tmp);
+                else if (inputLine == "[languageID]") {
+                    int value;
+                    iss >> value;
+                    C_languageID = value;
                 }
                 else if (inputLine == "[networkTeamRed]") {
                     std::string value;

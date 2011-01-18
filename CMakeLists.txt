@@ -38,9 +38,10 @@ if(APPLE)
 endif(APPLE)
 
 # Xrandr library needed for unix
-
 	find_library(XRANDR_LIBRARY Xrandr)
 
+# Fribidi library needed for bi-directional texts
+	find_library(FRIBIDI_LIBRARY fribidi)
 
 # set the executable output path
 if(APPLE)
@@ -98,6 +99,7 @@ message( "  SFML_LIBRARIES = ${SFML_LIBRARIES}" )
 message( "  OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}" )
 message( "  OPENGL_LIBRARIES = ${OPENGL_LIBRARIES}" )
 message( "  XRANDR_LIBRARY = ${XRANDR_LIBRARY}" )
+message( "  FRIBIDI_LIBRARY = ${FRIBIDI_LIBRARY}" )
 message( "" )
 
 

@@ -19,9 +19,38 @@ this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 # include "Media/text.hpp"
 # include "System/window.hpp"
+# include "Menu/ChooseLanguage.hpp"
+# include "Menu/ShaderError.hpp"
+# include "Menu/About.hpp"
+# include "Menu/Connect.hpp"
+# include "Menu/InfoCK.hpp"
+# include "Menu/InfoSB.hpp"
+# include "Menu/InfoDM.hpp"
+# include "Menu/InfoTDM.hpp"
+# include "Menu/InfoHide.hpp"
 # include "Menu/MainMenu.hpp"
 # include "Menu/PauseMenu.hpp"
 # include "Menu/ExitConfirm.hpp"
+# include "Tutorial/TutWindow01.hpp"
+# include "Tutorial/TutWindow02.hpp"
+# include "Tutorial/TutWindow03.hpp"
+# include "Tutorial/TutWindow04.hpp"
+# include "Tutorial/TutWindow05.hpp"
+# include "Tutorial/TutWindow06.hpp"
+# include "Tutorial/TutWindow07.hpp"
+# include "Tutorial/TutWindow08.hpp"
+# include "Tutorial/TutWindow09.hpp"
+# include "Tutorial/TutWindow10.hpp"
+# include "Tutorial/TutWindow11.hpp"
+# include "Tutorial/TutWindow12.hpp"
+# include "Tutorial/TutWindow13.hpp"
+# include "Tutorial/TutWindow14.hpp"
+# include "Tutorial/TutWindow15.hpp"
+# include "Tutorial/TutWindow16.hpp"
+# include "Tutorial/TutWindow17.hpp"
+# include "Tutorial/TutWindow18.hpp"
+# include "Tutorial/TutWindow19.hpp"
+# include "Tutorial/TutWindow20.hpp"
 # include "defines.hpp"
 
 namespace menus {
@@ -138,6 +167,36 @@ namespace menus {
 
     bool keyboardFixed() {
         return keyboardFixTarget_;
+    }
+
+    void reload() {
+        About::reset();
+        Connect::reset();
+        InfoCK::reset();
+        InfoDM::reset();
+        InfoHide::reset();
+        InfoSB::reset();
+        InfoTDM::reset();
+        TutWindow01::reset();
+        TutWindow02::reset();
+        TutWindow03::reset();
+        TutWindow04::reset();
+        TutWindow05::reset();
+        TutWindow06::reset();
+        TutWindow07::reset();
+        TutWindow08::reset();
+        TutWindow09::reset();
+        TutWindow10::reset();
+        TutWindow11::reset();
+        TutWindow12::reset();
+        TutWindow13::reset();
+        TutWindow14::reset();
+        TutWindow15::reset();
+        TutWindow16::reset();
+        TutWindow17::reset();
+        TutWindow18::reset();
+        TutWindow19::reset();
+        TutWindow20::reset();
     }
 
     bool visible() {

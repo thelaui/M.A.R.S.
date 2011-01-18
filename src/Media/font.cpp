@@ -24,31 +24,21 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace font {
     namespace {
-        sf::Font   *font_;
-
-        void setFont(sf::String const& fileName) {
-            if (!font_)
-                font_ = new sf::Font();
-            font_->LoadFromFile(settings::C_dataPath + "/fonts/" + fileName);
-        }
+        std::map<int, sf::Font*> fonts_;
     }
 
-    sf::Font const& getFont() {
-        if (font_ != NULL) {
-            return *font_;
+    sf::Font* getFont(int languageID) {
+        std::map<int, sf::Font*>::iterator it = fonts_.find(languageID);
+        if (it == fonts_.end()) {
+            // load it from file and...
+            sf::Font* font = new sf::Font();
+            font->LoadFromFile(settings::C_dataPath + "/fonts/" + locales::getLocales()[languageID].font_);
+            fonts_.insert(std::make_pair(languageID, font));
+            // ... return it afterwards
+            return font;
         }
         else {
-            // load it from file and...
-            setFont(*locales::getLocale(locales::FontName));
-            // ... return it afterwards
-            return *font_;
+            return it->second;
         }
-    }
-
-    void reload() {
-        if (font_)
-            delete font_;
-        font_ = NULL;
-        setFont(*locales::getLocale(locales::FontName));
     }
 }
