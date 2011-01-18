@@ -38,7 +38,9 @@ if(APPLE)
 endif(APPLE)
 
 # Xrandr library needed for unix
+if(UNIX)
 	find_library(XRANDR_LIBRARY Xrandr)
+endif(UNIX)
 
 # Fribidi library needed for bi-directional texts
 	find_library(FRIBIDI_LIBRARY fribidi)
