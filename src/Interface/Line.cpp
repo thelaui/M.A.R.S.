@@ -17,6 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Interface/Line.hpp"
 
+# include "Locales/locales.hpp"
+
 # include <SFML/OpenGL.hpp>
 
 Line::Line (Vector2f const& begin, Vector2f const& end):
@@ -28,6 +30,10 @@ void Line::draw() const {
     Vector2f begin = parent_->getTopLeft() + begin_;
     Vector2f end   = parent_->getTopLeft() + end_;
 
+    if (!locales::getCurrentLocale().LTR_) {
+        begin.x_ -= 2*begin_.x_;
+        end.x_   -= 2*end_.x_;
+    }
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 

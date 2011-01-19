@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Media/text.hpp"
 # include "Media/texture.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -50,8 +51,10 @@ void Slider::mouseLeft(bool down) {
 
 void Slider::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     if (pressed_ && focused_) {
-        *value_ = (position.x_+(0.5f*(width_ - (labelWidth_+10)))/(maxValue_ - minValue_)-parent_->getTopLeft().x_-topLeft_.x_-(labelWidth_+5))*(maxValue_ - minValue_)/(width_ - (labelWidth_+10)) + minValue_;
+        *value_ = (position.x_+(0.5f*(width() - (labelWidth_+10)*mirror))/(maxValue_ - minValue_)-getTopLeft().x_-(labelWidth_+5)*mirror)*(maxValue_ - minValue_)/(width() - (labelWidth_+10)*mirror) + minValue_;
         if (*value_ < minValue_) *value_ = minValue_;
         if (*value_ > maxValue_) *value_ = maxValue_;
     }
@@ -60,10 +63,18 @@ void Slider::mouseMoved(Vector2f const& position) {
 
 void Slider::keyEvent(bool down, sf::Key::Code keyCode) {
     if (down) {
-        if (keyCode == sf::Key::Left && *value_ > minValue_)
-            --(*value_);
-        else if (keyCode == sf::Key::Right && *value_ < maxValue_)
-            ++(*value_);
+        if (locales::getCurrentLocale().LTR_) {
+            if (keyCode == sf::Key::Left && *value_ > minValue_)
+                --(*value_);
+            else if (keyCode == sf::Key::Right && *value_ < maxValue_)
+                ++(*value_);
+        }
+        else {
+            if (keyCode == sf::Key::Left && *value_ < maxValue_)
+                ++(*value_);
+            else if (keyCode == sf::Key::Right && *value_ > minValue_)
+                --(*value_);
+        }
     }
 }
 
@@ -71,6 +82,9 @@ void Slider::draw() const {
     UiElement::draw();
 
     Vector2f origin = getTopLeft();
+
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
     // Hover effect
@@ -78,12 +92,12 @@ void Slider::draw() const {
 
     glLineWidth(2);
     glBegin(GL_LINES);
-        glVertex2f(origin.x_ + labelWidth_, 10 + origin.y_);
-        glVertex2f(width_ + origin.x_, 10 + origin.y_);
+        glVertex2f(origin.x_ + labelWidth_*mirror, 10 + origin.y_);
+        glVertex2f(width() + origin.x_, 10 + origin.y_);
     glEnd();
 
     // Hover effect
-    Vector2f sliderPosition(((width_-(labelWidth_+10))*(*value_- minValue_)/(maxValue_ - minValue_)) + origin.x_+(labelWidth_+5), 10 + origin.y_);
+    Vector2f sliderPosition(((width()-(labelWidth_+10)*mirror)*(*value_- minValue_)/(maxValue_ - minValue_)) + origin.x_+(labelWidth_+5)*mirror, 10 + origin.y_);
 
     glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -123,14 +137,14 @@ void Slider::draw() const {
         if(!sliderNames_.empty()) {
             if (sliderNames_.size() <= *value_-minValue_) {
                 sstr << *value_;
-                text::drawScreenText(sf::String(sstr.str()), origin + Vector2f(labelWidth_-10,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+                text::drawScreenText(sf::String(sstr.str()), origin + Vector2f((labelWidth_-10)*mirror,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
             }
             else
-                text::drawScreenText(sliderNames_[*value_-minValue_], origin + Vector2f(labelWidth_-10,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+                text::drawScreenText(sliderNames_[*value_-minValue_], origin + Vector2f((labelWidth_-10)*mirror,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
         else {
             sstr << *value_;
-            text::drawScreenText(sf::String(sstr.str()), origin + Vector2f(labelWidth_-10,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
+            text::drawScreenText(sf::String(sstr.str()), origin + Vector2f((labelWidth_-10)*mirror,1), 12.f, TEXT_ALIGN_RIGHT, Color3f(0.7, 0.7, 0.7));
         }
 
     }

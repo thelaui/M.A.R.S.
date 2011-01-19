@@ -38,11 +38,21 @@ Tab::~Tab() {
 }
 
 void Tab::mouseMoved(Vector2f const& position) {
-    Vector2f topLeftAbs(parent_->getTopLeft() + topLeft_);
-    if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
-        hovered_ = true;
-    else
-        hovered_ = false;
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+    Vector2f topLeftAbs(getTopLeft() + topLeft_*mirror-Vector2f(0.f, 10.f));
+    if (locales::getCurrentLocale().LTR_) {
+        if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
+            hovered_ = true;
+        else
+            hovered_ = false;
+    }
+    else {
+        if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
+            hovered_ = true;
+        else
+            hovered_ = false;
+    }
+
     if (active_)
         for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
             (*i)->mouseMoved(position);
@@ -133,7 +143,9 @@ void Tab::textEntered(int keyCode) {
 }
 
 void Tab::draw () const {
-    Vector2f origin = parent_->getTopLeft() + topLeft_;
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
+    Vector2f origin = getTopLeft() + topLeft_*mirror-Vector2f(0.f, 10.f);
 
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -141,11 +153,11 @@ void Tab::draw () const {
     if (!focusedWidget_ && parent_->isFocused() && isTopMost() && active_) {
         glBegin(GL_QUADS);
             glColor4f(1,0.5,0.8,0.7);
-            glVertex2f(origin.x_+width_,origin.y_);
+            glVertex2f(origin.x_+width(),origin.y_);
             glVertex2f(origin.x_,origin.y_);
             glColor4f(0.5,0.25,0.4,0.0);
             glVertex2f(origin.x_,origin.y_+height_);
-            glVertex2f(origin.x_+width_,origin.y_+height_);
+            glVertex2f(origin.x_+width(),origin.y_+height_);
         glEnd();
     }
 
@@ -153,11 +165,11 @@ void Tab::draw () const {
         if (isTopMost()) {
             glBegin(GL_QUADS);
                 glColor4f(1,0.5,0.8,0.7);
-                glVertex2f(origin.x_+width_,origin.y_);
+                glVertex2f(origin.x_+width(),origin.y_);
                 glVertex2f(origin.x_,origin.y_);
                 glColor4f(0.5,0.25,0.4,0.0);
                 glVertex2f(origin.x_,origin.y_+height_*0.5);
-                glVertex2f(origin.x_+width_,origin.y_+height_*0.5);
+                glVertex2f(origin.x_+width(),origin.y_+height_*0.5);
             glEnd();
         }
 
@@ -167,8 +179,8 @@ void Tab::draw () const {
             else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
             glVertex2f(origin.x_,origin.y_+height_);
             glVertex2f(origin.x_,origin.y_);
-            glVertex2f(origin.x_+width_,origin.y_);
-            glVertex2f(origin.x_+width_,origin.y_+height_);
+            glVertex2f(origin.x_+width(),origin.y_);
+            glVertex2f(origin.x_+width(),origin.y_+height_);
         glEnd();
     }
     else {
@@ -177,7 +189,7 @@ void Tab::draw () const {
             if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
             else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
             glVertex2f(origin.x_,origin.y_+height_);
-            glVertex2f(origin.x_+width_,origin.y_+height_);
+            glVertex2f(origin.x_+width(),origin.y_+height_);
         glEnd();
 
     }
@@ -213,10 +225,6 @@ void Tab::addWidget(UiElement* toBeAdded) {
 Vector2f Tab::getTopLeft() const {
     if (locales::getCurrentLocale().LTR_)
         return UiElement::getTopLeft() - topLeft_ + Vector2f(0.f, 10.f);
-    else {
-        Vector2f topLeft(UiElement::getTopLeft());
-        topLeft.x_ = topLeft.x_ + topLeft_.x_;
-        topLeft.y_ = topLeft.y_ - topLeft_.y_ + 10.f;
-        return topLeft;
-    }
+    else
+        return UiElement::getTopLeft() - Vector2f(-topLeft_.x_, topLeft_.y_) + Vector2f(0.f, 10.f);
 }

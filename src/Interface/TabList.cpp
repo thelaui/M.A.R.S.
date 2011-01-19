@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 # include "Media/sound.hpp"
 # include "Menu/menus.hpp"
+# include "Locales/locales.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -50,21 +51,21 @@ void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
         if (focusedTab_->isFocused())
             focusedTab_->keyEvent(down, keyCode);
         else {
-            if (down && keyCode == sf::Key::Left) {
+            if (down && ((keyCode == sf::Key::Left && locales::getCurrentLocale().LTR_) || (keyCode == sf::Key::Right && !locales::getCurrentLocale().LTR_))) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i-1 + tabs_.size())%tabs_.size();
                 i = (i-1 + tabs_.size())%tabs_.size();
-                while (!tabs_[i]->isTabable())      i = (i-1 + tabs_.size())%tabs_.size();
+                while (!tabs_[i]->isTabable())   i = (i-1 + tabs_.size())%tabs_.size();
 
                 focusedTab_->active_=false;
                 focusedTab_ = tabs_[i];
                 focusedTab_->active_=true;
             }
-            else if (down && keyCode == sf::Key::Right) {
+            if (down && ((keyCode == sf::Key::Right && locales::getCurrentLocale().LTR_) || (keyCode == sf::Key::Left && !locales::getCurrentLocale().LTR_))) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i+1)%tabs_.size();
                 i = (i+1)%tabs_.size();
-                while (!tabs_[i]->isTabable())      i = (i+1)%tabs_.size();
+                while (!tabs_[i]->isTabable())   i = (i+1)%tabs_.size();
 
                 focusedTab_->active_=false;
                 focusedTab_ = tabs_[i];
@@ -116,6 +117,7 @@ void TabList::textEntered(int keyCode) {
 void TabList::draw () const {
     Vector2f origin = getTopLeft();
 
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
@@ -130,10 +132,10 @@ void TabList::draw () const {
 
         if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 1.0f);
         else              glColor4f(0.4f, 0.4f, 0.4f, 1.0f);
-        glVertex2f(origin.x_+lastTabEnd_,origin.y_+20);
+        glVertex2f(origin.x_+lastTabEnd_*mirror,origin.y_+20);
         if (isTopMost())  glColor4f(1.f, 0.5f, 0.8f, 0.0f);
         else              glColor4f(0.4f, 0.4f, 0.4f, 0.0f);
-        glVertex2f(origin.x_+width_,origin.y_+20);
+        glVertex2f(origin.x_+width(),origin.y_+20);
     glEnd();
 
     for (std::vector<Tab*>::const_iterator i=tabs_.begin(); i != tabs_.end(); ++i)

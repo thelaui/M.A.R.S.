@@ -38,7 +38,7 @@ void Label::draw() const {
     UiElement::draw();
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-    Vector2f position(topLeft_ + parent_->getTopLeft());
+    Vector2f position(getTopLeft());
     if (interactive_) {
         if (parent_->isPressed())
             position += Vector2f(1, 1);

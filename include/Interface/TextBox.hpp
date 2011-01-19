@@ -36,8 +36,8 @@ class TextBox: public UiElement {
         bool isTabable() const {return false;}
 
     private:
-        sf::String text_;
-        Label* label_;
+        std::vector<Label*> lines_;
+        std::vector<sf::String*> texts_;
 };
 
 # endif

@@ -47,6 +47,8 @@ class UiElement {
         virtual Vector2f getTopLeft() const;
 
     protected:
+        int width() const;
+
         UiElement* parent_;
         mutable Vector2f topLeft_;
         int width_, height_;

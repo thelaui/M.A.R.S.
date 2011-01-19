@@ -76,6 +76,8 @@ void ColorPicker::keyEvent(bool down, sf::Key::Code keyCode) {
 void ColorPicker::draw() const {
     UiElement::draw();
 
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     Vector2f origin = getTopLeft();
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -83,52 +85,52 @@ void ColorPicker::draw() const {
     glBegin(GL_QUADS);
         // dark background
         currentValue_->gl3f();
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
+        glVertex2f(width() + origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, height_ + origin.y_);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
-        glVertex2f(labelWidth_+origin.x_, height_*0.7f + origin.y_);
-        glVertex2f(width_ + origin.x_, height_*0.7f + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, height_*0.7f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.7f + origin.y_);
         glColor4f(1.0,1.0,1.0,0.06);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
+        glVertex2f(width() + origin.x_, height_ + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, height_ + origin.y_);
 
     if (pressed_ && hovered_) {
         // bottom glow
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(labelWidth_+origin.x_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_,origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
+        glVertex2f(labelWidth_*mirror+origin.x_,origin.y_+height_);
     }
     else if (hovered_) {
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(labelWidth_+origin.x_,height_*0.5f + origin.y_);
-        glVertex2f(origin.x_+width_,height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_,height_*0.5f + origin.y_);
+        glVertex2f(origin.x_+width(),height_*0.5f + origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
+        glVertex2f(labelWidth_*mirror+origin.x_,origin.y_+height_);
 
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
-        glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, height_*0.5f + origin.y_);
     }
     else {
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
-        glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(labelWidth_*mirror+origin.x_, height_*0.5f + origin.y_);
     }
     glEnd();
 
@@ -137,10 +139,10 @@ void ColorPicker::draw() const {
 
     glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
+        glVertex2f(labelWidth_*mirror+origin.x_,origin.y_+height_);
+        glVertex2f(labelWidth_*mirror+origin.x_,origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
     glEnd();
 
     text::drawFooText();

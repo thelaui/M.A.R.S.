@@ -21,68 +21,92 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 
 TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int height, Color3f const& color):
-    UiElement(topLeft, width, height),
-    label_(NULL) {
+    UiElement(topLeft, width, height) {
 
-    text_ = *text;
-    sf::String word;
-    sf::String line;
-    int lastSpace(0);
+        sf::String wholeText = *text;
+        sf::String word;
+        sf::String line;
+        int lastSpace(0);
 
-    // search for "\n" and replace them with '\n'
-    for (unsigned int i=0; i<text_.GetSize()-1; ++i) {
-        if (text_[i] == '\\' && text_[i+1] == 'n') {
-            text_[i]  = ' ';
-            text_[++i]= '\n';
-        }
-    }
-
-    // remove doubled spaces
-    for (unsigned int i=0; i<text_.GetSize()-1; ++i)
-        if (text_[i] == ' ' && text_[i+1] == ' ')
-            text_.Erase(i--, 1);
-
-    // break lines
-    for (unsigned int i=0; i<text_.GetSize(); ++i) {
-        if (text_[i] == '\n') {
-            line = "";
-            word = "";
-        }
-        else if (text_[i] != ' ') {
-            word += text_[i];
-            sf::String tmp(line + word);
-            if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
-                if (lastSpace == 0) {
-                    text_.Insert(i-1, '\n');
-                    line = "";
-                    word = text_[i];
-                    ++i;
-                }
-                else {
-                    text_[lastSpace] = '\n';
-                    line = word;
-                    lastSpace = 0;
-                }
+        // search for "\n" and replace them with '\n'
+        for (unsigned int i=0; i<wholeText.GetSize()-1; ++i) {
+            if (wholeText[i] == '\\' && wholeText[i+1] == 'n') {
+                wholeText[i]  = ' ';
+                wholeText[++i]= '\n';
             }
         }
-        else {
-            lastSpace = i;
-            line += word + " ";
-            word = "";
-        }
-    }
 
-    label_ = new Label(&text_, TEXT_ALIGN_LEFT, Vector2f(0.f, 0.f), 12.f, color);
-    label_->setParent(this);
+        // remove doubled spaces
+        for (unsigned int i=0; i<wholeText.GetSize()-1; ++i)
+            if (wholeText[i] == ' ' && wholeText[i+1] == ' ')
+                wholeText.Erase(i--, 1);
+
+        // break lines
+        for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+            if (wholeText[i] == '\n') {
+                line = "";
+                word = "";
+            }
+            else if (wholeText[i] != ' ') {
+                word += wholeText[i];
+                sf::String tmp(line + word);
+                if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
+                    if (lastSpace == 0) {
+                        wholeText.Insert(i-1, '\n');
+                        line = "";
+                        word = wholeText[i];
+                        ++i;
+                    }
+                    else {
+                        wholeText[lastSpace] = '\n';
+                        line = word;
+                        lastSpace = 0;
+                    }
+                }
+            }
+            else {
+                lastSpace = i;
+                line += word + " ";
+                word = "";
+            }
+        }
+
+        // create single labels
+        line = "";
+        int top(0);
+        for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+            if (wholeText[i] == '\n') {
+                texts_.push_back(new sf::String(line));
+                Label* newLabel = new Label(texts_.back(), TEXT_ALIGN_LEFT, Vector2f(0.f, top), 12.f, color);
+                newLabel->setParent(this);
+                lines_.push_back(newLabel);
+                top += 15;
+                line = "";
+            }
+            else {
+                 line += wholeText[i];
+            }
+        }
+        if (line != "") {
+            texts_.push_back(new sf::String(line));
+            Label* newLabel = new Label(texts_.back(), TEXT_ALIGN_LEFT, Vector2f(0.f, top), 12.f, color);
+            newLabel->setParent(this);
+            lines_.push_back(newLabel);
+        }
+
 
     }
 
 TextBox::~TextBox() {
-    delete label_;
+    for (std::vector<Label*>::iterator it=lines_.begin(); it!=lines_.end(); ++it)
+        delete *it;
+    for (std::vector<sf::String*>::iterator it=texts_.begin(); it!=texts_.end(); ++it)
+        delete *it;
 }
 
 void TextBox::draw () const {
-    label_->draw();
+    for (std::vector<Label*>::const_iterator it=lines_.begin(); it!=lines_.end(); ++it)
+        (*it)->draw();
 }
 
 

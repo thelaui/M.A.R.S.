@@ -39,11 +39,18 @@ UiElement::UiElement(Vector2f const& topLeft, int width, int height):
 
 void UiElement::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(getTopLeft());
-    if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_) {
-        hovered_ = true;
+    if (locales::getCurrentLocale().LTR_) {
+        if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
+            hovered_ = true;
+        else
+            hovered_ = false;
     }
-    else
-        hovered_ = false;
+    else {
+        if ((!window::getInput().IsMouseButtonDown(sf::Mouse::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
+            hovered_ = true;
+        else
+            hovered_ = false;
+    }
 }
 
 void UiElement::mouseLeft(bool down) {
@@ -85,4 +92,10 @@ Vector2f UiElement::getTopLeft() const {
         return topLeft + parent_->getTopLeft();
     else
         return topLeft;
+}
+
+
+int UiElement::width() const {
+    if (locales::getCurrentLocale().LTR_) return width_;
+    else return -width_;
 }

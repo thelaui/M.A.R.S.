@@ -52,7 +52,8 @@ void TextEdit::mouseMoved(Vector2f const& position) {
     if (pressed_ && window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+185*mirror)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -68,7 +69,8 @@ void TextEdit::mouseLeft(bool down) {
     if (pressed_) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2 + getTopLeft().x_ +(width_+185)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+185*mirror)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -136,6 +138,8 @@ void TextEdit::textEntered(int keyCode) {
 void TextEdit::draw() const {
     UiElement::draw();
 
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     if (++cursorTimer_ > 50) cursorTimer_ = 0;
 
     Vector2f origin = getTopLeft();
@@ -149,28 +153,28 @@ void TextEdit::draw() const {
     glBegin(GL_QUADS);
         if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
         else               glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(origin.x_+185, origin.y_+2);
-        glVertex2f(width_ + origin.x_, origin.y_+2);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(width() + origin.x_, origin.y_+2);
+        glVertex2f(width() + origin.x_, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
-        glVertex2f(origin.x_+185, origin.y_+2);
-        glVertex2f(width_ + origin.x_, origin.y_+2);
+        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(width() + origin.x_, origin.y_+2);
         if (pressed_)   glColor4f(1.0,1.0,1.0,0.1);
         else            glColor4f(1.0,1.0,1.0,0.06);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185, height_ + origin.y_-2);
+        glVertex2f(width() + origin.x_, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
 
         if (!pressed_) {
             // glossy top
             glColor4f(1.0,1.0,1.0,0.2);
-            glVertex2f(origin.x_+185, origin.y_+2);
-            glVertex2f(width_ + origin.x_, origin.y_+2);
+            glVertex2f(origin.x_+185*mirror, origin.y_+2);
+            glVertex2f(width() + origin.x_, origin.y_+2);
             glColor4f(1.0,1.0,1.0,0.05);
-            glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-            glVertex2f(origin.x_+185, height_*0.5f + origin.y_);
+            glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
+            glVertex2f(origin.x_+185*mirror, height_*0.5f + origin.y_);
         }
     glEnd();
 
@@ -179,19 +183,19 @@ void TextEdit::draw() const {
 
     glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
-        glVertex2f(origin.x_+185, origin.y_+2);
-        glVertex2f(width_ + origin.x_, origin.y_+2);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(width() + origin.x_, origin.y_+2);
+        glVertex2f(width() + origin.x_, height_ + origin.y_-2);
+        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
     glEnd();
 
     float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
     Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
 
     if (pressed_)
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1) + Vector2f(1,1), 12.f, TEXT_ALIGN_CENTER, color);
+        text::drawScreenText(*value_, origin + Vector2f((width()+185*mirror)/2,1) + Vector2f(1,1), 12.f, TEXT_ALIGN_CENTER, color);
     else
-        text::drawScreenText(*value_, origin + Vector2f((width_+185)/2,1), 12.f, TEXT_ALIGN_CENTER, color);
+        text::drawScreenText(*value_, origin + Vector2f((width()+185*mirror)/2,1), 12.f, TEXT_ALIGN_CENTER, color);
 
     // draw cursor
     if (pressed_ && cursorTimer_ < 30) {
@@ -199,8 +203,8 @@ void TextEdit::draw() const {
         glColor4f(1,0.8,0.9,0.5);
         glLineWidth(0.5f);
         glBegin(GL_LINES);
-            glVertex2f(origin.x_ + pos +(width_+185)/2, origin.y_+3);
-            glVertex2f(origin.x_ + pos +(width_+185)/2, origin.y_+height_-3);
+            glVertex2f(origin.x_ + pos +(width()+185*mirror)/2, origin.y_+3);
+            glVertex2f(origin.x_ + pos +(width()+185*mirror)/2, origin.y_+height_-3);
         glEnd();
     }
 

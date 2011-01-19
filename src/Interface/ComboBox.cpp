@@ -77,6 +77,9 @@ void ComboBox::draw() const {
     UiElement::draw();
 
     Vector2f origin = getTopLeft();
+    int boxBegin(labelWidth_+origin.x_);
+    if (!locales::getCurrentLocale().LTR_)
+        boxBegin -= 2*labelWidth_;
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -84,59 +87,59 @@ void ComboBox::draw() const {
         // dark background
         if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
         else               glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
+        glVertex2f(boxBegin, origin.y_);
+        glVertex2f(boxBegin, height_ + origin.y_);
         glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, origin.y_);
-        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_*0.5f+width_*0.5f + origin.x_, origin.y_);
+        glVertex2f(boxBegin*0.5f+width()*0.5f + origin.x_*0.5f, height_ + origin.y_);
+        glVertex2f(boxBegin*0.5f+width()*0.5f + origin.x_*0.5f, origin.y_);
+        glVertex2f(boxBegin*0.5f+width()*0.5f + origin.x_*0.5f, height_ + origin.y_);
+        glVertex2f(boxBegin*0.5f+width()*0.5f + origin.x_*0.5f, origin.y_);
         if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
         else               glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(width_ + origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
+        glVertex2f(width() + origin.x_, height_ + origin.y_);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
-        glVertex2f(labelWidth_+origin.x_, height_*0.7f + origin.y_);
-        glVertex2f(width_ + origin.x_, height_*0.7f + origin.y_);
+        glVertex2f(boxBegin, height_*0.7f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.7f + origin.y_);
         glColor4f(1.0,1.0,1.0,0.06);
-        glVertex2f(width_ + origin.x_, height_ + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_ + origin.y_);
+        glVertex2f(width() + origin.x_, height_ + origin.y_);
+        glVertex2f(boxBegin, height_ + origin.y_);
 
     if (pressed_ && hovered_) {
         // bottom glow
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(labelWidth_+origin.x_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_);
+        glVertex2f(boxBegin,origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
+        glVertex2f(boxBegin,origin.y_+height_);
     }
     else if (hovered_) {
         glColor4f(0.5,0.25,0.4,0.0);
-        glVertex2f(labelWidth_+origin.x_,height_*0.5f + origin.y_);
-        glVertex2f(origin.x_+width_,height_*0.5f + origin.y_);
+        glVertex2f(boxBegin,height_*0.5f + origin.y_);
+        glVertex2f(origin.x_+width(),height_*0.5f + origin.y_);
         glColor4f(0.5,0.25,0.4,0.4);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
+        glVertex2f(boxBegin,origin.y_+height_);
 
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, origin.y_);
+        glVertex2f(boxBegin, origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
-        glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(boxBegin, height_*0.5f + origin.y_);
     }
     else {
         // glossy top
         glColor4f(1.0,1.0,1.0,0.2);
-        glVertex2f(labelWidth_+origin.x_, origin.y_);
-        glVertex2f(width_ + origin.x_, origin.y_);
+        glVertex2f(boxBegin, origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
         glColor4f(1.0,1.0,1.0,0.05);
-        glVertex2f(width_ + origin.x_, height_*0.5f + origin.y_);
-        glVertex2f(labelWidth_+origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
+        glVertex2f(boxBegin, height_*0.5f + origin.y_);
     }
     glEnd();
 
@@ -145,23 +148,25 @@ void ComboBox::draw() const {
 
     glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
-        glVertex2f(labelWidth_+origin.x_,origin.y_+height_);
-        glVertex2f(labelWidth_+origin.x_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_);
-        glVertex2f(origin.x_+width_,origin.y_+height_);
+        glVertex2f(boxBegin,origin.y_+height_);
+        glVertex2f(boxBegin,origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_);
+        glVertex2f(origin.x_+width(),origin.y_+height_);
     glEnd();
 
     glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Widgets));
 
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     int x(3), y(3);
     glColor3f(1.f, 1.f, 1.f);
     glBegin(GL_QUADS);
-        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(origin.x_-18.f+width_, origin.y_+16.f);
-        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(origin.x_-2.f+width_, origin.y_+16.f);
-        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(origin.x_-2.f+width_, origin.y_-0.f);
-        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(origin.x_-18.f+width_, origin.y_-0.f);
+        glTexCoord2f(x*0.25f, y*0.25f+0.25f);       glVertex2f(origin.x_-18.f*mirror+width(), origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f+0.25f); glVertex2f(origin.x_-2.f*mirror+width(), origin.y_+16.f);
+        glTexCoord2f(x*0.25f+0.25f, y*0.25f);       glVertex2f(origin.x_-2.f*mirror+width(), origin.y_-0.f);
+        glTexCoord2f(x*0.25f, y*0.25f);             glVertex2f(origin.x_-18.f*mirror+width(), origin.y_-0.f);
     glEnd();
 
     glDisable(GL_TEXTURE_2D);
@@ -171,7 +176,7 @@ void ComboBox::draw() const {
     Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
 
     text::drawFooText();
-    text::drawScreenText(*currentValue_, origin + Vector2f((width_+labelWidth_)*0.5f,1), 12.f, TEXT_ALIGN_CENTER, color);
+    text::drawScreenText(*currentValue_, origin + Vector2f((width()+labelWidth_*mirror)*0.5f,1), 12.f, TEXT_ALIGN_CENTER, color);
 
     // draw Label
     label_->draw();
