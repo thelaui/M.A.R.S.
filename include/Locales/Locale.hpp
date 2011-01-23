@@ -25,12 +25,14 @@ struct Locale {
         name_("NULL"),
         fileName_("NULL"),
         font_("Ubuntu-R.ttf"),
+        author_(""),
         LTR_(true) {}
 
-    sf::String  name_;
+    sf::String name_;
     sf::String fileName_;
     sf::String font_;
-    bool        LTR_;
+    sf::String author_;
+    bool       LTR_;
 };
 
 # endif // LOCALE_HPP_INCLUDED

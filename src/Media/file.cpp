@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 namespace file {
     bool load(std::string fileName, std::vector<sf::String>& strings) {
-        // Open the test file (contains UTF-8 encoded text)
+        // Open the file (contains UTF-8 encoded text)
         std::ifstream fileStream(fileName.c_str());
         if (!fileStream.is_open()) {
             return false;

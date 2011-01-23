@@ -20,8 +20,8 @@
 013 Cerrar
 014 Licencia
 015 OK
-106 Próximo
-016 Mostrar nuevamente esta información
+106 Siguiente
+016 Volver a mostrar esta información
 
 // Opciones antes del partido
 
@@ -58,27 +58,28 @@
 034 Recorridos de la IA
 035 Ver Información del Juego
 036 Cuadros Por Segundo (FPS)
-152 Language
-153 Hotkey for Screenshots
-054 File Format for Screenshots
+152 Idioma
+153 Tecla rápida para las Capturas de pantalla
+054 Formato de capturas de pantalla
 037 Conteo de Partículas
 038 Conteo de Partículas
 039 Duración de Partículas
-040 Game Settings
+040 Opciones del Juego
 041 Pantalla Completa
 042 V-Sync
+055 Display Tool Tips
 163 Efectos de Sombreado
-164 ¡Lamentablemente, los shaders no son soportados por su hardware!
+164 ¡Lamentablemente, tu hardware no soporta los shaders!
 
-151 High Starfield Resolution
-173 Resolution
-174 Color Depth
+151 Alta Resolución para el Campo Estelar
+173 Resolución
+174 Profundidad del color
 
 // Opciones de juego
 
 166 Velocidad de generación de PowerUp
 167 Dificultad de los Bots
-168 Explosiones para Movimiento Lento
+168 Explosiones para Slow Motion
 169 Apagado
 
 // Opciones de audio
@@ -96,8 +97,8 @@
 050 Arma
 175 Special
 051 Nave
-052 Player Color
-053 Team Color
+052 Color del Jugador
+053 Color del Equipo
 
 // Sobre
 
@@ -115,8 +116,8 @@
 
 // Abandonar
 
-059 ¿Estás seguro que quieres abandonar M.A.R.S?
-060 ¿Estás seguro que quieres terminar el juego actual?
+059 ¿Seguro que quieres abandonar M.A.R.S?
+060 ¿Seguro que quieres terminar el juego actual?
 
 // Red de información
 
@@ -140,21 +141,21 @@
 072 Igual
 073 Inicio
 074 Insertar
-075 Alt izquierdo
-076 Llave Izquierda
+075 Alt Izquierdo
+076 Paréntesis Izquierdo
 077 Control Izquierdo
 078 Flecha Izquierda
 079 Shift Izquierdo
-080 Super izquierdo
+080 Super Izquierdo
 081 Menú
 082 Multiplicar
 083 Av. Pág.
 084 Re. Pág.
 085 Pausa
 086 Punto
-087 Cita
+087 Comillas
 088 Alt Derecho
-089 Llave Derecha
+089 Paréntesis Derecho
 090 Control Derecho
 091 Volver
 092 Derecho
@@ -165,7 +166,7 @@
 097 Espacio
 098 Restar
 099 Virgulilla (~)
-100 Tab
+100 Tabulador
 101 Flecha Arriba
 
 // Textos tutorial
@@ -180,51 +181,51 @@
 112 ¡Llega a la zona rosa! \n Intenta no destrozar tu nueva nave.
 
 113 ¡Bien Hecho!
-114 Ahora regresa a tu planeta de origen y tratar de aterrizar tu nave lentamente, flotando lentamente mientras te acercas a tu planeta.
+114 Ahora regresa a tu planeta de origen y trata de aterrizar tu nave flotando lentamente mientras te acercas a tu planeta.
 
 115 ¡Buen Trabajo!
 116 Aterrizar adecuadamente no es tan fácil, ¿no? \n Deberías aprenderlo de memoria.
 
 117 Algo más difícil ...
-118 ¡Trata de seguir el camino marcado por las zonas de color rosa! \n\n Te contactaremos nuevamente, una vez hayas dominado ésto. ¡Ahora, ve a por ello!
+118 ¡Trata de seguir el camino marcado por las zonas de color rosa! \n\n Nos pondremos en contacto contigo cuando lo tengas dominado. ¡Ahora, ve a por ello!
 
 119 ¡Impresionante!
-120 Tú eres el mejor novato que he visto.\n Ahora prepárate para algo explosivo.
+120 Eres el mejor novato que he visto.\n Ahora prepárate para algo explosivo.
 
 121 Disparar...
 122 Para derrotar a tus enemigos ¡tienes que saber cómo disparar!\nPara eso presiona
-123 Diviértete disparando alrededor y luego aterriza tu nave para continuar el tutorial.
+123 Diviértete disparando por ahí y luego aterriza tu nave para continuar el tutorial.
 
 124 ¡Buen aterrizaje!
 125 Resultaste ser un gran piloto. \n\n Ahora ¿qué tal unas armas más?
 
 126 Las Armas...
-127 Sé que has estado esperando por esto. Cuando acoplado, puedes cambiar entre algunas armas increíblemente malvadas.\n Presiona
+127 Sé que has estado esperando esto. Con la nave en tierra puedes cambiar de arma, pudiendo elegir entre algunas armas increíblemente malvadas.\n Presiona
 128 para abrir tu arsenal.\n¡Luego usa
 129 para elegir un arma! ¡Despega cuando estés listo!
 
 
 130 ¡Lucha!
-131 Ahora vamos a ver cómo lo haces contra un novato de otro planeta.\nParece que él está tratando de mejorar sus habilidades de vuelo.\n¡Golpéalo!
+131 Ahora vamos a ver cómo lo haces contra un novato de otro planeta.\nParece que está tratando de mejorar sus habilidades de vuelo.\n¡Golpéalo!
 
 132 ¡Impresionante!
-133 ¡Lo lograste! Como te habrás dado cuenta, ganas algunos puntos de reputación por cada enemigo muerto.\nEl pequeño número verde que aparece en tu nave representa la cantidad. Aumentará si matas a un montón de enemigos seguidamente.
+133 ¡Lo lograste! Como te habrás dado cuenta, ganas algunos puntos de reputación por cada enemigo muerto.\nEl pequeño número verde que aparece en tu nave representa la cantidad. Aumentará si matas a un montón de enemigos a la vez.
 
 134 ¡Cuidado!
-135 No hay tiempo para el descanso.\n¡Nuestros enemigos han enviado uno de sus verdaderos guerreros por venganza! \nNo hay nada que pueda hacer por ti...
+135 No hay tiempo para el descanso.\n¡Nuestros enemigos han enviado uno de sus verdaderos guerreros para vengarse! \nNo hay nada que yo pueda hacer por ti...
 
 136 ¡Increíble!
 
-137 Has completado todas mis tareas con éxito. Ahora, ¿qué hacer? \nEchémos un vistazo en el Menú de Opciones. Allí puedes ajustar un montón de...bueno...opciones.\nPor ejemplo, puedes elegir el estilo de tu nave o su color o cambiar tu nombre ...
+137 Has completado todas mis tareas con éxito. Ahora, ¿qué hacer? \nEchémos un vistazo en el Menú de Opciones. Allí puedes ajustar un montón de...bueno...opciones.\nPor ejemplo, puedes elegir el estilo de tu nave, su color, cambiar tu nombre ...
 
 138 ¿Quién es mejor?
-139 Puedes visualizar una lista de frags, los puntos y así sucesivamente a través de <Tab>.\nAdemás, los números al lado de tu nombre ilustran tu contador de frags y tu distancia a la mejor.
+139 Puedes visualizar una lista de frags, los puntos y más cosas con la tecla <Tabulador>.\nAdemás, los números al lado de tu nombre ilustran tu contador de frags y tu distancia con el mejor.
 
 140 ¡Felicidades!
-141 Has terminado este tutorial. Ahora estás listo para luchar en la GRAN GUERRA. Si quieres seguir practicando, sólo espera a que enemigo reaparezca.Puedes terminar tu entrenamiento presionando <Esc>. \n\n¡Que tengas un buen rato con M.A.R.S.!
+141 Has terminado este tutorial. Ahora estás listo para luchar en la GRAN GUERRA. Si quieres seguir practicando, espera a que enemigo reaparezca. Puedes terminar tu entrenamiento presionando <Esc>. \n\n¡Qué pases un buen rato con M.A.R.S.!
 
 142 ¡Has Fallado!
-143 ¡Impresionante, has destruído tu nave nueva! Muy bien, vamos a conseguirte una nueva. Sólo tienes que esperar unos segundos ...
+143 ¡Impresionante, has destruído tu nave nueva! Muy bien, vamos a conseguirte otra nueva. Sólo tienes que esperar unos segundos ...
 
 144 ¿Te diste cuenta?
 145 ¡Tu vida se está agotando! Mantén un ojo en la barra verde de vida. Es mejor que aterrices si está demasiado vacía.
@@ -233,7 +234,7 @@
 147 ¡Tu combustible se está agotando! Mantén un ojo en la barra amarilla de combustible. Es mejor que aterrices si está demasiado vacía.
 
 148 ¡Casi lo atrapas!
-149 Ve el nombre de tu oponente. Su color indica sus puntos de vida. Cuanto más rojo, más débil está tu enemigo.
+149 Fíjate en el nombre de tu oponente. Su color indica sus puntos de vida. Cuanto más rojo, más débil está tu enemigo.
 
 // Columnas de Pestañas del menú
 
@@ -246,4 +247,38 @@
 160 Total:
 161 Estadísticas
 
-// 176 (055, 056)
+// Tool tips options menu
+
+176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
+177 Displays the amount of active particles.
+178 Dismisses tool tips like this one.
+179 Sets the format being used when screen shots are saved.
+180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
+181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
+182 If that many ships explode simultaneously, the slow motion effect kicks in.
+183 Displays the job of each bot.
+184 Displays tactical zones, which are important for the artificial intelligence.
+185 Displays paths calculated by bots.
+186 Maximizes the window, making it cover the entire screen.
+187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
+188 Enables cool effects like heat haze, but reduces game performance.
+189 Sets the size of the window.\nAffects both, full screen and windowed mode.
+190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+191 Adjusts the global particle count.\nLower values will increase performance significantly.
+192 Adjusts the global particle life time.\nLower values will increase performance significantly.
+193 Adjusts volume of background music.
+194 Adjusts volume of sound effects.
+195 Adjusts volume of announcers voice.
+
+// Tool tips in the start-a-new-game-window
+
+196 Sets the team of the local players.
+197 Enables local players.
+198 Adjusts the amount of ships controlled by the artificial intelligence.
+199 Point limit to be reached by a team in order to win the game.
+200 Point limit to be reached by a player in order to win the game.
+201 Adjusts the strength of the bots.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+
+// 203 (056)
+

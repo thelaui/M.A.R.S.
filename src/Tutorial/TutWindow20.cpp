@@ -31,7 +31,7 @@ bool TutWindow20::kOk_(false);
 UiWindow* TutWindow20::get() {
     if (instance_ == NULL) {
         instance_ = new TutWindow20(400, 200);
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(320,170), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(320,170), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Tut20), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(340, 35)));
         instance_->addWidget(new TextBox(locales::getLocale(locales::TutText20), Vector2f(10, 50), 380, 110));

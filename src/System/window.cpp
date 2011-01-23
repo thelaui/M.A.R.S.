@@ -155,18 +155,11 @@ namespace window {
         }
 
         void display() {
-
             window_.Display();
-
             if (++clearCount_ > 30) {
                 glClear(GL_COLOR_BUFFER_BIT);
                 clearCount_ = 0;
             }
-
-        }
-
-         bool isOpen() {
-            return window_.IsOpened();
         }
 
     }
@@ -174,12 +167,10 @@ namespace window {
     // "public" methodes /////////////////////////////////////////////////
 
     bool open() {
-        if (settings::load()) {
-            locales:: load();
+        if (settings::load() && locales::load()) {
             postFX::  load();
             fxImage_.SetBlendMode(sf::Blend::None);
             create();
-
             return true;
         }
         else return false;
@@ -191,9 +182,9 @@ namespace window {
     }
 
     void mainLoop() {
-        while (isOpen()) {
+        while (window_.IsOpened()) {
             update();
-            if (isOpen()) {
+            if (window_.IsOpened()) {
                 games::update();
                 games::draw();
                 display();
@@ -213,7 +204,7 @@ namespace window {
         //window_.SetFramerateLimit(10);
 
         sf::Image icon;
-        icon.LoadFromFile(settings::C_dataPath + "/tex/icon.png");
+        icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
         window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
 
         resized();
@@ -291,10 +282,7 @@ namespace window {
             glLoadIdentity();
             setViewPort();
 
-           /* if (*locales::getLocale(locales::LTRorRTL) == "RTL")
-                gluOrtho2D(viewPort_.x_, 0.f, viewPort_.y_, 0.f);
-            else*/
-                gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
 
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
@@ -303,10 +291,7 @@ namespace window {
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             setViewPort();
-         /*   if (*locales::getLocale(locales::LTRorRTL) == "RTL")
-                gluOrtho2D(viewPort_.x_, 0.f, viewPort_.y_, 0.f);
-            else*/
-                gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
         }

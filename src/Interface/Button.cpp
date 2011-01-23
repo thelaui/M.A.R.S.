@@ -21,12 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "Media/text.hpp"
 # include "Menu/menus.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 
-Button::Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align, sf::Font* font):
+Button::Button (sf::String* text, sf::String* toolTip, bool* key, Vector2f const& topLeft, int width, int height, int align, sf::Font* font):
     UiElement(topLeft, width, height),
-    key_(key) {
+    key_(key),
+    toolTip_(toolTip) {
 
     switch (align) {
         case TEXT_ALIGN_LEFT:  label_ = new Label(text, align, Vector2f(4, 2), 12.f, Color3f(0.75f,0.75f,0.75f), true, font);          break;
@@ -44,6 +46,8 @@ Button::~Button () {
 void Button::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void Button::mouseLeft(bool down) {
@@ -51,6 +55,7 @@ void Button::mouseLeft(bool down) {
     if (!pressed_ && hovered_ && focused_) {
         *key_ = true;
         hovered_ = false;
+        toolTip::show(NULL);
         sound::playSound(sound::Click);
     }
 }
@@ -61,6 +66,7 @@ void Button::keyEvent(bool down, sf::Key::Code keyCode) {
         if (!pressed_) {
             *key_ = true;
             hovered_ = false;
+            toolTip::show(NULL);
             sound::playSound(sound::Click);
         }
     }

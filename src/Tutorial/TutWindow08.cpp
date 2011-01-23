@@ -34,7 +34,7 @@ sf::String TutWindow08::text_("");
 UiWindow* TutWindow08::get() {
     if (instance_ == NULL) {
         instance_ = new TutWindow08(400, 200);
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(320,170), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(320,170), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Tut08), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(340, 35)));
         text_ = *locales::getLocale(locales::TutText08) + " <" + generateName::key(settings::C_playerIfire) + ">.\n" + *locales::getLocale(locales::TutText08b);

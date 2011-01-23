@@ -22,12 +22,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 # include "Media/texture.hpp"
 # include "Locales/locales.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 
-Checkbox::Checkbox (sf::String* text, bool* value, Vector2f const& topLeft, int width):
+Checkbox::Checkbox (sf::String* text, sf::String* toolTip, bool* value, Vector2f const& topLeft, int width):
     UiElement(topLeft, width, 20),
-    value_(value) {
+    value_(value),
+    toolTip_(toolTip) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(15,0));
     label_->setParent(this);
@@ -40,6 +42,9 @@ Checkbox::~Checkbox () {
 void Checkbox::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void Checkbox::mouseLeft(bool down) {

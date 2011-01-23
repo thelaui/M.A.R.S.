@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Button: public UiElement {
     public:
-        Button (sf::String* text, bool* key, Vector2f const& topLeft, int width, int height, int align = TEXT_ALIGN_CENTER, sf::Font* font = NULL);
+        Button (sf::String* text, sf::String* toolTip, bool* key, Vector2f const& topLeft, int width, int height, int align = TEXT_ALIGN_CENTER, sf::Font* font = NULL);
         ~Button ();
 
         void mouseMoved(Vector2f const& position);
@@ -39,6 +39,7 @@ class Button: public UiElement {
     private:
         bool* key_;
         Label* label_;
+        sf::String* toolTip_;
 };
 
 # endif

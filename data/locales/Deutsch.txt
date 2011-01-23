@@ -68,6 +68,7 @@
 040 Spieleinstellungen
 041 Vollbild
 042 V-Sync
+055 Zeige Tooltipps
 163 Shadereffekte
 164 Shader sind mit deiner Hardware leider nicht möglich!
 
@@ -245,4 +246,37 @@
 160 Gesamt:
 161 Statistik
 
-// 176 (055, 056)
+// Tooltipps Optionsmenü
+
+176 Zeigt an, wie viele Einzelbilder pro Sekunde berechnet werden.\nSollten dies immer wenig (<20) sein, solltest Du einige Einstellungen im Reiter Grafik anpassen!
+177 Zeigt die Anzahl der gerade herumfliegenden Partikel an.
+178 Schaltet solche Tooltipps ab.
+179 Legt den Kompressionsalgorithmus fest, nach dem Screenshots gespeichert werden.
+180 Beim drücken der hier festgelegten Taste wird ein Screenshot in ~/.marsshooter/screenshots gespeichert.
+181 Beim drücken der hier festgelegten Taste wird ein Screenshot im Ordner von M.A.R.S. gespeichert.
+182 Falls mindestens so viele Schiffe gleichzeitig explodieren, setzt der Slow-Motion-Effekt ein.
+183 Zeigt an, welche Aufgabe die Bots versuchen zu erfüllen.
+184 Zeigt taktische Zonen, an denen sich die KI orientiert.
+185 Zeigt die Pfade an, die die Bots berechnen.
+186 Maximiert das Fenster, so dass es den gesamten Bildschirm ausfüllt.
+187 Veranlasst M.A.R.S. sich mit der gleichen Frequenz wie Dein Bildschirm zu aktualisieren.\nDurch Aktivieren dieser Option wirkt das Spiel in der Regel flüssiger.
+188 Aktiviert Hitzeflimmern und andere Effekte, die sich negativ auf die Spielleistung auswirken, aber toll aussehen.
+189 Legt die Größe des Fensters fest.\nWirkt sich sowohl auf den Vollbildmodus als auch auf den Fenstermodus aus.
+190 Auf hochauflösenden Monitoren verhindert diese Option, dass sich der Sternenhintergrund zu schnell wiederholt.\nDeaktivieren dieser Option kann sich mitunter positiv auf die Spielleistung auswirken.
+191 Regelt die globale Anzahl von Partikeln.\nKleinere Werte verbessern die Spielleistung erheblich.
+192 Regelt die globale Lebenszeit von Partikeln.\nKleinere Werte verbessern die Spielleistung erheblich.
+193 Regelt die Lautstärke der Hintergrundmusik.
+194 Regelt die Lautstärke der Soundeffekte.
+195 Regelt die Lautstärke der Stimmausgabe.
+
+// Tooltipps im Spiel-starten-Dialog
+
+196 Legt fest, in welchem Team die lokalen Spieler jeweils mitspielen.
+197 Legt fest, welche der lokalen Spieler mitspielen. 
+198 Regelt die Anzahl der computergesteuerten Mitspieler.
+199 Wenn ein Team diese Punktzahl erreicht, endet das Spiel.
+200 Wenn ein Spieler diese Punktzahl erreicht, endet das Spiel.
+201 Regelt die Stärke der computergesteuerten Mitspieler.
+202 Regelt die Menge an PowerUps, die während des Spiels auftauchen.\n Wähle 0 um PowerUps gänzlich zu deaktivieren.
+
+// 203 (056)

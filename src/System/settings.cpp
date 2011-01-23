@@ -61,6 +61,7 @@ namespace settings {
     bool        C_showInfoTDM =             true;
     bool        C_showInfoCK =              true;
     bool        C_showSelectLanguage =      true;
+    bool        C_showToolTips =            true;
     int         C_languageID =              0;
     int         C_resX =                    960;
     int         C_resY =                    600;
@@ -164,6 +165,7 @@ namespace settings {
             outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
             outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
             outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
+            outStream << "[showToolTips] "    << (C_showToolTips ? "true" : "false") << std::endl;
             outStream << "[languageID] "            <<  C_languageID << std::endl;
             outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
             outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
@@ -186,7 +188,7 @@ namespace settings {
     bool load() {
         // check whether application directory in the home diretory exists, if not create it
         # ifdef __linux__
-            mkdir((std::string(getenv("HOME")) + "/.marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            mkdir((std::string(getenv("HOME")) + ".marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
         # ifdef __WIN32__
@@ -227,7 +229,7 @@ namespace settings {
             C_dataPath = "./data/";
 
             # ifdef __linux__
-                if (std::ifstream((C_dataPath + "/locales/English.txt").c_str()))
+                if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
                     success = true;
                 else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {
                     C_dataPath = "/usr/share/marsshooter/";
@@ -242,7 +244,7 @@ namespace settings {
             # endif
 
             # ifdef __WIN32__
-                if (std::ifstream((C_dataPath + "/locales/English.txt").c_str()))
+                if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
                     success = true;
             # endif
 
@@ -566,6 +568,13 @@ namespace settings {
                     iss >> value;
                     if (value == "true")        C_showInfoCK = true;
                     else if (value == "false")  C_showInfoCK = false;
+                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                }
+                else if (inputLine == "[showToolTips]") {
+                    std::string value;
+                    iss >> value;
+                    if (value == "true")        C_showToolTips = true;
+                    else if (value == "false")  C_showToolTips = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else if (inputLine == "[highStarResolution]") {

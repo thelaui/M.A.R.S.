@@ -33,24 +33,29 @@ namespace locales {
                      BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
                      ParticleCountSlider, ParticleLifetime, GameSettings, Fullscreen, VerticalSynchronisation, MusicVolume,
                      SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Weapon, ShipName, PlayerColor,
-                     TeamColor, ScreenShotFormat, SSSSSSSSSSSS, SSSSSSSS, AboutText, LicenseText, QuitText,
+                     TeamColor, ScreenShotFormat, ShowToolTips, SSSSSSSS, AboutText, LicenseText, QuitText,
                      QuitCurrentGameText, StartNetworkText, JoinNetworkText, HideMenuText, Add, BackSlash, Comma, Dash,
                      Delete, Divide, Down, End, Equal, Home, Insert, LeftAlt, LeftBracket, LeftControl, Left, LeftShift,
                      LeftSuper, Menu, Multiply, PageDown, PageUp, Pause, Period, Quote, RightAlt, RightBracket,
                      RightControl, Return,Right, RightShift, RightSuper, SemiColon, Slash, Space, Subtract, Tilde, Tab,
-                     Up, Display, Audio, WindowSettings, StartTutorial,Next, Tut01, TutText01, Tut02, TutText02, Tut03,
+                     Up, Display, Audio, WindowSettings, StartTutorial, Next, Tut01, TutText01, Tut02, TutText02, Tut03,
                      TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
                      TutText08b, Tut09, TutText09, Tut10, TutText10, TutText10b, TutText10c, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
-                     Resolution, ColorDepth, Special,
+                     Resolution, ColorDepth, Special, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
+                     ttScreenShotFormat, ttScreenShotKeyUnix, ttScreenShotKeyWindows, ttSlowMoKickIn, ttBotsOrientation,
+                     ttZones, ttAIPaths, ttFullscreen, ttVerticalSynchronisation,
+                     ttShaders, ttResolution, ttStarsHigh, ttParticleCountSlider, ttParticleLifetime, ttMusicVolume,
+                     ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
+                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 
-    /// Loads the current locale, accordind to settings::C_languageID.
-    void                       load();
+    /// Loa ds the current locale, accordind to settings::C_languageID.
+    bool                       load();
 
     /// Returns a list of all files in data/locales.
     std::vector<Locale> const& getLocales();

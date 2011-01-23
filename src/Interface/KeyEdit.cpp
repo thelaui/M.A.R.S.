@@ -23,12 +23,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/generateName.hpp"
 # include "Media/sound.hpp"
 # include "Menu/menus.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 
-KeyEdit::KeyEdit (sf::String* text, sf::Key::Code* value, Vector2f const& topLeft, int width):
+KeyEdit::KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width):
     UiElement(topLeft, width, 20),
-    value_(value) {
+    value_(value),
+    toolTip_(toolTip) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
@@ -41,6 +43,9 @@ KeyEdit::~KeyEdit () {
 void KeyEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void KeyEdit::mouseLeft(bool down) {

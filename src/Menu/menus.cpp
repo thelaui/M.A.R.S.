@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.*/
 # include "Menu/MainMenu.hpp"
 # include "Menu/PauseMenu.hpp"
 # include "Menu/ExitConfirm.hpp"
+# include "Interface/toolTip.hpp"
 # include "Tutorial/TutWindow01.hpp"
 # include "Tutorial/TutWindow02.hpp"
 # include "Tutorial/TutWindow03.hpp"
@@ -79,11 +80,14 @@ namespace menus {
             Vector2f viewPort = window::getViewPort();
             text::drawScreenText(sf::String("M.A.R.S. " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH)
                                             + " - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+
+            toolTip::draw();
         }
     }
 
     void mouseMoved(Vector2f const& position) {
         if (visible()) {
+            toolTip::mouseMoved(position);
             windowStack_.back()->mouseMoved(position);
             windowStack_.back()->checkWidgets();
         }

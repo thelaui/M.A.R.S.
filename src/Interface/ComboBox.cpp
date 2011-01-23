@@ -26,16 +26,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "Interface/DropDownWindow.hpp"
 # include "Interface/Button.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
 
-ComboBox::ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth):
+ComboBox::ComboBox (sf::String* text, sf::String* toolTip, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 16),
     dropBox_(NULL),
     labelWidth_(labelWidth),
     currentValue_(value),
-    opened_(false) {
+    opened_(false),
+    toolTip_(toolTip) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
@@ -51,6 +53,9 @@ ComboBox::~ComboBox () {
 void ComboBox::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void ComboBox::mouseLeft(bool down) {

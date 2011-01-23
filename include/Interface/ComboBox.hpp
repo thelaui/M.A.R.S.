@@ -25,7 +25,7 @@ class UiWindow;
 
 class ComboBox: public UiElement {
     public:
-        ComboBox (sf::String* text, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth=185);
+        ComboBox (sf::String* text, sf::String* toolTip, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth=185);
         ~ComboBox ();
 
         void mouseMoved(Vector2f const& position);
@@ -46,6 +46,7 @@ class ComboBox: public UiElement {
         Label* label_;
         int labelWidth_;
         bool opened_;
+        sf::String* toolTip_;
 };
 
 # endif // COMBOBOX_HPP_INCLUDED

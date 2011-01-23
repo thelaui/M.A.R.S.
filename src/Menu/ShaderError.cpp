@@ -31,7 +31,7 @@ bool ShaderError::kOk_(false);
 UiWindow* ShaderError::get() {
     if (instance_ == NULL) {
         instance_ = new ShaderError(350, 80);
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok),     &kOk_, Vector2f(270,50), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok),     NULL, &kOk_, Vector2f(270,50), 70, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::ShaderError), TEXT_ALIGN_LEFT, Vector2f(10, 8)));
     }
     return instance_;

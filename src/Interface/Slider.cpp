@@ -22,18 +22,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 # include "Media/texture.hpp"
 # include "Locales/locales.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
 
-Slider::Slider (sf::String* text, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<sf::String> const& sliderNames):
+Slider::Slider (sf::String* text, sf::String* toolTip, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<sf::String> const& sliderNames):
     UiElement(topLeft, width, 20),
     value_(value),
     minValue_(minValue),
     maxValue_(maxValue),
     labelWidth_(labelWidth),
     showValue_(showValue),
-    sliderNames_(sliderNames) {
+    sliderNames_(sliderNames),
+    toolTip_(toolTip) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
@@ -59,6 +61,9 @@ void Slider::mouseMoved(Vector2f const& position) {
         if (*value_ > maxValue_) *value_ = maxValue_;
     }
     label_->mouseMoved(position);
+
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void Slider::keyEvent(bool down, sf::Key::Code keyCode) {

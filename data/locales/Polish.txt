@@ -69,6 +69,7 @@
 040 Ustawienia Gry
 041 Pełny Ekran
 042 Synchronizacja Pionowa
+055 Display Tool Tips
 163 Efekty Cieniowania (shader)
 164 Niestety, Cieniowanie Nie Jest Obsługiwane Przez Twój Sprzęt!
 
@@ -247,5 +248,39 @@
 160 W sumie:
 161 Statystyki
 
-// 176 (055, 056)
+// Tool tips options menu
+
+176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
+177 Displays the amount of active particles.
+178 Dismisses tool tips like this one.
+179 Sets the format being used when screen shots are saved.
+180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
+181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
+182 If that many ships explode simultaneously, the slow motion effect kicks in.
+183 Displays the job of each bot.
+184 Displays tactical zones, which are important for the artificial intelligence.
+185 Displays paths calculated by bots.
+186 Maximizes the window, making it cover the entire screen.
+187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
+188 Enables cool effects like heat haze, but reduces game performance.
+189 Sets the size of the window.\nAffects both, full screen and windowed mode.
+190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+191 Adjusts the global particle count.\nLower values will increase performance significantly.
+192 Adjusts the global particle life time.\nLower values will increase performance significantly.
+193 Adjusts volume of background music.
+194 Adjusts volume of sound effects.
+195 Adjusts volume of announcers voice.
+
+// Tool tips in the start-a-new-game-window
+
+196 Sets the team of the local players.
+197 Enables local players.
+198 Adjusts the amount of ships controlled by the artificial intelligence.
+199 Point limit to be reached by a team in order to win the game.
+200 Point limit to be reached by a player in order to win the game.
+201 Adjusts the strength of the bots.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+
+// 203 (056)
+
 

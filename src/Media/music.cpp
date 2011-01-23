@@ -38,10 +38,10 @@ namespace music {
         void playMusic(MusicType music) {
             if (!initialized_) init();
             switch (music) {
-                case Technodog:        musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/technodog.ogg");      break;
-                case Thisistheday:     musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/thisistheday.ogg");   break;
-                case Midnightride:     musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/midnightride.ogg");   break;
-                case Dancezone:        musicChannel_.OpenFromFile(settings::C_dataPath + "/audio/music/dancezone.ogg");      break;
+                case Technodog:        musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/technodog.ogg");      break;
+                case Thisistheday:     musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/thisistheday.ogg");   break;
+                case Midnightride:     musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/midnightride.ogg");   break;
+                case Dancezone:        musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/dancezone.ogg");      break;
             }
             musicChannel_.Play();
         }

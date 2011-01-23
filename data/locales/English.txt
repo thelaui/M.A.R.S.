@@ -61,18 +61,19 @@
 035 Show Game Information
 036 Frames per Second
 152 Language
-153 Hotkey for Screenshots
-054 File Format for Screenshots
+153 Hot Key for Screen Shots
+054 File Format for Screen Shots
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
 040 Game Settings
-041 Fullscreen
+041 Full screen
 042 V-Sync
+055 Display Tool Tips
 163 Shader Effects
 164 Sadly, shaders are not supported by your hardware!
 
-151 High Starfield Resolution
+151 High Star Field Resolution
 173 Resolution
 174 Color Depth
 
@@ -127,7 +128,7 @@
 
 // hide menu
 
-063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwars by pressing ESC.
+063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screen shot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwards by pressing ESC.
 
 // key names
 
@@ -222,7 +223,7 @@
 139 You can display a list of frags, points and so on via <Tab>.\nFurthermore the numbers next to your name illustrate your frag counter and your distance to the best one. 
 
 140 Congratulations!
-141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practicing, just wait for the enemy to respawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
+141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemy to re-spawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
 
 142 You Failed!
 143 Awesome, you destroyed your brand new ship! All right, we will get you a new one. Just wait some seconds...
@@ -247,5 +248,38 @@
 160 Total:
 161 Statistics
 
-// 176 (055, 056)
+// Tool tips options menu
+
+176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
+177 Displays the amount of active particles.
+178 Dismisses tool tips like this one.
+179 Sets the format being used when screen shots are saved.
+180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
+181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
+182 If that many ships explode simultaneously, the slow motion effect kicks in.
+183 Displays the job of each bot.
+184 Displays tactical zones, which are important for the artificial intelligence.
+185 Displays paths calculated by bots.
+186 Maximizes the window, making it cover the entire screen.
+187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
+188 Enables cool effects like heat haze, but reduces game performance.
+189 Sets the size of the window.\nAffects both, full screen and windowed mode.
+190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+191 Adjusts the global particle count.\nLower values will increase performance significantly.
+192 Adjusts the global particle life time.\nLower values will increase performance significantly.
+193 Adjusts volume of background music.
+194 Adjusts volume of sound effects.
+195 Adjusts volume of announcers voice.
+
+// Tool tips in the start-a-new-game-window
+
+196 Sets the team of the local players.
+197 Enables local players.
+198 Adjusts the amount of ships controlled by the artificial intelligence.
+199 Point limit to be reached by a team in order to win the game.
+200 Point limit to be reached by a player in order to win the game.
+201 Adjusts the strength of the bots.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+
+// 203 (056)
 

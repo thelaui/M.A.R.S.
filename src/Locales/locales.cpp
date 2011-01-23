@@ -30,7 +30,7 @@ namespace locales {
         std::vector<Locale>     locales_;
         std::vector<sf::String> localeStrings_(COUNT, "Error");
 
-        void load(std::string const& fileName) {
+        bool load(std::string const& fileName) {
             std::vector<sf::String> lines;
             if (file::load(fileName, lines)) {
                 for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
@@ -43,15 +43,20 @@ namespace locales {
                         localeStrings_[id] = tmp;
                     }
                 }
+                return true;
             }
-            else
+            else {
                 std::cout << "Failed to open locale " << fileName << "! Interface will be messed up with errors...\n";
+                return false;
+            }
         }
     }
 
-    void load() {
+    bool load() {
+        std::cout << "Opening " << settings::C_dataPath << "locales/locales.conf... " << std::flush;
         std::vector<sf::String> lines;
-        if (file::load(settings::C_dataPath + "/locales/locales.conf", lines)) {
+        if (file::load(settings::C_dataPath + "locales/locales.conf", lines)) {
+            std::cout << "Done." << std::endl;
             Locale newLocale;
             bool first(true);
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
@@ -68,31 +73,55 @@ namespace locales {
                 }
                 else {
                     std::stringstream sstr(std::string((*it).ToAnsiString()));
-                    std::string flag, arg;
-                    sstr >> flag >> arg;
+                    std::string flag;
+                    sstr >> flag;
+
+                    sf::String arg(*it);
+                    arg.Erase(0, flag.size()+1);
 
                     if (flag == "file:")
-                        newLocale.fileName_ = sf::String(arg);
+                        newLocale.fileName_ = arg;
                     else if (flag == "font:")
-                        newLocale.font_ = sf::String(arg);
+                        newLocale.font_ = arg;
+                    else if (flag == "author:")
+                        newLocale.author_ = "By " + arg;
                     else if (flag == "direction:") {
                         if (arg == "RTL") newLocale.LTR_ = false;
                         else              newLocale.LTR_ = true;
                     }
                     else
-                        std::cout << "Unrecognized flag \"" << flag << "\" in " << settings::C_dataPath + "/locales/locales.conf !" << std::endl;
+                        std::cout << "Unrecognized flag \"" << flag << "\" in " << settings::C_dataPath + "locales/locales.conf !" << std::endl;
                 }
             }
 
             if (!first)
                 locales_.push_back(newLocale);
-        }
 
-        load (settings::C_dataPath + "/locales/English.txt");
-        if (settings::C_languageID < locales_.size())
-            load (settings::C_dataPath + "/locales/"+locales_[settings::C_languageID].fileName_);
-        else
-            settings::C_languageID = 0;
+            bool loadSuccess(false);
+
+            load (settings::C_dataPath + "locales/English.txt");
+            if (settings::C_languageID < locales_.size()) {
+                std::cout << "Loading " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.ToAnsiString() << "... " << std::flush;
+                if (load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
+                    std::cout << "Done." << std::endl;
+                }
+                else {
+                    std::cout << "Not found! Falling back to English..." << std::endl;
+                    settings::C_languageID = 0;
+                }
+
+            }
+            else {
+                std::cout << "Specified language in mars.conf doesn't match any in locales.conf! Falling back to English..." << std::endl;
+                settings::C_languageID = 0;
+            }
+
+            return true;
+        }
+        else {
+            std::cout << "Not found! Aborting..." << std::endl;
+            return false;
+        }
     }
 
     std::vector<Locale>const& getLocales() {
@@ -108,7 +137,7 @@ namespace locales {
     }
 
     void setCurrentLocale() {
-        load(settings::C_dataPath + "/locales/"+locales_[settings::C_languageID].fileName_);
+        load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_);
     }
 }
 

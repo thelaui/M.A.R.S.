@@ -1,4 +1,4 @@
-/* Checkbox.hpp
+/* toolTip.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,31 +15,21 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef CHECKBOX_HPP_INCLUDED
-# define CHECKBOX_HPP_INCLUDED
+# ifndef TOOLTIP_HPP_INCLUDED
+# define TOOLTIP_HPP_INCLUDED
 
-# include "Interface/UiElement.hpp"
-# include "Interface/Label.hpp"
+# include "System/Vector2f.hpp"
 
-class Checkbox: public UiElement {
-    public:
-        Checkbox (sf::String* text, sf::String* toolTip, bool* value, Vector2f const& topLeft, int width);
-        ~Checkbox ();
+# include <SFML/System.hpp>
 
-        void mouseMoved(Vector2f const& position);
-        void mouseLeft(bool down);
-        void keyEvent(bool down, sf::Key::Code keyCode);
+namespace toolTip {
 
-        void draw() const;
+    void draw();
 
-        void setFocus  (UiElement* toBeFocused, bool isPrevious);
-        void clearFocus();
+    void mouseMoved(Vector2f const& position);
 
-    private:
-        bool* value_;
-        Label* label_;
-        sf::String* toolTip_;
-};
+    void show(sf::String* text);
+}
 
-# endif
+# endif // TOOLTIP_HPP_INCLUDED
 

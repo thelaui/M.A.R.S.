@@ -34,7 +34,7 @@ DropDownWindow::DropDownWindow (int width, ComboBox* parent, std::vector<sf::Str
     for (int i=0; i<elements_.size(); ++i) {
         elements_[i] = std::make_pair(elements[i], false);
         Button* newOne;
-        newOne=new Button(&(elements_[i].first), &(elements_[i].second), Vector2f(10, top), width_-20, 20, TEXT_ALIGN_CENTER);
+        newOne=new Button(&(elements_[i].first), NULL, &(elements_[i].second), Vector2f(10, top), width_-20, 20, TEXT_ALIGN_CENTER);
         newOne->setParent(this);
         addWidget(newOne);
         top += 24 ;

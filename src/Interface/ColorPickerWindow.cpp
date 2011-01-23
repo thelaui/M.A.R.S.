@@ -30,7 +30,7 @@ ColorPickerWindow::ColorPickerWindow (ColorPicker* parent, Color3f* color):
     UiWindow(190, 185),
     parent_(parent),
     color_(color),
-    Ok_(new Button(locales::getLocale(locales::Ok), &kOk_, Vector2f(110, 155), 70, 20)),
+    Ok_(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(110, 155), 70, 20)),
     kOk_(false) {
 
     addWidget(Ok_);

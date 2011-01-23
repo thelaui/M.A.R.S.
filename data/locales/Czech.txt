@@ -1,0 +1,286 @@
+﻿// menu buttons
+
+000 Spustit lokální hru
+105 Spustit tutoriál
+001 Spustit síťovou hru
+002 Připojit se k síťové hře
+003 Nastavení
+004 O programu
+005 Ukončit M.A.R.S.
+006 Pokračovat
+007 Restartovat hru
+008 Skrýt menu
+009 Návrat do hlavního menu
+
+// standard buttons
+
+010 Start
+011 Zrušit
+012 Info
+013 Zavřít
+014 Licence
+015 Ok
+106 Další
+016 Zobrazit tyto informace i příště.
+
+// pregame options
+
+017 Levý tým
+018 Pravý tým
+019 Boti vlevo
+020 Boti vpravo
+021 Boti
+022 Limit fragů
+162 Limit bodů
+
+// story information
+
+023 V roce 3547 civilizace po celé galaxii ustálili své vlastní planety a žili v míru a harmonii s jejich prostředím.  \nAle mimo tato kontemplativní stanoviště zuří VELKÁ VÁLKA.  \nJakožto slavný bojovník musíš na své cestě za nikdy nekončící slávou a prosperitou chránit svoji planetu proti blížící se zkáze v podobě tvých žárlivých  \nsousedů! Bojuj v bitvě, pro kterou byl opravdový hrdina jako ty stvořen: SPACEBALL. \nChraň svou planetu před koulí smrti a poraž své nepřátele tak, že ji necháš narazit do jejich směšného glóbu.
+024 Dokopej nebo dostřílej kouli na nepřátelskou planetu!
+025 Následkem VELKÉ VÁLKY jsi ztratil vše: svůj domov, svoji rodinu a své\nsebevědomí. \nTvou poslední šancí dostat se z toho mizerného života ve kterém vězíš je stát se gladiátorem ve velkolepé \nDEATHMATCH aréně. \nOdolávej ostatním bojovníkům a získávej body ničením těch skořápek, které nazývají lodě. \nPřiprav se! \nČeká na tebe smrt a sláva.
+026 Znič co nejvíce nepřátel!
+027 Vyjednávání selhala! \nTy i tvoji sousedé jste zaznamenali velké ztráty při vyjednávání podmínek VELKÉ VÁLKY. \nJakožto poslední pokus o získání převahy musíš ničit zdroje svých nepřátel a chránit své vlastní. Jediný způsob jak toho docílit je velkolepý TÝMOVÝ DEATHMATCH. \nChraň své spolubojovníky a znič své nepřátele! \nDej jim lekci na kterou nikdy nezapomenou.
+028 Znič co nejvíce nepřátel!
+029 Jako kdyby VELKÁ VÁLKA nebyla dost, tvůj planetární systém je ohrožován novým zdrojem neuvěřitelného zla: Obrovská loď neznámých útočníků levituje nad tvou galaxií, mířící na domovské planety monolitickou zbraní hromadného ničení. \nJako znak cynismu útočníci upustili dálkový ovladač tohoto původce smrti a strachu. \nDostaň se k němu první abys přeměnil domovskou planetu tvých nepřátel na místo zkázy! \nStaň se STRÁŽCEM KANÓNU.
+030 Seber dálkový ovladač a udrž si ho co nejdéle!
+
+
+// display options
+// tabs
+
+150 Rozhraní
+165 Hra
+102 Grafika
+103 Zvuk
+
+104 Nastavení okna
+031 Zobrazování debugovacích informací
+032 Orientace botů
+033 Zóny
+034 Trasy AI
+035 Zobrazování herních informací
+036 Snímky za sekundu
+152 Jazyk
+153 Klávesa pro snímky obrazovky
+054 Formát snímků obrazovky
+037 Počet částic
+038 Počet částic
+039 Životnost částic
+040 Herní nastavení
+041 Celá obrazovka
+042 V-Sync
+055 Display Tool Tips
+163 Shader efekty
+164 Bohužel, shadery nejsou vaším hardware podporovány!
+
+151 Vysoké rozlišení hvězd
+173 Rozlišení
+174 Barevná hloubka
+
+// gameplay options
+
+166 Četnost PowerUpů
+167 Obtížnost botů
+168 Počet explozí pro zpomalení
+169 Vypnuto
+
+// audio options
+
+043 Hlasitost hudby
+044 Hlasitost zvuků
+045 Hlasitost hlasu
+
+// player options
+
+046 Jméno
+047 Akcelerace
+048 Vlevo
+049 Vpravo
+050 Zbraň
+175 Specialita
+051 Loď
+052 Barva hráče
+053 Barva týmu
+
+// about
+
+057 Toto je první pokus o vytvoření hry v OpenGL se SFML. Jedná se o hru pro dva hráče, létání s loděmi v dvourozměrném prostoru, ovládaného zákony gravitace. \n\nDomovská stránka: \nhttp://www.marsshooter.org
+
+// license
+
+058 Tento program je volný software; můžete ho šířit a/nebo upravovat pod podmínkami GNU General Public License vydanou Free Software Foundation ve verzi 3 nebo (dle vašeho rozhodnutí) jakoukoli pozdější verzí. \n\nTento program je distribuován v naději, že bude užitečný, ale BEZ JAKÉKOLI ZÁRUKY; tedy i bez záruky PRODEJNOSTI nebo VHODNOSTI PRO KONKRÉTNÍ ÚČEL. Přečtěte si GNU General Public License pro více detailů. \n\nDostupná online na:\nhttp://www.gnu.org/licenses/gpl-3.0.html \n\nČesky na:\nhttp://www.gnugpl.cz
+
+// credits
+
+170 Autoři
+171 Speciální poděkování:
+172 Překlady:\n   Čeština: Mates\n   Němčina: Sandra\n   Španělština: Gastón\n   Portugalština: Vitor\n   Francouzština: Astohan\n   Ruština: Drakmail\n   Italština: Proch\n   Švédština: Henrik\n\nTesty a kreativní podpora:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Opravdu chcete skončit?
+060 Opravdu chcete ukončit probíhající hru?
+
+// network information
+
+061 Podpora pro hru po internetu nebo lokální síti je plánovaná, ale není ještě implementována. \n\nZůstaňte naladěni!
+062 Podpora pro hru po internetu nebo lokální síti je plánovaná, ale není ještě implementována. \n\nZůstaňte naladěni!
+
+// hide menu
+
+063 Pauznul jsi M.A.R.S. právě uprostřed neuvěřitelný bitvy? \nPokud chceš udělat snímek obrazovky, tohle tlačítko ti umožní udělat úžasný wallpaper skrytím všech oken. \n\nPoté je jednoduše znovu vyvolej stisknutím ESC.
+
+// key names
+
+064 Plus
+065 Zpětné lomítko
+066 Čárka
+067 Pomlčka
+068 Delete
+069 Lomítko
+070 Dolů
+071 End
+072 Rovnítko
+073 Home
+074 Insert
+075 Levý Alt
+076 Levá závorka
+077 Levý Control
+078 Vlevo
+079 Levý Shift
+080 Levý Super
+081 Menu
+082 Hvězdička
+083 Page Down
+084 Page Up
+085 Pause
+086 Tečka
+087 Uvozovky
+088 Pravý Alt
+089 Pravá závorka
+090 Pravý Control
+091 Enter
+092 Vpravo
+093 Pravý Shift
+094 Pravý Super
+095 Středník
+096 Lomítko
+097 Mezerník
+098 Mínus
+099 Vlnovka
+100 Tab
+101 Nahoru
+
+// tutorial texts
+
+107 Vítej, nováčku!
+108 Jsme rádi, že můžeme vycvičit nového hrdinu jako jsi ty aby se k nám přidal ve VELKÉ VÁLCE!\nEvidentně potřebuješ trochu cviku se svou novou lodí.\nNechť výcvik začne...
+
+109 Základní pohyby...
+110 Ovládání tvé lodě je nejdůležitější úkol ke zvládnutí.\nVšechny pohyby podléhají zákonům gravitace. Ke zpomalení se musíš otočit a zrychlit v opačném směru. Ovládej svou loď klávesami
+
+111 Zahřívání!
+112 Dostaň se do růžové oblasti!\nSnaž se nezničit svoji novou loď.
+
+113 Velmi dobře!
+114 Teď se vrať na svoji domovskou planetu a pokus se pozadu přistát pomalým přibližováním se k planetě.
+
+115 Dobrá práce!
+116 Správné přistání není tak snadné, že?\nMusíš do toho vložit svoje srdce.
+
+117 Něco trošku obtížnějšího...
+118 Pokus se následovat trasu označenou růžovými oblastmi!\n\nKontaktujeme tě znovu až to zvládneš.
+
+119 Úžasné!
+120 Jsi ten nejlepší začátečník, kterého jsem kdy viděl.\nTeď se připrav na nějaké exploze.
+
+121 Střílení...
+122 K poražení nepřátel musíš vědět jak střílet!\nPro tento účel stiskni
+123 Trochu si to vyzkoušej a pak přistaň na své planetě pro pokračování.
+
+124 Dobré přistání!
+125 Zdá se, že jsi dobrý pilot.\n\nTeď, co takhle trochu víc zbraní?
+
+126 Zbraně...
+127 Vím, že na tohle jsi čekal. Když stojíš na planetě, můžeš přepínat mezi některými neuvěřitelně ďábelskými zbraněmi.\nStiskni
+128 k otevření svého arzenálu.\nPoté použij
+129 pro výběr zbraně! Vzleť až budeš hotov!
+
+130 Bitva!
+131 Teď se pojďme podívat jak si poradíš s nováčkem z jiné planety.\nZdá se, že se snaží zlepšit si svoje pilotní dovednosti.\nPoraž ho!
+
+132 Působivé!
+133 Dokázal jsi to! Jak sis možná všimnul, za každého zničeného nepřítele dostáváš nějaké reputační body.\nTy malé červené hvězdičky objevující se nad tvojí lodí značí jejich počet. Zvýší se pokud zabiješ hodně nepřátel v řadě.
+
+134 Pozor!
+135 Není čas na odpočinek.\nNaši nepřátelé poslali jednoho z jejich skutečných bojovníků kvůli pomstě!\nNení nic co bych pro tebe teď mohl udělat...
+
+136 Neuvěřitelné!
+
+137 Zvládl jsi všechny moje úkoly. Co teď?\nPojďme se podívat do menu nastavení. Můžeš tam upravit spoustu... no... nastavení.\nNapříklad si můžeš vybrat styl a barvu své lodi nebo změnit své jméno...
+
+138 Kdo je nejlepší?
+139 Můžeš si zobrazit tabulku fragů, bodů apod. pomocí <Tab>.\nNavíc, čísla vedle tvého jména ukazují počet tvých fragů a tvojí vzdálenost od nejlepšího.
+
+140 Gratuluji!
+141 Dokončil jsi tento tutoriál. Jsi teď připraven bojovat ve VELKÉ VÁLCE. Pokud chceš pokračovat v procvičování, stačí počkat až se nepřítel znovu objeví. Můžeš svůj výcvik ukončit pomocí <Esc>.\n\nUžij si M.A.R.S.!
+
+142 Selhal jsi!
+143 Úžasné, zničil jsi svoji úplně novou loď! Fajn, dáme ti novou. Jen počkej pár sekund...
+
+144 Všiml sis?
+145 Dochází ti zdraví! Sleduj svůj zelený ukazatel života. Měl bys přistát pokud je skoro prázdný.
+
+146 Všiml sis?
+147 Dochází ti palivo! Sleduj svůj žlutý ukazatel paliva. Měl bys přistát pokud je skoro prázdný.
+
+148 Už ho skoro máš!
+149 Sleduj jméno svého protivníka. Jeho barva značí jeho zdraví. Čím je červenější, tím slabší tvůj protivník je.
+
+// tabmenu collumns
+
+154 Body
+155 Fragy
+156 Teamkilly
+157 Sebevraždy
+158 Smrti
+159 Reputace
+160 Celkem:
+161 Statistika
+
+// Tool tips options menu
+
+176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
+177 Displays the amount of active particles.
+178 Dismisses tool tips like this one.
+179 Sets the format being used when screen shots are saved.
+180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
+181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
+182 If that many ships explode simultaneously, the slow motion effect kicks in.
+183 Displays the job of each bot.
+184 Displays tactical zones, which are important for the artificial intelligence.
+185 Displays paths calculated by bots.
+186 Maximizes the window, making it cover the entire screen.
+187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
+188 Enables cool effects like heat haze, but reduces game performance.
+189 Sets the size of the window.\nAffects both, full screen and windowed mode.
+190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+191 Adjusts the global particle count.\nLower values will increase performance significantly.
+192 Adjusts the global particle life time.\nLower values will increase performance significantly.
+193 Adjusts volume of background music.
+194 Adjusts volume of sound effects.
+195 Adjusts volume of announcers voice.
+
+// Tool tips in the start-a-new-game-window
+
+196 Sets the team of the local players.
+197 Enables local players.
+198 Adjusts the amount of ships controlled by the artificial intelligence.
+199 Point limit to be reached by a team in order to win the game.
+200 Point limit to be reached by a player in order to win the game.
+201 Adjusts the strength of the bots.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+
+// 203 (056)
+
+

@@ -22,13 +22,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/texture.hpp"
 # include "Media/text.hpp"
 # include "Locales/locales.hpp"
+# include "Interface/toolTip.hpp"
 
 # include <SFML/OpenGL.hpp>
 
-RadioButton::RadioButton (sf::String* text, bool* value, Vector2f const& topLeft, int width,bool offSwitchable):
+RadioButton::RadioButton (sf::String* text, sf::String* toolTip, bool* value, Vector2f const& topLeft, int width,bool offSwitchable):
     UiElement(topLeft, width, 20),
     value_(value),
-    offSwitchable_(offSwitchable) {
+    offSwitchable_(offSwitchable),
+    toolTip_(toolTip) {
 
     label_ = new Label(text, false, Vector2f(15,0));
     label_->setParent(this);
@@ -41,6 +43,9 @@ RadioButton::~RadioButton () {
 void RadioButton::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     label_->mouseMoved(position);
+
+    if (hovered_ && toolTip_)
+        toolTip::show(toolTip_);
 }
 
 void RadioButton::mouseLeft(bool down) {
