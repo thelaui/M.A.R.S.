@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 # include "System/timer.hpp"
 # include "System/window.hpp"
+# include "Locales/locales.hpp"
 
 # include <vector>
 # include <SFML/OpenGL.hpp>
@@ -121,6 +122,11 @@ namespace toolTip {
                     width = tmp;
             }
 
+
+            int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
+            width *= mirror;
+
             // draw background
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             glColor4f(0.0,0.0,0.0, alpha/1.25f);
@@ -146,7 +152,7 @@ namespace toolTip {
             // draw text
             int top(5);
             for (std::vector<sf::String>::iterator it = lines_.begin(); it!=lines_.end(); ++it) {
-                text::drawScreenText(*it, position_ + Vector2f(5, top), 12.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f)*alpha);
+                text::drawScreenText(*it, position_ + Vector2f(5*mirror, top), 12.f, TEXT_ALIGN_LEFT, Color3f(0.7f, 0.7f, 0.7f)*alpha);
                 top += 15;
             }
         }
