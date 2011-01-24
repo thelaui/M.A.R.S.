@@ -32,6 +32,9 @@
 021 Bots
 022 Limite de Frags
 162 Limite de Points
+056 Weapon Options
+203 Weapons
+204 Specials
 
 // story information
 
@@ -280,6 +283,6 @@
 201 Adjusts the strength of the bots.
 202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
 
-// 203 (056)
+// 205
 
 

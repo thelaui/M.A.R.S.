@@ -1,4 +1,4 @@
-/* NewGameMenu.hpp
+/* WeaponOptions.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,33 +15,33 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef NEWGAMEMENU_HPP_INCLUDED
-# define NEWGAMEMENU_HPP_INCLUDED
+# ifndef WEAPONOPTIONS_HPP_INCLUDED
+# define WEAPONOPTIONS_HPP_INCLUDED
 
 # include "Interface/UiWindow.hpp"
 
-class Tab;
-
-class NewGameMenu: public UiWindow {
+class WeaponOptions: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
-        void onShow();
+        void onShow() {}
 
         static void reset();
 
     private:
-        NewGameMenu(int width, int height): UiWindow(width, height) {}
-        NewGameMenu(NewGameMenu const& copy);
+        WeaponOptions(int width, int height): UiWindow(width, height) {}
+        WeaponOptions(WeaponOptions const& copy);
 
         static UiWindow* instance_;
 
-        static bool kStart_, kInfo_, kCancel_, playerI_, playerII_,
-                    tSB_, tDM_, tTDM_, tCK_, kWeaponOptions_;
-
-        static Tab *tabSpaceBall_, *tabDeathMatch_, *tabTeamDeathMatch_, *tabCannonKeep_;
+        static bool kOk_;
 };
 
-# endif // NEWGAMEMENU_HPP_INCLUDED
+# endif // WEAPONOPTIONS_HPP_INCLUDED
+
+
+
+
+
 
 

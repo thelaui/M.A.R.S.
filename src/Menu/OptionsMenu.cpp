@@ -170,8 +170,8 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIup, Vector2f(10,50), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIleft, Vector2f(10,70), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIright, Vector2f(10,90), 560));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), NULL, &settings::C_playerIfire, Vector2f(10,110), 560));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Special), NULL, &settings::C_playerIspecial, Vector2f(10,130), 560));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIfire, Vector2f(10,110), 560));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIspecial, Vector2f(10,130), 560));
         tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(500,200)));
         tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
         tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(10,200), 420, 185));
@@ -181,8 +181,8 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIIup, Vector2f(10,50), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIIleft, Vector2f(10,70), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIIright, Vector2f(10,90), 560));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Weapon), NULL, &settings::C_playerIIfire, Vector2f(10,110), 560));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Special), NULL, &settings::C_playerIIspecial, Vector2f(10,130), 560));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIIfire, Vector2f(10,110), 560));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIIspecial, Vector2f(10,130), 560));
         tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(500,200)));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(10,200), 420, 185));

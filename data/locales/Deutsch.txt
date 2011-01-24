@@ -32,6 +32,9 @@
 021 Bots
 022 Fraglimit
 162 Punktelimit
+056 Waffenoptionen
+203 Waffen
+204 Specials
 
 // Hintergrundgeschichte
 
@@ -279,4 +282,4 @@
 201 Regelt die Stärke der computergesteuerten Mitspieler.
 202 Regelt die Menge an PowerUps, die während des Spiels auftauchen.\n Wähle 0 um PowerUps gänzlich zu deaktivieren.
 
-// 203 (056)
+// 205

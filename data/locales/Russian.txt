@@ -32,6 +32,9 @@
 021 Боты
 022 Лимит фрагов
 162 Лимит очков
+056 Weapon Options
+203 Weapons
+204 Specials
 
 // story information
 //FixMe:разгроми и размажь своих врагов по их смехотворным планетам.
@@ -281,6 +284,6 @@
 201 Adjusts the strength of the bots.
 202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
 
-// 203 (056)
+// 205
 
 

@@ -32,8 +32,8 @@ namespace locales {
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
                      BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
                      ParticleCountSlider, ParticleLifetime, GameSettings, Fullscreen, VerticalSynchronisation, MusicVolume,
-                     SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Weapon, ShipName, PlayerColor,
-                     TeamColor, ScreenShotFormat, ShowToolTips, SSSSSSSS, AboutText, LicenseText, QuitText,
+                     SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Fire, ShipName, PlayerColor,
+                     TeamColor, ScreenShotFormat, ShowToolTips, WeaponOptions, AboutText, LicenseText, QuitText,
                      QuitCurrentGameText, StartNetworkText, JoinNetworkText, HideMenuText, Add, BackSlash, Comma, Dash,
                      Delete, Divide, Down, End, Equal, Home, Insert, LeftAlt, LeftBracket, LeftControl, Left, LeftShift,
                      LeftSuper, Menu, Multiply, PageDown, PageUp, Pause, Period, Quote, RightAlt, RightBracket,
@@ -45,12 +45,12 @@ namespace locales {
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
-                     Resolution, ColorDepth, Special, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
+                     Resolution, ColorDepth, SpecialKey, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
                      ttScreenShotFormat, ttScreenShotKeyUnix, ttScreenShotKeyWindows, ttSlowMoKickIn, ttBotsOrientation,
                      ttZones, ttAIPaths, ttFullscreen, ttVerticalSynchronisation,
                      ttShaders, ttResolution, ttStarsHigh, ttParticleCountSlider, ttParticleLifetime, ttMusicVolume,
                      ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
-                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate,
+                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

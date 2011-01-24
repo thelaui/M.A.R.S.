@@ -35,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/InfoDM.hpp"
 # include "Menu/InfoTDM.hpp"
 # include "Menu/InfoCK.hpp"
+# include "Menu/WeaponOptions.hpp"
 # include "Locales/locales.hpp"
 
 UiWindow* NewGameMenu::instance_(NULL);
@@ -47,6 +48,7 @@ bool NewGameMenu::tSB_(false);
 bool NewGameMenu::tDM_(false);
 bool NewGameMenu::tTDM_(false);
 bool NewGameMenu::tCK_(false);
+bool NewGameMenu::kWeaponOptions_(false);
 Tab* NewGameMenu::tabSpaceBall_(NULL);
 Tab* NewGameMenu::tabDeathMatch_(NULL);
 Tab* NewGameMenu::tabTeamDeathMatch_(NULL);
@@ -123,6 +125,7 @@ UiWindow* NewGameMenu::get() {
         instance_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,255), 540, 270, true));
 
         instance_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,300), 90, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,300), 120, 20));
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(415,300), 70, 20));
     }
     return instance_;
@@ -196,6 +199,10 @@ void NewGameMenu::checkWidgets() {
         tCK_ = false;
         if(settings::C_showInfoCK)
             menus::showWindow(InfoCK::get());
+    }
+    else if (kWeaponOptions_) {
+        kWeaponOptions_ = false;
+        menus::showWindow(WeaponOptions::get());
     }
     else if (kCancel_) {
         kCancel_ = false;
