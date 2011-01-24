@@ -23,11 +23,30 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
 # include "DecoObjects/decoObjects.hpp"
+# include "Players/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <vector>
 
 void Freezer::draw() const {
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
+    // draw glow
+    Color3f tmp = parent_->owner_->team()->color();
+    if (tmp.v() < 0.4f) tmp.v(0.4f);
+    if (tmp.s() < 0.5f) tmp.s(0.5f);
+    tmp.gl4f(0.8f);
+
+    const int posX = 2;
+    const int posY = 0;
+
+    glBegin(GL_QUADS);
+        glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-parent_->radius_*4,-parent_->radius_*4);
+        glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-parent_->radius_*4, parent_->radius_*4);
+        glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( parent_->radius_*4, parent_->radius_*4);
+        glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( parent_->radius_*4,-parent_->radius_*4);
+    glEnd();
+
     if (timer_ > 0.f) {
         float alpha(0.f);
         if(timer_ > 0.4f)

@@ -22,10 +22,32 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
 # include "SpaceObjects/physics.hpp"
+# include "Players/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 
 void Blast::draw() const {
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
+    // draw glow
+    Color3f tmp = parent_->owner_->team()->color();
+    if (tmp.v() < 0.4f) tmp.v(0.4f);
+    if (tmp.s() < 0.5f) tmp.s(0.5f);
+    tmp.gl4f(0.8f);
+
+    const int posX = 0;
+    const int posY = 0;
+
+    float scale(4 + std::sin(timer::totalTime()*6)*0.3f);
+
+    glBegin(GL_QUADS);
+        glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-parent_->radius_*scale,-parent_->radius_*scale);
+        glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-parent_->radius_*scale, parent_->radius_*scale);
+        glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( parent_->radius_*scale, parent_->radius_*scale);
+        glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( parent_->radius_*scale,-parent_->radius_*scale);
+    glEnd();
+
+    // draw effect
     if (timer_ > 0.f) {
         float alpha(0.f);
         if(timer_ > 0.4f)

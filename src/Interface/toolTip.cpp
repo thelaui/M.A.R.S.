@@ -122,7 +122,6 @@ namespace toolTip {
                     width = tmp;
             }
 
-
             int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
 
             width *= mirror;
@@ -196,10 +195,10 @@ namespace toolTip {
     }
 
     void mouseMoved(Vector2f const& position) {
-        if ((position_ - position - Vector2f(0, 25)).lengthSquare() > 60) {
-            if (state_ == INVISIBLE)
-                position_ = position + Vector2f(0, 25);
-            if (state_ != INVISIBLE && state_ != WAITING && state_ != FADE_OUT) {
+        if (state_ == INVISIBLE || state_ == WAITING)
+            position_ = position + Vector2f(0, 25);
+        else if ((position_ - position - Vector2f(0, 25)).lengthSquare() > 60) {
+            if (state_ != FADE_OUT) {
                 state_ = FADE_OUT;
                 timer_ = 1.f;
             }
@@ -220,7 +219,6 @@ namespace toolTip {
         }
         if (currentLocale_) {
             if (state_ == INVISIBLE) {
-                position_ = Vector2f(window::getInput().GetMouseX(), window::getInput().GetMouseY() + 25);
                 state_ = WAITING;
                 timer_ = 0.f;
             }

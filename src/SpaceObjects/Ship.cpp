@@ -227,20 +227,6 @@ void Ship::draw() const {
         glLoadIdentity();
         glTranslatef(location_.x_, location_.y_, 0.f);
 
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-
-        // draw glow
-        Color3f tmp = owner_->team_->color();
-        if (tmp.v() < 0.4f) tmp.v(0.4f);
-        if (tmp.s() < 0.5f) tmp.s(0.5f);
-        tmp.gl4f(0.5f);
-        glBegin(GL_QUADS);
-            glTexCoord2f(0.f, 0.75f);         glVertex2f(-radius_*3.6f,-radius_*3.6f);
-            glTexCoord2f(0.f, 0.875f);      glVertex2f(-radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.875f);   glVertex2f( radius_*3.6f, radius_*3.6f);
-            glTexCoord2f(0.125f, 0.75f);      glVertex2f( radius_*3.6f,-radius_*3.6f);
-        glEnd();
-
         // draw ship
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
@@ -305,15 +291,17 @@ void Ship::drawWeapon() const {
         glPushMatrix();
         glLoadIdentity();
         glTranslatef(location_.x_, location_.y_, 0.f);
+        glRotatef(timer::totalTime()*-50, 0.f, 0.f, 1.f);
 
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        // draw special
+        currentSpecial_->draw();
+
+        glLoadIdentity();
+        glTranslatef(location_.x_, location_.y_, 0.f);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
         // draw weapon
         currentWeapon_->draw();
-
-        // draw special
-        currentSpecial_->draw();
 
         glPopMatrix();
      }

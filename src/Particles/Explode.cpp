@@ -23,28 +23,34 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<Explode*> Explode::activeParticles_;
 
 Explode::Explode(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Explode>(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.3f, 0.45f)) {
+           Particle<Explode>(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.4f, 0.8f)) {
 
-    velocity_ = Vector2f::randDir()*150*sf::Randomizer::Random(0.2f, 2.f);
+    velocity_ = Vector2f::randDir()*200*sf::Randomizer::Random(0.5f, 2.f);
 
-    color_ = Color3f(1.0f, 0.5f, 0.2f);
+    color_.h(50.f);
+    color_.v(0.8f);
+    color_.s(0.3f);
 }
 
 void Explode::update() {
     float time = timer::frameTime();
 
-    color_.v(-1.0/totalLifeTime_*lifeTime_+1);
-    // update Size
-    radius_ = lifeTime_*100+5;
+    // update Color
+    color_.h((-1.0f/totalLifeTime_*lifeTime_+1.f)*60.f);
+    color_.v(-0.8f/totalLifeTime_*lifeTime_+0.8f);
+    color_.s(lifeTime_*10.f + 0.3f);
 
-    location_ = location_ + velocity_*time;
-    velocity_ = velocity_ + velocity_*(-2)*time;
+    // update Size
+    radius_ = lifeTime_*50 + 2;
+
+    location_ += velocity_*time;
+    velocity_ += velocity_*(-6.f)*time;
 
     lifeTime_ += time;
 }
 
 void Explode::draw() const {
-    color_.gl4f(0.2);
+    color_.gl4f(0.5);
     const int posX = 6;
     const int posY = 0;
     glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
