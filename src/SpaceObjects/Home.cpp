@@ -75,10 +75,11 @@ void Home::draw() const {
 }
 
 void Home::drawLife() const {
+    int lifeSize = 20.f / 1440 * window::getViewPort().x_;
     if (visible_) {
         std::stringstream sstr;
         sstr << "  " << getLife() << "  ";
-        text::drawSpaceText(sf::String(sstr.str()), location_ + Vector2f(0.f, -20), 20.f, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
+	text::drawSpaceText(sf::String(sstr.str()), location_ + Vector2f(0.f, -30 + lifeSize), lifeSize, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
     }
 }
 
@@ -192,4 +193,3 @@ void Home::explode() {
     players::getTeamL()->home() == this ? ++players::getTeamR()->points_ : ++players::getTeamL()->points_;
     hud::displayPoints();
 }
-
