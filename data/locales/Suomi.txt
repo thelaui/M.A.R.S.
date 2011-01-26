@@ -1,0 +1,253 @@
+﻿// Valikkopainikkeet
+
+000 Paikallinen peli
+105 Tutoriaali
+001 Aloita verkkopeli
+002 Liity verkkopeliin
+003 Asetukset
+004 Tietoja
+005 Poistu
+006 Jatka
+007 Aloita alusta
+008 Piilota valikko
+009 Palaa päävalikkoon
+
+// Peruspainikkeet
+
+010 Aloita
+011 Peruuta
+012 Info
+013 Sulje
+014 Lisenssi
+015 Ok
+106 Seuraava
+016 Näytä tämä viesti uudelleen.
+
+// Esipelin asetukset
+
+017 Vasen joukkue
+018 Oikea joukkue
+019 Botit vasemmalla
+020 Botit oikealla
+021 Botit
+022 Tapporaja
+162 Pisteraja
+
+// Tarinainfo
+
+023 Vuonna 3547, sivilisaatiot ympäri galaksia ovat asettuneet omille planeetoilleen, elämään rauhassa ja sovussa ympäristönsä kanssa.  \nMutta asuinpaikkojen ulkopuolella raivoaa SUURI SOTA.  \n Maineikkaana taistelijana kunnian ja menestyksen tiellä, sinun täytyy suojella planeettaasi lähestyvältä iskulta kateellisilta  \nnaapureiltasi! Ottele taistelussa, johon sinunlaisesi oikea sankari syntyi: AVARUUSPALLO. \nSuojele planeettaasi kuoleman pallolta ja päihitä vihollisesi antamalla sen murskaantua heidän naurettavaan planeettaansa.
+024 Potkaise tai ammu pallo vihollisesi planeettaa päin!
+025 SUUREN SODAN seurauksena olet menettänyt kaiken: Kotisi, perheesi ja \nitsekunnioituksesi. \nViimeinen mahdollisuutesi päästä pois onnettomasta elämästäsi, on tulla gladiaattoriksi loisteliaalla \nDEATHMATCH-areenalla. \nUhmaa muita taistelijoita ja ansaitse pisteitä tuhoamalla pähkinänkuoret, mitä he kutsuvat aluksiksi. \nValmistaudu! \nKuolema ja kunnia odottavat sinua.
+026 Tuhoa niin monta vihollista kuin mahdollista!
+027 Neuvottelut ovat epäonnistuneet! \nSinä ja naapurisi olette todistaneet monia häviöitä pysyvän SUUREN SODAN takia. \nViimeisenä yrityksenä niskalenkin saamiseksi, sinut on komennettu hävittämään vihollisesi voimavaroja, ja suojella omiasi. Ainoa keino onnistua tässä on eeppinen TEAMDEATHMATCH. \nSuojele tovereitasi tuhoa vihollisesi! \nAnna heille opetus, mitä he eivät ikinä unohda.
+028 Tuhoa niin monta vihollista kuin mahdollista!
+029 Ikään kuin SUURI SOTA ei olisi kylliksi, planeettaasi nimittäin uhkaa uusi, uskomaton pahuuden lähde. Jättimäinen tuntematon alus leijuu galaksisi yläpuolella, tähdäten kotiplaneettaasi massiivisella joukkotuhoaseella. \nKyynisyyden merkkinä, hyökkääjät pudottivat kauko-ohjaimen tämän kuoleman ja pelon alkuperän virittämiseen. \nEhdi sen luokse ensin muuttaaksesi vihollisesi kotiplaneetan lohduttomaksi paikaksi! \nOle CANNONKEEPER.
+030 Poimi kauko-ohjain ja pidä se itselläsi niin kauan kuin mahdollista!
+
+
+// Näytön asetukset
+// Välilehdet
+
+150 Käyttöliittymä
+165 Pelattavuus
+102 Grafiikka
+103 Ääni
+
+104 Ikkuna-asetukset
+031 Näytä debug-tiedot
+032 Bottien sopeutuminen
+033 Alueet
+034 AI-polut
+035 Näytä pelitiedot
+036 Näytä FPS
+152 Kieli
+153 Pikanäppäin kuvankaappaukselle
+037 Partikkelien lukumäärä
+038 Partikkelien lukumäärä
+039 Partikkelien kestoaika
+040 Pelin asetukset
+041 Koko näyttö
+042 V-Sync
+163 Varjostimen tehosteet
+164 Valitettavasti laitteistosi ei tue varjostimia!
+
+151 Korkea tähtikentän resoluutio
+173 Resoluutio
+174 Värin syvyys
+
+// Pelattavuusasetukset
+
+166 Nosta spawnaamisen nopeutta
+167 Botin vaikeusaste 
+168 Räjähdyksiä hidastukseen
+169 Off
+
+// Ääniasetukset
+
+043 Musiikin voimakkuus
+044 Äänien voimakkuus
+045 Tiedottajan äänen voimakkuus
+
+// Pelaajan asetukset
+
+046 Nimi
+047 Kiihdytä
+048 Käänny vasempaan
+049 Käänny oikeaan
+050 Ase
+175 Erikoiskyky
+051 Alus
+052 Pelaajan väri
+053 Joukkueen väri
+054 ####
+055 Paina näppäintä!
+056 Syötä tekstiä!
+
+// Tietoja
+
+057 Tämä on ensimmäinen yritys tehdä peli OpenGL:n SFML:llä. Pelissä lennetään kaksiulotteisessa avaruusmaailmassa, jota painovoiman laki hallitsee. \n\nKotisivu: http://www.marsshooter.org
+
+// Lisenssi
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// Lopputekstit
+
+170 Lopputekstit
+171 Erityiskiitokset:
+172 Käännökset:\n  Saksa: Sandra\n Espanja: Gastón\n Portugali: Vitor\n Ranska: Astohan\n Venäjä: Drakmail\n Italia: Proch\n Ruotsi: Henrik\n\n Testaus ja luova tuki:\n Heinrich, Martin, Bastian, Sandra, Diana.
+
+// Poistu
+
+059 Haluatko varmasti poistua?
+060 Haluatko varmasti poistua tämänhetkisestä pelistä?
+
+// Verkkotiedot
+
+061 M.A.R.S.-pelin pelaaminen verkossa tai paikallisessa verkossa on suunniteltu ominaisuus, muttei vielä toteutettu. \n\nOdota kärsivällisesti!
+062 M.A.R.S.-pelin pelaaminen verkossa tai paikallisessa verkossa on suunniteltu ominaisuus, muttei vielä toteutettu. \n\nOdota kärsivällisesti!
+
+// Piilota valikko
+
+063 Pysäytit M.A.R.S.-pelin hullun taistelun keskellä? \nJos haluat ottaa kuvankaappauksen, tämä painike mahdollistaa eeppisten taustakuvien luomisen, piilottamalla kaikki ikkunat. \n\nTuo ne myöhemmin takaisin painamalla Esc-näppäintä.
+
+// Painikkeiden nimet
+
+064 Add
+065 Back Slash
+066 Comma
+067 Dash
+068 Delete
+069 Divide
+070 Alas
+071 End
+072 Equal
+073 Home
+074 Insert
+075 Vasen Alt
+076 Left Bracket
+077 Vasen Ctrl
+078 Vasen
+079 Vasen Shift
+080 Vasen Super
+081 Menu
+082 Multiply
+083 Page Down
+084 Page Up
+085 Pause
+086 Piste
+087 Lainausmerkki
+088 Oikea Alt
+089 Right Bracket
+090 Oikea Ctrl
+091 Enter
+092 Oikea
+093 Oikea Shift
+094 Oikea Super
+095 Semi Colon
+096 Slash
+097 Välilyönti
+098 Subtract
+099 Tilde
+100 Tab
+101 Ylös
+
+// Tutoriaalitekstit
+
+107 Tervetuloa, avaruusnoviisi!
+108 Hienoa että saamme sinunlaisiasi nousevia sankareita liittymään meihin SUURESSA SODASSA!\nKäsitimme että tarvitset hieman harjoittelua uuden aluksesi kanssa.\nSaamasi pitää...
+
+109 Liikkuminen...
+110 Aluksesi ohjaus on tärkeää hallita.\nPainovoima hallitsee liikkumistasi. Hidastaaksesi sinun täytyy kääntyä ympäri ja kiihdyttää vastakkaiseen suuntaan. Ohjaa alustasi nuolinäppäimillä.
+
+111 Lämmittely...!
+112 Lennä pinkille alueelle!\nYritä olla törmäämättä uuden aluksesi kanssa.
+
+113 Hyvin tehty!
+114 Suuntaa nyt takaisin kotiplaneetallesi ja yritä laskeutua aluksellasi leijumalla hitaasti taaksepäin planeettaasi päin.
+
+115 Hyvää työtä!
+116 Oikeaoppinen laskeutuminen ei ole mikään helppo nakki, eihän?\nSinun täytyy omistautua sille sydämesi pohjasta.
+
+117 Jotakin vähän hankalempaa...
+118 Yritä seurata pinkillä värillä merkittyä polkua!\n\nOtamme yhteyttä uudestaan, kunhan onnistut siinä. Anna mennä vain!
+
+119 Mahtavaa!
+120 Olet paras näkemäni avaruusnoviisi.\nValmistaudu seuraavaksi räjähtävään toimintaan.
+
+121 Ampuminen...
+122 Tuhotaksesi vihollisesi, sinun täytyy osata ampua!\nAmmu näppäimellä
+123 Pidä hauskaa ampumalla ympäriinsä ja laskeudu aluksella planeetallesi kun olet valmis jatkamaan tutoriaalia.
+
+124 Hyvä laskeutuminen!
+125 Sinustahan on tullut hyvä pilotti.\n\nKatsotaanpa muita aseita.
+
+126 Aseet...
+127 Tiedän, että olet odottanut tätä. Telakoituneena voit valita monenlaisia ilkeitä aseita.\nPidä pohjassa
+128 avataksesi arsenaalin.\nPaina
+129 valitaksesi aseen! Lähde lentoon, kun olet valmis!
+
+130 Taistele!
+131 Katsotaanpa miten pärjäät toiselta planeetalta tulevaa noviisia vastaan.\nVaikuttaa siltä että hän yrittää kehittää lentotaitojaan.\nPäihitä hänet!
+
+132 Vaikuttavaa!
+133 Sinä teit sen! Kuten ehkä huomasit, saat jonkin verran mainepisteitä jokaisesta tapetusta vihollisesta.\nPieni vihreä numero joka pulpahtaa aluksestasi kuvaa pisteiden määrää. Se kasvaa jos tapat monta vihollista perättäin.
+
+134 Varo!
+135 Lepoon ei ole aikaa.\nVihollisemme ovat lähettäneet yhden heidän oikeista taistelijoistaan kostoretkelle!\nEnkä minä voi tehdä asialle mitään...
+
+136 Uskomatonta!
+
+137 Suoriuduit kaikista tehtävistä onnistuneesti. Mitä seuraavaksi?\nKatsotaanpa hieman Asetukset-valikkoa. Siellä voit säätää monenlaisia... No... Asetuksia. Voi esimerkiksi valita aluksesi mallin ja värin, muuttaa nimeäsi...
+
+138 Kuka on paras?
+139 Voit tarkastaa tappojen, pisteiden yms. määrän pitämällä Tab-näppäintä pohjassa.\nNumerot nimesi vieressä kuvaavat tappojesi määrää ja pisintä tapon etäisyyttä .
+
+140 Onnittelut
+141 Olet läpäissyt tämän tutoriaalin. Olet nyt valmis taistelemaan SUURESSA SODASSA. Jos haluat jatkaa harjoittelua, odota kunnes seuraava vihollinen ilmestyy. Voit päättää harjoittelun Esc-näppäimellä. \n\nPidä hauskaa M.A.R.S.-pelin parissa!
+
+142 Epäonnistuit!
+143 Mahtavaa, tuhosit upouuden aluksesi! Hyvä on, me hankimme sinulle uuden. Odota muutama sekunti...
+
+144 Huomasitko?
+145 Elinvoimasi kuluu! Pidä silmällä vihreää elinvoimamittaria. On parasta laskeutua jos se on melkein tyhjä.
+
+146 Huomasitko?
+147 Polttoaineesi kuluu! Pidä silmällä keltaista polttoainemittaria. On parasta laskeutua jos se on melkein tyhjä.
+
+148 Olet melkein voittanut hänet!
+149 Tarkkaile vihollisesi nimeä. Sen väri kuvaa aluksen elinvoimaa. Mitä punaisempi se on, sitä heikompi vihollisesikin.
+
+// Tab-valikon sarakkeet
+
+154 Pisteet
+155 Tapot
+156 Tiimitapot
+157 Itsemurhat
+158 Kuolemat
+159 Maine
+160 Yhteensä:
+161 Tilasto
+
+// 176
+
