@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class Planet;
 class Ship;
 class Ball;
-class pAmmoRocket;
+class AmmoRocket;
 class Sun;
 class DecoObject;
 
@@ -61,7 +61,7 @@ namespace decoObjects {
 
     /// Adds an ice block on the rocket's position.
     /// \param rocket The rocket to be frozen.
-    void addRocketIce(pAmmoRocket* rocket);
+    void addRocketIce(AmmoRocket* rocket);
 
     /// Removes an ice block from the list.
     /// \param toBeRemoved The ice block to be removed.

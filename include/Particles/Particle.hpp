@@ -130,6 +130,11 @@ class Particle: public MobileSpaceObject {
                                     // special case: Collision with rofle bullets is not physically correct, for improved gameplay
                                     if ((source->type() == spaceObjects::oAmmoROFLE) | (target->type() == spaceObjects::oAmmoROFLE))
                                         target-> velocity() += (0.05f*source->velocity()*source->mass() + (velocityTargetAfter - velocityTargetBefore) * 0.6);
+                                    else if (((source->type() == spaceObjects::oAmmoRocket) | (target->type() == spaceObjects::oAmmoRocket)) &&
+                                             ((source->type() != spaceObjects::oAmmoFist) | (target->type() != spaceObjects::oAmmoFist))) {
+                                        source->velocity() += (velocitySourceAfter - velocitySourceBefore) * 0.8;
+                                        target->velocity() += (velocityTargetAfter - velocityTargetBefore) * 0.1;
+                                    }
                                     else {
                                         source->velocity() += (velocitySourceAfter - velocitySourceBefore) * 0.8;
                                         target->velocity() += (velocityTargetAfter - velocityTargetBefore) * 0.8;

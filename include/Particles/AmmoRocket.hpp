@@ -36,13 +36,18 @@ class AmmoRocket: public Particle<AmmoRocket> {
                          Vector2f const& direction, Vector2f const& velocity);
 
         friend class Particle<AmmoRocket>;
+        template <typename Object> friend class Ice;
+        friend class Freezer;
 
     private:
         Color3f color_;
         float timer_;
         Ship* target_;
         Player* parent_;
+        float rotation_;
         float life_;
+        float frozen_;
+        bool visible_;
         static std::list<AmmoRocket*> activeParticles_;
 };
 

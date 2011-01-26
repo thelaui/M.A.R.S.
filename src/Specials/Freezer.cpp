@@ -100,6 +100,17 @@ void Freezer::activate() const {
                     decoObjects::addBallIce(ball);
             }
         }
+
+        for (std::list<AmmoRocket*>::iterator it=AmmoRocket::activeParticles_.begin(); it!=AmmoRocket::activeParticles_.end(); ++it) {
+            float distance(((*it)->location_-parent_->location_).length());
+            if (distance <= radius_) {
+                (*it)->frozen_=40;
+                (*it)->velocity_=Vector2f();
+                (*it)->mass_=9999999999.f;
+                decoObjects::addRocketIce(*it);
+            }
+        }
+
         timer_ = 0.5f;
         parent_->fragStars_ = 0;
     }

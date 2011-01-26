@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
 # include "Shaders/postFX.hpp"
+# include "Players/Player.hpp"
 
 # include <cfloat>
 
@@ -34,7 +35,11 @@ AmmoRocket::AmmoRocket(Vector2f const& location, Vector2f const& direction, Vect
          Particle<AmmoRocket>(spaceObjects::oAmmoRocket, location, 10.f, 3.0f, FLT_MAX),
          timer_(1.f),
          target_(NULL),
-         parent_(damageSource) {
+         parent_(damageSource),
+         rotation_(0.f),
+         life_(50.f),
+         frozen_(0.f),
+         visible_(true) {
 
     setDamageSource(damageSource);
     velocity_ = direction*300.f;
@@ -50,7 +55,7 @@ AmmoRocket::~AmmoRocket() {
 
 void AmmoRocket::update() {
     float const time = timer::frameTime();
-    if (timer_ <= 0.5)
+    if (timer_ >= 0.5)
         physics::collide(this, STATICS | MOBILES | PARTICLES);
     else
         physics::collide(this, STATICS | MOBILES);
@@ -62,9 +67,9 @@ void AmmoRocket::update() {
             float const speed(velocity_.length());
             velocity_ /= speed;
             Vector2f const toTarget(target_->location() - location_);
-            float const angle = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
+            rotation_ = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
             float const phi(time*5.f);
-            if (angle > 0.f)
+            if (rotation_ > 0.f)
                 velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
             else
                 velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
@@ -92,6 +97,19 @@ void AmmoRocket::update() {
                 closest = distance;
             }
         }
+    }
+
+    if (life_<=0.f) {
+        visible_ = false;
+        particles::spawnMultiple(50, particles::pDust, location_);
+        particles::spawnMultiple(20, particles::pExplode, location_);
+        particles::spawnMultiple(5, particles::pBurningFragment, location_);
+        particles::spawnMultiple(1, particles::pMiniFlame, location_);
+        postFX::onExplosion();
+        setDamageSource(parent_);
+        physics::  causeShockWave(damageSource(), location_, 50.f, 300.f, 5.f);
+        particles::spawn(particles::pShockWave, location_);
+        killMe();
     }
 }
 
@@ -124,24 +142,67 @@ void AmmoRocket::draw() const {
 
 void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
+    float strength(velocity.length());
+    float amount(0.f), unfreeze(0.f);
 
     switch (with->type()) {
         case spaceObjects::oAmmoFist:
             target_ = NULL;
             timer_ = 0.5f;
             break;
-        default:
-            if (!isDead()) {
-                particles::spawnMultiple(50, particles::pDust, location_);
-                particles::spawnMultiple(20, particles::pExplode, location_);
-                particles::spawnMultiple(5, particles::pBurningFragment, location_);
-                particles::spawnMultiple(1, particles::pMiniFlame, location_);
-                postFX::onExplosion();
-                setDamageSource(parent_);
-                physics::  causeShockWave(damageSource(), location_, 50.f, 300.f, 5.f);
-                particles::spawn(particles::pShockWave, location_);
-                killMe();
+
+        case spaceObjects::oAmmoAFK47:
+            amount = strength*0.02f;
+            unfreeze = 1.f;
+            break;
+
+        case spaceObjects::oAmmoROFLE:
+            amount = life_;
+            unfreeze = 10.f;
+            break;
+
+        case spaceObjects::oAmmoShotgun:
+            amount = strength*0.01f;
+            unfreeze = 1.f;
+            break;
+
+        case spaceObjects::oAmmoFlubba:
+            amount = sf::Randomizer::Random(5.5f, 8.f);
+            unfreeze = 10.f;
+            break;
+
+        case spaceObjects::oMiniAmmoFlubba:
+            amount = sf::Randomizer::Random(1.7f, 3.f);
+            break;
+
+        case spaceObjects::oAmmoBurner:
+            amount = timer::frameTime();
+            unfreeze = 1.f;
+            break;
+
+        case spaceObjects::oAmmoRocket:
+            unfreeze = 40.f;
+            life_ = 0.f;
+            break;
+
+        case spaceObjects::oShip: {
+            if (totalLifeTime_ <= 0.5) {
+                if (dynamic_cast<Ship*>(with) != parent_->ship())
+                    amount = life_;
             }
+            else
+                amount = life_;
+            break;
+        }
+
+        default:
+            amount = life_;
+            unfreeze = 10;
+
     }
+
+    if (frozen_ <= 0)
+        life_ -= amount;
+    else frozen_ -= unfreeze;
 }
 

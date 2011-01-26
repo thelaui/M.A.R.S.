@@ -60,7 +60,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
-               fragStars_(0),
+               fragStars_(5),
                damageByLocalPlayer_(0.f),
                damageCheckTimer_(0.f),
                damageDirection_(0.f, 0.f),

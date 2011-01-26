@@ -1,0 +1,260 @@
+// Hungarian Translation made by Papp Bence
+// Contact: ubilulu@gmail.com
+// Have a nice Game!!!﻿
+// Magyar fordítást készítette: Papp Bence
+// Kapcsolat: ubilulu@gmail.com
+// Jó Játékot Kívánok!!!
+
+
+// menu buttons
+
+000 Helyi Játék Indítása
+105 Oktatómód Indítása
+001 Hálózati Játék Indítása
+002 Belépés Hálózati Játékba
+003 Beállítások
+004 Névjegy
+005 Kilépés
+006 Folytatás
+007 Játék Újrakezdése
+008 Menü Elrejtése
+009 Vissza a Főmenübe
+
+// standard buttons
+
+010 Indítás
+011 Mégse
+012 Infó
+013 Bezárás
+014 Licence
+015 Ok
+106 Következő
+016 Mutassa ezt az Infót újra.
+
+// pregame options
+
+017 Baloldali Csapat
+018 Jobboldali Csapat
+019 Baloldali Botok
+020 Jobboldali Botok
+021 Botok
+022 Találat Limit
+162 Pont Limit
+
+// story information
+
+023 A világ 3547. esztendejében a galaxisban élő összes civilizáció letelepedett a saját bolygójára, harmóniában és békében éltek környezetükkel. \nDe a külvilágból szemlélődő teremtmények miatt a NAGY HÁBORÚ kitörőben van.  \nA jólét és becsület védelmében neked, mint híres vadásznak kell megvédeni bolygónkat a szomszédságunkban élő irigy szörnyek özönétől.  \nHarcolj a csatában, egy hozzád hasonló hős fog segíteni ebben: CSILLAGGÖMB.  \nVédd a bolygónkat a halál gömbjétől és győzd le az ellenségeinket a gömböt neki lökve nevetséges \nviláguknak.
+024 Lökd vagy lődd neki a gömböt az ellenség bolygójának!
+025 A NAGY HÁBORÚ során elvesztetted mindened: az otthonod, a családod és az önbecsülésed. \nAz utolsó esélyed, hogy kitörj ebből a szörnyű világból mibe beleragadtál az, hogy gladiátor légy a dicső DEATHMATCH-arénában. \nKüzdj a többi harcos ellen és szerezz pontokat úgy, hogy megsemmisíted a dióhéjukat, ahogy ők hívják a hajójukat.  \nKészülj a küzdelemre. \n\nA Halál és a Dicsőség szintén rád vár!
+026 Semmisíts meg annyi ellenséget amennyit csak tudsz!
+027 A tárgyalások eredménytelen voltak! \nTe és a szomszédos lények egyaránt jelentős veszteségeket könyvelhettetek el a NAGY HÁBORÚ miatt. \nMint egy utolsó esély a végső győzelemért elrendelted, hogy megtizedeled az ellenség erőit és védelmezed a sajátod. Az egyetlen módja ennek a hőskölteménybe illő TEAMDEATHMATCH.  \nVédelmezd a bajtársaid és semmisítsd meg az ellenséget! \n\nTanítsd őket Móresre, hogy soha ne feledjenek el.
+028 Semmisíts meg annyi ellenséget amennyit csak tudsz!
+029 Mintha a NAGY HÁBORÚ nem lett volna elég bolygórendszered újabb szörnyűséges lények fenyegetik: Egy óriási hajó ismeretlen támadókkal hatolt be a galaxisodba, céljuk hogy elpusztítsák a bolygódat egy hatalmas tömegpusztító fegyverrel.  \nCinizmusuk jeleként a támadok ledobtak egy távirányítót, hogy növeljék a halált és a félelmet köztünk. Érd el elsőként a távirányítót, hogy az ellenség kopár bolygója felé fordítsd! \n\nLegyél te a TŰZPARANCSNOK.
+030 Vedd fel a távirányítót és tartsd magadnál ameddig csak tudod!
+
+
+// display options
+// tabs
+
+150 Felület
+165 Játék
+102 Grafika
+103 Hang
+
+104 Ablak Beállítások
+031 Hibakeresési Infók Mutatása
+032 Botok Tájékozódása
+033 Zónák
+034 AI-Útvonala
+035 Játék Információk Mutatása
+036 Képkockák / másodperc (FPS)
+152 Nyelv
+153 Screenshot Gyorsbillentyűje
+037 Részecske Számláló
+038 Részecske Számláló
+039 Részecske Élettartalma
+040 Játék Beállítások
+041 Teljes-képernyő
+042 V-Sync
+163 Shader Effektek
+164 Sajnos a Shader Effekt a Videókártya által Nem Támogatott!
+
+151 Nagy Felbontású Csillagmező 
+173 Felbontás
+174 Színmélység
+
+// gameplay options
+
+166 Extrák Megjelenésének Ideje
+167 Botok Nehézsége
+168 Lassítás-Effekt x Robbanás Után
+169 Ki
+
+// audio options
+
+043 Zene Hangereje
+044 Hang Hangereje
+045 Bemondó Hangereje
+
+// player options
+
+046 Név
+047 Gyorsulás
+048 Balra Fordulás
+049 Jobbra Fordulás
+050 Fegyver
+175 Speciális
+051 Hajó
+052 Játékos Színe
+053 Csapat Színe
+054 ####
+055 Nyomj egy billentyűt amíg villog!
+056 Írd be a szöveget amíg villog!
+
+// about
+
+057 Ez az első próbálkozás, hogy játék készül OpenGL-ben SFML segítségével. Ez egy kétemberes játék, ahol hajókkal repülhetsz két dimenziós űrben, persze a gravitáció törvényeinek érvényesülése mellett.  \n\nWeboldal: \nhttp://www.marsshooter.org
+
+// license
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Készítők
+171 Nagy Köszönet az alábbi Személyeknek:
+172 Fordítók:\n   Német: Sandra\n   Spanyol: Gastón\n   Portugál: Vitor\n   Magyar: Papp Bence\n  Francia: Astohan\n   Orosz: Drakmail\n   Olasz: Proch\n   Svéd: Henrik\n\nTesztelés és egyéb támogatás:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Biztos benne, hogy kilép?
+060 Biztos benne, hogy befejezi a jelenlegi játékot?
+
+// network information
+
+061 M.A.R.S. játszható lesz majd a világhálón vagy helyi hálózaton, de még nincs kész! \n\nNE csüggedj, figyeld a weboldalunkat!
+062 M.A.R.S. játszható lesz majd a világhálón vagy helyi hálózaton, de még nincs kész! \n\nNE csüggedj, figyeld a weboldalunkat!
+// hide menu
+
+063 Megállítottad a M.A.R.S-ot a heves csata közepén? \nHa Screenshotot szeretnél készíteni, e gomb segítségével csodálatos háttérképeket készíthetsz a menü elrejtése mellett.\n\nHa készen vagy egyszerűen visszahozhatod a menüt az ESC billentyű lenyomásával.
+
+// key names
+
+064 Add
+065 Back Slash
+066 Comma
+067 Dash
+068 Delete
+069 Divide
+070 Le
+071 End
+072 Equal
+073 Home
+074 Insert
+075 Bal Alt
+076 Left Bracket
+077 Bal Control
+078 Balra
+079 Bal Shift
+080 Left Super
+081 Menu
+082 Multiply
+083 Page Down
+084 Page Up
+085 Szünet
+086 Period
+087 Quote
+088 Jobb Alt
+089 Right Bracket
+090 Jobb Control
+091 Vissza
+092 Jobbra
+093 Jobb Shift
+094 Right Super
+095 Semi Colon
+096 Slash
+097 Space
+098 Subtract
+099 Tilde
+100 Tab
+101 Fel
+
+// tutorial texts
+
+107 Üdvözöllek, Csillag Harcos!
+108 Nagyon örülünk, hogy egy olyan hőst tudtunk toborzásunk során arra rábírni, hogy csatlakozzon hozzánk a NAGY HÁBORÚBAN mint te! \nÚgy gondoljuk, hogy szükséged van pár tanácsra az új hajóddal kapcsolatban. \n\nKezdődjön hát a tréning...
+
+109 Alap Mozgások...
+110 Hajód irányítása a legfontosabb feladat, hogy mesterré válj. \nMozgásodat befolyásolják a gravitációs törvények. Lassuláshoz például meg kell fordulnod az ellenkező irányba és arra kell gyorsítani a hajód. Hajód \nirányításához használd a köv. billentyűket:
+
+111 Bemelegítés!
+112 Menj a rózsaszín zónához!\nPróbáld meg nem összetörni a vadi új hajód.
+
+113 Remek!
+114 Most repülj vissza a bolygódra és próbálj meg landolni. Nagyon lassan hátrafelé repülve közelítsd meg amíg el nem éred a bolygód.
+
+115 Szép Munka!
+116 A tökéletes landolás nem piskóta, mi? \n\nSzívvel kell megtanulnod.
+
+117 Következzen Valami Nehezzebb...
+118 Próbáld meg követni a rózsaszínnel jelölt zónákat!\n\nÚjra jelentkezem, ha készen vagy vele. \n\nMost menj!
+
+119 Csodálatos!
+120 Te vagy a legügyesebb újonc, akivel valaha találkoztam. \n\nMost következzen egy kis robbantgatás.
+
+121 Lövés...
+122 Ahhoz hogy legyőzd az ellenségeid, tudnod kell hogyan lődd ki őket!\nEhhez nyomd meg:
+123 Lövöldözz egy kicsit és utána landolj a hajóddal\na tréning folytatásához.
+
+124 Szép Landolás!
+125 Csodálatos pilóta lett belőled.\n\nNos, jöhet még pár fegyver?
+
+126 Fegyverek...
+127 Tudom, hogy csak erre vártál. Amíg a bolygódon dokkolsz hihetetlen gonosz fegyverek között váltogathatsz.\nNyomj
+128 -t hogy megnyisd a fegyver arzenálod.\nEzután használd a 
+129 fegyver kiválasztásához! Szállj fel, ha készen vagy!
+
+130 Harc!
+131 Most lássuk, hogy milyen vagy egy másik bolygóról érkező újonc ellen.\n\nÚgy tűnik. hogy a repülési képességeit próbálja javítani.\n\nLődd ki!
+
+132 Lenyűgöző!
+133 Megcsináltad! Ahogy észrevehetted, minden egyes legyőzött ellenség után hírnév pontokat kapsz.\nEzt a kicsi csillagok száma mutatja a hajód felett. Növekedni fog, ahogy  minél több ellenséget fogsz \nsorban megsemmisíteni.
+
+134 Vigyázz!
+135 Nincs idő lustálkodásra.\nAz ellenségeink most bosszúból igazi harcost küldtek ellened. Nem tehetek most érted semmit...
+
+136 Hihetetlen!
+
+137 Az összes feladatomat sikeresen teljesítetted. Most mi követezzen? \nVessünk egy pillantást a Beállítások menüre. Itt sok... nos... beállítást kezelhetsz.\nPéldául kiválaszthatód a hajód stílusát és \nszínét vagy módosíthatod a neved...
+
+138 Ki a legjobb?
+139 A <Tab> billentyűvel megnézheted a találataid, pontod számát és így tovább.\nRáadásul a neved melletti számok mutatják a találataid számát és a legjobbtól való távolságot. 
+
+140 Gratulálok!
+141 Sikeresen befejezted ezt a kiképzést. Most már készen állsz, hogy eredményesen szembe szállj az ellenséggel a NAGY HÁBORÚBAN. Ha folyatni szeretnéd a gyakorlást, csak várj egy kicsit hogy az ellenség újra szülessen. Tréningből való kilépéshez nyomj <Esc>-et.\n\nJó időtöltést kívánok a  M.A.R.S.-al!
+
+142 Elestél!
+143 Csodálatos, teljesen tönkre tetted az új hajód. Jól van, kapsz tőlünk egy másikat. Pillanat...
+
+144 Észrevetted?
+145 Az életed szintje csökken! Tartsd szemmel a zöld élet csíkot (első csík). Jobb ha landolsz, ha már nincs sok.
+
+146 Észrevetted?
+147 Az üzemanyagod szintje csökken! Tartsd szemmel a sárga üzemanyag csíkot (második csík). Jobb ha landolsz, ha már nincs sok.
+
+148 Már Majdnem Kilőtted!
+149 Figyeld az ellenfeled nevét. Ennek színe mutatja az élet pontjait. Minél jobban pirossá válik, annál gyengébb lesz.
+
+// tabmenu collumns
+
+154 Pontok
+155 Találat
+156 Társ Megölve
+157 Önhalál
+158 Meghalva
+159 Hírnév
+160 Összesen:
+161 Statisztika
+
+// 176
+

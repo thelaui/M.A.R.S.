@@ -90,6 +90,10 @@ namespace decoObjects {
         ices_.push_back(new Ice<Ball>(ball));
     }
 
+    void addRocketIce(AmmoRocket* rocket) {
+        ices_.push_back(new Ice<AmmoRocket>(rocket));
+    }
+
     void removeIce(DecoObject const* toBeRemoved) {
         for(std::list<DecoObject*>::iterator it=ices_.begin(); it!=ices_.end(); ++it)
             if(*it==toBeRemoved) {

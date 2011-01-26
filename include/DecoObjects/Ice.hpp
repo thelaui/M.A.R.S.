@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/decoObjects.hpp"
 # include "SpaceObjects/Ball.hpp"
 # include "SpaceObjects/Ship.hpp"
+# include "Particles/AmmoRocket.hpp"
 
 
 /// An ice block drawn over frozen SpaceObjects.
