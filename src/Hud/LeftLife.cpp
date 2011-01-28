@@ -121,10 +121,10 @@ void LeftLife::draw() const {
         glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::EnergyBars));
         glBegin(GL_QUADS);
             glColor3f(1.0,1.0,1.0);
-            glTexCoord2i(0, 0); glVertex2f(0, port.y_-64);
-            glTexCoord2i(0, 1); glVertex2f(0, port.y_);
-            glTexCoord2i(1, 1); glVertex2f(192, port.y_);
-            glTexCoord2i(1, 0); glVertex2f(192, port.y_-64);
+            glTexCoord2f(0, 0); glVertex2f(0, port.y_-64);
+            glTexCoord2f(0, 1); glVertex2f(0, port.y_);
+            glTexCoord2f(0.75f, 1); glVertex2f(192, port.y_);
+            glTexCoord2f(0.75f, 0); glVertex2f(192, port.y_-64);
         glEnd();
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
