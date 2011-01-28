@@ -22,9 +22,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/TacticalZone.hpp"
 # include "Zones/TutorialZone.hpp"
 # include "Zones/RasterZone.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "SpaceObjects/spaceObjects.hpp"
+# include "SpaceObjects/SpaceObject.hpp"
 # include "Games/games.hpp"
+# include "SpaceObjects/Home.hpp"
+# include "SpaceObjects/balls.hpp"
 
 # include <iostream>
 
@@ -278,22 +281,21 @@ namespace zones {
             (*it)->draw();
     }
 
-    TacticalZone* toProtect(Team* checker) {
-        if (checker->homeZone_ == homeL_)
-            for (unsigned int i=0; i<tacticalZonesL_.size(); ++i) {
-                if (!tacticalZonesL_[i]->covered())
-                    return tacticalZonesL_[i];
-                else if (i == tacticalZonesL_.size()-1)
-                    return tacticalZonesL_[0];
-            }
-        else
-            for (unsigned int i=0; i<tacticalZonesR_.size(); ++i) {
-                if (!tacticalZonesR_[i]->covered())
-                    return tacticalZonesR_[i];
-                else if (i == tacticalZonesR_.size()-1)
-                    return tacticalZonesR_[0];
-            }
-        return NULL;
+    std::map<float, TacticalZone*> const toProtect(Team* checker) {
+        std::map<float, TacticalZone*> sortedZones;
+        Ball* ball = balls::getBall();
+        if (ball) {
+            Vector2f ballLocation(ball->location());
+            if (checker->homeZone_ == homeL_)
+                for (std::vector<TacticalZone*>::iterator it = tacticalZonesL_.begin(); it!=tacticalZonesL_.end(); ++it) {
+                    sortedZones.insert(std::make_pair(((ballLocation + checker->home()->location())*0.5f - (*it)->location()).lengthSquare(), *it));
+                }
+            else
+                for (std::vector<TacticalZone*>::iterator it = tacticalZonesR_.begin(); it!=tacticalZonesR_.end(); ++it) {
+                    sortedZones.insert(std::make_pair(((ballLocation + checker->home()->location())*0.5f - (*it)->location()).lengthSquare(), *it));
+                }
+        }
+        return sortedZones;
     }
 
     RasterZone* freeZone() {

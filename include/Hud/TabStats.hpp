@@ -20,7 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Hud/HudElement.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "Players/Player.hpp"
 
 # include <map>
@@ -45,7 +45,7 @@ class TabStats: public HudElement {
 
         struct teamPtrCmp{
             bool operator()(Team* lhs, Team* rhs){
-                return lhs->points_ > rhs->points_;
+                return lhs->points() > rhs->points();
             }
         };
 

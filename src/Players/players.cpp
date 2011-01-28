@@ -21,11 +21,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/BotPlayer.hpp"
 # include "System/settings.hpp"
 # include "System/generateName.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
+# include "SpaceObjects/Home.hpp"
 
 namespace players {
     namespace {
-        std::vector<Team*> allTeams_;
         std::vector<Player*> allPlayers_;
         Player* playerI_;
         Player* playerII_;
@@ -36,11 +36,6 @@ namespace players {
             playerII_ = new LocalPlayer(controllers::cPlayer2);
             initialized_ = true;
         }
-    }
-
-    Team* addTeam(Team* newTeam) {
-        allTeams_.push_back(newTeam);
-        return newTeam;
     }
 
     void addPlayer (Team* team, controllers::ControlType type, Color3f const& color) {
@@ -56,27 +51,10 @@ namespace players {
                 allPlayers_.push_back(playerII_);
                 break;
             default:
-                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%9+1, type);
+                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%11);
                 team->addMember(bot);
                 allPlayers_.push_back(bot);
         }
-    }
-
-    void assignHomes(Home* home) {
-        if (allTeams_.size() > 0)
-            for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-                (*it)->setHome(home);
-        else
-            std::cout << "Cant assign Home Planet! No Teams are specified!\n";
-    }
-
-    void assignHomes(Home* homeL, Home* homeR) {
-        if (allTeams_.size() == 2) {
-            allTeams_[0]->setHome(homeL);
-            allTeams_[1]->setHome(homeR);
-        }
-        else
-            std::cout << "Cant assign two Home Planets! There have to be exactly two Teams specified!\n";
     }
 
     void createShips() {
@@ -101,65 +79,15 @@ namespace players {
         return playerII_;
     }
 
-    Team const* getTeamL() {
-        return allTeams_[0];
-    }
-
-    Team const* getTeamR() {
-        return allTeams_[1];
-    }
-
-    std::vector<Team*> const& getAllTeams() {
-        return allTeams_;
-    }
-
-    Team const* getEnemy(Team const* checker) {
-        return checker == allTeams_[0] ? allTeams_[1] : allTeams_[0];
-    }
-
-    int getFirstPoints() {
-        int highest(INT_MIN);
-        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-            if ((*it)->points() > highest)
-                highest = (*it)->points();
-        return highest;
-    }
-
-    int getSecondPoints() {
-        int first (INT_MIN);
-        int second(INT_MIN);
-        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-            if ((*it)->points() >= first) {
-                second = first;
-                first  = (*it)->points();
-            }
-            else if ((*it)->points() > second) {
-                second = (*it)->points();
-            }
-        if (second == INT_MIN) second = 0;
-        return second;
-    }
-
-    void resetTeamPoints() {
-        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
+    void resetPlayerPoints() {
+        for (std::vector<Player*>::iterator it = allPlayers_.begin(); it != allPlayers_.end(); ++it)
             (*it)->resetPoints();
     }
 
-    void resetPlayerPoints() {
-        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it) {
-            std::vector<Player*>const& members = (*it)->members();
-            for (std::vector<Player*>::const_iterator it = members.begin(); it != members.end(); ++it)
-                (*it)->resetPoints();
-        }
-    }
-
     void clear() {
-        for (std::vector<Team*>::iterator it = allTeams_.begin(); it != allTeams_.end(); ++it)
-            delete *it;
         for (std::vector<Player*>::iterator it = allPlayers_.begin(); it != allPlayers_.end(); ++it)
             delete *it;
         allPlayers_.clear();
-        allTeams_.clear();
         initialized_ = false;
     }
 }

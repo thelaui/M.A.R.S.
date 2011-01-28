@@ -29,10 +29,8 @@ Logo::Logo():
 
 void Logo::update() {
     if (games::elapsedTime() < 5.f) {
-        if (sf::Randomizer::Random(15, 25)*games::elapsedTime() > 50 && sf::Randomizer::Random(0, 1000) < 990)
-            on_ = true;
-        else
-            on_ = false;
+        on_ =  sf::Randomizer::Random(15, 25)*games::elapsedTime() > 50 && sf::Randomizer::Random(0, 1000) < 990;
+
     }
     else {
         if (timer_ < 0.f) {

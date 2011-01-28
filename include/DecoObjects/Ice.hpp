@@ -60,7 +60,7 @@ class Ice: public DecoObject {
                         posX = 0;
                         posY = 1;
                     }
-                    else if (object_->frozen_ >= 0) {
+                    else if (object_->frozen_ > 0) {
                         posX = 1;
                         posY = 1;
                     }
@@ -84,6 +84,9 @@ class Ice: public DecoObject {
 
                 glDisable(GL_TEXTURE_2D);
                 glBindTexture(GL_TEXTURE_2D, 0);
+            }
+            else {
+                decoObjects::removeIce(this);
             }
         }
 

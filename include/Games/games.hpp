@@ -37,6 +37,7 @@ namespace games {
         gCannonKeep,    ///< A funny game, where both teams aim on keeping the control of gigantic weapon of mass
                         ///< destruction in order to smash the oponents home planet. The team which is the first to
                         ///< destroy the others planet will win the match.
+        gGraveItation,  ///< InstaGib with only one Weapon, which kills instantly.
         gTutorial       ///< This is the tutorial which, in fact, is a special game.
     };
 

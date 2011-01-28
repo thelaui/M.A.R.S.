@@ -27,21 +27,13 @@ class RocketLauncher: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         RocketLauncher(Ship* parent):
-              Weapon(Weapon::wRocketLauncher, parent, "ROCK'n'LOL") {};
+              Weapon(weapons::wRocketLauncher, parent, "ROCK'n'LOL") {};
 
         /// Spawns some particles.
         void fire() const;
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 };
 
 # endif // ROCKETLAUNCHER_HPP_INCLUDED

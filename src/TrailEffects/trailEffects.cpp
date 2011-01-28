@@ -17,7 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "TrailEffects/trailEffects.hpp"
 
-# include "TrailEffects/Trail.hpp"
+# include "TrailEffects/FloatingTrail.hpp"
+# include "TrailEffects/PersistantTrail.hpp"
 
 # include <vector>
 # include <set>
@@ -50,8 +51,14 @@ namespace trailEffects {
             (*it)->draw();
     }
 
-    void attach(SpaceObject* target, int resolution, float length, float width, Color3f const& color) {
-        trails_.push_back(new Trail(target, resolution, length, width, color));
+    Trail* attach(SpaceObject* target, float timeStep, float duration, float width, Color3f const& color, bool persistant) {
+        Trail* trail;
+        if (persistant)
+            trail = new PersistantTrail(target, timeStep, duration, width, color);
+        else
+            trail = new FloatingTrail(target, timeStep, duration, width, color);
+        trails_.push_back(trail);
+        return trail;
     }
 
     void detach(SpaceObject* target) {

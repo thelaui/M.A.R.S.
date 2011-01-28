@@ -30,7 +30,7 @@ namespace locales {
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
                      RightTeam, BotsLeft, BotsRight, Bots, Fraglimit, InfoSB, ShortDescriptionSB, InfoDM,
                      ShortDescriptionDM, InfoTDM, ShortDescriptionTDM, InfoCK, ShortDescriptionCK, DebuggingInformation,
-                     BotsOrientation, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
+                     AIJobs, Zones, AIPaths, GameInformation, FramesPerSecond, ParticleCount,
                      ParticleCountSlider, ParticleLifetime, GameSettings, Fullscreen, VerticalSynchronisation, MusicVolume,
                      SoundVolume, AnnouncerVolume, Name, Accelerate, TurnLeft, TurnRight, Fire, ShipName, PlayerColor,
                      TeamColor, ScreenShotFormat, ShowToolTips, WeaponOptions, AboutText, LicenseText, QuitText,

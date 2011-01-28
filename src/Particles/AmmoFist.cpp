@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoFist*> AmmoFist::activeParticles_;
 
 AmmoFist::AmmoFist(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoFist>(spaceObjects::oAmmoFist, location, 20.f, 25.0f, 0.1f) {
+         Particle<AmmoFist>(spaceObjects::oAmmoFist, location, 20.f, 25.0f, 0.15f) {
 
     setDamageSource(damageSource);
     velocity_ = direction*500.f;

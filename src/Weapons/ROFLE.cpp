@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Weapons/weapons.hpp"
+# include "Weapons/ROFLE.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Particles/particles.hpp"
@@ -30,10 +30,10 @@ void ROFLE::draw() const {
     const int posX = 0;
     const int posY = 31;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.2f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.2f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*6.f, -1.f*parent_->radius_*0.2f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*6.f,      parent_->radius_*0.2f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius()*0.2f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius()*0.2f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius()*6.f, -1.f*parent_->radius()*0.2f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*6.f,      parent_->radius()*0.2f);
     glEnd();
 }
 
@@ -41,19 +41,10 @@ void ROFLE::fire() const {
     float time = timer::totalTime();
     if (time - timer_ > 3.0) {
         timer_ = time;
-        float angleRad = parent_->rotation_*M_PI / 180;
+        float angleRad = parent_->rotation()*M_PI / 180;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoROFLE, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        sound::playSound(sound::Sniper, parent_->location_);
+        particles::spawn(particles::pAmmoROFLE, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        sound::playSound(sound::Sniper, parent_->location());
     }
 }
 
-void ROFLE::next() {
-    parent_->currentWeapon_ = new Shotgun(parent_);
-    delete this;
-}
-
-void ROFLE::previous() {
-    parent_->currentWeapon_ = new Flubba(parent_);
-    delete this;
-}

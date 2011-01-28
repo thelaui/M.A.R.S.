@@ -17,13 +17,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/Tutorial.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/DMTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Items/items.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "Menu/menus.hpp"
 # include "Hud/hud.hpp"
+# include "Players/Player.hpp"
+# include "Players/players.hpp"
+# include "Teams/teams.hpp"
+# include "SpaceObjects/spaceObjects.hpp"
+# include "SpaceObjects/Home.hpp"
 # include "Menu/OptionsMenu.hpp"
 # include "Tutorial/TutWindow01.hpp"
 # include "Tutorial/TutWindow02.hpp"
@@ -60,14 +65,17 @@ Tutorial::Tutorial():
     fuel_(false),
     name_(false) {
 
+    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
+    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
+
     music::playGameMusic();
 
-    players::addPlayer (players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
+    players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     settings::C_playerIIteamL = false;
     settings::C_playerIIteamR = false;
     settings::C_playerIteamL = false;
     settings::C_playerIteamR = true;
-    players::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerITeamColor));
+    teams::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerITeamColor));
     players::createShips();
 
     evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), Color3f(0.5f, 0.f, 0.5f));
@@ -192,8 +200,8 @@ void Tutorial::update() {
             if (!players::getPlayerI()->ship()->docked_) {
                 zones::createRaster(4, 3);
                 menus::showWindow(TutWindow11::get());
-                Team* evilTeam = players::addTeam(new Team(Color3f(0.5f, 0.f, 0.5f)));
-                players::addPlayer(evilTeam, controllers::cTutBot);
+                Team* evilTeam = teams::addTeam(new DMTeam(Color3f(0.5f, 0.f, 0.5f)));
+                players::addPlayer(evilTeam, controllers::cBot);
                 evilTeam->setHome(evilHome_);
                 std::vector<Player*> evilPlayer(evilTeam->members());
                 evilPlayer1_ = evilPlayer[0];
@@ -225,7 +233,7 @@ void Tutorial::update() {
             if (timer::totalTime() > timer_ + 7.5f) {
                 evilPlayer1_->ship()->location_ = Vector2f(3000, 3000);
                 evilPlayer1_->ship()->respawnTimer_ = FLT_MAX;
-                players::addPlayer(evilPlayer1_->team(), controllers::cDMBot);
+                players::addPlayer(evilPlayer1_->team(), controllers::cBot);
                 std::vector<Player*> evilPlayer(evilPlayer1_->team()->members().begin()+1, evilPlayer1_->team()->members().end());
                 evilPlayer2_ = evilPlayer[0];
                 evilHome_->createShips(evilPlayer);
@@ -307,13 +315,14 @@ void Tutorial::restart() {
     fuel_ = false;
     name_ = false;
     players::clear();
+    teams::clear();
     controllers::clear();
     evilPlayer1_ = NULL;
     evilPlayer2_ = NULL;
 
 
-    players::addPlayer(players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
-    players::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
+    players::addPlayer(teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
+    teams::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
     players::createShips();
 
     evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), Color3f(0.5f, 0.f, 0.5f));

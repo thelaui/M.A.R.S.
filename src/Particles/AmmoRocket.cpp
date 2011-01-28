@@ -45,7 +45,7 @@ AmmoRocket::AmmoRocket(Vector2f const& location, Vector2f const& direction, Vect
     velocity_ = direction*300.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    trailEffects::attach(this, 30, 2.f, 20.f, Color3f(0.6f, 0.2f, 0.f));
+    trailEffects::attach(this, 0.05, 2.5f, 20.f, Color3f(0.6f, 0.2f, 0.f), false);
 }
 
 AmmoRocket::~AmmoRocket() {
@@ -107,7 +107,7 @@ void AmmoRocket::update() {
         particles::spawnMultiple(1, particles::pMiniFlame, location_);
         postFX::onExplosion();
         setDamageSource(parent_);
-        physics::  causeShockWave(damageSource(), location_, 50.f, 300.f, 5.f);
+        physics::  causeShockWave(damageSource(), location_, 150.f, 300.f, 5.f);
         particles::spawn(particles::pShockWave, location_);
         killMe();
     }

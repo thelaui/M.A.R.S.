@@ -20,7 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Vector2f.hpp"
 
-# include <utility>
+# include <list>
 
 class CannonControl;
 class PowerUp;
@@ -34,7 +34,7 @@ namespace items {
     void addCannonControl();
     CannonControl* getCannonControl();
 
-    std::pair<PowerUp*, float> const findClosest(Vector2f const& location, PowerUpType type);
+    std::list<PowerUp*>const& getPowerUps();
 
     void clear();
 }

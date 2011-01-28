@@ -17,12 +17,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/TeamDeathMatch.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/DMTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
+# include "Players/players.hpp"
+# include "SpaceObjects/spaceObjects.hpp"
+# include "Teams/teams.hpp"
 
 TeamDeathMatch::TeamDeathMatch():
     Game(games::gTeamDeathMatch) {
+
+    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
+    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
     music::playGameMusic();
 
@@ -30,46 +36,46 @@ TeamDeathMatch::TeamDeathMatch():
     Team* myTeamR = NULL;
 
     if (settings::C_playerIteamL) {
-        myTeamL = new Team(settings::C_playerITeamColor);
+        myTeamL = new DMTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer1);
     }
     else if (settings::C_playerIteamR) {
-        myTeamR = new Team(settings::C_playerITeamColor);
+        myTeamR = new DMTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer1);
     }
 
     if (settings::C_playerIIteamL) {
-        if (!myTeamL) myTeamL = new Team(settings::C_playerIITeamColor);
+        if (!myTeamL) myTeamL = new DMTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer2);
     }
     else if (settings::C_playerIIteamR) {
-        if (!myTeamR) myTeamR = new Team(settings::C_playerIITeamColor);
+        if (!myTeamR) myTeamR = new DMTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer2);
     }
 
     if (!myTeamR && !myTeamL) {
         Color3f rand = Color3f::random();
-        myTeamL = new Team(rand.inverted());
-        myTeamR = new Team(rand);
+        myTeamL = new DMTeam(rand.inverted());
+        myTeamR = new DMTeam(rand);
 
     }
     else if (!myTeamL) {
-        myTeamL = new Team(myTeamR->color().inverted());
+        myTeamL = new DMTeam(myTeamR->color().inverted());
     }
     else if (!myTeamR) {
-        myTeamR = new Team(myTeamL->color().inverted());
+        myTeamR = new DMTeam(myTeamL->color().inverted());
     }
 
-    players::addTeam(myTeamL);
-    players::addTeam(myTeamR);
+    teams::addTeam(myTeamL);
+    teams::addTeam(myTeamR);
 
-    for (int i=0; i<settings::C_botsLeft;  ++i)     players::addPlayer(myTeamL, controllers::cDMBot);
-    for (int i=0; i<settings::C_botsRight; ++i)     players::addPlayer(myTeamR, controllers::cDMBot);
+    for (int i=0; i<settings::C_botsLeft;  ++i)     players::addPlayer(myTeamL, controllers::cBot);
+    for (int i=0; i<settings::C_botsRight; ++i)     players::addPlayer(myTeamR, controllers::cBot);
 
     Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
     Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     createSpace();
@@ -84,10 +90,10 @@ void TeamDeathMatch::draw() const {
 void TeamDeathMatch::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  players::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, players::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     createSpace();

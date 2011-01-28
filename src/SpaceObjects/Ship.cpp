@@ -26,7 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/hud.hpp"
 # include "Media/text.hpp"
 # include "Players/Player.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "Games/games.hpp"
 # include "Controllers/Controller.hpp"
 # include "SpaceObjects/Ball.hpp"
@@ -34,6 +34,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/decoObjects.hpp"
 # include "Shaders/postFX.hpp"
 # include "Items/items.hpp"
+# include "SpaceObjects/Home.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -53,8 +54,8 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                damageSourceResetTimer_(0.f),
                respawnLocation_(location),
                respawnRotation_(rotation),
-               currentWeapon_(new AFK47(this)),
-               currentSpecial_(new Heal(this)),
+               currentWeapon_(NULL),
+               currentSpecial_(NULL),
                life_(200.f),
                maxLife_(life_),
                fuel_(100.f),
@@ -68,11 +69,21 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
 
     decoObjects::addName(this);
 
-    if  ((owner_->controlType_ == controllers::cPlayer1) | (owner_->controlType_ == controllers::cPlayer2))
+    if  (owner_->controlType_ == controllers::cPlayer1) {
         decoObjects::addHighlight(this);
+        currentWeapon_  = weapons:: create(settings::C_playerIWeapon, this);
+        currentSpecial_ = specials::create(settings::C_playerISpecial, this);
+    }
+    else if  (owner_->controlType_ == controllers::cPlayer2) {
+        decoObjects::addHighlight(this);
+        currentWeapon_  = weapons:: create(settings::C_playerIIWeapon, this);
+        currentSpecial_ = specials::create(settings::C_playerIISpecial, this);
+    }
     else {
         life_ = 50 + static_cast<float>(settings::C_iDumb)*2.5f;
         maxLife_ = life_;
+        currentWeapon_  = weapons:: create(weapons::wAFK47, this);
+        currentSpecial_ = specials::create(specials::sHeal, this);
     }
 
     physics::addMobileObject(this);
@@ -354,14 +365,14 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             waitForOtherDamage = 0.15f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color());
-            unfreeze = 1.f;
+            unfreeze = 0.1f;
             break;
 
         case spaceObjects::oAmmoROFLE:
             amount = strength*0.04f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(20, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.5f, velocity_, owner_->color());
-            unfreeze = 10.f;
+            unfreeze = 1.f;
             break;
 
         case spaceObjects::oAmmoShotgun:
@@ -369,13 +380,13 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             waitForOtherDamage = 0.1f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, owner_->color());
-            unfreeze = 1.f;
+            unfreeze = 0.1f;
             break;
 
         case spaceObjects::oAmmoFlubba:
             amount = sf::Randomizer::Random(2.5f, 3.f);
             setDamageSource(with->damageSource());
-            unfreeze = 10.f;
+            unfreeze = 1.f;
             break;
 
         case spaceObjects::oMiniAmmoFlubba:
@@ -397,19 +408,25 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             // chance to spawn smoke
             if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
             setDamageSource(with->damageSource());
-            unfreeze = 1.f;
+            unfreeze = 0.1f;
             break;
 
         case spaceObjects::oAmmoRocket:
             amount = 20.f;
             setDamageSource(with->damageSource());
-            unfreeze = 40.f;
+            unfreeze = 4.f;
             break;
 
         case spaceObjects::oAmmoFist:
             amount = 25.f+sf::Randomizer::Random(-3.f, 3.f);
             setDamageSource(with->damageSource());
-            unfreeze = 10.f;
+            unfreeze = 5.f;
+            break;
+
+        case spaceObjects::oAmmoInsta:
+            amount = life_;
+            setDamageSource(with->damageSource());
+            unfreeze = 100;
             break;
 
         default:;
@@ -436,19 +453,21 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
 }
 
 void Ship::onShockWave(Player* damageSource, float intensity) {
-    setDamageSource(damageSource);
     if (frozen_ > 0)
         frozen_-=10;
 
-    if (!collectedPowerUps_[items::puShield]) {
-        float damage(intensity*0.1f*(20.f + settings::C_iDumb));
-        life_ -= damage;
-        if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
-            || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
-            damageByLocalPlayer_ -= damage;
-            ++collisionCount_;
-            if (damageCheckTimer_ <= 0.f)
-                damageCheckTimer_ = 0.01f;
+    else {
+        setDamageSource(damageSource);
+        if (!collectedPowerUps_[items::puShield]) {
+            float damage(intensity*0.1f*(20.f + settings::C_iDumb));
+            life_ -= damage;
+            if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
+                || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
+                damageByLocalPlayer_ -= damage;
+                ++collisionCount_;
+                if (damageCheckTimer_ <= 0.f)
+                    damageCheckTimer_ = 0.01f;
+            }
         }
     }
 }
@@ -511,7 +530,10 @@ void Ship::explode() {
     visible_ = false;
     life_ = 0.f;
     fuel_ = 0.f;
-    respawnTimer_ = 10.f;
+    if (games::type() == games::gGraveItation)
+        respawnTimer_ = 2.f;
+    else
+        respawnTimer_ = 10.f;
     frozen_ = 0.f;
 
     ++owner_->deaths_;
@@ -522,7 +544,7 @@ void Ship::explode() {
         ++owner_->suicides_;
         --owner_->points_;
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            --damageSource_->team()->points_;
+            damageSource_->team()->subtractPoint();
 
         announcer::announce(announcer::Affronting);
     }
@@ -533,7 +555,7 @@ void Ship::explode() {
         (damageSource_->ship()->fragStars_-1 < 0) ? damageSource_->ship()->fragStars_=0 : --damageSource_->ship()->fragStars_;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            --damageSource_->team()->points_;
+            damageSource_->team()->subtractPoint();
 
         announcer::announce(announcer::Affronting);
     }
@@ -542,7 +564,7 @@ void Ship::explode() {
         ++damageSource_->points_;
 
         if (games::type() != games::gSpaceBall && games::type() != games::gCannonKeep)
-            ++damageSource_->team()->points_;
+            damageSource_->team()->addPoint();
 
         ++damageSource_->ship()->fragStars_;
 
@@ -565,5 +587,9 @@ void Ship::respawn() {
     damageDirection_ = Vector2f();
     collisionCount_ = 0;
     sound::playSound(sound::ShipRespawn, location_, 100.f);
+}
+
+float Ship::rotation() const {
+    return rotation_;
 }
 

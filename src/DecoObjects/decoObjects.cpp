@@ -51,10 +51,11 @@ namespace decoObjects {
             (*it)->draw();
 
         for(std::list<DecoObject*>::iterator it=ices_.begin(); it!=ices_.end(); ++it) {
-            if(*it!=NULL)
+            if((*it)!=NULL)
                 (*it)->draw();
-            else
+            else {
                it = ices_.erase(it);
+            }
         }
     }
 
@@ -68,6 +69,27 @@ namespace decoObjects {
             (*it)->draw();
     }
 
+    void drawArrow(Vector2f const& from,  Vector2f const& to, Color3f const& color, float width) {
+
+        Vector2f direction((to-from).normalize()*width*0.5f);
+        Vector2f normal(direction.y_, -direction.x_);
+
+        glBlendFunc(GL_ONE, GL_ONE);
+        glLineWidth(width);
+
+        glBegin(GL_TRIANGLES);
+            (color*0.5f).gl3f();
+            glVertex2f(from.x_,from.y_);
+
+            color.gl3f();
+            glVertex2f(to.x_-normal.x_,to.y_-normal.y_);
+            glVertex2f(to.x_+normal.x_,to.y_+normal.y_);
+
+            glVertex2f(to.x_+direction.x_*3.f,to.y_+direction.y_*3.f);
+            glVertex2f(to.x_+normal.x_*2.f,to.y_+normal.y_*2.f);
+            glVertex2f(to.x_-normal.x_*2.f,to.y_-normal.y_*2.f);
+        glEnd();
+    }
 
     void addCannon() {
         cannon_ = new Cannon();

@@ -41,6 +41,7 @@ class PowerUp {
         items::PowerUpType type()  const;
 
         bool isDead()              const;
+        bool isCollected()         const;
 
     protected:
         virtual void refreshLifeTime() = 0;

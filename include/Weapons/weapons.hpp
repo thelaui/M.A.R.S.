@@ -18,14 +18,17 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef WEAPONS_HPP_INCLUDED
 # define WEAPONS_HPP_INCLUDED
 
-# include "Weapons/Weapon.hpp"
-# include "Weapons/AFK47.hpp"
-# include "Weapons/ROFLE.hpp"
-# include "Weapons/Shotgun.hpp"
-# include "Weapons/Flubba.hpp"
-# include "Weapons/Burner.hpp"
-# include "Weapons/H2OMG.hpp"
-# include "Weapons/Fist.hpp"
-# include "Weapons/RocketLauncher.hpp"
+class Weapon;
+class Ship;
+
+namespace weapons {
+    enum WeaponType {wInsta=1, wAFK47=2, wBurner=4, wFist=8, wFlubba=16,
+                     wShotgun=32, wRocketLauncher=64, wROFLE=128,
+                     wH2OMG=256, wNoWeapon=512};
+
+    Weapon* create    (WeaponType type, Ship* parent);
+    Weapon* createNext(WeaponType type, Ship* parent);
+    Weapon* createPrev(WeaponType type, Ship* parent);
+}
 
 # endif // WEAPONS_HPP_INCLUDED

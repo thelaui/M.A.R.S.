@@ -21,13 +21,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Color3f.hpp"
 
 class SpaceObject;
+class Trail;
 
 namespace trailEffects {
     void update();
 
     void draw();
 
-    void attach(SpaceObject* target, int resolution, float length, float width, Color3f const& color);
+    Trail* attach(SpaceObject* target, float timeStep, float duration, float width, Color3f const& color, bool persistant);
 
     void detach(SpaceObject* target);
 

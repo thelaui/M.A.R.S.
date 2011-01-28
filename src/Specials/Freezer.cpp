@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Specials/specials.hpp"
+# include "Specials/Freezer.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
@@ -23,7 +23,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
 # include "DecoObjects/decoObjects.hpp"
-# include "Players/Team.hpp"
+# include "Menu/menus.hpp"
+# include "Games/games.hpp"
+# include "Teams/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <vector>
@@ -32,8 +34,8 @@ void Freezer::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
-    Color3f tmp = parent_->owner_->team()->color();
-    if (tmp.v() < 0.4f) tmp.v(0.4f);
+    Color3f tmp = parent_->getOwner()->team()->color();
+    if (tmp.v() < 0.5f) tmp.v(0.5f);
     if (tmp.s() < 0.5f) tmp.s(0.5f);
     tmp.gl4f(0.8f);
 
@@ -41,10 +43,10 @@ void Freezer::draw() const {
     const int posY = 0;
 
     glBegin(GL_QUADS);
-        glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-parent_->radius_*4,-parent_->radius_*4);
-        glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-parent_->radius_*4, parent_->radius_*4);
-        glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( parent_->radius_*4, parent_->radius_*4);
-        glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( parent_->radius_*4,-parent_->radius_*4);
+        glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-parent_->radius()*4,-parent_->radius()*4);
+        glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-parent_->radius()*4, parent_->radius()*4);
+        glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( parent_->radius()*4, parent_->radius()*4);
+        glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( parent_->radius()*4,-parent_->radius()*4);
     glEnd();
 
     if (timer_ > 0.f) {
@@ -59,7 +61,7 @@ void Freezer::draw() const {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glColor4f(1.0f, 1.0f, 1.0f, alpha);
 
-        const int posX = 3;
+        const int posX = 2;
         const int posY = 1;
 
         glBegin(GL_QUADS);
@@ -69,30 +71,32 @@ void Freezer::draw() const {
             glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( radius_*scale,-radius_*scale);
         glEnd();
 
-        timer_ -= timer::frameTime();
+        if (!menus::visible() || games::type() == games::gMenu)
+            timer_ -= timer::frameTime();
     }
 }
 
 void Freezer::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*50.f+25.f;
+        radius_ = parent_->fragStars_*50.f+50.f;
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
             if ((*it)!=parent_ && (*it)->visible_) {
-                float distance(((*it)->location_-parent_->location_).length());
+                float distance(((*it)->location()-parent_->location()).length());
                 if (distance <= radius_) {
                     (*it)->setDamageSource(parent_->getOwner());
-                    (*it)->frozen_=40;
                     (*it)->velocity_=Vector2f();
                     (*it)->mass_=9999999999.f;
-                    decoObjects::addShipIce(*it);
+                    if ((*it)->frozen_ <= 0)
+                        decoObjects::addShipIce(*it);
+                    (*it)->frozen_=40;
                 }
             }
         }
         Ball* ball = balls::getBall();
 
         if(ball && ball->visible_) {
-            float distance((ball->location_-parent_->location_).length());
+            float distance((ball->location()-parent_->location()).length());
                 if (distance <= radius_) {
                     ball->frozen_=40;
                     ball->velocity_=Vector2f();
@@ -102,7 +106,7 @@ void Freezer::activate() const {
         }
 
         for (std::list<AmmoRocket*>::iterator it=AmmoRocket::activeParticles_.begin(); it!=AmmoRocket::activeParticles_.end(); ++it) {
-            float distance(((*it)->location_-parent_->location_).length());
+            float distance(((*it)->location()-parent_->location()).length());
             if (distance <= radius_) {
                 (*it)->frozen_=40;
                 (*it)->velocity_=Vector2f();
@@ -115,16 +119,5 @@ void Freezer::activate() const {
         parent_->fragStars_ = 0;
     }
 }
-
-void Freezer::next() {
-    parent_->currentSpecial_ = new Blast(parent_);
-    delete this;
-}
-
-void Freezer::previous() {
-    parent_->currentSpecial_ = new Heal(parent_);
-    delete this;
-}
-
 
 

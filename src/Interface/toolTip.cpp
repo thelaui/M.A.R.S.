@@ -195,8 +195,10 @@ namespace toolTip {
     }
 
     void mouseMoved(Vector2f const& position) {
-        if (state_ == INVISIBLE || state_ == WAITING)
+        if (state_ == INVISIBLE || state_ == WAITING) {
             position_ = position + Vector2f(0, 25);
+            state_ = INVISIBLE;
+        }
         else if ((position_ - position - Vector2f(0, 25)).lengthSquare() > 60) {
             if (state_ != FADE_OUT) {
                 state_ = FADE_OUT;

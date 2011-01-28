@@ -18,34 +18,21 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef TRAIL_HPP_INCLUDED
 # define TRAIL_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
-# include "System/Color3f.hpp"
-
-# include <vector>
-
 class SpaceObject;
 
 class Trail {
     public:
-        Trail(SpaceObject* target, int resolution, float length, float width, Color3f const& color);
+        Trail(SpaceObject* target);
 
-        void update();
-        void draw() const;
+        virtual void update() = 0;
+        virtual void draw() const = 0;
+        virtual bool isDead() const = 0;
 
         void detach();
-
-        bool         isDead() const;
         SpaceObject* target() const;
 
-    private:
+    protected:
         SpaceObject* target_;
-        std::vector<Vector2f> points_;
-        int frontIndex_;
-        int length_;
-        float timer_;
-        float timeStep_;
-        float width_;
-        Color3f color_;
 };
 
 # endif //TRAIL_HPP_INCLUDED

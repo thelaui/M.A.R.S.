@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Weapons/weapons.hpp"
+# include "Weapons/AFK47.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Particles/particles.hpp"
@@ -26,19 +26,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 void AFK47::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    parent_->owner_->color().gl3f();
+    parent_->getOwner()->color().gl3f();
     const int posX = 0;
     const int posY = 28;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, parent_->radius_*0.95f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, parent_->radius_*0.45f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*1.5f, parent_->radius_*0.45f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*1.5f, parent_->radius_*0.95f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, parent_->radius()*0.95f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, parent_->radius()*0.45f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius()*1.5f, parent_->radius()*0.45f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*1.5f, parent_->radius()*0.95f);
 
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, -1.f*parent_->radius_*0.95f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.45f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*1.5f, -1.f*parent_->radius_*0.45f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*1.5f, -1.f*parent_->radius_*0.95f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0, -1.f*parent_->radius()*0.95f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius()*0.45f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius()*1.5f, -1.f*parent_->radius()*0.45f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*1.5f, -1.f*parent_->radius()*0.95f);
     glEnd();
 }
 
@@ -46,20 +46,10 @@ void AFK47::fire() const {
     float time = timer::totalTime();
     if (time - timer_ > 0.1) {
         timer_ = time;
-        float angleRad = parent_->rotation_*M_PI / 180;
+        float angleRad = parent_->rotation()*M_PI / 180;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.9 - faceDirection.y_*parent_->radius_*0.9), parent_->location_.y_+( faceDirection.x_*parent_->radius_*0.7 + faceDirection.y_*parent_->radius_*0.7)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location_.x_+(faceDirection.x_*parent_->radius_*0.9 + faceDirection.y_*parent_->radius_*0.9), parent_->location_.y_+(-faceDirection.x_*parent_->radius_*0.7 + faceDirection.y_*parent_->radius_*0.7)), faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        sound::playSound(sound::Laser, parent_->location_);
+        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location().x_+(faceDirection.x_*parent_->radius()*0.9 - faceDirection.y_*parent_->radius()*0.9), parent_->location().y_+( faceDirection.x_*parent_->radius()*0.7 + faceDirection.y_*parent_->radius()*0.7)), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location().x_+(faceDirection.x_*parent_->radius()*0.9 + faceDirection.y_*parent_->radius()*0.9), parent_->location().y_+(-faceDirection.x_*parent_->radius()*0.7 + faceDirection.y_*parent_->radius()*0.7)), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        sound::playSound(sound::Laser, parent_->location());
     }
-}
-
-void AFK47::next() {
-    parent_->currentWeapon_ = new Flubba(parent_);
-    delete this;
-}
-
-void AFK47::previous() {
-    parent_->currentWeapon_ = new Burner(parent_);
-    delete this;
 }

@@ -17,13 +17,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/SpaceBall.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/DMTeam.hpp"
+# include "Teams/SBTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "SpaceObjects/balls.hpp"
+# include "Players/players.hpp"
+# include "Teams/teams.hpp"
 
 SpaceBall::SpaceBall():
     Game(games::gSpaceBall) {
+
+    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
+    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
     music::playGameMusic();
 
@@ -31,48 +37,46 @@ SpaceBall::SpaceBall():
     Team* myTeamR = NULL;
 
     if (settings::C_playerIteamL) {
-        myTeamL = new Team(settings::C_playerITeamColor);
+        myTeamL = new SBTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer1);
     }
     else if (settings::C_playerIteamR) {
-        myTeamR = new Team(settings::C_playerITeamColor);
+        myTeamR = new SBTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer1);
     }
 
     if (settings::C_playerIIteamL) {
-        if (!myTeamL) myTeamL = new Team(settings::C_playerIITeamColor);
+        if (!myTeamL) myTeamL = new SBTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer2);
     }
     else if (settings::C_playerIIteamR) {
-        if (!myTeamR) myTeamR = new Team(settings::C_playerIITeamColor);
+        if (!myTeamR) myTeamR = new SBTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer2);
     }
 
     if (!myTeamR && !myTeamL) {
         Color3f rand = Color3f::random();
-        myTeamL = new Team(rand.inverted());
-        myTeamR = new Team(rand);
+        myTeamL = new SBTeam(rand.inverted());
+        myTeamR = new SBTeam(rand);
 
     }
     else if (!myTeamL) {
-        myTeamL = new Team(myTeamR->color().inverted());
+        myTeamL = new SBTeam(myTeamR->color().inverted());
     }
     else if (!myTeamR) {
-        myTeamR = new Team(myTeamL->color().inverted());
+        myTeamR = new SBTeam(myTeamL->color().inverted());
     }
 
-    players::addTeam(myTeamL);
-    players::addTeam(myTeamR);
+    teams::addTeam(myTeamL);
+    teams::addTeam(myTeamR);
 
-    for (int i=0; i<settings::C_botsLeft/2;  ++i)                       players::addPlayer(myTeamL, controllers::cDefBot);
-    for (int i=settings::C_botsLeft/2; i<settings::C_botsLeft;  ++i)    players::addPlayer(myTeamL, controllers::cAggroBot);
-    for (int i=0; i<settings::C_botsRight/2;  ++i)                      players::addPlayer(myTeamR, controllers::cDefBot);
-    for (int i=settings::C_botsRight/2; i<settings::C_botsRight;  ++i)  players::addPlayer(myTeamR, controllers::cAggroBot);
+    for (int i=0; i<settings::C_botsLeft;  ++i)                       players::addPlayer(myTeamL, controllers::cBot);
+    for (int i=0; i<settings::C_botsRight;  ++i)                      players::addPlayer(myTeamR, controllers::cBot);
 
     Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
     Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     balls::addBall();
@@ -90,10 +94,10 @@ void SpaceBall::draw() const {
 void SpaceBall::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  players::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, players::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     balls::addBall();

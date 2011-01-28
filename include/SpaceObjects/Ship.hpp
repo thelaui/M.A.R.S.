@@ -50,18 +50,13 @@ class Ship: public MobileSpaceObject {
         float   getFuel()  const;
         Player* getOwner() const;
 
+        float   rotation() const;
+
         std::vector<PowerUp*> const& getCollectedPowerUps() const;
 
         friend class Controller;
         friend class BotController;
-        friend class AFK47;
-        friend class ROFLE;
-        friend class Shotgun;
-        friend class Flubba;
-        friend class Burner;
-        friend class H2OMG;
-        friend class RocketLauncher;
-        friend class Fist;
+        friend class KeyController;
         friend class CannonControl;
         friend class PowerUp;
         friend class PUHealth;
@@ -69,11 +64,11 @@ class Ship: public MobileSpaceObject {
         friend class ShipName;
         friend class ShipHighlight;
         friend class Tutorial;
-        friend class TutBot;
-        friend class TutAggroBot;
-        friend class Heal;
         friend class Blast;
         friend class Freezer;
+        friend class Heal;
+        friend class Special;
+        friend class Weapon;
         template <typename Object> friend class Ice;
         friend class Team;
 

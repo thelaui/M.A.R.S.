@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define SETTINGS_HPP_INCLUDED
 
 # include "Color3f.hpp"
+# include "Weapons/Weapon.hpp"
+# include "Specials/Special.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <string>
@@ -48,8 +50,6 @@ namespace settings {
     extern bool           C_fullScreen;
     extern bool           C_vsync;
     extern bool           C_StarsHigh;
-    extern bool           C_drawLocalNames;
-    extern bool           C_drawRemoteNames;
     extern int            C_globalParticleCount;
     extern bool           C_adaptiveParticleCount;
     extern int            C_globalParticleLifeTime;
@@ -77,6 +77,10 @@ namespace settings {
     extern std::string    C_configPath;
     extern std::string    C_dataPath;
     extern std::string    C_screenShotFormat;
+    extern int            C_EnabledWeapons;
+    extern int            C_EnabledSpecials;
+    extern int            C_EnabledWeaponsByUser;
+    extern int            C_EnabledSpecialsByUser;
     ///@}
 
     /// \name Player settings
@@ -88,10 +92,12 @@ namespace settings {
     extern sf::Key::Code  C_playerIleft;
     extern sf::Key::Code  C_playerIright;
     extern sf::Key::Code  C_playerIfire;
-    extern sf::Key::Code  C_playerIspecial;
+    extern sf::Key::Code  C_playerISpecialKey;
     extern bool           C_playerIteamL;
     extern bool           C_playerIteamR;
     extern int            C_playerIShip;
+    extern weapons::WeaponType   C_playerIWeapon;
+    extern specials::SpecialType C_playerISpecial;
     extern sf::String     C_playerIIName;
     extern Color3f        C_playerIIColor;
     extern Color3f        C_playerIITeamColor;
@@ -99,21 +105,20 @@ namespace settings {
     extern sf::Key::Code  C_playerIIleft;
     extern sf::Key::Code  C_playerIIright;
     extern sf::Key::Code  C_playerIIfire;
-    extern sf::Key::Code  C_playerIIspecial;
+    extern sf::Key::Code  C_playerIISpecialKey;
     extern bool           C_playerIIteamL;
     extern bool           C_playerIIteamR;
     extern int            C_playerIIShip;
+    extern weapons::WeaponType   C_playerIIWeapon;
+    extern specials::SpecialType C_playerIISpecial;
     extern bool           C_networkPlayerI;
     ///@}
 
     /// \name AI settings
     ///@{
-    extern bool           C_drawBotNames;
-    extern bool           C_drawBotOrientation;
-    extern bool           C_drawZones;
+    extern bool           C_drawBotJobs;
     extern bool           C_drawAIPath;
     extern int            C_iDumb;
-    extern bool           C_drawBotOrientation;
     extern bool           C_drawZones;
     ///@}
 

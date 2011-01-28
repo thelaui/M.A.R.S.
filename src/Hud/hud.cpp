@@ -66,8 +66,10 @@ namespace hud {
         else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial) countDown_->draw();
         gameStats_->draw();
 
-        if ((!menus::visible() && games::active()) || games::type() == games::gTutorial) {
+        if (games::type() != games::gMenu)
             decoObjects::drawNames();
+
+        if ((!menus::visible() && games::active()) || games::type() == games::gTutorial) {
             if(games::type() == games::gSpaceBall || games::type() == games::gCannonKeep) {
                 std::vector<Home*> const& homes = spaceObjects::getHomes();
                 for (std::vector<Home*>::const_iterator it = homes.begin(); it != homes.end(); ++it)

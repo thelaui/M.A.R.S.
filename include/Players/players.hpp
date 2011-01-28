@@ -26,31 +26,15 @@ class Home;
 class Player;
 
 namespace players {
-    Team* addTeam(Team* newTeam);
-
     void addPlayer (Team* team, controllers::ControlType type, Color3f const& = Color3f::random());
-
-    void assignHomes(Home* home);
-    void assignHomes(Home* homeL, Home* homeR);
-
-    void assignZones();
 
     void createShips();
 
-    void resetTeamPoints();
     void resetPlayerPoints();
     void clear();
 
     Player const* getPlayerI ();
     Player const* getPlayerII();
-
-    Team   const* getTeamL();
-    Team   const* getTeamR();
-    std::vector<Team*> const& getAllTeams();
-    Team   const*             getEnemy(Team const* checker);
-
-    int getFirstPoints();
-    int getSecondPoints();
 }
 
 # endif // PLAYERS_HPP_INCLUDED

@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 
 class Team;
+class KeyController;
 
 class LocalPlayer: public Player {
     public:
@@ -30,10 +31,13 @@ class LocalPlayer: public Player {
         sf::String const&        name()   const {return *name_;}
         int                      graphic()const {return *graphic_;}
 
+        friend class Team;
+
     private:
         sf::String*  name_;
         Color3f* color_;
         int* graphic_;
+        KeyController* controller_;
 };
 
 # endif // LOCALPLAYER_HPP_INCLUDED

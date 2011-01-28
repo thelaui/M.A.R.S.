@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Weapons/weapons.hpp"
+# include "Weapons/Fist.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Media/sound.hpp"
@@ -42,20 +42,20 @@ void Fist::draw() const {
     glColor3f(1.0f, 1.0f, 1.0f);
 
     glBegin(GL_QUADS);
-        glTexCoord2f(0.109375f, 0.953125f); glVertex2f(0.f,          parent_->radius_*0.5f);
-        glTexCoord2f(0.140625f, 0.984375f); glVertex2f(0.f,     -1.f*parent_->radius_*0.5f);
-        glTexCoord2f(0.234375f, 0.890625f); glVertex2f(position_*parent_->radius_*(position_+1)*1.2f, (-1.f*parent_->radius_*0.5f)*(1+position_)*0.7f);
-        glTexCoord2f(0.203125f, 0.859375f); glVertex2f(position_*parent_->radius_*(position_+1)*1.2f, (     parent_->radius_*0.5f)*(1+position_)*0.7f);
+        glTexCoord2f(0.109375f, 0.953125f); glVertex2f(0.f,          parent_->radius()*0.5f);
+        glTexCoord2f(0.140625f, 0.984375f); glVertex2f(0.f,     -1.f*parent_->radius()*0.5f);
+        glTexCoord2f(0.234375f, 0.890625f); glVertex2f(position_*parent_->radius()*(position_+1)*1.2f, (-1.f*parent_->radius()*0.5f)*(1+position_)*0.7f);
+        glTexCoord2f(0.203125f, 0.859375f); glVertex2f(position_*parent_->radius()*(position_+1)*1.2f, (     parent_->radius()*0.5f)*(1+position_)*0.7f);
     glEnd();
 
     parent_->getOwner()->color().gl3f();
     const float posX = 2;
     const float posY = 28;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);       glVertex2f(position_*parent_->radius_*(position_+1),       (     parent_->radius_*0.5f)*(1+position_));
-        glTexCoord2f(posX*0.125f,    (posY+2)*0.03125f);    glVertex2f(position_*parent_->radius_*(position_+1),       (-1.f*parent_->radius_*0.5f)*(1+position_));
-        glTexCoord2f((posX+0.5f)*0.125f,(posY+2)*0.03125f); glVertex2f(parent_->radius_*(1.f+position_)*(position_+1), (-1.f*parent_->radius_*0.5f)*(1+position_));
-        glTexCoord2f((posX+0.5f)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*(1.f+position_)*(position_+1), (     parent_->radius_*0.5f)*(1+position_));
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);       glVertex2f(position_*parent_->radius()*(position_+1),       (     parent_->radius()*0.5f)*(1+position_));
+        glTexCoord2f(posX*0.125f,    (posY+2)*0.03125f);    glVertex2f(position_*parent_->radius()*(position_+1),       (-1.f*parent_->radius()*0.5f)*(1+position_));
+        glTexCoord2f((posX+0.5f)*0.125f,(posY+2)*0.03125f); glVertex2f(parent_->radius()*(1.f+position_)*(position_+1), (-1.f*parent_->radius()*0.5f)*(1+position_));
+        glTexCoord2f((posX+0.5f)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*(1.f+position_)*(position_+1), (     parent_->radius()*0.5f)*(1+position_));
     glEnd();
 }
 
@@ -63,24 +63,14 @@ void Fist::fire() const {
     float time = timer::totalTime();
     if (time - timer_ > 0.5f) {
         timer_ = time;
-        float angleRad = parent_->rotation_*M_PI / 180.f;
+        float angleRad = parent_->rotation()*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
 
-        particles::spawn(particles::pAmmoFist, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
+        particles::spawn(particles::pAmmoFist, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
 
-        parent_->velocity_ -= faceDirection*200.f;
-        sound::playSound(sound::Pump, parent_->location_);
+        parent_->velocity() -= faceDirection*200.f;
+        sound::playSound(sound::Pump, parent_->location());
     }
-}
-
-void Fist::next() {
-    parent_->currentWeapon_ = new RocketLauncher(parent_);
-    delete this;
-}
-
-void Fist::previous() {
-    parent_->currentWeapon_ = new Shotgun(parent_);
-    delete this;
 }
 
 

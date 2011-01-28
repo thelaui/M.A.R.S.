@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Weapons/weapons.hpp"
+# include "Weapons/Flubba.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Particles/particles.hpp"
@@ -30,10 +30,10 @@ void Flubba::draw() const {
     const int posX = 0;
     const int posY = 29;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.4f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.4f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*3.f, -1.f*parent_->radius_*0.4f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*3.f,      parent_->radius_*0.4f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius()*0.4f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius()*0.4f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius()*3.f, -1.f*parent_->radius()*0.4f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*3.f,      parent_->radius()*0.4f);
     glEnd();
 }
 
@@ -41,21 +41,11 @@ void Flubba::fire() const {
     float time = timer::totalTime();
     if (time - timer_ > 0.2f) {
         timer_ = time;
-        float angleRad = parent_->rotation_*M_PI / 180.f;
+        float angleRad = parent_->rotation()*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoFlubba, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        parent_->velocity_ -= faceDirection*10.f;
-        sound::playSound(sound::Blub, parent_->location_);
+        particles::spawn(particles::pAmmoFlubba, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        parent_->velocity() -= faceDirection*10.f;
+        sound::playSound(sound::Blub, parent_->location());
     }
-}
-
-void Flubba::next() {
-    parent_->currentWeapon_ = new ROFLE(parent_);
-    delete this;
-}
-
-void Flubba::previous() {
-    parent_->currentWeapon_ = new AFK47(parent_);
-    delete this;
 }
 

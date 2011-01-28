@@ -17,30 +17,36 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/MenuGame.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/DMTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Hud/hud.hpp"
 # include "Menu/menus.hpp"
 # include "Menu/ChooseLanguage.hpp"
+# include "Players/players.hpp"
+# include "SpaceObjects/Home.hpp"
+# include "Teams/teams.hpp"
 
 MenuGame::MenuGame():
     Game(games::gMenu) {
+
+    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
+    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
     music::playMenuMusic();
 
     Color3f rand = Color3f::random();
 
-    Team* myTeamL = players::addTeam(new Team(rand));
-    Team* myTeamR = players::addTeam(new Team(rand.inverted()));
+    Team* myTeamL = teams::addTeam(new DMTeam(rand));
+    Team* myTeamR = teams::addTeam(new DMTeam(rand.inverted()));
 
-    for (int i=0; i<5;  ++i)    players::addPlayer(myTeamL, controllers::cDMBot);
-    for (int i=0; i<5; ++i)     players::addPlayer(myTeamR, controllers::cDMBot);
+    for (int i=0; i<5;  ++i)    players::addPlayer(myTeamL, controllers::cBot);
+    for (int i=0; i<5; ++i)     players::addPlayer(myTeamR, controllers::cBot);
 
     Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
     Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     menus::showMain();
@@ -57,10 +63,10 @@ MenuGame::MenuGame():
 void MenuGame::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  players::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, players::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
 
-    players::assignHomes(homeL, homeR);
+    teams::assignHomes(homeL, homeR);
     players::createShips();
 
     menus::showMain();

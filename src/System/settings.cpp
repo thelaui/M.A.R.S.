@@ -45,8 +45,6 @@ namespace settings {
     int         C_globalParticleCount =     100;
     int         C_globalParticleLifeTime =  100;
     bool        C_StarsHigh =               true;
-    bool        C_drawLocalNames =          true;
-    bool        C_drawRemoteNames =         true;
     int         C_botsLeft =                4;
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
@@ -68,9 +66,14 @@ namespace settings {
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 false;
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
-    std::string  C_configPath =             "";
-    std::string  C_dataPath =               "";
-    std::string  C_screenShotFormat =       "jpg";
+    std::string C_configPath =              "";
+    std::string C_dataPath =                "";
+    std::string C_screenShotFormat =        "jpg";
+    int         C_EnabledWeapons =          weapons::wAFK47 | weapons::wShotgun | weapons::wFlubba | weapons::wFist |
+                                            weapons::wRocketLauncher | weapons::wROFLE | weapons::wBurner;
+    int         C_EnabledSpecials =         specials::sBlast | specials::sFreeze | specials::sHeal;
+    int         C_EnabledWeaponsByUser =    C_EnabledWeapons;
+    int         C_EnabledSpecialsByUser =   C_EnabledSpecials;
 
     // player settings ----- adjustable via options menu
     sf::String    C_playerIName =           "PlayerI";
@@ -80,10 +83,12 @@ namespace settings {
     sf::Key::Code C_playerIleft =           sf::Key::Left;
     sf::Key::Code C_playerIright =          sf::Key::Right;
     sf::Key::Code C_playerIfire =           sf::Key::RControl;
-    sf::Key::Code C_playerIspecial =        sf::Key::RShift;
+    sf::Key::Code C_playerISpecialKey =        sf::Key::RShift;
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
+    weapons::WeaponType   C_playerIWeapon =  weapons::wAFK47;
+    specials::SpecialType C_playerISpecial = specials::sHeal;
     sf::String    C_playerIIName =          "PlayerII";
     Color3f       C_playerIIColor =         Color3f(0.5f, 0.4f, 0.82f);
     Color3f       C_playerIITeamColor =     Color3f(0.05f, 1.f, 0.785f);
@@ -91,15 +96,16 @@ namespace settings {
     sf::Key::Code C_playerIIleft =          sf::Key::A;
     sf::Key::Code C_playerIIright =         sf::Key::D;
     sf::Key::Code C_playerIIfire =          sf::Key::LControl;
-    sf::Key::Code C_playerIIspecial =       sf::Key::LShift;
+    sf::Key::Code C_playerIISpecialKey =       sf::Key::LShift;
     bool          C_playerIIteamL =         true;
     bool          C_playerIIteamR =         false;
     int           C_playerIIShip =          0;
+    weapons::WeaponType   C_playerIIWeapon =  weapons::wAFK47;
+    specials::SpecialType C_playerIISpecial = specials::sHeal;
     bool          C_networkPlayerI =        true;
 
     // ai settings ------ adjustable via options menu
-    bool        C_drawBotNames =            true;
-    bool        C_drawBotOrientation =      false;
+    bool        C_drawBotJobs =             false;
     bool        C_drawZones =               false;
     bool        C_drawAIPath =              false;
     int         C_iDumb =                   0;
@@ -129,10 +135,7 @@ namespace settings {
             outStream << "[drawAIPath] "            << (C_drawAIPath ? "true" : "false") << std::endl;
             outStream << "[iDumb] "                 << (C_iDumb) << std::endl;
             outStream << "[adaptiveParticleCount] " << (C_adaptiveParticleCount ? "true" : "false") << std::endl;
-            outStream << "[drawLocalNames] "        << (C_drawLocalNames ? "true" : "false") << std::endl;
-            outStream << "[drawRemoteNames] "       << (C_drawRemoteNames ? "true" : "false") << std::endl;
-            outStream << "[drawBotNames] "          << (C_drawBotNames ? "true" : "false") << std::endl;
-            outStream << "[drawBotOrientation] "    << (C_drawBotOrientation ? "true" : "false") << std::endl;
+            outStream << "[drawBotJobs] "           << (C_drawBotJobs ? "true" : "false") << std::endl;
             outStream << "[drawZones] "             << (C_drawZones ? "true" : "false") << std::endl;
             outStream << "[botsLeft] "              << C_botsLeft << std::endl;
             outStream << "[botsRight] "             << C_botsRight << std::endl;
@@ -143,19 +146,23 @@ namespace settings {
             outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
             outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
             outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
-            outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerIspecial << std::endl;
+            outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerISpecialKey << std::endl;
             outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
             outStream << "[playerITeamColor] "      <<  C_playerITeamColor.r() << " "<< C_playerITeamColor.g() << " " << C_playerITeamColor.b() << std::endl;
             outStream << "[playerITeamL] "          << (C_playerIteamL ? "true" : "false") << std::endl;
             outStream << "[playerITeamR] "          << (C_playerIteamR ? "true" : "false") << std::endl;
             outStream << "[playerIShip] "           <<  C_playerIShip << std::endl;
+            outStream << "[playerIWeapon] "         <<  C_playerIWeapon << std::endl;
+            outStream << "[playerISpecial] "        <<  C_playerISpecial << std::endl;
             outStream << "[playerIIName] "          <<  C_playerIIName.ToAnsiString() << std::endl;
-            outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIIspecial <<  std::endl;
+            outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIISpecialKey <<  std::endl;
             outStream << "[playerIIColor] "         <<  C_playerIIColor.r() << " "<< C_playerIIColor.g() << " " << C_playerIIColor.b() << std::endl;
             outStream << "[playerIITeamColor] "     <<  C_playerIITeamColor.r() << " "<< C_playerIITeamColor.g() << " " << C_playerIITeamColor.b() << std::endl;
             outStream << "[playerIITeamL] "         << (C_playerIIteamL ? "true" : "false") << std::endl;
             outStream << "[playerIITeamR] "         << (C_playerIIteamR ? "true" : "false") << std::endl;
             outStream << "[playerIIShip] "          <<  C_playerIIShip << std::endl;
+            outStream << "[playerIIWeapon] "        <<  C_playerIIWeapon << std::endl;
+            outStream << "[playerIISpecial] "       <<  C_playerIISpecial << std::endl;
             outStream << "[connectIP] "             <<  C_ip.ToAnsiString() << std::endl;
             outStream << "[connectPort] "           <<  C_port.ToAnsiString() << std::endl;
             outStream << "[networkTeamRed] "        << (C_networkPlayerI ? "true" : "false") << std::endl;
@@ -165,7 +172,7 @@ namespace settings {
             outStream << "[showInfoTDM] "           << (C_showInfoTDM ? "true" : "false") << std::endl;
             outStream << "[showInfoCK] "            << (C_showInfoCK ? "true" : "false") << std::endl;
             outStream << "[showSelectLanguage] "    << (C_showSelectLanguage ? "true" : "false") << std::endl;
-            outStream << "[showToolTips] "    << (C_showToolTips ? "true" : "false") << std::endl;
+            outStream << "[showToolTips] "          << (C_showToolTips ? "true" : "false") << std::endl;
             outStream << "[languageID] "            <<  C_languageID << std::endl;
             outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
             outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
@@ -174,6 +181,8 @@ namespace settings {
             outStream << "[colorDepth] "            << C_colorDepth << std::endl;
             outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
             outStream << "[screenShotFormat] "      << C_screenShotFormat << std::endl;
+            outStream << "[enabledWeapons] "        << C_EnabledWeaponsByUser << std::endl;
+            outStream << "[enabledSpecials] "       << C_EnabledSpecialsByUser << std::endl;
 
             outStream.close();
 
@@ -340,32 +349,11 @@ namespace settings {
                     else if (value == "false")  C_adaptiveParticleCount = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
-                else if (inputLine == "[drawLocalNames]") {
+                else if (inputLine == "[drawBotJobs]") {
                     std::string value;
                     iss >> value;
-                    if (value == "true")        C_drawLocalNames = true;
-                    else if (value == "false")  C_drawLocalNames = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
-                }
-                else if (inputLine == "[drawRemoteNames]") {
-                    std::string value;
-                    iss >> value;
-                    if (value == "true")        C_drawRemoteNames = true;
-                    else if (value == "false")  C_drawRemoteNames = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
-                }
-                else if (inputLine == "[drawBotNames]") {
-                    std::string value;
-                    iss >> value;
-                    if (value == "true")        C_drawBotNames = true;
-                    else if (value == "false")  C_drawBotNames = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
-                }
-                else if (inputLine == "[drawBotOrientation]") {
-                    std::string value;
-                    iss >> value;
-                    if (value == "true")        C_drawBotOrientation = true;
-                    else if (value == "false")  C_drawBotOrientation = false;
+                    if (value == "true")        C_drawBotJobs = true;
+                    else if (value == "false")  C_drawBotJobs = false;
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else if (inputLine == "[drawZones]") {
@@ -436,7 +424,7 @@ namespace settings {
                     iss >> temp;
                     C_playerIfire = (sf::Key::Code)temp;
                     iss >> temp;
-                    C_playerIspecial = (sf::Key::Code)temp;
+                    C_playerISpecialKey = (sf::Key::Code)temp;
                 }
                 else if (inputLine == "[playerIIKeys]") {
                     int temp;
@@ -449,7 +437,7 @@ namespace settings {
                     iss >> temp;
                     C_playerIIfire = (sf::Key::Code)temp;
                     iss >> temp;
-                    C_playerIIspecial = (sf::Key::Code)temp;
+                    C_playerIISpecialKey = (sf::Key::Code)temp;
                 }
                 else if (inputLine == "[playerIColor]") {
                     float r, g, b;
@@ -498,6 +486,30 @@ namespace settings {
                 }
                 else if (inputLine == "[playerIIShip]") {
                     iss >> C_playerIIShip;
+                }
+                else if (inputLine == "[playerIWeapon]") {
+                    int tmp;
+                    iss >> tmp;
+                    if (tmp == weapons::wInsta)
+                        tmp = weapons::wAFK47;
+                    C_playerIWeapon = static_cast<weapons::WeaponType>(tmp);
+                }
+                else if (inputLine == "[playerISpecial]") {
+                    int tmp;
+                    iss >> tmp;
+                    C_playerISpecial = static_cast<specials::SpecialType>(tmp);
+                }
+                else if (inputLine == "[playerIIWeapon]") {
+                    int tmp;
+                    iss >> tmp;
+                    if (tmp == weapons::wInsta)
+                        tmp = weapons::wAFK47;
+                    C_playerIIWeapon = static_cast<weapons::WeaponType>(tmp);
+                }
+                else if (inputLine == "[playerIISpecial]") {
+                    int tmp;
+                    iss >> tmp;
+                    C_playerIISpecial = static_cast<specials::SpecialType>(tmp);
                 }
                 else if (inputLine == "[playerIITeamL]") {
                     std::string value;
@@ -620,6 +632,14 @@ namespace settings {
                 }
                 else if (inputLine == "[screenShotFormat]") {
                     iss >> C_screenShotFormat;
+                }
+                else if (inputLine == "[enabledWeapons]") {
+                    iss >> C_EnabledWeaponsByUser;
+                    C_EnabledWeapons = C_EnabledWeaponsByUser;
+                }
+                else if (inputLine == "[enabledSpecials]") {
+                    iss >> C_EnabledSpecialsByUser;
+                    C_EnabledSpecials = C_EnabledSpecialsByUser;
                 }
                 else
                     std::cout << inputLine << " is a bad option in " << C_configPath << "mars.cfg!\n";

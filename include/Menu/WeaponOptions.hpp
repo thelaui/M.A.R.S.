@@ -24,7 +24,7 @@ class WeaponOptions: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
-        void onShow() {}
+        void onShow();
 
         static void reset();
 
@@ -35,6 +35,8 @@ class WeaponOptions: public UiWindow {
         static UiWindow* instance_;
 
         static bool kOk_;
+        static bool kAFK_, kBurner_, kFist_, kFlubba, kShotgun_, kRocket_, kRofle_;
+        static bool kFreeze_, kHeal_, kBlast_;
 };
 
 # endif // WEAPONOPTIONS_HPP_INCLUDED

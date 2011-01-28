@@ -17,29 +17,36 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/DeathMatch.hpp"
 
-# include "Players/Team.hpp"
+# include "Teams/DMTeam.hpp"
+# include "Players/players.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
+# include "Players/players.hpp"
+# include "SpaceObjects/spaceObjects.hpp"
+# include "Teams/teams.hpp"
 
 DeathMatch::DeathMatch():
     Game(games::gDeathMatch) {
 
+    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
+    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
+
     music::playGameMusic();
 
     if (settings::C_playerIteamL  | settings::C_playerIteamR)
-        players::addPlayer (players::addTeam(new Team(settings::C_playerITeamColor)), controllers::cPlayer1);
+        players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     if (settings::C_playerIIteamL | settings::C_playerIIteamR)
-        players::addPlayer (players::addTeam(new Team(settings::C_playerIITeamColor)), controllers::cPlayer2);
+        players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerIITeamColor)), controllers::cPlayer2);
 
     for (int i=0; i<settings::C_botsDeath; ++i) {
-        Team* newTeam = players::addTeam(new Team());
+        Team* newTeam = teams::addTeam(new DMTeam());
         Color3f color(newTeam->color());
         color.h(newTeam->color().h()+10*sf::Randomizer::Random(-5, 5));
         color.v(newTeam->color().v()+sf::Randomizer::Random(-0.5f, 0.5f));
-        players::addPlayer(newTeam, controllers::cDMBot, color);
+        players::addPlayer(newTeam, controllers::cBot, color);
     }
 
-    players::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
+    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
     players::createShips();
 
     createSpace();
@@ -54,7 +61,7 @@ void DeathMatch::draw() const {
 void DeathMatch::restart() {
     Game::restart();
 
-    players::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
+    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
     players::createShips();
 
     createSpace();

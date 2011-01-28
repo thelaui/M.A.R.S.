@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
     #endif
 
 	// Parse command line options
-    for (int i = 1; i < argc; i++) {
+    for (int i = 1; i < argc; ++i) {
         if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "-help" || std::string(argv[i]) == "--help") {
             std::cout << "Usage:               mars [Options]"                                                                          << std::endl;
             std::cout << "Basic Options:"                                                                                               << std::endl;

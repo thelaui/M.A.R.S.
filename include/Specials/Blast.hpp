@@ -27,7 +27,7 @@ class Blast: public Special {
     public:
         /// Ctor which constructs the special.
         Blast(Ship* parent):
-              Special(parent, sf::String("BLAST")),
+              Special(specials::sBlast, parent, sf::String("BLAST")),
               radius_(0.f) {};
 
         /// Blasts away nearby ships.
@@ -35,14 +35,6 @@ class Blast: public Special {
 
         /// Draws the special.
         void draw() const;
-
-        /// Replaces this special by the next one.
-        /// With this method it's possible to cycle through the specials.
-        void next();
-
-        /// Replaces this special by the previous one.
-        /// With this method it's possible to cycle through the specials.
-        void previous();
 
     private:
         mutable float radius_;

@@ -27,7 +27,7 @@ class Fist: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Fist(Ship* parent):
-              Weapon(Weapon::wFist, parent, sf::String("FIST OF ALI")),
+              Weapon(weapons::wFist, parent, sf::String("FIST OF ALI")),
               position_(1.f) {};
 
         /// Spawns some particles.
@@ -35,14 +35,6 @@ class Fist: public Weapon {
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 
     private:
         mutable float position_;

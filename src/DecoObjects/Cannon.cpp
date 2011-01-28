@@ -22,8 +22,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "Particles/particles.hpp"
+# include "SpaceObjects/Home.hpp"
+# include "Teams/teams.hpp"
 
 Cannon::Cannon():
     timer_(0.f),
@@ -33,8 +35,8 @@ void Cannon::update() {
     Player* carrier = items::getCannonControl()->getCarrier();
 
     Vector2f toTarget;
-    if (carrier && players::getEnemy(carrier->team())->home()->getLife() > 0 && carrier->team()->home()->getLife() > 0)
-        toTarget = (players::getEnemy(carrier->team())->home()->location() - Vector2f(640.f, 0.f)).normalize();
+    if (carrier && teams::getEnemy(carrier->team())->home()->getLife() > 0 && carrier->team()->home()->getLife() > 0)
+        toTarget = (teams::getEnemy(carrier->team())->home()->location() - Vector2f(640.f, 0.f)).normalize();
     else
         toTarget = Vector2f(0.f, -1.f);
 

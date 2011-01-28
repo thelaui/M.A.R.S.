@@ -48,6 +48,7 @@ void InfoHide::checkWidgets() {
         kOk_ = false;
         menus::hideWindow();
         menus::hideMenu();
+        settings::save();
     }
 }
 

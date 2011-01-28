@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "SpaceObjects/ships.hpp"
 # include "Locales/locales.hpp"
+# include "Teams/teams.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -41,15 +42,15 @@ void TabStats::update() {
     if (visible_ || refresh_) {
         // check for necessityof a map-update
         int currentPoints(0);
-        for (std::vector<Team*>::const_iterator it = players::getAllTeams().begin(); it != players::getAllTeams().end(); ++it)
-            currentPoints += (*it)->points_;
+        for (std::vector<Team*>::const_iterator it = teams::getAllTeams().begin(); it != teams::getAllTeams().end(); ++it)
+            currentPoints += (*it)->points();
 
         if (currentPoints != sumPoints_ || refresh_) {
             refresh_ = false;
             sumPoints_ = currentPoints;
             // create Map
             teamMap_ = std::multimap<Team*, std::multiset<Player*, playerPtrCmp>, teamPtrCmp >();
-            std::vector<Team*>const& teams = players::getAllTeams();
+            std::vector<Team*>const& teams = teams::getAllTeams();
             for (std::vector<Team*>::const_iterator it = teams.begin(); it != teams.end(); ++it)
                 teamMap_.insert(std::make_pair(*it, std::multiset<Player*, playerPtrCmp>((*it)->members().begin(), (*it)->members().end())));
         }

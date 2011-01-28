@@ -20,25 +20,29 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "System/settings.hpp"
 # include "Players/BotPlayer.hpp"
+# include "Teams/teams.hpp"
+# include "SpaceObjects/Ball.hpp"
+# include "SpaceObjects/Home.hpp"
+# include "Zones/TacticalZone.hpp"
 
 # include <cfloat>
 
-BotController::BotController(Player* slave, controllers::ControlType type, float strength):
-    Controller(slave, type),
-    actions_(11),
+BotController::BotController(Player* slave, float strength):
+    Controller(slave),
     target_(NULL),
-    weaponChangeTimer_(sf::Randomizer::Random(0.f, 1.f)),
-    evaluationTimer_(0.f),
+    weaponChangeTimer_(sf::Randomizer::Random(0.f, 0.5f)),
+    specialChangeTimer_(sf::Randomizer::Random(0.f, 0.5f)),
+    currentJob_(Job::jCharge, 1),
     nextRoutePoint_(FLT_MAX, FLT_MAX),
     toCover_(NULL),
     strength_(strength) {}
 
 void BotController::update() {
     if(aggroTable_.empty()) {
-        std::vector<Team*> const& teams = players::getAllTeams();
+        std::vector<Team*> const& teams = teams::getAllTeams();
         for (std::vector<Team*>::const_iterator it = teams.begin(); it != teams.end(); ++it) {
             if ((*it) != slave_->team()) {
                 std::vector<Player*> const& players = (*it)->members();
@@ -47,77 +51,204 @@ void BotController::update() {
             }
         }
     }
-    evaluationTimer_ += timer::frameTime();
+
     if (weaponChangeTimer_ > 0)
         weaponChangeTimer_ -= timer::frameTime();
-    if(evaluationTimer_ > 0.2f) {
-        evaluationTimer_ = 0.f;
-        evaluate();
-    }
 
-    int action = BOT_CHARGE;
-    for (unsigned int i=0; i<actions_.size(); ++i)
-        if (actions_[i] > actions_[action])
-            action = i;
+    if (specialChangeTimer_ > 0)
+        specialChangeTimer_ -= timer::frameTime();
 
-    switch (action) {
+    performJob();
+}
 
-        case BOT_CHARGE:             charge();                                              break;
-        case BOT_LAND:               land();                                                break;
-        case BOT_KICK_BALL_TE:       kickBallToEnemy();                                     break;
-        case BOT_KICK_BALL_OH:       kickBallOutHome();                                     break;
-        case BOT_WAIT_FOR_BALL:      waitForBall();                                         break;
-        case BOT_ATTACK_TARGET:      attackTarget();                                        break;
-        case BOT_PROTECT_ZONE:       protectZone();                                         break;
-        case BOT_CHANGE_WEAPON:      switchToWeapon();                                      break;
-        case BOT_GET_CANNON_CONTROL: moveTo(items::getCannonControl()->location(), 0.5f);   break;
-        case BOT_ESCAPE:             escape();                                              break;
-        case BOT_START_FIGHT:        startFight();                                          break;
+void BotController::performJob() {
+    switch (currentJob_.type_) {
+        case Job::jAttackTarget:       attackTarget();                                        break;
+        case Job::jAttackAny:          attackAny();                                           break;
+        case Job::jHeal:               heal();                                                break;
+        case Job::jUnfreeze:           unfreeze();                                            break;
+        case Job::jGetPUFuel: case Job::jGetPUHealth: case Job::jGetPUReverse: case Job::jGetPUShield:
+            case Job::jGetPUSleep:     getPowerUp();                                          break;
+        case Job::jKickOutHome:        kickBallOutHome();                                     break;
+        case Job::jKickToEnemy:        kickBallToEnemy();                                     break;
+        case Job::jWaitForBall:        waitForBall();                                         break;
+        case Job::jProtectZone:        protectZone();                                         break;
+        case Job::jLand:               land();                                                break;
+        case Job::jCharge:             charge();                                              break;
         default:;
     }
 }
 
-void BotController::draw() {
-    const Vector2f shipLocation = ship()->location_;
-     // draw lines
-    if (settings::C_drawAIPath) {
+void BotController::evaluate() {
+    checkEnergy();
+    checkAggro();
+    checkSpecial();
+}
 
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        glLineWidth(1);
+void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotController*> >& jobMap) {
+    for (std::multimap<Job, std::multimap<short, BotController*> >::iterator it=jobMap.begin(); it!=jobMap.end(); ++it) {
+        short need(0);
 
-        glBegin(GL_LINES);
-        if (nextPathPoint_ == moveToPoint_) {
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(shipLocation.x_, shipLocation.y_);
-            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
+        short didThisJobLAstTimeToo(0);
+        if (currentJob_.type_ == it->first.type_)
+            didThisJobLAstTimeToo = 10;
+
+        if (ship()->getLife() > 0 && ship()->frozen_ <= 0.f) {
+            switch (it->first.type_) {
+                case Job::jAttackAny: {
+                    need = 5;
+                    break;
+                }
+                case Job::jCharge: {
+                    if (ship()->docked_) {
+                        float life = 100.f - std::pow(ship()->getLife(),4)*0.000001f;
+                        float fuel = 100.f - std::pow(ship()->getFuel(),4)*0.000001f;
+                        need = std::max(life,fuel) + didThisJobLAstTimeToo;
+                    }
+                    break;
+                }
+                case Job::jLand: {
+                    float life = std::pow(100.f - ship()->getLife(),2)*0.01f;
+                    float fuel = std::pow(100.f - ship()->getFuel(),2)*0.01f;
+                    need = std::max(life,fuel) + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jHeal: {
+                    // 20 - 100, based on fragstars and distance
+                    if (ship()->currentSpecial_->getType() == specials::sHeal && ship()->fragStars_ > 0) {
+                        Ship* target = static_cast<Ship*>(it->first.object_);
+                        if (target != ship()) {
+                            float dist((target->location()-ship()->location()).length());
+                            dist *= 0.1f;
+                            dist = 50 - dist;
+                            if (dist < 0) dist = 0;
+                            need = dist + (10 * ship()->fragStars_) + didThisJobLAstTimeToo;
+                        }
+                    }
+                    break;
+                }
+                case Job::jUnfreeze: {
+                    // 20 - 100, based on distance
+                    Ship* target = static_cast<Ship*>(it->first.object_);
+                    float dist = ((target->location()-ship()->location()).length());
+                    dist *= 0.1f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    need = 1 + dist + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jAttackTarget: {
+                    // 20 - 100, based on distance and much life
+                    Ship* target = static_cast<Ship*>(it->first.object_);
+                    float dist = ((target->location()-ship()->location()).length());
+                    dist *= 0.1f;
+                    dist = 50 - dist;
+                    if (dist < 0) dist = 0;
+                    float life = ship()->getLife()*0.5f;
+                    need = dist + life + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jGetPUShield: case Job::jGetPUHealth: {
+                    // 0 - 100, based on distance and few life
+                    float dist = ((*static_cast<Vector2f*>(it->first.object_)-ship()->location()).length());
+                    dist *= 0.2f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    float life = 100 - ship()->getLife();
+                    need = dist + life + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jGetPUReverse: case Job::jGetPUSleep: {
+                    // 0 - 100, based on distance
+                    float dist = ((*static_cast<Vector2f*>(it->first.object_)-ship()->location()).length());
+                    dist *= 0.2f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    need = dist + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jGetPUFuel: {
+                    // 0 - 100, based on distance and few fuel
+                    float dist = ((*static_cast<Vector2f*>(it->first.object_)-ship()->location()).length());
+                    dist *= 0.2f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    float fuel = 100 - ship()->getFuel();
+                    need = dist + fuel + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jKickToEnemy: {
+                    // 0 - 100, based on distance and few fuel
+                    float dist = ((static_cast<Ball*>(it->first.object_)->location()-ship()->location()).length());
+                    dist *= 0.075f;
+                    dist = 50 - dist;
+                    if (dist < 0) dist = 0;
+                    Vector2f ballLocation (calcPath(static_cast<Ball*>(it->first.object_)->location(), false));
+                    Vector2f targetPlanetLocation = calcPath(teams::getEnemy(slave_->team())->home()->location(), false);
+                    float dir = spaceObjects::isOnLine(ship()->location(), ballLocation-ship()->location(), targetPlanetLocation, teams::getEnemy(slave_->team())->home()->radius()*2.f) ? 50 : 0;
+                    need = 1 + dist + dir + didThisJobLAstTimeToo;
+                    if (need > 85)
+                        need = 85;
+                    break;
+                }
+                case Job::jKickOutHome: {
+                    // 0 - 100, based on distance and few fuel
+                    float dist = ((static_cast<Ball*>(it->first.object_)->location()-ship()->location()).length());
+                    dist *= 0.1f;
+                    dist = 50 - dist;
+                    if (dist < 0) dist = 0;
+                    Vector2f ballLocation (calcPath(static_cast<Ball*>(it->first.object_)->location(), false));
+                    Vector2f targetPlanetLocation = calcPath(teams::getEnemy(slave_->team())->home()->location(), false);
+                    float dir = spaceObjects::isOnLine(ballLocation, ship()->location() - ballLocation, slave_->team()->home()->location(), slave_->team()->home()->radius()) ? 50 : 0;
+                    need = dist + dir + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jProtectZone: {
+                    // 0 - 100, based on distance and few fuel
+                    float dist = ((static_cast<TacticalZone*>(it->first.object_)->location()-ship()->location()).length());
+                    dist *= 0.1f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    if (currentJob_.type_ == it->first.type_ && currentJob_.object_ == it->first.object_)
+                        didThisJobLAstTimeToo = 10;
+                    else
+                        didThisJobLAstTimeToo = 0;
+                    need = 1 + dist + didThisJobLAstTimeToo;
+                    if (need > 60)
+                        need = 60;
+                    break;
+                }
+                case Job::jWaitForBall: {
+                    // 0 - 100, based on distance and few fuel
+                    float dist = (static_cast<Ball*>(it->first.object_)->location()-ship()->location()).length();
+                    dist *= 0.1f;
+                    dist = 100 - dist;
+                    if (dist < 0) dist = 0;
+                    need = 10 + dist + didThisJobLAstTimeToo;
+                    break;
+                }
+                default:;
+
+            }
+
+            if (need > 100)
+                need = 100;
         }
-        else {
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(shipLocation.x_, shipLocation.y_);
-            glColor4f(1,0,0, 0.8f);
-            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
-            glVertex2f(nextPathPoint_.x_, nextPathPoint_.y_);
-            glColor4f(0,1,0, 0.8f);
-            glVertex2f(moveToPoint_.x_, moveToPoint_.y_);
-        }
-        glEnd();
-
-        glPointSize(8);
-        glBegin(GL_POINTS);
-        glColor3f(0,1,0);
-        Vector2f temp = aimDirection_*50 + shipLocation;
-            glVertex2f(temp.x_, temp.y_);
-        glEnd();
+        it->second.insert(std::make_pair(need*it->first.priority_, this));
     }
 }
 
 void BotController::reset() {
     target_ = NULL;
-    weaponChangeTimer_ = sf::Randomizer::Random(0, 1);
+    weaponChangeTimer_ =  0.f;
+    specialChangeTimer_ = 0.f;
     nextRoutePoint_ = Vector2f(FLT_MAX, FLT_MAX);
     aggroTable_.clear();
-    for(unsigned int i=0; i<actions_.size(); ++i)
-        actions_[i] = 0;
+    currentJob_ = Job(Job::jCharge, 1);
     for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
         it->second = 0.f;
+}
+
+void BotController::assignJob(Job const& job) {
+    currentJob_=job;
 }

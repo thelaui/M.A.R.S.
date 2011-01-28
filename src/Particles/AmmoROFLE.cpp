@@ -24,13 +24,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoROFLE*> AmmoROFLE::activeParticles_;
 
 AmmoROFLE::AmmoROFLE(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoROFLE>(spaceObjects::oAmmoROFLE, location, 1.f, 3.0f, 5.0f) {
+         Particle<AmmoROFLE>(spaceObjects::oAmmoROFLE, location, 1.f, 3.0f, 3.0f) {
 
     setDamageSource(damageSource);
     velocity_ = direction*1300.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    trailEffects::attach(this, 15, 0.6f, 4.f, Color3f(1.f, 0.2f, 0.f));
+    trailEffects::attach(this, 0.05, 1.f, 4.f, Color3f(1.f, 0.2f, 0.f), false);
 }
 
 AmmoROFLE::~AmmoROFLE() {
@@ -44,6 +44,10 @@ void AmmoROFLE::update() {
     location_ += velocity_*time;
 
     lifeTime_ += time;
+
+    if (location_.x_ < -100 || location_.x_ > 1280 + 100 || location_.y_ < -100 || location_.y_ > 800 + 100) {
+        killMe();
+    }
 }
 
 void AmmoROFLE::draw() const {

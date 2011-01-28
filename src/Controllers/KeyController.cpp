@@ -19,9 +19,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/window.hpp"
 # include "System/settings.hpp"
+# include "SpaceObjects/Ship.hpp"
+# include "Players/Player.hpp"
+# include "Teams/Team.hpp"
 
-KeyController::KeyController(controllers::ControlType type, Player* slave):
-    Controller(slave, type) {}
+KeyController::KeyController(Player* slave):
+    Controller(slave) {}
 
 void KeyController::update(sf::Input const& input) const {
     if (type_ == controllers::cPlayer1) {
@@ -29,7 +32,7 @@ void KeyController::update(sf::Input const& input) const {
         slaveLeft (input.IsKeyDown(settings::C_playerIleft));
         slaveRight(input.IsKeyDown(settings::C_playerIright));
         slaveFire (input.IsKeyDown(settings::C_playerIfire));
-        slaveSpecial (input.IsKeyDown(settings::C_playerIspecial));
+        slaveSpecial (input.IsKeyDown(settings::C_playerISpecialKey));
     }
 
     else if (type_ == controllers::cPlayer2) {
@@ -37,7 +40,7 @@ void KeyController::update(sf::Input const& input) const {
         slaveLeft (input.IsKeyDown(settings::C_playerIIleft));
         slaveRight(input.IsKeyDown(settings::C_playerIIright));
         slaveFire (input.IsKeyDown(settings::C_playerIIfire));
-        slaveSpecial (input.IsKeyDown(settings::C_playerIIspecial));
+        slaveSpecial (input.IsKeyDown(settings::C_playerIISpecialKey));
     }
 }
 
@@ -47,7 +50,7 @@ void KeyController::update(sf::Key::Code keyCode) const {
         else if (keyCode == settings::C_playerIleft)  slaveLeft();
         else if (keyCode == settings::C_playerIright) slaveRight();
         else if (keyCode == settings::C_playerIfire)  slaveFire();
-        else if (keyCode == settings::C_playerIspecial)  slaveSpecial();
+        else if (keyCode == settings::C_playerISpecialKey)  slaveSpecial();
     }
 
     else if (type_ == controllers::cPlayer2) {
@@ -55,6 +58,20 @@ void KeyController::update(sf::Key::Code keyCode) const {
         else if (keyCode == settings::C_playerIIleft)  slaveLeft();
         else if (keyCode == settings::C_playerIIright) slaveRight();
         else if (keyCode == settings::C_playerIIfire)  slaveFire();
-        else if (keyCode == settings::C_playerIIspecial)  slaveSpecial();
+        else if (keyCode == settings::C_playerIISpecialKey)  slaveSpecial();
+    }
+}
+
+
+void KeyController::evaluate() {
+    if (std::max(100 - ship()->getLife(), 100 - ship()->getFuel()) > 30) {
+        slave_->team()->addJob(Job(Job::jHeal, std::max(100 - ship()->getLife(), 100 - ship()->getFuel()), ship()));
+        slave_->team()->addJob(Job(Job::jHeal, std::max(100 - ship()->getLife(), 100 - ship()->getFuel()), ship()));
+    }
+
+    if (ship()->frozen_ > 0) {
+        slave_->team()->addJob(Job(Job::jUnfreeze, 90, ship()));
+        slave_->team()->addJob(Job(Job::jUnfreeze, 90, ship()));
+        slave_->team()->addJob(Job(Job::jUnfreeze, 90, ship()));
     }
 }

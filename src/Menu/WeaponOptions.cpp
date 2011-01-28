@@ -20,12 +20,24 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Line.hpp"
 # include "Interface/UiWindow.hpp"
 # include "Interface/Button.hpp"
+# include "Interface/Checkbox.hpp"
 # include "System/window.hpp"
 # include "Menu/menus.hpp"
 # include "Locales/locales.hpp"
 
 UiWindow* WeaponOptions::instance_(NULL);
 bool WeaponOptions::kOk_(false);
+bool WeaponOptions::kAFK_(false);
+bool WeaponOptions::kBurner_(false);
+bool WeaponOptions::kFist_(false);
+bool WeaponOptions::kFlubba(false);
+bool WeaponOptions::kShotgun_(false);
+bool WeaponOptions::kRocket_(false);
+bool WeaponOptions::kRofle_(false);
+
+bool WeaponOptions::kFreeze_(false);
+bool WeaponOptions::kHeal_(false);
+bool WeaponOptions::kBlast_(false);
 
 UiWindow* WeaponOptions::get() {
     if (instance_ == NULL) {
@@ -37,14 +49,52 @@ UiWindow* WeaponOptions::get() {
         instance_->addWidget(new Label(locales::getLocale(locales::Weapons), TEXT_ALIGN_LEFT, Vector2f(10, 50), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Label(locales::getLocale(locales::Specials), TEXT_ALIGN_LEFT, Vector2f(160, 50), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
 
+        // weapons
+        instance_->addWidget(new Checkbox(new sf::String("AFK-47"), NULL, &kAFK_, Vector2f(10,80), 100));
+        instance_->addWidget(new Checkbox(new sf::String("WT-FLAMER"), NULL, &kBurner_, Vector2f(10,100), 100));
+        instance_->addWidget(new Checkbox(new sf::String("FIST OF ALI"), NULL, &kFist_, Vector2f(10,120), 100));
+        instance_->addWidget(new Checkbox(new sf::String("FLUBBA"), NULL, &kFlubba, Vector2f(10,140), 100));
+        instance_->addWidget(new Checkbox(new sf::String("SHOTGUN"), NULL, &kShotgun_, Vector2f(10,160), 100));
+        instance_->addWidget(new Checkbox(new sf::String("ROCK'n'LOL"), NULL, &kRocket_, Vector2f(10,180), 100));
+        instance_->addWidget(new Checkbox(new sf::String("ROFLE"), NULL, &kRofle_, Vector2f(10,200), 100));
 
+        instance_->addWidget(new Checkbox(new sf::String("FREEZER"), NULL, &kFreeze_, Vector2f(160,80), 100));
+        instance_->addWidget(new Checkbox(new sf::String("HEAL"), NULL, &kHeal_, Vector2f(160,100), 100));
+        instance_->addWidget(new Checkbox(new sf::String("BLAST"), NULL, &kBlast_, Vector2f(160,120), 100));
     }
     return instance_;
+}
+
+void WeaponOptions::onShow() {
+    kAFK_ = settings::C_EnabledWeaponsByUser & weapons::wAFK47;
+    kBurner_ = settings::C_EnabledWeaponsByUser & weapons::wBurner;
+    kFist_ = settings::C_EnabledWeaponsByUser & weapons::wFist;
+    kFlubba = settings::C_EnabledWeaponsByUser & weapons::wFlubba;
+    kShotgun_ = settings::C_EnabledWeaponsByUser & weapons::wShotgun;
+    kRocket_ = settings::C_EnabledWeaponsByUser & weapons::wRocketLauncher;
+    kRofle_ = settings::C_EnabledWeaponsByUser & weapons::wROFLE;
+
+    kFreeze_ = settings::C_EnabledSpecialsByUser & specials::sFreeze;
+    kHeal_ = settings::C_EnabledSpecialsByUser & specials::sHeal;
+    kBlast_ = settings::C_EnabledSpecialsByUser & specials::sBlast;
 }
 
 void WeaponOptions::checkWidgets() {
     if (kOk_) {
         kOk_ = false;
+
+        settings::C_EnabledWeaponsByUser  = (kAFK_ ? weapons::wAFK47:0) | (kBurner_ ? weapons::wBurner:0) | (kFist_ ? weapons::wFist:0) |
+                                           (kFlubba ? weapons::wFlubba:0) | (kShotgun_ ? weapons::wShotgun:0) | (kRocket_ ? weapons::wRocketLauncher:0) |
+                                           (kRofle_ ? weapons::wROFLE:0);
+
+        settings::C_EnabledSpecialsByUser = (kFreeze_ ? specials::sFreeze:0) | (kHeal_ ? specials::sHeal:0) | (kBlast_ ? specials::sBlast:0);
+
+        if (settings::C_EnabledWeaponsByUser == 0)
+            settings::C_EnabledWeaponsByUser = weapons::wNoWeapon;
+
+        if (settings::C_EnabledSpecialsByUser == 0)
+            settings::C_EnabledSpecialsByUser = specials::sNoSpecial;
+
         menus::hideWindow();
     }
 }

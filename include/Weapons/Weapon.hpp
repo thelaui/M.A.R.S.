@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define WEAPON_HPP_INCLUDED
 
 # include "System/timer.hpp"
+# include "Weapons/weapons.hpp"
 
 class Ship;
 
@@ -27,14 +28,8 @@ class Ship;
 
 class Weapon {
     public:
-        enum WeaponType {wAFK47, wBurner, wFist, wFlubba, wShotgun, wRocketLauncher, wROFLE, wH2OMG};
-
         /// Ctor which constructs the base Weapon.
-        Weapon(WeaponType type, Ship* parent, sf::String name):
-               parent_(parent),
-               timer_(0),
-               type_(type),
-               name_(name) {}
+        Weapon(weapons::WeaponType type, Ship* parent, sf::String name);
 
         /// This function is called whenever the weapon is fired.
         virtual void fire() const = 0;
@@ -44,17 +39,17 @@ class Weapon {
 
         /// Replaces this weapon by the next one.
         /// With this method it's possible to cycle through the weapons.
-        virtual void next()     = 0;
+        void next();
 
         /// Replaces this weapon by the previous one.
         /// With this method it's possible to cycle through the weapons.
-        virtual void previous() = 0;
+        void previous();
 
         /// Returns the name of the Weapon.
         sf::String const& getName() const {return name_;}
 
         /// Returns the type of the Weapon.
-        WeaponType getType() const {return type_;}
+        weapons::WeaponType getType() const {return type_;}
 
     protected:
         Ship* parent_;
@@ -62,7 +57,7 @@ class Weapon {
 
     private:
         sf::String name_;
-        WeaponType type_;
+        weapons::WeaponType type_;
 };
 
 # endif // WEAPON_HPP_INCLUDED

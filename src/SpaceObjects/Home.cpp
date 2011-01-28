@@ -26,9 +26,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/text.hpp"
 # include "System/window.hpp"
 # include "Games/games.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "SpaceObjects/Ball.hpp"
 # include "Shaders/postFX.hpp"
+# include "Teams/teams.hpp"
 
 # include <sstream>
 
@@ -39,7 +40,7 @@ Home::Home(Vector2f const& location, float radius, Color3f const& color):
                visible_(true),
                restartTimer_(0.f) {
 
-    if (color_.v() < 0.4f) color_.v(0.4f);
+    if (color_.v() < 0.5f) color_.v(0.5f);
     if (color_.s() < 0.5f) color_.s(0.5f);
 
     physics::addStaticObject(this);
@@ -162,7 +163,7 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
 
         case spaceObjects::oBall:
             life_ -= (strength + dynamic_cast<Ball*>(with)->heatAmount());
-            players::getTeamL()->home() == this ? players::getTeamR()->addStars() : players::getTeamL()->addStars();
+            teams::getTeamL()->home() == this ? teams::getTeamR()->addStars() : teams::getTeamL()->addStars();
             break;
 
         case spaceObjects::oCannonBall:
@@ -190,6 +191,6 @@ void Home::explode() {
     location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;
     restartTimer_ = 5.f;
-    players::getTeamL()->home() == this ? ++players::getTeamR()->points_ : ++players::getTeamL()->points_;
+    teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
     hud::displayPoints();
 }

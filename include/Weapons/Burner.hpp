@@ -27,21 +27,13 @@ class Burner: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Burner(Ship* parent):
-              Weapon(Weapon::wBurner, parent, sf::String("WT-Flamer")) {};
+              Weapon(weapons::wBurner, parent, sf::String("WT-FLAMER")) {};
 
         /// Spawns some particles.
         void fire() const;
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 };
 
 # endif // BURNER_HPP_INCLUDED

@@ -33,8 +33,8 @@ BurningFragment::BurningFragment(Vector2f const& location, Vector2f const& direc
     radius_   = sf::Randomizer::Random(0.5f, 5.0f);
     velocity_ = Vector2f::randDir()*sf::Randomizer::Random(200, 600);
 
-    trailEffects::attach(this, 10, 0.3f, radius_*2.f, Color3f(0.5f, 0.f, 0.f));
-    trailEffects::attach(this, 5, 0.1f, radius_, color_);
+    trailEffects::attach(this, 0.1, 0.5f, radius_*2.f, Color3f(0.5f, 0.f, 0.f), false);
+    trailEffects::attach(this, 0.1, 0.2f, radius_, color_, false);
 }
 
 BurningFragment::~BurningFragment() {

@@ -21,9 +21,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/texture.hpp"
 # include "System/window.hpp"
 # include "Players/players.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "Particles/particles.hpp"
 # include "Media/sound.hpp"
+# include "System/timer.hpp"
+# include "Teams/teams.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -95,7 +97,7 @@ void GamePoints::draw() const {
         glBindTexture(GL_TEXTURE_2D, 0);
 
         std::stringstream sstr;
-        sstr << players::getTeamL()->points_ << " : " << players::getTeamR()->points_;
+        sstr << teams::getTeamL()->points() << " : " << teams::getTeamR()->points();
         text::drawFooText();
         text::drawScreenText(sf::String(sstr.str()), Vector2f(midPoint, viewPort.y_-60.f-top), 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
     }

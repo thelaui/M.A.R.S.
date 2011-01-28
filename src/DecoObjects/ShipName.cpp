@@ -34,32 +34,11 @@ void ShipName::draw() const {
         else {
             Color3f color(1.f, 0.f, 0.f);
             color.h(color.h() + ship_->getLife());
-            if (settings::C_drawBotOrientation)
-                switch (ship_->owner_->type()) {
-                    case controllers::cAggroBot:
-                        if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                        else
-                            text::drawMobileSpaceText(ship_->owner_->name() + " [AGGRO]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                        break;
-                    case controllers::cDefBot:
-                        if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                        else
-                            text::drawMobileSpaceText(ship_->owner_->name() + " [DEF]", ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                        break;
-                    default:
-                        if (ship_->docked_)
-                            text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                        else
-                            text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                }
-            else {
-                if (ship_->docked_)
-                    text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-                else
-                    text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
-            }
+
+            if (ship_->docked_)
+                text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
+            else
+                text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
         }
 
         if (ship_->fragStars_ > 0) {

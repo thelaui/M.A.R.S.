@@ -59,8 +59,9 @@ namespace particles {
         pAmmoRocket,        ///< Spawned by the ROCK'n'LOL.
         pPowerUpCollect,    ///< Spawned by just collected powerUps.
         pAmmoFist,          ///< Spawned by the Fist.
-        pNumber,             ///< Spawned when damage is done.
-        pCrushedIce         ///< Spawned when damage is done.
+        pNumber,            ///< Spawned when damage is done.
+        pCrushedIce,        ///< Spawned when damage is done.
+        pAmmoInsta          ///< Spawned by the InstaGib rifle.
     };
 
     /// Updates all particles.

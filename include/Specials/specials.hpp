@@ -18,9 +18,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef SPECIALS_HPP_INCLUDED
 # define SPECIALS_HPP_INCLUDED
 
-# include "Specials/Heal.hpp"
-# include "Specials/Blast.hpp"
-# include "Specials/Freezer.hpp"
+class Special;
+class Ship;
+
+namespace specials {
+    enum SpecialType {sFreeze=1, sHeal=2, sBlast=4, sNoSpecial=8};
+
+    Special* create    (SpecialType type, Ship* parent);
+    Special* createNext(SpecialType type, Ship* parent);
+    Special* createPrev(SpecialType type, Ship* parent);
+}
 
 # endif // SPECIALS_HPP_INCLUDED
 

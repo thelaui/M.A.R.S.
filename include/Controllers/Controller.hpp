@@ -31,15 +31,10 @@ class Controller {
         /// Constructs an Controller, attached to a Player.
         /// \param slave The controlled Player.
         /// \param type The type of the Controller.
-        Controller(Player* slave, controllers::ControlType type):
-                type_(type),
-                slave_(slave) {}
+        Controller(Player* slave);
 
         /// Returns the Ship of the controlled PLayer.
-        Ship const* ship() const;
-
-        /// Returns true, if the associated Ship is docked.
-        bool shipDocked()  const;
+        Ship* ship() const;
 
         /// Returns the type of the Controller.
         controllers::ControlType type() const;

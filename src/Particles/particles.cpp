@@ -38,6 +38,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/MiniAmmoFlubba.hpp"
 # include "Particles/CannonBall.hpp"
 # include "Particles/Spark.hpp"
+# include "Particles/AmmoInsta.hpp"
 # include "Particles/Fragment.hpp"
 # include "Particles/AmmoH2OMG.hpp"
 # include "Particles/Heat.hpp"
@@ -84,6 +85,7 @@ namespace particles {
         AmmoFist::         updateAll();
         Number::           updateAll();
         CrushedIce::       updateAll();
+        AmmoInsta::        updateAll();
     }
 
     void drawLower() {
@@ -103,6 +105,7 @@ namespace particles {
             AmmoShotgun::      drawAll();
             AmmoROFLE::        drawAll();
             BurningFragment::  drawAll();
+            AmmoInsta::        drawAll();
 
         glEnd();
 
@@ -216,6 +219,7 @@ namespace particles {
             case pAmmoFist:         AmmoFist::         spawn(location, direction, velocity, color, damageSource); break;
             case pNumber:           Number::           spawn(location, direction, velocity, color, damageSource); break;
             case pCrushedIce:       CrushedIce::       spawn(location, direction, velocity, color, damageSource); break;
+            case pAmmoInsta:        AmmoInsta::        spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -257,7 +261,7 @@ namespace particles {
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
                 + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count()
-                + AmmoFist::count() + Number::count();
+                + AmmoFist::count() + Number::count() + CrushedIce::count() + AmmoInsta::count();
     }
 
     void clear() {
@@ -290,5 +294,6 @@ namespace particles {
         AmmoFist::         clear();
         Number::           clear();
         CrushedIce::       clear();
+        AmmoInsta::        clear();
     }
 }

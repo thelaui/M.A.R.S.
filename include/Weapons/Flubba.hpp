@@ -27,21 +27,13 @@ class Flubba: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         Flubba(Ship* parent):
-              Weapon(Weapon::wFlubba, parent, sf::String("FLUBBA")) {};
+              Weapon(weapons::wFlubba, parent, sf::String("FLUBBA")) {};
 
         /// Spawns some particles.
         void fire() const;
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 };
 
 # endif // FLUBBA_HPP_INCLUDED

@@ -27,21 +27,13 @@ class ROFLE: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         ROFLE(Ship* parent):
-              Weapon(Weapon::wROFLE, parent, sf::String("ROFLE")) {};
+              Weapon(weapons::wROFLE, parent, sf::String("ROFLE")) {};
 
         /// Spawns some particles.
         void fire() const;
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 };
 
 # endif // ROFLE_HPP_INCLUDED

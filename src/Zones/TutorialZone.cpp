@@ -23,7 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ship.hpp"
 # include "Players/players.hpp"
 # include "Players/Player.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include <SFML/System.hpp>
 
 # include <cmath>

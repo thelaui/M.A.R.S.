@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Vector2f.hpp"
 # include "Zones/Zone.hpp"
 
-# include <vector>
+# include <map>
 
 class Team;
 class TacticalZone;
@@ -70,10 +70,8 @@ namespace zones {
     /// Draws every Zone.
     void draw();
 
-    /// Returns a pointer to a TacticalZone which ought to be protected.
-    /// Tactical zones, which are allready covered aren't returned.
-    /// \param checker The team who asks for a Zone.
-    TacticalZone* toProtect(Team* checker);
+
+    std::map<float, TacticalZone*> const toProtect(Team* checker);
 
     /// Returns a pointer to a not-covered RasterZone.
     /// Useful for escaping behaviour.

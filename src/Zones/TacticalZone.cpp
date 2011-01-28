@@ -23,9 +23,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ship.hpp"
 # include "Players/players.hpp"
 # include "Players/Player.hpp"
-# include "Players/Team.hpp"
-# include <SFML/System.hpp>
+# include "Teams/Team.hpp"
+# include "Teams/teams.hpp"
 
+# include <SFML/System.hpp>
 # include <cmath>
 
 TacticalZone::TacticalZone(Vector2f const& location, float radius) :
@@ -46,14 +47,14 @@ bool TacticalZone::isInside(SpaceObject const& toBeChecked) const {
 void TacticalZone::update() {
     shipCount_ = 0;
     if (homeSide_ == 0) {
-        std::vector<Player*> const& players = players::getTeamL()->members();
+        std::vector<Player*> const& players = teams::getTeamL()->members();
         for (std::vector<Player*>::const_iterator it = players.begin(); it != players.end(); ++it)
             if (isInside(*(*it)->ship()))
                 ++shipCount_;
         shipCount_ /= players.size();
     }
     else {
-        std::vector<Player*> const& players = players::getTeamR()->members();
+        std::vector<Player*> const& players = teams::getTeamR()->members();
         for (std::vector<Player*>::const_iterator it = players.begin(); it != players.end(); ++it)
             if (isInside(*(*it)->ship()))
                 ++shipCount_;

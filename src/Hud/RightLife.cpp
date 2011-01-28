@@ -22,7 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Media/text.hpp"
 # include "System/window.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
+# include "Teams/teams.hpp"
 
 # include <sstream>
 
@@ -43,9 +44,9 @@ void RightLife::draw() const {
         Vector2f const& port = window::getViewPort();
 
         std::stringstream sstr;
-        int first(players::getFirstPoints());
+        int first(teams::getFirstPoints());
         if (player->team()->points() == first) {
-            int second(players::getSecondPoints());
+            int second(teams::getSecondPoints());
             sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ +" << first-second << ")";
         }
         else

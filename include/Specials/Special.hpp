@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define SPECIAL_HPP_INCLUDED
 
 # include "System/timer.hpp"
+# include "Specials/specials.hpp"
 
 class Ship;
 
@@ -28,10 +29,7 @@ class Ship;
 class Special {
     public:
         /// Ctor which constructs the base special.
-        Special(Ship* parent, sf::String name):
-               parent_(parent),
-               timer_(0.f),
-               name_(name) {}
+        Special(specials::SpecialType type, Ship* parent, sf::String name);
 
         /// This function is called whenever the special is activated.
         virtual void activate() const = 0;
@@ -41,20 +39,22 @@ class Special {
 
         /// Replaces this special by the next one.
         /// With this method it's possible to cycle through the specials.
-        virtual void next()     = 0;
+        void next();
 
         /// Replaces this special by the previous one.
         /// With this method it's possible to cycle through the specials.
-        virtual void previous() = 0;
+        void previous();
 
         /// Returns the name of the special.
         sf::String const& getName() const {return name_;}
+        specials::SpecialType getType() const {return type_;}
 
     protected:
         Ship* parent_;
         mutable float timer_;
 
     private:
+        specials::SpecialType type_;
         sf::String name_;
 };
 

@@ -18,21 +18,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef BOTCONTROLLER_HPP_INCLUDED
 # define BOTCONTROLLER_HPP_INCLUDED
 
-# define BOT_CHARGE 0
-# define BOT_LAND 1
-# define BOT_KICK_BALL_TE 2
-# define BOT_KICK_BALL_OH 3
-# define BOT_WAIT_FOR_BALL 4
-# define BOT_ATTACK_TARGET 5
-# define BOT_PROTECT_ZONE 6
-# define BOT_CHANGE_WEAPON 7
-# define BOT_GET_CANNON_CONTROL 8
-# define BOT_ESCAPE 9
-# define BOT_START_FIGHT 10
-
 # include "Controllers/Controller.hpp"
 
 # include "System/Vector2f.hpp"
+# include "Teams/Job.hpp"
 
 # include <map>
 
@@ -57,11 +46,15 @@ class BotController: public Controller {
         /// \param slave The Player, controlled by this bot.
         /// \param type The type of the Controller.
         /// \param strength The individual strength of the bot. From 0 to 100.
-        BotController(Player* slave, controllers::ControlType type, float strength);
+        BotController(Player* slave, float strength);
 
         /// Performs the action with the highest priority.
         /// And calls evaluate twice a second.
         /*virtual*/ void update();
+
+        void evaluate();
+
+        void applyForJob(std::multimap<Job, std::multimap<short, BotController*> >& jobMap);
 
         /// Draws some debugging stuff.
         /// Like lines, showing where the bot heads.
@@ -71,35 +64,43 @@ class BotController: public Controller {
         /// Should be called, when a game restarts.
         void reset();
 
-    protected:
-        /// Changes the priorities.
-        /// Derived bots should implements this in different ways.
-        virtual void evaluate() = 0;
-
-        /// A vector storing all priorities.
-        std::vector<int> actions_;
-
-        /// The current target of attacks.
-        Ship* target_;
-
-        /// Stores a threat-value for each opponent.
-        std::map<Ship*, float> aggroTable_;
-
-        /// Stores time until weapons may be changed.
-        float    weaponChangeTimer_;
+        void assignJob(Job const& job);
 
     private:
-        // actions
-        void     charge();
-        void     land();
+        // checks
+        void checkAggro();
+        void checkEnergy();
+        void checkSpecial();
+
+        // team actions
+        void     performJob();
         void     kickBallToEnemy();
         void     kickBallOutHome();
         void     waitForBall();
         void     attackTarget();
+        void     attackAny();
         void     protectZone();
-        void     switchToWeapon();
         void     escape();
         void     startFight();
+        void     heal();
+        void     unfreeze();
+        void     getPowerUp();
+
+        // basic actions
+        void     switchSpecial();
+        void     switchWeapon();
+        void     charge();
+        void     land();
+
+        Ship*    target_;
+        std::map<Ship*, float> aggroTable_;
+
+        Job      currentJob_;
+
+        float    weaponChangeTimer_;
+        float    specialChangeTimer_;
+
+        float lastFrameLife_;
 
         // helper functions
         bool     turnTo(Vector2f const& location);
@@ -108,7 +109,6 @@ class BotController: public Controller {
         void     shootEnemy(Ship* enemyShip = NULL);
         void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true);
 
-        float evaluationTimer_;
         Vector2f nextRoutePoint_;
         TacticalZone* toCover_;
         const float strength_;

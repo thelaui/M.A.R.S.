@@ -18,6 +18,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef DECOOBJECTS_HPP_INCLUDED
 # define DECOOBJECTS_HPP_INCLUDED
 
+# include "System/Vector2f.hpp"
+# include "System/Color3f.hpp"
+
 class Planet;
 class Ship;
 class Ball;
@@ -39,6 +42,9 @@ namespace decoObjects {
 
     /// Draws every ShipName.
     void drawNames();
+
+    /// Draws an arrow between the given points.
+    void drawArrow(Vector2f const& from,  Vector2f const& to, Color3f const& color, float width = 10.f);
 
     /// Adds the CannonKeep Cannon.
     void addCannon();

@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Players/players.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
 # include "Hud/hud.hpp"
 # include "Zones/zones.hpp"
 # include "DecoObjects/decoObjects.hpp"
@@ -37,6 +37,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Shaders/postFX.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "TrailEffects/trailEffects.hpp"
+# include "Teams/teams.hpp"
 
 Game::Game(games::GameType const& type):
     type_(type),
@@ -60,6 +61,7 @@ Game::~Game() {
     particles::clear();
     spaceObjects::clear();
     controllers::clear();
+    teams::clear();
     players::clear();
     zones::clear();
     decoObjects::clear();
@@ -71,7 +73,8 @@ void Game::update() {
     announcer::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
         hud::update();
-        if (players::getFirstPoints() < pointLimit_) {
+        if (teams::getFirstPoints() < pointLimit_) {
+            teams::update();
             controllers::update();
             if ((elapsedTime() > 4.f) || (type_ == games::gTutorial))
                 ships::update();
@@ -99,13 +102,13 @@ void Game::update() {
 void Game::draw() const {
     particles::drawLower();
     trailEffects::draw();
+    controllers::draw();
     ships::draw();
     balls::draw();
     spaceObjects::draw();
     particles::drawHigher();
     decoObjects::draw();
     items::draw();
-    controllers::draw();
 }
 
 void Game::restart() {
@@ -118,8 +121,8 @@ void Game::restart() {
     zones::clear();
     decoObjects::clear();
     trailEffects::clear();
-    if (players::getFirstPoints() >= pointLimit_) {
-        players::resetTeamPoints();
+    if (teams::getFirstPoints() >= pointLimit_) {
+        teams::resetTeamPoints();
         players::resetPlayerPoints();
     }
     if (games::type() == games::gCannonKeep || games::type() == games::gSpaceBall)

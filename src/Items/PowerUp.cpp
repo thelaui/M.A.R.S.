@@ -146,3 +146,7 @@ items::PowerUpType PowerUp::type() const {
 bool PowerUp::isDead() const {
     return lifeTime_ >= totalLifeTime_;
 }
+
+bool PowerUp::isCollected() const {
+    return collected_;
+}

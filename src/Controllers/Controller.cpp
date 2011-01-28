@@ -22,6 +22,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Items/items.hpp"
 
+Controller::Controller(Player* slave):
+    type_(slave->type()),
+    slave_(slave) {}
+
 void Controller::slaveUp (bool up) const {
     if (slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->up_ = up;
@@ -94,12 +98,8 @@ void Controller::slaveSpecial () const {
     }
 }
 
-Ship const* Controller::ship() const {
+Ship* Controller::ship() const {
     return slave_->ship_;
-}
-
-bool Controller::shipDocked() const {
-    return ship()->docked_;
 }
 
 controllers::ControlType Controller::type() const {

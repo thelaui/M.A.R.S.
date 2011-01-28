@@ -48,11 +48,13 @@ bool NewGameMenu::tSB_(false);
 bool NewGameMenu::tDM_(false);
 bool NewGameMenu::tTDM_(false);
 bool NewGameMenu::tCK_(false);
+bool NewGameMenu::tGI_(false);
 bool NewGameMenu::kWeaponOptions_(false);
 Tab* NewGameMenu::tabSpaceBall_(NULL);
 Tab* NewGameMenu::tabDeathMatch_(NULL);
 Tab* NewGameMenu::tabTeamDeathMatch_(NULL);
 Tab* NewGameMenu::tabCannonKeep_(NULL);
+Tab* NewGameMenu::tabGraveItation_(NULL);
 
 UiWindow* NewGameMenu::get() {
     if (instance_ == NULL) {
@@ -66,6 +68,7 @@ UiWindow* NewGameMenu::get() {
         tabDeathMatch_      = new Tab(new sf::String("DeathMatch"), 100, &tDM_);
         tabTeamDeathMatch_  = new Tab(new sf::String("Team-DeathMatch"), 130, &tTDM_);
         tabCannonKeep_      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
+        tabGraveItation_    = new Tab(new sf::String("Grave-Itation"), 120, &tGI_);
 
         tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
@@ -114,18 +117,38 @@ UiWindow* NewGameMenu::get() {
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 540, 270, true));
 
+        tabGraveItation_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabGraveItation_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        RadioGroup* player1Group4 = new RadioGroup();
+            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(10,70), 80, true));
+            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(290,70), 80, true));
+            tabGraveItation_->addWidget(player1Group4);
+        RadioGroup* player2Group4 = new RadioGroup();
+            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
+            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(373,70), 80, true));
+            tabGraveItation_->addWidget(player2Group4);
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::BotsLeft), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
+
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabSpaceBall_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(100,235), 120, 20));
+        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabDeathMatch_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(100,235), 120, 20));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabTeamDeathMatch_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(100,235), 120, 20));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabCannonKeep_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(100,235), 120, 20));
+
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);
         tabList->addTab(tabTeamDeathMatch_);
         tabList->addTab(tabCannonKeep_);
+        tabList->addTab(tabGraveItation_);
 
         instance_->addWidget(tabList);
 
         instance_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,235), 540, 270, true));
-        instance_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,255), 540, 270, true));
-
         instance_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,300), 90, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,300), 120, 20));
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(415,300), 70, 20));
     }
     return instance_;
@@ -164,6 +187,13 @@ void NewGameMenu::checkWidgets() {
             settings::save();
             games::start(games::gCannonKeep);
         }
+        else if (tabGraveItation_->isActive()) {
+            menus::hideWindow();
+            menus::hideWindow();
+            settings::save();
+            settings::C_powerUpRate = 0;
+            games::start(games::gGraveItation);
+        }
     }
     else if (kInfo_) {
         kInfo_ = false;
@@ -177,6 +207,9 @@ void NewGameMenu::checkWidgets() {
             menus::showWindow(InfoTDM::get());
         }
         else if (tabCannonKeep_->isActive()) {
+            menus::showWindow(InfoCK::get());
+        }
+        else if (tabGraveItation_->isActive()) {
             menus::showWindow(InfoCK::get());
         }
     }
@@ -197,6 +230,11 @@ void NewGameMenu::checkWidgets() {
     }
     else if (tCK_) {
         tCK_ = false;
+        if(settings::C_showInfoCK)
+            menus::showWindow(InfoCK::get());
+    }
+    else if (tGI_) {
+        tGI_ = false;
         if(settings::C_showInfoCK)
             menus::showWindow(InfoCK::get());
     }

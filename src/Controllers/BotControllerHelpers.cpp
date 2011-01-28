@@ -23,7 +23,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "SpaceObjects/balls.hpp"
 # include "Players/Player.hpp"
-# include "Players/Team.hpp"
+# include "Teams/Team.hpp"
+# include "Teams/teams.hpp"
+
+# include <cfloat>
 
 int pathDepth = 0;
 
@@ -37,7 +40,7 @@ bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoi
     const Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation));
 
     if (nextPathPoint_ == moveToPoint_) aimDirection_ = nextPathPoint_ - shipLocation - shipVelocity*stopFactor*shipVelocity.lengthSquare()*0.00003f;
-    else                         aimDirection_ = nextPathPoint_ - shipLocation - shipVelocity*0.8f*shipVelocity.lengthSquare()*0.00003f;
+    else                                aimDirection_ = nextPathPoint_ - shipLocation - shipVelocity*0.8f*shipVelocity.lengthSquare()*0.00003f;
 
     aimDirection_ = aimDirection_.normalize();
 
@@ -142,7 +145,7 @@ void BotController::shootEnemy(Ship* enemyShip) {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
     Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
     if (enemyShip == NULL) {
-        std::vector<Player*>const& enemies = players::getEnemy(slave_->team())->members();
+        std::vector<Player*>const& enemies = teams::getEnemy(slave_->team())->members();
         for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it) {
             Vector2f pathToEnemy = calcPath((*it)->ship()->location(), false);
             if (pathToEnemy == (*it)->ship()->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f)) {

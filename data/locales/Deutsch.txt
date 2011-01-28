@@ -255,8 +255,8 @@
 177 Zeigt die Anzahl der gerade herumfliegenden Partikel an.
 178 Schaltet solche Tooltipps ab.
 179 Legt den Kompressionsalgorithmus fest, nach dem Screenshots gespeichert werden.
-180 Beim drücken der hier festgelegten Taste wird ein Screenshot in ~/.marsshooter/screenshots gespeichert.
-181 Beim drücken der hier festgelegten Taste wird ein Screenshot im Ordner von M.A.R.S. gespeichert.
+180 Beim Drücken der hier festgelegten Taste wird ein Screenshot in ~/.marsshooter/screenshots gespeichert.
+181 Beim Drücken der hier festgelegten Taste wird ein Screenshot im Ordner von M.A.R.S. gespeichert.
 182 Falls mindestens so viele Schiffe gleichzeitig explodieren, setzt der Slow-Motion-Effekt ein.
 183 Zeigt an, welche Aufgabe die Bots versuchen zu erfüllen.
 184 Zeigt taktische Zonen, an denen sich die KI orientiert.

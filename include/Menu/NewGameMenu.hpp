@@ -37,9 +37,10 @@ class NewGameMenu: public UiWindow {
         static UiWindow* instance_;
 
         static bool kStart_, kInfo_, kCancel_, playerI_, playerII_,
-                    tSB_, tDM_, tTDM_, tCK_, kWeaponOptions_;
+                    tSB_, tDM_, tTDM_, tCK_, tGI_, kWeaponOptions_;
 
-        static Tab *tabSpaceBall_, *tabDeathMatch_, *tabTeamDeathMatch_, *tabCannonKeep_;
+        static Tab *tabSpaceBall_, *tabDeathMatch_, *tabTeamDeathMatch_, *tabCannonKeep_,
+                   *tabGraveItation_;
 };
 
 # endif // NEWGAMEMENU_HPP_INCLUDED

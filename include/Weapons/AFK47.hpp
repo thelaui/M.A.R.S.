@@ -27,21 +27,13 @@ class AFK47: public Weapon {
     public:
         /// Ctor which constructs the weapon.
         AFK47(Ship* parent):
-              Weapon(Weapon::wAFK47, parent, sf::String("AFK-47")) {};
+              Weapon(weapons::wAFK47, parent, sf::String("AFK-47")) {};
 
         /// Spawns some particles.
         void fire() const;
 
         /// Draws the weapon.
         void draw() const;
-
-        /// Replaces this weapon by the next one.
-        /// With this method it's possible to cycle through the weapons.
-        void next();
-
-        /// Replaces this weapon by the previous one.
-        /// With this method it's possible to cycle through the weapons.
-        void previous();
 };
 
 # endif // AFK47_HPP_INCLUDED

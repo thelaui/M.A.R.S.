@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Weapons/weapons.hpp"
+# include "Weapons/RocketLauncher.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "Particles/particles.hpp"
@@ -30,10 +30,10 @@ void RocketLauncher::draw() const {
     const int posX = 0;
     const int posY = 30;
     glBegin(GL_QUADS);
-        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius_*0.5f);
-        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius_*0.5f);
-        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius_*2.f, -1.f*parent_->radius_*0.5f);
-        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius_*2.f,      parent_->radius_*0.5f);
+        glTexCoord2f(posX*0.125f,     posY*0.03125f);    glVertex2f(0,      parent_->radius()*0.5f);
+        glTexCoord2f(posX*0.125f,    (posY+1)*0.03125f); glVertex2f(0, -1.f*parent_->radius()*0.5f);
+        glTexCoord2f((posX+1)*0.125f,(posY+1)*0.03125f); glVertex2f(parent_->radius()*2.f, -1.f*parent_->radius()*0.5f);
+        glTexCoord2f((posX+1)*0.125f, posY*0.03125f);    glVertex2f(parent_->radius()*2.f,      parent_->radius()*0.5f);
     glEnd();
 }
 
@@ -41,21 +41,11 @@ void RocketLauncher::fire() const {
     float time = timer::totalTime();
     if (time - timer_ > 4.0f) {
         timer_ = time;
-        float angleRad = parent_->rotation_*M_PI / 180.f;
+        float angleRad = parent_->rotation()*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoRocket, parent_->location_ + faceDirection*parent_->radius_, faceDirection, parent_->velocity_, Color3f(), parent_->owner_);
-        particles::spawnMultiple(10.f, particles::pDust,  parent_->location_ + faceDirection*parent_->radius_, parent_->velocity_);
-        parent_->velocity_ -= faceDirection*400.f;
-        sound::playSound(sound::Pump, parent_->location_);
+        particles::spawn(particles::pAmmoRocket, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        particles::spawnMultiple(10.f, particles::pDust,  parent_->location() + faceDirection*parent_->radius(), parent_->velocity());
+        parent_->velocity() -= faceDirection*400.f;
+        sound::playSound(sound::Pump, parent_->location());
     }
-}
-
-void RocketLauncher::next() {
-    parent_->currentWeapon_ = new Burner(parent_);
-    delete this;
-}
-
-void RocketLauncher::previous() {
-    parent_->currentWeapon_ = new Fist(parent_);
-    delete this;
 }

@@ -15,14 +15,11 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Controllers/DefBot.hpp"
-# include "Controllers/AggroBot.hpp"
-# include "Controllers/CKBot.hpp"
-# include "Controllers/DMBot.hpp"
-# include "Controllers/TutBot.hpp"
 # include "Controllers/KeyController.hpp"
+# include "Controllers/BotController.hpp"
 # include "System/settings.hpp"
 # include "System/window.hpp"
+# include "Players/Player.hpp"
 
 # include <SFML/Window.hpp>
 
@@ -57,16 +54,20 @@ namespace controllers {
             (*it)->draw();
     }
 
-    void addController(ControlType type, Player* slave, float strength) {
-        switch (type) {
-            case cDefBot:     botControllers_.push_back(new DefBot(slave, strength));       break;
-            case cAggroBot:   botControllers_.push_back(new AggroBot(slave, strength));     break;
-            case cCKBot:      botControllers_.push_back(new CKBot(slave, strength));        break;
-            case cDMBot:      botControllers_.push_back(new DMBot(slave, strength));        break;
-            case cTutBot:     botControllers_.push_back(new TutBot(slave, 0.f));            break;
-            case cTutAggroBot:botControllers_.push_back(new DMBot(slave, 0.f));             break;
-            case cPlayer1:    keyControllers1_ = new KeyController(type, slave);            break;
-            case cPlayer2:    keyControllers2_ = new KeyController(type, slave);            break;
+    BotController* addBotController(Player* slave, float strength) {
+        BotController* bot = new BotController(slave, strength);
+        botControllers_.push_back(bot);
+        return bot;
+    }
+
+    KeyController* addKeyController(Player* slave) {
+        switch (slave->type()) {
+            case cPlayer1:
+                keyControllers1_ = new KeyController(slave);
+                return keyControllers1_;
+            default:
+                keyControllers2_ = new KeyController(slave);
+                return keyControllers2_;
         }
     }
 

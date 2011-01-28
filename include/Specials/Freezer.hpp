@@ -27,7 +27,7 @@ class Freezer: public Special {
     public:
         /// Ctor which constructs the special.
         Freezer(Ship* parent):
-              Special(parent, sf::String("FREEZER")),
+              Special(specials::sFreeze, parent, sf::String("FREEZER")),
               radius_(0.f) {};
 
         /// Freezes nearby ships.
@@ -35,14 +35,6 @@ class Freezer: public Special {
 
         /// Draws the special.
         void draw() const;
-
-        /// Replaces this special by the next one.
-        /// With this method it's possible to cycle through the specials.
-        void next();
-
-        /// Replaces this special by the previous one.
-        /// With this method it's possible to cycle through the specials.
-        void previous();
 
     private:
         mutable float radius_;

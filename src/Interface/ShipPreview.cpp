@@ -44,7 +44,7 @@ void ShipPreview::draw() const {
     // draw glow
     glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
     Color3f bg = *teamColor_;
-    if (bg.v() < 0.4f) bg.v(0.4f);
+    if (bg.v() < 0.5f) bg.v(0.5f);
     if (bg.s() < 0.5f) bg.s(0.5f);
     bg.gl4f(0.6f);
     glBegin(GL_QUADS);

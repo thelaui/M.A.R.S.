@@ -26,7 +26,7 @@ LocalPlayer::LocalPlayer(controllers::ControlType controlType):
     color_(controlType == controllers::cPlayer1 ? &settings::C_playerIColor : &settings::C_playerIIColor),
     graphic_(controlType == controllers::cPlayer1 ? &settings::C_playerIShip : &settings::C_playerIIShip) {
 
-        controllers::addController(controlType, this);
+        controller_ = controllers::addKeyController(this);
 }
 
 

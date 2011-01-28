@@ -106,7 +106,7 @@ UiWindow* OptionsMenu::get() {
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), locales::getLocale(locales::ttParticleCount), &settings::C_showParticleCount, Vector2f(10,70), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ShowToolTips), locales::getLocale(locales::ttShowToolTips), &settings::C_showToolTips, Vector2f(10,90), 150));
         tabInterface->addWidget(new Label(locales::getLocale(locales::DebuggingInformation), TEXT_ALIGN_LEFT, Vector2f(210,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::BotsOrientation), locales::getLocale(locales::ttBotsOrientation), &settings::C_drawBotOrientation, Vector2f(210,50), 150));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIJobs), locales::getLocale(locales::ttBotsOrientation), &settings::C_drawBotJobs, Vector2f(210,50), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), locales::getLocale(locales::ttZones), &settings::C_drawZones, Vector2f(210,70), 150));
         tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), locales::getLocale(locales::ttAIPaths), &settings::C_drawAIPath, Vector2f(210,90), 150));
         tabInterface->addWidget(new LanguageButton(locales::getLocale(locales::Language), Vector2f(10,130), 350, 185));
@@ -171,7 +171,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIleft, Vector2f(10,70), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIright, Vector2f(10,90), 560));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIfire, Vector2f(10,110), 560));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIspecial, Vector2f(10,130), 560));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerISpecialKey, Vector2f(10,130), 560));
         tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(500,200)));
         tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
         tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(10,200), 420, 185));
@@ -182,7 +182,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIIleft, Vector2f(10,70), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIIright, Vector2f(10,90), 560));
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIIfire, Vector2f(10,110), 560));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIIspecial, Vector2f(10,130), 560));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIISpecialKey, Vector2f(10,130), 560));
         tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(500,200)));
         tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, 10, Vector2f(10,170), 420, 185, true, generateName::shipNames()));
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(10,200), 420, 185));
@@ -265,6 +265,13 @@ void OptionsMenu::onShow() {
     else if (settings::C_screenShotFormat == "tga") format_ = "TARGA (*.tga)";
     else if (settings::C_screenShotFormat == "png") format_ = "PNG(*.png)";
     else if (settings::C_screenShotFormat == "jpg") format_ = "JPEG (*.jpg)";
+
+    sf::VideoMode mode(settings::C_resX, settings::C_resY);
+    if (!mode.IsValid()) {
+        mode = sf::VideoMode::GetFullscreenModes().front();
+        settings::C_resX = mode.Width;
+        settings::C_resY = mode.Height;
+    }
 
     std::stringstream sstr1;
     sstr1 << settings::C_resX << " x " << settings::C_resY;
