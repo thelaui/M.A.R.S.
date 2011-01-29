@@ -204,6 +204,10 @@ namespace settings {
 
         # endif
 
+        # ifdef __APPLE__
+            mkdir((std::string(getenv("HOME")) + "/Library/Application Support/mars/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+        # endif
+
         // search for config file
         if (C_configPath == "") {
             bool success(false);
@@ -226,6 +230,18 @@ namespace settings {
                 if (std::ifstream((C_configPath + "mars.cfg").c_str()))
                     success = true;
             # endif
+
+            # ifdef __APPLE__
+                if (std::ifstream((std::string(getenv("HOME")) + "/Library/Application Support/mars/mars.cfg").c_str())) {
+                    C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
+                    success = true;
+                }
+                else
+                {
+                    C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
+                }
+            # endif
+
 
             if (success) std::cout << "Found " << C_configPath << "mars.cfg"  << std::endl;
             else         std::cout << "Found nothing. Will create a new one." << std::endl;
@@ -255,6 +271,13 @@ namespace settings {
             # ifdef __WIN32__
                 if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
                     success = true;
+            # endif
+
+            # ifdef __APPLE__
+                if (std::ifstream("../Resources/data/locales/English.txt")) {
+                    C_dataPath = "../Resources/data/";
+                    success = true;
+                }
             # endif
 
             if (success) std::cout << "Found " << C_dataPath << std::endl;
