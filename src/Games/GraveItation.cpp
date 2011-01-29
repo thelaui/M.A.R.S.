@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/GraveItation.hpp"
 
-# include "Teams/DMTeam.hpp"
+# include "Teams/GITeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Players/players.hpp"
@@ -36,34 +36,34 @@ GraveItation::GraveItation():
     Team* myTeamR = NULL;
 
     if (settings::C_playerIteamL) {
-        myTeamL = new DMTeam(settings::C_playerITeamColor);
+        myTeamL = new GITeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer1);
     }
     else if (settings::C_playerIteamR) {
-        myTeamR = new DMTeam(settings::C_playerITeamColor);
+        myTeamR = new GITeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer1);
     }
 
     if (settings::C_playerIIteamL) {
-        if (!myTeamL) myTeamL = new DMTeam(settings::C_playerIITeamColor);
+        if (!myTeamL) myTeamL = new GITeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer2);
     }
     else if (settings::C_playerIIteamR) {
-        if (!myTeamR) myTeamR = new DMTeam(settings::C_playerIITeamColor);
+        if (!myTeamR) myTeamR = new GITeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer2);
     }
 
     if (!myTeamR && !myTeamL) {
         Color3f rand = Color3f::random();
-        myTeamL = new DMTeam(rand.inverted());
-        myTeamR = new DMTeam(rand);
+        myTeamL = new GITeam(rand.inverted());
+        myTeamR = new GITeam(rand);
 
     }
     else if (!myTeamL) {
-        myTeamL = new DMTeam(myTeamR->color().inverted());
+        myTeamL = new GITeam(myTeamR->color().inverted());
     }
     else if (!myTeamR) {
-        myTeamR = new DMTeam(myTeamL->color().inverted());
+        myTeamR = new GITeam(myTeamL->color().inverted());
     }
 
     teams::addTeam(myTeamL);
@@ -78,7 +78,7 @@ GraveItation::GraveItation():
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    createSpace();
+    spaceObjects::populateSpace();
     zones::createRaster(4,3);
 }
 
@@ -96,7 +96,7 @@ void GraveItation::restart() {
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    createSpace();
+    spaceObjects::populateSpace();
     zones::createRaster(4,3);
 }
 

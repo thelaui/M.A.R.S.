@@ -34,6 +34,7 @@ class Number: public Particle<Number> {
     private:
         Color3f color_;
         int     value_;
+        float   alpha_;
         static std::list<Number*> activeParticles_;
 };
 

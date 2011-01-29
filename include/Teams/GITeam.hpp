@@ -1,4 +1,4 @@
-/* hud.hpp
+/* GITeam.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,24 +15,24 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HUD_HPP_INCLUDED
-# define HUD_HPP_INCLUDED
+# ifndef GITEAM_HPP_INCLUDED
+# define GITEAM_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
-# include "System/Color3f.hpp"
+# include "Teams/Team.hpp"
 
-namespace hud {
-    void init();
+class GITeam: public Team {
+    public:
+        GITeam(Color3f const& color = Color3f::random()):
+            Team(color) {}
 
-    void update();
-    void draw();
+    private:
+        void createJobs();
 
-    void displayPoints();
-    void displayStats(bool show = true);
+        void checkEnemies();
+};
 
-    void displayMessage(sf::String const& message, Color3f const& color = Color3f(1.0f, 1.0f, 0.55f));
-}
+# endif // GITEAM_HPP_INCLUDED
 
-# endif // HUD_HPP_INCLUDED
+
 
 

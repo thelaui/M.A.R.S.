@@ -81,7 +81,7 @@ SpaceBall::SpaceBall():
 
     balls::addBall();
 
-    createSpace();
+    spaceObjects::populateSpace();
 
     zones::detectTacticalZones();
 }
@@ -102,7 +102,7 @@ void SpaceBall::restart() {
 
     balls::addBall();
 
-    createSpace();
+    spaceObjects::populateSpace();
 
     zones::detectTacticalZones();
 }

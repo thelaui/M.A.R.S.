@@ -83,7 +83,7 @@ namespace settings {
     sf::Key::Code C_playerIleft =           sf::Key::Left;
     sf::Key::Code C_playerIright =          sf::Key::Right;
     sf::Key::Code C_playerIfire =           sf::Key::RControl;
-    sf::Key::Code C_playerISpecialKey =        sf::Key::RShift;
+    sf::Key::Code C_playerISpecialKey =     sf::Key::RShift;
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
@@ -96,7 +96,7 @@ namespace settings {
     sf::Key::Code C_playerIIleft =          sf::Key::A;
     sf::Key::Code C_playerIIright =         sf::Key::D;
     sf::Key::Code C_playerIIfire =          sf::Key::LControl;
-    sf::Key::Code C_playerIISpecialKey =       sf::Key::LShift;
+    sf::Key::Code C_playerIISpecialKey =    sf::Key::LShift;
     bool          C_playerIIteamL =         true;
     bool          C_playerIIteamR =         false;
     int           C_playerIIShip =          0;
@@ -236,8 +236,7 @@ namespace settings {
                     C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
                     success = true;
                 }
-                else
-                {
+                else {
                     C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
                 }
             # endif

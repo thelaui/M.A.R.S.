@@ -56,7 +56,7 @@ MenuGame::MenuGame():
         settings::C_showSelectLanguage = false;
     }
 
-    createSpace();
+    spaceObjects::populateSpace();
     zones::createRaster(4,3);
 }
 
@@ -71,7 +71,7 @@ void MenuGame::restart() {
 
     menus::showMain();
 
-    createSpace();
+    spaceObjects::populateSpace();
     zones::createRaster(4,3);
 }
 

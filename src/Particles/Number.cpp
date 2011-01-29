@@ -25,9 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<Number*> Number::activeParticles_;
 
 Number::Number(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Number>(spaceObjects::oNumber, location, 4, 0, 1.f) {
+           Particle<Number>(spaceObjects::oNumber, location, 4, 0, 1.f),
+           alpha_(1.f) {
 
-    velocity_ = velocity;// + Vector2f::randDir()*150;
+    velocity_ = velocity;
 
     value_ = direction.x_;
 
@@ -43,7 +44,7 @@ Number::Number(Vector2f const& location, Vector2f const& direction, Vector2f con
 void Number::update() {
     float time = timer::frameTime();
 
-    color_.v(-1.f/totalLifeTime_*lifeTime_+1.f);
+    alpha_ = 1.f-1.f/totalLifeTime_*lifeTime_;
 
     location_ = location_ + velocity_*time;
     velocity_ = velocity_ + velocity_*(-5.f)*time;
@@ -54,7 +55,7 @@ void Number::update() {
 void Number::draw() const {
     std::stringstream sstr;
     sstr << value_;
-    text::drawMobileSpaceText(sf::String(sstr.str()), location_, radius_, TEXT_ALIGN_CENTER, color_);
+    text::drawMobileSpaceText(sf::String(sstr.str()), location_, radius_, TEXT_ALIGN_CENTER, color_, alpha_);
 }
 
 

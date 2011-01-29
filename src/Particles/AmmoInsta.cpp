@@ -33,6 +33,9 @@ AmmoInsta::AmmoInsta(Vector2f const& location, Vector2f const& direction, Vector
     location_ += velocity_*timer::frameTime()*1.2f;
 
     trail_ = trailEffects::attach(this, 0.1f, 2.f, 6.f, color_, true);
+
+    color_.v(1.f);
+    color_.s(0.3f);
 }
 
 AmmoInsta::~AmmoInsta() {
@@ -70,16 +73,16 @@ void AmmoInsta::draw() const {
 
     Vector2f direction(velocity_*0.015f);
     Vector2f normDirection(direction.y_, -1.f*direction.x_);
-    normDirection *= 0.05f;
+    normDirection *= 0.13f;
 
-    const Vector2f topLeft(location_ + direction + normDirection), topRight(location_ + direction - normDirection), bottomLeft(location_ - 3*direction + normDirection), bottomRight(location_ - 3*direction - normDirection);
+    const Vector2f topLeft(location_ + 2*direction + normDirection), topRight(location_ + 2*direction - normDirection), bottomLeft(location_ - 2*direction + normDirection), bottomRight(location_ - 2*direction - normDirection);
 
-    const int posX = 1;
-    const float posY = 1.f;
+    const int posX = 0;
+    const float posY = 7.f;
     glTexCoord2f(posX*0.125f,       posY*0.125f);       glVertex2f(topLeft.x_, topLeft.y_);
-    glTexCoord2f(posX*0.125f,      (posY+1.f)*0.125f); glVertex2f(bottomLeft.x_, bottomLeft.y_);
-    glTexCoord2f((posX+1)*0.125f,(posY+1.f)*0.125f); glVertex2f(bottomRight.x_, bottomRight.y_);
-    glTexCoord2f((posX+1.f)*0.125f, posY*0.125f);       glVertex2f(topRight.x_, topRight.y_);
+    glTexCoord2f(posX*0.125f,      (posY+0.5f)*0.125f); glVertex2f(bottomLeft.x_, bottomLeft.y_);
+    glTexCoord2f((posX+3.f)*0.125f,(posY+0.5f)*0.125f); glVertex2f(bottomRight.x_, bottomRight.y_);
+    glTexCoord2f((posX+3.f)*0.125f, posY*0.125f);       glVertex2f(topRight.x_, topRight.y_);
 }
 
 void AmmoInsta::onCollision(SpaceObject* with, Vector2f const& location,

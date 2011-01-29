@@ -66,9 +66,9 @@ UiWindow* NewGameMenu::get() {
         TabList* tabList        = new TabList(Vector2f(10,55), 560, 220);
         tabSpaceBall_       = new Tab(new sf::String("SpaceBall"), 90,  &tSB_);
         tabDeathMatch_      = new Tab(new sf::String("DeathMatch"), 100, &tDM_);
-        tabTeamDeathMatch_  = new Tab(new sf::String("Team-DeathMatch"), 130, &tTDM_);
+        tabTeamDeathMatch_  = new Tab(new sf::String("Team-DeathMatch"), 120, &tTDM_);
         tabCannonKeep_      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
-        tabGraveItation_    = new Tab(new sf::String("Grave-Itation"), 120, &tGI_);
+        tabGraveItation_    = new Tab(new sf::String("Grave-Itation Pit"), 125, &tGI_);
 
         tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));

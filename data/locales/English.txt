@@ -284,5 +284,8 @@
 201 Adjusts the strength of the bots.
 202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
 
-// 205
+// Interface notifications
 
+205 Screen shot saved!
+
+// 206

@@ -27,12 +27,12 @@ namespace text {
 
     namespace {
         void drawText(sf::String const& text, Vector2f const& location,
-                      float size, int align, Color3f const& color, sf::Font* font) {
+                      float size, int align, Color3f const& color, float alpha, sf::Font* font) {
 
             sf::Text drawString(text, font ? *font : *font::getFont(), size);
-            drawString.SetColor(color.sfColor());
+            drawString.SetColor(sf::Color(color.r()*255, color.g()*255, color.b()*255, alpha<0 ? 0 : alpha*255));
 
-            drawString.SetBlendMode(sf::Blend::Add);
+            drawString.SetBlendMode(sf::Blend::Alpha);
 
             Vector2f loc(location);
             sf::FloatRect boundingBox = drawString.GetRect();
@@ -56,22 +56,22 @@ namespace text {
     }
 
     void drawSpaceText(sf::String const& text, Vector2f const& location,
-                       float size, int align, Color3f const& color, sf::Font* font) {
+                       float size, int align, Color3f const& color, float alpha, sf::Font* font) {
 
-        drawScreenText(text, window::coordToPixel(location), size, align, color, font);
+        drawScreenText(text, window::coordToPixel(location), size, align, color, alpha, font);
     }
 
     void drawMobileSpaceText(sf::String const& text, Vector2f const& location,
-                             float size, int align, Color3f const& color, sf::Font* font) {
+                             float size, int align, Color3f const& color, float alpha, sf::Font* font) {
 
-        drawText(text, window::coordToPixel(location), size, align, color, font);
+        drawText(text, window::coordToPixel(location), size, align, color, alpha, font);
 
     }
 
     void drawScreenText(sf::String const& text, Vector2f const& location,
-                       float size, int align, Color3f const& color, sf::Font* font) {
+                       float size, int align, Color3f const& color, float alpha, sf::Font* font) {
 
-        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), size, align, color, font);
+        drawText(text, Vector2f(static_cast<int>(location.x_), static_cast<int>(location.y_)), size, align, color, alpha, font);
     }
 
     void drawFooText() {

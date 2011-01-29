@@ -57,10 +57,6 @@ class Game {
         /// Returns the elapsed time since it has been created.
         float elapsedTime() const;
 
-    protected:
-        /// Populates the space with planets, suns and black holes.
-        void createSpace() const;
-
     private:
         /// Stores the game's GameType
         games::GameType type_;

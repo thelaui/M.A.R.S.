@@ -50,6 +50,9 @@ namespace spaceObjects {
     std::vector<Home*>const&                getHomes();
     std::vector<SpaceObject*> const&        getObjects();
 
+    /// Populates the space with planets, suns and black holes.
+    void populateSpace();
+
     void clear();
 }
 

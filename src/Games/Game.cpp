@@ -71,8 +71,8 @@ Game::~Game() {
 void Game::update() {
     music::update();
     announcer::update();
+    hud::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
-        hud::update();
         if (teams::getFirstPoints() < pointLimit_) {
             teams::update();
             controllers::update();
@@ -138,40 +138,6 @@ games::GameType Game::type() const {
 
 float Game::elapsedTime() const {
     return timer::totalTime() - startTime_;
-}
-
-void Game::createSpace() const {
-    int sunCount(2), holeCount(1), planetCount(4);
-    int count = rand()%5 + 1;
-    if (count == 1) count += rand()%2;
-    if (count == 5) count -= rand()%2;
-
-    while (count > 0) {
-        int type = rand()%7;
-        switch (type) {
-            case 0:
-                if (holeCount > 0) {
-                    spaceObjects::addBlackHole();
-                    --count;
-                    --holeCount;
-                }
-                break;
-            case 1:
-                if (sunCount > 0) {
-                    spaceObjects::addSun();
-                    --count;
-                    --sunCount;
-                }
-                break;
-            default:
-                if (planetCount > 0) {
-                    spaceObjects::addPlanet();
-                    --count;
-                    --planetCount;
-                }
-        }
-
-    }
 }
 
 

@@ -1,4 +1,4 @@
-/* hud.hpp
+/* Message.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,24 +15,36 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HUD_HPP_INCLUDED
-# define HUD_HPP_INCLUDED
+# ifndef MESSAGE_HPP_INCLUDED
+# define MESSAGE_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
+# include "Hud/HudElement.hpp"
 # include "System/Color3f.hpp"
+# include "System/window.hpp"
 
-namespace hud {
-    void init();
+class Message: public HudElement {
+    public:
+        Message(sf::String const& message, Color3f const& color);
 
-    void update();
-    void draw();
+        void draw() const;
+        void update();
 
-    void displayPoints();
-    void displayStats(bool show = true);
+        bool isDead() const;
 
-    void displayMessage(sf::String const& message, Color3f const& color = Color3f(1.0f, 1.0f, 0.55f));
-}
+    private:
+        sf::String text_;
+        Color3f    color_;
+        Vector2f   location_;
+        float      timer_;
+        float      alpha_;
+        float      speed_;
+};
 
-# endif // HUD_HPP_INCLUDED
+# endif // MESSAGE_HPP_INCLUDED
+
+
+
+
+
 
 

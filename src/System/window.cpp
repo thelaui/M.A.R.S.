@@ -28,6 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "Media/music.hpp"
+# include "Hud/hud.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -76,6 +77,17 @@ namespace window {
                 mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
                 if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                     std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
+                } else {
+                    std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                }
+            # endif
+
+            # ifdef __APPLE__
+                mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+                if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                    std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
                 } else {
                     std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
                 }
@@ -84,6 +96,7 @@ namespace window {
             # ifdef __WIN32__
                 if (shot.SaveToFile(settings::C_configPath + filename.str())) {
                     std::cout << "Saved screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
                 } else {
                     std::cout << "Failed saving screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
                 }
@@ -199,8 +212,8 @@ namespace window {
             window_.Create(mode, "M.A.R.S. - a " + generateName::game(), sf::Style::Fullscreen);
         else
             window_.Create(mode, "M.A.R.S. - a " + generateName::game());
-        //window_.EnableVerticalSync(settings::C_vsync);
-        window_.SetFramerateLimit(60);
+        window_.EnableVerticalSync(settings::C_vsync);
+        //window_.SetFramerateLimit(60);
 
         sf::Image icon;
         icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");

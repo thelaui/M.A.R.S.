@@ -194,4 +194,38 @@ namespace spaceObjects {
         objectList_.clear();
         homeList_.clear();
     }
+
+    void populateSpace() {
+        int sunCount(2), holeCount(1), planetCount(4);
+        int count = rand()%5 + 1;
+        if (count == 5) count -= rand()%2;
+        if (count == 4) count -= rand()%2;
+
+        while (count > 0) {
+            int type = rand()%7;
+            switch (type) {
+                case 0:
+                    if (holeCount > 0) {
+                        addBlackHole();
+                        --count;
+                        --holeCount;
+                    }
+                    break;
+                case 1:
+                    if (sunCount > 0) {
+                        addSun();
+                        --count;
+                        --sunCount;
+                    }
+                    break;
+                default:
+                    if (planetCount > 0) {
+                        addPlanet();
+                        --count;
+                        --planetCount;
+                    }
+            }
+
+        }
+    }
 }

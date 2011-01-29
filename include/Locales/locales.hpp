@@ -50,7 +50,7 @@ namespace locales {
                      ttZones, ttAIPaths, ttFullscreen, ttVerticalSynchronisation,
                      ttShaders, ttResolution, ttStarsHigh, ttParticleCountSlider, ttParticleLifetime, ttMusicVolume,
                      ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
-                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials,
+                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

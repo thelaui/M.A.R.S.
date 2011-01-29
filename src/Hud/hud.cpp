@@ -28,9 +28,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/GameStats.hpp"
 # include "Hud/GamePoints.hpp"
 # include "Hud/TabStats.hpp"
+# include "Hud/Message.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "Hud/CountDown.hpp"
 # include "Particles/particles.hpp"
+# include "Media/text.hpp"
 
 # include <sstream>
 
@@ -44,6 +46,8 @@ namespace hud {
         GamePoints* gamePoints_ = new GamePoints();
         TabStats* tabStats_ = new TabStats();
         CountDown* countDown_ = new CountDown();
+
+        std::list<Message*> messages_;
     }
 
     void update() {
@@ -58,12 +62,26 @@ namespace hud {
         }
         else tabStats_->display(false);
 
+        std::list<Message*>::iterator it = messages_.begin();
+        while (it != messages_.end()) {
+            (*it)->update();
+            if ((*it)->isDead()) {
+                delete *it;
+                it = messages_.erase(it);
+            }
+            else ++it;
+        }
+
     }
 
     void draw() {
         particles::drawNumbers();
-        if (games::type() == games::gMenu)   logo_->draw();
-        else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial) countDown_->draw();
+
+        if (games::type() == games::gMenu)
+            logo_->draw();
+        else if (games::elapsedTime() < 6.f && games::type() != games::gTutorial)
+            countDown_->draw();
+
         gameStats_->draw();
 
         if (games::type() != games::gMenu)
@@ -80,6 +98,10 @@ namespace hud {
             leftLife_ ->draw();
         }
         tabStats_->draw();
+
+        text::drawFooText();
+        for (std::list<Message*>::iterator it=messages_.begin(); it!=messages_.end(); ++it)
+            (*it)->draw();
     }
 
     void displayPoints() {
@@ -93,6 +115,10 @@ namespace hud {
 
     void init() {
         tabStats_->refresh();
+    }
+
+    void displayMessage(sf::String const& message, Color3f const& color) {
+        messages_.push_back(new Message(message, color));
     }
 }
 
