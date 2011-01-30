@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Label: public UiElement {
     public:
-        Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(0.75f,0.75f,0.75f), bool interactive = true, sf::Font* font = NULL);
+        Label (sf::String* text, int textAlign, Vector2f const& topLeft, float fontSize = 12.f, Color3f color = Color3f(0.65f,0.65f,0.65f), bool interactive = true, sf::Font* font = NULL);
 
         void mouseMoved(Vector2f const& position);
 

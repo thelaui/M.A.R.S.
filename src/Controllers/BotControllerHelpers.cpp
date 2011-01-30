@@ -143,12 +143,12 @@ Vector2f BotController::calcPath(Vector2f const& endPoint, bool avoidBall) {
 
 void BotController::shootEnemy(Ship* enemyShip) {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
-    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation)).normalize();
+    Vector2f shipDirection = Vector2f(std::cos(shipRotation), std::sin(shipRotation));
     if (enemyShip == NULL) {
         std::vector<Player*>const& enemies = teams::getEnemy(slave_->team())->members();
         for (std::vector<Player*>::const_iterator it = enemies.begin(); it != enemies.end(); ++it) {
             Vector2f pathToEnemy = calcPath((*it)->ship()->location(), false);
-            if (pathToEnemy == (*it)->ship()->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f)) {
+            if (pathToEnemy == (*it)->ship()->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 50.f)) {
                 shootPoint(pathToEnemy);
                 break;
             }
@@ -156,7 +156,7 @@ void BotController::shootEnemy(Ship* enemyShip) {
     }
     else {
         Vector2f pathToEnemy = calcPath(enemyShip->location(), true);
-            if (pathToEnemy == enemyShip->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 10.f))
+            if (pathToEnemy == enemyShip->location() && spaceObjects::isOnLine(ship()->location(), shipDirection, pathToEnemy, 50.f))
                 shootPoint(pathToEnemy);
     }
 }
