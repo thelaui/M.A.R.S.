@@ -49,3 +49,15 @@ void RocketLauncher::fire() const {
         sound::playSound(sound::Pump, parent_->location());
     }
 }
+
+float RocketLauncher::maxDistance() const {
+    return 500.f;
+}
+
+float RocketLauncher::minDistance() const {
+    return 50.f;
+}
+
+float RocketLauncher::maxAngle() const {
+    return 30.f;
+}

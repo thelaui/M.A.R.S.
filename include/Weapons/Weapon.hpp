@@ -51,6 +51,15 @@ class Weapon {
         /// Returns the type of the Weapon.
         weapons::WeaponType getType() const {return type_;}
 
+        /// Returns the maximum distance from which this weapon should be used.
+        virtual float maxDistance() const = 0;
+
+        /// Returns the minimum distance from which this weapon should be used.
+        virtual float minDistance() const = 0;
+
+        /// Returns the maximum angle from which this weapon should be used.
+        virtual float maxAngle()   const = 0;
+
     protected:
         Ship* parent_;
         mutable float timer_;

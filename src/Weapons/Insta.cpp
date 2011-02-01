@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Teams/Team.hpp"
 
 # include <SFML/Graphics.hpp>
+# include <cfloat>
 
 void Insta::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -50,4 +51,17 @@ void Insta::fire() const {
         particles::spawn(particles::pAmmoInsta, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), tmp, parent_->getOwner());
         sound::playSound(sound::Sniper, parent_->location());
     }
+}
+
+
+float Insta::maxDistance() const {
+    return FLT_MAX;
+}
+
+float Insta::minDistance() const {
+    return 20.f;
+}
+
+float Insta::maxAngle() const {
+    return 30.f;
 }

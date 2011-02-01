@@ -49,3 +49,15 @@ void Shotgun::fire() const {
         sound::playSound(sound::Pump, parent_->location());
     }
 }
+
+float Shotgun::maxDistance() const {
+    return 300.f;
+}
+
+float Shotgun::minDistance() const {
+    return 0.f;
+}
+
+float Shotgun::maxAngle() const {
+    return 20.f;
+}

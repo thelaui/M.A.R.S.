@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 
 # include <SFML/Graphics.hpp>
+# include <cfloat>
 
 void AFK47::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -52,4 +53,16 @@ void AFK47::fire() const {
         particles::spawn(particles::pAmmoAFK47, Vector2f(parent_->location().x_+(faceDirection.x_*parent_->radius()*0.9 + faceDirection.y_*parent_->radius()*0.9), parent_->location().y_+(-faceDirection.x_*parent_->radius()*0.7 + faceDirection.y_*parent_->radius()*0.7)), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
         sound::playSound(sound::Laser, parent_->location());
     }
+}
+
+float AFK47::maxDistance() const {
+    return FLT_MAX;
+}
+
+float AFK47::minDistance() const {
+    return 0.f;
+}
+
+float AFK47::maxAngle() const {
+    return 10.f;
 }

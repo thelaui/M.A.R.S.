@@ -34,6 +34,15 @@ class Insta: public Weapon {
 
         /// Draws the weapon.
         void draw() const;
+
+        /// Returns the maximum distance from which this weapon should be used.
+        float maxDistance() const;
+
+        /// Returns the minimum distance from which this weapon should be used.
+        float minDistance() const;
+
+        /// Returns the maximum angle from which this weapon should be used.
+        float maxAngle()   const;
 };
 
 # endif // INSTA_HPP_INCLUDED

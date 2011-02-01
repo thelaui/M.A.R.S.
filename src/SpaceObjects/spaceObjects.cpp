@@ -145,7 +145,8 @@ namespace spaceObjects {
                  && (end   - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2))
                     checkRadius += minDistance;
 
-                if (isOnLine(start, end-start, (*it)->location(), checkRadius)) {
+                //if (isOnLine(start, end-start, (*it)->location(), checkRadius)) {
+                if (((end-start)*((*it)->location() - start) > 0 && (std::pow(((end-start)*((*it)->location() - start))/(end-start).lengthSquare(), 2) - (((*it)->location() -start).lengthSquare() - std::pow(checkRadius, 2))/(end-start).lengthSquare()) > 0)) {
                     // check if object is in between or endpoint inside of obstacle
                     if ((end - start)*(end - (*it)->location()) >= 0.f || (end - (*it)->location()).lengthSquare() < std::pow((*it)->radius(), 2)) {
                         // hacky... should check for distańce to impactlocation, but does not...
@@ -184,8 +185,7 @@ namespace spaceObjects {
     }
 
     bool isOnLine(Vector2f source, Vector2f direction, Vector2f target, float radius) {
-        return (direction*(target - source) > 0
-                && (std::pow((direction*(target - source))/direction.lengthSquare(), 2) - ((target -source).lengthSquare() - std::pow(radius, 2))/direction.lengthSquare()) > 0);
+        return std::acos(direction.normalize()*(target - source).normalize()) < radius*M_PI/360;
     }
 
     void clear() {
@@ -200,6 +200,8 @@ namespace spaceObjects {
         int count = rand()%5 + 1;
         if (count == 5) count -= rand()%2;
         if (count == 4) count -= rand()%2;
+        if (count == 3) count -= rand()%2;
+        if (count == 2) count -= rand()%2;
 
         while (count > 0) {
             int type = rand()%7;

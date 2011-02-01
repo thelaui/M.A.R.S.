@@ -46,7 +46,8 @@
 028 Destroy es many enemies as possible!
 029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer.
 030 Pick up the remote and keep it as long as possible!
-
+206 As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!  \n \nUnfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand. \n \nWin this battle, and the victory of the GREAT WAR may be yours. 
+207 Destroy es many enemies as possible!
 
 // display options
 // tabs
@@ -257,8 +258,7 @@
 177 Displays the amount of active particles.
 178 Dismisses tool tips like this one.
 179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
+180 When this key is pressed, a screen shot is saved to
 182 If that many ships explode simultaneously, the slow motion effect kicks in.
 183 Displays the job of each bot.
 184 Displays tactical zones, which are important for the artificial intelligence.
@@ -288,4 +288,4 @@
 
 205 Screen shot saved!
 
-// 206
+// 208 (181)

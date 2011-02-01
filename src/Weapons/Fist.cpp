@@ -73,4 +73,14 @@ void Fist::fire() const {
     }
 }
 
+float Fist::maxDistance() const {
+    return 75.f;
+}
 
+float Fist::minDistance() const {
+    return 0.f;
+}
+
+float Fist::maxAngle() const {
+    return 10.f;
+}

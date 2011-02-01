@@ -46,11 +46,12 @@ namespace locales {
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
                      Resolution, ColorDepth, SpecialKey, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
-                     ttScreenShotFormat, ttScreenShotKeyUnix, ttScreenShotKeyWindows, ttSlowMoKickIn, ttBotsOrientation,
+                     ttScreenShotFormat, ttScreenShotKey, sssssssss, ttSlowMoKickIn, ttBotsOrientation,
                      ttZones, ttAIPaths, ttFullscreen, ttVerticalSynchronisation,
                      ttShaders, ttResolution, ttStarsHigh, ttParticleCountSlider, ttParticleLifetime, ttMusicVolume,
                      ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
-                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot,
+                     ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot, InfoGIP,
+                     ShortDescriptionGIP,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

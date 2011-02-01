@@ -51,4 +51,14 @@ void Burner::fire() const {
     }
 }
 
+float Burner::maxDistance() const {
+    return 200.f;
+}
 
+float Burner::minDistance() const {
+    return 0.f;
+}
+
+float Burner::maxAngle() const {
+    return 10.f;
+}

@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 
 # include <SFML/Graphics.hpp>
+# include <cfloat>
 
 void H2OMG::draw() const {
     glLineWidth(1);
@@ -49,3 +50,14 @@ void H2OMG::fire() const {
     }
 }
 
+float H2OMG::maxDistance() const {
+    return FLT_MAX;
+}
+
+float H2OMG::minDistance() const {
+    return 0.f;
+}
+
+float H2OMG::maxAngle() const {
+    return 20.f;
+}

@@ -117,14 +117,7 @@ UiWindow* OptionsMenu::get() {
             fileFormats.push_back("PNG(*.png)");
             fileFormats.push_back("TARGA (*.tga)");
         tabInterface->addWidget(new ComboBox(locales::getLocale(locales::ScreenShotFormat), locales::getLocale(locales::ttScreenShotFormat), &format_, fileFormats, Vector2f(10,160), 350, 185));
-
-        # ifdef __linux__
-        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKeyUnix), &settings::C_screenShotKey, Vector2f(10,180), 350));
-        # endif
-
-        # ifndef __linux__
-        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKeyWindows), &settings::C_screenShotKey, Vector2f(10,180), 350));
-        # endif
+        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKey), &settings::C_screenShotKey, Vector2f(10,180), 350));
 
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), locales::getLocale(locales::ttFullscreen), &fullscreen_, Vector2f(10,50), 150));
         tabGraphics->addWidget(new Label(locales::getLocale(locales::WindowSettings), TEXT_ALIGN_LEFT, Vector2f(10,30), 12.f, Color3f(1.f, 0.5f, 0.9f), false));

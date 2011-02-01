@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 
 # include <SFML/Graphics.hpp>
+# include <cfloat>
 
 void ROFLE::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -48,3 +49,14 @@ void ROFLE::fire() const {
     }
 }
 
+float ROFLE::maxDistance() const {
+    return FLT_MAX;
+}
+
+float ROFLE::minDistance() const {
+    return 0.f;
+}
+
+float ROFLE::maxAngle() const {
+    return 5.f;
+}

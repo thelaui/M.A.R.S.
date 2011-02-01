@@ -69,7 +69,7 @@ void BotController::kickBallToEnemy() {
             moveTo(aimPosition, 0.2f, true);
         }
 
-        shootEnemy();
+        shootEnemies();
     }
 }
 
@@ -114,7 +114,7 @@ void BotController::waitForBall() {
     Vector2f aimPosition = ballLocation + planetBall*50;
     moveTo(aimPosition, 1.5f, true);
 
-    shootEnemy();
+    shootEnemies();
 }
 
 

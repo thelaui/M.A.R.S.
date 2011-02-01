@@ -49,3 +49,14 @@ void Flubba::fire() const {
     }
 }
 
+float Flubba::maxDistance() const {
+    return 150.f;
+}
+
+float Flubba::minDistance() const {
+    return 20.f;
+}
+
+float Flubba::maxAngle() const {
+    return 10.f;
+}

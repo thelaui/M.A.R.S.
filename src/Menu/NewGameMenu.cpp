@@ -35,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/InfoDM.hpp"
 # include "Menu/InfoTDM.hpp"
 # include "Menu/InfoCK.hpp"
+# include "Menu/InfoGIP.hpp"
 # include "Menu/WeaponOptions.hpp"
 # include "Locales/locales.hpp"
 
@@ -219,7 +220,7 @@ void NewGameMenu::checkWidgets() {
             menus::showWindow(InfoCK::get());
         }
         else if (tabGraveItation_->isActive()) {
-            menus::showWindow(InfoCK::get());
+            menus::showWindow(InfoGIP::get());
         }
     }
     else if (tSB_) {

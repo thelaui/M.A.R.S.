@@ -40,6 +40,9 @@ namespace locales {
                     if (id < COUNT && it->GetSize() > 4) {
                         sf::String tmp(*it);
                         tmp.Erase(0, 4);
+
+                        if (id == ttScreenShotKey)
+                            tmp += " " + settings::C_configPath + "screenshots/";
                         localeStrings_[id] = tmp;
                     }
                 }

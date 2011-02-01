@@ -189,7 +189,7 @@ namespace settings {
             return true;
         }
         else {
-            std::cout << "Faild to save configuration file " << C_configPath << "!" << std::endl;
+            std::cout << "Faild to save configuration file " << C_configPath << "mars.cfg!" << std::endl;
             return false;
         }
     }

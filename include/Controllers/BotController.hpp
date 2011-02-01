@@ -106,7 +106,8 @@ class BotController: public Controller {
         bool     turnTo(Vector2f const& location);
         bool     moveTo(Vector2f const& location, float stopFactor, bool avoidBall = true, float minDistance = 10.f, bool goingToLand = false);
         Vector2f calcPath(Vector2f const& endPoint, bool avoidBall);
-        void     shootEnemy(Ship* enemyShip = NULL);
+        void     shootEnemies();
+        void     shootEnemy(Ship* enemyShip);
         void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true);
 
         Vector2f nextRoutePoint_;
