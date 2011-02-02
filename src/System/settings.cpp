@@ -197,7 +197,9 @@ namespace settings {
     bool load() {
         // check whether application directory in the home diretory exists, if not create it
         # ifdef __linux__
-            mkdir((std::string(getenv("HOME")) + ".marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            std::string home(getenv("HOME"));
+            if (*home.rbegin() != '/') home += '/';
+            mkdir((home + ".marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
         # ifdef __WIN32__
@@ -205,7 +207,9 @@ namespace settings {
         # endif
 
         # ifdef __APPLE__
-            mkdir((std::string(getenv("HOME")) + "/Library/Application Support/mars/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            std::string home(getenv("HOME"));
+            if (*home.rbegin() != '/') home += '/';
+            mkdir((home + "Library/Application Support/mars/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
         // search for config file
@@ -215,14 +219,17 @@ namespace settings {
             C_configPath = "./";
 
             # ifdef __linux__
+                std::string home(getenv("HOME"));
+                if (*home.rbegin() != '/') home += '/';
+
                 if (std::ifstream((C_configPath + "mars.cfg").c_str()))
                     success = true;
-                else if (std::ifstream((std::string(getenv("HOME")) + "/.marsshooter/mars.cfg").c_str())) {
-                    C_configPath =      std::string(getenv("HOME")) + "/.marsshooter/";
+                else if (std::ifstream((home + ".marsshooter/mars.cfg").c_str())) {
+                    C_configPath =      home + ".marsshooter/";
                     success = true;
                 }
                 else {
-                    C_configPath =      std::string(getenv("HOME")) + "/.marsshooter/";
+                    C_configPath =      home + ".marsshooter/";
                 }
             # endif
 
@@ -232,12 +239,15 @@ namespace settings {
             # endif
 
             # ifdef __APPLE__
-                if (std::ifstream((std::string(getenv("HOME")) + "/Library/Application Support/mars/mars.cfg").c_str())) {
-                    C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
+                std::string home(getenv("HOME"));
+                if (*home.rbegin() != '/') home += '/';
+
+                if (std::ifstream((home + "Library/Application Support/mars/mars.cfg").c_str())) {
+                    C_configPath =      home + "Library/Application Support/mars/";
                     success = true;
                 }
                 else {
-                    C_configPath =      std::string(getenv("HOME")) + "/Library/Application Support/mars/";
+                    C_configPath =      home + "Library/Application Support/mars/";
                 }
             # endif
 

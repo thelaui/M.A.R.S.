@@ -213,7 +213,7 @@ namespace window {
         else
             window_.Create(mode, "M.A.R.S. - a " + generateName::game());
         window_.EnableVerticalSync(settings::C_vsync);
-        //window_.SetFramerateLimit(60);
+        //window_.SetFramerateLimit(15);
 
         sf::Image icon;
         icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
