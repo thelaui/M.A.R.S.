@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
-void NoSpecial::draw() const {
+void NoSpecial::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
@@ -32,7 +32,7 @@ void NoSpecial::draw() const {
     if (tmp.v() < 0.5f) tmp.v(0.5f);
     if (tmp.s() < 0.5f) tmp.s(0.5f);
 
-    tmp.gl4f(0.7f);
+    tmp.gl4f(0.7f*alpha);
 
     const int posX = 3;
     const int posY = 3;

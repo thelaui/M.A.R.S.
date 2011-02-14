@@ -22,7 +22,7 @@ struct Job {
     enum JobType{jLand, jCharge, jHeal, jAssist, jUnfreeze, jAttackAny,
                  jAttackTarget, jGetPUFuel, jGetPUHealth, jGetPUReverse,
                  jGetPUShield, jGetPUSleep, jKickOutHome, jKickToEnemy,
-                 jWaitForBall, jProtectZone};
+                 jWaitForBall, jProtectZone, jEscape};
 
     Job(JobType type, short priority, void* object = NULL):
          type_(type),

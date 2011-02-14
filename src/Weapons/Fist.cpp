@@ -24,10 +24,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
+# include "Teams/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 
-void Fist::draw() const {
+void Fist::draw(float alpha) const {
     if (!menus::visible() || games::type() == games::gMenu) {
         float time = timer::totalTime();
         if (time - timer_ < 0.1f)
@@ -39,7 +40,7 @@ void Fist::draw() const {
     }
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor4f(1.0f, 1.0f, 1.0f, alpha);
 
     glBegin(GL_QUADS);
         glTexCoord2f(0.109375f, 0.953125f); glVertex2f(0.f,          parent_->radius()*0.5f);
@@ -48,7 +49,7 @@ void Fist::draw() const {
         glTexCoord2f(0.203125f, 0.859375f); glVertex2f(position_*parent_->radius()*(position_+1)*1.2f, (     parent_->radius()*0.5f)*(1+position_)*0.7f);
     glEnd();
 
-    parent_->getOwner()->color().gl3f();
+    parent_->getOwner()->team()->color().gl4f(alpha);
     const float posX = 2;
     const float posY = 28;
     glBegin(GL_QUADS);

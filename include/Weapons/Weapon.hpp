@@ -35,7 +35,7 @@ class Weapon {
         virtual void fire() const = 0;
 
         /// Draws the weapon.
-        virtual void draw() const = 0;
+        virtual void draw(float alpha) const = 0;
 
         /// Replaces this weapon by the next one.
         /// With this method it's possible to cycle through the weapons.

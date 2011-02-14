@@ -33,7 +33,7 @@ class Ball: public MobileSpaceObject {
         void onShockWave(SpaceObject* source, float intensity);
 
         bool atStart() const     {return sticky_;}
-        bool isVisible() const   {return visible_;}
+        bool isVisible() const      {return visible_;}
         float heatAmount() const {return heatTimer_*5.f;}
 
         friend class BotController;

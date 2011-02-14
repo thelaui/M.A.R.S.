@@ -25,9 +25,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <cfloat>
 
-void ROFLE::draw() const {
+void ROFLE::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor3f(1.0, 0.4, 0.4);
+    glColor4f(1.0, 0.4, 0.4, alpha);
     const int posX = 0;
     const int posY = 31;
     glBegin(GL_QUADS);

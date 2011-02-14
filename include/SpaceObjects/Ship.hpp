@@ -52,6 +52,8 @@ class Ship: public MobileSpaceObject {
 
         float   rotation() const;
 
+        bool    collidable() const;
+
         std::vector<PowerUp*> const& getCollectedPowerUps() const;
 
         friend class Controller;
@@ -87,6 +89,7 @@ class Ship: public MobileSpaceObject {
         bool specialChange_;
 
         bool visible_;
+        float ghostTimer_;
         float frozen_;
         float respawnTimer_;
         float damageSourceResetTimer_;

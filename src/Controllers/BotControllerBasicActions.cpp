@@ -40,8 +40,8 @@ void BotController::switchWeapon() {
     if (weaponChangeTimer_ <= 0.f) {
         slaveFire();
         slaveLeft();
-        if(ship()->currentWeapon_->getType() == weapons::wFlubba)
-            slaveLeft();
+        //if(ship()->currentWeapon_->getType() == weapons::wFlubba)
+        //    slaveLeft();
         slaveFire();
 
         if (sf::Randomizer::Random(0, 2) == 0)

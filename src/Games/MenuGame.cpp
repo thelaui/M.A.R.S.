@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/MenuGame.hpp"
 
-# include "Teams/DMTeam.hpp"
+# include "Teams/TDMTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Hud/hud.hpp"
@@ -37,8 +37,8 @@ MenuGame::MenuGame():
 
     Color3f rand = Color3f::random();
 
-    Team* myTeamL = teams::addTeam(new DMTeam(rand));
-    Team* myTeamR = teams::addTeam(new DMTeam(rand.inverted()));
+    Team* myTeamL = teams::addTeam(new TDMTeam(rand));
+    Team* myTeamR = teams::addTeam(new TDMTeam(rand.inverted()));
 
     for (int i=0; i<5;  ++i)    players::addPlayer(myTeamL, controllers::cBot);
     for (int i=0; i<5; ++i)     players::addPlayer(myTeamR, controllers::cBot);

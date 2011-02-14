@@ -32,7 +32,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoRocket*> AmmoRocket::activeParticles_;
 
 AmmoRocket::AmmoRocket(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoRocket>(spaceObjects::oAmmoRocket, location, 10.f, 3.0f, FLT_MAX),
+         Particle<AmmoRocket>(spaceObjects::oAmmoRocket, location, 10.f, 3.0f, 10000.f),
          timer_(1.f),
          target_(NULL),
          parent_(damageSource),
@@ -55,14 +55,13 @@ AmmoRocket::~AmmoRocket() {
 
 void AmmoRocket::update() {
     float const time = timer::frameTime();
-    if (timer_ >= 0.5)
-        physics::collide(this, STATICS | MOBILES | PARTICLES);
-    else
-        physics::collide(this, STATICS | MOBILES);
+
+    physics::collide(this, STATICS | MOBILES | PARTICLES);
 
     if (target_) {
-        if (target_->getLife() == 0.f)
+        if (target_->getLife() == 0.f) {
             target_ = NULL;
+        }
         else {
             float const speed(velocity_.length());
             velocity_ /= speed;
@@ -73,7 +72,7 @@ void AmmoRocket::update() {
                 velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
             else
                 velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
-            velocity_ *= speed;
+            velocity_ *= 300.f;
         }
     }
 
@@ -92,7 +91,7 @@ void AmmoRocket::update() {
         float closest(FLT_MAX);
         for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it) {
             float distance((location_ - (*it)->location()).lengthSquare());
-            if ( distance < closest && (*it)->getLife() != 0.f) {
+            if ( distance < closest && (*it)->collidable()) {
                 target_ = *it;
                 closest = distance;
             }
@@ -146,33 +145,24 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
     float amount(0.f), unfreeze(0.f);
 
     switch (with->type()) {
-        case spaceObjects::oAmmoFist:
-            target_ = NULL;
-            timer_ = 0.5f;
-            break;
 
         case spaceObjects::oAmmoAFK47:
-            amount = strength*0.02f;
-            unfreeze = 1.f;
-            break;
-
-        case spaceObjects::oAmmoROFLE:
-            amount = life_;
-            unfreeze = 10.f;
-            break;
-
-        case spaceObjects::oAmmoShotgun:
             amount = strength*0.01f;
             unfreeze = 1.f;
             break;
 
+        case spaceObjects::oAmmoShotgun:
+            amount = strength*0.005f;
+            unfreeze = 1.f;
+            break;
+
         case spaceObjects::oAmmoFlubba:
-            amount = sf::Randomizer::Random(5.5f, 8.f);
+            amount = 5.f;
             unfreeze = 10.f;
             break;
 
         case spaceObjects::oMiniAmmoFlubba:
-            amount = sf::Randomizer::Random(1.7f, 3.f);
+            amount = 1.f;
             break;
 
         case spaceObjects::oAmmoBurner:
@@ -180,9 +170,11 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
             unfreeze = 1.f;
             break;
 
+        case spaceObjects::oAmmoFist:
+        case spaceObjects::oAmmoROFLE:
         case spaceObjects::oAmmoRocket:
-            unfreeze = 40.f;
-            life_ = 0.f;
+            unfreeze = frozen_;
+            amount = life_;
             break;
 
         case spaceObjects::oShip: {

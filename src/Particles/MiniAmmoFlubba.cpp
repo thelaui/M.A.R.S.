@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<MiniAmmoFlubba*> MiniAmmoFlubba::activeParticles_;
 
 MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 1.8f, sf::Randomizer::Random(10.f, 17.f)) {
+           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 0.2f, sf::Randomizer::Random(10.f, 17.f)) {
 
     setDamageSource(damageSource);
 
@@ -71,7 +71,9 @@ void MiniAmmoFlubba::draw() const {
 
 void MiniAmmoFlubba::onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity) {
-    killMe();
+    if (!isDead() && with->type() != spaceObjects::oAmmoFlubba && with->type() != spaceObjects::oMiniAmmoFlubba) {
+        killMe();
+    }
 }
 
 void MiniAmmoFlubba::shockWave(Vector2f const& location, float strength, float radius) {

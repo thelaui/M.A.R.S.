@@ -35,7 +35,7 @@ void GITeam::checkEnemies() {
     bool existAny(false);
 
     for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it)
-        if ((*it)->getOwner()->team() != this && (*it)->getLife() > 0) {
+        if ((*it)->getOwner()->team() != this && (*it)->collidable()) {
             existAny = true;
             break;
         }

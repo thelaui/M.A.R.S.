@@ -25,9 +25,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <cfloat>
 
-void AFK47::draw() const {
+void AFK47::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    parent_->getOwner()->color().gl3f();
+    parent_->getOwner()->color().gl4f(alpha);
     const int posX = 0;
     const int posY = 28;
     glBegin(GL_QUADS);

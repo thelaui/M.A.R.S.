@@ -67,14 +67,18 @@ void BotController::performJob() {
         case Job::jAttackAny:          attackAny();                                           break;
         case Job::jHeal:               heal();                                                break;
         case Job::jUnfreeze:           unfreeze();                                            break;
-        case Job::jGetPUFuel: case Job::jGetPUHealth: case Job::jGetPUReverse: case Job::jGetPUShield:
-            case Job::jGetPUSleep:     getPowerUp();                                          break;
+        case Job::jGetPUFuel:
+          case Job::jGetPUHealth:
+          case Job::jGetPUReverse:
+          case Job::jGetPUShield:
+          case Job::jGetPUSleep:       getPowerUp();                                          break;
         case Job::jKickOutHome:        kickBallOutHome();                                     break;
         case Job::jKickToEnemy:        kickBallToEnemy();                                     break;
         case Job::jWaitForBall:        waitForBall();                                         break;
         case Job::jProtectZone:        protectZone();                                         break;
         case Job::jLand:               land();                                                break;
         case Job::jCharge:             charge();                                              break;
+        case Job::jEscape:             escape();                                              break;
         default:;
     }
 }
@@ -103,7 +107,7 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     if (ship()->docked_) {
                         float life = 100.f - std::pow(ship()->getLife(),4)*0.000001f;
                         float fuel = 100.f - std::pow(ship()->getFuel(),4)*0.000001f;
-                        need = std::max(life,fuel) + didThisJobLAstTimeToo;
+                        need = std::max(life,fuel);
                     }
                     break;
                 }
@@ -225,6 +229,10 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     dist = 100 - dist;
                     if (dist < 0) dist = 0;
                     need = 10 + dist + didThisJobLAstTimeToo;
+                    break;
+                }
+                case Job::jEscape: {
+                    need = 10 + didThisJobLAstTimeToo;
                     break;
                 }
                 default:;

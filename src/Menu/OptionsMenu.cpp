@@ -145,7 +145,6 @@ UiWindow* OptionsMenu::get() {
             }
         }
         tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), locales::getLocale(locales::ttResolution), &resolution_, resolutions, Vector2f(10,110), 360, 185));
-        //tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::ColorDepth), NULL, &colorDepth_, colorDepths, Vector2f(10,130), 360, 185));
         tabGraphics->addWidget(new Label(locales::getLocale(locales::GameSettings), TEXT_ALIGN_LEFT, Vector2f(10,170), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), locales::getLocale(locales::ttStarsHigh), &settings::C_StarsHigh, Vector2f(10,190), 150));
         tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), locales::getLocale(locales::ttParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(10,210), 560));

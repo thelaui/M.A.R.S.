@@ -49,6 +49,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                weaponChange_(false),
                specialChange_(false),
                visible_(true),
+               ghostTimer_(1.f),
                frozen_(0.f),
                respawnTimer_(0.f),
                damageSourceResetTimer_(0.f),
@@ -86,7 +87,6 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
         currentSpecial_ = specials::create(specials::sHeal, this);
     }
 
-    physics::addMobileObject(this);
     owner->ship_ = this;
     damageSource_ = owner_;
 }
@@ -114,116 +114,128 @@ void Ship::update() {
     }
 
     if (visible_) {
-        if (frozen_ <= 0) {
-            // spin around
-            if (collectedPowerUps_[items::puReverse]) {
-                if (right_) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
-                if (left_ ) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+        if (ghostTimer_ > 0.f && !(docked_ && ghostTimer_ == 1.f)) {
+            ghostTimer_ -= time;
+            if (ghostTimer_ <= 0.f)
+                physics::addMobileObject(this);
+        }
+
+        if ((games::elapsedTime() > 4.f) || (games::type() == games::gTutorial)) {
+
+            if (frozen_ <= 0) {
+                // spin around
+                if (collectedPowerUps_[items::puReverse]) {
+                    if (right_) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+                    if (left_ ) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+                }
+                else {
+                    if (right_) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+                    if (left_ ) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+                }
+                if (!right_ && !left_) rotateSpeed_ = 1.0;
+                else if (rotateSpeed_ < 10.f) rotateSpeed_ += time*30.f;
+
+                // accelerate
+                float angleRad = rotation_ * M_PI / 180.f;
+                Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
+                Vector2f acceleration;
+                if (up_ && getFuel() > 0.f) {
+                    fuel_ -= time*3.f;
+                    acceleration = faceDirection * 300.f;
+                    particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
+                    particles::spawnTimed(10.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
+                }
+                else {
+                    acceleration = Vector2f();
+                    if (getFuel() < maxFuel_)
+                        fuel_ += time*0.5f;
+                    else
+                        fuel_ = maxFuel_;
+                }
+
+
+                // movement
+                // check if docked
+                Home const* home = owner_->team()->home();
+                Vector2f toHome = home->location()-location_;
+                bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
+                if (!up_ && velocity_.lengthSquare() < 10000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
+                    docked_ = true;
+                    velocity_ = Vector2f();
+                    if (fuel_ < maxFuel_) {
+                        if (fuel_ > 0) fuel_ += time*maxFuel_*0.2;
+                    }
+                    else fuel_ = maxFuel_;
+
+                    if (life_ < maxLife_) {
+                        if (life_ > 0) life_ += time*maxLife_*0.2;
+                    }
+                    else life_ = maxLife_;
+
+                    if (owner_->controlType_ == controllers::cPlayer1 || owner_->controlType_ == controllers::cPlayer2) {
+                            if (life_ < maxLife_) {
+                                damageByLocalPlayer_ += time*maxLife_*0.2;
+                                collisionCount_ = 1;
+                                damageDirection_ = Vector2f(0.f, -250.f);
+                            }
+                            if (damageCheckTimer_ <= 0.f)
+                                damageCheckTimer_ = 0.6f;
+                    }
+                }
+                else {
+                    docked_ = false;
+                    weaponChange_ = false;
+                    specialChange_ = false;
+                    acceleration += physics::attract(this);
+                }
+
+                // s = s0 + v0*t + 0.5*a*t*t
+                location_ += velocity_*time + acceleration*0.5f*time*time;
+                // v = v0 + a*t
+                velocity_ += acceleration*time + velocity_*(-0.2f)*time;
             }
             else {
-                if (right_) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
-                if (left_ ) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
-            }
-            if (!right_ && !left_) rotateSpeed_ = 1.0;
-            else if (rotateSpeed_ < 10.f) rotateSpeed_ += time*30.f;
-
-            // accelerate
-            float angleRad = rotation_ * M_PI / 180.f;
-            Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-            Vector2f acceleration;
-            if (up_ && getFuel() > 0.f) {
-                fuel_ -= time*3.f;
-                acceleration = faceDirection * 300.f;
-                particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
-                particles::spawnTimed(10.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
-            }
-            else {
-                acceleration = Vector2f();
-                if (getFuel() < maxFuel_)
-                    fuel_ += time*0.5f;
-                else
-                    fuel_ = maxFuel_;
-            }
-
-
-            // movement
-            // check if docked
-            Home const* home = owner_->team()->home();
-            Vector2f toHome = home->location()-location_;
-            bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
-            if (!up_ && velocity_.lengthSquare() < 10000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
-                docked_ = true;
-                velocity_ = Vector2f();
-                if (fuel_ < maxFuel_) {
-                    if (fuel_ > 0) fuel_ += time*maxFuel_*0.2;
-                }
-                else fuel_ = maxFuel_;
-
-                if (life_ < maxLife_) {
-                    if (life_ > 0) life_ += time*maxLife_*0.2;
-                }
-                else life_ = maxLife_;
-
-                if (owner_->controlType_ == controllers::cPlayer1 || owner_->controlType_ == controllers::cPlayer2) {
-                        if (life_ < maxLife_) {
-                            damageByLocalPlayer_ += time*maxLife_*0.2;
-                            collisionCount_ = 1;
-                            damageDirection_ = Vector2f(0.f, -250.f);
-                        }
-                        if (damageCheckTimer_ <= 0.f)
-                            damageCheckTimer_ = 0.6f;
+                frozen_ -= timer::frameTime()*3.f;
+                life_ -= timer::frameTime()*10.f;
+                if(damageSource_==players::getPlayerI() || damageSource_==players::getPlayerII() || owner_==players::getPlayerI() || owner_==players::getPlayerII()) {
+                    damageByLocalPlayer_ -= timer::frameTime()*10.f;
+                    collisionCount_ = 1;
+                    damageDirection_ = Vector2f(0.f, 400.f);
+                    if (damageCheckTimer_ <= 0.f)
+                        damageCheckTimer_ = 1.f;
                 }
             }
-            else {
-                docked_ = false;
-                weaponChange_ = false;
-                specialChange_ = false;
-                acceleration += physics::attract(this);
+
+            if (ghostTimer_ <= 0.f)
+                physics::collide(this, STATICS | MOBILES);
+            else
+                physics::collide(this, STATICS);
+
+            if (location_.x_ < radius_) {
+                location_.x_ = radius_;
+                velocity_.x_ = 0.f;
+            }
+            if (location_.x_ > 1280.f - radius_) {
+                location_.x_ = 1280.f - radius_;
+                velocity_.x_ = 0.f;
+            }
+            if (location_.y_ < radius_) {
+                location_.y_ = radius_;
+                velocity_.y_ = 0.f;
+            }
+            if (location_.y_ > 800.f - radius_) {
+                location_.y_ = 800.f - radius_;
+                velocity_.y_ = 0.f;
             }
 
-            // s = s0 + v0*t + 0.5*a*t*t
-            location_ += velocity_*time + acceleration*0.5f*time*time;
-            // v = v0 + a*t
-            velocity_ += acceleration*time + velocity_*(-0.2f)*time;
-        }
-        else {
-            frozen_ -= timer::frameTime()*3.f;
-            life_ -= timer::frameTime()*10.f;
-            if(damageSource_==players::getPlayerI() || damageSource_==players::getPlayerII() || owner_==players::getPlayerI() || owner_==players::getPlayerII()) {
-                damageByLocalPlayer_ -= timer::frameTime()*10.f;
-                collisionCount_ = 1;
-                damageDirection_ = Vector2f(0.f, 400.f);
-                if (damageCheckTimer_ <= 0.f)
-                    damageCheckTimer_ = 1.f;
+            // check for death
+            if (getLife() <= 0) explode();
+
+            if (frozen_ < 0.f) {
+                frozen_ = 0.f;
+                mass_ = 10.f;
+                particles::spawnMultiple(10, particles::pCrushedIce, location_);
             }
-        }
-
-        physics::collide(this, STATICS | MOBILES);
-
-        if (location_.x_ < radius_) {
-            location_.x_ = radius_;
-            velocity_.x_ = 0.f;
-        }
-        if (location_.x_ > 1280.f - radius_) {
-            location_.x_ = 1280.f - radius_;
-            velocity_.x_ = 0.f;
-        }
-        if (location_.y_ < radius_) {
-            location_.y_ = radius_;
-            velocity_.y_ = 0.f;
-        }
-        if (location_.y_ > 800.f - radius_) {
-            location_.y_ = 800.f - radius_;
-            velocity_.y_ = 0.f;
-        }
-
-        // check for death
-        if (getLife() <= 0) explode();
-
-        if (frozen_ < 0.f) {
-            frozen_ = 0.f;
-            mass_ = 10.f;
-            particles::spawnMultiple(10, particles::pCrushedIce, location_);
         }
     }
     else {
@@ -240,14 +252,15 @@ void Ship::draw() const {
 
         // draw ship
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        //glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
-        float x, y;
+        float x, y, alpha(ghostTimer_ == 1.f ? 0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f : (ghostTimer_ > 0.f ? ghostTimer_*(0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f) + 1.f-ghostTimer_ : 1.f));
 
         x = static_cast<float>(owner_->graphic()%8)*0.125f;
         y = static_cast<float>(std::floor(owner_->graphic()*0.125f))*0.375f;
 
-        glColor3f(1.f, 1.f, 1.f);
+        glColor4f(1.f, 1.f, 1.f, alpha);
         glBegin(GL_QUADS);
             glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
             glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
@@ -257,7 +270,7 @@ void Ship::draw() const {
 
         y += 0.125f;
 
-        owner_->team()->color().gl3f();
+        owner_->team()->color().gl4f(alpha);
         glBegin(GL_QUADS);
             glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
             glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
@@ -267,7 +280,7 @@ void Ship::draw() const {
 
         y += 0.125f;
 
-        owner_->color().gl3f();
+        owner_->color().gl4f(alpha);
         glBegin(GL_QUADS);
             glTexCoord2f(x, y+0.125f);          glVertex2f(-radius_, -radius_);
             glTexCoord2f(x+0.125f, y+0.125f);   glVertex2f(-radius_,  radius_);
@@ -304,15 +317,17 @@ void Ship::drawWeapon() const {
         glTranslatef(location_.x_, location_.y_, 0.f);
         glRotatef(timer::totalTime()*-50, 0.f, 0.f, 1.f);
 
+        float alpha(ghostTimer_ == 1.f ? 0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f : (ghostTimer_ > 0.f ? ghostTimer_*(0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f) + 1.f-ghostTimer_ : 1.f));
+
         // draw special
-        currentSpecial_->draw();
+        currentSpecial_->draw(alpha);
 
         glLoadIdentity();
         glTranslatef(location_.x_, location_.y_, 0.f);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
         // draw weapon
-        currentWeapon_->draw();
+        currentWeapon_->draw(alpha);
 
         glPopMatrix();
      }
@@ -574,15 +589,16 @@ void Ship::explode() {
 }
 
 void Ship::respawn() {
-    physics::addMobileObject(this);
     location_ = respawnLocation_;
     rotation_ = respawnRotation_;
     velocity_ = Vector2f();
-    rotateSpeed_ = (1.f);
+    rotateSpeed_ = 1.f;
     life_ = maxLife_;
     fuel_ = maxFuel_;
     fragStars_ = 0;
+    ghostTimer_ = 1.f;
     visible_ = true;
+    docked_ = true;
     damageByLocalPlayer_ = 0.f;
     damageDirection_ = Vector2f();
     collisionCount_ = 0;
@@ -593,3 +609,6 @@ float Ship::rotation() const {
     return rotation_;
 }
 
+bool Ship::collidable() const {
+    return visible_ && ghostTimer_ <= 0.f;
+}

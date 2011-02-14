@@ -57,21 +57,31 @@ namespace items {
 
                 if (newPowerUpFits) break;
             }
-            if(newPowerUpFits)
-                switch (sf::Randomizer::Random(static_cast<int>(puShield), static_cast<int>(COUNT))) {
-                    case puShield:
-                        powerUps_.push_back(new PUShield(position)); break;
-                    case puReverse:
-                        powerUps_.push_back(new PUReverse(position)); break;
-                    case puSleep:
-                        powerUps_.push_back(new PUSleep(position)); break;
-                    case puHealth:
-                        powerUps_.push_back(new PUHealth(position)); break;
-                    case puFuel:
-                        powerUps_.push_back(new PUFuel(position)); break;
+            if(newPowerUpFits) {
+                if (sf::Randomizer::Random(0, 4) == 0) {
+                    // rare powerUps
+                    switch (sf::Randomizer::Random(0, 1)) {
+                        case 0:
+                            powerUps_.push_back(new PUReverse(position)); break;
+                        case 1:
+                            powerUps_.push_back(new PUSleep(position)); break;
+                    }
                 }
+                else {
+                    // common powerUps
+                    switch (sf::Randomizer::Random(0, 2)) {
+                        case 0:
+                            powerUps_.push_back(new PUShield(position)); break;
+                        case 1:
+                            powerUps_.push_back(new PUHealth(position)); break;
+                        case 2:
+                            powerUps_.push_back(new PUFuel(position)); break;
+                    }
+                }
+            }
         }
     }
+
     void update() {
         if (cannonControl_)
             cannonControl_->update();

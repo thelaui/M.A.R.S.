@@ -26,9 +26,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <cmath>
 
 void BotController::checkAggro() {
-    if (ship()->getLife() > 0.f) {
+    if (ship()->collidable()) {
         if(lastFrameLife_ - ship()->getLife() > 0.f && ship()->damageSource()) {
-            if(ship()->damageSource() != slave_ && slave_->team() != ship()->damageSource()->team() && ship()->damageSource()->ship()->getLife() > 0.f)
+            if(ship()->damageSource() != slave_ && slave_->team() != ship()->damageSource()->team() && ship()->damageSource()->ship()->collidable())
                 aggroTable_[ship()->damageSource()->ship()] += (lastFrameLife_ - ship()->getLife()) * 30.f;
         }
 
@@ -46,11 +46,11 @@ void BotController::checkAggro() {
 
         float maxAggro(-1.f);
         for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-            if(it->second > 0.f && it->first->getLife() == 0.f)
+            if(it->second > 0.f && !it->first->collidable())
                 it->second = 0.f;
             if(it->second > 0.f && it->first != target_)
                 it->second -= 5.f;
-            if(it->second > maxAggro && it->first->getLife() > 0.f)
+            if(it->second > maxAggro && it->first->collidable())
                 maxAggro = it->second;
         }
         if (maxAggro > 120.f)
@@ -99,7 +99,7 @@ void BotController::checkSpecial() {
                 blastRadius *= blastRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-                    if ((*it)->getLife() > 0) {
+                    if ((*it)->collidable()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
                         if (distance <= blastRadius) {
                             if ((*it)->owner_->team() == slave_->team())
@@ -119,7 +119,7 @@ void BotController::checkSpecial() {
                 freezeRadius *= freezeRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-                    if ((*it)->getLife() > 0 && (*it)->frozen_ <= 0) {
+                    if ((*it)->collidable() && (*it)->frozen_ <= 0) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
                         if (distance <= freezeRadius) {
                             if ((*it)->owner_->team() == slave_->team())

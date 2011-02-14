@@ -124,6 +124,7 @@ void BotController::draw() {
                     decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.8f, 0.2f, 0.1f));
                     break;
                 }
+                case Job::jEscape:
                 case Job::jProtectZone: {
                     Vector2f direction(nextRoutePoint_ - shipLocation);
                     decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.4f, 0.f));

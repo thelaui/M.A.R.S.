@@ -25,10 +25,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoFlubba*> AmmoFlubba::activeParticles_;
 
 AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 0.4f, sf::Randomizer::Random(12.f, 15.f)) {
+         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 1.0f, sf::Randomizer::Random(12.f, 15.f)) {
 
     setDamageSource(damageSource);
-    velocity_ = velocity + direction*700;
+    velocity_ = velocity + direction*900;
     location_ += velocity_*timer::frameTime()*1.2f;
 
     radius_ = sf::Randomizer::Random(6.f, 8.f);
@@ -72,7 +72,7 @@ void AmmoFlubba::draw() const {
 
 void AmmoFlubba::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
-    if (!isDead()) {
+    if (!isDead() && with->type() != spaceObjects::oAmmoFlubba && with->type() != spaceObjects::oMiniAmmoFlubba) {
         physics::causeShockWave(damageSource(), location_, 350.f, 100.f, 0.f);
         sound::playSound(sound::BlubCollide, location_);
         killMe();

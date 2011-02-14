@@ -24,9 +24,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
-void Shotgun::draw() const {
+void Shotgun::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor4f(1.0f, 1.0f, 1.0f, alpha);
     const int posX = 1;
     const int posY = 31;
     glBegin(GL_QUADS);

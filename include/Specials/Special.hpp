@@ -35,7 +35,7 @@ class Special {
         virtual void activate() const = 0;
 
         /// Draws the special.
-        virtual void draw() const = 0;
+        virtual void draw(float alpha) const = 0;
 
         /// Replaces this special by the next one.
         /// With this method it's possible to cycle through the specials.

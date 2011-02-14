@@ -1,4 +1,4 @@
-/* Blast.hpp
+/* TDMTeam.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,32 +15,26 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef BLAST_HPP_INCLUDED
-# define BLAST_HPP_INCLUDED
+# ifndef TDMTEAM_HPP_INCLUDED
+# define TDMTEAM_HPP_INCLUDED
 
-# include "Specials/Special.hpp"
+# include "Teams/Team.hpp"
 
-/// Special: Blast.
-/// A blast wave.
-
-class Blast: public Special {
+class TDMTeam: public Team {
     public:
-        /// Ctor which constructs the special.
-        Blast(Ship* parent):
-              Special(specials::sBlast, parent, sf::String("BLAST")),
-              radius_(0.f) {};
-
-        /// Blasts away nearby ships.
-        void activate() const;
-
-        /// Draws the special.
-        void draw(float alpha) const;
+        TDMTeam(Color3f const& color = Color3f::random()):
+            Team(color) {}
 
     private:
-        mutable float radius_;
+        void createJobs();
+
+        void checkEnemies();
+        void checkPowerUps();
+
+        std::vector<Vector2f> powerUpLocations_;
 };
 
-# endif // BLAST_HPP_INCLUDED
+# endif // TDMTEAM_HPP_INCLUDED
 
 
 

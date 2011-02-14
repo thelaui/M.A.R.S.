@@ -1,4 +1,4 @@
-/* DMTeam.cpp
+/* TDMTeam.cpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,7 +15,7 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Teams/DMTeam.hpp"
+# include "Teams/TDMTeam.hpp"
 
 # include "Teams/teams.hpp"
 # include "Players/Player.hpp"
@@ -24,7 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/ships.hpp"
 # include "Games/games.hpp"
 
-void DMTeam::createJobs() {
+void TDMTeam::createJobs() {
     if (games::elapsedTime() > 5.f) {
         checkEnemies();
         checkPowerUps();
@@ -41,7 +41,7 @@ void DMTeam::createJobs() {
     }
 }
 
-void DMTeam::checkEnemies() {
+void TDMTeam::checkEnemies() {
     std::vector<Ship*> ships = ships::getShips();
     bool existAny(false);
 
@@ -56,7 +56,7 @@ void DMTeam::checkEnemies() {
             addJob(Job(Job::jAttackAny, 60));
 }
 
-void DMTeam::checkPowerUps() {
+void TDMTeam::checkPowerUps() {
     powerUpLocations_.clear();
     std::list<PowerUp*> const& powerUps = items::getPowerUps();
     for (std::list<PowerUp*>::const_iterator it=powerUps.begin(); it!=powerUps.end(); ++it) {
@@ -65,11 +65,12 @@ void DMTeam::checkPowerUps() {
             switch ((*it)->type()) {
                 case items::puFuel:     addJob(Job(Job::jGetPUFuel,    70, &powerUpLocations_.back())); break;
                 case items::puHealth:   addJob(Job(Job::jGetPUHealth,  70, &powerUpLocations_.back())); break;
-                case items::puReverse:  addJob(Job(Job::jGetPUReverse, 70, &powerUpLocations_.back())); break;
+                case items::puReverse:  addJob(Job(Job::jGetPUReverse, 40, &powerUpLocations_.back())); break;
                 case items::puShield:   addJob(Job(Job::jGetPUShield,  70, &powerUpLocations_.back())); break;
-                default:                addJob(Job(Job::jGetPUSleep,   70, &powerUpLocations_.back())); break;
+                default:                addJob(Job(Job::jGetPUSleep,   40, &powerUpLocations_.back())); break;
             }
         }
     }
 }
+
 

@@ -24,9 +24,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
-void Flubba::draw() const {
+void Flubba::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor4f(1.0f, 1.0f, 1.0f, alpha);
     const int posX = 0;
     const int posY = 29;
     glBegin(GL_QUADS);
@@ -50,7 +50,7 @@ void Flubba::fire() const {
 }
 
 float Flubba::maxDistance() const {
-    return 150.f;
+    return 200.f;
 }
 
 float Flubba::minDistance() const {
@@ -58,5 +58,5 @@ float Flubba::minDistance() const {
 }
 
 float Flubba::maxAngle() const {
-    return 10.f;
+    return 70.f;
 }

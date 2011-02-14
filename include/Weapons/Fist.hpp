@@ -34,7 +34,7 @@ class Fist: public Weapon {
         void fire() const;
 
         /// Draws the weapon.
-        void draw() const;
+        void draw(float alpha) const;
 
         /// Returns the maximum distance from which this weapon should be used.
         float maxDistance() const;

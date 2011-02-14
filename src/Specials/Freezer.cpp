@@ -30,14 +30,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <vector>
 
-void Freezer::draw() const {
+void Freezer::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
     Color3f tmp = parent_->getOwner()->team()->color();
     if (tmp.v() < 0.5f) tmp.v(0.5f);
     if (tmp.s() < 0.5f) tmp.s(0.5f);
-    tmp.gl4f(0.8f);
+    tmp.gl4f(0.8f*alpha);
 
     const int posX = 2;
     const int posY = 0;
@@ -81,7 +81,7 @@ void Freezer::activate() const {
         radius_ = parent_->fragStars_*50.f+50.f;
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-            if ((*it)!=parent_ && (*it)->visible_) {
+            if ((*it)!=parent_ && (*it)->collidable()) {
                 float distance(((*it)->location()-parent_->location()).length());
                 if (distance <= radius_) {
                     (*it)->setDamageSource(parent_->getOwner());

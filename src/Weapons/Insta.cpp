@@ -26,9 +26,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <cfloat>
 
-void Insta::draw() const {
+void Insta::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    parent_->getOwner()->team()->color().gl3f();
+    parent_->getOwner()->team()->color().gl4f(alpha);
     const int posX = 2;
     const int posY = 31;
     glBegin(GL_QUADS);

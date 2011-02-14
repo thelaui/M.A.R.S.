@@ -44,7 +44,7 @@ BurningFragment::~BurningFragment() {
 void BurningFragment::update() {
     float time = timer::frameTime();
     Vector2f acceleration = physics::attract(this);
-    physics::collide(this, STATICS | MOBILES);
+    physics::collide(this, STATICS);
 
     location_ += velocity_*time + acceleration*time*time*2;
     velocity_ += acceleration*time*2 + velocity_*-time;

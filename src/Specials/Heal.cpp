@@ -28,7 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <vector>
 
-void Heal::draw() const {
+void Heal::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
@@ -36,7 +36,7 @@ void Heal::draw() const {
     if (tmp.v() < 0.5f) tmp.v(0.5f);
     if (tmp.s() < 0.5f) tmp.s(0.5f);
 
-    float alpha(0.6 + std::sin(timer::totalTime()*6)*0.1f);
+    alpha *= 0.6 + std::sin(timer::totalTime()*6)*0.1f;
 
     tmp.gl4f(alpha);
 
@@ -82,7 +82,7 @@ void Heal::activate() const {
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
             if ((*it)!=parent_) {
                 float distance(((*it)->location()-parent_->location()).length());
-                if ((*it)->getLife() > 0 && parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_) {
+                if ((*it)->collidable() && parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_) {
                     (*it)->heal(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*10);
                     (*it)->refuel(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*10);
                 }

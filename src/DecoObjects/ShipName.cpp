@@ -53,5 +53,16 @@ void ShipName::draw() const {
             else
                 text::drawMobileSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), 25.f, TEXT_ALIGN_CENTER, color);
         }
+
+        std::stringstream sstr;
+        sstr << static_cast<int>(ship_->getLife()) << "%";
+        Color3f color(1.f, 0.f, 0.f);
+        color.h(color.h() + ship_->getLife());
+        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(-5.f, -ship_->radius_)*1.8f, 8.f, TEXT_ALIGN_CENTER, color);
+        sstr.str("");
+        sstr << static_cast<int>(ship_->getFuel()) << "%";
+        color = Color3f(1.f, 0.f, 0.f);
+        color.h(color.h() + ship_->getFuel());
+        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f( 5.f, -ship_->radius_)*1.8f, 8.f, TEXT_ALIGN_CENTER, color);
     }
 }

@@ -33,7 +33,7 @@ class NoSpecial: public Special {
         void activate() const {}
 
         /// Draws the special.
-        void draw() const;
+        void draw(float alpha) const;
 };
 
 # endif // NOSPECIAL_HPP_INCLUDED

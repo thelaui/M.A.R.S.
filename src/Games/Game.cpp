@@ -76,8 +76,7 @@ void Game::update() {
         if (teams::getFirstPoints() < pointLimit_) {
             teams::update();
             controllers::update();
-            if ((elapsedTime() > 4.f) || (type_ == games::gTutorial))
-                ships::update();
+            ships::update();
             balls::update();
             spaceObjects::update();
         }

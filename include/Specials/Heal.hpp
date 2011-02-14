@@ -34,7 +34,7 @@ class Heal: public Special {
         void activate() const;
 
         /// Draws the special.
-        void draw() const;
+        void draw(float alpha) const;
 
     private:
         mutable float radius_;

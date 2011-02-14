@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/TeamDeathMatch.hpp"
 
-# include "Teams/DMTeam.hpp"
+# include "Teams/TDMTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Players/players.hpp"
@@ -36,34 +36,34 @@ TeamDeathMatch::TeamDeathMatch():
     Team* myTeamR = NULL;
 
     if (settings::C_playerIteamL) {
-        myTeamL = new DMTeam(settings::C_playerITeamColor);
+        myTeamL = new TDMTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer1);
     }
     else if (settings::C_playerIteamR) {
-        myTeamR = new DMTeam(settings::C_playerITeamColor);
+        myTeamR = new TDMTeam(settings::C_playerITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer1);
     }
 
     if (settings::C_playerIIteamL) {
-        if (!myTeamL) myTeamL = new DMTeam(settings::C_playerIITeamColor);
+        if (!myTeamL) myTeamL = new TDMTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamL, controllers::cPlayer2);
     }
     else if (settings::C_playerIIteamR) {
-        if (!myTeamR) myTeamR = new DMTeam(settings::C_playerIITeamColor);
+        if (!myTeamR) myTeamR = new TDMTeam(settings::C_playerIITeamColor);
         players::addPlayer(myTeamR, controllers::cPlayer2);
     }
 
     if (!myTeamR && !myTeamL) {
         Color3f rand = Color3f::random();
-        myTeamL = new DMTeam(rand.inverted());
-        myTeamR = new DMTeam(rand);
+        myTeamL = new TDMTeam(rand.inverted());
+        myTeamR = new TDMTeam(rand);
 
     }
     else if (!myTeamL) {
-        myTeamL = new DMTeam(myTeamR->color().inverted());
+        myTeamL = new TDMTeam(myTeamR->color().inverted());
     }
     else if (!myTeamR) {
-        myTeamR = new DMTeam(myTeamL->color().inverted());
+        myTeamR = new TDMTeam(myTeamL->color().inverted());
     }
 
     teams::addTeam(myTeamL);

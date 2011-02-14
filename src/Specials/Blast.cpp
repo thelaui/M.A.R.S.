@@ -28,14 +28,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/Graphics.hpp>
 
-void Blast::draw() const {
+void Blast::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
     Color3f tmp = parent_->getOwner()->team()->color();
     if (tmp.v() < 0.5f) tmp.v(0.5f);
     if (tmp.s() < 0.5f) tmp.s(0.5f);
-    tmp.gl4f(0.8f);
+    tmp.gl4f(0.8f*alpha);
 
     const int posX = 0;
     const int posY = 0;

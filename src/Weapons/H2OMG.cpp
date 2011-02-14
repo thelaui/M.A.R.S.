@@ -25,13 +25,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Graphics.hpp>
 # include <cfloat>
 
-void H2OMG::draw() const {
+void H2OMG::draw(float alpha) const {
     glLineWidth(1);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBegin(GL_LINES);
         glColor4f(1.0, 1.0, 0.2, 0);
             glVertex2f(parent_->radius(),  0);
-        glColor4f(1.0, 1.0, 0.2, 0.5);
+        glColor4f(1.0, 1.0, 0.2, 0.5*alpha);
             glVertex2f(parent_->radius()*3.5, 0);
             glVertex2f(parent_->radius()*3.5,  0);
         glColor4f(1.0, 1.0, 0.2, 0);
