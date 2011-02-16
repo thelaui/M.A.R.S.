@@ -94,12 +94,12 @@ void BotController::checkSpecial() {
                 break;
 
             case specials::sBlast: {
-                int decision(1);
+                int decision(0);
                 float blastRadius = ship()->fragStars_*100.f + 50.f;
                 blastRadius *= blastRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-                    if ((*it)->collidable()) {
+                    if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it) != slave_->ship()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
                         if (distance <= blastRadius) {
                             if ((*it)->owner_->team() == slave_->team())
@@ -114,12 +114,12 @@ void BotController::checkSpecial() {
             }
 
             default: {
-                int decision(1);
+                int decision(0);
                 float freezeRadius = ship()->fragStars_*50.f + 50.f;
                 freezeRadius *= freezeRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-                    if ((*it)->collidable() && (*it)->frozen_ <= 0) {
+                    if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it) != slave_->ship()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
                         if (distance <= freezeRadius) {
                             if ((*it)->owner_->team() == slave_->team())

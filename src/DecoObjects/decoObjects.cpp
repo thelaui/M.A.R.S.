@@ -104,15 +104,15 @@ namespace decoObjects {
         heats_.push_back(new SunHeat(sun));
     }
 
-    void addShipIce(Ship* ship) {
+    void addIce(Ship* ship) {
         ices_.push_back(new Ice<Ship>(ship));
     }
 
-    void addBallIce(Ball* ball) {
+    void addIce(Ball* ball) {
         ices_.push_back(new Ice<Ball>(ball));
     }
 
-    void addRocketIce(AmmoRocket* rocket) {
+    void addIce(AmmoRocket* rocket) {
         ices_.push_back(new Ice<AmmoRocket>(rocket));
     }
 

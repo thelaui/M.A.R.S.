@@ -88,7 +88,7 @@ void Freezer::activate() const {
                     (*it)->velocity_=Vector2f();
                     (*it)->mass_=9999999999.f;
                     if ((*it)->frozen_ <= 0)
-                        decoObjects::addShipIce(*it);
+                        decoObjects::addIce(*it);
                     (*it)->frozen_=40;
                 }
             }
@@ -101,7 +101,8 @@ void Freezer::activate() const {
                     ball->frozen_=40;
                     ball->velocity_=Vector2f();
                     ball->mass_=9999999999.f;
-                    decoObjects::addBallIce(ball);
+                    if (ball->frozen_ <= 0)
+                        decoObjects::addIce(ball);
             }
         }
 
@@ -111,7 +112,8 @@ void Freezer::activate() const {
                 (*it)->frozen_=40;
                 (*it)->velocity_=Vector2f();
                 (*it)->mass_=9999999999.f;
-                decoObjects::addRocketIce(*it);
+                if ((*it)->frozen_ <= 0)
+                    decoObjects::addIce(*it);
             }
         }
 

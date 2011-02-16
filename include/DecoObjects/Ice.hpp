@@ -35,7 +35,7 @@ class Ice: public DecoObject {
         Ice(Object* object): object_(object) {}
 
         void draw() const {
-            if (object_->visible_) {
+            if (object_->visible_ && object_->frozen_ > 0.f) {
                 glEnable(GL_TEXTURE_2D);
                 glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ice));
                 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

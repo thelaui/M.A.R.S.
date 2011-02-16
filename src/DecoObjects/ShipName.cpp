@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Media/text.hpp"
 # include "System/settings.hpp"
+# include "System/window.hpp"
 
 # include <sstream>
 
@@ -36,9 +37,9 @@ void ShipName::draw() const {
             color.h(color.h() + ship_->getLife());
 
             if (ship_->docked_)
-                text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
+                text::drawSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_*2.5f), 12.f, TEXT_ALIGN_CENTER, color);
             else
-                text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, color);
+                text::drawMobileSpaceText(ship_->owner_->name(), ship_->location_ + Vector2f(0.f, -ship_->radius_*2.5f), 12.f, TEXT_ALIGN_CENTER, color);
         }
 
         if (ship_->fragStars_ > 0) {
@@ -49,20 +50,40 @@ void ShipName::draw() const {
             for (int i=0; i<ship_->fragStars_; ++i)
                 sstr << "*";
             if (ship_->docked_)
-                text::drawSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_*2.5f) + Vector2f(0.f, -17.f), 25.f, TEXT_ALIGN_CENTER, color);
             else
-                text::drawMobileSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f + Vector2f(0.f, -17.f), 25.f, TEXT_ALIGN_CENTER, color);
+                text::drawMobileSpaceText(sf::String(sstr.str()), ship_->location_ + Vector2f(0.f, -ship_->radius_*2.5f) + Vector2f(0.f, -17.f), 25.f, TEXT_ALIGN_CENTER, color);
         }
 
-        std::stringstream sstr;
+        /*std::stringstream sstr;
         sstr << static_cast<int>(ship_->getLife()) << "%";
         Color3f color(1.f, 0.f, 0.f);
         color.h(color.h() + ship_->getLife());
-        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(-5.f, -ship_->radius_)*1.8f, 8.f, TEXT_ALIGN_CENTER, color);
+        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f(-15.f, -ship_->radius_*2.5f + 15.f), 9.f, TEXT_ALIGN_CENTER, color);
         sstr.str("");
         sstr << static_cast<int>(ship_->getFuel()) << "%";
         color = Color3f(1.f, 0.f, 0.f);
         color.h(color.h() + ship_->getFuel());
-        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f( 5.f, -ship_->radius_)*1.8f, 8.f, TEXT_ALIGN_CENTER, color);
+        text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f( 15.f, -ship_->radius_*2.5f + 15.f), 9.f, TEXT_ALIGN_CENTER, color);*/
+
+        Vector2f shipLocation(window::coordToPixel(ship_->location()));
+
+        glLineWidth(2.f);
+        glBegin(GL_LINES);
+            Color3f color(1.f, 0.f, 0.f);
+            color.h(color.h() + ship_->getLife());
+            color.gl4f(0.5);
+
+            glVertex2f(shipLocation.x_-20.f, shipLocation.y_ -ship_->radius_*2.5f + 25.f);
+            glVertex2f(shipLocation.x_-20.f + ship_->getLife()*0.4f, shipLocation.y_ -ship_->radius_*2.5f + 25.f);
+
+            color = Color3f(1.f, 0.8f, 0.f);
+            //color.h(color.h() + ship_->getFuel());
+            color.gl4f(0.3);
+
+            glVertex2f(shipLocation.x_-20.f, shipLocation.y_ -ship_->radius_*2.5f + 28.f);
+            glVertex2f(shipLocation.x_-20.f + ship_->getFuel()*0.4f, shipLocation.y_ - ship_->radius_*2.5f + 28.f);
+
+        glEnd();
     }
 }

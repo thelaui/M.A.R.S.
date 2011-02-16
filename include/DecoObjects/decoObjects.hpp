@@ -59,15 +59,15 @@ namespace decoObjects {
 
     /// Adds an ice block at the ship's position.
     /// \param ship The ship to be frozen.
-    void addShipIce(Ship* ship);
+    void addIce(Ship* ship);
 
     /// Adds an ice block at the ball's position.
     /// \param ball The ball to be frozen.
-    void addBallIce(Ball* ball);
+    void addIce(Ball* ball);
 
     /// Adds an ice block on the rocket's position.
     /// \param rocket The rocket to be frozen.
-    void addRocketIce(AmmoRocket* rocket);
+    void addIce(AmmoRocket* rocket);
 
     /// Removes an ice block from the list.
     /// \param toBeRemoved The ice block to be removed.

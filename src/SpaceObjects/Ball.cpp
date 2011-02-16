@@ -98,8 +98,10 @@ void Ball::update() {
                 }
             }
         }
-        else
+        else {
+            velocity_ = Vector2f();
             frozen_ -= timer::frameTime()*3.f;
+        }
     }
     else {
         respawnTimer_ -= time;

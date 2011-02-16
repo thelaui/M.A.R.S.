@@ -193,10 +193,34 @@ void Ship::update() {
                 location_ += velocity_*time + acceleration*0.5f*time*time;
                 // v = v0 + a*t
                 velocity_ += acceleration*time + velocity_*(-0.2f)*time;
+
+                if (ghostTimer_ <= 0.f)
+                    physics::collide(this, STATICS | MOBILES);
+                else
+                    physics::collide(this, STATICS);
+
+                if (location_.x_ < radius_) {
+                    location_.x_ = radius_;
+                    velocity_.x_ = 0.f;
+                }
+                if (location_.x_ > 1280.f - radius_) {
+                    location_.x_ = 1280.f - radius_;
+                    velocity_.x_ = 0.f;
+                }
+                if (location_.y_ < radius_) {
+                    location_.y_ = radius_;
+                    velocity_.y_ = 0.f;
+                }
+                if (location_.y_ > 800.f - radius_) {
+                    location_.y_ = 800.f - radius_;
+                    velocity_.y_ = 0.f;
+                }
+
             }
             else {
                 frozen_ -= timer::frameTime()*3.f;
                 life_ -= timer::frameTime()*10.f;
+                velocity_ = Vector2f();
                 if(damageSource_==players::getPlayerI() || damageSource_==players::getPlayerII() || owner_==players::getPlayerI() || owner_==players::getPlayerII()) {
                     damageByLocalPlayer_ -= timer::frameTime()*10.f;
                     collisionCount_ = 1;
@@ -204,28 +228,6 @@ void Ship::update() {
                     if (damageCheckTimer_ <= 0.f)
                         damageCheckTimer_ = 1.f;
                 }
-            }
-
-            if (ghostTimer_ <= 0.f)
-                physics::collide(this, STATICS | MOBILES);
-            else
-                physics::collide(this, STATICS);
-
-            if (location_.x_ < radius_) {
-                location_.x_ = radius_;
-                velocity_.x_ = 0.f;
-            }
-            if (location_.x_ > 1280.f - radius_) {
-                location_.x_ = 1280.f - radius_;
-                velocity_.x_ = 0.f;
-            }
-            if (location_.y_ < radius_) {
-                location_.y_ = radius_;
-                velocity_.y_ = 0.f;
-            }
-            if (location_.y_ > 800.f - radius_) {
-                location_.y_ = 800.f - radius_;
-                velocity_.y_ = 0.f;
             }
 
             // check for death
