@@ -27,10 +27,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-KeyEdit::KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width):
+KeyEdit::KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 20),
     value_(value),
-    toolTip_(toolTip) {
+    toolTip_(toolTip),
+    labelWidth_(labelWidth) {
 
     label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
     label_->setParent(this);
@@ -88,28 +89,28 @@ void KeyEdit::draw() const {
     glBegin(GL_QUADS);
         if (isTopMost())   glColor4f(0.3*focusedFadeTime_,0.1*focusedFadeTime_,0.2*focusedFadeTime_,0.8);
         else               glColor4f(0.0,0.0,0.0,0.8);
-        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(origin.x_+labelWidth_*mirror, origin.y_+2);
         glVertex2f(width() + origin.x_, origin.y_+2);
         glVertex2f(width() + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
+        glVertex2f(origin.x_+labelWidth_*mirror, height_ + origin.y_-2);
 
         // glossy bottom
         glColor4f(1.0,1.0,1.0,0.0);
-        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(origin.x_+labelWidth_*mirror, origin.y_+2);
         glVertex2f(width() + origin.x_, origin.y_+2);
         if (pressed_)   glColor4f(1.0,1.0,1.0,0.1);
         else            glColor4f(1.0,1.0,1.0,0.06);
         glVertex2f(width() + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
+        glVertex2f(origin.x_+labelWidth_*mirror, height_ + origin.y_-2);
 
         if (!pressed_) {
             // glossy top
             glColor4f(1.0,1.0,1.0,0.2);
-            glVertex2f(origin.x_+185*mirror, origin.y_+2);
+            glVertex2f(origin.x_+labelWidth_*mirror, origin.y_+2);
             glVertex2f(width() + origin.x_, origin.y_+2);
             glColor4f(1.0,1.0,1.0,0.05);
             glVertex2f(width() + origin.x_, height_*0.5f + origin.y_);
-            glVertex2f(origin.x_+185*mirror, height_*0.5f + origin.y_);
+            glVertex2f(origin.x_+labelWidth_*mirror, height_*0.5f + origin.y_);
         }
     glEnd();
 
@@ -118,19 +119,19 @@ void KeyEdit::draw() const {
 
     glColor4f(1.0,0.4,0.8,0.3f+hoveredFadeTime_*0.7f);
     glBegin(GL_LINE_LOOP);
-        glVertex2f(origin.x_+185*mirror, origin.y_+2);
+        glVertex2f(origin.x_+labelWidth_*mirror, origin.y_+2);
         glVertex2f(width() + origin.x_, origin.y_+2);
         glVertex2f(width() + origin.x_, height_ + origin.y_-2);
-        glVertex2f(origin.x_+185*mirror, height_ + origin.y_-2);
+        glVertex2f(origin.x_+labelWidth_*mirror, height_ + origin.y_-2);
     glEnd();
 
     float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
     Color3f color(Color3f(0.7f, 0.7f, 0.7f)*(1-highlight) + highlight*(Color3f(1.f, 0.6f, 0.8f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
 
     if (pressed_)
-        text::drawScreenText("...", origin + Vector2f((width()+185*mirror)/2,1)+Vector2f(1, 1), 12.f, TEXT_ALIGN_CENTER, color);
+        text::drawScreenText("...", origin + Vector2f((width()+labelWidth_*mirror)/2,1)+Vector2f(1, 1), 12.f, TEXT_ALIGN_CENTER, color);
     else
-        text::drawScreenText(generateName::key(*value_), origin + Vector2f((width()+185*mirror)/2,1), 12.f, TEXT_ALIGN_CENTER, color);
+        text::drawScreenText(generateName::key(*value_), origin + Vector2f((width()+labelWidth_*mirror)/2,1), 12.f, TEXT_ALIGN_CENTER, color);
 
     //draw Label
     label_->draw();

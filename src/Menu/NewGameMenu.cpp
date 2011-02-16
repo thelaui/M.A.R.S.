@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Slider.hpp"
 # include "Interface/Checkbox.hpp"
 # include "Interface/Line.hpp"
+# include "Interface/LabeledBox.hpp"
 # include "Games/games.hpp"
 # include "System/window.hpp"
 # include "System/settings.hpp"
@@ -71,84 +72,91 @@ UiWindow* NewGameMenu::get() {
         tabCannonKeep_      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
         tabGraveItation_    = new Tab(new sf::String("Grave-Itation Pit"), 125, &tGI_);
 
-        tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabSpaceBall_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::LeftTeam), Vector2f(10, 30), 250, 80));
+        tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::RightTeam), Vector2f(300, 30), 250, 80));
         RadioGroup* player1Group = new RadioGroup();
-            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(10,70), 80, true));
-            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(290,70), 80, true));
+            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(20,60), 80, true));
+            player1Group->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(310,60), 80, true));
             tabSpaceBall_->addWidget(player1Group);
         RadioGroup* player2Group = new RadioGroup();
-            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
-            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(373,70), 80, true));
+            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(120,60), 80, true));
+            player2Group->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(410,60), 80, true));
             tabSpaceBall_->addWidget(player2Group);
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::BotsLeft), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 540, 270, true));
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(10,170), 540, 270, true));
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
+        tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 120), 540, 100));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 20, Vector2f(20,150), 520, 270, true));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabSpaceBall_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
         tabSpaceBall_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
-        tabDeathMatch_->addWidget(new Checkbox(&settings::C_playerIName, locales::getLocale(locales::ttPlayersWho), &playerI_, Vector2f(10,60), 100));
-        tabDeathMatch_->addWidget(new Checkbox(&settings::C_playerIIName, locales::getLocale(locales::ttPlayersWho), &playerII_, Vector2f(290,60), 100));
-        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsDeath, 0, 20, Vector2f(10,110), 540, 270, true));
-        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitPlayer), &settings::C_pointLimitDM, 1, 50, Vector2f(10,150), 540, 270, true));
-        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(10,170), 540, 270, true));
-        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabDeathMatch_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 30), 540, 80));
+        tabDeathMatch_->addWidget(new Checkbox(&settings::C_playerIName, locales::getLocale(locales::ttPlayersWho), &playerI_, Vector2f(20,60), 100));
+        tabDeathMatch_->addWidget(new Checkbox(&settings::C_playerIIName, locales::getLocale(locales::ttPlayersWho), &playerII_, Vector2f(310,60), 100));
+        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsDeath, 0, 20, Vector2f(20,80), 520, 270, true));
+        tabDeathMatch_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 120), 540, 100));
+        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitTDM, 1, 20, Vector2f(20,150), 520, 270, true));
+        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
+        tabDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabDeathMatch_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
         tabDeathMatch_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
-        tabTeamDeathMatch_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabTeamDeathMatch_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabTeamDeathMatch_->addWidget(new LabeledBox(locales::getLocale(locales::LeftTeam), Vector2f(10, 30), 250, 80));
+        tabTeamDeathMatch_->addWidget(new LabeledBox(locales::getLocale(locales::RightTeam), Vector2f(300, 30), 250, 80));
         RadioGroup* player1Group2 = new RadioGroup();
-            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(10,70), 80, true));
-            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(290,70), 80, true));
+            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(20,60), 80, true));
+            player1Group2->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(310,60), 80, true));
             tabTeamDeathMatch_->addWidget(player1Group2);
         RadioGroup* player2Group2 = new RadioGroup();
-            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
-            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(373,70), 80, true));
+            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(120,60), 80, true));
+            player2Group2->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(410,60), 80, true));
             tabTeamDeathMatch_->addWidget(player2Group2);
-        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::BotsLeft), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
-        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
-        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitTDM, 1, 100, Vector2f(10,150), 540, 270, true));
-        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(10,170), 540, 270, true));
-        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
+        tabTeamDeathMatch_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 120), 540, 100));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitTDM, 1, 20, Vector2f(20,150), 520, 270, true));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
+        tabTeamDeathMatch_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabTeamDeathMatch_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
         tabTeamDeathMatch_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
-        tabCannonKeep_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabCannonKeep_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabCannonKeep_->addWidget(new LabeledBox(locales::getLocale(locales::LeftTeam), Vector2f(10, 30), 250, 80));
+        tabCannonKeep_->addWidget(new LabeledBox(locales::getLocale(locales::RightTeam), Vector2f(300, 30), 250, 80));
         RadioGroup* player1Group3 = new RadioGroup();
-            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(10,70), 80, true));
-            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(290,70), 80, true));
+            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(20,60), 80, true));
+            player1Group3->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(310,60), 80, true));
             tabCannonKeep_->addWidget(player1Group3);
         RadioGroup* player2Group3 = new RadioGroup();
-            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
-            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(373,70), 80, true));
+            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(120,60), 80, true));
+            player2Group3->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(410,60), 80, true));
             tabCannonKeep_->addWidget(player2Group3);
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::BotsLeft), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 20, Vector2f(10,150), 540, 270, true));
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(10,170), 540, 270, true));
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(10,190), 540, 270, true));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
+        tabCannonKeep_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 120), 540, 100));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 20, Vector2f(20,150), 520, 270, true));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabCannonKeep_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
         tabCannonKeep_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
-
-        tabGraveItation_->addWidget(new Label(locales::getLocale(locales::LeftTeam), TEXT_ALIGN_LEFT, Vector2f(10, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
-        tabGraveItation_->addWidget(new Label(locales::getLocale(locales::RightTeam), TEXT_ALIGN_LEFT, Vector2f(290, 40), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+        tabGraveItation_->addWidget(new LabeledBox(locales::getLocale(locales::LeftTeam), Vector2f(10, 30), 250, 80));
+        tabGraveItation_->addWidget(new LabeledBox(locales::getLocale(locales::RightTeam), Vector2f(300, 30), 250, 80));
         RadioGroup* player1Group4 = new RadioGroup();
-            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(10,70), 80, true));
-            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(290,70), 80, true));
+            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamL, Vector2f(20,60), 80, true));
+            player1Group4->addRadioButton(new RadioButton(&settings::C_playerIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIteamR, Vector2f(310,60), 80, true));
             tabGraveItation_->addWidget(player1Group4);
         RadioGroup* player2Group4 = new RadioGroup();
-            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(93,70), 80, true));
-            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(373,70), 80, true));
+            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamL, Vector2f(120,60), 80, true));
+            player2Group4->addRadioButton(new RadioButton(&settings::C_playerIIName, locales::getLocale(locales::ttTeamPlayer), &settings::C_playerIIteamR, Vector2f(410,60), 80, true));
             tabGraveItation_->addWidget(player2Group4);
-        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::BotsLeft), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(10,100), 230, 120, true));
-        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::BotsRight), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(290,100), 230, 120, true));
-        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(10,170), 540, 270, true));
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
+        tabGraveItation_->addWidget(new LabeledBox(locales::getLocale(locales::BotsLeft), Vector2f(10, 120), 540, 80));
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitTDM, 1, 20, Vector2f(20,150), 520, 270, true));
+        tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
         tabGraveItation_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
+        tabGraveItation_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);

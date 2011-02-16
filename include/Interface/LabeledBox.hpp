@@ -1,4 +1,4 @@
-/* KeyEdit.hpp
+/* LabeledBox.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,32 +15,27 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef KEYEDIT_HPP_INCLUDED
-# define KEYEDIT_HPP_INCLUDED
+# ifndef LABELEDBOX_HPP_INCLUDED
+# define LABELEDBOX_HPP_INCLUDED
 
 # include "Interface/UiElement.hpp"
-# include "Interface/Label.hpp"
+# include "System/Color3f.hpp"
 
-class KeyEdit: public UiElement {
+class Label;
+
+class LabeledBox: public UiElement {
     public:
-        KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width, int labelWidth);
-        ~KeyEdit ();
+        LabeledBox(sf::String* text, Vector2f const& topLeft, int width, int height);
 
-        void mouseMoved(Vector2f const& position);
-        void mouseLeft(bool down);
-        void keyEvent(bool down, sf::Key::Code keyCode);
+        ~LabeledBox();
 
         void draw() const;
 
-        void setFocus  (UiElement* toBeFocused, bool isPrevious);
-        void clearFocus();
+        bool isTabable() const {return false;}
 
     private:
-        sf::Key::Code* value_;
         Label* label_;
-        sf::String* toolTip_;
-        int labelWidth_;
 };
 
-# endif
+# endif //LABELEDBOX_HPP_INCLUDED
 

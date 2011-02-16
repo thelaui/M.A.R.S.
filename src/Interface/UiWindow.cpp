@@ -96,7 +96,7 @@ void UiWindow::draw () const {
 
     glBegin(GL_QUADS);
         // bg
-        glColor4f(0.0,0.0,0.0,0.85);
+        glColor4f(0.0,0.0,0.0,0.9);
         glVertex2f(origin.x_-10,origin.y_-10);
         glVertex2f(origin.x_+width_+10,origin.y_-10);
         glVertex2f(origin.x_+width_+10,origin.y_+height_+10);

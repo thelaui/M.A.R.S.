@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TextEdit: public UiElement {
     public:
-        TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int type, int maxLength=0);
+        TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int labelWidth, int type, int maxLength=0);
         ~TextEdit ();
 
         void mouseMoved(Vector2f const& position);
@@ -47,6 +47,7 @@ class TextEdit: public UiElement {
         unsigned cursorPos_;
         mutable int cursorTimer_;
         int type_;
+        int labelWidth_;
 };
 
 # endif

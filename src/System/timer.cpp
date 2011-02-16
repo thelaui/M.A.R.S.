@@ -40,7 +40,6 @@ namespace timer {
     }
 
     void update(float frameTime) {
-        //frameTime *= 0.5f;
         // fps
         fpsTimer_  += frameTime;
         ++frameCount_;
