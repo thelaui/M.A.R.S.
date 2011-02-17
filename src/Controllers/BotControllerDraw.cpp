@@ -90,15 +90,8 @@ void BotController::draw() {
                             decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.f, 0.f), 8.f);
                         }
                         else {
-                            glBlendFunc(GL_ONE, GL_ONE);
-                            glLineWidth(3.f);
-
-                            glBegin(GL_LINES);
-                                glColor3f(it->second/120.f, it->second/240.f, 0);
-                                glVertex2f(shipLocation.x_,shipLocation.y_);
-                                glColor3f(0,0,0);
-                                glVertex2f(it->first->location().x_,it->first->location().y_);
-                            glEnd();
+                            Vector2f direction(it->first->location() - shipLocation);
+                            decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(it->second/120.f, it->second/240.f, 0), 8.f*it->second/120.f);
                         }
                     }
                     break;

@@ -54,21 +54,17 @@ void BotController::kickBallToEnemy() {
             if (shipDirection*(ballLocation - shipLocation) > 0.8f) {
                 // kick ball
                 moveTo(targetPlanetLocation, 0.f, false);
-
                 if (ballLocation == balls::getBall()->location_)
                     shootPoint(ballLocation);
             }
-            else {
-                // rotate ship correctly
+            else
                 turnTo(ballLocation);
-            }
         }
         else {
             // move behind the ball
             Vector2f aimPosition = ballLocation + (ballLocation - targetPlanetLocation).normalize()*70 + ballVelocity*0.5f;
             moveTo(aimPosition, 0.2f, true);
         }
-
         shootEnemies();
     }
 }
@@ -119,12 +115,8 @@ void BotController::waitForBall() {
 
 
 void BotController::attackAny() {
-    if (target_ && target_->getLife() == 0.f) {
-        aggroTable_[target_] = 0.f;
-        target_ = NULL;
-    }
-
     if (target_ && !target_->attackable()) {
+        aggroTable_[target_] = 0.f;
         target_ = NULL;
     }
 
@@ -136,14 +128,13 @@ void BotController::attackAny() {
         std::vector<Ship*> const& ships = ships::getShips();
         float maxDistance(FLT_MAX);
         for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it) {
-            if ((*it)->owner_->team() != slave_->team())
-                if ((*it)->collidable() && (*it)->frozen_ <= 0.f) {
-                    float distance = ((*it)->location() - ship()->location_).lengthSquare()*(*it)->getLife();
-                    if(distance < maxDistance) {
-                        maxDistance = distance;
-                        target_ = (*it);
-                    }
+            if ((*it)->owner_->team() != slave_->team() && (*it)->attackable()) {
+                float distance = ((*it)->location() - ship()->location_).lengthSquare()*(*it)->getLife();
+                if(distance < maxDistance) {
+                    maxDistance = distance;
+                    target_ = (*it);
                 }
+            }
         }
         if (target_)
             aggroTable_[target_] = 100.f;

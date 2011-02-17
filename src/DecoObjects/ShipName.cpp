@@ -66,8 +66,7 @@ void ShipName::draw() const {
         color.h(color.h() + ship_->getFuel());
         text::drawMobileSpaceText(sstr.str(), ship_->location_ + Vector2f( 15.f, -ship_->radius_*2.5f + 15.f), 9.f, TEXT_ALIGN_CENTER, color);*/
 
-        Vector2f shipLocation(window::coordToPixel(ship_->location()));
-
+        /*Vector2f shipLocation(window::coordToPixel(ship_->location()));
         glLineWidth(2.f);
         glBegin(GL_LINES);
             Color3f color(1.f, 0.f, 0.f);
@@ -83,7 +82,6 @@ void ShipName::draw() const {
 
             glVertex2f(shipLocation.x_-20.f, shipLocation.y_ -ship_->radius_*2.5f + 28.f);
             glVertex2f(shipLocation.x_-20.f + ship_->getFuel()*0.4f, shipLocation.y_ - ship_->radius_*2.5f + 28.f);
-
-        glEnd();
+        glEnd();*/
     }
 }

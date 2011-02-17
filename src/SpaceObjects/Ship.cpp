@@ -544,7 +544,7 @@ void Ship::explode() {
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(5, particles::pBurningFragment, location_);
     particles::spawnMultiple(1, particles::pMiniFlame, location_);
-    physics::  causeShockWave(damageSource(), location_, 300.f, 200.f, 5.f);
+    physics::  causeShockWave(damageSource(), location_, 400.f, 200.f, 2.f);
     particles::spawn(particles::pShockWave, location_);
     physics::  removeMobileObject(this);
     timer::    onShipExplode();

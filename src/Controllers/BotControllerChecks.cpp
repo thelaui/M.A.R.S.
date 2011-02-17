@@ -29,22 +29,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 void BotController::checkAggro() {
     if (ship()->collidable()) {
         if(lastFrameLife_ - ship()->getLife() > 0.f && ship()->damageSource()) {
-            if(ship()->damageSource() != slave_ && slave_->team() != ship()->damageSource()->team() && ship()->damageSource()->ship()->collidable())
+            if(ship()->damageSource() != slave_ && slave_->team() != ship()->damageSource()->team() && ship()->damageSource()->ship()->attackable())
                 aggroTable_[ship()->damageSource()->ship()] += (lastFrameLife_ - ship()->getLife()) * 30.f;
-        }
-
-        if (target_) {
-            float targetAggro(aggroTable_[target_]);
-            if (targetAggro > 100.f) {
-                for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                    it->second /= (targetAggro/100.f);
-                }
-            }
         }
 
         if(lastFrameLife_ != ship()->getLife())
             lastFrameLife_ = ship()->getLife();
 
+        // process aggroTable
         float maxAggro(-1.f);
         for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
             if(it->second > 0.f && !it->first->collidable())
@@ -54,6 +46,8 @@ void BotController::checkAggro() {
             if(it->second > maxAggro && it->first->collidable())
                 maxAggro = it->second;
         }
+        // if there is one enemy with a lot more aggro than the current
+        // target, attack this one
         if (maxAggro > 120.f)
             for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
                 if(it->second == maxAggro && it->first->attackable()) {
@@ -63,11 +57,19 @@ void BotController::checkAggro() {
                 else
                     it->second /= (maxAggro/100.f);
             }
+
+        // normalize aggro to 100 for the target
+        if (target_) {
+            float targetAggro(aggroTable_[target_]);
+            for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
+                it->second /= (targetAggro/100.f);
+            }
+        }
     }
 }
 
 void BotController::checkEnergy() {
-    if(ship()->getLife() == 0.f) {
+    if(!ship()->collidable()) {
         for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
             it->second = 0.f;
         target_ = NULL;
@@ -120,7 +122,7 @@ void BotController::checkSpecial() {
                 freezeRadius *= freezeRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-                    if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it) != slave_->ship()) {
+                    if ((*it)->attackable() && (*it) != slave_->ship()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
                         if (distance <= freezeRadius) {
                             if ((*it)->owner_->team() == slave_->team())
@@ -139,15 +141,12 @@ void BotController::checkSpecial() {
 void BotController::checkCloseEnemies() {
     std::vector<Ship*> const& ships(ships::getShips());
     for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-        if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it)->owner_->team() != slave_->team()) {
+        if ((*it)->attackable() && (*it)->owner_->team() != slave_->team()) {
             float aggroGain(90.f - (*it)->getLife()*0.9);
             float distance(((*it)->location_-ship()->location_).length()*0.01f);
             aggroGain -= distance;
             if (aggroGain < 0.f) aggroGain = 0.f;
-            aggroGain *= 0.01f;
-            aggroGain *= settings::C_iDumb;
-
-            // from 0 to 50
+            aggroGain *= settings::C_iDumb*0.01f;
             aggroTable_[*it] += aggroGain;
         }
     }
