@@ -119,44 +119,18 @@ void BotController::waitForBall() {
 
 
 void BotController::attackAny() {
-
-    if (target_ && target_->frozen_ > 0) {
+    if (target_ && target_->getLife() == 0.f) {
         aggroTable_[target_] = 0.f;
         target_ = NULL;
     }
+
+    if (target_ && !target_->attackable()) {
+        target_ = NULL;
+    }
+
     if (target_) {
         moveTo(target_->location(), 0.f);
         shootEnemy(target_);
-        if (target_->getLife() == 0.f) {
-            aggroTable_[target_] = 0.f;
-            float maxAggro(0.f);
-            for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                if(it->second > maxAggro && it->first->collidable())
-                    maxAggro = it->second;
-            }
-
-            if(maxAggro == 0.f) {
-                float closest(FLT_MAX);
-                for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
-                    if(((it->first->location() - ship()->location()).lengthSquare() < closest) && (it->first->collidable())) {
-                        closest = (it->first->location() - ship()->location()).lengthSquare();
-                        target_ = it->first;
-                    }
-                if(closest == FLT_MAX)
-                    target_ = NULL;
-                else
-                    aggroTable_[target_] = 100.f;
-            }
-            else
-                for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                    if((it->second == maxAggro) && (it->first->collidable())) {
-                        it->second = 100.f;
-                        target_ = it->first;
-                    }
-                    else
-                        it->second /= (maxAggro/100.f);
-            }
-        }
     }
     else {
         std::vector<Ship*> const& ships = ships::getShips();

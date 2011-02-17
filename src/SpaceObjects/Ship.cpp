@@ -452,7 +452,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     if (frozen_ > 0)
         frozen_ -= unfreeze;
 
-    if (!collectedPowerUps_[items::puShield] && frozen_ <= 0) {
+    if (attackable()) {
         life_ -= amount;
         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
             || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
@@ -613,4 +613,8 @@ float Ship::rotation() const {
 
 bool Ship::collidable() const {
     return visible_ && ghostTimer_ <= 0.f;
+}
+
+bool Ship::attackable() const {
+    return collidable() && frozen_ <= 0 && !collectedPowerUps_[items::puShield];
 }

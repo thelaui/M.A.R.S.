@@ -55,7 +55,7 @@ void BotController::checkAggro() {
         }
         if (maxAggro > 120.f)
             for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                if(it->second == maxAggro) {
+                if(it->second == maxAggro && it->first->attackable()) {
                     it->second = 100.f;
                     target_ = it->first;
                 }
@@ -133,4 +133,18 @@ void BotController::checkSpecial() {
                 break;
             }
         }
+}
+
+void BotController::checkCloseEnemies() {
+    std::vector<Ship*> const& ships(ships::getShips());
+    for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
+        if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it)->owner_->team() != slave_->team()) {
+            float aggroGain(30.f - (*it)->getLife()*0.3);
+            float distance(((*it)->location_-ship()->location_).length()*0.03f);
+            aggroGain -= distance;
+            if (aggroGain < 0.f) aggroGain = 0.f;
+            // from 0 to 20
+            aggroTable_[*it] += aggroGain;
+        }
+    }
 }

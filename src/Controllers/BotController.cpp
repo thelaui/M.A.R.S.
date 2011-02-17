@@ -62,29 +62,35 @@ void BotController::update() {
 }
 
 void BotController::performJob() {
-    switch (currentJob_.type_) {
-        case Job::jAttackTarget:       attackTarget();                                        break;
-        case Job::jAttackAny:          attackAny();                                           break;
-        case Job::jHeal:               heal();                                                break;
-        case Job::jUnfreeze:           unfreeze();                                            break;
-        case Job::jGetPUFuel:
-          case Job::jGetPUHealth:
-          case Job::jGetPUReverse:
-          case Job::jGetPUShield:
-          case Job::jGetPUSleep:       getPowerUp();                                          break;
-        case Job::jKickOutHome:        kickBallOutHome();                                     break;
-        case Job::jKickToEnemy:        kickBallToEnemy();                                     break;
-        case Job::jWaitForBall:        waitForBall();                                         break;
-        case Job::jProtectZone:        protectZone();                                         break;
-        case Job::jLand:               land();                                                break;
-        case Job::jCharge:             charge();                                              break;
-        case Job::jEscape:             escape();                                              break;
-        default:;
+    if (ship()->docked_ && (weaponChangeTimer_ < 0.5f || specialChangeTimer_ < 0.5f) && currentJob_.type_ != Job::jKickOutHome) {
+        charge();
+    }
+    else {
+        switch (currentJob_.type_) {
+            case Job::jAttackTarget:       attackTarget();                                        break;
+            case Job::jAttackAny:          attackAny();                                           break;
+            case Job::jHeal:               heal();                                                break;
+            case Job::jUnfreeze:           unfreeze();                                            break;
+            case Job::jGetPUFuel:
+              case Job::jGetPUHealth:
+              case Job::jGetPUReverse:
+              case Job::jGetPUShield:
+              case Job::jGetPUSleep:       getPowerUp();                                          break;
+            case Job::jKickOutHome:        kickBallOutHome();                                     break;
+            case Job::jKickToEnemy:        kickBallToEnemy();                                     break;
+            case Job::jWaitForBall:        waitForBall();                                         break;
+            case Job::jProtectZone:        protectZone();                                         break;
+            case Job::jLand:               land();                                                break;
+            case Job::jCharge:             charge();                                              break;
+            case Job::jEscape:             escape();                                              break;
+            default:;
+        }
     }
 }
 
 void BotController::evaluate() {
     checkEnergy();
+    checkCloseEnemies();
     checkAggro();
     checkSpecial();
 }

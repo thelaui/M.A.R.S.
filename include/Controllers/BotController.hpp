@@ -71,6 +71,7 @@ class BotController: public Controller {
         void checkAggro();
         void checkEnergy();
         void checkSpecial();
+        void checkCloseEnemies();
 
         // team actions
         void     performJob();

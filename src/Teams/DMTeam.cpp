@@ -25,20 +25,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 
 void DMTeam::createJobs() {
-    if (games::elapsedTime() > 5.f) {
-        checkEnemies();
-        checkPowerUps();
+    checkEnemies();
+    checkPowerUps();
 
-        for (int i=0; i<botControllers_.size(); ++i) {
-            addJob(Job(Job::jLand, 1));
-            addJob(Job(Job::jCharge, 1));
-        }
+    for (int i=0; i<botControllers_.size(); ++i) {
+        addJob(Job(Job::jLand, 1));
+        addJob(Job(Job::jCharge, 1));
     }
-    else {
-        for (int i=0; i<botControllers_.size(); ++i) {
-            addJob(Job(Job::jEscape, 20));
-        }
-    }
+
 }
 
 void DMTeam::checkEnemies() {
@@ -46,14 +40,19 @@ void DMTeam::checkEnemies() {
     bool existAny(false);
 
     for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it)
-        if ((*it)->getOwner()->team() != this && (*it)->collidable()) {
+        if ((*it)->getOwner()->team() != this && (*it)->attackable()) {
             existAny = true;
             break;
         }
 
-    if (existAny)
+    if (existAny) {
         for (int i=0; i<botControllers_.size(); ++i)
             addJob(Job(Job::jAttackAny, 60));
+    }
+    else {
+        for (int i=0; i<botControllers_.size(); ++i)
+            addJob(Job(Job::jEscape, 1));
+    }
 }
 
 void DMTeam::checkPowerUps() {

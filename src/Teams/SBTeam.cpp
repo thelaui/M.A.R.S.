@@ -43,7 +43,7 @@ void SBTeam::checkEnemies() {
     bool existAny(false);
 
     for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it)
-        if ((*it)->getOwner()->team() != this && (*it)->collidable()) {
+        if ((*it)->getOwner()->team() != this && (*it)->attackable()) {
             existAny = true;
             break;
         }

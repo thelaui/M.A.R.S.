@@ -35,14 +35,19 @@ void GITeam::checkEnemies() {
     bool existAny(false);
 
     for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it)
-        if ((*it)->getOwner()->team() != this && (*it)->collidable()) {
+        if ((*it)->getOwner()->team() != this && (*it)->attackable()) {
             existAny = true;
             break;
         }
 
-    if (existAny)
+    if (existAny) {
         for (int i=0; i<botControllers_.size(); ++i)
             addJob(Job(Job::jAttackAny, 90));
+    }
+    else {
+        for (int i=0; i<botControllers_.size(); ++i)
+            addJob(Job(Job::jEscape, 1));
+    }
 }
 
 

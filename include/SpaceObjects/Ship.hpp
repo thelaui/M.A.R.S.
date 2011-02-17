@@ -53,6 +53,7 @@ class Ship: public MobileSpaceObject {
         float   rotation() const;
 
         bool    collidable() const;
+        bool    attackable() const;
 
         std::vector<PowerUp*> const& getCollectedPowerUps() const;
 

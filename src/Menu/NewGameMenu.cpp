@@ -156,7 +156,6 @@ UiWindow* NewGameMenu::get() {
         tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitTDM, 1, 50, Vector2f(20,150), 520, 270, true));
         tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
         tabGraveItation_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
-        tabGraveItation_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
 
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);
