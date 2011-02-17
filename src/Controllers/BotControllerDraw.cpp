@@ -85,7 +85,7 @@ void BotController::draw() {
                 }
                 case Job::jAttackAny: {
                     for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it) {
-                        if (it->second == 100.f) {
+                        if (it->first == target_) {
                             Vector2f direction(it->first->location() - shipLocation);
                             decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.f, 0.f), 8.f);
                         }
@@ -94,7 +94,7 @@ void BotController::draw() {
                             glLineWidth(3.f);
 
                             glBegin(GL_LINES);
-                                glColor3f(it->second/120.f, 0.f, 0);
+                                glColor3f(it->second/120.f, it->second/240.f, 0);
                                 glVertex2f(shipLocation.x_,shipLocation.y_);
                                 glColor3f(0,0,0);
                                 glVertex2f(it->first->location().x_,it->first->location().y_);

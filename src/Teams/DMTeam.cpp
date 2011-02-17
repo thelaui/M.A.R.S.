@@ -29,8 +29,8 @@ void DMTeam::createJobs() {
     checkPowerUps();
 
     for (int i=0; i<botControllers_.size(); ++i) {
-        addJob(Job(Job::jLand, 1));
-        addJob(Job(Job::jCharge, 1));
+        addJob(Job(Job::jLand, 4));
+        addJob(Job(Job::jCharge, 4));
     }
 
 }
@@ -51,7 +51,7 @@ void DMTeam::checkEnemies() {
     }
     else {
         for (int i=0; i<botControllers_.size(); ++i)
-            addJob(Job(Job::jEscape, 1));
+            addJob(Job(Job::jEscape, 6));
     }
 }
 

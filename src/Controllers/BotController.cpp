@@ -111,15 +111,15 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                 }
                 case Job::jCharge: {
                     if (ship()->docked_) {
-                        float life = 100.f - std::pow(ship()->getLife(),4)*0.000001f;
-                        float fuel = 100.f - std::pow(ship()->getFuel(),4)*0.000001f;
+                        float life = 100.f - std::pow(ship()->getLife(),5)*0.00000001f;
+                        float fuel = 100.f - std::pow(ship()->getFuel(),5)*0.00000001f;
                         need = std::max(life,fuel);
                     }
                     break;
                 }
                 case Job::jLand: {
-                    float life = std::pow(100.f - ship()->getLife(),2)*0.01f;
-                    float fuel = std::pow(100.f - ship()->getFuel(),2)*0.01f;
+                    float life = std::pow(100.f - ship()->getLife(),3)*0.0001f;
+                    float fuel = std::pow(100.f - ship()->getFuel(),3)*0.0001f;
                     need = std::max(life,fuel) + didThisJobLAstTimeToo;
                     break;
                 }
@@ -165,14 +165,14 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     dist = 100 - dist;
                     if (dist < 0) dist = 0;
                     float life = 100 - ship()->getLife();
-                    need = dist + life + didThisJobLAstTimeToo;
+                    need = dist*life*0.01 + didThisJobLAstTimeToo;
                     break;
                 }
                 case Job::jGetPUReverse: case Job::jGetPUSleep: {
-                    // 0 - 100, based on distance
+                    // 0 - 70, based on distance
                     float dist = ((*static_cast<Vector2f*>(it->first.object_)-ship()->location()).length());
-                    dist *= 0.2f;
-                    dist = 100 - dist;
+                    dist *= 0.3f;
+                    dist = 70 - dist;
                     if (dist < 0) dist = 0;
                     need = dist + didThisJobLAstTimeToo;
                     break;
@@ -184,7 +184,7 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     dist = 100 - dist;
                     if (dist < 0) dist = 0;
                     float fuel = 100 - ship()->getFuel();
-                    need = dist + fuel + didThisJobLAstTimeToo;
+                    need = dist*fuel*0.01f + didThisJobLAstTimeToo;
                     break;
                 }
                 case Job::jKickToEnemy: {

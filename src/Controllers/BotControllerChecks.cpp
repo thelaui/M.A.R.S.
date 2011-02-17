@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/zones.hpp"
 # include "Players/Player.hpp"
 # include "Teams/Team.hpp"
+# include "System/settings.hpp"
 
 # include <cmath>
 
@@ -139,11 +140,14 @@ void BotController::checkCloseEnemies() {
     std::vector<Ship*> const& ships(ships::getShips());
     for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
         if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it)->owner_->team() != slave_->team()) {
-            float aggroGain(30.f - (*it)->getLife()*0.3);
-            float distance(((*it)->location_-ship()->location_).length()*0.03f);
+            float aggroGain(90.f - (*it)->getLife()*0.9);
+            float distance(((*it)->location_-ship()->location_).length()*0.01f);
             aggroGain -= distance;
             if (aggroGain < 0.f) aggroGain = 0.f;
-            // from 0 to 20
+            aggroGain *= 0.01f;
+            aggroGain *= settings::C_iDumb;
+
+            // from 0 to 50
             aggroTable_[*it] += aggroGain;
         }
     }
