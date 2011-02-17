@@ -83,6 +83,7 @@ void BotController::performJob() {
             case Job::jLand:               land();                                                break;
             case Job::jCharge:             charge();                                              break;
             case Job::jEscape:             escape();                                              break;
+            case Job::jGetControl:         getControl();                                          break;
             default:;
         }
     }
@@ -93,6 +94,7 @@ void BotController::evaluate() {
     checkCloseEnemies();
     checkAggro();
     checkSpecial();
+    checkControl();
 }
 
 void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotController*> >& jobMap) {
@@ -239,6 +241,25 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                 }
                 case Job::jEscape: {
                     need = 10 + didThisJobLAstTimeToo;
+                    CannonControl* control(items::getCannonControl());
+                    if (control) {
+                        Player* carrier(control->getCarrier());
+                        if (carrier == slave_)
+                            need = 100;
+                    }
+                    break;
+                }
+                case Job::jGetControl: {
+                    // 20 - 100, based on distance and much life
+                    CannonControl* control(items::getCannonControl());
+                    if (control) {
+                        float dist = ((control->location()-ship()->location()).length());
+                        dist *= 0.1f;
+                        dist = 50 - dist;
+                        if (dist < 0) dist = 0;
+                        float life = ship()->getLife()*0.5f;
+                        need = dist + life + didThisJobLAstTimeToo;
+                    }
                     break;
                 }
                 default:;

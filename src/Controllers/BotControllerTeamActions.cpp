@@ -29,6 +29,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/RasterZone.hpp"
 # include "SpaceObjects/Home.hpp"
 # include "Teams/teams.hpp"
+# include "Items/items.hpp"
+# include "Items/CannonControl.hpp"
 
 void BotController::kickBallToEnemy() {
     Vector2f ballLocation = balls::getBall()->location_;
@@ -143,8 +145,6 @@ void BotController::attackAny() {
 
 void  BotController::attackTarget() {
     if (currentJob_.object_) {
-        aggroTable_[target_] = 0;
-        target_=NULL;
         moveTo(static_cast<Ship*>(currentJob_.object_)->location(), 0.f);
         shootEnemy(static_cast<Ship*>(currentJob_.object_));
     }
@@ -167,12 +167,6 @@ void BotController::escape() {
         nextRoutePoint_.x_ = FLT_MAX;
 }
 
-void  BotController::startFight() {
-    if (nextRoutePoint_.x_ == FLT_MAX)
-        nextRoutePoint_ = zones::freeZone()->getRandomPoint();
-    moveTo(nextRoutePoint_, 0.9f, false, 250.f);
-}
-
 void  BotController::heal() {
     if (currentJob_.object_) {
         if (moveTo(static_cast<Ship*>(currentJob_.object_)->location(), 0.f, true, 20.f + 30.f*ship()->fragStars_))
@@ -191,5 +185,14 @@ void  BotController::unfreeze() {
 void BotController::getPowerUp() {
     if (currentJob_.object_) {
         moveTo(*static_cast<Vector2f*>(currentJob_.object_), 1.f);
+        shootEnemies();
+    }
+}
+
+void BotController::getControl() {
+    CannonControl* control(items::getCannonControl());
+    if (control) {
+        moveTo(control->location(), 1.f);
+        shootEnemies();
     }
 }

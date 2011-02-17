@@ -72,6 +72,7 @@ class BotController: public Controller {
         void checkEnergy();
         void checkSpecial();
         void checkCloseEnemies();
+        void checkControl();
 
         // team actions
         void     performJob();
@@ -82,10 +83,10 @@ class BotController: public Controller {
         void     attackAny();
         void     protectZone();
         void     escape();
-        void     startFight();
         void     heal();
         void     unfreeze();
         void     getPowerUp();
+        void     getControl();
 
         // basic actions
         void     switchSpecial();

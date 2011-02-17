@@ -23,6 +23,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Teams/Team.hpp"
 # include "System/settings.hpp"
+# include "Items/items.hpp"
+# include "Items/CannonControl.hpp"
 
 # include <cmath>
 
@@ -148,6 +150,17 @@ void BotController::checkCloseEnemies() {
             if (aggroGain < 0.f) aggroGain = 0.f;
             aggroGain *= settings::C_iDumb*0.01f;
             aggroTable_[*it] += aggroGain;
+        }
+    }
+}
+void BotController::checkControl() {
+    CannonControl* control(items::getCannonControl());
+    if (control) {
+        Player* carrier(control->getCarrier());
+        if (carrier == slave_) {
+            for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
+                if (it->second > 0)
+                    slave_->team()->addJob(Job(Job::jAttackTarget, it->second, it->first));
         }
     }
 }

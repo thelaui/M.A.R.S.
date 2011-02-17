@@ -22,6 +22,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Teams/Team.hpp"
 # include "SpaceObjects/Home.hpp"
+# include "Items/items.hpp"
+# include "Items/CannonControl.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -80,7 +82,7 @@ void BotController::draw() {
                 }
                 case Job::jAttackTarget: {
                     Vector2f direction(static_cast<Ship*>(currentJob_.object_)->location() - shipLocation);
-                    decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.f, 0.f));
+                    decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.4f, 0.f, 0.6f));
                     break;
                 }
                 case Job::jAttackAny: {
@@ -121,6 +123,14 @@ void BotController::draw() {
                 case Job::jProtectZone: {
                     Vector2f direction(nextRoutePoint_ - shipLocation);
                     decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.4f, 0.f));
+                    break;
+                }
+                case Job::jGetControl: {
+                    CannonControl* control(items::getCannonControl());
+                    if (control) {
+                        Vector2f direction(control->location() - shipLocation);
+                        decoObjects::drawArrow(shipLocation + direction*0.1f, shipLocation + direction*0.9f, Color3f(0.6f, 0.f, 0.6f));
+                    }
                     break;
                 }
 

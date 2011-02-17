@@ -19,10 +19,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define JOB_HPP_INCLUDED
 
 struct Job {
-    enum JobType{jLand, jCharge, jHeal, jAssist, jUnfreeze, jAttackAny,
+    enum JobType{jLand, jCharge, jHeal, jUnfreeze, jAttackAny,
                  jAttackTarget, jGetPUFuel, jGetPUHealth, jGetPUReverse,
                  jGetPUShield, jGetPUSleep, jKickOutHome, jKickToEnemy,
-                 jWaitForBall, jProtectZone, jEscape};
+                 jWaitForBall, jProtectZone, jEscape, jGetControl};
 
     Job(JobType type, short priority, void* object = NULL):
          type_(type),
