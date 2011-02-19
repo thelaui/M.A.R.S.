@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Home.hpp"
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
+# include "Particles/AmmoInsta.hpp"
 
 # include <SFML/OpenGL.hpp>
 
@@ -61,6 +62,13 @@ void BotController::draw() {
                 glVertex2f(temp.x_, temp.y_);
             glEnd();
         }
+
+        /*const float    maxAngle     (ship()->currentWeapon_->maxAngle());
+        const float    shipRotation (ship()->rotation_*M_PI/180.f);
+        const Vector2f shipDirection(Vector2f(std::cos(shipRotation), std::sin(shipRotation)));
+        if (ship()->currentWeapon_->getType() == weapons::wInsta) {
+            slaveFire(AmmoInsta::hitsAny(ship()->location() + shipDirection*ship()->radius(), shipDirection, slave_->team()));
+        }*/
 
         // draw Jobs
         if (settings::C_drawBotJobs) {

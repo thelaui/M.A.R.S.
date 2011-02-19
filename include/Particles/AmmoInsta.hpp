@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/Particle.hpp"
 
 class Trail;
+class Team;
 
 class AmmoInsta: public Particle<AmmoInsta> {
     public:
@@ -32,6 +33,8 @@ class AmmoInsta: public Particle<AmmoInsta> {
 
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
+
+        static bool hitsAny(Vector2f const& location, Vector2f const& direction, Team* team);
 
         friend class Particle<AmmoInsta>;
 

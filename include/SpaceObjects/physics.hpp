@@ -41,6 +41,9 @@ namespace physics {
     void addStaticObject    (SpaceObject* source);
     void removeStaticObject (SpaceObject* source);
     void addGravitySource   (SpaceObject* source);
+
+    std::vector<SpaceObject*> const& getGravitySources();
+
     void clear              ();
 }
 

@@ -200,6 +200,10 @@ namespace physics {
         gravitySources_.push_back(object);
     }
 
+    std::vector<SpaceObject*> const& getGravitySources() {
+        return gravitySources_;
+    }
+
     void clear() {
         staticObjects_.clear();
         mobileObjects_.clear();

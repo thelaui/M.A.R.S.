@@ -120,6 +120,10 @@ bool operator> (Vector2f const& lhs, Vector2f const& rhs) {
     return lhs.lengthSquare() > rhs.lengthSquare();
 }
 
+bool clockWise(Vector2f const& first, Vector2f const& second) {
+    return (first.x_*second.y_ - first.y_*second.x_) < 0;
+}
+
 std::ostream& operator<<(std::ostream& os, Vector2f const& rhs) {
      return os << "[" << rhs.x_ << ", " << rhs.y_ << "]";
 }

@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Teams/Team.hpp"
 # include "Teams/teams.hpp"
+# include "Particles/AmmoInsta.hpp"
 
 # include <cfloat>
 
@@ -165,23 +166,28 @@ void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) 
     const float    shipRotation (ship()->rotation_*M_PI/180.f);
     const Vector2f shipDirection(Vector2f(std::cos(shipRotation), std::sin(shipRotation)));
 
-    const float    distance     ((location - ship()->location()).length());
+    if (ship()->currentWeapon_->getType() == weapons::wInsta) {
+        slaveFire(AmmoInsta::hitsAny(ship()->location() + shipDirection*ship()->radius(), shipDirection, slave_->team()));
+    }
+    else {
+        const float    distance     ((location - ship()->location()).length());
 
-    if(distance < maxDistance && distance > minDistance) {
-        if (spaceObjects::isOnLine(ship()->location(), shipDirection, location, maxAngle)) {
-            bool doShoot(true);
-            if(avoidTeamMembers) {
-                std::vector<Player*>const& teamMates = slave_->team()->members();
-                for (std::vector<Player*>::const_iterator it = teamMates.begin(); it != teamMates.end(); ++it) {
-                    if (*it != slave_)
-                        if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), (*it)->ship()->location(), 20.f)
-                           && ((location - ship()->location()) > ((*it)->ship()->location() - ship()->location()))) {
-                            doShoot = false;
-                            break;
-                        }
+        if(distance < maxDistance && distance > minDistance) {
+            if (spaceObjects::isOnLine(ship()->location(), shipDirection, location, maxAngle)) {
+                bool doShoot(true);
+                if(avoidTeamMembers) {
+                    std::vector<Player*>const& teamMates = slave_->team()->members();
+                    for (std::vector<Player*>::const_iterator it = teamMates.begin(); it != teamMates.end(); ++it) {
+                        if (*it != slave_)
+                            if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), (*it)->ship()->location(), 20.f)
+                               && ((location - ship()->location()) > ((*it)->ship()->location() - ship()->location()))) {
+                                doShoot = false;
+                                break;
+                            }
+                    }
                 }
+                slaveFire(doShoot);
             }
-            slaveFire(doShoot);
         }
     }
 }

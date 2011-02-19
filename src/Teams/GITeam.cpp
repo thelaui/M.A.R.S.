@@ -25,8 +25,8 @@ void GITeam::createJobs() {
     checkEnemies();
 
     for (int i=0; i<botControllers_.size(); ++i) {
-        addJob(Job(Job::jLand, 10));
-        addJob(Job(Job::jCharge, 10));
+        addJob(Job(Job::jLand, 1));
+        addJob(Job(Job::jCharge, 1));
     }
 }
 
@@ -42,11 +42,11 @@ void GITeam::checkEnemies() {
 
     if (existAny) {
         for (int i=0; i<botControllers_.size(); ++i)
-            addJob(Job(Job::jAttackAny, 90));
+            addJob(Job(Job::jEscape, 90));
     }
     else {
         for (int i=0; i<botControllers_.size(); ++i)
-            addJob(Job(Job::jEscape, 1));
+            addJob(Job(Job::jEscape, 3));
     }
 }
 

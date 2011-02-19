@@ -100,6 +100,9 @@ bool          operator<  (Vector2f const& lhs, Vector2f const& rhs);
 /// Comparision of two vectors.
 bool          operator>  (Vector2f const& lhs, Vector2f const& rhs);
 
+/// Returns true, if second vector is rotated clockwise in reference to the first
+bool clockWise(Vector2f const& first, Vector2f const& second);
+
 /// Stream operator for a vector.
 /// Creates an output like [x, y].
 std::ostream& operator<< (std::ostream& os, Vector2f const& rhs);
