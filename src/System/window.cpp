@@ -215,9 +215,12 @@ namespace window {
         window_.EnableVerticalSync(settings::C_vsync);
         //window_.SetFramerateLimit(15);
 
-        sf::Image icon;
-        icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
-        window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
+        # ifndef __APPLE__
+            // apple uses bundle icon instead
+            sf::Image icon;
+            icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
+            window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
+        # endif
 
         resized();
 
