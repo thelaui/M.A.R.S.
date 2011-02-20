@@ -182,7 +182,7 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
 void Home::explode() {
     sound::playSound(sound::PlanetExplode, location_, 100.f);
     announcer::announce(announcer::Neutral);
-    physics::causeShockWave(damageSource(), location_, 100.f, 500.f, 100.f);
+    physics::causeShockWave(damageSource(), location_, 200.f, 500.f, 5.f);
     particles::spawnMultiple(200, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);
     particles::spawnMultiple(2, particles::pBurningFragment, location_);

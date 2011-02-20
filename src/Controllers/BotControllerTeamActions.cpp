@@ -194,6 +194,5 @@ void BotController::getControl() {
     CannonControl* control(items::getCannonControl());
     if (control) {
         moveTo(control->location(), 1.f);
-        shootEnemies();
     }
 }

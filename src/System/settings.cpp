@@ -209,7 +209,7 @@ namespace settings {
         # ifdef __APPLE__
             std::string home(getenv("HOME"));
             if (*home.rbegin() != '/') home += '/';
-            mkdir((home + "Library/Application Support/mars/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            mkdir((home + "Library/Preferences/mars/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
         // search for config file
@@ -242,12 +242,12 @@ namespace settings {
                 std::string home(getenv("HOME"));
                 if (*home.rbegin() != '/') home += '/';
 
-                if (std::ifstream((home + "Library/Application Support/mars/mars.cfg").c_str())) {
-                    C_configPath =      home + "Library/Application Support/mars/";
+                if (std::ifstream((home + "Library/Preferences/mars/mars.cfg").c_str())) {
+                    C_configPath =      home + "Library/Preferences/mars/";
                     success = true;
                 }
                 else {
-                    C_configPath =      home + "Library/Application Support/mars/";
+                    C_configPath =      home + "Library/Preferences/mars/";
                 }
             # endif
 
