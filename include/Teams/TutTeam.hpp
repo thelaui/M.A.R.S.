@@ -1,10 +1,10 @@
-/* TutWindow05.hpp
+/* TutTeam.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
-Software Foundation, either version 5 of the License, or (at your option)
+Software Foundation, either version 3 of the License, or (at your option)
 any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT
@@ -15,32 +15,26 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef TUTWINDOW05_HPP_INCLUDED
-# define TUTWINDOW05_HPP_INCLUDED
+# ifndef TUTTEAM_HPP_INCLUDED
+# define TUTTEAM_HPP_INCLUDED
 
-# include "Interface/UiWindow.hpp"
+# include "Teams/Team.hpp"
 
-class TutWindow05: public UiWindow {
+class TutTeam: public Team {
     public:
-        static UiWindow* get();
-        void checkWidgets();
-        void onShow() {}
-
-        static void reset();
+        TutTeam(Color3f const& color = Color3f::random()):
+            Team(color) {}
 
     private:
-        TutWindow05(int width, int height): UiWindow(width, height) {}
-        TutWindow05(TutWindow05 const& copy);
+        void createJobs();
 
-        static UiWindow* instance_;
+        void checkEnemies();
+        void checkPowerUps();
 
-        static bool kOk_;
+        std::vector<Vector2f> powerUpLocations_;
 };
 
-# endif // TUTWINDOW05_HPP_INCLUDED
-
-
-
+# endif // TUTTEAM_HPP_INCLUDED
 
 
 

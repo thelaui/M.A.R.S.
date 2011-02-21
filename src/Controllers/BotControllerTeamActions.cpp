@@ -165,7 +165,6 @@ void BotController::escape() {
         nextRoutePoint_ = zones::freeZone()->getRandomPoint();
     if (moveTo(nextRoutePoint_, 0.4f, false, 100.f))
         nextRoutePoint_.x_ = FLT_MAX;
-    shootEnemies();
 }
 
 void  BotController::heal() {

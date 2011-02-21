@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/Tutorial.hpp"
 
-# include "Teams/DMTeam.hpp"
+# include "Teams/TutTeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Items/items.hpp"
@@ -30,26 +30,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/spaceObjects.hpp"
 # include "SpaceObjects/Home.hpp"
 # include "Menu/OptionsMenu.hpp"
-# include "Tutorial/TutWindow01.hpp"
-# include "Tutorial/TutWindow02.hpp"
-# include "Tutorial/TutWindow03.hpp"
-# include "Tutorial/TutWindow04.hpp"
-# include "Tutorial/TutWindow05.hpp"
-# include "Tutorial/TutWindow06.hpp"
-# include "Tutorial/TutWindow07.hpp"
-# include "Tutorial/TutWindow08.hpp"
-# include "Tutorial/TutWindow09.hpp"
-# include "Tutorial/TutWindow10.hpp"
-# include "Tutorial/TutWindow11.hpp"
-# include "Tutorial/TutWindow12.hpp"
-# include "Tutorial/TutWindow13.hpp"
-# include "Tutorial/TutWindow14.hpp"
-# include "Tutorial/TutWindow15.hpp"
-# include "Tutorial/TutWindow16.hpp"
-# include "Tutorial/TutWindow17.hpp"
-# include "Tutorial/TutWindow18.hpp"
-# include "Tutorial/TutWindow19.hpp"
-# include "Tutorial/TutWindow20.hpp"
+# include "Menu/TutorialWindow.hpp"
+# include "Locales/locales.hpp"
 
 Tutorial::Tutorial():
     Game(games::gTutorial),
@@ -65,12 +47,14 @@ Tutorial::Tutorial():
     fuel_(false),
     name_(false) {
 
-    settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
-    settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
+    settings::C_EnabledWeapons  = weapons::wAFK47 | weapons::wShotgun | weapons::wROFLE;
+    settings::C_EnabledSpecials = specials::sFreeze | specials::sHeal | specials::sBlast;
+
+    settings::C_iDumb = 0;
 
     music::playGameMusic();
 
-    players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
+    players::addPlayer (teams::addTeam(new TutTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     settings::C_playerIIteamL = false;
     settings::C_playerIIteamR = false;
     settings::C_playerIteamL = false;
@@ -112,17 +96,17 @@ void Tutorial::update() {
     switch (state_) {
         case 0:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow01::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut01), locales::getLocale(locales::TutText01), 1, false, true));
                 ++state_;
             } break;
         case 1:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow02::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut02), locales::getLocale(locales::TutText02), 2, false, true));
                 ++state_;
             } break;
         case 2:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow03::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut03), locales::getLocale(locales::TutText03), 3, false, false));
                 ++state_;
             } break;
         case 3:
@@ -146,19 +130,19 @@ void Tutorial::update() {
             } break;
         case 7:
             if (zones::updateTutZones()){
-                menus::showWindow(TutWindow04::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut04), locales::getLocale(locales::TutText04), 4, false, false));
                 zones::addTutorialZone(Vector2f(1300.f, 450.f), 190.f);
                 ++state_;
             } break;
         case 8:
             if (players::getPlayerI()->ship()->docked_){
                 zones::clear();
-                menus::showWindow(TutWindow05::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut05), locales::getLocale(locales::TutText05), 5, false, true));
                 ++state_;
             } break;
         case 9:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow06::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut06), locales::getLocale(locales::TutText06), 6, false, false));
                 ++state_;
             } break;
         case 10:
@@ -176,31 +160,31 @@ void Tutorial::update() {
             break;
         case 11:
             if (zones::updateTutZones()){
-                menus::showWindow(TutWindow07::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut07), locales::getLocale(locales::TutText07), 7, false, true));
                 ++state_;
             } break;
         case 12:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow08::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut08), locales::getLocale(locales::TutText08), 8, false, false));
                 zones::addTutorialZone(Vector2f(1300.f, 450.f), 190.f);
                 ++state_;
             } break;
         case 13:
             if (players::getPlayerI()->ship()->docked_){
                 zones::clear();
-                menus::showWindow(TutWindow09::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut09), locales::getLocale(locales::TutText09), 9, false, true));
                 ++state_;
             } break;
         case 14:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow10::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut10), locales::getLocale(locales::TutText10), 10, false, false));
                 ++state_;
             } break;
         case 15:
             if (!players::getPlayerI()->ship()->docked_) {
                 zones::createRaster(4, 3);
-                menus::showWindow(TutWindow11::get());
-                Team* evilTeam = teams::addTeam(new DMTeam(Color3f(0.5f, 0.f, 0.5f)));
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut11), locales::getLocale(locales::TutText11), 11, false, false));
+                Team* evilTeam = teams::addTeam(new TutTeam(Color3f(0.5f, 0.f, 0.5f)));
                 players::addPlayer(evilTeam, controllers::cBot);
                 evilTeam->setHome(evilHome_);
                 std::vector<Player*> evilPlayer(evilTeam->members());
@@ -216,12 +200,12 @@ void Tutorial::update() {
             } break;
         case 17:
             if (timer::totalTime() > timer_ + 1.f) {
-                menus::showWindow(TutWindow12::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut12), locales::getLocale(locales::TutText12), 12, false, true));
                 ++state_;
             } break;
         case 18:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow13::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut13), locales::getLocale(locales::TutText13), 13, false, false));
                 ++state_;
             } break;
         case 19:
@@ -247,7 +231,7 @@ void Tutorial::update() {
             } break;
         case 22:
             if (timer::totalTime() > timer_ + 1.f) {
-                menus::showWindow(TutWindow14::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut14), locales::getLocale(locales::TutText14), 14, false, false));
                 ++state_;
             } break;
         case 23:
@@ -257,34 +241,34 @@ void Tutorial::update() {
             } break;
         case 24:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow15::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut15), locales::getLocale(locales::TutText15), 15, false, true));
                 ++state_;
             } break;
         case 25:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow16::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut16), locales::getLocale(locales::TutText16), 16, false, false));
                 ++state_;
             } break;
 
 
         case 50:
             if (!menus::visible() && timer::totalTime() > deadTimer_ + 1.f) {
-                menus::showWindow(TutWindow17::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut17), locales::getLocale(locales::TutText17), 0, true, false));
                 state_ = 99;
             } break;
         case 51:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow18::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut18), locales::getLocale(locales::TutText18), 0, true, false));
                 state_ = 99;
             } break;
         case 52:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow19::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut19), locales::getLocale(locales::TutText19), 0, true, false));
                 state_ = 99;
             } break;
         case 53:
             if (!menus::visible()) {
-                menus::showWindow(TutWindow20::get());
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut20), locales::getLocale(locales::TutText20), 0, true, false));
                 state_ = 99;
             } break;
 
@@ -321,7 +305,7 @@ void Tutorial::restart() {
     evilPlayer2_ = NULL;
 
 
-    players::addPlayer(teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
+    players::addPlayer(teams::addTeam(new TutTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     teams::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
     players::createShips();
 

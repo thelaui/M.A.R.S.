@@ -28,10 +28,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 void ShipName::draw() const {
     if (ship_->visible_) {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-        if (ship_->weaponChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2)))
-            text::drawSpaceText(ship_->currentWeapon_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
-        else if (ship_->specialChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2)))
-            text::drawSpaceText(ship_->currentSpecial_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_)*2.5f, 12.f, TEXT_ALIGN_CENTER, Color3f(0.8f, 0.8f, 0.8f));
+        if (ship_->weaponChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2))) {
+            text::drawSpaceText(ship_->currentWeapon_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_  )*2.5f, 12.f, TEXT_ALIGN_CENTER, Color3f(1.f, 0.5f, 0.7f));
+        }
+        else if (ship_->specialChange_ && ((ship_->owner_->type() == controllers::cPlayer1) | (ship_->owner_->type() == controllers::cPlayer2))) {
+            text::drawSpaceText(ship_->currentSpecial_->getName(), ship_->location_ + Vector2f(0.f, -ship_->radius_  )*2.5f, 12.f, TEXT_ALIGN_CENTER, Color3f(0.5f, 0.5f, 1.f));
+        }
         else {
             Color3f color(1.f, 0.f, 0.f);
             color.h(color.h() + ship_->getLife());

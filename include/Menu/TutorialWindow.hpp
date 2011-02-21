@@ -1,10 +1,10 @@
-/* TutWindow18.hpp
+/* TutorialWindow.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
-Software Foundation, either version 9 of the License, or (at your option)
+Software Foundation, either version 3 of the License, or (at your option)
 any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT
@@ -15,31 +15,30 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef TUTWINDOW18_HPP_INCLUDED
-# define TUTWINDOW18_HPP_INCLUDED
+# ifndef TUTORIALWINDOW_HPP_INCLUDED
+# define TUTORIALWINDOW_HPP_INCLUDED
 
 # include "Interface/UiWindow.hpp"
 
-class TutWindow18: public UiWindow {
+class TutorialWindow: public UiWindow {
     public:
-        static UiWindow* get();
+        static UiWindow* get(sf::String* text, sf::String* title, int index, bool info, bool next);
         void checkWidgets();
         void onShow() {}
 
         static void reset();
 
     private:
-        TutWindow18(int width, int height): UiWindow(width, height) {}
-        TutWindow18(TutWindow18 const& copy);
+        TutorialWindow(int width, int height): UiWindow(width, height) {}
+        TutorialWindow(TutorialWindow const& copy);
 
         static UiWindow* instance_;
 
         static bool kOk_;
+        static sf::String index_;
 };
 
-# endif // TUTWINDOW18_HPP_INCLUDED
-
-
+# endif // TUTORIALWINDOW_HPP_INCLUDED
 
 
 
