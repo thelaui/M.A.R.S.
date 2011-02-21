@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "System/timer.hpp"
+# include "Hud/hud.hpp"
+# include "Locales/locales.hpp"
 
 namespace music {
 
@@ -27,6 +29,7 @@ namespace music {
         // for Music there is only one channel... who wants to have multiple music files played at once?
         sf::Music musicChannel_;
         bool      initialized_(false);
+        MusicType currentTrack_;
 
         void init() {
             musicChannel_.SetRelativeToListener(true);
@@ -44,12 +47,13 @@ namespace music {
                 case Dancezone:        musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/dancezone.ogg");      break;
             }
             musicChannel_.Play();
+            currentTrack_ = music;
         }
     }
 
     void update() {
         if (musicChannel_.GetStatus() == sf::Music::Stopped)
-            playMusic(static_cast<MusicType>(sf::Randomizer::Random(0, Thisistheday-1)));
+            playGameMusic();
 
         float slowMoTime(timer::slowMoTime());
         if (slowMoTime > 0.75f) {
@@ -71,7 +75,19 @@ namespace music {
 
     void playGameMusic() {
         musicChannel_.SetLoop(false);
-        playMusic(static_cast<MusicType>(sf::Randomizer::Random(0, Thisistheday-1)));
+        MusicType nextTrack(currentTrack_);
+
+        while (currentTrack_ == nextTrack)
+            nextTrack = static_cast<MusicType>(sf::Randomizer::Random(0, Thisistheday-1));
+
+        playMusic(nextTrack);
+    }
+
+    void next() {
+        if (currentTrack_ != Thisistheday) {
+            stop();
+            hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
+        }
     }
 
     void stop() {

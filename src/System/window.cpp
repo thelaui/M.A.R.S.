@@ -141,6 +141,8 @@ namespace window {
                 else if (event.Type == sf::Event::KeyPressed) {
                     if (event.Key.Code == settings::C_screenShotKey && !menus::keyboardFixed())
                         screenShot();
+                    else if (event.Key.Code == settings::C_audioNextKey && !menus::keyboardFixed())
+                        music::next();
                     else if (!menus::visible())
                         controllers::singleKeyEvent(event.Key.Code);
                     menus::keyEvent(true, event.Key.Code);

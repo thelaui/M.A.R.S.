@@ -90,9 +90,12 @@
 
 // audio options
 
-043 Music Volume
-044 Sound Volume
-045 Announcer Volume
+123 Volume settings
+043 Music
+044 Sound
+045 Announcer
+128 Play next Track
+129 Playback settings
 
 // player options
 
@@ -264,6 +267,7 @@
 178 Dismisses tool tips like this one.
 179 Sets the format being used when screenshots are saved.
 180 When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/
+181 Pressing this key switches to the next music track.
 182 If that many ships explode simultaneously, the slow motion effect kicks in.
 183 Displays the job of each bot.
 184 Displays tactical zones, which are important for the artificial intelligence.
@@ -292,5 +296,6 @@
 // Interface notifications
 
 205 Screenshot saved!
+214 Next music track!
 
-// 213 (181)
+// 215

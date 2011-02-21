@@ -66,6 +66,7 @@ namespace settings {
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 false;
     sf::Key::Code  C_screenShotKey =        sf::Key::F12;
+    sf::Key::Code  C_audioNextKey =         sf::Key::F8;
     std::string C_configPath =              "";
     std::string C_dataPath =                "";
     std::string C_screenShotFormat =        "jpg";
@@ -179,6 +180,7 @@ namespace settings {
             outStream << "[resolutionX] "           << C_resX << std::endl;
             outStream << "[resolutionY] "           << C_resY << std::endl;
             outStream << "[colorDepth] "            << C_colorDepth << std::endl;
+            outStream << "[audioNextKey] "          << C_audioNextKey << std::endl;
             outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
             outStream << "[screenShotFormat] "      << C_screenShotFormat << std::endl;
             outStream << "[enabledWeapons] "        << C_EnabledWeaponsByUser << std::endl;
@@ -656,6 +658,11 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_colorDepth = value;
+                }
+                else if (inputLine == "[audioNextKey]") {
+                    int value;
+                    iss >> value;
+                    C_audioNextKey = (sf::Key::Code)value;
                 }
                 else if (inputLine == "[screenShotKey]") {
                     int value;

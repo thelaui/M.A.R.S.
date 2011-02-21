@@ -136,10 +136,12 @@ UiWindow* OptionsMenu::get() {
         off.push_back(*locales::getLocale(locales::SlowMoOff));
         tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), locales::getLocale(locales::ttSlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(10,30), 560, 210, true, off));
 
-        tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::DebuggingInformation), Vector2f(10, 30), 560, 90));
-        tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), locales::getLocale(locales::ttMusicVolume), &musicVolume_, 0, 100, Vector2f(20,60), 540, 210, true));
-        tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), locales::getLocale(locales::ttSoundVolume), &soundVolume_, 0, 100, Vector2f(20,80), 540, 210, true));
+        tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::VolumeSettings), Vector2f(10, 30), 560, 90));
+        tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), locales::getLocale(locales::ttMusicVolume), &musicVolume_, 0, 100, Vector2f(20,60), 540, 200, true));
+        tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), locales::getLocale(locales::ttSoundVolume), &soundVolume_, 0, 100, Vector2f(20,80), 540, 200, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::AnnouncerVolume), locales::getLocale(locales::ttAnnouncerVolume), &announcerVolume_, 0, 100, Vector2f(20,100), 540, 210, true));
+        tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::PlaybackSettings), Vector2f(10, 140), 560, 60));
+        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioNextKey), locales::getLocale(locales::ttAudioNextKey), &settings::C_audioNextKey, Vector2f(20,170), 350, 200));
 
         tabPlayer1->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIName, Vector2f(10,30), 560, 200, TEXT_EDIT, 12));
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIup, Vector2f(10,50), 560, 200));

@@ -40,18 +40,19 @@ namespace locales {
                      RightControl, Return,Right, RightShift, RightSuper, SemiColon, Slash, Space, Subtract, Tilde, Tab,
                      Up, Display, Audio, WindowSettings, StartTutorial, Next, Tut01, TutText01, Tut02, TutText02, Tut03,
                      TutText03, Tut04, TutText04, Tut05, TutText05, Tut06, TutText06, Tut07, TutText07, Tut08, TutText08,
-                     sssssssssss, Tut09, TutText09, Tut10, TutText10, sssss, sss, Tut11, TutText11, Tut12,
+                     VolumeSettings, Tut09, TutText09, Tut10, TutText10, AudioNextKey, PlaybackSettings, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
                      Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
                      Resolution, ColorDepth, SpecialKey, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
-                     ttScreenShotFormat, ttScreenShotKey, sssssssss, ttSlowMoKickIn, ttBotsOrientation,
+                     ttScreenShotFormat, ttScreenShotKey, ttAudioNextKey, ttSlowMoKickIn, ttBotsOrientation,
                      ttZones, ttAIPaths, ttFullscreen, ttVerticalSynchronisation,
                      ttShaders, ttResolution, ttStarsHigh, ttParticleCountSlider, ttParticleLifetime, ttMusicVolume,
                      ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
                      ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot, InfoGIP,
                      ShortDescriptionGIP, Tut21, TutText21, Tut22, TutText22, PleaseEnterName, PleaseEnterNameText,
+                     NextTrackNotify,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

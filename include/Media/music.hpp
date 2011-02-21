@@ -33,6 +33,8 @@ namespace music {
     void playMenuMusic();
     /// Plays a music file, suitable for in-game action.
     void playGameMusic();
+    /// Switches to the next track.
+    void next();
     /// Stops playing Music.
     void stop();
 
