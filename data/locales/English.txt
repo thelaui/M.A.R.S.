@@ -214,13 +214,20 @@
 131 Now let's see how you make it against a rookie from another planet.\nSeems like he is trying to improve his flying abilities.\nBeat him!
 
 132 Impressive!
-133 You did it! As you may have noticed, you gain some reputation points for each killed enemy.\nThe little green number popping up over your ship represents the amount. It will increase if you kill a lot of enemies in row.
+133 You did it! As you may have noticed, a little star apperead over your ship.\nThe more enemies you kill, the more of them will show. But they are not only a frag indicator! Land again and I will show you what else stars are good for.
+
+208 Specials..
+209 As I promised, I will tell you the meaning of stars. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance! The more stars you have, the larger range and strength of the special grow.
+
+210 Selection...
+211 To switch through the specials, you just have to press
+212 Now choose one using
+213 and 
 
 134 Beware!
 135 There is no time for rest.\nOur enemies have sent one of their real warriors for vengeance!\nThere is nothing I can do for you...
 
 136 Unbelievable!
-
 137 You managed all my tasks successfully. Now what to do?\nLet's have a look at the options menu. There you can adjust a lot of... well... options.\nFor example you may choose your ship style and color or change your name...
 
 138 Who's best?
@@ -288,4 +295,4 @@
 
 205 Screen shot saved!
 
-// 208 (181)
+// 214 (181)
