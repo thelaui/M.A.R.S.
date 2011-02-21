@@ -26,7 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 
 DropDownWindow::DropDownWindow (int width, ComboBox* parent, std::vector<sf::String> elements):
-    UiWindow(width, elements.size()*24 + 20),
+    UiWindow(200, elements.size()*24 + 20),
     parent_(parent),
     elements_(elements.size()) {
 

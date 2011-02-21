@@ -52,7 +52,7 @@ namespace locales {
                      ttSoundVolume, ttAnnouncerVolume, ttTeamPlayer, ttPlayersWho, ttBotCount, ttPointLimitTeam,
                      ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot, InfoGIP,
                      ShortDescriptionGIP, Tut21, TutText21, Tut22, TutText22, PleaseEnterName, PleaseEnterNameText,
-                     NextTrackNotify,
+                     NextTrackNotify, GeneralOptions, SpecialEffects, ShipSettings,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

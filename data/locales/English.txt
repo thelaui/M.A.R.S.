@@ -35,6 +35,8 @@
 056 Weapon Options
 203 Weapons
 204 Specials
+166 PowerUp Spawn Rate
+167 Bot Difficulty 
 
 // story information
 
@@ -57,6 +59,8 @@
 102 Graphics
 103 Audio
 
+// interface Options
+
 104 Window Settings
 031 Show Debug Information
 032 Bots Orientation
@@ -64,9 +68,13 @@
 034 AI-Paths
 035 Show Game Information
 036 Frames per Second
+215 General Settings
 152 Language
 153 Hot Key for Screenshots
 054 File Format for Screenshots
+
+// graphics options
+
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
@@ -76,26 +84,24 @@
 055 Display Tool Tips
 163 Shader Effects
 164 Sadly, shaders are not supported by your hardware!
-
 151 High Star Field Resolution
 173 Resolution
 174 Color Depth
 
 // gameplay options
 
-166 PowerUp Spawn Rate
-167 Bot Difficulty 
+216 Special Effects
 168 Explosions for Slow Motion
 169 Off
 
 // audio options
 
-123 Volume settings
+123 Volume Settings
 043 Music
 044 Sound
 045 Announcer
-128 Play next Track
-129 Playback settings
+128 Play Next Track
+129 Playback Settings
 
 // player options
 
@@ -105,6 +111,7 @@
 049 Turn Right
 050 Weapon
 175 Special
+217 Ship Settings
 051 Ship
 052 Player Color
 053 Team Color
@@ -298,4 +305,4 @@
 205 Screenshot saved!
 214 Next music track!
 
-// 215
+// 218

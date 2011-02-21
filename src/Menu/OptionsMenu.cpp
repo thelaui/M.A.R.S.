@@ -82,24 +82,20 @@ UiWindow* OptionsMenu::get() {
         Tab* tabPlayer1   = new Tab(&settings::C_playerIName, 100);
         Tab* tabPlayer2   = new Tab(&settings::C_playerIIName, 100);
 
-        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GameInformation), Vector2f(10, 30), 190, 90));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), locales::getLocale(locales::ttFramesPerSecond), &settings::C_showFPS, Vector2f(20,60), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), locales::getLocale(locales::ttParticleCount), &settings::C_showParticleCount, Vector2f(20,80), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ShowToolTips), locales::getLocale(locales::ttShowToolTips), &settings::C_showToolTips, Vector2f(20,100), 140));
-        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::DebuggingInformation), Vector2f(210, 30), 190, 90));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIJobs), locales::getLocale(locales::ttBotsOrientation), &settings::C_drawBotJobs, Vector2f(220,60), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::Zones), locales::getLocale(locales::ttZones), &settings::C_drawZones, Vector2f(220,80), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), locales::getLocale(locales::ttAIPaths), &settings::C_drawAIPath, Vector2f(220,100), 140));
-        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::DebuggingInformation), Vector2f(10, 140), 400, 90));
-        tabInterface->addWidget(new LanguageButton(locales::getLocale(locales::Language), Vector2f(20,170), 350, 200));
+        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GeneralOptions), Vector2f(10, 30), 560, 90));
+        tabInterface->addWidget(new LanguageButton(locales::getLocale(locales::Language), Vector2f(20,60), 540, 200));
         std::vector<sf::String> fileFormats;
             fileFormats.push_back("BITMAP (*.bmp)");
             fileFormats.push_back("GIF (*.gif)");
             fileFormats.push_back("JPEG (*.jpg)");
             fileFormats.push_back("PNG(*.png)");
             fileFormats.push_back("TARGA (*.tga)");
-        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::ScreenShotFormat), locales::getLocale(locales::ttScreenShotFormat), &format_, fileFormats, Vector2f(20,200), 350, 200));
-        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKey), &settings::C_screenShotKey, Vector2f(20,220), 350, 200));
+        tabInterface->addWidget(new ComboBox(locales::getLocale(locales::ScreenShotFormat), locales::getLocale(locales::ttScreenShotFormat), &format_, fileFormats, Vector2f(20,80), 540, 200));
+        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKey), &settings::C_screenShotKey, Vector2f(20,100), 540, 200));
+        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GameInformation), Vector2f(10, 140), 560, 90));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), locales::getLocale(locales::ttFramesPerSecond), &settings::C_showFPS, Vector2f(20,170), 140));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), locales::getLocale(locales::ttParticleCount), &settings::C_showParticleCount, Vector2f(20,190), 140));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ShowToolTips), locales::getLocale(locales::ttShowToolTips), &settings::C_showToolTips, Vector2f(20,210), 140));
 
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), locales::getLocale(locales::ttFullscreen), &fullscreen_, Vector2f(20,60), 150));
         tabGraphics->addWidget(new LabeledBox(locales::getLocale(locales::WindowSettings), Vector2f(10, 30), 560, 110));
@@ -126,49 +122,56 @@ UiWindow* OptionsMenu::get() {
                     colorDepths.push_back(depth.str());
             }
         }
-        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), locales::getLocale(locales::ttResolution), &resolution_, resolutions, Vector2f(20,120), 360, 200));
+        tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), locales::getLocale(locales::ttResolution), &resolution_, resolutions, Vector2f(20,120), 540, 200));
         tabGraphics->addWidget(new LabeledBox(locales::getLocale(locales::GameSettings), Vector2f(10, 170), 560, 90));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), locales::getLocale(locales::ttStarsHigh), &settings::C_StarsHigh, Vector2f(20,200), 150));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), locales::getLocale(locales::ttParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(20,220), 540));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), locales::getLocale(locales::ttParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(20,240), 540));
-
-        std::vector<sf::String> off;
-        off.push_back(*locales::getLocale(locales::SlowMoOff));
-        tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), locales::getLocale(locales::ttSlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(10,30), 560, 210, true, off));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), locales::getLocale(locales::ttParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(20,220), 540, 200));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), locales::getLocale(locales::ttParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(20,240), 540, 200));
 
         tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::VolumeSettings), Vector2f(10, 30), 560, 90));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::MusicVolume), locales::getLocale(locales::ttMusicVolume), &musicVolume_, 0, 100, Vector2f(20,60), 540, 200, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), locales::getLocale(locales::ttSoundVolume), &soundVolume_, 0, 100, Vector2f(20,80), 540, 200, true));
-        tabAudio->addWidget(new Slider(locales::getLocale(locales::AnnouncerVolume), locales::getLocale(locales::ttAnnouncerVolume), &announcerVolume_, 0, 100, Vector2f(20,100), 540, 210, true));
+        tabAudio->addWidget(new Slider(locales::getLocale(locales::AnnouncerVolume), locales::getLocale(locales::ttAnnouncerVolume), &announcerVolume_, 0, 100, Vector2f(20,100), 540, 200, true));
         tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::PlaybackSettings), Vector2f(10, 140), 560, 60));
-        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioNextKey), locales::getLocale(locales::ttAudioNextKey), &settings::C_audioNextKey, Vector2f(20,170), 350, 200));
+        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioNextKey), locales::getLocale(locales::ttAudioNextKey), &settings::C_audioNextKey, Vector2f(20,170), 540, 200));
 
-        tabPlayer1->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIName, Vector2f(10,30), 560, 200, TEXT_EDIT, 12));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIup, Vector2f(10,50), 560, 200));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIleft, Vector2f(10,70), 560, 200));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIright, Vector2f(10,90), 560, 200));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIfire, Vector2f(10,110), 560, 200));
-        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerISpecialKey, Vector2f(10,130), 560, 200));
-        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(500,200)));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, 10, Vector2f(10,170), 420, 200, true, generateName::shipNames()));
-        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(10,200), 420, 200));
-        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerITeamColor, Vector2f(10,230), 420, 200));
+        std::vector<sf::String> off;
+        off.push_back(*locales::getLocale(locales::SlowMoOff));
+        tabGameplay->addWidget(new LabeledBox(locales::getLocale(locales::SpecialEffects), Vector2f(10, 30), 560, 90));
+        tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), locales::getLocale(locales::ttSlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, Vector2f(20,60), 540, 200, true, off));
+        tabGameplay->addWidget(new LabeledBox(locales::getLocale(locales::DebuggingInformation), Vector2f(10, 140), 560, 90));
+        tabGameplay->addWidget(new Checkbox(locales::getLocale(locales::AIJobs), locales::getLocale(locales::ttBotsOrientation), &settings::C_drawBotJobs, Vector2f(20,170), 140));
+        tabGameplay->addWidget(new Checkbox(locales::getLocale(locales::Zones), locales::getLocale(locales::ttZones), &settings::C_drawZones, Vector2f(20,190), 140));
+        tabGameplay->addWidget(new Checkbox(locales::getLocale(locales::AIPaths), locales::getLocale(locales::ttAIPaths), &settings::C_drawAIPath, Vector2f(20,210), 140));
 
-        tabPlayer2->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIIName, Vector2f(10,30), 560, 200, TEXT_EDIT, 12));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIIup, Vector2f(10,50), 560, 200));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIIleft, Vector2f(10,70), 560, 200));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIIright, Vector2f(10,90), 560, 200));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIIfire, Vector2f(10,110), 560, 200));
-        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIISpecialKey, Vector2f(10,130), 560, 200));
-        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(500,200)));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, 10, Vector2f(10,170), 420, 200, true, generateName::shipNames()));
-        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(10,200), 420, 200));
-        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerIITeamColor, Vector2f(10,230), 420, 200));
+        tabPlayer1->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIName, Vector2f(20,30), 540, 200, TEXT_EDIT, 12));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIup, Vector2f(20,50), 540, 200));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIleft, Vector2f(20,70), 540, 200));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIright, Vector2f(20,90), 540, 200));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIfire, Vector2f(20,110), 540, 200));
+        tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerISpecialKey, Vector2f(20,130), 540, 200));
+        tabPlayer1->addWidget(new LabeledBox(locales::getLocale(locales::ShipSettings), Vector2f(10, 170), 560, 90));
+        tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(510,210)));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, 10, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
+        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(20,220), 410, 200));
+        tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerITeamColor, Vector2f(20,240), 410, 200));
+
+        tabPlayer2->addWidget(new TextEdit(locales::getLocale(locales::Name), &settings::C_playerIIName, Vector2f(20,30), 540, 200, TEXT_EDIT, 12));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Accelerate), NULL, &settings::C_playerIIup, Vector2f(20,50), 540, 200));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnLeft), NULL, &settings::C_playerIIleft, Vector2f(20,70), 540, 200));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::TurnRight), NULL, &settings::C_playerIIright, Vector2f(20,90), 540, 200));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::Fire), NULL, &settings::C_playerIIfire, Vector2f(20,110), 540, 200));
+        tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIISpecialKey, Vector2f(20,130), 540, 200));
+        tabPlayer2->addWidget(new LabeledBox(locales::getLocale(locales::ShipSettings), Vector2f(10, 170), 560, 90));
+        tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(510,210)));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, 10, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
+        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(20,220), 410, 200));
+        tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerIITeamColor, Vector2f(20,240), 410, 200));
 
         tabList->addTab(tabInterface);
-        tabList->addTab(tabGameplay);
         tabList->addTab(tabGraphics);
         tabList->addTab(tabAudio);
+        tabList->addTab(tabGameplay);
         tabList->addTab(tabPlayer2);
         tabList->addTab(tabPlayer1);
         instance_->addWidget(tabList);

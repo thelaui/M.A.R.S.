@@ -104,10 +104,8 @@ namespace locales {
     }
 
     bool load() {
-        std::cout << "Opening " << settings::C_dataPath << "locales/locales.conf... " << std::flush;
         std::vector<sf::String> lines;
         if (file::load(settings::C_dataPath + "locales/locales.conf", lines)) {
-            std::cout << "Done." << std::endl;
             Locale newLocale;
             bool first(true);
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
@@ -152,12 +150,8 @@ namespace locales {
 
             load (settings::C_dataPath + "locales/English.txt");
             if (settings::C_languageID < locales_.size()) {
-                std::cout << "Loading " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.ToAnsiString() << "... " << std::flush;
-                if (load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
-                    std::cout << "Done." << std::endl;
-                }
-                else {
-                    std::cout << "Not found! Falling back to English..." << std::endl;
+                if (!load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
+                    std::cout << "Failed to load " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.ToAnsiString() << "! Falling back to English..." << std::endl;
                     settings::C_languageID = 0;
                 }
 
