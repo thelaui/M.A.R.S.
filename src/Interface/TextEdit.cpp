@@ -30,6 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 TextEdit::TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int labelWidth, int type, int maxLength):
     UiElement(topLeft, width, 20),
     value_(value),
+    label_(NULL),
     maxLength_(maxLength),
     cursorPos_(0),
     cursorTimer_(0),
@@ -39,17 +40,21 @@ TextEdit::TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft
     if (type == 1) maxLength_ = 5;
     else if (type == 2) maxLength_ = 15;
 
-    label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
-    label_->setParent(this);
+    if (text) {
+        label_ = new Label(text, TEXT_ALIGN_LEFT, Vector2f(0,0));
+        label_->setParent(this);
+    }
 }
 
 TextEdit::~TextEdit () {
-    delete label_;
+    if (label_)
+        delete label_;
 }
 
 void TextEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
-    label_->mouseMoved(position);
+    if (label_)
+        label_->mouseMoved(position);
     if (pressed_ && window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
@@ -210,17 +215,20 @@ void TextEdit::draw() const {
     }
 
     // draw Label
-    label_->draw();
+    if (label_)
+        label_->draw();
 }
 
 void TextEdit::setFocus (UiElement* toBeFocused, bool isPrevious) {
     UiElement::setFocus(this, isPrevious);
-    label_->setFocus(this, isPrevious);
+    if (label_)
+        label_->setFocus(this, isPrevious);
 }
 
 void TextEdit::clearFocus() {
     UiElement::clearFocus();
     pressed_ = false;
     menus::unFixKeyboard();
-    label_->clearFocus();
+    if (label_)
+        label_->clearFocus();
 }

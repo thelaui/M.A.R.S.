@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/locales.hpp"
 
 # include "System/settings.hpp"
+# include "System/generateName.hpp"
 # include "Media/file.hpp"
 # include "Locales/Locale.hpp"
 
@@ -41,8 +42,55 @@ namespace locales {
                         sf::String tmp(*it);
                         tmp.Erase(0, 4);
 
-                        if (id == ttScreenShotKey)
-                            tmp += " " + settings::C_configPath + "screenshots/";
+                        for (int i=0; i<tmp.GetSize(); ++i) {
+                            if (tmp[i] == '{') {
+                                int j(i+1);
+                                sf::String macro;
+                                while (tmp[j] != '}') {
+                                    macro.Insert(macro.GetSize(), tmp[j]);
+                                    ++j;
+                                    if (j == tmp.GetSize()) {
+                                        std::cout << "Error parsing " << fileName << ": At ID " << id << " the macro " << macro.ToAnsiString() << " misses a trailing '}' !" << std::endl;
+                                        break;
+                                    }
+                                }
+                                tmp.Erase(i, j-i+1);
+
+                                if (macro == "PLAYER1_KEY_UP")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIup));
+                                else if (macro == "PLAYER2_KEY_UP")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIIup));
+                                else if (macro == "PLAYER1_KEY_RIGHT")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIright));
+                                else if (macro == "PLAYER2_KEY_RIGHT")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIIright));
+                                else if (macro == "PLAYER1_KEY_LEFT")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIleft));
+                                else if (macro == "PLAYER2_KEY_LEFT")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIIleft));
+                                else if (macro == "PLAYER1_KEY_FIRE")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIfire));
+                                else if (macro == "PLAYER2_KEY_FIRE")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIIfire));
+                                else if (macro == "PLAYER1_KEY_SPECIAL")
+                                    tmp.Insert(i, generateName::key(settings::C_playerISpecialKey));
+                                else if (macro == "PLAYER2_KEY_SPECIAL")
+                                    tmp.Insert(i, generateName::key(settings::C_playerIISpecialKey));
+                                else if (macro == "PLAYER1_NAME")
+                                    tmp.Insert(i, settings::C_playerIName);
+                                else if (macro == "PLAYER2_NAME")
+                                    tmp.Insert(i, settings::C_playerIIName);
+                                else if (macro == "DATA_PATH")
+                                    tmp.Insert(i, settings::C_dataPath);
+                                else if (macro == "CONFIG_PATH")
+                                    tmp.Insert(i, settings::C_configPath);
+                                else
+                                    std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.ToAnsiString() << "!" << std::endl;
+                            }
+                        }
+
+                        //if (id == ttScreenShotKey)
+                        //    tmp += " " + settings::C_configPath + "screenshots/";
                         localeStrings_[id] = tmp;
                     }
                 }

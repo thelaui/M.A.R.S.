@@ -42,7 +42,7 @@ UiWindow* TutorialWindow::get(sf::String* title, sf::String* text, int index, bo
         }
         else {
             std::stringstream sstr;
-            sstr << index << "/20";
+            sstr << index << "/18";
             index_ = sf::String(sstr.str());
             instance_->addWidget(new Label(&index_, TEXT_ALIGN_RIGHT, Vector2f(380,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         }

@@ -159,7 +159,7 @@ void Ship::update() {
                 Home const* home = owner_->team()->home();
                 Vector2f toHome = home->location()-location_;
                 bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
-                if (!up_ && velocity_.lengthSquare() < 10000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.16f)) {
+                if (!up_ && velocity_.lengthSquare() < 13000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.26f)) {
                     docked_ = true;
                     velocity_ = Vector2f();
                     if (fuel_ < maxFuel_) {

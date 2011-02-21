@@ -65,8 +65,8 @@
 035 Show Game Information
 036 Frames per Second
 152 Language
-153 Hot Key for Screen Shots
-054 File Format for Screen Shots
+153 Hot Key for Screenshots
+054 File Format for Screenshots
 037 Particle Count
 038 Particle Count
 039 Particle Lifetime
@@ -132,7 +132,7 @@
 
 // hide menu
 
-063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screen shot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwards by pressing ESC.
+063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwards by pressing ESC.
 
 // key names
 
@@ -177,11 +177,14 @@
 
 // tutorial texts
 
+212 Hey, {PLAYER1_NAME}!
+213 That's a bad name... Feel free to enter a better one!
+
 107 Welcome, Space Rookie!
 108 We are glad to recruit a rising hero like you to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
 
 109 Basic Movement...
-110 Controlling your ship is the most important task to master.\nAll movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys
+110 Controlling your ship is the most important task to master.\nAll movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!
 
 111 Warming Up!
 112 Reach the pink zone!\nTry not to crash your brand new ship.
@@ -199,30 +202,25 @@
 120 You are the best rookie I have ever seen.\nNow prepare yourself for some explosive stuff.
 
 121 Shooting...
-122 To defeat your enemies, you have to know how to shoot them up!\nFor that purpose press
-123 Have some fun shooting around and then land your ship to continue the tutorial.
+122 To defeat your enemies, you have to know how to shoot them up!\nFor that purpose press <{PLAYER1_KEY_FIRE}>. \nHave some fun shooting around and then land your ship to continue the tutorial.
 
 124 Good Landing!
 125 You turn out to be a great pilot.\n\nNow how about some more weapons?
 
 126 The Weapons...
-127 I know you've been waiting for this. When docked you can switch through some incredibly evil weapons.\nPress
-128 to open your arsenal.\nThen use
-129 to choose a weapon! Take-off, when you're ready!
+127 I know you've been waiting for this. When docked you can switch through some incredibly evil weapons.\nPress <{PLAYER1_KEY_FIRE}> to open your arsenal.\nThen use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a weapon! Take-off, when you're ready!
 
 130 Fight!
 131 Now let's see how you make it against a rookie from another planet.\nSeems like he is trying to improve his flying abilities.\nBeat him!
 
 132 Impressive!
-133 You did it! As you may have noticed, a little star apperead over your ship.\nThe more enemies you kill, the more of them will show. But they are not only a frag indicator! Land again and I will show you what else stars are good for.
+133 You did it! As you may have noticed, a little star appeared over your ship.\nThe more enemies you kill, the more of them will show. But they are not only a frag indicator! Land again and I will show you what else stars are good for.
 
-208 Specials..
+208 Specials...
 209 As I promised, I will tell you the meaning of stars. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance! The more stars you have, the larger range and strength of the special grow.
 
 210 Selection...
-211 To switch through the specials, you just have to press
-212 Now choose one using
-213 and 
+211 To switch through the specials, you just have to press <{PLAYER1_KEY_SPECIAL}>. Now choose one using <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! 
 
 134 Beware!
 135 There is no time for rest.\nOur enemies have sent one of their real warriors for vengeance!\nThere is nothing I can do for you...
@@ -264,8 +262,8 @@
 176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
 177 Displays the amount of active particles.
 178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to
+179 Sets the format being used when screenshots are saved.
+180 When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/
 182 If that many ships explode simultaneously, the slow motion effect kicks in.
 183 Displays the job of each bot.
 184 Displays tactical zones, which are important for the artificial intelligence.
@@ -293,6 +291,6 @@
 
 // Interface notifications
 
-205 Screen shot saved!
+205 Screenshot saved!
 
-// 214 (181)
+// 213 (181)

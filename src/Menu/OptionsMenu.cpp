@@ -205,6 +205,9 @@ void OptionsMenu::checkWidgets() {
         else if (format_ == "PNG(*.png)")     settings::C_screenShotFormat = "png";
         else if (format_ == "JPEG (*.jpg)")   settings::C_screenShotFormat = "jpg";
 
+        locales::load();
+        menus::reload();
+
         settings::save();
         menus::hideWindow();
     }

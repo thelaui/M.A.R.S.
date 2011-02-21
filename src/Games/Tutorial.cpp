@@ -31,11 +31,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Home.hpp"
 # include "Menu/OptionsMenu.hpp"
 # include "Menu/TutorialWindow.hpp"
+# include "Menu/EnterName.hpp"
 # include "Locales/locales.hpp"
 
 Tutorial::Tutorial():
     Game(games::gTutorial),
-    state_(0),
+    state_(-1),
     savedState_(0),
     evilHome_(NULL),
     evilPlayer1_(NULL),
@@ -94,6 +95,12 @@ void Tutorial::update() {
     }
 
     switch (state_) {
+        case -1:
+            if (!menus::visible()) {
+                if (settings::C_playerIName == "PlayerI")
+                    menus::showWindow(EnterName::get());
+                ++state_;
+            } break;
         case 0:
             if (!menus::visible()) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut01), locales::getLocale(locales::TutText01), 1, false, true));
@@ -182,6 +189,11 @@ void Tutorial::update() {
             } break;
         case 15:
             if (!players::getPlayerI()->ship()->docked_) {
+                timer_ = timer::totalTime();
+                ++state_;
+            } break;
+        case 16:
+            if (timer::totalTime() > timer_ + 1.f) {
                 zones::createRaster(4, 3);
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut11), locales::getLocale(locales::TutText11), 11, false, false));
                 Team* evilTeam = teams::addTeam(new TutTeam(Color3f(0.5f, 0.f, 0.5f)));
@@ -193,30 +205,50 @@ void Tutorial::update() {
                 hud::init();
                 ++state_;
             } break;
-        case 16:
+        case 17:
             if (evilPlayer1_->ship()->getLife() == 0.f) {
                 timer_ = timer::totalTime();
                 ++state_;
             } break;
-        case 17:
+        case 18:
             if (timer::totalTime() > timer_ + 1.f) {
+                evilPlayer1_->ship()->location_ = Vector2f(3000, 3000);
+                evilPlayer1_->ship()->respawnTimer_ = FLT_MAX;
+                zones::addTutorialZone(Vector2f(1300.f, 450.f), 190.f);
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut12), locales::getLocale(locales::TutText12), 12, false, true));
                 ++state_;
             } break;
-        case 18:
-            if (!menus::visible()) {
-                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut13), locales::getLocale(locales::TutText13), 13, false, false));
+
+         case 19:
+            if (players::getPlayerI()->ship()->docked_) {
+                zones::clear();
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut21), locales::getLocale(locales::TutText21), 13, false, true));
                 ++state_;
             } break;
-        case 19:
+        case 20:
+            if (!menus::visible()) {
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut22), locales::getLocale(locales::TutText22), 14, false, false));
+                ++state_;
+            } break;
+        case 21:
+            if (!players::getPlayerI()->ship()->docked_) {
+                timer_ = timer::totalTime();
+                ++state_;
+            } break;
+
+
+        case 22:
+            if (timer::totalTime() > timer_ + 5.f) {
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut13), locales::getLocale(locales::TutText13), 15, false, false));
+                ++state_;
+            } break;
+        case 23:
             if (!menus::visible()) {
                 timer_ = timer::totalTime();
                 ++state_;
             } break;
-        case 20:
-            if (timer::totalTime() > timer_ + 7.5f) {
-                evilPlayer1_->ship()->location_ = Vector2f(3000, 3000);
-                evilPlayer1_->ship()->respawnTimer_ = FLT_MAX;
+        case 24:
+            if (timer::totalTime() > timer_ + 1.f) {
                 players::addPlayer(evilPlayer1_->team(), controllers::cBot);
                 std::vector<Player*> evilPlayer(evilPlayer1_->team()->members().begin()+1, evilPlayer1_->team()->members().end());
                 evilPlayer2_ = evilPlayer[0];
@@ -224,29 +256,32 @@ void Tutorial::update() {
                 hud::init();
                 ++state_;
             } break;
-        case 21:
+        case 25:
             if (evilPlayer2_->ship()->getLife() == 0.f) {
                 timer_ = timer::totalTime();
                 ++state_;
             } break;
-        case 22:
+
+
+
+        case 26:
             if (timer::totalTime() > timer_ + 1.f) {
-                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut14), locales::getLocale(locales::TutText14), 14, false, false));
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut14), locales::getLocale(locales::TutText14), 16, false, false));
                 ++state_;
             } break;
-        case 23:
+        case 27:
             if (!menus::visible()) {
                 menus::showWindow(OptionsMenu::get());
                 ++state_;
             } break;
-        case 24:
+        case 28:
             if (!menus::visible()) {
-                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut15), locales::getLocale(locales::TutText15), 15, false, true));
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut15), locales::getLocale(locales::TutText15), 17, false, true));
                 ++state_;
             } break;
-        case 25:
+        case 29:
             if (!menus::visible()) {
-                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut16), locales::getLocale(locales::TutText16), 16, false, false));
+                menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut16), locales::getLocale(locales::TutText16), 18, false, false));
                 ++state_;
             } break;
 
@@ -289,7 +324,7 @@ void Tutorial::draw() const {
 void Tutorial::restart() {
     Game::restart();
 
-    state_ = 0;
+    state_ = -1;
     savedState_ = 0;
     deadTimer_ = 0.f;
     timer_ = 0.f;
