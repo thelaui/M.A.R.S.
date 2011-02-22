@@ -123,8 +123,14 @@ void BotController::attackAny() {
     }
 
     if (target_) {
-        moveTo(target_->location(), 0.f);
-        shootEnemy(target_);
+        if ((ship()->location()-target_->location()).lengthSquare() > std::pow(ship()->currentWeapon_->minDistance(),2)) {
+            moveTo(target_->location(), 0.f);
+            shootEnemy(target_);
+        }
+        else {
+            escape();
+            shootEnemy(target_);
+        }
     }
     else {
         std::vector<Ship*> const& ships = ships::getShips();

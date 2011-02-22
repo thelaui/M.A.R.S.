@@ -59,7 +59,7 @@ float Insta::maxDistance() const {
 }
 
 float Insta::minDistance() const {
-    return 20.f;
+    return 500.f;
 }
 
 float Insta::maxAngle() const {

@@ -42,7 +42,7 @@ void GITeam::checkEnemies() {
 
     if (existAny) {
         for (int i=0; i<botControllers_.size(); ++i)
-            addJob(Job(Job::jEscape, 90));
+            addJob(Job(Job::jAttackAny, 90));
     }
     else {
         for (int i=0; i<botControllers_.size(); ++i)
