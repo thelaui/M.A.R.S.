@@ -254,7 +254,6 @@ void Ship::draw() const {
 
         // draw ship
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        //glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glRotatef(rotation_, 0.f, 0.f, 1.f);
 
         float x, y, alpha(ghostTimer_ == 1.f ? 0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f : (ghostTimer_ > 0.f ? ghostTimer_*(0.2f*std::sin(timer::totalTime()*8.f + 1.5f*M_PI)+0.4f) + 1.f-ghostTimer_ : 1.f));

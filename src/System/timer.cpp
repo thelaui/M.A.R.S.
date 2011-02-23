@@ -51,7 +51,11 @@ namespace timer {
         }
 
         // get frametime, occasionally with slow motion
-        if (slowMoTimer_ > 1.f) {
+        if ((!menus::visible() && window::isKeyDown(settings::C_statisticsKey))) {
+            frameTime_ =  frameTime*0.05f;
+            totalTime_ += frameTime_;
+        }
+        else if (slowMoTimer_ > 1.f) {
             if (!menus::visible() || games::type() == games::gMenu)
                 slowMoTimer_ -= frameTime;
             frameTime_ =  frameTime*0.15f;

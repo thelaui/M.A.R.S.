@@ -65,6 +65,7 @@ namespace decoObjects {
     }
 
     void drawNames() {
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         for (std::vector<DecoObject*>::iterator it = names_.begin(); it != names_.end(); ++it)
             (*it)->draw();
     }

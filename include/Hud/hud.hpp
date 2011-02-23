@@ -26,6 +26,7 @@ namespace hud {
 
     void update();
     void draw();
+    void drawMessages();
 
     void displayPoints();
     void displayStats(bool show = true);

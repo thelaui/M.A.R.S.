@@ -184,10 +184,12 @@ void TabStats::draw() const {
         for (std::multimap<Team*, std::multiset<Player*, playerPtrCmp>, teamPtrCmp >::const_iterator it = teamMap_.begin(); it != teamMap_.end(); ++it) {
             int totalPoints(0), totalFrags(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
             Color3f teamColor = it->first->color();
+            teamColor.v(1.f);
+            teamColor.s(0.8f);
             std::multiset<Player*, playerPtrCmp>const& members = it->second;
             for (std::multiset<Player*, playerPtrCmp>::iterator currentPlayer = members.begin(); currentPlayer != members.end(); ++currentPlayer) {
                 if ((*currentPlayer)->controlType_ == controllers::cPlayer1 || (*currentPlayer)->controlType_ == controllers::cPlayer2)
-                    teamColor.gl4f(0.5);
+                    teamColor.gl4f(0.6 + std::sin(timer::totalTime()*100.f)*0.2f);
                 else
                     teamColor.gl4f(0.2);
 
@@ -199,6 +201,8 @@ void TabStats::draw() const {
                 glEnd();
 
                 Color3f drawColor((*currentPlayer)->color());
+                drawColor.v(1.f);
+                drawColor.s(0.8f);
                 // draw name, shadowed
                 text::drawScreenText((*currentPlayer)->name(), topLeft + Vector2f(3*mirror, 1), 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
                 text::drawScreenText((*currentPlayer)->name(), topLeft + Vector2f(2*mirror, 0), 12.f, TEXT_ALIGN_LEFT, drawColor);

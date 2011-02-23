@@ -72,6 +72,7 @@
 152 Language
 153 Hot Key for Screenshots
 054 File Format for Screenshots
+242 Hot Key for Statistics
 
 // graphics options
 
@@ -317,6 +318,7 @@
 193 Adjusts volume of background music.
 194 Adjusts volume of sound effects.
 195 Adjusts volume of announcers voice.
+243 When this key is pressed while playing a game, a window pops up displaying statistics for the current game.
 
 // Tool tips in the start-a-new-game-window
 

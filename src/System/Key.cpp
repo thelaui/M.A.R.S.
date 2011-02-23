@@ -72,9 +72,9 @@ Key::Key(unsigned int joyID, unsigned int joyButton):
 
     code_.joyButton_ = joyButton;
 
-    if (joyButton == 0 || joyButton == 8 || joyButton == 9  || joyButton == 2 || joyButton == 10)
+    if (joyButton == 0 || joyButton == 8 || joyButton == 9  || joyButton == 2)
         navi_ = nConfirm;
-    else if (joyButton == 1 || joyButton == 6)
+    else if (joyButton == 6 || joyButton == 10)
         navi_ = nAbort;
     else if (joyButton == 4)
         navi_ = nUp;

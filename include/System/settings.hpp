@@ -76,6 +76,7 @@ namespace settings {
     extern bool           C_shaders;
     extern Key            C_screenShotKey;
     extern Key            C_audioNextKey;
+    extern Key            C_statisticsKey;
     extern std::string    C_configPath;
     extern std::string    C_dataPath;
     extern std::string    C_screenShotFormat;

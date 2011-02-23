@@ -67,6 +67,7 @@ namespace settings {
     bool        C_shaders =                 false;
     Key         C_screenShotKey =           Key(sf::Key::F12);
     Key         C_audioNextKey =            Key(sf::Key::F8);
+    Key         C_statisticsKey =           Key(sf::Key::Tab);
     std::string C_configPath =              "";
     std::string C_dataPath =                "";
     std::string C_screenShotFormat =        "jpg";
@@ -182,6 +183,7 @@ namespace settings {
             outStream << "[colorDepth] "            << C_colorDepth << std::endl;
             outStream << "[audioNextKey] "          << C_audioNextKey << std::endl;
             outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
+            outStream << "[statisticsKey] "         << C_statisticsKey << std::endl;
             outStream << "[screenShotFormat] "      << C_screenShotFormat << std::endl;
             outStream << "[enabledWeapons] "        << C_EnabledWeaponsByUser << std::endl;
             outStream << "[enabledSpecials] "       << C_EnabledSpecialsByUser << std::endl;
@@ -644,6 +646,9 @@ namespace settings {
                 }
                 else if (inputLine == "[screenShotKey]") {
                     iss >> C_screenShotKey;
+                }
+                else if (inputLine == "[statisticsKey]") {
+                    iss >> C_statisticsKey;
                 }
                 else if (inputLine == "[screenShotFormat]") {
                     iss >> C_screenShotFormat;

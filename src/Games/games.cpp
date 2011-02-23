@@ -89,6 +89,7 @@ namespace games {
 
         hud::draw();
         menus::draw();
+        hud::drawMessages();
 
         if (fadeIn_ || fadeOut_) fade();
     }

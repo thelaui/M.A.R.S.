@@ -56,7 +56,7 @@ namespace hud {
 
         if (games::type() == games::gMenu)   logo_->update();
 
-        if (games::type() != games::gMenu && window::getInput().IsKeyDown(sf::Key::Tab)) {
+        if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey)) {
             tabStats_->display();
             gamePoints_->display();
         }
@@ -98,7 +98,10 @@ namespace hud {
             leftLife_ ->draw();
         }
         tabStats_->draw();
+    }
 
+    void drawMessages() {
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         text::drawFooText();
         for (std::list<Message*>::iterator it=messages_.begin(); it!=messages_.end(); ++it)
             (*it)->draw();

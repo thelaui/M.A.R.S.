@@ -82,7 +82,7 @@ UiWindow* OptionsMenu::get() {
         Tab* tabPlayer1   = new Tab(&settings::C_playerIName, 100);
         Tab* tabPlayer2   = new Tab(&settings::C_playerIIName, 100);
 
-        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GeneralOptions), Vector2f(10, 30), 560, 90));
+        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GeneralOptions), Vector2f(10, 30), 560, 110));
         tabInterface->addWidget(new LanguageButton(locales::getLocale(locales::Language), Vector2f(20,60), 540, 200));
         std::vector<sf::String> fileFormats;
             fileFormats.push_back("BITMAP (*.bmp)");
@@ -92,10 +92,11 @@ UiWindow* OptionsMenu::get() {
             fileFormats.push_back("TARGA (*.tga)");
         tabInterface->addWidget(new ComboBox(locales::getLocale(locales::ScreenShotFormat), locales::getLocale(locales::ttScreenShotFormat), &format_, fileFormats, Vector2f(20,80), 540, 200));
         tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::ScreenShotKey), locales::getLocale(locales::ttScreenShotKey), &settings::C_screenShotKey, Vector2f(20,100), 540, 200));
-        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GameInformation), Vector2f(10, 140), 560, 90));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), locales::getLocale(locales::ttFramesPerSecond), &settings::C_showFPS, Vector2f(20,170), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), locales::getLocale(locales::ttParticleCount), &settings::C_showParticleCount, Vector2f(20,190), 140));
-        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ShowToolTips), locales::getLocale(locales::ttShowToolTips), &settings::C_showToolTips, Vector2f(20,210), 140));
+        tabInterface->addWidget(new KeyEdit(locales::getLocale(locales::StatisticsKey), locales::getLocale(locales::ttStatisticsKey), &settings::C_statisticsKey, Vector2f(20,120), 540, 200));
+        tabInterface->addWidget(new LabeledBox(locales::getLocale(locales::GameInformation), Vector2f(10, 160), 560, 90));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::FramesPerSecond), locales::getLocale(locales::ttFramesPerSecond), &settings::C_showFPS, Vector2f(20,190), 140));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ParticleCount), locales::getLocale(locales::ttParticleCount), &settings::C_showParticleCount, Vector2f(20,210), 140));
+        tabInterface->addWidget(new Checkbox(locales::getLocale(locales::ShowToolTips), locales::getLocale(locales::ttShowToolTips), &settings::C_showToolTips, Vector2f(20,230), 140));
 
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Fullscreen), locales::getLocale(locales::ttFullscreen), &fullscreen_, Vector2f(20,60), 150));
         tabGraphics->addWidget(new LabeledBox(locales::getLocale(locales::WindowSettings), Vector2f(10, 30), 560, 110));
