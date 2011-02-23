@@ -185,6 +185,34 @@
 100 Tab
 101 Up
 
+// Joystick button names
+
+218 A Button
+219 B Button
+220 X Button
+221 Y Button
+222 Start Button
+223 Back Button
+224 Right Bumper
+225 Left Bumper
+226 Right Trigger
+227 Left Trigger
+228 Direction Up
+229 Direction Down
+230 Direction Left
+231 Direction Right
+232 Stick1 Up
+233 Stick1 Down
+234 Stick1 Left
+235 Stick1 Right
+236 Stick2 Up
+237 Stick2 Down
+238 Stick2 Left
+239 Stick2 Right
+240 Joystick
+241 Button
+
+
 // tutorial texts
 
 212 Hey, {PLAYER1_NAME}!
@@ -305,4 +333,4 @@
 205 Screenshot saved!
 214 Next music track!
 
-// 218
+// 242

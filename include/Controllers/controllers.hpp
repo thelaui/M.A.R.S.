@@ -18,6 +18,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef CONTROLLERS_HPP_INCLUDED
 # define CONTROLLERS_HPP_INCLUDED
 
+# include "System/Key.hpp"
+
 # include <SFML/Window.hpp>
 
 class Player;
@@ -40,7 +42,7 @@ namespace controllers {
     void update();
 
     /// Notifies KeyControllers of single key events.
-    void singleKeyEvent(sf::Key::Code keyCode);
+    void singleKeyEvent(Key const& keyCode);
 
     /// Draws some debugging stuff.
     /// Like lines, showing where the bot heads.

@@ -176,7 +176,7 @@ void BotController::escape() {
 void  BotController::heal() {
     if (currentJob_.object_) {
         if (moveTo(static_cast<Ship*>(currentJob_.object_)->location(), 0.f, true, 20.f + 30.f*ship()->fragStars_))
-            slaveSpecial(true);
+            slaveSpecial(100);
     }
 }
 

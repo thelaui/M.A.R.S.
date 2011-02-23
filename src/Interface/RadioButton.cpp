@@ -61,8 +61,8 @@ void RadioButton::mouseLeft(bool down) {
     }
 }
 
-void RadioButton::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+void RadioButton::keyEvent(bool down, Key const& key) {
+    if (key.navi_ == Key::nConfirm) {
         pressed_ = down;
         if (!pressed_) {
             if (*value_ && offSwitchable_)

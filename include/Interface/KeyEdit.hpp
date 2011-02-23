@@ -23,12 +23,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class KeyEdit: public UiElement {
     public:
-        KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width, int labelWidth);
+        KeyEdit (sf::String* text, sf::String* toolTip, Key* value, Vector2f const& topLeft, int width, int labelWidth);
         ~KeyEdit ();
 
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
-        void keyEvent(bool down, sf::Key::Code keyCode);
+        void keyEvent(bool down, Key const& key);
 
         void draw() const;
 
@@ -36,7 +36,7 @@ class KeyEdit: public UiElement {
         void clearFocus();
 
     private:
-        sf::Key::Code* value_;
+        Key* value_;
         Label* label_;
         sf::String* toolTip_;
         int labelWidth_;

@@ -95,7 +95,7 @@ void BotController::checkSpecial() {
         switch (ship()->currentSpecial_->getType()) {
             case specials::sHeal:
                 if (ship()->getLife() < 10)
-                    slaveSpecial(true);
+                    slaveSpecial(100);
                 break;
 
             case specials::sBlast: {
@@ -114,7 +114,7 @@ void BotController::checkSpecial() {
                     }
                 }
                 if (decision > 0)
-                    slaveSpecial(true);
+                    slaveSpecial(100);
                 break;
             }
 
@@ -134,7 +134,7 @@ void BotController::checkSpecial() {
                     }
                 }
                 if (decision > 0)
-                    slaveSpecial(true);
+                    slaveSpecial(100);
                 break;
             }
         }

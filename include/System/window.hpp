@@ -19,6 +19,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define WINDOW_HPP_INCLUDED
 
 # include "System/Vector2f.hpp"
+# include "System/Key.hpp"
+# include "Media/music.hpp"
 
 # include <SFML/Graphics.hpp>
 
@@ -57,6 +59,10 @@ namespace window {
     /// Returns a reference to the current input state of the window.
     /// This can be used for getting pressed keys and stuff like this.
     sf::Input const& getInput();
+
+    int isKeyDown(Key const& key);
+
+    void screenShot();
 
     /// Shows or hides the mouse cursor.
     void showCursor(bool show);

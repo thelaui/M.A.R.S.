@@ -41,19 +41,19 @@ class Controller {
 
     protected:
         /// Accelerates the Ship. (continous action)
-        void slaveUp    (bool up)    const;
+        void slaveUp    (int up)    const;
 
         /// Turns the Ship left. (continous action)
-        void slaveLeft  (bool left)  const;
+        void slaveLeft  (int left)  const;
 
         /// Turns the Ship right. (continous action)
-        void slaveRight (bool right) const;
+        void slaveRight (int right) const;
 
         /// Fires the Ship's Weapon. (continous action)
-        void slaveFire  (bool fire)  const;
+        void slaveFire  (int fire)  const;
 
         /// "Presses" the Special-key. (single action)
-        void slaveSpecial (bool special) const;
+        void slaveSpecial (int special) const;
 
         /// "Presses" the Up-key. (single action)
         void slaveUp    () const;

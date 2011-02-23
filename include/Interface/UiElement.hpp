@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Vector2f.hpp"
 
+# include "System/Key.hpp"
+
 # include <SFML/Window.hpp>
 
 class UiElement {
@@ -28,7 +30,7 @@ class UiElement {
 
         virtual void mouseMoved(Vector2f const& position);
         virtual void mouseLeft(bool down);
-        virtual void keyEvent(bool down, sf::Key::Code keyCode) {}
+        virtual void keyEvent(bool down, Key const& key) {}
         virtual void textEntered(int keyCode) {}
         virtual bool tabNext() {return true;}
         virtual bool tabPrevious() {return true;}

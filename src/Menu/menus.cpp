@@ -80,13 +80,17 @@ namespace menus {
         }
     }
 
-    void keyEvent(bool down, sf::Key::Code keyCode) {
+    void keyEvent(bool down, Key const& key) {
+        if (down && key == settings::C_screenShotKey && !menus::keyboardFixed())
+            window::screenShot();
+        else if (down && key == settings::C_audioNextKey && !menus::keyboardFixed())
+            music::next();
         if (visible()) {
             if (keyboardFixTarget_) {
-                keyboardFixTarget_->keyEvent(down, keyCode);
+                keyboardFixTarget_->keyEvent(down, key);
                 windowStack_.back()->checkWidgets();
             }
-            else if (down && keyCode == sf::Key::Escape) {
+            else if (down && key.navi_ == Key::nAbort) {
                 if (hidden_) {
                     hidden_ = false;
                     window::showCursor(true);
@@ -96,20 +100,18 @@ namespace menus {
                 else
                     hideWindow();
             }
-            else if (down && ((keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LControl) || window::getInput().IsKeyDown(sf::Key::RControl)))
-             || (keyCode == sf::Key::Tab && (window::getInput().IsKeyDown(sf::Key::LShift) || window::getInput().IsKeyDown(sf::Key::RShift)))
-             || (keyCode == sf::Key::Up))) {
+            else if (down && key.navi_ == Key::nUp) {
                 windowStack_.back()->tabPrevious();
             }
-            else if (down && (keyCode == sf::Key::Tab || keyCode == sf::Key::Down)) {
+            else if (down && key.navi_ == Key::nDown) {
                 windowStack_.back()->tabNext();
             }
             else {
-                windowStack_.back()->keyEvent(down, keyCode);
+                windowStack_.back()->keyEvent(down, key);
                 windowStack_.back()->checkWidgets();
             }
         }
-        else if (down && keyCode == sf::Key::Escape)
+        else if (down && key.navi_ == Key::nAbort)
             showPause();
     }
 

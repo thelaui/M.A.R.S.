@@ -50,11 +50,11 @@ bool BotController::moveTo(Vector2f const& location, float stopFactor, bool avoi
     Vector2f velocityInAimDirection = aimDirection_*(shipVelocity*aimDirection_);
     float distance = (nextPathPoint_-shipLocation).lengthSquare();
 
-    bool accelerate(false);
+    int accelerate(0);
     if (velocityInAimDirection.lengthSquare() < 15000.f + strength_* 75000.f || shipVelocity*aimDirection_ < 0.f)
         if (distance > 2500 || (shipVelocity*aimDirection_ < 0.f && (distance > 250.f || !goingToLand)))
             if (spaceObjects::isOnLine(shipLocation, shipDirection, shipLocation+aimDirection_*50.f, 10.f))
-                accelerate = true;
+                accelerate = 100;
 
     slaveUp(accelerate);
 
@@ -65,8 +65,8 @@ bool BotController::turnTo(Vector2f const& location) {
     float    shipRotation = ship()->rotation_*M_PI/180.f;
     Vector2f aimDirection_ = location - ship()->location();
     float angle = aimDirection_.y_*std::cos(shipRotation)-aimDirection_.x_*std::sin(shipRotation);
-    if (angle > 0) slaveRight(true);
-    else           slaveLeft (true);
+    if (angle > 0) slaveRight(100);
+    else           slaveLeft (100);
     return std::abs(angle) < 1.f;
 }
 
@@ -174,14 +174,14 @@ void BotController::shootPoint(Vector2f const& location, bool avoidTeamMembers) 
 
         if(distance < maxDistance && distance > minDistance) {
             if (spaceObjects::isOnLine(ship()->location(), shipDirection, location, maxAngle)) {
-                bool doShoot(true);
+                int doShoot(100);
                 if(avoidTeamMembers) {
                     std::vector<Player*>const& teamMates = slave_->team()->members();
                     for (std::vector<Player*>::const_iterator it = teamMates.begin(); it != teamMates.end(); ++it) {
                         if (*it != slave_)
                             if(spaceObjects::isOnLine(ship()->location(), location - ship()->location(), (*it)->ship()->location(), 20.f)
                                && ((location - ship()->location()) > ((*it)->ship()->location() - ship()->location()))) {
-                                doShoot = false;
+                                doShoot = 0;
                                 break;
                             }
                     }

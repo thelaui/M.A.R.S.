@@ -26,42 +26,42 @@ Controller::Controller(Player* slave):
     type_(slave->type()),
     slave_(slave) {}
 
-void Controller::slaveUp (bool up) const {
+void Controller::slaveUp (int up) const {
     if (slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep])
         slave_->ship_->up_ = up;
     else
-        slave_->ship_->up_ = false;
+        slave_->ship_->up_ = 0;
 }
 
-void Controller::slaveLeft (bool left) const {
+void Controller::slaveLeft (int left) const {
     if (!slave_->ship_->weaponChange_ && !slave_->ship_->specialChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (left && slave_->ship_->right_)
-            slave_->ship_->right_ = false;
+            slave_->ship_->right_ = 0;
         else
             slave_->ship_->left_ = left;
     }
     else
-        slave_->ship_->left_ = false;
+        slave_->ship_->left_ = 0;
 }
 
-void Controller::slaveRight (bool right) const {
+void Controller::slaveRight (int right) const {
     if (!slave_->ship_->weaponChange_ && !slave_->ship_->specialChange_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep]) {
         if (right && slave_->ship_->left_)
-            slave_->ship_->left_ = false;
+            slave_->ship_->left_ = 0;
         else
             slave_->ship_->right_ = right;
     }
     else
-        slave_->ship_->right_ = false;
+        slave_->ship_->right_ = 0;
 }
 
-void Controller::slaveFire (bool fire) const {
-    if (fire && !slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep] && slave_->ship_->frozen_<=0.f)
+void Controller::slaveFire (int fire) const {
+    if (fire > 50 && !slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep] && slave_->ship_->frozen_<=0.f)
         slave_->ship_->currentWeapon_->fire();
 }
 
-void Controller::slaveSpecial (bool special) const {
-    if (special && !slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep] && slave_->ship_->frozen_<=0.f)
+void Controller::slaveSpecial (int special) const {
+    if (special > 50 && !slave_->ship_->docked_ && slave_->ship_->visible_ && !slave_->ship_->collectedPowerUps_[items::puSleep] && slave_->ship_->frozen_<=0.f)
         slave_->ship_->currentSpecial_->activate();
 }
 

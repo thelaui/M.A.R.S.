@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Vector2f.hpp"
 
+# include "System/Key.hpp"
+
 # include <SFML/Window.hpp>
 
 class UiWindow;
@@ -32,7 +34,7 @@ namespace menus {
     // events
     void mouseMoved(Vector2f const& position);
     void mouseLeft(bool down);
-    void keyEvent(bool down, sf::Key::Code keyCode);
+    void keyEvent(bool down, Key const& key);
     void textEntered(int keyCode);
 
     void showMain();

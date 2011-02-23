@@ -44,7 +44,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                owner_(owner),
                rotation_(rotation),
                rotateSpeed_(1.f),
-               up_(false), left_(false), right_(false),
+               up_(0), left_(0), right_(0),
                docked_(true),
                weaponChange_(false),
                specialChange_(false),
@@ -125,25 +125,25 @@ void Ship::update() {
             if (frozen_ <= 0) {
                 // spin around
                 if (collectedPowerUps_[items::puReverse]) {
-                    if (right_) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
-                    if (left_ ) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
+                    if (right_ > 15) fmod(rotation_-= rotateSpeed_*time*0.3f*right_, 360.f);
+                    if (left_  > 15) fmod(rotation_+= rotateSpeed_*time*0.3f*left_, 360.f);
                 }
                 else {
-                    if (right_) fmod(rotation_+= rotateSpeed_*time*30.f, 360.f);
-                    if (left_ ) fmod(rotation_-= rotateSpeed_*time*30.f, 360.f);
+                    if (right_ > 15) fmod(rotation_+= rotateSpeed_*time*0.3f*right_, 360.f);
+                    if (left_  > 15) fmod(rotation_-= rotateSpeed_*time*0.3f*left_, 360.f);
                 }
-                if (!right_ && !left_) rotateSpeed_ = 1.0;
+                if (right_ == 0 && left_ == 0) rotateSpeed_ = 1.0;
                 else if (rotateSpeed_ < 10.f) rotateSpeed_ += time*30.f;
 
                 // accelerate
                 float angleRad = rotation_ * M_PI / 180.f;
                 Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
                 Vector2f acceleration;
-                if (up_ && getFuel() > 0.f) {
-                    fuel_ -= time*3.f;
-                    acceleration = faceDirection * 300.f;
-                    particles::spawnTimed(150.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
-                    particles::spawnTimed(10.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
+                if (up_ > 15 && getFuel() > 0.f) {
+                    fuel_ -= time*0.03f * up_;
+                    acceleration = faceDirection * 3.f * up_;
+                    particles::spawnTimed(1.5f/settings::C_globalParticleCount*up_, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
+                    particles::spawnTimed(0.1f/settings::C_globalParticleCount*up_, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
                 }
                 else {
                     acceleration = Vector2f();
@@ -159,7 +159,7 @@ void Ship::update() {
                 Home const* home = owner_->team()->home();
                 Vector2f toHome = home->location()-location_;
                 bool closeToHome(toHome.lengthSquare() < std::pow(home->radius() + radius_ + 0.1f, 2.f));
-                if (!up_ && velocity_.lengthSquare() < 13000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.26f)) {
+                if (up_ < 10 && velocity_.lengthSquare() < 13000.f && closeToHome && ((faceDirection + toHome.normalize()).lengthSquare() < 0.26f)) {
                     docked_ = true;
                     velocity_ = Vector2f();
                     if (fuel_ < maxFuel_) {

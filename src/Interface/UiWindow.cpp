@@ -46,9 +46,9 @@ void UiWindow::mouseLeft(bool down) {
         (*i)->mouseLeft(down);
 }
 
-void UiWindow::keyEvent(bool down, sf::Key::Code keyCode) {
+void UiWindow::keyEvent(bool down, Key const& key) {
     if (focusedWidget_)
-        focusedWidget_->keyEvent(down, keyCode);
+        focusedWidget_->keyEvent(down, key);
 }
 
 bool UiWindow::tabNext() {

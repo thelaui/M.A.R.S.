@@ -37,9 +37,9 @@ void RadioGroup::mouseLeft(bool down) {
         (*i)->mouseLeft(down);
 }
 
-void RadioGroup::keyEvent(bool down, sf::Key::Code keyCode) {
+void RadioGroup::keyEvent(bool down, Key const& key) {
     if (focusedButton_)
-        focusedButton_->keyEvent(down, keyCode);
+        focusedButton_->keyEvent(down, key);
 }
 
 bool RadioGroup::tabNext() {

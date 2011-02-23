@@ -34,7 +34,7 @@ class AmmoInsta: public Particle<AmmoInsta> {
         void onCollision(SpaceObject* with, Vector2f const& location,
                          Vector2f const& direction, Vector2f const& velocity);
 
-        static bool hitsAny(Vector2f const& location, Vector2f const& direction, Team* team);
+        static int hitsAny(Vector2f const& location, Vector2f const& direction, Team* team);
 
         friend class Particle<AmmoInsta>;
 

@@ -25,8 +25,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 void BotController::charge() {
     Vector2f direction = ship()->location() - slave_->team()->home()->location();
     turnTo(direction + ship()->location());
-    slaveFire(false);
-    slaveUp(false);
+    slaveFire(0);
+    slaveUp(0);
     switchWeapon();
     if (weaponChangeTimer_ > 0.5f)
         switchSpecial();

@@ -26,39 +26,39 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 KeyController::KeyController(Player* slave):
     Controller(slave) {}
 
-void KeyController::update(sf::Input const& input) const {
+void KeyController::update() const {
     if (type_ == controllers::cPlayer1) {
-        slaveUp   (input.IsKeyDown(settings::C_playerIup));
-        slaveLeft (input.IsKeyDown(settings::C_playerIleft));
-        slaveRight(input.IsKeyDown(settings::C_playerIright));
-        slaveFire (input.IsKeyDown(settings::C_playerIfire));
-        slaveSpecial (input.IsKeyDown(settings::C_playerISpecialKey));
+        slaveUp   (window::isKeyDown(settings::C_playerIup));
+        slaveLeft (window::isKeyDown(settings::C_playerIleft));
+        slaveRight(window::isKeyDown(settings::C_playerIright));
+        slaveFire (window::isKeyDown(settings::C_playerIfire));
+        slaveSpecial (window::isKeyDown(settings::C_playerISpecialKey));
     }
 
     else if (type_ == controllers::cPlayer2) {
-        slaveUp   (input.IsKeyDown(settings::C_playerIIup));
-        slaveLeft (input.IsKeyDown(settings::C_playerIIleft));
-        slaveRight(input.IsKeyDown(settings::C_playerIIright));
-        slaveFire (input.IsKeyDown(settings::C_playerIIfire));
-        slaveSpecial (input.IsKeyDown(settings::C_playerIISpecialKey));
+        slaveUp   (window::isKeyDown(settings::C_playerIIup));
+        slaveLeft (window::isKeyDown(settings::C_playerIIleft));
+        slaveRight(window::isKeyDown(settings::C_playerIIright));
+        slaveFire (window::isKeyDown(settings::C_playerIIfire));
+        slaveSpecial (window::isKeyDown(settings::C_playerIISpecialKey));
     }
 }
 
-void KeyController::update(sf::Key::Code keyCode) const {
-    if (type_ == controllers::cPlayer1) {
-        if      (keyCode == settings::C_playerIup)    slaveUp();
-        else if (keyCode == settings::C_playerIleft)  slaveLeft();
-        else if (keyCode == settings::C_playerIright) slaveRight();
-        else if (keyCode == settings::C_playerIfire)  slaveFire();
-        else if (keyCode == settings::C_playerISpecialKey)  slaveSpecial();
+void KeyController::update(Key const& key) const {
+    if (type_ == controllers::cPlayer1 && key.strength_ == 100) {
+        if      (key == settings::C_playerIup)    slaveUp();
+        else if (key == settings::C_playerIleft)  slaveLeft();
+        else if (key == settings::C_playerIright) slaveRight();
+        else if (key == settings::C_playerIfire)  slaveFire();
+        else if (key == settings::C_playerISpecialKey)  slaveSpecial();
     }
 
-    else if (type_ == controllers::cPlayer2) {
-        if      (keyCode == settings::C_playerIIup)    slaveUp();
-        else if (keyCode == settings::C_playerIIleft)  slaveLeft();
-        else if (keyCode == settings::C_playerIIright) slaveRight();
-        else if (keyCode == settings::C_playerIIfire)  slaveFire();
-        else if (keyCode == settings::C_playerIISpecialKey)  slaveSpecial();
+    else if (type_ == controllers::cPlayer2 && key.strength_ == 100) {
+        if      (key == settings::C_playerIIup)    slaveUp();
+        else if (key == settings::C_playerIIleft)  slaveLeft();
+        else if (key == settings::C_playerIIright) slaveRight();
+        else if (key == settings::C_playerIIfire)  slaveFire();
+        else if (key == settings::C_playerIISpecialKey)  slaveSpecial();
     }
 }
 

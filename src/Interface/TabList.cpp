@@ -46,12 +46,12 @@ void TabList::mouseLeft(bool down) {
         (*i)->mouseLeft(down);
 }
 
-void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
+void TabList::keyEvent(bool down, Key const& key) {
     if (focusedTab_) {
         if (focusedTab_->isFocused())
-            focusedTab_->keyEvent(down, keyCode);
+            focusedTab_->keyEvent(down, key);
         else {
-            if (down && ((keyCode == sf::Key::Left && locales::getCurrentLocale().LTR_) || (keyCode == sf::Key::Right && !locales::getCurrentLocale().LTR_))) {
+            if (down && ((key.navi_ == Key::nLeft && locales::getCurrentLocale().LTR_) || (key.navi_ == Key::nRight && !locales::getCurrentLocale().LTR_))) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i-1 + tabs_.size())%tabs_.size();
                 i = (i-1 + tabs_.size())%tabs_.size();
@@ -61,7 +61,7 @@ void TabList::keyEvent(bool down, sf::Key::Code keyCode) {
                 focusedTab_ = tabs_[i];
                 focusedTab_->active_=true;
             }
-            if (down && ((keyCode == sf::Key::Right && locales::getCurrentLocale().LTR_) || (keyCode == sf::Key::Left && !locales::getCurrentLocale().LTR_))) {
+            if (down && ((key.navi_ == Key::nRight && locales::getCurrentLocale().LTR_) || (key.navi_ == Key::nLeft && !locales::getCurrentLocale().LTR_))) {
                 int i(0);
                 while ( tabs_[i] != focusedTab_) i = (i+1)%tabs_.size();
                 i = (i+1)%tabs_.size();

@@ -81,35 +81,35 @@ void TextEdit::mouseLeft(bool down) {
     }
 }
 
-void TextEdit::keyEvent(bool down, sf::Key::Code keyCode) {
+void TextEdit::keyEvent(bool down, Key const& key) {
     if (pressed_) {
-        if (down) {
+        if (down && key.type_ == Key::kKeyBoard) {
             // backspace
-            if (keyCode == sf::Key::Back && cursorPos_ > 0) {
+            if (key.code_.keyBoard_ == sf::Key::Back && cursorPos_ > 0) {
                 value_->Erase(cursorPos_-1, 1);
                 --cursorPos_;
                 cursorTimer_ = 0;
             }
             // delete
-            else if (keyCode == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
+            else if (key.code_.keyBoard_ == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
                 value_->Erase(cursorPos_, 1);
             }
             // move cursor
-            else if (keyCode == sf::Key::Left && cursorPos_ > 0) {
+            else if (key.code_.keyBoard_ == sf::Key::Left && cursorPos_ > 0) {
                 --cursorPos_;
                 cursorTimer_ = 0;
             }
-            else if (keyCode == sf::Key::Right && cursorPos_ < value_->GetSize()) {
+            else if (key.code_.keyBoard_ == sf::Key::Right && cursorPos_ < value_->GetSize()) {
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
-            else if (keyCode == sf::Key::Escape || keyCode == sf::Key::Up || keyCode == sf::Key::Down || keyCode == sf::Key::Return) {
+            else if (key.code_.keyBoard_ == sf::Key::Escape || key.code_.keyBoard_ == sf::Key::Up || key.code_.keyBoard_ == sf::Key::Down || key.code_.keyBoard_ == sf::Key::Return) {
                 menus::unFixKeyboard();
             pressed_ = false;
             }
         }
     }
-    else if (down && (keyCode == sf::Key::Return || keyCode == sf::Key::Space)) {
+    else if (down && (key.navi_ == Key::nConfirm)) {
         menus::fixKeyboardOn(this);
         pressed_ = true;
     }

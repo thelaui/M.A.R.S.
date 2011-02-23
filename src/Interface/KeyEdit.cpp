@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <SFML/OpenGL.hpp>
 
-KeyEdit::KeyEdit (sf::String* text, sf::String* toolTip, sf::Key::Code* value, Vector2f const& topLeft, int width, int labelWidth):
+KeyEdit::KeyEdit (sf::String* text, sf::String* toolTip, Key* value, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 20),
     value_(value),
     toolTip_(toolTip),
@@ -59,19 +59,19 @@ void KeyEdit::mouseLeft(bool down) {
     }
 }
 
-void KeyEdit::keyEvent(bool down, sf::Key::Code keyCode) {
+void KeyEdit::keyEvent(bool down, Key const& key) {
     if (pressed_) {
-        if (down && keyCode != sf::Key::Escape) {
-            *value_ = keyCode;
+        if (down && (key.navi_ != Key::nAbort) && key.strength_ == 100) {
+            *value_ = key;
             pressed_ = false;
             menus::unFixKeyboard();
         }
-        else if (down && (keyCode == sf::Key::Escape)) {
+        else if (down && (key.navi_ == Key::nAbort)) {
             menus::unFixKeyboard();
             pressed_ = false;
         }
     }
-    else if (down && (keyCode == sf::Key::Return || keyCode == sf::Key::Space)) {
+    else if (down && (key.navi_ == Key::nConfirm)) {
         menus::fixKeyboardOn(this);
         pressed_ = true;
     }

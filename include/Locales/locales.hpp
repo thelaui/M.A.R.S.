@@ -53,6 +53,9 @@ namespace locales {
                      ttPointLimitPlayer, ttBotStrength, ttPowerUpRate, Weapons, Specials, SavedScreenshot, InfoGIP,
                      ShortDescriptionGIP, Tut21, TutText21, Tut22, TutText22, PleaseEnterName, PleaseEnterNameText,
                      NextTrackNotify, GeneralOptions, SpecialEffects, ShipSettings,
+                     JoyButtonA, JoyButtonB, JoyButtonX, JoyButtonY, JoyButtonStart, JoyButtonBack, JoyButtonRB, JoyButtonLB,
+                     JoyAxisRT, JoyAxisLT, JoyPOVup, JoyPOVdown, JoyPOVleft, JoyPOVright, JoyA1up, JoyA1down, JoyA1left,
+                     JoyA1right, JoyA2up, JoyA2down, JoyA2left, JoyA2right, JoyStick, JoyButton,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

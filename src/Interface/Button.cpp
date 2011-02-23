@@ -60,8 +60,8 @@ void Button::mouseLeft(bool down) {
     }
 }
 
-void Button::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+void Button::keyEvent(bool down, Key const& key) {
+    if (key.navi_ == Key::nConfirm) {
         pressed_ = down;
         if (!pressed_) {
             *key_ = true;

@@ -62,8 +62,8 @@ void ColorPicker::mouseLeft(bool down) {
     }
 }
 
-void ColorPicker::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+void ColorPicker::keyEvent(bool down, Key const& key) {
+    if (key.navi_ == Key::nConfirm) {
         pressed_ = down;
         if (!pressed_) {
             hovered_ = false;

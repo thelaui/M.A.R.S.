@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Color3f.hpp"
 # include "Weapons/Weapon.hpp"
 # include "Specials/Special.hpp"
+# include "System/Key.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <string>
@@ -73,8 +74,8 @@ namespace settings {
     extern int            C_resY;
     extern int            C_colorDepth;
     extern bool           C_shaders;
-    extern sf::Key::Code  C_screenShotKey;
-    extern sf::Key::Code  C_audioNextKey;
+    extern Key            C_screenShotKey;
+    extern Key            C_audioNextKey;
     extern std::string    C_configPath;
     extern std::string    C_dataPath;
     extern std::string    C_screenShotFormat;
@@ -89,11 +90,11 @@ namespace settings {
     extern sf::String     C_playerIName;
     extern Color3f        C_playerIColor;
     extern Color3f        C_playerITeamColor;
-    extern sf::Key::Code  C_playerIup;
-    extern sf::Key::Code  C_playerIleft;
-    extern sf::Key::Code  C_playerIright;
-    extern sf::Key::Code  C_playerIfire;
-    extern sf::Key::Code  C_playerISpecialKey;
+    extern Key            C_playerIup;
+    extern Key            C_playerIleft;
+    extern Key            C_playerIright;
+    extern Key            C_playerIfire;
+    extern Key            C_playerISpecialKey;
     extern bool           C_playerIteamL;
     extern bool           C_playerIteamR;
     extern int            C_playerIShip;
@@ -102,11 +103,11 @@ namespace settings {
     extern sf::String     C_playerIIName;
     extern Color3f        C_playerIIColor;
     extern Color3f        C_playerIITeamColor;
-    extern sf::Key::Code  C_playerIIup;
-    extern sf::Key::Code  C_playerIIleft;
-    extern sf::Key::Code  C_playerIIright;
-    extern sf::Key::Code  C_playerIIfire;
-    extern sf::Key::Code  C_playerIISpecialKey;
+    extern Key            C_playerIIup;
+    extern Key            C_playerIIleft;
+    extern Key            C_playerIIright;
+    extern Key            C_playerIIfire;
+    extern Key            C_playerIISpecialKey;
     extern bool           C_playerIIteamL;
     extern bool           C_playerIIteamR;
     extern int            C_playerIIShip;

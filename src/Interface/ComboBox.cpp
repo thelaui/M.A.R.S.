@@ -67,8 +67,8 @@ void ComboBox::mouseLeft(bool down) {
     }
 }
 
-void ComboBox::keyEvent(bool down, sf::Key::Code keyCode) {
-    if (keyCode == sf::Key::Return || keyCode == sf::Key::Space) {
+void ComboBox::keyEvent(bool down, Key const& key) {
+    if (key.navi_ == Key::nConfirm) {
         pressed_ = down;
         if (!pressed_) {
             hovered_ = false;

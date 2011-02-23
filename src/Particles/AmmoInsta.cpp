@@ -120,7 +120,7 @@ void AmmoInsta::onCollision(SpaceObject* with, Vector2f const& location,
     killMe();
 }
 
-bool AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team* team) {
+int AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team* team) {
 
     glLineWidth(2.f);
     team->color().gl4f(0.4f);
@@ -160,7 +160,7 @@ bool AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Tea
                         glBegin(GL_POINTS);
                             glVertex2f((*it)->location().x_, (*it)->location().y_);
                         glEnd();
-                        return true;
+                        return 100;
                     }
                     else {
                         glPointSize(50.f);
@@ -168,24 +168,24 @@ bool AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Tea
                         glBegin(GL_POINTS);
                             glVertex2f((*it)->location().x_, (*it)->location().y_);
                         glEnd();
-                        return false;
+                        return 0;
                     }
                 }
             }
         }
 
         if (to.x_ < -100 || to.x_ > 1280 + 100 || to.y_ < -100 || to.y_ > 800 + 100)
-            return false;
+            return 0;
 
         for (std::vector<SpaceObject*>::const_iterator it = physics::getGravitySources().begin(); it != physics::getGravitySources().end(); ++it) {
             if((*it)->type() != spaceObjects::oBlackHole && ((*it)->location()-to).lengthSquare() < std::pow((*it)->radius(), 2))
-                return false;
+                return 0;
         }
 
         from = to;
     }
 
-    return false;
+    return 0;
 }
 
 

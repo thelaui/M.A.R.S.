@@ -66,18 +66,18 @@ void Slider::mouseMoved(Vector2f const& position) {
         toolTip::show(toolTip_);
 }
 
-void Slider::keyEvent(bool down, sf::Key::Code keyCode) {
+void Slider::keyEvent(bool down, Key const& key) {
     if (down) {
         if (locales::getCurrentLocale().LTR_) {
-            if (keyCode == sf::Key::Left && *value_ > minValue_)
+            if (key.navi_ == Key::nLeft && *value_ > minValue_)
                 --(*value_);
-            else if (keyCode == sf::Key::Right && *value_ < maxValue_)
+            else if (key.navi_ == Key::nRight && *value_ < maxValue_)
                 ++(*value_);
         }
         else {
-            if (keyCode == sf::Key::Left && *value_ < maxValue_)
+            if (key.navi_ == Key::nLeft && *value_ < maxValue_)
                 ++(*value_);
-            else if (keyCode == sf::Key::Right && *value_ > minValue_)
+            else if (key.navi_ == Key::nRight && *value_ > minValue_)
                 --(*value_);
         }
     }

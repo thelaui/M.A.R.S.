@@ -27,7 +27,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Shaders/postFX.hpp"
 # include "Games/games.hpp"
 # include "SpaceObjects/stars.hpp"
-# include "Media/music.hpp"
 # include "Hud/hud.hpp"
 
 # include <SFML/OpenGL.hpp>
@@ -46,6 +45,7 @@ namespace window {
         Vector2f         viewPort_;
         float            scale_(960.f/1280.f);
         int              clearCount_(0);
+        float            joyButtonTimer_(0.f);
 
         void setViewPort() {
             const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
@@ -57,51 +57,6 @@ namespace window {
             }
         }
 
-        void screenShot() {
-            sf::Image shot;
-            const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-            if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
-                shot.CopyScreen(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
-            else
-                shot.CopyScreen(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));
-
-            time_t rawtime;
-            struct tm* timeinfo;
-            time (&rawtime);
-            timeinfo = localtime(&rawtime);
-
-            std::stringstream filename;
-            filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
-
-            # ifdef __linux__
-                mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-                if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                    std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
-                } else {
-                    std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                }
-            # endif
-
-            # ifdef __APPLE__
-                mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-                if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                    std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
-                } else {
-                    std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                }
-            # endif
-
-            # ifdef __WIN32__
-                if (shot.SaveToFile(settings::C_configPath + filename.str())) {
-                    std::cout << "Saved screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
-                    hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
-                } else {
-                    std::cout << "Failed saving screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
-                }
-            # endif
-        }
 
         void resized() {
             window_.SetActive(true);
@@ -139,16 +94,12 @@ namespace window {
                 else if (event.Type == sf::Event::Closed)
                     close();
                 else if (event.Type == sf::Event::KeyPressed) {
-                    if (event.Key.Code == settings::C_screenShotKey && !menus::keyboardFixed())
-                        screenShot();
-                    else if (event.Key.Code == settings::C_audioNextKey && !menus::keyboardFixed())
-                        music::next();
-                    else if (!menus::visible())
-                        controllers::singleKeyEvent(event.Key.Code);
-                    menus::keyEvent(true, event.Key.Code);
+                    if (!menus::visible())
+                        controllers::singleKeyEvent(Key(event.Key.Code));
+                    menus::keyEvent(true, Key(event.Key.Code));
                 }
                 else if (event.Type == sf::Event::KeyReleased) {
-                    menus::keyEvent(false, event.Key.Code);
+                    menus::keyEvent(false, Key(event.Key.Code));
                 }
                 else if (event.Type == sf::Event::TextEntered) {
                     if (menus::visible())
@@ -165,6 +116,23 @@ namespace window {
                 else if (event.Type == sf::Event::MouseButtonReleased) {
                     if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
                         menus::mouseLeft(false);
+                }
+                else if (event.Type == sf::Event::JoyButtonPressed) {
+                    if (timer::totalTime() - joyButtonTimer_ > 0.2f) {
+                        if (!menus::visible())
+                            controllers::singleKeyEvent(Key(event.JoyButton.JoystickId, event.JoyButton.Button));
+                        menus::keyEvent(true, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
+                        joyButtonTimer_ = timer::totalTime();
+                    }
+                }
+                else if (event.Type == sf::Event::JoyButtonReleased)
+                    menus::keyEvent(false, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
+                else if (event.Type == sf::Event::JoyMoved) {
+                    Key key(event.JoyButton.JoystickId, event.JoyMove.Axis, event.JoyMove.Position);
+                    if (!menus::visible())
+                        controllers::singleKeyEvent(key);
+                    if(key.strength_ == 100)
+                        menus::keyEvent(true, key);
                 }
             }
         }
@@ -323,6 +291,74 @@ namespace window {
 
     sf::Input const& getInput() {
         return window_.GetInput();
+    }
+
+    int isKeyDown(Key const& key) {
+        switch (key.type_) {
+            case Key::kKeyBoard:
+                if (window_.GetInput().IsKeyDown(key.code_.keyBoard_))
+                    return 100;
+                break;
+
+            case Key::kJoyButton:
+                if (window_.GetInput().IsJoystickButtonDown(key.joyID_, key.code_.joyButton_))
+                    return 100;
+                break;
+
+            case Key::kJoyAxis:
+                sf::Joy::Axis tmp(Key::convertToSFML(key.code_.joyAxis_));
+                int strength(window_.GetInput().GetJoystickAxis(key.joyID_, tmp));
+                std::pair<Key::AxisType, int> result(Key::convertFromSFML(tmp,strength));
+                return result.first == key.code_.joyAxis_ ? result.second : 0;
+                break;
+        }
+        return 0;
+    }
+
+    void screenShot() {
+        sf::Image shot;
+        const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+        if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
+            shot.CopyScreen(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
+        else
+            shot.CopyScreen(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));
+
+        time_t rawtime;
+        struct tm* timeinfo;
+        time (&rawtime);
+        timeinfo = localtime(&rawtime);
+
+        std::stringstream filename;
+        filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
+
+        # ifdef __linux__
+            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
+            } else {
+                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+            }
+        # endif
+
+        # ifdef __APPLE__
+            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
+            } else {
+                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+            }
+        # endif
+
+        # ifdef __WIN32__
+            if (shot.SaveToFile(settings::C_configPath + filename.str())) {
+                std::cout << "Saved screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
+            } else {
+                std::cout << "Failed saving screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+            }
+        # endif
     }
 
     void showCursor(bool show) {

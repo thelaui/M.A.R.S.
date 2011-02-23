@@ -71,9 +71,9 @@ void Tab::mouseLeft(bool down) {
             (*i)->mouseLeft(down);
 }
 
-void Tab::keyEvent(bool down, sf::Key::Code keyCode) {
+void Tab::keyEvent(bool down, Key const& key) {
     if (focusedWidget_)
-        focusedWidget_->keyEvent(down, keyCode);
+        focusedWidget_->keyEvent(down, key);
 }
 
 bool Tab::tabNext() {

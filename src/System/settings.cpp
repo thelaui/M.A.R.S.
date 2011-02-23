@@ -65,8 +65,8 @@ namespace settings {
     int         C_resY =                    600;
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 false;
-    sf::Key::Code  C_screenShotKey =        sf::Key::F12;
-    sf::Key::Code  C_audioNextKey =         sf::Key::F8;
+    Key         C_screenShotKey =           Key(sf::Key::F12);
+    Key         C_audioNextKey =            Key(sf::Key::F8);
     std::string C_configPath =              "";
     std::string C_dataPath =                "";
     std::string C_screenShotFormat =        "jpg";
@@ -80,11 +80,11 @@ namespace settings {
     sf::String    C_playerIName =           "PlayerI";
     Color3f       C_playerIColor =          Color3f(1.f, 0.87f, 0.0125f);
     Color3f       C_playerITeamColor =      Color3f(0.94f, 0.24f, 1.f);
-    sf::Key::Code C_playerIup =             sf::Key::Up;
-    sf::Key::Code C_playerIleft =           sf::Key::Left;
-    sf::Key::Code C_playerIright =          sf::Key::Right;
-    sf::Key::Code C_playerIfire =           sf::Key::RControl;
-    sf::Key::Code C_playerISpecialKey =     sf::Key::RShift;
+    Key           C_playerIup =             Key(sf::Key::Up);
+    Key           C_playerIleft =           Key(sf::Key::Left);
+    Key           C_playerIright =          Key(sf::Key::Right);
+    Key           C_playerIfire =           Key(sf::Key::RControl);
+    Key           C_playerISpecialKey =     Key(sf::Key::RShift);
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
@@ -93,11 +93,11 @@ namespace settings {
     sf::String    C_playerIIName =          "PlayerII";
     Color3f       C_playerIIColor =         Color3f(0.5f, 0.4f, 0.82f);
     Color3f       C_playerIITeamColor =     Color3f(0.05f, 1.f, 0.785f);
-    sf::Key::Code C_playerIIup =            sf::Key::W;
-    sf::Key::Code C_playerIIleft =          sf::Key::A;
-    sf::Key::Code C_playerIIright =         sf::Key::D;
-    sf::Key::Code C_playerIIfire =          sf::Key::LControl;
-    sf::Key::Code C_playerIISpecialKey =    sf::Key::LShift;
+    Key           C_playerIIup =            Key(sf::Key::W);
+    Key           C_playerIIleft =          Key(sf::Key::A);
+    Key           C_playerIIright =         Key(sf::Key::D);
+    Key           C_playerIIfire =          Key(sf::Key::LControl);
+    Key           C_playerIISpecialKey =    Key(sf::Key::LShift);
     bool          C_playerIIteamL =         true;
     bool          C_playerIIteamR =         false;
     int           C_playerIIShip =          0;
@@ -448,30 +448,10 @@ namespace settings {
                     C_playerIIName = sf::String(std::string(tmp, 0, 12));
                 }
                 else if (inputLine == "[playerIKeys]") {
-                    int temp;
-                    iss >> temp;
-                    C_playerIup = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIright = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIleft = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIfire = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerISpecialKey = (sf::Key::Code)temp;
+                    iss >> C_playerIup >> C_playerIright >> C_playerIleft >> C_playerIfire >> C_playerISpecialKey;
                 }
                 else if (inputLine == "[playerIIKeys]") {
-                    int temp;
-                    iss >> temp;
-                    C_playerIIup = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIIright = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIIleft = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIIfire = (sf::Key::Code)temp;
-                    iss >> temp;
-                    C_playerIISpecialKey = (sf::Key::Code)temp;
+                    iss >> C_playerIIup >> C_playerIIright >> C_playerIIleft >> C_playerIIfire >> C_playerIISpecialKey;
                 }
                 else if (inputLine == "[playerIColor]") {
                     float r, g, b;
@@ -660,14 +640,10 @@ namespace settings {
                     C_colorDepth = value;
                 }
                 else if (inputLine == "[audioNextKey]") {
-                    int value;
-                    iss >> value;
-                    C_audioNextKey = (sf::Key::Code)value;
+                    iss >> C_audioNextKey;
                 }
                 else if (inputLine == "[screenShotKey]") {
-                    int value;
-                    iss >> value;
-                    C_screenShotKey = (sf::Key::Code)value;
+                    iss >> C_screenShotKey;
                 }
                 else if (inputLine == "[screenShotFormat]") {
                     iss >> C_screenShotFormat;

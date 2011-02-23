@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define KEYCONTROLLER_HPP_INCLUDED
 
 # include "Controllers/Controller.hpp"
+# include "System/Key.hpp"
 
 # include <SFML/Window.hpp>
 
@@ -33,10 +34,10 @@ class KeyController: public Controller {
         KeyController(Player* slave);
 
         /// Updates the Controller, based on the current input state.
-        void update(sf::Input const& input) const;
+        void update() const;
 
         /// Updates the Controller, based on single key events.
-        void update(sf::Key::Code keyCode)  const;
+        void update(Key const& key)  const;
 
         void evaluate();
 };

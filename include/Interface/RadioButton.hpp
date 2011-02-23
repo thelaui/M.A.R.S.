@@ -31,7 +31,7 @@ class RadioButton: public UiElement {
 
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
-        void keyEvent(bool down, sf::Key::Code keyCode);
+        void keyEvent(bool down, Key const& key);
 
         void draw() const;
 

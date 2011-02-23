@@ -18,7 +18,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Controllers/KeyController.hpp"
 # include "Controllers/BotController.hpp"
 # include "System/settings.hpp"
-# include "System/window.hpp"
 # include "Players/Player.hpp"
 
 # include <SFML/Window.hpp>
@@ -28,21 +27,19 @@ namespace controllers {
         KeyController* keyControllers1_(NULL);
         KeyController* keyControllers2_(NULL);
         std::vector<BotController*> botControllers_;
-
-        sf::Input const& input_ = window::getInput();
     }
 
     void update() {
         if (keyControllers1_ != NULL && (settings::C_playerIteamL | settings::C_playerIteamR))
-            keyControllers1_->update(input_);
+            keyControllers1_->update();
         if (keyControllers2_ != NULL && (settings::C_playerIIteamL | settings::C_playerIIteamR))
-            keyControllers2_->update(input_);
+            keyControllers2_->update();
 
         for (std::vector<BotController*>::iterator it = botControllers_.begin(); it != botControllers_.end(); ++it)
             (*it)->update();
     }
 
-    void singleKeyEvent(sf::Key::Code keyCode) {
+    void singleKeyEvent(Key const& keyCode) {
         if (keyControllers1_ != NULL && (settings::C_playerIteamL | settings::C_playerIteamR))
             keyControllers1_->update(keyCode);
         if (keyControllers2_ != NULL && (settings::C_playerIIteamL | settings::C_playerIIteamR))

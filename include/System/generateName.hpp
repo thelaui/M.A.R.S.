@@ -18,6 +18,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef GENERATENAME_HPP_INCLUDED
 # define GENERATENAME_HPP_INCLUDED
 
+# include "System/Key.hpp"
+
 # include <vector>
 # include <SFML/System.hpp>
 # include <SFML/Window.hpp>
@@ -43,7 +45,7 @@ namespace generateName {
 
     /// Returns a human-readable string, containing the name of given key.
     /// The key is loaded from the current locale.
-    sf::String const key(sf::Key::Code keyCode);
+    sf::String const key(Key const& keyCode);
 }
 
 # endif //GENERATENAME_HPP_INCLUDED
