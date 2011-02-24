@@ -27,14 +27,18 @@
 
 017 Équipe Gauche
 018 Équipe Droite
-019 Alliés Gauche
-020 Alliés Droite
+019 Bots Gauche
+020 Bots Droite
 021 Bots
 022 Limite de Frags
 162 Limite de Points
-056 Weapon Options
-203 Weapons
-204 Specials
+056 Options d'Arme
+203 Armes
+204 Capacités Spéciales
+166 Taux d'Apparition des Objets
+167 Difficulté des Bots
+159 Options de Jeu
+257 Joueurs
 
 // story information
 
@@ -46,6 +50,8 @@
 028 Détruisez autant d'ennemis que possible !
 029 Comme si la GRANDE GUERRE n'était pas suffisante, votre système planétaire est menacé par un nouvel ennemi maléfique: Un vaisseau géant d'origine inconnue est en vol stationnaire au-dessus de votre galaxie, menaçant les planètes-mères d'une arme de destruction massive monolithique. \nÉtrangement, les envahisseurs ont laissé tomber le dispositif permettant d'ajuster la puissance de cette arme titanesque. \nAtteingnez ce dispositif avant les autres afin de transformer la planète-mère de vos ennemis en lieu de désolation ! \nSoyez le CANNONKEEPer.
 030 Prenez le dispositif et gardez-le coûte que coûte !
+206 Comme la GRANDE GUERRE draine vos ressources rapidement, les scientifiques ont créé une arme économique meurtrière: elle tue instantanément, mais les projectiles ainsi lancés sont instables et difficiles à maîtriser. C'est ainsi qu'ils ont dénommé cette arme: INSTA-GRAVE!  \n \nMalheureusement quelqu'un a dérobé cette technologie, vos ennemis la possèdent donc également. Détruisez ces voleurs dans la grande fosse à GRAVE-ITATION pour reprendre l'avantage. \n \nRemportez cette bataille, et la victoire pour la GRANDE GUERRE sera vôtre. 
+207 Détruisez autant d'ennemis que possible !
 
 // display options
 // tabs
@@ -55,42 +61,50 @@
 102 Graphismes
 103 Audio
 
+// interface Options
+
 104 Options de fenêtre
 031 Afficher Informations de débogage
-032 Orientation des Alliés
-033 Zones
+032 Orientation des Vaisseaux
+033 Zones tactiques
 034 Chemins de l'IA
 035 Afficher Informations du jeu
 036 Images par seconde
-152 Language
-153 Hotkey for Screenshots
-054 File Format for Screenshots
+215 Options Générales
+152 Langue
+153 Raccourci Captures d'écran
+054 Format des Captures d'écran
+242 Raccourci Statistiques
+
+// graphics options
+
 037 Compteur de particules
 038 Compteur de particules
 039 Durée de vie des particules
-040 Étoiles
+040 Options de jeu
 041 Plein-écran
 042 Synchronisation verticale
-055 Display Tool Tips
+055 Afficher les Infobulles
 163 Effets Shaders
-164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
-
-151 High Starfield Resolution
-173 Resolution
-174 Color Depth
+164 164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
+151 Champs d'Étoiles Haute Résolution
+173 Résolution
+174 Couleurs
 
 // gameplay options
 
-166 Taux d'apparition des Objets
-167 Difficulté des Alliés
+216 Effets Spéciaux
 168 Explosions au ralenti
 169 Désactivé
 
 // audio options
 
-043 Volume de la musique
-044 Volume du son
-045 Volume du présentateur
+123 Options du Volume
+043 Musique
+044 Son
+045 Présentateur
+128 Jouer la piste suivante
+129 Options du Playback
 
 // player options
 
@@ -99,10 +113,11 @@
 048 Tourner à gauche
 049 Tourner à droite
 050 Arme
-175 Special
+175 Capacité Spéciale
+217 Options du Vaisseau
 051 Vaisseau
-052 Player Color
-053 Team Color
+052 Couleur Joueur
+053 Couleur Équipe
 
 // about
 
@@ -116,7 +131,7 @@
 
 170 Crédits
 171 Remerciements particuliers à:
-172 Traductions:\n    Allemand: Sandra  \n   Français: Astohan \n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests et support à la création:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traductions:\n Arabe: Majid\n Chinois: Wecing\n Tchèque: Mates\n Finlandais: Paavo\n Français: Ludovic\n Allemand: Sandra\n Hindi: Antriksh & Aakanksh\n Hongrois: Papp Bence\n Italien: Proch\n Polonais: command_dos\n Portugais: Vitor\n Russe: Drakmail\n Espagnol: Gastón\n Suedois: Henrik\n\nAide au développement:\n Werner et Deubeuliou\n\nTests et Aide à la création:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quitter
 
@@ -173,7 +188,37 @@
 100 Tab
 101 Haut
 
+// Joystick button names
+
+218 Bouton A
+219 Bouton B
+220 Bouton X
+221 Bouton Y
+222 Bouton Démarrer
+223 Bouton Retour
+224 Bumper Droite
+225 Bumper Gauche
+226 Trigger Droite
+227 Trigger Gauche
+228 Direction Haut
+229 Direction Bas
+230 Direction Gauche
+231 Direction Droite
+232 Joueur1 Haut
+233 Joueur1 Bas
+234 Joueur1 Gauche
+235 Joueur1 Droite
+236 Joueur2 Haut
+237 Joueur2 Bas
+238 Joueur2 Gauche
+239 Joueur2 Droite
+240 Joystick
+241 Bouton
+
 // tutorial texts
+
+212 Hé, {PLAYER1_NAME}!
+213 C'est un bien mauvais pseudonyme... N'hésitez pas à en choisir un autre !
 
 107 Bienvenue, bleu de l'espace !
 108 Nous sommes fiers de recruter dans nos rangs un futur héros de la GRANDE GUERRE !\nNous avons compris que vous aviez besoin d'un peu d'entraînement à bord de votre nouveau vaisseau.\nCommençons l'entraînement...
@@ -184,7 +229,7 @@
 111 L'échauffement !
 112 Atteignez la zone rose !\nEssayez de na pas faire s'écraser votre tout nouveau vaisseau.
 
-113 Bravo !
+113 Bravo, {PLAYER1_NAME} !
 114 Maintenant retournez à votre planète-mère et essayez d'y faire atterrir votre vaisseau en inversant la poussée des moteurs, une fois arrivé proche de la planète.
 
 115 Beau travail !
@@ -197,16 +242,13 @@
 120 Vous êtes le meilleur bleu que je n'ai jamais vu.\nPréparez-vous maintenant à maîtriser l'art des explosions.
 
 121 Tirer...
-122 Pour détruire vos ennemis, vous devez savoir comment leur tirer dessus !\nPour cela, appuyez sur
-123 Amusez-vous à tirer un peu partout, puis faîtes atterrir votre vaisseau pour continuer le tutoriel.
+122 Pour détruire vos ennemis, vous devez savoir comment leur tirer dessus !\nPour cela, appuyez sur <{PLAYER1_KEY_FIRE}>. \nAmusez-vous à tirer un peu partout, puis faîtes atterrir votre vaisseau pour continuer le tutoriel.
 
-124 Bel atterrissage !
+124 Bel atterrissage, {PLAYER1_NAME} !
 125 Vous devenez bon pilote !\n\nQue diriez-vous d'essayer d'autres armes ?
 
 126 Les armes...
-127 Je sais que vous n'attendiez que ça. Une fois posé, vous pourrez changer d'armement.\nAppuyez sur
-128 pour ouvrir votre arsenal.\nPuis utilisez
-129 pour choisir une arme ! Quittez cette fenêtre quand vous êtes prêt !
+127 Je sais que vous n'attendiez que ça. Une fois posé, vous pourrez changer d'armement.\nAppuyez sur <{PLAYER1_KEY_FIRE}> pour ouvrir votre arsenal.\nPuis utilisez <{PLAYER1_KEY_LEFT}> et <{PLAYER1_KEY_RIGHT}> pour choisir une arme ! \nQuittez cette fenêtre quand vous êtes prêt !
 
 130 Combattez !
 131 Voyons maintenant comment vous vous débrouillez face à un bleu d'une autre planète.\nOn dirait qu'il essaie d'améliorer ses techniques de vol.\nBattez-le !
@@ -214,21 +256,44 @@
 132 Impressionnant !
 133 Vous l'avez fait ! Comme vous l'aurez remarqué, vous obtenez quelques points de récompense à chaque ennemi abattu.\nLe petit chiffre vert qui apparaît au-dessus de votre vaisseau représente le montant des points. Il augmentera si vous tuez plusieurs ennemis d'affilée.
 
-134 Attention !
-135 Il n' y a pas de temps pour le repos.\nNos ennemis ont envoyé l'un de leurs meilleurs combattants pour se venger !\nJe ne peux rien faire pour vous...
+208 Capacités Spéciales...
+209 Comme promis, nous allons vous expliquer l'intérêt des étoiles. Elles sont de précieuses et puissantes ressources pour votre vaisseau, lui conférant d'étonnantes capacités. Par exemple, vous pouvez vous soigner (ainsi que les alliés proches), ou encore repousser ou figer les vaisseaux proches ! \nPlus vous possédez d'étoiles, plus le rayon d'action et la puissance de vos capacités s'accroissent.
+
+210 Sélection...
+211 Pour alterner entre vos différentes capacités, appuyez sur <{PLAYER1_KEY_SPECIAL}>. Pour en choisir une, faîtes-les défiler par les touches <{PLAYER1_KEY_LEFT}> et <{PLAYER1_KEY_RIGHT}>! \nPour le moment, contentons-nous de choisir la capacité "Freezer"! Quittez cette fenêtre quand vous aurez terminé !
+
+245 Stop, {PLAYER1_NAME}!
+246 Nous vous avons conseillé la capacité Freezer, mais vous avez délibérement choisi une autre capacité !\nVeuillez atterrir puis choisir Freezer !
+
+247 Le Freezer...
+248 C'est une capacité puissante, qui fige les vaisseaux proches. \nVous devez voler à proximité de votre ennemi, puis appuyer sur <{PLAYER1_KEY_SPECIAL}> pour le figer sur place.
+
+249 La pratique!
+250 Essayez à présent de figer/gêler votre ennemi ! \nNous allons vous concéder ici quelques FragStars. N'oubliez pas: Dans un véritable combat, vous devez attaquer vos ennemis pour obtenir ces étoiles !
+
+251 Vous l'avez manqué, {PLAYER1_NAME}!
+252 Persévérez. Nous allons vous donner d'autres FragStars.
+
+253 Vous l'avez fait !
+254 À présent, retournez sur votre planète, et choisissez une autre capacité.
+
+255 Attention, {PLAYER1_NAME}!
+256 Vous n'avez plus le temps de vous perfectionner !\nNos ennemis ont envoyé deux guerrier pour se venger !
+
+134 Battez-les !
+135 Prouvez votre valeur ! Obtenez au moins cinq points en les tuant ! Votre score actuel est affiché à côté de votre nom !\nNous vous envoyons un combattant expérimenté pour vous soutenir, {PLAYER1_NAME}!
 
 136 Incroyable !
-
 137 Vous avez suivi tous mes conseils avec succès. Que faire à présent ?\nRegardons un peu dans le menu des options. Ici vous pouvez ajuster un paquet de... comment dire... d'options.\nPar example, vous pouvez modifier l'apparence de votre vaisseau, ou bien changer votre nom...
 
 138 Qui est le meilleur ?
 139 Vous pouvez afficher une liste de frags, points et autres via la touche <Tab>.\nLes chiffres accolés à votre nom illustrent votre compteur de frag et la différence qui vous sépare du meilleur score. 
 
-140 Félicitations !
+140 Félicitations, {PLAYER1_NAME}! !
 141 Vous avez terminé ce tutoriel. Vous êtes à présent prêt à combattre dans la GRANDE GUERRE. Si vous désirez continuer à vous entraîner, attendez simplement que l'ennemi réapparaisse. Vous pouvez quitter votre entraînement par la touche <Esc>.\n\nAmusez-vous bien sur M.A.R.S.!
 
 142 Echec complet !
-143 Merveilleux, vous venez de détruire votre tout nouveau vaisseau ! Bien, nous allons vous en fournir un autre. Attendez un instant...
+143 Merveilleux, {PLAYER1_NAME}! Vous venez de détruire votre tout nouveau vaisseau ! Bien, nous allons vous en fournir un autre. Attendez un instant...
 
 144 Avez-vous remarqué ?
 145 Votre santé diminue ! Gardez un oeil sur la barre verte. Vous feriez mieux d'atterrir si celle-ci est trop vide.
@@ -243,47 +308,50 @@
 
 154 Points
 155 Frags
-156 CannonShots
-157 Teamkills
-158 Suicides
-159 Morts
-160 Réputation
-161 Total:
-162 Statistiques
+244 CannonShots
+156 Teamkills
+157 Suicides
+158 Morts
+160 Total:
+161 Statistiques
 
 // Tool tips options menu
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Affiche le nombre d'Images par Seconde.\nSi les IPS sont basses (<20), vous devriez ajuster vos options graphiques !
+177 Affiche le nombre de particules actives.
+178 Désactive les infobulles comme celle-ci.
+179 Change le format d'enregistrement des captures d'écran.
+180 Quand cette touche est pressée, une capture d'écran est enregistrée dans {CONFIG_PATH}screenshots/
+181 Permet de passer à la piste musicale suivante.
+182 Active l'effet de ralenti lors d'explosions simultanées de vaisseaux. 
+183 Affiche le rôle de chaque bot.
+184 Affiche les zones tactiques, importantes pour l'intelligence artificielle.
+185 Affiche les chemins calculés par les bots.
+186 Maximise la fenêtre, qui recouvre tout l'écran.
+187 Force le jeu à s'actualiser selon le taux de rafraichissement de l'écran.\nGénéralement, cela rend le jeu plus fluide.
+188 Active les effets additionnels, mais réduit les performances du jeu.
+189 Change la taille de la fenêtre.\nAffecte le plein-écran et le mode fenêtré.
+190 Avec une haute résolution, cette option repousse le rafraichissement du champs d'étoiles.\nDésactiver pour accroître les performances.
+191 Ajuste le compteur global de particules.\nDes valeurs basses accroissent les performances.
+192 Ajuste la durée de vie des particules.\nDes valeurs basses accroissent les performances.
+193 Ajuste le volume du fond musical.
+194 Ajuste le volume des effets sonores.
+195 Ajuste le volume de la voix du présentateur.
+243 Affiche une fenêtre détaillant les statistiques de la partie en cours, une fois cette touche pressée durant le jeu.
 
 // Tool tips in the start-a-new-game-window
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
-202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+196 Configure l'équipe des joueurs locaux.
+197 Active les joueurs locaux.
+198 Ajuste le nombre de vaisseaux contrôlés par l'intelligence artificielle.
+199 Limite de points à atteindre par une équipe pour gagner la partie.
+200 Limite de points à atteindre par un joueur pour gagner la partie.
+201 Ajuste la puissance des vaisseaux.
+202 Ajuste le nombre d'Améliorations/Objets apparaissant pendant la partie.\n Zero désactive entièrement les objets.
 
-// 205
+// Interface notifications
 
+205 Capture d'écran enregistrée !
+214 Piste musicale suivante !
 
+// 258

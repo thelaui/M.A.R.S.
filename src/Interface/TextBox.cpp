@@ -19,9 +19,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/text.hpp"
 
+# include <SFML/OpenGL.hpp>
 
 TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int height, Color3f const& color):
-    UiElement(topLeft, width, height) {
+    UiElement(topLeft, width, height),
+    color_(color),
+    slider_(NULL),
+    position_(0) {
 
         sf::String wholeText = *text;
         sf::String word;
@@ -50,7 +54,7 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
             else if (wholeText[i] != ' ') {
                 word += wholeText[i];
                 sf::String tmp(line + word);
-                if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
+                if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_-10) {
                     if (lastSpace == 0) {
                         wholeText.Insert(i-1, '\n');
                         line = "";
@@ -77,10 +81,6 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
             if (wholeText[i] == '\n') {
                 texts_.push_back(new sf::String(line));
-                Label* newLabel = new Label(texts_.back(), TEXT_ALIGN_LEFT, Vector2f(0.f, top), 12.f, color);
-                newLabel->setParent(this);
-                lines_.push_back(newLabel);
-                top += 15;
                 line = "";
             }
             else {
@@ -89,24 +89,64 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         }
         if (line != "") {
             texts_.push_back(new sf::String(line));
-            Label* newLabel = new Label(texts_.back(), TEXT_ALIGN_LEFT, Vector2f(0.f, top), 12.f, color);
-            newLabel->setParent(this);
-            lines_.push_back(newLabel);
         }
 
-
+    if (texts_.size()*15.f > height_) {
+        slider_ = new VerticalSlider(&position_, 0, texts_.size()*15.f-height, Vector2f(width_-12, 0), height_);
+        slider_->setParent(this);
     }
 
+}
+
 TextBox::~TextBox() {
-    for (std::vector<Label*>::iterator it=lines_.begin(); it!=lines_.end(); ++it)
-        delete *it;
     for (std::vector<sf::String*>::iterator it=texts_.begin(); it!=texts_.end(); ++it)
         delete *it;
+    if (slider_)
+        delete slider_;
+}
+
+void TextBox::mouseMoved(Vector2f const& position) {
+    if (slider_)
+        slider_->mouseMoved(position);
+}
+
+void TextBox::mouseLeft(bool down) {
+    if (slider_)
+        slider_->mouseLeft(down);
 }
 
 void TextBox::draw () const {
-    for (std::vector<Label*>::const_iterator it=lines_.begin(); it!=lines_.end(); ++it)
-        (*it)->draw();
+    Vector2f origin(getTopLeft());
+    int top(-position_);
+
+    /*glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glBegin(GL_QUADS);
+        glColor3f(0.3,0.1,0.2);
+        glVertex2f(origin.x_, origin.y_);
+        glVertex2f(origin.x_, height_ + origin.y_);
+        glVertex2f(width() + origin.x_, height_ + origin.y_);
+        glVertex2f(width() + origin.x_, origin.y_);
+    glEnd();*/
+
+    for (std::vector<sf::String*>::const_iterator it=texts_.begin(); it!=texts_.end(); ++it) {
+        float alpha(1.f);
+        if (top > height_-15.f)
+            alpha = (height_-top)/15.f;
+        else if (top < 0 && top > -15)
+            alpha = 1 + top/15.f;
+        else if (top <= -15)
+            alpha = 0;
+
+        if (alpha > 0)
+            text::drawScreenText(*(*it), origin+Vector2f(0, top), 12.f, TEXT_ALIGN_LEFT, color_, alpha);
+        top += 15.f;
+    }
+
+    if (slider_)
+        slider_->draw();
+
+    text::drawFooText();
 }
 
 

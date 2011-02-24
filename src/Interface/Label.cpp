@@ -44,7 +44,12 @@ void Label::draw() const {
             position += Vector2f(1, 1);
         float highlight(std::max(hoveredFadeTime_, focusedFadeTime_));
         Color3f color(color_*(1-highlight) + highlight*(Color3f(1.f, 0.8f, 0.9f)*(1-hoveredFadeTime_) + Color3f(1, 1, 1)*hoveredFadeTime_));
-        text::drawScreenText(*text_, position, fontSize_, textAlign_, color, 1.f, font_);
+        if (parent_->isFocused()) {
+            sf::String tmp("[ " + (*text_) + " ]");
+            text::drawScreenText(tmp, position, fontSize_, textAlign_, color, 1.f, font_);
+        }
+        else
+            text::drawScreenText(*text_, position, fontSize_, textAlign_, color, 1.f, font_);
     }
     else {
         text::drawScreenText(*text_, position, fontSize_, textAlign_, color_, 1.f, font_);

@@ -1,4 +1,4 @@
-/* TextBox.hpp
+/* VerticalSlider.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,36 +15,29 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef TEXTBOX_HPP_INCLUDED
-# define TEXTBOX_HPP_INCLUDED
+# ifndef VERTICALSLIDER_HPP_INCLUDED
+# define VERTICALSLIDER_HPP_INCLUDED
 
 # include "Interface/UiElement.hpp"
 # include "Interface/Label.hpp"
-# include "Interface/VerticalSlider.hpp"
 
 # include <vector>
 
-class TextBox: public UiElement {
+class VerticalSlider: public UiElement {
     public:
-        TextBox (sf::String* text, Vector2f const& topLeft, int width, int height, Color3f const& color = Color3f(0.7f, 0.7f, 0.7f));
-        ~TextBox();
+        VerticalSlider (int* value, int min, int max, Vector2f const& topLeft, int height);
 
-        void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
+        void mouseMoved(Vector2f const& position);
+        void keyEvent(bool down, Key const& key);
 
-        void draw () const;
-
-        bool isTabable() const {return false;}
+        void draw() const;
 
     private:
-        Color3f color_;
-        std::vector<sf::String*> texts_;
-        VerticalSlider* slider_;
-        int position_;
+        int* value_;
+        int minValue_, maxValue_;
 };
 
-# endif
-
-
+# endif //VERTICALSLIDER_HPP_INCLUDED
 
 

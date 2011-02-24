@@ -165,7 +165,7 @@ void TabList::addTab(Tab* toBeAdded) {
 
     toBeAdded->topLeft_ = Vector2f(lastTabEnd_, 0.f);
 
-    toBeAdded->label_ = new Label(toBeAdded->name_, TEXT_ALIGN_CENTER, Vector2f(lastTabEnd_+toBeAdded->width_/2, -6));
+    toBeAdded->label_ = new Label(toBeAdded->name_, TEXT_ALIGN_CENTER, Vector2f(lastTabEnd_+toBeAdded->width_/2, -6), 12.f, Color3f(0.65f, 0.65f, 0.65f), false);
     toBeAdded->label_->setParent(toBeAdded);
 
     tabs_.push_back(toBeAdded);
