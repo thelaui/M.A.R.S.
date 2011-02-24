@@ -554,7 +554,7 @@ void Ship::explode() {
     if (games::type() == games::gGraveItation)
         respawnTimer_ = 2.f;
     else
-        respawnTimer_ = 10.f;
+        respawnTimer_ = 5.f;
     frozen_ = 0.f;
 
     ++owner_->deaths_;

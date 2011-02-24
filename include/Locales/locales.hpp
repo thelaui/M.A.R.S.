@@ -43,7 +43,7 @@ namespace locales {
                      VolumeSettings, Tut09, TutText09, Tut10, TutText10, AudioNextKey, PlaybackSettings, Tut11, TutText11, Tut12,
                      TutText12, Tut13, TutText13, Tut14, TutText14, Tut15, TutText15, Tut16, TutText16, Tut17, TutText17,
                      Tut18, TutText18, Tut19, TutText19, Tut20, TutText20, Interface, StarsHigh, Language, ScreenShotKey,
-                     Points, Frags, TeamKills, Suicides, Deaths, Reputation, Total, Statistics, Pointlimit, Shaders,
+                     Points, Frags, TeamKills, Suicides, Deaths, GameOptions, Total, Statistics, Pointlimit, Shaders,
                      ShaderError, Gameplay, PowerUpRate, iDumb, SlowMoKickIn, SlowMoOff, Credits, SpecialThanks, CreditText,
                      Resolution, ColorDepth, SpecialKey, ttFramesPerSecond, ttParticleCount, ttShowToolTips,
                      ttScreenShotFormat, ttScreenShotKey, ttAudioNextKey, ttSlowMoKickIn, ttBotsOrientation,
@@ -56,7 +56,8 @@ namespace locales {
                      JoyButtonA, JoyButtonB, JoyButtonX, JoyButtonY, JoyButtonStart, JoyButtonBack, JoyButtonRB, JoyButtonLB,
                      JoyAxisRT, JoyAxisLT, JoyPOVup, JoyPOVdown, JoyPOVleft, JoyPOVright, JoyA1up, JoyA1down, JoyA1left,
                      JoyA1right, JoyA2up, JoyA2down, JoyA2left, JoyA2right, JoyStick, JoyButton,
-                     StatisticsKey, ttStatisticsKey, CannonShots,
+                     StatisticsKey, ttStatisticsKey, CannonShots, Tut23, TutText23, Tut24, TutText24, Tut25, TutText25,
+                     Tut26, TutText26, Tut27, TutText27, Tut28, TutText28, PlayerOptions,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

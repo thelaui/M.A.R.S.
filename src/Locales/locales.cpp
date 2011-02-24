@@ -84,6 +84,8 @@ namespace locales {
                                     tmp.Insert(i, settings::C_dataPath);
                                 else if (macro == "CONFIG_PATH")
                                     tmp.Insert(i, settings::C_configPath);
+                                else if (macro == "STATISTICS_KEY")
+                                    tmp.Insert(i, generateName::key(settings::C_statisticsKey));
                                 else
                                     std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.ToAnsiString() << "!" << std::endl;
                             }

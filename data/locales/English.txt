@@ -34,9 +34,11 @@
 162 Point Limit
 056 Weapon Options
 203 Weapons
-204 Specials
+204 Special Abilities
 166 PowerUp Spawn Rate
 167 Bot Difficulty 
+159 Game Options
+257 Players
 
 // story information
 
@@ -111,7 +113,7 @@
 048 Turn Left
 049 Turn Right
 050 Weapon
-175 Special
+175 Special Ability
 217 Ship Settings
 051 Ship
 052 Player Color
@@ -129,7 +131,7 @@
 
 170 Credits
 171 Special Thanks to:
-172 Translations:\n   German: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Translations:\n Arabic: Majid\n Chinese: Wecing\n Czech: Mates\n Finnish: Paavo\n French: Astohan\n German: Sandra\n Hindi: Antriksh & Aakanksh\n Hungarian: Papp Bence\n Italian: Proch\n Polish: command_dos\n Portuguese: Vitor\n Russian: Drakmail\n Spanish: Gastón\n Swedish: Henrik\n\nCoding support:\n Werner and Deubeuliou\n\nTests und creative support:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
@@ -220,7 +222,7 @@
 213 That's a bad name... Feel free to enter a better one!
 
 107 Welcome, Space Rookie!
-108 We are glad to recruit a rising hero like you to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
+108 We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in the GREAT WAR!\nWe figured out you needed some practice with your new ship.\nLet the training begin...
 
 109 Basic Movement...
 110 Controlling your ship is the most important task to master.\nAll movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!
@@ -228,56 +230,74 @@
 111 Warming Up!
 112 Reach the pink zone!\nTry not to crash your brand new ship.
 
-113 Well Done!
+113 Well Done, {PLAYER1_NAME}!
 114 Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet.
 
 115 Good Work!
 116 Proper landing is not a piece of cake, is it?\nYou should learn it by heart.
 
 117 Something More Difficult...
-118 Try to follow the path marked up by the pink zones!\n\nWe will contact you again, after you have mastered this. Now go for it!
+118 Try to follow the path marked up by the pink zones!\nWe will contact you again, after you have mastered this.\nNow go for it!
 
 119 Awesome!
-120 You are the best rookie I have ever seen.\nNow prepare yourself for some explosive stuff.
+120 You are the best rookie we have ever seen.\nNow prepare yourself for some explosive stuff.
 
 121 Shooting...
 122 To defeat your enemies, you have to know how to shoot them up!\nFor that purpose press <{PLAYER1_KEY_FIRE}>. \nHave some fun shooting around and then land your ship to continue the tutorial.
 
-124 Good Landing!
-125 You turn out to be a great pilot.\n\nNow how about some more weapons?
+124 Good Landing, {PLAYER1_NAME}!
+125 You turn out to be a great pilot.\nNow how about some more weapons?
 
 126 The Weapons...
-127 I know you've been waiting for this. When docked you can switch through some incredibly evil weapons.\nPress <{PLAYER1_KEY_FIRE}> to open your arsenal.\nThen use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a weapon! Take-off, when you're ready!
+127 We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your arsenal.\nThen use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a weapon! \nTake-off, when you're ready!
 
 130 Fight!
-131 Now let's see how you make it against a rookie from another planet.\nSeems like he is trying to improve his flying abilities.\nBeat him!
+131 Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\nBeat him!
 
 132 Impressive!
-133 You did it! As you may have noticed, a little star appeared over your ship.\nThe more enemies you kill, the more of them will show. But they are not only a frag indicator! Land again and I will show you what else stars are good for.
+133 You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator! \nLand again and we will show you what else stars are good for.
 
-208 Specials...
-209 As I promised, I will tell you the meaning of stars. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance! The more stars you have, the larger range and strength of the special grow.
+208 Special Abilities...
+209 As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance! \nThe more stars you have, the larger range and strength of the ability grow.
 
 210 Selection...
-211 To switch through the specials, you just have to press <{PLAYER1_KEY_SPECIAL}>. Now choose one using <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! 
+211 To switch through the abilities, you just have to press <{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! \nFor this lesson, select the "Freezer"! Take off, when you got it!
 
-134 Beware!
-135 There is no time for rest.\nOur enemies have sent one of their real warriors for vengeance!\nThere is nothing I can do for you...
+245 Stop, {PLAYER1_NAME}!
+246 We told you to select the Freezer, but you have chosen another ability!\nPlease land again and take the Freezer!
+
+247 The Freezer...
+248 This is a powerful special ability which freezes nearby ships. \nYou have to fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. Watch him loosing life slowly... until he dies!
+
+249 Practice!
+250 Now try to freeze your enemy! \nFor this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!
+
+251 You Missed Him, {PLAYER1_NAME}!
+252 Try again. we will refill your FragStars.
+
+253 You Did It!
+254 Now head back to your planet to select another special ability!
+
+255 Beware, {PLAYER1_NAME}!
+256 There is no time for further testing!\nOur enemies have sent two of their real warriors for vengeance!
+
+134 Beat Them!
+135 Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\nWe will send in an experienced warrior assisting you, {PLAYER1_NAME}!
 
 136 Unbelievable!
-137 You managed all my tasks successfully. Now what to do?\nLet's have a look at the options menu. There you can adjust a lot of... well... options.\nFor example you may choose your ship style and color or change your name...
+137 You managed all our tasks successfully. Now what to do?\nLet's have a look at the options menu. There you can adjust a lot of... well... options.\nFor example you may choose your ship style and color or change your name...
 
-138 Who's best?
-139 You can display a list of frags, points and so on via <Tab>.\nFurthermore the numbers next to your name illustrate your frag counter and your distance to the best one. 
+138 Who's Best?
+139 You can display a list of frags, points and so on via <{STATISTICS_KEY}>.\nFurthermore the numbers next to your name illustrate your frag counter and your distance to the best one. 
 
-140 Congratulations!
-141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemy to re-spawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
+140 Congratulations, {PLAYER1_NAME}!
+141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
 
 142 You Failed!
-143 Awesome, you destroyed your brand new ship! All right, we will get you a new one. Just wait some seconds...
+143 Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds...
 
 144 Did You Notice?
-145 Your life is draining! Keep an eye on the green life bar. You better land if it's too empty.
+145 Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty.
 
 146 Did You Notice?
 147 Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty.
@@ -293,7 +313,6 @@
 156 Teamkills
 157 Suicides
 158 Deaths
-159 Reputation
 160 Total:
 161 Statistics
 
@@ -336,4 +355,4 @@
 205 Screenshot saved!
 214 Next music track!
 
-// 245
+// 258

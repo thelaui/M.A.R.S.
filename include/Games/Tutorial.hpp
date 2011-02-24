@@ -57,6 +57,9 @@ class Tutorial: public Game {
         /// Pointer to the strong opponent.
         Player* evilPlayer2_;
 
+        /// A friend.
+        Player* friendPlayer_;
+
         /// Some data
         ///@{
         float timer_, deadTimer_;
