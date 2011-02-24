@@ -243,12 +243,13 @@
 
 154 Points
 155 Frags
-156 Teamkills
-157 Suicides
-158 Morts
-159 Réputation
-160 Total:
-161 Statistiques
+156 CannonShots
+157 Teamkills
+158 Suicides
+159 Morts
+160 Réputation
+161 Total:
+162 Statistiques
 
 // Tool tips options menu
 

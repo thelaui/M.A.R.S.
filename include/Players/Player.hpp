@@ -42,11 +42,12 @@ class Player {
         friend class Ship;
         friend class Controller;
         friend class TabStats;
+        friend class Cannon;
 
     private:
         Ship* ship_;
         Team* team_;
-        int points_, frags_, suicides_, deaths_, teamKills_;
+        int points_, frags_, suicides_, deaths_, teamKills_, cannonShots_;
         controllers::ControlType controlType_;
 };
 

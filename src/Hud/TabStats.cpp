@@ -33,6 +33,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 # include <iomanip>
 
+// helper function
+void inline writeScoreAtCol(int value, int col, Vector2f topLeft, int mirror, Color3f drawColor) {
+    std::stringstream sstr;
+    sstr << value;
+    text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f((170+70*col + 1)*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+    text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f((170+70*col)*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+}
+
 TabStats::TabStats():
     visible_(false),
     refresh_(false),
@@ -66,7 +74,16 @@ void TabStats::draw() const {
             height = ships::getShips().size()*12 + teamMap_.size()*2 + 85;
         else
             height = ships::getShips().size()*12 + teamMap_.size()*20 + 85;
-        int width = 500*mirror;
+
+        // Compute the width:
+        // Points, Frags, TeamKills, Suicides
+        int nbColumns = 5;
+        // CannonShots
+        if (games::type() == games::gCannonKeep)
+            nbColumns++;
+        // Padding, Name, [BOT], Padding, Columns, Padding
+        int width = (3 + 77 + 20 + 70 + (nbColumns*70) + 5)*mirror;
+
         // draw background
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -173,16 +190,21 @@ void TabStats::draw() const {
         height = 12;
         topLeft += Vector2f(10.f*mirror, 60.f);
 
-        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f(170*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f(235*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f(300*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f(365*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f(430*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        // Index of the column we are writing
+        int col = 0;
+
+        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f((170+70*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        if (games::type() == games::gCannonKeep)
+            text::drawScreenText(*locales::getLocale(locales::CannonShots), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
         topLeft.y_ += 15;
 
         for (std::multimap<Team*, std::multiset<Player*, playerPtrCmp>, teamPtrCmp >::const_iterator it = teamMap_.begin(); it != teamMap_.end(); ++it) {
-            int totalPoints(0), totalFrags(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
+            int totalPoints(0), totalFrags(0), totalCannonShots(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
             Color3f teamColor = it->first->color();
             teamColor.v(1.f);
             teamColor.s(0.8f);
@@ -211,57 +233,52 @@ void TabStats::draw() const {
                     text::drawScreenText(sf::String("[BOT]"), topLeft+Vector2f(81*mirror,1), 12.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
                     text::drawScreenText(sf::String("[BOT]"), topLeft+Vector2f(80*mirror,0), 12.f, TEXT_ALIGN_LEFT, drawColor);
                 }
+                col = 0;
                 // draw points
                 int value = (*currentPlayer)->points_;
                 if (value > 0)      drawColor = Color3f(0.3,1,0.3);
                 else if (value < 0) drawColor = Color3f(1,0.3,0.3);
                 else                drawColor = Color3f(1,1,0.3);
+                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalPoints += value;
-                std::stringstream sstr;
-                sstr << value;
-                text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f(171*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f(170*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw frags
                 value = (*currentPlayer)->frags_;
                 if (value > 0)      drawColor = Color3f(0.3,1,0.3);
                 else                drawColor = Color3f(1,1,0.3);
+                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalFrags += value;
-                sstr.str("");
-                sstr << value;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(236*mirror, 1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(235*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                // draw cannonShots
+                if (games::type() == games::gCannonKeep) {
+                    value = (*currentPlayer)->cannonShots_;
+                    if (value > 0)      drawColor = Color3f(0.3,1,0.3);
+                    else                drawColor = Color3f(1,1,0.3);
+                    writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
+                    totalCannonShots += value;
+                }
                 // draw teamKills
                 value = (*currentPlayer)->teamKills_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
                 else                drawColor = Color3f(0.3,1,0.3);
+                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalTeamKills += value;
-                sstr.str("");
-                sstr << value;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(301*mirror, 1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(300*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw suicides
                 value = (*currentPlayer)->suicides_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
                 else                drawColor = Color3f(0.3,1,0.3);
+                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalSuicides += value;
-                sstr.str("");
-                sstr << value;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(366*mirror, 1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(365*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
                 // draw deaths
                 value = (*currentPlayer)->deaths_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);
                 else                drawColor = Color3f(0.3,1,0.3);
+                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalDeaths += value;
-                sstr.str("");
-                sstr << value;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(431*mirror, 1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(430*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
 
                 topLeft.y_ += 12;
             }
             if (games::type() != games::gDeathMatch) {
                 topLeft.y_ += 2;
+                col = 0;
 
                 teamColor.gl4f(0.2f);
                 glBegin(GL_QUADS);
@@ -277,33 +294,29 @@ void TabStats::draw() const {
                 if (totalPoints > 0)      drawColor = Color3f(0.3,1,0.3);
                 else if (totalPoints < 0) drawColor = Color3f(1,0.3,0.3);
                 else                              drawColor = Color3f(1,1,0.3);
-                std::stringstream sstr;
-                sstr << totalPoints;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(170*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                writeScoreAtCol(totalPoints, col++, topLeft, mirror, drawColor);
 
                 if (totalFrags > 0)     drawColor = Color3f(0.3,1,0.3);
                 else                    drawColor = Color3f(1,1,0.3);
-                sstr.str("");
-                sstr << totalFrags;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(235*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                writeScoreAtCol(totalFrags, col++, topLeft, mirror, drawColor);
+
+                if (games::type() == games::gCannonKeep) {
+                    if (totalCannonShots > 0)     drawColor = Color3f(0.3,1,0.3);
+                    else                          drawColor = Color3f(1,1,0.3);
+                    writeScoreAtCol(totalCannonShots, col++, topLeft, mirror, drawColor);
+                }
 
                 if (totalTeamKills > 0) drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
-                sstr.str("");
-                sstr << totalTeamKills;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(300*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                writeScoreAtCol(totalTeamKills, col++, topLeft, mirror, drawColor);
 
                 if (totalSuicides > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
-                sstr.str("");
-                sstr << totalSuicides;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(365*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                writeScoreAtCol(totalSuicides, col++, topLeft, mirror, drawColor);
 
                 if (totalDeaths > 0)  drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);
-                sstr.str("");
-                sstr << totalDeaths;
-                text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(430*mirror, 0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+                writeScoreAtCol(totalDeaths, col++, topLeft, mirror, drawColor);
 
                 topLeft.y_ += 18;
             }
