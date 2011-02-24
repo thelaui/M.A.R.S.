@@ -84,6 +84,7 @@ SpaceBall::SpaceBall():
     spaceObjects::populateSpace();
 
     zones::detectTacticalZones();
+    zones::createRaster(4, 3);
 }
 
 void SpaceBall::draw() const {
@@ -105,6 +106,7 @@ void SpaceBall::restart() {
     spaceObjects::populateSpace();
 
     zones::detectTacticalZones();
+    zones::createRaster(4, 3);
 }
 
 
