@@ -94,6 +94,7 @@ namespace hud {
                     (*it)->drawLife();
                 gamePoints_->draw();
             }
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             rightLife_->draw();
             leftLife_ ->draw();
         }

@@ -42,7 +42,8 @@ void LeftLife::draw() const {
 
     if (player) {
         Color3f color = player->color();
-        if (color.v() < 0.5f) color.v(0.5f);
+        color.v(1.f);
+        color.s(0.3f);;
         Vector2f const& port = window::getViewPort();
 
         std::stringstream sstr;
@@ -54,6 +55,7 @@ void LeftLife::draw() const {
         else
             sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
+        text::drawScreenText(sf::String(sstr.str()), Vector2f(11, port.y_-74), 18.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
         text::drawScreenText(sf::String(sstr.str()), Vector2f(10, port.y_-75), 18.f, TEXT_ALIGN_LEFT, color);
 
         float life = player->ship()->getLife();

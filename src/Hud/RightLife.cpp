@@ -40,7 +40,8 @@ void RightLife::draw() const {
 
     if (player) {
         Color3f color = player->color();
-        if (color.v() < 0.5f) color.v(0.5f);
+        color.v(1.f);
+        color.s(0.3f);
         Vector2f const& port = window::getViewPort();
 
         std::stringstream sstr;
@@ -52,6 +53,7 @@ void RightLife::draw() const {
         else
             sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
+        text::drawScreenText(sf::String(sstr.str()), Vector2f(port.x_-9.f,port.y_-74.f), 18.f, TEXT_ALIGN_RIGHT, Color3f(0.f, 0.f, 0.f));
         text::drawScreenText(sf::String(sstr.str()), Vector2f(port.x_-10.f,port.y_-75.f), 18.f, TEXT_ALIGN_RIGHT, color);
 
         float life = player->ship()->getLife();
