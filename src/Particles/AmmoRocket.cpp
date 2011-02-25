@@ -106,7 +106,7 @@ void AmmoRocket::update() {
         particles::spawnMultiple(1, particles::pMiniFlame, location_);
         postFX::onExplosion();
         setDamageSource(parent_);
-        physics::  causeShockWave(damageSource(), location_, 150.f, 300.f, 5.f);
+        physics::  causeShockWave(damageSource(), location_, 150.f, 300.f, 3.f);
         particles::spawn(particles::pShockWave, location_);
         killMe();
     }

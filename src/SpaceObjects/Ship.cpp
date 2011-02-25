@@ -81,7 +81,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
         currentSpecial_ = specials::create(settings::C_playerIISpecial, this);
     }
     else {
-        life_ = 50 + static_cast<float>(settings::C_iDumb);
+        life_ = 50 + static_cast<float>(settings::C_iDumb)*1.5f;
         maxLife_ = life_;
         currentWeapon_  = weapons:: create(weapons::wAFK47, this);
         currentSpecial_ = specials::create(specials::sHeal, this);
@@ -428,7 +428,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoRocket:
-            amount = 20.f;
+            amount = 10.f;
             setDamageSource(with->damageSource());
             unfreeze = 4.f;
             break;

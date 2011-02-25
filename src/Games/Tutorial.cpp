@@ -80,12 +80,12 @@ void Tutorial::update() {
         deadTimer_ = timer::totalTime();
         state_ = 50;
     }
-    else if (!life_ && players::getPlayerI()->ship()->getLife() < 50.f && players::getPlayerI()->ship()->getLife() != 0.f) {
+    else if (!life_ && players::getPlayerI()->ship()->getLife() < 30.f && players::getPlayerI()->ship()->getLife() != 0.f) {
         life_ = true;
         savedState_ = state_;
         state_ = 51;
     }
-    else if (!fuel_ && players::getPlayerI()->ship()->getFuel() < 50.f && players::getPlayerI()->ship()->getLife() != 0.f) {
+    else if (!fuel_ && players::getPlayerI()->ship()->getFuel() < 30.f && players::getPlayerI()->ship()->getLife() != 0.f) {
         fuel_ = true;
         savedState_ = state_;
         state_ = 52;

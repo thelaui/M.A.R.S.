@@ -35,7 +35,7 @@ UiWindow* TutorialWindow::get(sf::String* title, sf::String* text, int index, bo
     reset();
     if (instance_ == NULL) {
         instance_ = new TutorialWindow(400, 200);
-        instance_->addWidget(new Button(locales::getLocale(next ? locales::Next : locales::Ok), NULL, &kOk_, Vector2f(320,170), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(next ? locales::Next : locales::Ok), NULL, &kOk_, Vector2f(300,170), 90, 20));
         instance_->addWidget(new Label(title, TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         if (info) {
             instance_->addWidget(new Label(locales::getLocale(locales::Info), TEXT_ALIGN_RIGHT, Vector2f(380,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));

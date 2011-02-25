@@ -72,7 +72,7 @@ UiWindow* OptionsMenu::get() {
     if (instance_ == NULL) {
         instance_ = new OptionsMenu(600, 370);
 
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(520,340), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(500,340), 90, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Options), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 
         TabList* tabList  = new TabList(Vector2f(10,55), 580, 250);

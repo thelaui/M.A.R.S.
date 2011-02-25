@@ -61,7 +61,7 @@ Tab* NewGameMenu::tabGraveItation_(NULL);
 UiWindow* NewGameMenu::get() {
     if (instance_ == NULL) {
         instance_ = new NewGameMenu(580, 335);
-        instance_->addWidget(new Button(locales::getLocale(locales::Start), NULL, &kStart_, Vector2f(495,300), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Start), NULL, &kStart_, Vector2f(475,300), 90, 20));
 
         instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 
@@ -166,7 +166,7 @@ UiWindow* NewGameMenu::get() {
         instance_->addWidget(tabList);
 
 
-        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(415,300), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(375,300), 90, 20));
     }
     return instance_;
 }

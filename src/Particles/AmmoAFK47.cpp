@@ -85,5 +85,6 @@ void AmmoAFK47::onCollision(SpaceObject* with, Vector2f const& location,
             default:;
         }
     }
-    killMe();
+    if (with->type() != spaceObjects::oMiniAmmoFlubba)
+        killMe();
 }

@@ -33,7 +33,7 @@ bool InfoHide::kOk_(false);
 UiWindow* InfoHide::get() {
     if (instance_ == NULL) {
         instance_ = new InfoHide(320, 200);
-        instance_->addWidget(new Button(locales::getLocale(locales::Close), NULL, &kOk_, Vector2f(240,170), 70, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Close), NULL, &kOk_, Vector2f(220,170), 90, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::HideMenu), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Label(locales::getLocale(locales::Info), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));

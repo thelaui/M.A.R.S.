@@ -108,6 +108,7 @@ namespace locales {
     bool load() {
         std::vector<sf::String> lines;
         if (file::load(settings::C_dataPath + "locales/locales.conf", lines)) {
+            locales_.clear();
             Locale newLocale;
             bool first(true);
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
