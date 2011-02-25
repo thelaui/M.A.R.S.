@@ -18,11 +18,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/Message.hpp"
 
 # include "Media/text.hpp"
+# include "defines.hpp"
 
 Message::Message(sf::String const& message, Color3f const& color):
     text_(message),
     color_(color),
-    location_(1280*0.5f, 200),
+    location_(SPACE_X_RESOLUTION*0.5f, 200),
     timer_(0.f),
     alpha_(1.f),
     speed_(0.f) {}

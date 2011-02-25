@@ -67,10 +67,10 @@ namespace window {
     /// Shows or hides the mouse cursor.
     void showCursor(bool show);
 
-    /// Converts the given location from space coordinates (max (1280, 800)) to pixel coordinates on the screen.
+    /// Converts the given location from space coordinates (max (SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION)) to pixel coordinates on the screen.
     Vector2f const coordToPixel(Vector2f const& spaceCoord);
 
-    /// Converts the given location on screen to space coordinates (max (1280, 800)).
+    /// Converts the given location on screen to space coordinates (max (SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION)).
     Vector2f const PixelToCoord(Vector2f const& screenCoord);
 
     /// Returns a vector representing the size of the visible game area on screen.

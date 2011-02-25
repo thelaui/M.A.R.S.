@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/particles.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "Media/texture.hpp"
+# include "defines.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <iostream>
@@ -75,9 +76,9 @@ namespace postFX {
     void load() {
         if (supported()) {
             postFX_.LoadFromFile(settings::C_dataPath + "shaders/bump.frag");
-            bumpMap_.Create(640, 400);
-            glViewport(0,0,640,400);
-            gluOrtho2D(0, 1280, 800, 0);
+            bumpMap_.Create(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f);
+            glViewport(0,0,SPACE_X_RESOLUTION*0.5f,SPACE_Y_RESOLUTION*0.5f);
+            gluOrtho2D(0, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0);
             glEnable(GL_BLEND);
             glMatrixMode(GL_MODELVIEW);
             postFX_.SetTexture("BumpMap", bumpMap_.GetImage());

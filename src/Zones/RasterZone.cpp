@@ -48,9 +48,9 @@ void RasterZone::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glBegin(GL_QUADS);
         if(!covered_)
-            glColor4f (0.f, 0.7f, 0.f, 0.3f);
+            glColor4f (0.f, 0.7f, 0.f, 0.1f);
         else
-            glColor4f (6.f, 0.2f, 0.f, 0.3f);
+            glColor4f (6.f, 0.2f, 0.f, 0.1f);
         glVertex2f(bottomLeft_.x_, bottomLeft_.y_);
         glVertex2f(bottomLeft_.x_, topRight_.y_);
         glVertex2f(topRight_.x_, topRight_.y_);
@@ -58,7 +58,7 @@ void RasterZone::draw() const {
     glEnd();
     glLineWidth(2.f);
     glBegin(GL_LINE_LOOP);
-        glColor4f(0.5f, 0.5f, 0.5f, 0.8f);
+        glColor4f(0.5f, 0.5f, 0.5f, 0.3f);
         glVertex2f(bottomLeft_.x_, bottomLeft_.y_);
         glVertex2f(bottomLeft_.x_, topRight_.y_);
         glVertex2f(topRight_.x_, topRight_.y_);

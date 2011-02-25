@@ -35,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Shaders/postFX.hpp"
 # include "Items/items.hpp"
 # include "SpaceObjects/Home.hpp"
+# include "defines.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -203,16 +204,16 @@ void Ship::update() {
                     location_.x_ = radius_;
                     velocity_.x_ = 0.f;
                 }
-                if (location_.x_ > 1280.f - radius_) {
-                    location_.x_ = 1280.f - radius_;
+                if (location_.x_ > SPACE_X_RESOLUTION - radius_) {
+                    location_.x_ = SPACE_X_RESOLUTION - radius_;
                     velocity_.x_ = 0.f;
                 }
                 if (location_.y_ < radius_) {
                     location_.y_ = radius_;
                     velocity_.y_ = 0.f;
                 }
-                if (location_.y_ > 800.f - radius_) {
-                    location_.y_ = 800.f - radius_;
+                if (location_.y_ > SPACE_Y_RESOLUTION - radius_) {
+                    location_.y_ = SPACE_Y_RESOLUTION - radius_;
                     velocity_.y_ = 0.f;
                 }
 

@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/CannonControl.hpp"
 # include "Items/items.hpp"
 # include "DecoObjects/decoObjects.hpp"
+# include "defines.hpp"
 
 # include <vector>
 
@@ -42,8 +43,8 @@ namespace spaceObjects {
 
             while (!newPlanetFits && ++tries < 500) {
                 // 100 is min distance between edge and planet
-                int randx = rand() % (1280 - 2*(100 + radius)) + 100 + radius;
-                int randy = rand() % (800  - 2*(100 + radius)) + 100 + radius;
+                int randx = rand() % (SPACE_X_RESOLUTION - 2*(100 + radius)) + 100 + radius;
+                int randy = rand() % (SPACE_Y_RESOLUTION  - 2*(100 + radius)) + 100 + radius;
                 Vector2f position(randx, randy);
 
                 // check for collisions with other objects
@@ -83,7 +84,7 @@ namespace spaceObjects {
     }
 
     void addPlanet() {
-        int radius = (rand() % 100 + 50);
+        int radius = (rand() % (SPACEOBJECT_MAX_RADIUS - SPACEOBJECT_MIN_RADIUS) + SPACEOBJECT_MIN_RADIUS);
         Vector2f position = possiblePlanetLocation(radius, 100);
         if (position != Vector2f(0,0)) addPlanet(position, radius);
     }
@@ -93,7 +94,7 @@ namespace spaceObjects {
     }
 
     void addSun() {
-        int radius = (rand() % 100 + 50);
+        int radius = (rand() % (SPACEOBJECT_MAX_RADIUS - SPACEOBJECT_MIN_RADIUS) + SPACEOBJECT_MIN_RADIUS);
         Vector2f position = possiblePlanetLocation(radius, 200);
         if (position != Vector2f(0,0)) {
             Sun* newSun = new Sun(position, radius);
@@ -103,7 +104,7 @@ namespace spaceObjects {
     }
 
     void addBlackHole() {
-        int radius = (rand() % 100 + 50);
+        int radius = (rand() % (SPACEOBJECT_MAX_RADIUS - SPACEOBJECT_MIN_RADIUS) + SPACEOBJECT_MIN_RADIUS);
         Vector2f position = possiblePlanetLocation(radius, 200);
         if (position != Vector2f(0,0)) objectList_.push_back(new BlackHole(position, radius));
     }
@@ -111,9 +112,9 @@ namespace spaceObjects {
     Home* addHome(int where, Color3f const& color) {
         Vector2f position;
         switch (where) {
-            case HOME_LEFT:  position = Vector2f(-50,     (rand()%550) + 100); break;
-            case HOME_RIGHT: position = Vector2f(1280+50, (rand()%550) + 100); break;
-            default:         position = possiblePlanetLocation(100, 100);
+            case HOME_LEFT:  position = Vector2f(-50,     (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
+            case HOME_RIGHT: position = Vector2f(SPACE_X_RESOLUTION+50, (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
+            default:         position = possiblePlanetLocation(HOME_PLANET_RADIUS, 100);
         }
         return addHome(position, color);
     }

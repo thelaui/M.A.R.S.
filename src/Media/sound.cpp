@@ -35,7 +35,7 @@ namespace sound {
         }
 
         void init_() {
-            sf::Listener::SetPosition(640.f, 0.f, 300.f);
+            sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             initialized_ = true;
         }
     }

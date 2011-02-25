@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
 # include "TrailEffects/trailEffects.hpp"
+# include "defines.hpp"
 
 std::list<AmmoROFLE*> AmmoROFLE::activeParticles_;
 
@@ -45,7 +46,7 @@ void AmmoROFLE::update() {
 
     lifeTime_ += time;
 
-    if (location_.x_ < -100 || location_.x_ > 1280 + 100 || location_.y_ < -100 || location_.y_ > 800 + 100) {
+    if (location_.x_ < -100 || location_.x_ > SPACE_X_RESOLUTION + 100 || location_.y_ < -100 || location_.y_ > SPACE_Y_RESOLUTION + 100) {
         killMe();
     }
 }

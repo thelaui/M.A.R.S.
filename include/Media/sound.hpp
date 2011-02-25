@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define SOUND_HPP_INCLUDED
 
 # include "System/Vector2f.hpp"
+# include "defines.hpp"
 
 # include <SFML/Audio.hpp>
 
@@ -41,7 +42,7 @@ namespace sound {
     /// \param type specifies the sound::SoundType
     /// \param position selects the location on the screen, where the sound should be played
     /// \param sets the volume
-    void playSound (SoundType type, Vector2f const& position = Vector2f(640, 0), float volume = 100.f);
+    void playSound (SoundType type, Vector2f const& position = Vector2f(SPACE_X_RESOLUTION*0.5f, 0), float volume = 100.f);
 }
 
 # endif // SOUND_HPP_INCLUDED

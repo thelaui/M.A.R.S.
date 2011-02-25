@@ -28,6 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "Hud/hud.hpp"
+# include "defines.hpp"
 
 # include <SFML/OpenGL.hpp>
 # include <sstream>
@@ -43,13 +44,14 @@ namespace window {
         sf::Sprite       fxImage_;
 
         Vector2f         viewPort_;
-        float            scale_(960.f/1280.f);
+        float            scale_(960.f/SPACE_X_RESOLUTION);
         int              clearCount_(0);
         float            joyButtonTimer_(0.f);
+        const float      ratio(static_cast<float>(SPACE_X_RESOLUTION)/static_cast<float>(SPACE_Y_RESOLUTION));
 
         void setViewPort() {
             const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-            if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
+            if (static_cast<float>(windowWidth)/windowHeight > ratio) {
                 glViewport((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_);
             }
             else {
@@ -62,14 +64,14 @@ namespace window {
             window_.SetActive(true);
             int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
             // if windows aspect ration is greater than aspect ratio of space
-            if (static_cast<float>(windowWidth)/windowHeight > 1.6f) {
-                scale_ = static_cast<float>(windowHeight)/800.f;
+            if (static_cast<float>(windowWidth)/windowHeight > ratio) {
+                scale_ = static_cast<float>(windowHeight)/SPACE_Y_RESOLUTION;
                 viewPort_.y_ = windowHeight;
-                viewPort_.x_  = windowHeight * 1.6f;
+                viewPort_.x_  = windowHeight * ratio;
             }
             else {
-                scale_ = static_cast<float>(windowWidth)/1280.f;
-                viewPort_.y_ = windowWidth / 1.6f;
+                scale_ = static_cast<float>(windowWidth)/SPACE_X_RESOLUTION;
+                viewPort_.y_ = windowWidth / ratio;
                 viewPort_.x_  = windowWidth;
             }
             glClear(GL_COLOR_BUFFER_BIT);
@@ -209,7 +211,7 @@ namespace window {
         glLoadIdentity();
 
         // Setup translation (according to left-upper corner)
-        gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
+        gluOrtho2D(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f);
 
         // probably improves performance...
         glDisable(GL_LIGHTING);
@@ -242,7 +244,7 @@ namespace window {
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        gluOrtho2D(0.f, 1280.f, 800.f, 0.f);
+        gluOrtho2D(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
     }
@@ -325,7 +327,7 @@ namespace window {
     void screenShot() {
         sf::Image shot;
         const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-        if (static_cast<float>(windowWidth)/windowHeight > 1.6f)
+        if (static_cast<float>(windowWidth)/windowHeight > ratio)
             shot.CopyScreen(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
         else
             shot.CopyScreen(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));

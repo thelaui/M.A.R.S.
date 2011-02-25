@@ -30,6 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ball.hpp"
 # include "Shaders/postFX.hpp"
 # include "Teams/teams.hpp"
+# include "defines.hpp"
 
 # include <sstream>
 
@@ -108,9 +109,9 @@ void Home::createShips(std::vector<Player*>& inhabitants) const {
             ++shipCounter;
         }
     }
-    else if (location_.x_ > 1280 - radius_) {
+    else if (location_.x_ > SPACE_X_RESOLUTION - radius_) {
         // 2. homeplanet is covered by right screen edge
-        float angle = std::acos((location_.x_ - 1280)/radius_);
+        float angle = std::acos((location_.x_ - SPACE_X_RESOLUTION)/radius_);
         float deltaAngle = 2*angle/(inhabitants.size()+1);
         angle = ((inhabitants.size()+1)%2)*deltaAngle/2;
         int shipCounter = 0;

@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/window.hpp"
 # include "Games/games.hpp"
 # include "System/timer.hpp"
+# include "defines.hpp"
 
 Logo::Logo():
     timer_(1.f),
@@ -68,8 +69,8 @@ void Logo::draw() const {
 
     int mid(window::getViewPort().x_/2);
     int height(0);
-    if (window::getViewPort().y_ < 800)
-        height = (window::getViewPort().y_ - 800)*0.3;
+    if (window::getViewPort().y_ < SPACE_Y_RESOLUTION)
+        height = (window::getViewPort().y_ - SPACE_Y_RESOLUTION)*0.3;
     glBegin(GL_QUADS);
         glColor3f(1.0,1.0,1.0);
         glTexCoord2f(0, 0 + offset);                   glVertex2f(mid-400, 0+height);

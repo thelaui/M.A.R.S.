@@ -28,6 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/PUFuel.hpp"
 # include "Items/PUSleep.hpp"
 # include "Items/PUReverse.hpp"
+# include "defines.hpp"
 
 # include <list>
 
@@ -44,8 +45,8 @@ namespace items {
 
             while (!newPowerUpFits && ++tries < 500) {
                 // 100 is min distance between edge and planet
-                int randx = rand() % (1280 - 2*(50)) + 50;
-                int randy = rand() % (800  - 2*(50)) + 50 ;
+                int randx = rand() % (SPACE_X_RESOLUTION - 2*(50)) + 50;
+                int randy = rand() % (SPACE_Y_RESOLUTION - 2*(50)) + 50 ;
                 position.x_ = randx;
                 position.y_ = randy;
 

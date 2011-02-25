@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/settings.hpp"
 # include "System/timer.hpp"
+# include "defines.hpp"
 
 # include <iostream>
 # include <SFML/Audio.hpp>
@@ -46,7 +47,7 @@ namespace announcer {
                     // play sound
                     soundChannel_.SetBuffer(*sounds_[sound]);
                     soundChannel_.SetVolume(static_cast<float>(settings::C_announcerVolume));
-                    soundChannel_.SetPosition(640, 0.f, 0.f);
+                    soundChannel_.SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 0.f);
                     soundChannel_.SetAttenuation(0.f);
                     soundChannel_.Play();
                 }

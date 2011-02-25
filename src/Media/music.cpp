@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "Hud/hud.hpp"
 # include "Locales/locales.hpp"
+# include "defines.hpp"
 
 namespace music {
 
@@ -33,7 +34,7 @@ namespace music {
 
         void init() {
             musicChannel_.SetRelativeToListener(true);
-            sf::Listener::SetPosition(640.f, 0.f, 300.f);
+            sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             setGlobalVolume();
             initialized_ = true;
         }
