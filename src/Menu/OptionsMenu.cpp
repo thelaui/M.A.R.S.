@@ -51,6 +51,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/InfoTDM.hpp"
 # include "Menu/InfoHide.hpp"
 # include "Shaders/postFX.hpp"
+# include "defines.hpp"
 
 # include <SFML/Window.hpp>
 # include <sstream>
@@ -153,7 +154,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer1->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerISpecialKey, Vector2f(20,130), 540, 200));
         tabPlayer1->addWidget(new LabeledBox(locales::getLocale(locales::ShipSettings), Vector2f(10, 170), 560, 90));
         tabPlayer1->addWidget(new ShipPreview(&settings::C_playerIColor, &settings::C_playerITeamColor, &settings::C_playerIShip, Vector2f(510,210)));
-        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, 10, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
+        tabPlayer1->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIShip, 0, SHIP_GRAPHICS_COUNT, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
         tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIColor, Vector2f(20,220), 410, 200));
         tabPlayer1->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerITeamColor, Vector2f(20,240), 410, 200));
 
@@ -165,7 +166,7 @@ UiWindow* OptionsMenu::get() {
         tabPlayer2->addWidget(new KeyEdit(locales::getLocale(locales::SpecialKey), NULL, &settings::C_playerIISpecialKey, Vector2f(20,130), 540, 200));
         tabPlayer2->addWidget(new LabeledBox(locales::getLocale(locales::ShipSettings), Vector2f(10, 170), 560, 90));
         tabPlayer2->addWidget(new ShipPreview(&settings::C_playerIIColor, &settings::C_playerIITeamColor, &settings::C_playerIIShip, Vector2f(510,210)));
-        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, 10, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
+        tabPlayer2->addWidget(new Slider(locales::getLocale(locales::ShipName), NULL, &settings::C_playerIIShip, 0, SHIP_GRAPHICS_COUNT, Vector2f(20,200), 410, 200, true, generateName::shipNames()));
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::PlayerColor), &settings::C_playerIIColor, Vector2f(20,220), 410, 200));
         tabPlayer2->addWidget(new ColorPicker(locales::getLocale(locales::TeamColor), &settings::C_playerIITeamColor, Vector2f(20,240), 410, 200));
 

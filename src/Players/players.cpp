@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/generateName.hpp"
 # include "Teams/Team.hpp"
 # include "SpaceObjects/Home.hpp"
+# include "defines.hpp"
 
 namespace players {
     namespace {
@@ -51,7 +52,7 @@ namespace players {
                 allPlayers_.push_back(playerII_);
                 break;
             default:
-                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%11);
+                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%SHIP_GRAPHICS_COUNT+1);
                 team->addMember(bot);
                 allPlayers_.push_back(bot);
         }

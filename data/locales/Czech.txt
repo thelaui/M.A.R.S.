@@ -1,6 +1,6 @@
 ﻿// menu buttons
 
-000 Spustit lokální hru
+000 Spustit místní hru
 105 Spustit tutoriál
 001 Spustit síťovou hru
 002 Připojit se k síťové hře
@@ -32,9 +32,13 @@
 021 Boti
 022 Limit fragů
 162 Limit bodů
-056 Weapon Options
-203 Weapons
-204 Specials
+056 Nastavení zbraní
+203 Zbraně
+204 Speciality
+166 Četnost Power-Upů
+167 Obtížnost botů
+159 Herní nastavení
+257 Hráči
 
 // story information
 
@@ -46,7 +50,8 @@
 028 Znič co nejvíce nepřátel!
 029 Jako kdyby VELKÁ VÁLKA nebyla dost, tvůj planetární systém je ohrožován novým zdrojem neuvěřitelného zla: Obrovská loď neznámých útočníků levituje nad tvou galaxií, mířící na domovské planety monolitickou zbraní hromadného ničení. \nJako znak cynismu útočníci upustili dálkový ovladač tohoto původce smrti a strachu. \nDostaň se k němu první abys přeměnil domovskou planetu tvých nepřátel na místo zkázy! \nStaň se STRÁŽCEM KANÓNU.
 030 Seber dálkový ovladač a udrž si ho co nejdéle!
-
+206 Jelikož VELKÁ VÁLKA snižuje drasticky tvé zdroje, vědci byli nuceni nalézt způsob jak efektivně likvidovat tvé nepřátele s využitím minimálních zdrojů. Provedli spoustu výzkumů a nakonec vytvořili novou zbraň s neuvěřitelnou vlastností: Zabijí instantně ale projektily jsou velice náchylné na gravitační pole a velice těžko se ovládají. Proto ji nazvali: INSTA-GRAVE!  \n \nNaneštěstí tuto technologii někdo ukradl, takže tví nepřátelé mohou tuto ďábelskou zbraň používat také. Teď je řada na tobě: Poraž ty zloděje ve velké GRAVE-ITATION-PIT pro znovuzískání nadvlády. \n \nZvítěz v této bitvě a vítězství ve VELKÉ VÁLCE může být tvoje. 
+207 Znič co nejvíce nepřátel!
 
 // display options
 // tabs
@@ -56,6 +61,8 @@
 102 Grafika
 103 Zvuk
 
+// interface Options
+
 104 Nastavení okna
 031 Zobrazování debugovacích informací
 032 Orientace botů
@@ -63,35 +70,41 @@
 034 Trasy AI
 035 Zobrazování herních informací
 036 Snímky za sekundu
+215 Obecné nastavení
 152 Jazyk
 153 Klávesa pro snímky obrazovky
 054 Formát snímků obrazovky
+242 Klávesová zkratka pro statistiky
+
+// graphics options
+
 037 Počet částic
 038 Počet částic
 039 Životnost částic
 040 Herní nastavení
 041 Celá obrazovka
 042 V-Sync
-055 Display Tool Tips
+055 Zobrazovat nápovědy
 163 Shader efekty
 164 Bohužel, shadery nejsou vaším hardware podporovány!
-
 151 Vysoké rozlišení hvězd
 173 Rozlišení
 174 Barevná hloubka
 
 // gameplay options
 
-166 Četnost PowerUpů
-167 Obtížnost botů
+216 Speciální efekty
 168 Počet explozí pro zpomalení
 169 Vypnuto
 
 // audio options
 
-043 Hlasitost hudby
-044 Hlasitost zvuků
-045 Hlasitost hlasu
+123 Nastavení hlasitosti
+043 Hudba
+044 Zvuky
+045 Hlas
+128 Přehrát další skladbu
+129 Nastavení přehrávání
 
 // player options
 
@@ -101,6 +114,7 @@
 049 Vpravo
 050 Zbraň
 175 Specialita
+217 Nastavení lodě
 051 Loď
 052 Barva hráče
 053 Barva týmu
@@ -117,7 +131,7 @@
 
 170 Autoři
 171 Speciální poděkování:
-172 Překlady:\n   Čeština: Mates\n   Němčina: Sandra\n   Španělština: Gastón\n   Portugalština: Vitor\n   Francouzština: Astohan\n   Ruština: Drakmail\n   Italština: Proch\n   Švédština: Henrik\n\nTesty a kreativní podpora:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Překlady:\n Arabština: Majid\n Čínština: Wecing\n Čeština: Mates\n Finština: Paavo\n Francouzština: Astohan\n Němčina: Sandra\n Hindština: Antriksh & Aakanksh\n Maďarština: Papp Bence\n Italština: Proch\n Polština: command_dos\n Portugalština: Vitor\n Ruština: Drakmail\n Španělština: Gastón\n Švédština: Henrik\n\nPodpora kódování:\n Werner a Deubeuliou\n\nTesty a kreativní podpora:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
@@ -174,18 +188,49 @@
 100 Tab
 101 Nahoru
 
+// Joystick button names
+
+218 Tlačítko A
+219 Tlačítko B
+220 Tlačítko X
+221 Tlačítko Y
+222 Tlačítko Start
+223 Tlačítko Zpět
+224 Pravý Bumper
+225 Levý Bumper
+226 Pravý Trigger
+227 Levý Trigger
+228 Směr Nahoru
+229 Směr Dolů
+230 Směr Vlevo
+231 Směr Vpravo
+232 Stick1 Nahoru
+233 Stick1 Dolů
+234 Stick1 Vlevo
+235 Stick1 Vpravo
+236 Stick2 Nahoru
+237 Stick2 Dolů
+238 Stick2 Vlevo
+239 Stick2 Vpravo
+240 Joystick
+241 Tlačítko
+
+
 // tutorial texts
 
+212 Hej, {PLAYER1_NAME}!
+213 To je ale divný jméno... Měl by sis ho změnit!
+
 107 Vítej, nováčku!
-108 Jsme rádi, že můžeme vycvičit nového hrdinu jako jsi ty aby se k nám přidal ve VELKÉ VÁLCE!\nEvidentně potřebuješ trochu cviku se svou novou lodí.\nNechť výcvik začne...
+108 Jsme rádi, že můžeme vycvičit nového hrdinu jako jsi ty, {PLAYER1_NAME}, aby se k nám přidal ve VELKÉ VÁLCE!\nEvidentně potřebuješ trochu cviku se svou novou lodí.\nNechť výcvik začne...
 
 109 Základní pohyby...
-110 Ovládání tvé lodě je nejdůležitější úkol ke zvládnutí.\nVšechny pohyby podléhají zákonům gravitace. Ke zpomalení se musíš otočit a zrychlit v opačném směru. Ovládej svou loď klávesami
+110 Ovládání tvé lodě je nejdůležitější úkol ke zvládnutí.\nVšechny pohyby podléhají zákonům gravitace. Ke zpomalení se musíš otočit a zrychlit v opačném směru. Ovládej svou loď klávesami <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> a <{PLAYER1_KEY_RIGHT}>!
 
 111 Zahřívání!
 112 Dostaň se do růžové oblasti!\nSnaž se nezničit svoji novou loď.
 
-113 Velmi dobře!
+113 Velmi dobře, {PLAYER1_NAME}!
 114 Teď se vrať na svoji domovskou planetu a pokus se pozadu přistát pomalým přibližováním se k planetě.
 
 115 Dobrá práce!
@@ -195,47 +240,68 @@
 118 Pokus se následovat trasu označenou růžovými oblastmi!\n\nKontaktujeme tě znovu až to zvládneš.
 
 119 Úžasné!
-120 Jsi ten nejlepší začátečník, kterého jsem kdy viděl.\nTeď se připrav na nějaké exploze.
+120 Jsi ten nejlepší začátečník, kterého jsme kdy viděli.\nTeď se připrav na nějaké exploze.
 
 121 Střílení...
-122 K poražení nepřátel musíš vědět jak střílet!\nPro tento účel stiskni
-123 Trochu si to vyzkoušej a pak přistaň na své planetě pro pokračování.
+122 K poražení nepřátel musíš vědět jak střílet!\nPro tento účel stiskni <{PLAYER1_KEY_FIRE}>. \nTrochu si to vyzkoušej a pak přistaň na své planetě pro pokračování.
 
-124 Dobré přistání!
+124 Dobré přistání, {PLAYER1_NAME}!
 125 Zdá se, že jsi dobrý pilot.\n\nTeď, co takhle trochu víc zbraní?
 
 126 Zbraně...
-127 Vím, že na tohle jsi čekal. Když stojíš na planetě, můžeš přepínat mezi některými neuvěřitelně ďábelskými zbraněmi.\nStiskni
-128 k otevření svého arzenálu.\nPoté použij
-129 pro výběr zbraně! Vzleť až budeš hotov!
+127 Vím, že na tohle jsi čekal. Když stojíš na planetě, můžeš přepínat mezi některými neuvěřitelně ďábelskými zbraněmi.\nStiskni <{PLAYER1_KEY_FIRE}> k otevření svého arzenálu.\nPoté použij <{PLAYER1_KEY_LEFT}> a <{PLAYER1_KEY_RIGHT}> k výběru zbraně! \nVzleť až budeš hotov!
 
 130 Bitva!
-131 Teď se pojďme podívat jak si poradíš s nováčkem z jiné planety.\nZdá se, že se snaží zlepšit si svoje pilotní dovednosti.\nPoraž ho!
+131 Teď se pojďme podívat jak si poradíš s nováčkem z jiné planety. Zdá se, že se snaží zlepšit si svoje pilotní dovednosti.\nPoraž ho!
 
 132 Působivé!
-133 Dokázal jsi to! Jak sis možná všimnul, za každého zničeného nepřítele dostáváš nějaké reputační body.\nTy malé červené hvězdičky objevující se nad tvojí lodí značí jejich počet. Zvýší se pokud zabiješ hodně nepřátel v řadě.
+133 Dokázal jsi to! Jak sis možná všimnul, nad tvojí lodí se objevila malá hvězda. Čím více nepřátel zničíš, tím více se jich objeví. Neslouží ale jenom jako indikátor fragů! \nPřistaň opět na planetě a my ti ukážeme k čemu jsou hvězdy ještě dobré.
 
-134 Pozor!
-135 Není čas na odpočinek.\nNaši nepřátelé poslali jednoho z jejich skutečných bojovníků kvůli pomstě!\nNení nic co bych pro tebe teď mohl udělat...
+208 Speciální schopnosti...
+209 Jak jsme slíbili, řekneme ti význam hvězdiček. Jsou to zdroje pro působivě silné zvláštní schopnosti tvé lodě. Můžeš se například během bitvy ošetřit včetně přátel poblíž, odstrčit nebo zmrazit lodě v určité vzdálenosti! \nČím více hvězdiček, tím větší dosah a sílu bude zvláštní schopnost mít.
+
+210 Výběr...
+211 Pro aktivaci volby schopnosti stačí stisknout <{PLAYER1_KEY_SPECIAL}>. Mezi jednotlivými schopnostmi můžeš přepínat pomocí <{PLAYER1_KEY_LEFT}> a <{PLAYER1_KEY_RIGHT}>! \nPro tuhle lekci zvol "Freezer"! Vzleť jakmile ho budeš mít!
+
+245 Počkej, {PLAYER1_NAME}!
+246 Říkali jsme aby sis vzal Freezer, ale vzal sis něco jiného!\nProsím, přistaň znovu a vezmi si Freezer!
+
+247 Freezer...
+248 Tohle je mocná speciální schopnost, která zmrazí lodě poblíž. \nMusíš zaletět blízko k nepříteli a stisknout <{PLAYER1_KEY_SPECIAL}> abys ho zmrazil. Sleduj ho pomalu ztrácet životy... než umře!
+
+249 Nácvik!
+250 Teď zkus zmrazit svého nepřítele! \nPro tento výcvik ti dáme nějaké hvězdy. Ale pamatuj: V reálu budeš muset drtit nepřátele abys tyhle hvězdy získal!
+
+251 Netrefil jsi ho, {PLAYER1_NAME}!
+252 Zkus to znovu. Přidáme ti znovu hvězdy.
+
+253 Dokázal jsi to!
+254 Teď se vrať zpátky na planetu pro výběr další speciální schopnosti!
+
+255 Pozor, {PLAYER1_NAME}!
+256 Už není čas na další zkoušení!\nNaši nepřátelé poslali dva jejich skutečné válečníky kvůli pomstě!
+
+134 Poraž je!
+135 Prokaž své schopnosti! Získej alespoň pět bodů jejich ničením! Tvé současné skóre je zobrazeno vedle tvého jména!\nPošleme ti zkušeného válečníka na pomoc, {PLAYER1_NAME}!
 
 136 Neuvěřitelné!
 
-137 Zvládl jsi všechny moje úkoly. Co teď?\nPojďme se podívat do menu nastavení. Můžeš tam upravit spoustu... no... nastavení.\nNapříklad si můžeš vybrat styl a barvu své lodi nebo změnit své jméno...
+137 Zvládl jsi všechny naše úkoly. Co teď?\nPojďme se podívat do menu nastavení. Můžeš tam upravit spoustu... no... nastavení.\nNapříklad si můžeš vybrat styl a barvu své lodi nebo změnit své jméno...
 
 138 Kdo je nejlepší?
-139 Můžeš si zobrazit tabulku fragů, bodů apod. pomocí <Tab>.\nNavíc, čísla vedle tvého jména ukazují počet tvých fragů a tvojí vzdálenost od nejlepšího.
+139 Můžeš si zobrazit tabulku fragů, bodů apod. pomocí <{STATISTICS_KEY}>.\nNavíc, čísla vedle tvého jména ukazují počet tvých fragů a tvůj rozdíl od nejlepšího.
 
-140 Gratuluji!
-141 Dokončil jsi tento tutoriál. Jsi teď připraven bojovat ve VELKÉ VÁLCE. Pokud chceš pokračovat v procvičování, stačí počkat až se nepřítel znovu objeví. Můžeš svůj výcvik ukončit pomocí <Esc>.\n\nUžij si M.A.R.S.!
+140 Gratulujeme, {PLAYER1_NAME}!
+141 Dokončil jsi tento tutoriál. Jsi teď připraven bojovat ve VELKÉ VÁLCE. Pokud chceš pokračovat v procvičování, stačí počkat až se nepřátelé znovu objeví. Můžeš svůj výcvik ukončit pomocí <Esc>.\n\nUžij si M.A.R.S.!
 
 142 Selhal jsi!
-143 Úžasné, zničil jsi svoji úplně novou loď! Fajn, dáme ti novou. Jen počkej pár sekund...
+143 Úžasné, {PLAYER1_NAME}! Zničil jsi svoji úplně novou loď! Fajn, dáme ti novou. Jen počkej pár sekund...
 
 144 Všiml sis?
-145 Dochází ti zdraví! Sleduj svůj zelený ukazatel života. Měl bys přistát pokud je skoro prázdný.
+145 Dochází ti zdraví! Sleduj svůj zelený ukazatel života. Měl bys přistát, pokud je skoro prázdný.
 
 146 Všiml sis?
-147 Dochází ti palivo! Sleduj svůj žlutý ukazatel paliva. Měl bys přistát pokud je skoro prázdný.
+147 Dochází ti palivo! Sleduj svůj žlutý ukazatel paliva. Měl bys přistát, pokud je skoro prázdný.
 
 148 Už ho skoro máš!
 149 Sleduj jméno svého protivníka. Jeho barva značí jeho zdraví. Čím je červenější, tím slabší tvůj protivník je.
@@ -244,46 +310,50 @@
 
 154 Body
 155 Fragy
+244 Výstřely kanónu
 156 Teamkilly
 157 Sebevraždy
 158 Smrti
-159 Reputace
 160 Celkem:
 161 Statistika
 
 // Tool tips options menu
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Zobrazuje počet snímků za sekundu.\nPokud je tato hodnota vždy nízká (<20), měli byste upravit některá nastavení v záložce Grafika!
+177 Zobrazuje počet aktivních částic.
+178 Skryje okna s nápovědou jako je toto.
+179 Nastaví formát pro ukládání snímků obrazovky.
+180 Když je stisknuta tato klávesa, je do složky {CONFIG_PATH}screenshots/ uložen snímek obrazovky.
+181 Stisknutí této klávesy přeskočí na další hudební skladbu.
+182 Pokud vybouchne tento počet lodí současně, projeví se efekt zpomalení.
+183 Zobrazí současný úkol každého bota.
+184 Zobrazí taktické oblasti, které jsou důležité pro umělou inteligenci.
+185 Zobrazí cesty vypočítané botmi.
+186 Maximalizuje okno aby zakrývalo celou obrazovku.
+187 Způsobí obnovování hry podle obnovovací frekvence vašeho monitoru.\nAktivace této volby většinou udělá hru více plynulou.
+188 Aktivuje dobře vypadající efekty jako tepelná mlha, ale redukuje celkový výkon.
+189 Nastaví velikost okna.\nOvlivní jak režim v okně tak režim přes celou obrazovku.
+190 U monitorů s vysokým rozlišením způsobují lepší vzhled pozadí.\nVypnutí této volby může lehce zvýšit výkon.
+191 Upravuje celkový počet částic.\nNižší hodnoty znatelně zvýší výkon.
+192 Upravuje celkovou dobu života částic.\nNižší hodnoty znatelně zvýší výkon.
+193 Upravuje hlasitost hudby v pozadí.
+194 Upravuje hlasitost zvukových efektů.
+195 Upravuje hlasitost hlasatele.
+243 Při stisknutí této klávesy během hry se zobrazí okno se statistikami současné hry.
 
 // Tool tips in the start-a-new-game-window
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
-202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+196 Nastavuje tým místních hráčů.
+197 Aktivuje místní hráče.
+198 Upravuje počet lodí ovládáných umělou inteligencí.
+199 Limit bodů kterých musí tým dosáhnout pro výhru.
+200 Limit bodů kterých musí hráč dosáhnout pro výhru.
+201 Upravuje odolnost botů.
+202 Upravuje počet vylepšení (Power-Upů), které se budou objevovat během hry.\n Nula vypne Power-Upy úplně.
 
-// 205
+// Interface notifications
 
+205 Snímek uložen!
+214 Další hudební skladba!
 
+// 258

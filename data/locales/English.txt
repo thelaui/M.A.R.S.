@@ -47,7 +47,7 @@
 025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you.
 026 Destroy as many enemies as possible!
 027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget.
-028 Destroy es many enemies as possible!
+028 Destroy as many enemies as possible!
 029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer.
 030 Pick up the remote and keep it as long as possible!
 206 As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!  \n \nUnfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand. \n \nWin this battle, and the victory of the GREAT WAR may be yours. 
@@ -131,7 +131,7 @@
 
 170 Credits
 171 Special Thanks to:
-172 Translations:\n Arabic: Majid\n Chinese: Wecing\n Czech: Mates\n Finnish: Paavo\n French: Astohan\n German: Sandra\n Hindi: Antriksh & Aakanksh\n Hungarian: Papp Bence\n Italian: Proch\n Polish: command_dos\n Portuguese: Vitor\n Russian: Drakmail\n Spanish: Gastón\n Swedish: Henrik\n\nCoding support:\n Werner and Deubeuliou\n\nTests und creative support:\n Heinrich, Martin, Bastian, Sandra, Diana.
+172 Translations:\n Arabic: Majid\n Chinese: Wecing\n Czech: Mates\n Finnish: Paavo\n French: Ludovic\n German: Atto\n Hindi: Antriksh & Aakanksh\n Hungarian: Papp Bence\n Italian: Proch\n Polish: command_dos\n Portuguese: Vitor\n Russian: Drakmail\n Spanish: Gastón\n Swedish: Henrik\n\nCoding support:\n Werner and Deubeuliou\n\nTests and creative support:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 

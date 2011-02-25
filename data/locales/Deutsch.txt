@@ -34,7 +34,11 @@
 162 Punktelimit
 056 Waffenoptionen
 203 Waffen
-204 Specials
+204 Besondere Fähigkeiten
+166 PowerUp Spawnrate
+167 Botstärke
+159 Spieloptionen
+257 Spieler
 
 // Hintergrundgeschichte
 
@@ -46,6 +50,8 @@
 028 Vernichte möglichst viele Feinde!
 029 Als ob der GROßE KRIEG nicht schon genug wäre, hat eine neue Quelle abgrundtiefer Boshaftigkeit sein Augenmerk auf dein Planetensystem gerichtet:\nEin riesiges Schiff unbekannter Invasoren schwebt über der Galaxie und nimmt mit einer gigantischen Massenvernichtungswaffe die Heimatplaneten ins Visier!\nAls Zeichen ihres Zynismus' überlassen die Angreifer die Kontrolle über die todbringende Kanone dir und deinen Gegnern.\nErreiche sie zuerst, um den Planeten deiner Feinde in Schutt und Asche zu legen!\nSei der CANNONKEEPer. 
 030 Nimm die Fernbedienung und behalt sie möglichst lange!
+206 Der GROßE KRIEG hält weiter an und zehrt an den vorhandenen Ressourcen. Die größten Space-Wissenschaftler tüfteln deshalb an Waffen mit minimalen Input, aber maximaler Zerstörungskraft! Im Zuge dessen wurde eine neue Waffe entwickelt: Sie tötet instantan, aber ihre Geschosse sind sehr gravitationsanfällig....die INSTA-GRAVE wurde geboren! \n \nUnglücklichesweise wurde diese unglaublich mächtige Technologie gestohlen! Deine Feinde verfügen nun auch über das Wissen! Nun bist du dran: Zahle es diesen Dieben im großen GRAVE-ITATION-PIT heim! \n \nGewinne diesen Kampf und der GROßE KRIEG wird dir Ruhm und Ehre bringen!
+207 Vernichte möglichst viele Feinde!
 
 // Anzeigeoptionen
 // Tabs
@@ -62,35 +68,41 @@
 034 KI-Pfade
 035 Zeige Spielinformationen
 036 Bilder pro Sekunde
+215 Allgemein
 152 Sprache
 153 Taste für Screenshots
 054 Dateiformat für Screenshots
+242 Taste für Statistiken
+
+// Grafik
+
 037 Partikelzahl
 038 Partikelzahl
 039 Partikellebensdauer
 040 Spieleinstellungen
 041 Vollbild
 042 V-Sync
-055 Zeige Tooltipps
+055 Zeige Tool-Tipps
 163 Shadereffekte
 164 Shader sind mit deiner Hardware leider nicht möglich!
-
 151 Hochauflösende Sterne
 173 Auflösung
 174 Farbtiefe
 
 // Gameplayoptionen
 
-166 PowerUp-Spawnrate
-167 Botstärke
+216 Spezialeffekte
 168 Explosionen für Slow-Motion
 169 Aus
 
 // Audiooptionen
 
-043 Musiklautstärke
-044 Soundlautstärke
-045 Sprachlautstärke
+123 Lautstärke
+043 Musik
+044 Sound
+045 Sprach
+128 Spiele nächsten Titel
+129 Wiedergabeoptionen 
 
 // Spieleroptionen
 
@@ -99,6 +111,7 @@
 048 Links
 049 Rechts
 050 Schießen
+217 Schiffeinstellungen
 175 Spezial
 051 Schiff
 052 Spielerfarbe
@@ -116,7 +129,7 @@
 
 170 Credits
 171 Besonderer Dank geht an:
-172 Übersetzungen:\n   Deutsch: Sandra\n   Spanisch: Gastón\n   Portugiesisch: Vitor\n   Französisch: Astohan\n   Russisch: Drakmail\n   Italienisch: Proch\n   Schwedisch: Henrik\n\nTests und kreative Ideen:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Übersetzungen:\n Arabisch: Majid\n Chinesisch: Wecing\n Tschechisch: Mates\n Finnisch: Paavo\n Französisch: Ludovic\n Deutsch: Atto\n Hindi: Antriksh & Aakanksh\n Ungarisch: Papp Bence\n Italienisch: Proch\n Polnisch: command_dos\n Portugisisch: Vitor\n Russisch: Drakmail\n Spanisch: Gastón\n Schwedisch: Henrik\n\nQuellcodebeiträge:\n Werner and Deubeuliou\n\nTests und kreativer Support:\n Heinrich, Martin, Bastian, Atto, Diana.
 
 // Beenden
 
@@ -173,18 +186,48 @@
 100 Tab
 101 Hoch
 
+// Joystick button names
+
+218 Taste A
+219 Taste B
+220 Taste X
+221 Taste Y
+222 Starttaste
+223 Zurücktaste
+224 Bumper Rechts
+225 Bumper Links
+226 Trigger Rechts
+227 Trigger Links
+228 Steuerkreuz Hoch
+229 Steuerkreuz Runter
+230 Steuerkreuz Links
+231 Steuerkreuz Rechts
+232 Stick1 Hoch
+233 Stick1 Runter
+234 Stick1 Links
+235 Stick1 Rechts
+236 Stick2 Hoch
+237 Stick2 Runter
+238 Stick2 Links
+239 Stick2 Rechts
+240 Joystick
+241 Tasten
+
 // Tutorial Texte
+
+212 Hey, {PLAYER1_NAME}!
+213 Was für ein blöder Name...Nimm doch bitte einen Besseren!
 
 107 Willkommen, Space Rookie!
 108 Wir freuen uns, einen vielversprechenden Helden wie dich im GROßEN KRIEG auf unserer Seite zu haben!\nWir glauben, dass du noch etwas Training mit deinem neuen Schiff brauchst.\nLass uns anfangen...
 
 109 Grundlegende Steuerung...
-110 Das Wichtigste ist das Kontrollieren deines Schiffs.\nJede Bewegung wird von der Gravitation beeinflusst. Zum Bremsen musst du dich in die entgegengesetzte Richtung drehen und Gas geben. Benutze zum Steuern die Tasten
+110 Das Wichtigste ist das Kontrollieren deines Schiffs.\nJede Bewegung wird von der Gravitation beeinflusst. Zum Bremsen musst du dich in die entgegengesetzte Richtung drehen und Gas geben. Benutze zum Steuern die Tasten <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> und <{PLAYER1_KEY_RIGHT}>!
 
 111 Aufwärmen!
 112 Erreiche die rosa Zone!\nFlieg' dein nagelneues Schiff nicht gleich zu Schrott.
 
-113 Gut Gemacht!
+113 Gut Gemacht, {PLAYER1_NAME}!
 114 Jetzt bewege dich zurück zu deinem Heimatplaneten. Schwebe dazu langsam rückwärts an deinen Planeten heran. 
 
 115 Gute Arbeit!
@@ -197,37 +240,59 @@
 120 Du bist der beste Rookie, den wir hier jemals hatten.\nBereite dich nun auf etwas Explosives vor.
 
 121 Schießen...
-122 Um deine Feinde zu besiegen, musst du wissen, wie du sie wegpusten kannst!\nDrücke dazu auf
-123 Tob' dich etwas aus! Lande dein Schiff,\num mit dem Tutorial fortzufahren.
+122 Um deine Feinde zu besiegen, musst du wissen, wie du sie wegpusten kannst!\nDrücke dazu auf <{PLAYER1_KEY_FIRE}>. \nTob' dich etwas aus! Lande dein Schiff, um mit dem Tutorial fortzufahren.
 
 124 Gut Gelandet!
 125 Du scheinst ein guter Pilot zu sein.\n\nWie wäre es mit ein paar mehr Waffen?
 
 126 Die Waffen...
-127 Darauf hast du sicher gewartet. Wenn du gelandet bist, kannst du zwischen ein paar wirklich fiesen Waffen wählen.\nDrücke
-128 um dein Arsenal zu öffnen.\nBenutze dann
-129 zum Auswählen einer Waffe! Flieg' los, wenn du fertig bist!
+127 Darauf hast du sicher gewartet. Wenn du gelandet bist, kannst du zwischen ein paar wirklich fiesen Waffen wählen.\nDrücke <{PLAYER1_KEY_FIRE}>, um dein Arsenal zu öffnen.\nBenutze dann <{PLAYER1_KEY_LEFT}> und <{PLAYER1_KEY_RIGHT}> zum Auswählen einer Waffe!Flieg' los, wenn du fertig bist!
+
 
 130 Kämpfe!
 131 Schauen wir doch mal, wie du dich gegen einen Rookie eines anderen Planeten schlägst.\nAnscheinend versucht er, seine Flugfertigkeiten zu verbessen.\nMach' ihn fertig!
 
 132 Beeindruckend!
-133 Du hast es geschafft! Wie du vielleicht bemerkt hast, erhältst du Rufpunkte für jeden getöteten Gegner.\nDie kleine grüne Nummer, die über deinem Schiff aufpoppt, repräsentiert die Menge. Diese erhöht sich, wenn du mehrere Gegner hintereinander tötest.
+133 Du hast es geschafft! Wie du vielleicht bemerkt hast, hast du einen kleinen Stern über deinem Schiff erhalten. Je mehr Feinde du tötest, desto mehr Sterne bekommst du. Diese zeigen dir aber nicht nur die Anzahl der getöteten Feinde an...lande noch einmal und du wirst den tieferen Sinn der Sterne erfassen! 
 
-134 Achtung!
-135 Du hast keine Zeit zum Ausruhen.\nUnsere Feinde haben einen ihrer echten Krieger ausgesandt, um sich an dir zu rächen.\nDa musst du alleine durch...
+208 Besondere Fähigkeiten...
+209 Das Gekeimnis der Sterne wird dir nun zuteil: Sie sind Ressourcen für unglaublich mächtige Fähigkeiten deines Schiffes! So kannst du zum Beispiel in der Nähe befindliche Freunde und dich selber heilen oder Feinde wegpusten und einfrieren. Je mehr Sterne du hast, desto mehr Reichweite und Kraft hat die Fähigkeit! \nAber gib Acht: Sobald du stirbst, verlierst du alle bis dahin gesammelten Sterne!
+
+210 Auswahl...
+211 Um besondere Fähigkeiten auszuwählen, musst du landen und <{PLAYER1_KEY_SPECIAL}> drücken. Mithilfe der Tasten <{PLAYER1_KEY_LEFT}> und <{PLAYER1_KEY_RIGHT}> kannst du durch die verschiedenen Fähigkeiten durchschalten! \nNun nimm die "Freezer" und heb wieder ab!
+
+245 Stopp, {PLAYER1_NAME}!
+246 Haben wir nicht gesagt, du sollst die "Freezer" nehmen? Du hast eine andere Fähigkeit gewählt! \nLande nochmal und wähle die "Freezer" aus! 
+
+247 Der Freezer...
+248 Eine sehr mächtige Waffe im GROßEN KRIEG! Mit ihrer Hilfe kannst du in der Nähe befindliche Schiffe einfrieren! \nDrücke <{PLAYER1_KEY_SPECIAL}>, um den Freezer auszulösen! Ganz langsam wird der Feind dahingerafft...bis zum Tod!
+
+249 Übung macht den Meister...
+250 Nun probier's mal aus! \nZu Übungszwecken erhälst du einige Sterne! Aber im wahren Leben eines Space-Rookie musst du dir diese hart verdienen, indem du Feinde zerschmetterst!
+
+251 Du hast ihn verfehlt!
+252 Versuch es noch einmal! Hier sind weitere Sterne!
+
+253 Yeah, gut gemacht! 
+254 Flieg zurück zum Heimatplaneten und probier die anderen Fähigkeiten aus!
+
+255 Achtung, {PLAYER1_NAME}!
+256 Wir haben keine Zeit mehr zum Üben! \n Der Feind hat zwei starke Krieger geschickt!
+
+134 Zeig's ihnen!
+135 Verbessere deine Fertigkeiten! Erreiche fünf Punkte, indem du sie tötest! Dein aktueller Punktestand wird neben deinem Namen angezeigt! \nEin weiterer Rekrut wird dir beistehen!
 
 136 Unfassbar!
 137 Du hast alle meine Aufgaben erfolgreich abgeschlossen. Was nun?\nWerfen wir einmal einen Blick auf das Einstellungsmenü. Dort kannst du eine Menge... naja... einstellen.\nDu kannst zum Beispiel Schiffstil und -farbe oder deinen Namen ändern...
 
 138 Wer Ist Der Beste?
-139 Du kannst eine Liste mit Frags, Punkten usw. mit <Tab> anzeigen.\nZusätzlich zeigen die Zahlen neben deinem Namen deine Fragzahl und deinen Abstand zum Führenden an. 
+139 Du kannst eine Liste mit Frags, Punkten usw. mit <{STATISTICS_KEY}> anzeigen.\nZusätzlich zeigen die Zahlen neben deinem Namen deine Fragzahl und deinen Abstand zum Führenden an. 
 
-140 Gratulation!
+140 Gratulation {PLAYER1_NAME}!
 141 Du hast das Tutorial gemeistert. Jetzt bist du bereit für den Kampf im GROßEN KRIEG. Wenn du noch weiter üben willst, warte einfach, bis der Gegner wieder auftaucht. Beende das Training mit <Esc>.\n\nViel Spaß mit M.A.R.S.!
 
 142 Du Hast Versagt!
-143 Wunderbar, du hast dein brandneues Schiff geschrottet! Na schön, du kriegst ein neues. Hab' ein paar Sekunden Geduld...
+143 Wunderbar {PLAYER1_NAME}, du hast dein brandneues Schiff geschrottet! Na schön, du kriegst ein neues. Hab' ein paar Sekunden Geduld...
 
 144 Schon Bemerkt?
 145 Du verlierst Leben! Behalte den grünen Lebensbalken im Auge. Lande lieber, wenn er zu leer ist.
@@ -245,44 +310,47 @@
 156 Teamkills
 157 Suizide
 158 Tode
-159 Ruf
+159 Spieleinstellungen
 160 Gesamt:
 161 Statistik
 
-// Tooltipps Optionsmenü
+// Tooltipps im Optionsmenu
 
-176 Zeigt an, wie viele Einzelbilder pro Sekunde berechnet werden.\nSollten dies immer wenig (<20) sein, solltest Du einige Einstellungen im Reiter Grafik anpassen!
-177 Zeigt die Anzahl der gerade herumfliegenden Partikel an.
-178 Schaltet solche Tooltipps ab.
-179 Legt den Kompressionsalgorithmus fest, nach dem Screenshots gespeichert werden.
-180 Das Drücken der hier festgelegten Taste speichert einen Screenshot in 
-182 Falls mindestens so viele Schiffe gleichzeitig explodieren, setzt der Slow-Motion-Effekt ein.
-183 Zeigt an, welche Aufgabe die Bots versuchen zu erfüllen.
-184 Zeigt taktische Zonen, an denen sich die KI orientiert.
-185 Zeigt die Pfade an, die die Bots berechnen.
-186 Maximiert das Fenster, so dass es den gesamten Bildschirm ausfüllt.
-187 Veranlasst M.A.R.S. sich mit der gleichen Frequenz wie Dein Bildschirm zu aktualisieren.\nDurch Aktivieren dieser Option wirkt das Spiel in der Regel flüssiger.
-188 Aktiviert Hitzeflimmern und andere Effekte, die sich negativ auf die Spielleistung auswirken, aber toll aussehen.
-189 Legt die Größe des Fensters fest.\nWirkt sich sowohl auf den Vollbildmodus als auch auf den Fenstermodus aus.
-190 Auf hochauflösenden Monitoren verhindert diese Option, dass sich der Sternenhintergrund zu schnell wiederholt.\nDeaktivieren dieser Option kann sich mitunter positiv auf die Spielleistung auswirken.
-191 Regelt die globale Anzahl von Partikeln.\nKleinere Werte verbessern die Spielleistung erheblich.
-192 Regelt die globale Lebenszeit von Partikeln.\nKleinere Werte verbessern die Spielleistung erheblich.
-193 Regelt die Lautstärke der Hintergrundmusik.
-194 Regelt die Lautstärke der Soundeffekte.
-195 Regelt die Lautstärke der Stimmausgabe.
+176 Zeigt die berechnete Anzahl der Bilder pro Sekunde an!\nIst diese ziemlich klein (<20), solltest du einige Grafikeinstellungen ändern!
+177 Zeigt die Anzahl der aktiven Partikel.
+178 Schaltet solche Tooltipps aus.
+179 Stellt das bei Screenshots verwendete Dateiformat ein.
+180 Speichert bei Knopfdruck einen Screenshot in {CONFIG_PATH}screenshots/
+181 Nächsten Musiktitel abspielen
+182 Bei dieser Anzahl an gleichzeitigen Explosionen wird ein Zeitlupeneffekt aktiviert.
+183 Zeigt den Job jedes Bots.
+184 Zeigt taktische Zonen, die für die KI wichtig sind.
+185 Zeigt von den Bots berechnete Pfade.
+186 Maximiert das Spiel, so dass es den kompletten Bildschirm füllt.
+187 Synchronisiert die Bildwiederholrate des Monitors etwa mit der des Spiels.\nBei Aktivierung läuft das Spiel in der Regel flüssiger.
+188 Schaltet tolle Effekte, wie Hitzeflimmern ein, aber reduziert die Spielleistung.
+189 Stellt die Fenstergröße ein.\nBeeinflusst sowohl den Vollbildmodus als auch den Fenstermodus.
+190 Bei hohen Auflösungen wird eine Wiederholung des Sternenhintergrundes vermieden.\nBei Deaktivierung erhöht sich die Spielleistung leicht.
+191 Stellt die globale Partikelanzahl ein!\nKleine Werte erhöhen die Spielleistung!
+192 Stellt die globale Partikellebensdauer ein.\nKleine Werte erhöhen die Spielleistung!
+193 Stellt die Musiklautstärke ein.
+194 Stellt die Soundlautstärke ein.
+195 Stellt die Sprachlautstärke ein.
+243 Beim Drücken der Taste während eines Spieles, wird eine Statistik zum laufenden Spiel angezeigt.
 
-// Tooltipps im Spiel-starten-Dialog
+// Tooltipps in "Ein-neues-Spiel-starten"-Fenster
 
-196 Legt fest, in welchem Team die lokalen Spieler jeweils mitspielen.
-197 Legt fest, welche der lokalen Spieler mitspielen. 
-198 Regelt die Anzahl der computergesteuerten Mitspieler.
-199 Wenn ein Team diese Punktzahl erreicht, endet das Spiel.
-200 Wenn ein Spieler diese Punktzahl erreicht, endet das Spiel.
-201 Regelt die Stärke der computergesteuerten Mitspieler.
-202 Regelt die Menge an PowerUps, die während des Spiels auftauchen.\n Wähle 0 um PowerUps gänzlich zu deaktivieren.
+196 Stellt das Team der lokalen Spieler ein.
+197 Schaltet lokale Spieler ein/aus. 
+198 Stellt die Anzahl von KI-Bots ein. 
+199 Stellt das Punktelimit ein. Erreicht ein Team diese Punktzahl, so gewinnt es.
+200 Stellt das Punktelimit ein. Erreicht ein Spieler diese Punktzahl, so gewinnt er.
+201 Stellt die Botsstärke ein.
+202 Stellt die Anzahl der PowerUps im Spiel ein.\n Bei 0 werden PowerUps ausgeschaltet.
 
-// Interface-Meldungen
+// Interfaceanmerkungen
 
 205 Screenshot gespeichert!
+214 Nächster Musiktitel!
 
-// 206
+// 258

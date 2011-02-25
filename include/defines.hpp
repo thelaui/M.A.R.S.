@@ -18,8 +18,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # ifndef DEFINES_HPP_INCLUDED
 # define DEFINES_HPP_INCLUDED
 
-# define VERSION_MAJOR      "0"
-# define VERSION_MINOR      "6"
-# define VERSION_PATCH      "9"
+# define VERSION_MAJOR       "0"
+# define VERSION_MINOR       "7"
+# define VERSION_PATCH       "0"
+
+# define SHIP_GRAPHICS_COUNT 13
 
 # endif //DEFINES_HPP_INCLUDED

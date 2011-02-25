@@ -26,7 +26,7 @@ class InfoHide: public UiWindow {
     public:
         static UiWindow* get();
         void checkWidgets();
-        void onShow();
+        void onShow() {}
 
         static void reset();
 

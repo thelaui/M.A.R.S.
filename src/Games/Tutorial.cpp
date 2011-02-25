@@ -285,7 +285,7 @@ void Tutorial::update() {
                 --state_;
             } break;
         case 27:
-            if (timer::totalTime() > timer_ + 5.f) {
+            if (timer::totalTime() > timer_ + 7.f) {
                 if (evilPlayer1_->ship()->getLife() > 0)
                     evilPlayer1_->ship()->explode();
                 evilPlayer1_->ship()->respawnTimer_ = FLT_MAX;
@@ -294,7 +294,7 @@ void Tutorial::update() {
                 ++state_;
             } break;
         case 28:
-            if (players::getPlayerI()->ship()->docked_) {
+            if (players::getPlayerI()->ship()->docked_ && !menus::visible()) {
                 zones::clear();
                 zones::createRaster(4, 3);
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut28), locales::getLocale(locales::TutText28), 18, true, true));
@@ -400,8 +400,7 @@ void Tutorial::restart() {
     evilPlayer1_ = NULL;
     evilPlayer2_ = NULL;
 
-
-    players::addPlayer(teams::addTeam(new TutTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
+    players::addPlayer(teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     teams::assignHomes(spaceObjects::addHome(Vector2f(1300.f, 450.f), settings::C_playerIColor));
     players::createShips();
 
