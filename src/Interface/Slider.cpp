@@ -66,6 +66,14 @@ void Slider::mouseMoved(Vector2f const& position) {
         toolTip::show(toolTip_);
 }
 
+void Slider::mouseWheelMoved(Vector2f const& position, int delta) {
+    if (hovered_) {
+        *value_ += delta;
+        if (*value_ < minValue_) *value_ = minValue_;
+        else if (*value_ > maxValue_) *value_ = maxValue_;
+    }
+}
+
 void Slider::keyEvent(bool down, Key const& key) {
     if (down) {
         if (locales::getCurrentLocale().LTR_) {

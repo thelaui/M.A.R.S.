@@ -41,6 +41,11 @@ void TabList::mouseMoved(Vector2f const& position) {
         (*i)->mouseMoved(position);
 }
 
+void TabList::mouseWheelMoved(Vector2f const& position, int delta) {
+    for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
+        (*i)->mouseWheelMoved(position, delta);
+}
+
 void TabList::mouseLeft(bool down) {
     for (std::vector<Tab*>::iterator i=tabs_.begin(); i != tabs_.end(); ++i)
         (*i)->mouseLeft(down);

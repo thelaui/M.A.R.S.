@@ -28,6 +28,7 @@ class UiWindow: public UiElement {
         ~UiWindow();
 
         void mouseMoved(Vector2f const& position);
+        void mouseWheelMoved(Vector2f const& position, int delta);
         void mouseLeft(bool down);
         void keyEvent(bool down, Key const& key);
         void textEntered(int keyCode);

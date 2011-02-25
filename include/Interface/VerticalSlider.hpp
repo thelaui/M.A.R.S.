@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class VerticalSlider: public UiElement {
     public:
-        VerticalSlider (int* value, int min, int max, Vector2f const& topLeft, int height);
+        VerticalSlider (float* value, float min, float max, Vector2f const& topLeft, int height);
 
         void mouseLeft(bool down);
         void mouseMoved(Vector2f const& position);
@@ -34,8 +34,8 @@ class VerticalSlider: public UiElement {
         void draw() const;
 
     private:
-        int* value_;
-        int minValue_, maxValue_;
+        float* value_;
+        float minValue_, maxValue_;
 };
 
 # endif //VERTICALSLIDER_HPP_INCLUDED

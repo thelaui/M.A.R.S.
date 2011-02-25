@@ -29,6 +29,7 @@ class ComboBox: public UiElement {
         ~ComboBox ();
 
         void mouseMoved(Vector2f const& position);
+        void mouseWheelMoved(Vector2f const& position, int delta);
         void mouseLeft(bool down);
         void keyEvent(bool down, Key const& key);
 
@@ -43,6 +44,7 @@ class ComboBox: public UiElement {
         UiWindow* dropBox_;
 
         sf::String* currentValue_;
+        std::vector<sf::String> values_;
         Label* label_;
         int labelWidth_;
         bool opened_;

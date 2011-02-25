@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <sstream>
 
-VerticalSlider::VerticalSlider (int* value, int minValue, int maxValue, Vector2f const& topLeft, int height):
+VerticalSlider::VerticalSlider (float* value, float minValue, float maxValue, Vector2f const& topLeft, int height):
     UiElement(topLeft, 20, height),
     value_(value),
     minValue_(minValue),
@@ -64,6 +64,8 @@ void VerticalSlider::draw() const {
 
     Vector2f origin = getTopLeft();
 
+    int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // draw line
     // Hover effect
@@ -71,12 +73,12 @@ void VerticalSlider::draw() const {
 
     glLineWidth(2);
     glBegin(GL_LINES);
-        glVertex2f(10 + origin.x_, origin.y_);
-        glVertex2f(10 + origin.x_, height_ + origin.y_);
+        glVertex2f(10*mirror + origin.x_, origin.y_);
+        glVertex2f(10*mirror + origin.x_, height_ + origin.y_);
     glEnd();
 
     // Hover effect
-    Vector2f sliderPosition(10 + origin.x_, (height_-10)*(*value_- minValue_)/(maxValue_ - minValue_) + origin.y_+5);
+    Vector2f sliderPosition(10*mirror + origin.x_, (height_-10)*(*value_- minValue_)/(maxValue_ - minValue_) + origin.y_+5);
 
     glEnable(GL_TEXTURE_2D);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

@@ -34,7 +34,7 @@ UiWindow* NewGameConfirm::get() {
         instance_ = new NewGameConfirm(280, 80);
         instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(200,50), 70, 20));
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(120,50), 70, 20));
-        instance_->addWidget(new Label(locales::getLocale(locales::QuitCurrentGameText), TEXT_ALIGN_LEFT, Vector2f(10, 8)));
+        instance_->addWidget(new Label(locales::getLocale(locales::QuitCurrentGameText), TEXT_ALIGN_LEFT, Vector2f(10, 8), 12.f, Color3f(0.7f, 0.7f, 0.7f), false));
     }
     return instance_;
 }

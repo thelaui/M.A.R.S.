@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 UiWindow* ChooseLanguage::instance_(NULL);
 bool ChooseLanguage::kCancel_(false);
 std::map<int, bool*> ChooseLanguage::languageKeyMap_;
+std::map<sf::String, int> ChooseLanguage::sortedLocales_;
 
 UiWindow* ChooseLanguage::get() {
     if (instance_ == NULL) {
@@ -36,12 +37,11 @@ UiWindow* ChooseLanguage::get() {
 
         instance_ = new ChooseLanguage(220, 100 + 24*localeList.size());
 
-        std::map   <sf::String, int> sortedLocales;
         for (int i=0; i<localeList.size(); ++i)
-            sortedLocales.insert(std::make_pair(localeList[i].name_, i));
+            sortedLocales_.insert(std::make_pair(localeList[i].name_, i));
 
         int top(50);
-        for (std::map<sf::String, int>::iterator it=sortedLocales.begin(); it!=sortedLocales.end(); ++it) {
+        for (std::map<sf::String, int>::iterator it=sortedLocales_.begin(); it!=sortedLocales_.end(); ++it) {
             bool* key = new bool(false);
             languageKeyMap_.insert(std::make_pair(it->second, key));
             Button* newButton(new Button(new sf::String(it->first), new sf::String(localeList[it->second].author_), key, Vector2f(10, top), 200, 20, TEXT_ALIGN_CENTER, font::getFont(it->second)));
@@ -54,7 +54,7 @@ UiWindow* ChooseLanguage::get() {
         }
 
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(140,top+20), 70, 20));
-        instance_->addWidget(new Label(new sf::String("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f));
+        instance_->addWidget(new Label(new sf::String("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(210, 35)));
     }
     return instance_;
@@ -81,9 +81,42 @@ void ChooseLanguage::reset() {
     if (instance_)
         delete instance_;
     instance_ = NULL;
+
+    languageKeyMap_.clear();
+    for (std::map<int, bool*>::iterator it = languageKeyMap_.begin(); it != languageKeyMap_.end(); ++it)
+        delete it->second;
+    sortedLocales_.clear();
 }
 
+void ChooseLanguage::next() {
+    get();
+    for (std::map<sf::String, int>::iterator it = sortedLocales_.begin(); it != sortedLocales_.end(); ++it) {
+        if (it->second == settings::C_languageID) {
+            ++it;
+            if (it != --sortedLocales_.begin()) {
+                settings::C_languageID = it->second;
+                locales::load();
+                menus::reload();
+            }
+            break;
+        }
+    }
+}
 
+void ChooseLanguage::previous() {
+    get();
+    for (std::map<sf::String, int>::iterator it = sortedLocales_.begin(); it != sortedLocales_.end(); ++it) {
+        if (it->second == settings::C_languageID) {
+            --it;
+            if (it != --sortedLocales_.begin()) {
+                settings::C_languageID = it->second;
+                locales::load();
+                menus::reload();
+            }
+            break;
+        }
+    }
+}
 
 
 

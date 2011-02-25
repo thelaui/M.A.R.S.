@@ -30,6 +30,7 @@ class TextBox: public UiElement {
         ~TextBox();
 
         void mouseMoved(Vector2f const& position);
+        void mouseWheelMoved(Vector2f const& position, int delta);
         void mouseLeft(bool down);
 
         void draw () const;
@@ -40,7 +41,8 @@ class TextBox: public UiElement {
         Color3f color_;
         std::vector<sf::String*> texts_;
         VerticalSlider* slider_;
-        int position_;
+        mutable float position_;
+        mutable float scrollSpeed_;
 };
 
 # endif

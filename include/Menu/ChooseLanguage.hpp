@@ -30,6 +30,9 @@ class ChooseLanguage: public UiWindow {
 
         static void reset();
 
+        static void next();
+        static void previous();
+
     private:
         ChooseLanguage(int width, int height): UiWindow(width, height) {}
         ChooseLanguage(ChooseLanguage const& copy);
@@ -38,6 +41,7 @@ class ChooseLanguage: public UiWindow {
 
         static bool kCancel_;
         static std::map<int, bool*> languageKeyMap_;
+        static std::map<sf::String, int> sortedLocales_;
 };
 
 # endif // CHOOSELANGUAGE_HPP_INCLUDED

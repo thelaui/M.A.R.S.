@@ -34,6 +34,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 ComboBox::ComboBox (sf::String* text, sf::String* toolTip, sf::String* value, std::vector<sf::String> const& values, Vector2f const& topLeft, int width, int labelWidth):
     UiElement(topLeft, width, 16),
     dropBox_(NULL),
+    values_(values),
     labelWidth_(labelWidth),
     currentValue_(value),
     opened_(false),
@@ -56,6 +57,20 @@ void ComboBox::mouseMoved(Vector2f const& position) {
 
     if (hovered_ && toolTip_)
         toolTip::show(toolTip_);
+}
+
+void ComboBox::mouseWheelMoved(Vector2f const& position, int delta) {
+    if (hovered_) {
+        int i(0);
+        for (i=0; i<values_.size(); ++i) {
+            if (values_[i] == (*currentValue_))
+                break;
+        }
+        i-=delta;
+        if      (i<0)               i=0;
+        else if (i>=values_.size()) i=values_.size()-1;
+        (*currentValue_) = values_[i];
+    }
 }
 
 void ComboBox::mouseLeft(bool down) {

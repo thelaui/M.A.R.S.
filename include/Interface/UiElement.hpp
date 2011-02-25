@@ -29,6 +29,7 @@ class UiElement {
         UiElement(Vector2f const& topLeft, int width, int height);
 
         virtual void mouseMoved(Vector2f const& position);
+        virtual void mouseWheelMoved(Vector2f const& position, int delta) {}
         virtual void mouseLeft(bool down);
         virtual void keyEvent(bool down, Key const& key) {}
         virtual void textEntered(int keyCode) {}

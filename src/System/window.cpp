@@ -137,6 +137,10 @@ namespace window {
                         joyButtonTimer_ = timer::totalTime();
                     }
                 }
+                else if (event.Type == sf::Event::MouseWheelMoved) {
+                    if (menus::visible())
+                        menus::mouseWheelMoved(Vector2f(event.MouseWheel.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseWheel.Y - (window_.GetHeight() - viewPort_.y_)/2), event.MouseWheel.Delta);
+                }
             }
         }
 

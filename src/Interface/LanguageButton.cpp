@@ -46,6 +46,19 @@ void LanguageButton::mouseMoved(Vector2f const& position) {
     label_->mouseMoved(position);
 }
 
+void LanguageButton::mouseWheelMoved(Vector2f const& position, int delta) {
+    if (hovered_) {
+        while (delta > 0) {
+            ChooseLanguage::previous();
+            --delta;
+        }
+        while (delta < 0) {
+            ChooseLanguage::next();
+            ++delta;
+        }
+    }
+}
+
 void LanguageButton::mouseLeft(bool down) {
     UiElement::mouseLeft(hovered_ && down);
     if (!pressed_ && hovered_ && focused_) {

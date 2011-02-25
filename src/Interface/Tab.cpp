@@ -58,6 +58,12 @@ void Tab::mouseMoved(Vector2f const& position) {
             (*i)->mouseMoved(position);
 }
 
+void Tab::mouseWheelMoved(Vector2f const& position, int delta) {
+    if (active_)
+        for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
+            (*i)->mouseWheelMoved(position, delta);
+}
+
 void Tab::mouseLeft(bool down) {
     pressed_ = hovered_ && down;
 

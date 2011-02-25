@@ -41,6 +41,11 @@ void UiWindow::mouseMoved(Vector2f const& position) {
         (*i)->mouseMoved(position);
 }
 
+void UiWindow::mouseWheelMoved(Vector2f const& position, int delta) {
+    for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
+        (*i)->mouseWheelMoved(position, delta);
+}
+
 void UiWindow::mouseLeft(bool down) {
     for (std::vector<UiElement*>::iterator i=widgets_.begin(); i != widgets_.end(); ++i)
         (*i)->mouseLeft(down);

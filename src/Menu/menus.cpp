@@ -73,6 +73,11 @@ namespace menus {
         }
     }
 
+    void mouseWheelMoved(Vector2f const& position, int delta) {
+        if (visible())
+            windowStack_.back()->mouseWheelMoved(position, delta);
+    }
+
     void mouseLeft(bool down) {
         if (visible()) {
             windowStack_.back()->mouseLeft(down);
