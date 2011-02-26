@@ -22,7 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define VERSION_MINOR       "7"
 # define VERSION_PATCH       "0"
 
-# define SHIP_GRAPHICS_COUNT 13
+# define SHIP_GRAPHICS_COUNT 14
 
 # define SPACE_X_RESOLUTION  1440
 # define SPACE_Y_RESOLUTION  810
