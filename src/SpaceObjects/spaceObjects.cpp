@@ -196,37 +196,25 @@ namespace spaceObjects {
         homeList_.clear();
     }
 
-    void populateSpace() {
-        int sunCount(2), holeCount(1), planetCount(4);
-        int count = rand()%5 + 1;
-        if (count == 5) count -= rand()%2;
-        if (count == 4) count -= rand()%2;
-        if (count == 3) count -= rand()%2;
-        if (count == 2) count -= rand()%2;
+    void populateSpace(float holePercentage, float sunPercentage, int maxObjects) {
+        int count = sf::Randomizer::Random(1, maxObjects);
 
-        while (count > 0) {
-            int type = rand()%7;
+        while (--count >= 0) {
+            float percentage = sf::Randomizer::Random(0.f, 100.f);
+
+            int type(2);
+            if (percentage < holePercentage)                      type = 0;
+            else if (percentage < holePercentage + sunPercentage) type = 1;
+
             switch (type) {
                 case 0:
-                    if (holeCount > 0) {
-                        addBlackHole();
-                        --count;
-                        --holeCount;
-                    }
+                    addBlackHole();
                     break;
                 case 1:
-                    if (sunCount > 0) {
-                        addSun();
-                        --count;
-                        --sunCount;
-                    }
+                    addSun();
                     break;
                 default:
-                    if (planetCount > 0) {
-                        addPlanet();
-                        --count;
-                        --planetCount;
-                    }
+                    addPlanet();
             }
 
         }

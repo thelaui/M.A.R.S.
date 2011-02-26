@@ -36,7 +36,7 @@ AmmoInsta::AmmoInsta(Vector2f const& location, Vector2f const& direction, Vector
          color_(color) {
 
     setDamageSource(damageSource);
-    velocity_ = direction.normalize()*1000.f;
+    velocity_ = direction.normalize()*800.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
     trail_ = trailEffects::attach(this, 0.1f, 2.f, 6.f, color_, true);
@@ -57,7 +57,7 @@ void AmmoInsta::update() {
     for (int i=0; i<steps; ++i) {
         if (!isDead()) {
             physics::collide(this, STATICS | MOBILES);
-            Vector2f acceleration = physics::attract(this)*70;
+            Vector2f acceleration = physics::attract(this)*60;
 
             location_ += velocity_*time + acceleration*time*time;
             velocity_ += acceleration*time;
@@ -123,22 +123,22 @@ void AmmoInsta::onCollision(SpaceObject* with, Vector2f const& location,
 
 int AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team* team) {
 
-    glLineWidth(2.f);
+    glLineWidth(3.f);
     team->color().gl4f(0.4f);
 
-    float resolution(0.05f + 0.002f*(100-settings::C_iDumb));
+    float resolution(0.02f + 0.002f*(100-settings::C_iDumb));
 
-    Vector2f velocity(direction.normalize()*1000.f), from(location);
+    Vector2f velocity(direction.normalize()*800.f), from(location);
     from += velocity*timer::frameTime()*1.2f;
 
-    for (int i=0; i<10+settings::C_iDumb*0.4f; ++i) {
+    for (int i=0; i<10+settings::C_iDumb*0.9f; ++i) {
         Vector2f acceleration;
         for (std::vector<SpaceObject*>::const_iterator it = physics::getGravitySources().begin(); it != physics::getGravitySources().end(); ++it) {
             float distanceSquared = (from - (*it)->location()).lengthSquare();
             if (distanceSquared > 100.f)
                 acceleration += ((*it)->location() - from) * (*it)->mass() / distanceSquared;
         }
-        acceleration *= 70.f;
+        acceleration *= 60.f;
         Vector2f to (from + velocity * resolution + acceleration*resolution*resolution);
         velocity += acceleration*resolution;
 

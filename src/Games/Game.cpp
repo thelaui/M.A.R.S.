@@ -81,7 +81,11 @@ void Game::update() {
             spaceObjects::update();
         }
         else if(window::getInput().IsMouseButtonDown(sf::Mouse::Left) || window::getInput().IsMouseButtonDown(sf::Mouse::Right)
-                || window::getInput().IsKeyDown(sf::Key::Space) || window::getInput().IsKeyDown(sf::Key::Return)) {
+                || window::getInput().IsKeyDown(sf::Key::Space) || window::getInput().IsKeyDown(sf::Key::Return)
+                || window::getInput().IsJoystickButtonDown(0, 0) || window::getInput().IsJoystickButtonDown(1, 0)
+                || window::getInput().IsJoystickButtonDown(0, 8) || window::getInput().IsJoystickButtonDown(1, 8)
+                || window::getInput().IsJoystickButtonDown(0, 9) || window::getInput().IsJoystickButtonDown(1, 9)
+                || window::getInput().IsJoystickButtonDown(0, 2) || window::getInput().IsJoystickButtonDown(1, 2) ) {
             games::restart();
             hud::displayStats(false);
         }

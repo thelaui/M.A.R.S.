@@ -78,7 +78,7 @@ TeamDeathMatch::TeamDeathMatch():
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 
@@ -96,7 +96,7 @@ void TeamDeathMatch::restart() {
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 

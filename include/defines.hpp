@@ -24,11 +24,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # define SHIP_GRAPHICS_COUNT 13
 
-# define SPACE_X_RESOLUTION  1600
-# define SPACE_Y_RESOLUTION  900
+# define SPACE_X_RESOLUTION  1440
+# define SPACE_Y_RESOLUTION  810
 
 # define HOME_PLANET_RADIUS     100
 # define SPACEOBJECT_MIN_RADIUS 50
-# define SPACEOBJECT_MAX_RADIUS 150
+# define SPACEOBJECT_MAX_RADIUS 120
 
 # endif //DEFINES_HPP_INCLUDED

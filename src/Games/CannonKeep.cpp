@@ -82,7 +82,7 @@ CannonKeep::CannonKeep():
     decoObjects::addCannon();
     items::addCannonControl();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 
@@ -102,7 +102,7 @@ void CannonKeep::restart() {
     decoObjects::addCannon();
     items::addCannonControl();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 

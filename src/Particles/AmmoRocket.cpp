@@ -56,45 +56,59 @@ AmmoRocket::~AmmoRocket() {
 void AmmoRocket::update() {
     float const time = timer::frameTime();
 
-    physics::collide(this, STATICS | MOBILES | PARTICLES);
+    if (frozen_ <= 0) {
+        physics::collide(this, STATICS | MOBILES | PARTICLES);
 
-    if (target_) {
-        if (target_->getLife() == 0.f) {
-            target_ = NULL;
+        if (target_) {
+            if (target_->getLife() == 0.f) {
+                target_ = NULL;
+            }
+            else {
+                float const speed(velocity_.length());
+                velocity_ /= speed;
+                Vector2f const toTarget(target_->location() - location_);
+                rotation_ = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
+                float const phi(time*5.f);
+                if (rotation_ > 0.f)
+                    velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
+                else
+                    velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
+                velocity_ *= 300.f;
+            }
         }
-        else {
-            float const speed(velocity_.length());
-            velocity_ /= speed;
-            Vector2f const toTarget(target_->location() - location_);
-            rotation_ = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
-            float const phi(time*5.f);
-            if (rotation_ > 0.f)
-                velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
-            else
-                velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
-            velocity_ *= 300.f;
+
+        location_ += velocity_*time;
+
+        Vector2f const faceDirection(velocity_.normalize());
+
+        particles::spawnTimed(80.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_*2.3f, faceDirection, velocity_);
+        particles::spawnTimed(5.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*3.f, faceDirection, velocity_);
+
+        lifeTime_ += time;
+        timer_ -= time;
+        if (timer_ < 0.f) {
+            timer_ = 0.5f;
+            std::vector<Ship*> const& ships (ships::getShips());
+            float closest(FLT_MAX);
+            for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it) {
+                float distance((location_ - (*it)->location()).lengthSquare());
+                if ( distance < closest && (*it)->collidable()) {
+                    target_ = *it;
+                    closest = distance;
+                }
+            }
         }
     }
+    else {
+        frozen_  -= time*3.f;
+        life_    -= time*10.f;
+        velocity_ = Vector2f();
 
-    location_ += velocity_*time;
 
-    Vector2f const faceDirection(velocity_.normalize());
-
-    particles::spawnTimed(80.f/settings::C_globalParticleCount, particles::pFuel, location_-faceDirection*radius_*2.3f, faceDirection, velocity_);
-    particles::spawnTimed(5.f/settings::C_globalParticleCount, particles::pHeatJet, location_-faceDirection*radius_*3.f, faceDirection, velocity_);
-
-    lifeTime_ += time;
-    timer_ -= time;
-    if (timer_ < 0.f) {
-        timer_ = 0.5f;
-        std::vector<Ship*> const& ships (ships::getShips());
-        float closest(FLT_MAX);
-        for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it) {
-            float distance((location_ - (*it)->location()).lengthSquare());
-            if ( distance < closest && (*it)->collidable()) {
-                target_ = *it;
-                closest = distance;
-            }
+        if (frozen_ < 0.f) {
+            frozen_ = 0.f;
+            mass_ = 10000.f;
+            particles::spawnMultiple(10, particles::pCrushedIce, location_);
         }
     }
 
@@ -126,7 +140,7 @@ void AmmoRocket::draw() const {
     glTexCoord2f((posX+4)*0.125f, posY*0.125f);    glVertex2f(bottomRight.x_, bottomRight.y_);
     glTexCoord2f(posX*0.125f,     posY*0.125f);    glVertex2f(topRight.x_, topRight.y_);
 
-    if (target_) {
+    if (target_ && frozen_ <= 0) {
         glColor3f(1.f, 0.7f, 0.9f);
         const int posX = 5;
         const int posY = 5;

@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Games/MenuGame.hpp"
 
-# include "Teams/TDMTeam.hpp"
+# include "Teams/GITeam.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Hud/hud.hpp"
@@ -27,6 +27,55 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Home.hpp"
 # include "Teams/teams.hpp"
 
+MenuGame::MenuGame():
+    Game(games::gMenu) {
+
+    settings::C_EnabledWeapons  = weapons::wInsta;
+    settings::C_EnabledSpecials = specials::sNoSpecial;
+
+    music::playMenuMusic();
+
+    Color3f rand = Color3f::random();
+
+    Team* myTeamL = teams::addTeam(new GITeam(rand));
+    Team* myTeamR = teams::addTeam(new GITeam(rand.inverted()));
+
+    for (int i=0; i<4;  ++i)    players::addPlayer(myTeamL, controllers::cBot);
+    for (int i=0; i<4; ++i)     players::addPlayer(myTeamR, controllers::cBot);
+
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
+
+    teams::assignHomes(homeL, homeR);
+    players::createShips();
+
+    menus::showMain();
+
+    if (settings::C_showSelectLanguage) {
+        menus::showWindow(ChooseLanguage::get());
+        settings::C_showSelectLanguage = false;
+    }
+
+    spaceObjects::populateSpace(40.f, 5.f, 2);
+    zones::createRaster(4,3);
+}
+
+void MenuGame::restart() {
+    Game::restart();
+
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
+
+    teams::assignHomes(homeL, homeR);
+    players::createShips();
+
+    menus::showMain();
+
+    spaceObjects::populateSpace(40.f, 5.f, 2);
+    zones::createRaster(4,3);
+}
+
+/*
 MenuGame::MenuGame():
     Game(games::gMenu) {
 
@@ -56,7 +105,7 @@ MenuGame::MenuGame():
         settings::C_showSelectLanguage = false;
     }
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 
@@ -71,10 +120,10 @@ void MenuGame::restart() {
 
     menus::showMain();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
-
+*/
 
 
 

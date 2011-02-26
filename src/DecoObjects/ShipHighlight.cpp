@@ -28,7 +28,7 @@ void ShipHighlight::draw() const {
         const float    shipRotation (ship_->rotation_*M_PI/180.f);
         const Vector2f shipDirection(Vector2f(std::cos(shipRotation), std::sin(shipRotation)));
         if (ship_->currentWeapon_->getType() == weapons::wInsta) {
-//            AmmoInsta::hitsAny(ship_->location() + shipDirection*ship_->radius(), shipDirection, ship_->owner_->team());
+           // AmmoInsta::hitsAny(ship_->location() + shipDirection*ship_->radius(), shipDirection, ship_->owner_->team());
         }
 
         glEnable(GL_TEXTURE_2D);

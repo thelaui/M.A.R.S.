@@ -120,7 +120,7 @@ void BotController::checkSpecial() {
 
             default: {
                 int decision(0);
-                float freezeRadius = ship()->fragStars_*50.f + 50.f;
+                float freezeRadius = ship()->fragStars_*50.f + 150.f;
                 freezeRadius *= freezeRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {

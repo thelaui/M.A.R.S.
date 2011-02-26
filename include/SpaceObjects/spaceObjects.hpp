@@ -51,7 +51,7 @@ namespace spaceObjects {
     std::vector<SpaceObject*> const&        getObjects();
 
     /// Populates the space with planets, suns and black holes.
-    void populateSpace();
+    void populateSpace(float holePercentage, float sunPercentage, int maxObjects);
 
     void clear();
 }

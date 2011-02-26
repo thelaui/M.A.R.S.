@@ -78,7 +78,10 @@ void Freezer::draw(float alpha) const {
 
 void Freezer::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*50.f+50.f;
+
+        radius_              = parent_->fragStars_*50.f+150.f;
+        const float strength = parent_->fragStars_*8.f;
+
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
             if ((*it)!=parent_ && (*it)->collidable()) {
@@ -89,7 +92,7 @@ void Freezer::activate() const {
                     (*it)->mass_=9999999999.f;
                     if ((*it)->frozen_ <= 0)
                         decoObjects::addIce(*it);
-                    (*it)->frozen_=40;
+                    (*it)->frozen_= strength;
                 }
             }
         }
@@ -98,22 +101,22 @@ void Freezer::activate() const {
         if(ball && ball->visible_) {
             float distance((ball->location()-parent_->location()).length());
                 if (distance <= radius_) {
-                    ball->frozen_=40;
                     ball->velocity_=Vector2f();
                     ball->mass_=9999999999.f;
                     if (ball->frozen_ <= 0)
                         decoObjects::addIce(ball);
+                    ball->frozen_=strength;
             }
         }
 
         for (std::list<AmmoRocket*>::iterator it=AmmoRocket::activeParticles_.begin(); it!=AmmoRocket::activeParticles_.end(); ++it) {
             float distance(((*it)->location()-parent_->location()).length());
             if (distance <= radius_) {
-                (*it)->frozen_=40;
                 (*it)->velocity_=Vector2f();
                 (*it)->mass_=9999999999.f;
                 if ((*it)->frozen_ <= 0)
                     decoObjects::addIce(*it);
+                (*it)->frozen_=strength;
             }
         }
 

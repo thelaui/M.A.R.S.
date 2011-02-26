@@ -78,7 +78,7 @@ GraveItation::GraveItation():
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(40.f, 5.f, 2);
     zones::createRaster(4,3);
 }
 
@@ -96,7 +96,7 @@ void GraveItation::restart() {
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(40.f, 5.f, 2);
     zones::createRaster(4,3);
 }
 

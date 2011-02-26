@@ -49,7 +49,7 @@ DeathMatch::DeathMatch():
     teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 void DeathMatch::draw() const {
@@ -64,7 +64,7 @@ void DeathMatch::restart() {
     teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
     players::createShips();
 
-    spaceObjects::populateSpace();
+    spaceObjects::populateSpace(5.f, 10.f, 4);
     zones::createRaster(4,3);
 }
 

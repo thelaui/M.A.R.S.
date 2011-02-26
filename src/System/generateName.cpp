@@ -157,11 +157,15 @@ namespace generateName {
     }
 
     sf::String const key(Key const& key) {
-        sf::String result;
+        sf::String result("Unknown Key");
         switch (key.type_) {
             case Key::kKeyBoard: {
                 sf::Key::Code keyCode(key.code_.keyBoard_);
-                if (static_cast<int>(keyCode) > 32 && static_cast<int>(keyCode) < 126) result = static_cast<char>(keyCode);
+                // "normal" character
+                if (static_cast<int>(keyCode) >= 97 && static_cast<int>(keyCode) <= 122) result = static_cast<char>(keyCode-32);
+
+                // numbers
+                if (static_cast<int>(keyCode) >= 48 && static_cast<int>(keyCode) <= 57) result = static_cast<char>(keyCode);
 
                 else if (keyCode == sf::Key::Add) result =         *locales::getLocale(locales::Add);
                 else if (keyCode == sf::Key::BackSlash) result =   *locales::getLocale(locales::BackSlash);
@@ -223,6 +227,7 @@ namespace generateName {
                 else if (keyCode == sf::Key::Tilde) result =       *locales::getLocale(locales::Tilde);
                 else if (keyCode == sf::Key::Tab) result =         *locales::getLocale(locales::Tab);
                 else if (keyCode == sf::Key::Up) result =          *locales::getLocale(locales::Up);
+
                 break;
             }
 
