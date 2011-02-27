@@ -33,6 +33,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/CountDown.hpp"
 # include "Particles/particles.hpp"
 # include "Media/text.hpp"
+# include "Hud/musicNotify.hpp"
 
 # include <sstream>
 
@@ -71,6 +72,7 @@ namespace hud {
             }
             else ++it;
         }
+        musicNotify::update();
 
     }
 
@@ -106,6 +108,7 @@ namespace hud {
         text::drawFooText();
         for (std::list<Message*>::iterator it=messages_.begin(); it!=messages_.end(); ++it)
             (*it)->draw();
+        musicNotify::draw();
     }
 
     void displayPoints() {

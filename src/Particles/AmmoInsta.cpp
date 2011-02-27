@@ -123,8 +123,8 @@ void AmmoInsta::onCollision(SpaceObject* with, Vector2f const& location,
 
 int AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team* team) {
 
-    glLineWidth(3.f);
-    team->color().gl4f(0.4f);
+    //glLineWidth(3.f);
+    //team->color().gl4f(0.4f);
 
     float resolution(0.02f + 0.002f*(100-settings::C_iDumb));
 
@@ -142,10 +142,10 @@ int AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team
         Vector2f to (from + velocity * resolution + acceleration*resolution*resolution);
         velocity += acceleration*resolution;
 
-        glBegin(GL_LINES);
+       /* glBegin(GL_LINES);
             glVertex2f(from.x_, from.y_);
             glVertex2f(to.x_, to.y_);
-        glEnd();
+        glEnd();*/
 
         for (std::vector<Ship*>::const_iterator it = ships::getShips().begin(); it != ships::getShips().end(); ++it) {
             if ((*it)->attackable()) {
@@ -156,19 +156,19 @@ int AmmoInsta::hitsAny(Vector2f const& location, Vector2f const& direction, Team
 
                 if (clockWise(velocity, shipRight-to) && !clockWise(velocity, shipLeft-to) && clockWise(orthoDir, from-shipRight) && !clockWise(orthoDir, to-shipRight)) {
                     if((*it)->getOwner()->team() != team) {
-                        glPointSize(50.f);
+                       /* glPointSize(50.f);
                         glColor3f(0.f, 1.f, 0.f);
                         glBegin(GL_POINTS);
                             glVertex2f((*it)->location().x_, (*it)->location().y_);
-                        glEnd();
+                        glEnd();*/
                         return 100;
                     }
                     else {
-                        glPointSize(50.f);
+                        /*glPointSize(50.f);
                         glColor3f(1.f, 0.f, 0.f);
                         glBegin(GL_POINTS);
                             glVertex2f((*it)->location().x_, (*it)->location().y_);
-                        glEnd();
+                        glEnd();*/
                         return 0;
                     }
                 }

@@ -1,4 +1,4 @@
-/* defines.hpp
+/* musicNotify.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,24 +15,19 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DEFINES_HPP_INCLUDED
-# define DEFINES_HPP_INCLUDED
+# ifndef MUSICNOTIFY_HPP_INCLUDED
+# define MUSICNOTIFY_HPP_INCLUDED
 
-# define VERSION_MAJOR               "0"
-# define VERSION_MINOR               "7"
-# define VERSION_PATCH               "0"
-# define VERSION_REVIS               "149"
+# include <string>
 
-# define SHIP_GRAPHICS_COUNT         14
+namespace musicNotify {
 
-# define SPACE_X_RESOLUTION          1440
-# define SPACE_Y_RESOLUTION          810
+    void draw();
 
-# define INITIAL_WINDOW_X            960
-# define INITIAL_WINDOW_Y            540
+    void update();
 
-# define HOME_PLANET_RADIUS          100
-# define SPACEOBJECT_MIN_RADIUS      50
-# define SPACEOBJECT_MAX_RADIUS      120
+    void show(std::string const& fileName);
+}
 
-# endif //DEFINES_HPP_INCLUDED
+# endif // MUSICNOTIFY_HPP_INCLUDED
+

@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Media/file.hpp"
 # include "Shaders/postFX.hpp"
+# include "defines.hpp"
 
 # include <sys/stat.h>
 
@@ -61,8 +62,8 @@ namespace settings {
     bool        C_showSelectLanguage =      true;
     bool        C_showToolTips =            true;
     int         C_languageID =              0;
-    int         C_resX =                    960;
-    int         C_resY =                    600;
+    int         C_resX =                    INITIAL_WINDOW_X;
+    int         C_resY =                    INITIAL_WINDOW_Y;
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 false;
     Key         C_screenShotKey =           Key(sf::Key::F12);

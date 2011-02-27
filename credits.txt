@@ -17,16 +17,14 @@ Sound Files:
  - some soundfiles are modified with Audacity
    (http://audacity.sourceforge.net/)
  - Credits go to:
-   - http://www.pacdv.com/    (thisistheday.ogg)
-   - http://www.soundjay.com/ (interface-sounds)
+   - http://www.pacdv.com/sounds/free-music.html    (thisistheday.ogg, dancezone.ogg, technodog.ogg)
+   - http://www.soundjay.com/                       (interface-sounds, midnightride.ogg)
  - all toon sounds are public domain
  - announcer sounds are created with eSpeak 
    (http://espeak.sourceforge.net/)
    
 Fonts
- - HandelGotLig: Be careful with this one...
-   You can get it for free everywhere on the internet, but I wasn't
-   able to figure out it's correct license
+ - 
 
 Translations
  - German: Sandra

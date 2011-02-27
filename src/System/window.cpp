@@ -44,7 +44,7 @@ namespace window {
         sf::Sprite       fxImage_;
 
         Vector2f         viewPort_;
-        float            scale_(960.f/SPACE_X_RESOLUTION);
+        float            scale_(static_cast<float>(settings::C_resX)/SPACE_X_RESOLUTION);
         int              clearCount_(0);
         float            joyButtonTimer_(0.f);
         const float      ratio(static_cast<float>(SPACE_X_RESOLUTION)/static_cast<float>(SPACE_Y_RESOLUTION));

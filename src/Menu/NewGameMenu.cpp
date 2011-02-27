@@ -160,11 +160,10 @@ UiWindow* NewGameMenu::get() {
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);
         tabList->addTab(tabTeamDeathMatch_);
-        tabList->addTab(tabGraveItation_);
         tabList->addTab(tabCannonKeep_);
+        tabList->addTab(tabGraveItation_);
 
         instance_->addWidget(tabList);
-
 
         instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(375,300), 90, 20));
     }

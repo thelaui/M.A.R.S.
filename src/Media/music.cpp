@@ -22,34 +22,41 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/hud.hpp"
 # include "Locales/locales.hpp"
 # include "defines.hpp"
+# include "Hud/musicNotify.hpp"
+
+# include <sys/types.h>
+# include <dirent.h>
 
 namespace music {
 
     namespace {
-        enum MusicType {Technodog, Midnightride, Dancezone, Thisistheday};
         // for Music there is only one channel... who wants to have multiple music files played at once?
-        sf::Music musicChannel_;
-        bool      initialized_(false);
-        MusicType currentTrack_;
+        sf::Music                musicChannel_;
+        bool                     initialized_(false);
+        int                      currentTrack_;
+        std::vector<std::string> files_;
 
         void init() {
+            // get files
+            DIR *dp;
+            struct dirent *dirp;
+            if((dp = opendir((settings::C_dataPath + "/audio/music/").c_str())) == NULL) {
+                std::cout << "Error opening " << settings::C_dataPath << "/audio/music/" << std::endl;
+            }
+
+            while ((dirp = readdir(dp)) != NULL) {
+                std::string file(dirp->d_name);
+                if (file.size() > 0 && file[0] != '.')
+                files_.push_back(file);
+            }
+            closedir(dp);
+
             musicChannel_.SetRelativeToListener(true);
             sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             setGlobalVolume();
             initialized_ = true;
         }
 
-        void playMusic(MusicType music) {
-            if (!initialized_) init();
-            switch (music) {
-                case Technodog:        musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/technodog.ogg");      break;
-                case Thisistheday:     musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/thisistheday.ogg");   break;
-                case Midnightride:     musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/midnightride.ogg");   break;
-                case Dancezone:        musicChannel_.OpenFromFile(settings::C_dataPath + "audio/music/dancezone.ogg");      break;
-            }
-            musicChannel_.Play();
-            currentTrack_ = music;
-        }
     }
 
     void update() {
@@ -71,21 +78,32 @@ namespace music {
 
     void playMenuMusic() {
         musicChannel_.SetLoop(true);
-        playMusic(Thisistheday);
+        sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
+        musicChannel_.OpenFromFile(fileName);
+        musicChannel_.Play();
+        currentTrack_ = -1;
     }
 
     void playGameMusic() {
+        if (!initialized_) init();
+
+        int nextTrack(currentTrack_);
+        while (nextTrack == currentTrack_ && files_.size() > 1)
+            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+
+        currentTrack_ = nextTrack;
+
+        sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
+
+        musicChannel_.OpenFromFile(fileName);
+        musicChannel_.Play();
         musicChannel_.SetLoop(false);
-        MusicType nextTrack(currentTrack_);
 
-        while (currentTrack_ == nextTrack)
-            nextTrack = static_cast<MusicType>(sf::Randomizer::Random(0, Thisistheday-1));
-
-        playMusic(nextTrack);
+        musicNotify::show(fileName.ToAnsiString());
     }
 
     void next() {
-        if (currentTrack_ != Thisistheday) {
+        if (currentTrack_ != -1) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
         }
