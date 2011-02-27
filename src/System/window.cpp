@@ -35,6 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <time.h>
 # include <sys/stat.h>
 
+
 namespace window {
 
     namespace {
@@ -131,10 +132,10 @@ namespace window {
                     menus::keyEvent(false, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
                 else if (event.Type == sf::Event::JoyMoved) {
                     Key key(event.JoyButton.JoystickId, event.JoyMove.Axis, event.JoyMove.Position);
-                    if (key.strength_ == 100 && timer::totalTime() - joyButtonTimer_ > 0.1f) {
+                    if (key.strength_ >= 95 && timer::totalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
                             controllers::singleKeyEvent(key);
-                        if(key.strength_ == 100)
+                        if(key.strength_ >= 95)
                             menus::keyEvent(true, key);
                         joyButtonTimer_ = timer::totalTime();
                     }

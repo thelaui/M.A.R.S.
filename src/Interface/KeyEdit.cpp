@@ -61,7 +61,7 @@ void KeyEdit::mouseLeft(bool down) {
 
 void KeyEdit::keyEvent(bool down, Key const& key) {
     if (pressed_) {
-        if (down && (key.navi_ != Key::nAbort) && key.strength_ == 100) {
+        if (down && (key.navi_ != Key::nAbort) && key.strength_ >= 95) {
             *value_ = key;
             pressed_ = false;
             menus::unFixKeyboard();

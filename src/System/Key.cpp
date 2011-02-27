@@ -54,9 +54,21 @@ Key::Key(unsigned int joyID, sf::Joy::Axis joyAxis, int strength):
     code_.joyButton_ = tmp.first;
     strength_ = tmp.second;
 
-    if ((joyAxis == 6 && strength == 0) || (joyAxis == 1 && strength == -100) || (joyAxis == 5 && strength == -100))
+    if ((joyAxis == 6 && strength == 0) || (joyAxis == 1 && strength == -100) ||
+        # if defined __WIN32__
+            (joyAxis == 3 && strength == -100)
+        # else
+            (joyAxis == 5 && strength == -100)
+        # endif
+        )
         navi_ = nUp;
-    else if ((joyAxis == 6 && strength == 180) || (joyAxis == 1 && strength == 100) || (joyAxis == 5 && strength == 100))
+    else if ((joyAxis == 6 && strength == 180) || (joyAxis == 1 && strength == 100) ||
+        # if defined __WIN32__
+            (joyAxis == 3 && strength == 100)
+        # else
+            (joyAxis == 5 && strength == 100)
+        # endif
+        )
         navi_ = nDown;
     else if ((joyAxis == 6 && strength == 270) || (joyAxis == 0 && strength == -100) || (joyAxis == 4 && strength == -100))
         navi_ = nLeft;
@@ -74,7 +86,13 @@ Key::Key(unsigned int joyID, unsigned int joyButton):
 
     if (joyButton == 0 || joyButton == 8 || joyButton == 9  || joyButton == 2)
         navi_ = nConfirm;
-    else if (joyButton == 6 || joyButton == 10)
+    else if (joyButton == 6 ||
+        # if defined __WIN32__
+             joyButton == 7
+        # else
+             joyButton == 10
+        # endif
+        )
         navi_ = nAbort;
     else if (joyButton == 4)
         navi_ = nUp;
@@ -94,22 +112,43 @@ std::pair<Key::AxisType, int> Key::convertFromSFML(sf::Joy::Axis joyAxis, int st
             if (strength < 0) result.first = aALup;
             else              result.first = aALdown;
             break;
+
         case sf::Joy::AxisZ:
-            result.first = aLT;
-            result.second = strength*0.5 + 50;
-            break;
+            # if defined __WIN32__
+                if (strength > 0) {
+                    result.first = aLT;
+                    result.second = strength;
+                }
+                else {
+                    result.first = aRT;
+                    result.second = std::abs(strength);
+                }
+            # else
+                result.first = aLT;
+                result.second = strength*0.5 + 50;
+            # endif
+                break;
+
         case sf::Joy::AxisR:
-            result.first = aRT;
-            result.second = strength*0.5 + 50;
-            break;
+            # if defined __WIN32__
+                if (strength < 0) result.first = aARup;
+                else              result.first = aARdown;
+            # else
+                result.first = aRT;
+                result.second = strength*0.5 + 50;
+            # endif
+                break;
+
         case sf::Joy::AxisU:
             if (strength < 0) result.first = aARleft;
             else              result.first = aARright;
             break;
         case sf::Joy::AxisV:
-            if (strength < 0) result.first = aARup;
-            else              result.first = aARdown;
-            break;
+            # if !defined __WIN32__
+                if (strength < 0) result.first = aARup;
+                else              result.first = aARdown;
+            # endif
+                break;
         case sf::Joy::AxisPOV:
             result.second = (strength == -1 ? 0 : 100);
             if (strength <= 45)       result.first = aPOVup;
@@ -132,12 +171,21 @@ sf::Joy::Axis Key::convertToSFML(AxisType joyAxis) {
         return sf::Joy::AxisY;
     else if(joyAxis == aLT)
         return sf::Joy::AxisZ;
-    else if(joyAxis == aRT)
-        return sf::Joy::AxisR;
+    else if(joyAxis == aRT) {
+        # if defined __WIN32__
+            return sf::Joy::AxisZ;
+        # else
+            return sf::Joy::AxisR;
+        # endif
+    }
     else if(joyAxis == aARleft || joyAxis == aARright)
         return sf::Joy::AxisU;
     else if(joyAxis == aARup || joyAxis == aARdown)
-        return sf::Joy::AxisV;
+        # if defined __WIN32__
+            return sf::Joy::AxisR;
+        # else
+            return sf::Joy::AxisV;
+        # endif
     else return sf::Joy::AxisPOV;
 }
 
