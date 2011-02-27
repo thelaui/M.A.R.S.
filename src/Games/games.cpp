@@ -36,7 +36,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace games {
 
     namespace {
-        Game* currentGame_(0);
+        Game* currentGame_(NULL);
         bool restart_(false);
         bool newGame_(true);
         GameType newGameType_(gNoGame);
@@ -136,6 +136,10 @@ namespace games {
 
     bool active() {
         return (!fadeIn_ && !fadeOut_);
+    }
+
+    bool ended() {
+        return currentGame_->ended();
     }
 
     GameType type() {

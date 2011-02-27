@@ -40,6 +40,8 @@ namespace timer {
     /// Returns the remaining Slow-Mo-time.
     float slowMoTime();
 
+    void resetSlowMotion();
+
     /// Returns the current frames per second.
     /// Calculated twice a second.
     float fps();

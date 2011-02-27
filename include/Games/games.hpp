@@ -61,6 +61,8 @@ namespace games {
     /// Returns false, when there is currently a transition from one game to another.
     bool active();
 
+    bool ended();
+
     /// Returns the GameType of the current Game.
     GameType type();
 

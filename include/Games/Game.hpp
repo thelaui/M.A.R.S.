@@ -57,6 +57,8 @@ class Game {
         /// Returns the elapsed time since it has been created.
         float elapsedTime() const;
 
+        bool ended() const;
+
     private:
         /// Stores the game's GameType
         games::GameType type_;

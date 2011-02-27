@@ -30,9 +30,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>.*/
 # include "Menu/InfoHide.hpp"
 # include "Menu/MainMenu.hpp"
 # include "Menu/PauseMenu.hpp"
+# include "Menu/EndMenu.hpp"
 # include "Menu/ExitConfirm.hpp"
 # include "Interface/toolTip.hpp"
 # include "defines.hpp"
+# include "Games/games.hpp"
 
 namespace menus {
 
@@ -48,8 +50,12 @@ namespace menus {
     }
 
     void showPause() {
-        if (!visible())
-            showWindow(PauseMenu::get());
+        if (!visible()) {
+            if (games::ended())
+                showWindow(EndMenu::get());
+            else
+                showWindow(PauseMenu::get());
+        }
     }
 
     void draw() {
@@ -58,8 +64,8 @@ namespace menus {
                 (*it)->draw();
 
             Vector2f viewPort = window::getViewPort();
-            text::drawScreenText(sf::String("M.A.R.S. " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH)
-                                            + " - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+            text::drawScreenText(sf::String("M.A.R.S. Alpha " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH)
+                                            + " (rev" + VERSION_REVIS + ") - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
 
             toolTip::draw();
         }

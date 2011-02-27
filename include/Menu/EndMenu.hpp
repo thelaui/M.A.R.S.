@@ -1,4 +1,4 @@
-/* hud.hpp
+/* EndMenu.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,26 +15,28 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HUD_HPP_INCLUDED
-# define HUD_HPP_INCLUDED
+# ifndef ENDMENU_HPP_INCLUDED
+# define ENDMENU_HPP_INCLUDED
 
-# include "System/Vector2f.hpp"
-# include "System/Color3f.hpp"
+# include "Interface/UiWindow.hpp"
 
-namespace hud {
-    void init();
+class EndMenu: public UiWindow {
+    public:
+        static UiWindow* get();
+        void checkWidgets();
+        void onShow() {}
 
-    void update();
-    void draw();
-    void drawMessages();
+        static void reset();
 
-    void displayPoints();
-    void displayStats(bool show = true);
-    bool statsVisible();
+    private:
+        EndMenu(int width, int height): UiWindow(width, height) {}
+        EndMenu(EndMenu const& copy);
 
-    void displayMessage(sf::String const& message, Color3f const& color = Color3f(1.0f, 1.0f, 0.55f));
-}
+        static UiWindow* instance_;
 
-# endif // HUD_HPP_INCLUDED
+        static bool kNew_, kOptions_, kToMainMenu_, kHide_;
+};
+
+# endif // ENDMENU_HPP_INCLUDED
 
 

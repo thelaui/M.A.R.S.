@@ -36,6 +36,8 @@ class TabStats: public HudElement {
         void display(bool show = true);
         void refresh();
 
+        bool visible() const;
+
     private:
         struct playerPtrCmp{
             bool operator()(Player* lhs, Player* rhs){

@@ -17,7 +17,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 
-# include "System/window.hpp"
+# include "Hud/hud.hpp"
 # include "System/settings.hpp"
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
@@ -51,7 +51,7 @@ namespace timer {
         }
 
         // get frametime, occasionally with slow motion
-        if ((!menus::visible() && window::isKeyDown(settings::C_statisticsKey))) {
+        if (!menus::visible() && hud::statsVisible()) {
             frameTime_ =  frameTime*0.05f;
             totalTime_ += frameTime_;
         }
@@ -103,6 +103,8 @@ namespace timer {
     float totalTime() { return totalTime_; }
 
     float slowMoTime() { return slowMoTimer_ < 0.f ? 0.f : slowMoTimer_*0.2f; }
+
+    void resetSlowMotion() { slowMoTimer_ = 0.f; }
 
     float fps()       { return fps_; }
 }

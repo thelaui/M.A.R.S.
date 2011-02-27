@@ -207,11 +207,11 @@ void TabStats::draw() const {
             int totalPoints(0), totalFrags(0), totalCannonShots(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
             Color3f teamColor = it->first->color();
             teamColor.v(1.f);
-            teamColor.s(0.8f);
+            teamColor.s(0.5f);
             std::multiset<Player*, playerPtrCmp>const& members = it->second;
             for (std::multiset<Player*, playerPtrCmp>::iterator currentPlayer = members.begin(); currentPlayer != members.end(); ++currentPlayer) {
                 if ((*currentPlayer)->controlType_ == controllers::cPlayer1 || (*currentPlayer)->controlType_ == controllers::cPlayer2)
-                    teamColor.gl4f(0.6 + std::sin(timer::totalTime()*100.f)*0.2f);
+                    teamColor.gl4f(0.4 + std::sin(timer::totalTime()*150.f)*0.1f);
                 else
                     teamColor.gl4f(0.2);
 
@@ -333,4 +333,8 @@ void TabStats::display(bool show) {
 
 void TabStats::refresh() {
     refresh_ = true;
+}
+
+bool TabStats::visible() const {
+    return visible_;
 }

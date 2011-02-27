@@ -160,8 +160,8 @@ UiWindow* NewGameMenu::get() {
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);
         tabList->addTab(tabTeamDeathMatch_);
-        tabList->addTab(tabCannonKeep_);
         tabList->addTab(tabGraveItation_);
+        tabList->addTab(tabCannonKeep_);
 
         instance_->addWidget(tabList);
 
@@ -253,7 +253,7 @@ void NewGameMenu::checkWidgets() {
     else if (tGI_) {
         tGI_ = false;
         if(settings::C_showInfoCK)
-            menus::showWindow(InfoCK::get());
+            menus::showWindow(InfoGIP::get());
     }
     else if (kWeaponOptions_) {
         kWeaponOptions_ = false;

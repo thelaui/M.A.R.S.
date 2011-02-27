@@ -66,6 +66,7 @@ Game::~Game() {
     zones::clear();
     decoObjects::clear();
     trailEffects::clear();
+    timer::resetSlowMotion();
 }
 
 void Game::update() {
@@ -73,30 +74,22 @@ void Game::update() {
     announcer::update();
     hud::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
-        if (teams::getFirstPoints() < pointLimit_) {
-            teams::update();
-            controllers::update();
-            ships::update();
-            balls::update();
-            spaceObjects::update();
-        }
-        else if(window::getInput().IsMouseButtonDown(sf::Mouse::Left) || window::getInput().IsMouseButtonDown(sf::Mouse::Right)
-                || window::getInput().IsKeyDown(sf::Key::Space) || window::getInput().IsKeyDown(sf::Key::Return)
-                || window::getInput().IsJoystickButtonDown(0, 0) || window::getInput().IsJoystickButtonDown(1, 0)
-                || window::getInput().IsJoystickButtonDown(0, 8) || window::getInput().IsJoystickButtonDown(1, 8)
-                || window::getInput().IsJoystickButtonDown(0, 9) || window::getInput().IsJoystickButtonDown(1, 9)
-                || window::getInput().IsJoystickButtonDown(0, 2) || window::getInput().IsJoystickButtonDown(1, 2) ) {
-            games::restart();
-            hud::displayStats(false);
-        }
-        else
-            hud::displayStats();
+        spaceObjects::update();
         particles::update();
-        zones::update();
-        decoObjects::update();
         items::update();
         postFX::update();
         trailEffects::update();
+
+        if (ended())
+            hud::displayStats();
+        else {
+            decoObjects::update();
+            ships::update();
+            balls::update();
+            teams::update();
+            controllers::update();
+            zones::update();
+        }
     }
     else
         startTime_ += timer::frameTime();
@@ -133,6 +126,8 @@ void Game::restart() {
     startTime_ = timer::totalTime();
     controllers::resetBots();
     stars::init();
+    hud::displayStats(false);
+    timer::resetSlowMotion();
 }
 
 games::GameType Game::type() const {
@@ -143,6 +138,8 @@ float Game::elapsedTime() const {
     return timer::totalTime() - startTime_;
 }
 
-
+bool Game::ended() const {
+    return teams::getFirstPoints() >= pointLimit_;
+}
 
 

@@ -66,7 +66,7 @@ Tutorial::Tutorial():
     teams::assignHomes(spaceObjects::addHome(Vector2f(SPACE_X_RESOLUTION+20, 450.f), settings::C_playerITeamColor));
     players::createShips();
 
-    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), Color3f(0.5f, 0.f, 0.5f));
+    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), settings::C_playerITeamColor.inverted());
 
     spaceObjects::addPlanet(Vector2f(680.f, 300.f), 150.f);
     spaceObjects::addPlanet(Vector2f(280.f, 650.f), 80.f);
@@ -199,7 +199,7 @@ void Tutorial::update() {
         case 16:
             if (timer::totalTime() > timer_ + 1.f) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut11), locales::getLocale(locales::TutText11), 11, false, false));
-                Team* evilTeam = teams::addTeam(new TutTeam(Color3f(0.5f, 0.f, 0.5f)));
+                Team* evilTeam = teams::addTeam(new TutTeam( settings::C_playerITeamColor.inverted()));
                 players::addPlayer(evilTeam, controllers::cBot);
                 evilTeam->setHome(evilHome_);
                 std::vector<Player*> evilPlayer(evilTeam->members());

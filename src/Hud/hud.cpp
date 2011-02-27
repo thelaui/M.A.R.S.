@@ -121,6 +121,10 @@ namespace hud {
         tabStats_->refresh();
     }
 
+    bool statsVisible() {
+        return tabStats_->visible();
+    }
+
     void displayMessage(sf::String const& message, Color3f const& color) {
         messages_.push_back(new Message(message, color));
     }
