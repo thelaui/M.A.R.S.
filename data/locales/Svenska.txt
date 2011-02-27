@@ -32,47 +32,60 @@
 021 Bottar
 022 Frag-gräns
 162 Poänggräns
-056 Weapon Options
-203 Weapons
-204 Specials
+056 Vapeninställningar
+203 Vapen
+204 Specialförmågor
+166 Spawn rate för PowerUps
+167 Bottarnas svårighetsgrad
+159 Spelinställningar
+257 Spelare
 
 // story information
 
-023 Vid år 3547, har galaxens alla civilisationer slätt sig ner på sina egna planeter, där de lever i fred och harmoni med sin omgivning.  \nMen utanför de kontemplativa miljöerna, rasar det STORA KRIGET.  \nSom en känd kämpe på din väg mot rikedom och evig ära, så måste du skydda din planet från dess mötande undergång av dina avundsjuka  \ngrannar! Kämpa i slaget, som du som en sann hjälte föddes för: RYMDBOLL. \nSkydda din planet från dödssfären, och besegra dina fiender genom att låta den krossa deras löjliga lilla glob.
+023 Vid år 3547, har galaxens alla civilisationer slått sig ner på sina egna planeter, där de lever i fred och harmoni med sin omgivning.\n\nMen utanför de kontemplativa miljöerna, rasar det STORA KRIGET.\n\nSom en känd kämpe på din väg mot rikedom och evig ära, så måste du skydda din planet från dess mötande undergång av dina avundsjuka grannar!\n\nKämpa i slaget, som du som en sann hjälte föddes för: RYMDBOLL.\n\nSkydda din planet från dödssfären, och besegra dina fiender genom att låta den krossa deras löjliga lilla glob.
 024 Sparka eller skjut bollen till din fiendes planet!
-025 Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj och \ndin självkänsla. \nDin sista chans att komma bort från det miserabla liv du fastnat i, är att bli en gladiator på den ärorika DÖDSMATCH-arenan. \nMotstå de andra kämparna och tjäna poäng genom att förstöra det skrot som de kallar skepp. \Stålsätt dig! \nDöd och ära väntar dig.
+025 Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj och din självkänsla.\n\nDin sista chans att komma bort från det miserabla liv du fastnat i, är att bli en gladiator på den ärorika DÖDSMATCH-arenan.\n\nSlåss med de andra kämparna och tjäna poäng genom att förstöra det skrot som de kallar skepp.\n\nStålsätt dig!\n\nDöd och ära väntar dig.
 026 Förgör så många fiender som möjligt!
-027 Förhandlingar har brutit samman! \nBåde du och dina grannar fick utstå enorma förluster i slutakten av det bestående STORA KRIGET. \nI ett sista försök att få övertaget, så förpliktas du att decimera fiendens resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH. \nSkydda dina kamrater och förgör dina fiender! \nLär dem en läxa som de aldrig glömmer.
+027 Förhandlingar har brutit samman!\n\nBåde du och dina grannar fick utstå enorma förluster i slutakten av det bestående STORA KRIGET.\n\nI ett sista försök att få övertaget, så förpliktas du att decimera fiendens resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH.\n\nSkydda dina kamrater och förgör dina fiender!\n\nLär dem en läxa som de aldrig glömmer.
 028 Förgör så många fiender som möjligt!
-029 Som om det inte vore nog med det STORA KRIGET, nu hotas hela ditt planetsystem av en källa av otrolig ondska: Ett gigantiskt skepp av okänt ursprung svävar över din galax, med sina massförstörelsevapen inriktade på hemplaneterna. \nSom ett tecken på cynism, så har angriparna släppt en fjärrstyrningsanordning som justerar härkomsten av död och rädsla. \nNå den först för att förvandla din fiendes hemplanet till ett ödsligt ställe! \nBli CANNONKEEPer.
+029 Som om det inte vore nog med det STORA KRIGET, så hotas nu hela ditt planetsystem av en källa av otrolig ondska: Ett gigantiskt skepp av okänt ursprung svävar över din galax, med sina massförstörelsevapen inriktade på hemplaneterna.\n\nSom ett tecken på cynism, så har angriparna släppt en fjärrstyrningsanordning som justerar källan till död och rädsla.\n\nNå den först för att förvandla din fiendes hemplanet till ett ödsligt ställe!\n\nBli CANNONKEEPer.
 030 Fånga fjärrstyrningsanordningen och behåll den så länge som möjligt!
+206 Eftersom det STORA KRIGET drastiskt minskade dina resurser, engagerades vetenskapsmännen för att hitta ett sätt att förgöra din fiende så effektivt som möjligt. De gjorde en hel del forskning och skapade så småningom ett nytt vapen med en otrolig egenskap: Det dödar omedelbart, men avfyrade projektiler är väldigt känsliga för gravitation och de är ganska svåra att hantera. Därför kallade dem det: INSTA-GRAVE!  \n \nOlyckligtvis så stal någon teknologin, så dina fiender kan också använda detta onda vapen. Nu är det din tur: Besegra tjuvarna i den stora GRAVE-ITATION-GROPEN för att återfå övertaget. \n \nVinn denna kamp, och segern i det STORA KRIGET kan bli din. 
+207 Förgör så många fiender som möjligt!
 
 
 // display options
 // tabs
 
 150 Gränssnitt
-165 Spelsätt
+165 Spel
 102 Grafik
 103 Ljud
 
+// interface Options
+
 104 Fönsterinställningar
-031 Visa felsökningsinformation
+031 Felsökningsinformation
 032 Bottarnas orientering
 033 Zoner
-034 AI-Spår
-035 Visa spelinformation
+034 AI-Banor
+035 Spelinformation
 036 Bilder per sekund
+215 Allmänna inställningar
 152 Språk
 153 Kortkommando för skärmdump
-054 File Format for Screenshots
+054 Filformat för skärmdump
+242 Kortkommando för statistik
+
+// graphics options
+
 037 Antal partiklar
 038 Antal partiklar
 039 Partiklarnas livslängd
 040 Spelinställningar
 041 Fullskärm
 042 V-Sync
-055 Display Tool Tips
+055 Visa inforutor
 163 Shader-effekter
 164 Tyvärr så stödjer inte din hårdvara shaders!
 
@@ -82,16 +95,18 @@
 
 // gameplay options
 
-166 Spawn rate för PowerUps
-167 Bottarnas svårighetsgrad
+216 Specialeffekter
 168 Antal explosioner för slowmotion
 169 Av
 
 // audio options
 
+123 Volyminställningar
 043 Musik
 044 Ljudeffekter
 045 Annonsör
+128 Spela nästa spår
+129 Uppspelningsinställningar
 
 // player options
 
@@ -100,10 +115,12 @@
 048 Sväng vänster
 049 Sväng höger
 050 Vapen
-175 Special
+175 Specialförmåga
+217 Skeppsinställningar
 051 Skepp
-052 Player Color
-053 Team Color
+052 Spelarfärg
+053 Lagfärg
+
 
 // about
 
@@ -117,7 +134,7 @@
 
 170 Medverkande
 171 Särskilt tack till:
-172 Översättningar:\n   Tyska: Sandra\n   Spanish: Gastón\n   Portugisiska: Vitor\n   Franska: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTestning och kreativt stöd:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Översättningar:\n Arabiska: Majid\n Kinesiska: Wecing\n Tjeckiska: Mates\n Finska: Paavo\n Franska: Astohan\n Tyska: Sandra\n Hindi: Antriksh & Aakanksh\n Ungerska: Papp Bence\n Italienska: Proch\n Polska: command_dos\n Portugisiska: Vitor\n Ryska: Drakmail\n Spanska: Gastón\n Svenska: Henrik\n\nUtvecklingsstöd: Werner och Deubeuliou\n\nTestning och kreativt stöd:\n Heinrich, Martin, Bastian, Sandra och Diana.
 
 // quit
 
@@ -141,15 +158,15 @@
 067 Bindestreck
 068 Delete
 069 Division
-070 Piltangent ned
+070 Ned
 071 End
 072 Likamedtecken
 073 Home
 074 Insert
 075 Vänster Alt
 076 Vänster parantes
-077 Vänster Control
-078 Piltangent vänster
+077 Vänster Ctrl
+078 Vänster
 079 Vänster skift
 080 Vänster meta
 081 Meny
@@ -157,13 +174,13 @@
 083 Page Down
 084 Page Up
 085 Pause
-086 Kommatecken
+086 Punkt
 087 Citattecken
 088 Höger Alt
 089 Höger parentes
-090 Höger Control
+090 Höger Ctrl
 091 Return
-092 Piltangent höger
+092 Höger
 093 Höger skift
 094 Höger meta
 095 Semikolon
@@ -172,67 +189,118 @@
 098 Minus
 099 Tilde
 100 Tabb
-101 Piltangent upp
+101 Upp
+
+// Joystick button names
+
+218 A-knappen
+219 B-knappen
+220 X-knappen
+221 Y-knappen
+222 Startknappen
+223 Bakåtknappen
+224 Höger bumper
+225 Vänster bumper
+226 Höger skjutknapp
+227 Vänster skjutknapp
+228 Styrkors upp
+229 Styrkors ner
+230 Styrkors vänster
+231 Styrkors höger
+232 Styrspak 1 upp
+233 Styrspak 1 ner
+234 Styrspak 1 vänster
+235 Styrspak 1 höger
+236 Styrspak 2 upp
+237 Styrspak 2 ner
+238 Styrspak 2 vänster
+239 Styrspak 2 höger
+240 Joystick
+241 Knapp
+
 
 // tutorial texts
 
+212 Hej, {PLAYER1_NAME}!
+213 Dåligt namn... Du får gärna skriva in ett bättre!
+
 107 Välkommen, Space Rookie!
-108 Vi glädjer oss över att ha rekryterat en blivande hjälte som du, som valt att bistå oss i det STORA KRIGET!\nVi antog att du behövde lite träning med ditt nya skepp.\nLåt oss börja med träningen...
+108 Vi glädjer oss över att ha rekryterat en blivande hjälte som du, {PLAYER1_NAME}, som valt att bistå oss i det STORA KRIGET!\n\nVi antog att du behövde lite träning med ditt nya skepp.\nLåt oss börja med träningen...
 
 109 Grundläggande rörelser...
-110 Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.\nAlla rörelser styrs av gravitationslagen. För att minska farten måste du vända dig om och accelerera i motsatt riktning. Styr ditt skepp med tangenterna
+110 Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.\n\nAlla rörelser styrs av gravitationslagen. För att minska farten måste du vända dig om och accelerera i motsatt riktning. Styr ditt skepp med tangenterna <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}>!
 
 111 Uppvärmning!
-112 Nå den rosa zonen!\nFörsök att inte krascha ditt helt nya skepp.
+112 Nå den rosa zonen!\n\nFörsök att inte krascha ditt helt nya skepp.
 
-113 Bra gjort!
+113 Bra gjort, {PLAYER1_NAME}!
 114 Styr nu tillbaka till din hemplanet och försök att landa ditt skepp genom att sakta sväva baklänges medan du närmar dig planeten.
 
 115 Bra jobbat!
-116 Att landa korrekt är inte lätt som en plätt, eller?\nDu skall lära dig det utantill.
+116 Att landa korrekt är inte lätt som en plätt, eller?\n\nDu skall lära dig det utantill.
 
 117 Någonting lite mer svårt...
-118 Försök att följa vägen som är markerad med de rosa zonerna!\n\nVi kommer att kontakta dig igen, efter att du har bemästrat detta. Sätt igång!
+118 Försök att följa vägen som är markerad med de rosa zonerna!\n\nVi kommer att kontakta dig igen, när du har bemästrat detta.\n\nSätt igång!
 
 119 Kanonbra!
-120 Du är den bästa nybörjaren jag någonsin sett.\nFörbered dig för lite explosiva saker.
+120 Du är den bästa nybörjaren vi någonsin sett.\n\nFörbered dig för lite explosiva saker.
 
 121 Att skjuta...
-122 För att besegra dina fiender så måste du veta hur du skjuter på dem!\nFör det ändamålet, tryck
-123 Ha nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo att fortsätta med övningarna.
+122 För att besegra dina fiender så måste du veta hur du skjuter på dem!\n\nFör det ändamålet, tryck <{PLAYER1_KEY_FIRE}>. \n\nHa nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo att fortsätta med övningarna.
 
-124 Bra landning!
-125 Du visar dig ju vara en bra pilot.\n\nSå, hur skulle vet smaka med lite vapen?
+124 Bra landning, {PLAYER1_NAME}!
+125 Du visar dig ju vara en bra pilot.\n\nSå, hur skulle det smaka med fler vapen?
 
 126 Vapenarsenalen...
-127 Jag vet att du har väntat på det här. När du har dockat kan du byta mellan några otroligt ondskefulla vapen.\nTryck
-128 för att öppna din arsenal.\nAnvänd sen
-129 för att välja ett vapen! Starta när du är redo!
+127 Vi vet att du har väntat på det här. När du har dockat kan du byta mellan några otroligt ondskefulla vapen. Håll in <{PLAYER1_KEY_FIRE}> för att öppna din arsenal.\n\nAnvänd sen <{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}> för att välja ett vapen! \n\nStarta när du är redo!
 
 130 Kämpa!
-131 Nu ska vi se hur du klarar av en nybörjare från en annan planet.\nSer ut som att han försöker förbättra sin flygförmåga.\nBesegra honom!
+131 Nu ska vi se hur du klarar av en nybörjare från en annan planet. Ser ut som att han försöker förbättra sin flygförmåga.\n\nBesegra honom!
 
 132 Imponerande!
-133 Du gjorde det! Som du kanske har märkt, så får du sk ryktespoäng för varje dödad fiende.\nDen lilla gröna siffran som poppar upp ovanför ditt skepp visar antalet. Det kommer att öka om du dödar en massa fiender på raken.
+133 Du gjorde det! Som du kanske har märkt, så dök en liten stjärna upp ovanför ditt skepp. Ju fler fiender du dödar, desto fler stjärnor kommer att visas. Men de är inte enbart en fragindikator! \n\nLanda igen och vi ska visa dig vad mer stjärnor kan vara bra för.
 
-134 Se upp!
-135 Det finns ingen tid åt vila.\nVåra fiender har skickat ut en av deras riktiga krigare för hämnd!\nDet finns inget som jag kan göra för dig...
+208 Specialförmågor...
+209 Som utlovat, så ska vi berätta meningen med stjärnorna. De är en resurs för ditt skepps imponerande kraftfulla extra förmågor. \n\nTill exempel kan du hela dig inklusive närbelägna vänner, spränga eller frysa skepp inom ett visst avstånd! \n\nJu fler stjärnor du har, desto större område och styrka får förmågan.
+
+210 Val...
+211 För att växla mellan förmågorna, behöver du bara hålla in <{PLAYER1_KEY_SPECIAL}>. För att välja en, så kan du cykla igenom dem med <{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}>! \n\nFör den här lektionen, välj "Freezer"! \n\nStarta när du har den!
+
+245 Halt, {PLAYER1_NAME}!
+246 Vi sade till dig att välja frysen, men du har valt en annan förmåga!\n\nVänligen landa igen och ta frysen!
+
+247 Frysen...
+248 Detta är en kraftfull specialförmåga som fryser närbelägna skepp. \n\nDu behöver flyga nära din fiende och trycka <{PLAYER1_KEY_SPECIAL}> för att frysa honom. Se honom sakta förlora livet... tills han dör!
+
+249 Öva!
+250 Försök nu att frysa din fiende! \n\nFör den här övningen kommer vi att ge dig ett antal fragstjärnor. Men kom ihåg: I verkligheten måste du krossa motståndare för att få dessa stjärnor!
+
+251 Du missade honom, {PLAYER1_NAME}!
+252 Försök igen. Vi kommer att fylla på dina fragstjärnor.
+
+253 Du gjorde det!
+254 Åk nu tillbaka till din planet och välj en annan specialförmåga!
+
+255 Se upp, {PLAYER1_NAME}!
+256 Det finns ingen tid åt ytterligare övning!\n\nVåra fiender har skickat ut två av deras riktiga krigare för hämnd!
+
+134 Ge dem stryk!
+135 Bevisa dina kunskaper! Få minst fem poäng genom att döda dem! Din nuvarande poäng visas bredvid ditt namn!\n\nVi skickar in en erfaren krigare att assistera dig, {PLAYER1_NAME}!
 
 136 Otroligt!
-
-137 Du klarade av alla uppdragen med framgång. Så vad göra nu?\nLåt oss ta en titt på inställningsmenyn. Där kan man justera en massa... tja... inställningar.\nTill exempel så kan du välja stil och färg på skeppet, eller kanske ändra ditt namn...
+137 Du klarade av alla våra uppdrag med framgång. Så vad göra nu?\n\nLåt oss ta en titt på inställningsmenyn. Där kan man justera en massa... tja... inställningar.\n\nTill exempel så kan du välja stil och färg på skeppet, eller kanske ändra ditt namn...
 
 138 Vem är bäst?
-139 Du kan visa en lista med frags, poäng osv med <Tab>.\nDessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och avståndet till den bästa.
+139 Du kan visa en lista med frags, poäng osv med <{STATISTICS_KEY}>.\n\nDessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och avståndet till den bästa.
 
-140 Gratulerar!
+140 Gratulerar, {PLAYER1_NAME}!
 141 Du har klarat samtliga övningar. Du är nu reda att kämpa i det STORA KRIGET. Om du vill fortsätta att öva, så behöver du bara vänta tills fienden återskapas. Du kan sluta din övning med <Esc>.\n\nHa en fantastisk stund med M.A.R.S.!
 
 142 Du misslyckades!
-143 Skitbra, du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. Vänta bara några sekunder...
+143 Skitbra {PLAYER1_NAME}. Du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. Vänta bara några sekunder...
 
 144 Såg du?
-145 Din hälsa håller på att ta slut! Håll ett öga på den gröna hälsomätaren. Det är bäst att landa när den är för låg.
+145 Din hälsa håller på att ta slut! Håll ett öga på den övre hälsomätaren. Det är bäst att landa när den är för låg.
 
 146 Såg du?
 147 Ditt bränsle håller på att ta slut! Håll ett öga på den gula bränslemätaren. Det är bäst att landa när den är för låg.
@@ -244,46 +312,50 @@
 
 154 Poäng
 155 Frags
+244 Kanonskott
 156 Vådaskott
 157 Självmord
 158 Dödsfall
-159 Rykte
 160 Totalt:
 161 Statistik
 
 // Tool tips options menu
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Visar antalet bilder som beräknas per sekund.\nOm värdet alltid är väldigt lågt (<20), så bör du justera några inställningar under grafiktabben!
+177 Visar antalet aktiva partiklar.
+178 Stänger av inforutor som denna.
+179 Ställer in filformatet som används när skärmdumpar sparas.
+180 Trycker man på den här tangenten, kommer en skärmdump att sparas på {CONFIG_PATH}screenshots/
+181 Trycker man på den här tangenten växlar musiken till nästa spår.
+182 Om så många skepp exploderar samtidigt, aktiveras slowmotioneffekten.
+183 Visar varje bots jobb.
+184 Visar taktiska zoner, vilket är viktigt för den artificiella intelligensen.
+185 Visar bottarnas beräknade banor.
+186 Maximerar fönstret, så att det upptar hela skärmen.
+187 Gör att spelet uppdaterar enligt uppdateringsfrekvensen på din skärm.\nAktivering gör oftast spelet smidigare.
+188 Aktiverar häftiga effekter som t.ex soldis, men kan minska prestandan.
+189 Sätter storleken på fönstret.\nPåverkar både fullskärm och fönsterläge.
+190 Med högupplösta skärmar, gör detta val att stjärnfältet loopar senare.\nInaktivering kan öka prestandan något.
+191 Justerar det globala antalet partiklar.\nLägre värden ökar prestandan avsevärt.
+192 Justerar partiklarnas livslängd.\nLägre värden ökar prestandan avsevärt.
+193 Justerar volumen på bakgrundsmusiken.
+194 Justerar volumen på ljudeffekterna.
+195 Justerar volymen på annonsörens röst.
+243 Trycker man på här tangenten medan man spelar ett spel, så dyker ett fönster upp som visar spelstatistiken.
 
 // Tool tips in the start-a-new-game-window
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
-202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+196 Väljer lag för de lokala spelarna.
+197 Tillåter lokala spelare.
+198 Justerar mängden skepp som kontrolleras av den artificiella intelligensen.
+199 Poänggräns som behöver nås av ett lag för att vinna spelet.
+200 Poänggräns som behöver nås av en spelare för att vinna spelet.
+201 Justerar styrkan på bottarna.
+202 Justerar mängden av Power-Ups som kommer att spawnas under spelet.\n Noll stänger av Power-Ups helt.
 
-// 205
+// Interface notifications
 
-
+205 Skärmdump sparad!
+214 Nästa musikspår!
+ 
+// 258
