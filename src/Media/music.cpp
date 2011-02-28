@@ -33,8 +33,8 @@ namespace music {
         // for Music there is only one channel... who wants to have multiple music files played at once?
         sf::Music                musicChannel_;
         bool                     initialized_(false);
-        int                      currentTrack_;
         std::vector<std::string> files_;
+        std::vector<int>         playList_;
 
         void init() {
             // get files
@@ -57,6 +57,14 @@ namespace music {
             initialized_ = true;
         }
 
+        void play(int nextTrack) {
+            sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
+            musicChannel_.OpenFromFile(fileName);
+            musicChannel_.Play();
+            musicChannel_.SetLoop(false);
+            musicNotify::show(files_[nextTrack]);
+        }
+
     }
 
     void update() {
@@ -77,35 +85,57 @@ namespace music {
     }
 
     void playMenuMusic() {
+        if (!initialized_) init();
+
         musicChannel_.SetLoop(true);
         sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
         musicChannel_.OpenFromFile(fileName);
         musicChannel_.Play();
-        currentTrack_ = -1;
+        playList_.clear();
     }
 
     void playGameMusic() {
         if (!initialized_) init();
 
-        int nextTrack(currentTrack_);
-        while (nextTrack == currentTrack_ && files_.size() > 1)
-            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+        int nextTrack(0);
 
-        currentTrack_ = nextTrack;
+        if (files_.size() > 1) {
+            if (settings::C_audioRandom) {
+                if (playList_.empty())
+                    nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                else {
+                    nextTrack = playList_.back();
+                    while (nextTrack == playList_.back())
+                        nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                }
+            }
+            else {
+                if (!playList_.empty())
+                    nextTrack = (playList_.back()+1)%files_.size();
+            }
+        }
 
-        sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
+        playList_.push_back(nextTrack);
 
-        musicChannel_.OpenFromFile(fileName);
-        musicChannel_.Play();
-        musicChannel_.SetLoop(false);
-
-        musicNotify::show(fileName.ToAnsiString());
+        play(nextTrack);
     }
 
     void next() {
-        if (currentTrack_ != -1) {
+        if (!playList_.empty()) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
+        }
+    }
+
+    void previous() {
+        if (!playList_.empty()) {
+            stop();
+            hud::displayMessage(*locales::getLocale(locales::PreviousTrackNotify));
+
+            if (playList_.size() > 1)
+                playList_.pop_back();
+
+            play(playList_.back());
         }
     }
 

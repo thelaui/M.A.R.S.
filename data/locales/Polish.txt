@@ -32,9 +32,13 @@
 021 Boty
 022 Limit Fragów
 162 Limit Punktów
-056 Weapon Options
-203 Weapons
-204 Specials
+056 Ustawienia Broni
+203 Broń
+204 Specialne wyposażenie
+166 Częstotliwość Pojawiania Się Bonusu
+167 Sprytność Botów 
+159 Opcje gry
+257 Gracze
 
 // story information
 
@@ -46,7 +50,8 @@
 028 Zniszcz tylu wrogów, ilu tylko potrafisz!
 029 Jakby WIELKIEJ WOJNY nie było zbyt wiele... Twój system planetarny jest nękany przez nowe źródła niewyobrażalnego zła: Wielkie pojazdy kosmiczne nieznanych najeźdźców, lewitują nad galaktyką, grożąc domowym planetom bronią masowej zagłady. \nJako znak cynizmu, najeźdźcy zrzucili zdalne sterowanie aby spotęgować strach i aby znane było pochodzenie śmierci. \nZdobądź to pierwszy, aby obrócić planetę Twojego przeciwnika w miejsce spustoszenia! \nBądź Trzymającym Władzę.
 030 Zdobądź pilot zdalnego sterowania i trzymaj tak długo, jak tylko zdołasz!
-
+206 WIELKA WOJNA spowodowała niewyobrażalną redukcję zasobów, więc naukowcy zmuszeni zostali do wynalezienia skutecznej broni, której produkcja nie wymagała zużycia deficytowych zasobów planety. Stworzyli nową broń z niesomowitymi właściwościami: zabija natychmiastowo, ale duży wpływ na wystrzelony pocisk ma grawitacja, przez co trudno ją operować. Dlatego nazwali ją: INSTA-GRAVE! \n \nNiestety, ktoś ukradł technologię, przez co wrogowie także mogą używać tej diabelskiej technologii. Teraz Twoja kolej: Rozgrom tych złodziei w wielkiej bitwie GRAVE-ITATION-PIT, aby odzyskać przewagę. \n \nWygraj tą bitwę, a zwycięstwo w WIELKIEJ WOJNIE może należeć do Ciebie.
+207 Zniszcz tyle wrogich pojazdów ile tylko zdołasz!
 
 // display options
 // tabs
@@ -56,51 +61,60 @@
 102 Grafika
 103 Dźwięk
 
+// interface Options
+
 104 Opcje Okna
 031 Pokazuj Informacje o Przetwarzaniu
-032 Orientacja Botów
+032 Status Pracy Botów
 033 Strefy
 034 Ścieżki Sztucznej Inteligencji
 035 Pokazuj Informacje w Grze
 036 Klatki Na Sekundę
+215 Ogólne Ustawienia
 152 Język
-153 Klawisz Zrzutu Ekranu
-054 File Format for Screenshots
+153 Klawisz do Zrzutu Ekranu
+054 Format Pliku dla Zrzutów Ekranu
+242 Klawisz dla Statystyk
+
+// graphics options
+
 037 Liczba Cząstek
 038 Liczba Cząstek
 039 Długość Życia Cząstki
 040 Ustawienia Gry
 041 Pełny Ekran
 042 Synchronizacja Pionowa
-055 Display Tool Tips
+055 Wyświetlaj podpowiedzi
 163 Efekty Cieniowania (shader)
 164 Niestety, Cieniowanie Nie Jest Obsługiwane Przez Twój Sprzęt!
-
 151 Duża Rozdzielczość Gwiezdnego Pola
 173 Rozdzielczość
 174 Głębia kolorów
 
 // gameplay options
 
-166 Częstotliwość Pojawiania Się Bonusu
-167 Sprytność Botów 
+216 Efekty Specjalne
 168 Eksplozja w Zwolnionym Tempie
 169 Wył.
 
 // audio options
 
-043 Głośność Muzyki
-044 Głośność Dźwięków
-045 Głośność Zapowiedzi
+123 Opcje Głośności
+043 Muzyka
+044 Dźwięki
+045 Zapowiedzi
+128 Następna ścieżka
+129 Opcje odtwarzania
 
 // player options
 
 046 Imię
-047 Do Przodu
+047 Przyśpieszanie
 048 Skręt w Lewo
 049 Skręt w Prawo
 050 Broń
 175 Specjalna Broń
+217 Opcje Pojazdu
 051 Pojazd
 052 Kolor Gracza
 053 Kolor Drużyny
@@ -116,8 +130,8 @@
 // credits
 
 170 Credits
-171 Specjalne Podziękowania Dla:
-172 Translations:\n   German: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests und creative support:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+171 Specjalne Podziękowania za:
+172 Tłumaczenia:\n Arabski: Majid\n Chiński: Wecing\n Czeski: Mates\n Fiński: Paavo\n Francuski: Ludovic\n Niemiecki: Atto\n Hinduski: Antriksh & Aakanksh\n Węgierski: Papp Bence\n Włoski: Proch\n Polski: command_dos\n Portugalski: Vitor\n Rosyjski: Drakmail\n Hiszpański: Gastón\n Szwedzki: Henrik\n\nWsparcie programowania:\n Werner and Deubeuliou\n\nTesty i wsparcie w tworzeniu:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
@@ -174,18 +188,49 @@
 100 Tab
 101 Strzałka w Górę
 
+// Joystick button names
+
+218 Przycisk A
+219 Przycisk B
+220 Przycisk X
+221 Przycisk Y
+222 Przycisk Start
+223 Przycisk Back
+224 Prawy Bumper
+225 Lewy Bumper
+226 Prawy cyngiel
+227 Lewy cyngiel
+228 W górę
+229 W dół
+230 W lewo
+231 W prawo
+232 Drążek 1 Góra
+233 Drążek 1 Dół
+234 Drążek 1 Lewo
+235 Drążek 1 Prawo
+236 Drążek 2 Góra
+237 Drążek 2 Dół
+238 Drążek 2 Lewo
+239 Drążek 2 Prawo
+240 Joystick
+241 Przycisk
+
+
 // tutorial texts
 
+212 Witaj, {PLAYER1_NAME}!
+213 Co to za nazwa... Spróbuj wprowadzić nieco lepszą!
+
 107 Witaj Wojowniku Przestworzy!
-108 Jesteśmy dumni, że możemy przyjąć do swych szeregów wschodzącą gwiazdę taką jak Ty, gotową przyłączyć się do WIELKIEJ WOJNY!\nZauważyliśmy jednak, że potrzebujesz nieco praktyki i obycia ze swym nowym pojazdem kosmicznym.\nZatem, rozpocznijmy trening...
+108 Jesteśmy dumni, że możemy przyjąć do swych szeregów wschodzącą gwiazdę taką jak Ty, {PLAYER1_NAME}, gotową przyłączyć się do WIELKIEJ WOJNY!\nZauważyliśmy jednak, że potrzebujesz nieco praktyki i obycia ze swym nowym pojazdem kosmicznym.\nZatem, rozpocznijmy trening...
 
 109 Podstawowe poruszanie się...
-110 Kontrola pojazdu, to podstawowe zadanie dla mistrza.\nKażdy ruch tutaj podlega prawom grawitacji. Aby zwolnić musisz się obrócić i przyśpieszać w odwrotnym kierunku. Kontroluj swój pojazd używając klawiszy
+110 Kontrola pojazdu, to podstawowe zadanie dla mistrza.\nKażdy ruch tutaj podlega prawom grawitacji. Aby zwolnić musisz się obrócić i przyśpieszać w odwrotnym kierunku. Kontroluj swój pojazd używając klawiszy <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>
 
 111 Rozgrzewka!
 112 Leć do różowej strefy!\nPostaraj się nie zniszczyć swojego nowego pojazdu...
 
-113 Dobra Robota!
+113 Dobra Robota, {PLAYER1_NAME}!
 114 Teraz powróć do swojej planety i spróbuj wylądować swoim statkiem, powoli, lekko przyhamowując, kiedy będziesz zbliżał się do celu (wylądowania na swojej planecie).
 
 115 Świetna robota!
@@ -198,38 +243,59 @@
 120 Jesteś najlepszym rekrutem, jakiego widziałem.\nTeraz przygotuj się nieco do strzałów, ognia i wybuchów ;)
 
 121 Strzelanie...
-122 Aby pokonać nieprzyjacół, musisz wiedzieć, jak ich zestrzelić!\nAby tego dokonać naciśnij
-123 Pobaw się trochę strzelając, a kiedy będziesz gotów kontynuować szkolenie, to wyląduj.
+122 Aby pokonać nieprzyjacół, musisz wiedzieć, jak ich zestrzelić!\nAby tego dokonać naciśnij <{PLAYER1_KEY_FIRE}>. \nPobaw się trochę strzelając, a kiedy będziesz gotów kontynuować szkolenie, to wyląduj.
 
 124 Dobre lądowanie!
 125 Przeistaczasz się w wielkiego pilota.\n\nCo powiesz na powiększenie asortymentu z bronią?
 
 126 Broń...
-127 Wiem, że czekałeś na to. Po wylądowaniu można przebierać w iście diabelskim asortymencie broni.\nNaciśnij
-128 , aby dostać się do arsenału.\nNastępnie użyj
-129 aby wybrać broń! Odlatujesz z lądowiska i gotowe!
+127 Wiem, że czekałeś na to. Po wylądowaniu można przebierać w iście diabelskim asortymencie broni.\nNaciśnij <{PLAYER1_KEY_FIRE}>, aby dostać się do arsenału.\nNastępnie użyj <{PLAYER1_KEY_LEFT}> i <{PLAYER1_KEY_RIGHT}>, aby wybrać broń! \nOdlatujesz z lądowiska i gotowe!
 
 130 Walka!
 131 Teraz zobaczmy, jak sobie poradzisz z rekrutem innej planety.\nWygląda na to, że próbuje pokazać, czego się nauczył.\nRozwal go!
 
 132 Doskonale!
-133 Udało Ci się! Pewnie, jak zauważyłeś, zarobiłeś punkty reputacji - dostaje się je za każdego zestrzelonego nieprzyjaciela.\nMały zielony numerek pokazujący się nad Twoim statkiem mówi o ilości tych punktów. Powiększa się, jeśli zestrzelisz więcej nieprzyjacielskich statków w jednym locie.
+133 Udało Ci się! Pewnie, jak zauważyłeś, zarobiłeś punkty reputacji - dostaje się je za każdego zestrzelonego nieprzyjaciela.\nGwizdki (FragStars) pokazujące się nad Twoim statkiem mówą o ilości tych punktów. Pomnażają się, jeśli zestrzelisz więcej nieprzyjacielskich statków w jednym locie.
 
-134 Strzeż się!
-135 Tu nie ma czasu na odpoczynek.\nNasi wrogowie, w akcie desperacji, przysłali jednego ze swoich lepszych wojowników!\nChyba już nic nie mogę dla Ciebie zrobić...
+208 Specialne Możliwości...
+209 Jak było obiecane, opowiemy Ci o możliwościach gwiazd (FragStars). Gwiazdki to złoża mocy, które mogą być wykorzystane przez Twój statek i jego specjalne zdolności. Możesz, na przykład, uzdrowić siebie oraz przelatujących w pobliżu przyjaciół, przedmuchać lub zamrozić statki w niedalekiej odległości od siebie! \nIm więcej gwiazd, tym większy zasięg i moc Twoich zdolności.
+
+210 Wybór...
+211 Aby móc przełączać się pomiędzy dostępnymi zdolnościami, wystarczy przytrzymać <{PLAYER1_KEY_SPECIAL}>. Aby wybrać jedną z nich, możesz przebierać między tymi zdolnościami używając <{PLAYER1_KEY_LEFT}> i <{PLAYER1_KEY_RIGHT}>! \nNa tej lekcji wybierz "Freezer"! Po dokonaniu wyboru wystartuj i gotowe - już masz!
+
+245 Poczekaj, {PLAYER1_NAME}!
+246 Miałeś wybrać Freezer, a wybrałeś inną specjalną zdolność!\nProszę wylądować i wybrać Freezer jeszcze raz!
+
+247 Freezer...
+248 To jest zdolność, która pozwala zamrażać statki znajdujące się nieopodal Ciebie. \nMusisz podlecieć blisko wrogiego pojazdu i przycisnąć <{PLAYER1_KEY_SPECIAL}>, aby go zamrozić. Obserwuj, jak powoli uchodzi z niego życie... dopóki nie umrze!
+
+249 Praktyka!
+250 Teraz spróbuj zamrozić wroga! \nBędziesz do tego potrzebować nieco gwiazd. Pamiętaj jednak: w rzeczywistości musisz rozwalić przeciwnika, aby dostać te gwiazdy!
+
+251 Spudłowałeś, {PLAYER1_NAME}!
+252 Spróbuj jeszcze raz. Napełnimy Twoją gwiezdną moc.
+
+253 Udało Ci się!
+254 Teraz wracaj na planetę i wybierz następną specjalną zdolność!
+
+255 Strzeż się, {PLAYER1_NAME}!
+256 Nie ma czasu na dalsze nauki!\nNasi wrogowie, żeby zemścić się, przysłali dwóch swoich wojowników!
+
+
+134 Pokonaj ich!
+135 Pokaż swoje umiejętności! Zdobądź przynajmniej pięć punktów zabijając ich! Twój wynik jest wyświetlany obok Twojej nazwy!\n{PLAYER1_NAME}, przyślemy Ci doświadczonego wojownika, który będzie udzielał Ci asysty!
 
 136 Niewiarygodne!
-
 137 Z powodzeniem wykonałeś wszystkie zadania. Co teraz robić?\nPopartzmy na Menu Opcji. Tam możesz ustawić, ilość... hmmm... opcje.\nNa przykład, możesz wybrać sobie styl swojego pojazdu, jego kolor i zmienić nazwę...
 
 138 Kto jest najlepszy?
-139 Możesz wyświetlić listę Fragów, punktów, statystyki naciskając <Tab>.\nLiczby obok Twojej nazwy, pokazują ilość Fragów zdobytych przez Ciebie i obrazują, jak daleko Ci do najlepszych. 
+139 Możesz wyświetlić listę Fragów, punktów, statystyki naciskając <{STATISTICS_KEY}>.\nObok Twojej nazwy, pokazują się  zdobyte przez Ciebie punkty i obrazują, jak daleko Ci do najlepszych. 
 
-140 Gratulacje!
+140 Gratulacje, {PLAYER1_NAME}!
 141 Ukończyłeś samouczka. Teraz jesteś gotów do walki w WIELKIEJ WOJNIE. Jeśli chcesz ćwiczyć, poczekaj aż przeciwnik się pojawi ponownie. Możesz jednak zakończyć trening naciskając klawisz <Esc>.\n\nUdanej rozgrywki w  M.A.R.S.!
 
 142 Oblałeś!
-143 Świetnie, właśnie rozwaliłeś swój nowiutki pojazd! W porządku... damy Ci nowego. Poczekaj sekundkę...
+143 Świetnie {PLAYER1_NAME}, właśnie rozwaliłeś swój nowiutki pojazd! W porządku... damy Ci nowego. Poczekaj sekundkę...
 
 144 Zaobserwowałeś?
 145 Twojego życia ubywa! Zwracaj uwagę na zielony "pasek życia". Lepiej wyląduj, kiedy jest go zbyt mało.
@@ -244,6 +310,7 @@
 
 154 Punkty
 155 Wrogów
+244 Strzały Armaty
 156 Przyjacieli
 157 Samobójstwa
 158 Poległeś
@@ -253,37 +320,41 @@
 
 // Tool tips options menu
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Pokazuje ilość klatek w przeliczeniu na jedną sekundę.\nJeśli ta wartość jest zawsze mała (<20), powinieneś dopasować ustawienia w zakładce Grafika!
+177 Wyświetla ilość aktywnych cząstek.
+178 Wyłącza podpowiedzi - takie jak ta...
+179 Ustawia format pliku używany przy zrzucie ekranu.
+180 Po naciśnięciu tego klawisza, zachowywany jest zrzut ekranu w {CONFIG_PATH}screenshots/
+181 Po naciśnięciu tego klawisza, odtwarzana jest następna ścieżka z muzyką.
+182 Ilość statków eksplodująca jednocześnie, kiedy to załączany jest efekt zwolnionego tempa.
+183 Wyświetla pracę każdego BOT'a.
+184 Wyświetla strefy taktyczne, które są ważne dla sztucznej inteligencji.
+185 Wyświetla ścieżkę wyliczoną przez BOT'y.
+186 Maksymalizuje okno, zakrywając cały ekran.
+187 Aktualizuje obraz dopasowując do częstotliwości odświerzania Twojego monitora.\nUżywając tej opcji, zazwyczaj obraz wyświetlany jest bardziej precyzyjnie.
+188 Dostęp do takich efektów, jak mgiełka ciepła. Uwaga, zmniejsza wydajność gry.
+189 Ustala wymiary okna.\nDotyczy to zarówno trybu pełnoekranowego, jak i trybu w oknie.
+190 Z wyświetlaczami wysokiej rozdzielczości, opcja ta sprawia, że gwiezdne pole jest mniej razy powtarzane.\nRezygnując z tej opcji, możesz nieznacznie podnieść wydajność gry.
+191 Ustawia globalną liczbę cząstek.\nMniejsze wartości podniosą wydajność gry dosyć znacznie.
+192 Ustawia globalny czas życia cząstki.\nMniejsze wartości podniosą wydajność gry dosyć znacznie.
+193 Ustawia głośność muzyki w tle.
+194 Ustawia głośność efektów dźwiękowych.
+195 Ustawia głośność głosu zapowiedzi.
+243 Kiedy ten klawisz zostanie naciśnięty w trakcie gry, spowoduje wyświetlenie okna ze statystyką bieżącej rozgrywki.
 
 // Tool tips in the start-a-new-game-window
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
-202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+196 Ustawiania w drużynie gracza lokalnego.
+197 Włącza graczy lokalnych.
+198 Ustawia ilość pojazdów kontrolowanych przez sztuczną inteligencję.
+199 Limit punktów do osiągnięcia, aby wygrać grę przez drużynę.
+200 Limit punktów do osiągnięcia, aby wygrać grę przez gracza.
+201 Ustawia siłę BOTów.
+202 Ustawia wartość z jaką częstotliwością będą pojawiać się Bonusu na planszy.\n Zero wyłącza dostępność Bonusów.
 
-// 205
+// Interface notifications
 
+205 Zrzut ekranu zapisany!
+214 Następna ścieżka dźwiękowa!
 
+// 258

@@ -55,6 +55,7 @@ target_link_libraries(
 		${OPENGL_LIBRARIES}
 		${XRANDR_LIBRARY}
 		${FRIBIDI_LIBRARY}
+		${TAG_LIBRARY}
 )
 
 #####################################################################

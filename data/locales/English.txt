@@ -105,6 +105,8 @@
 045 Announcer
 128 Play Next Track
 129 Playback Settings
+261 Play Previous Track
+262 Play Tracks in Random Order
 
 // player options
 
@@ -324,6 +326,8 @@
 179 Sets the format being used when screenshots are saved.
 180 When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/
 181 Pressing this key switches to the next music track.
+263 Pressing this key switches to the previous music track.
+264 Enables music play back in a random sequence. 
 182 If that many ships explode simultaneously, the slow motion effect kicks in.
 183 Displays the job of each bot.
 184 Displays tactical zones, which are important for the artificial intelligence.
@@ -354,5 +358,8 @@
 
 205 Screenshot saved!
 214 Next music track!
+260 Previous music track!
+258 Artist: 
+259 Album: 
 
-// 258
+// 265

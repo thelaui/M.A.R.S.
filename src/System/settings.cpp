@@ -67,7 +67,9 @@ namespace settings {
     int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
     bool        C_shaders =                 false;
     Key         C_screenShotKey =           Key(sf::Key::F12);
+    bool        C_audioRandom =             false;
     Key         C_audioNextKey =            Key(sf::Key::F8);
+    Key         C_audioPreviousKey =        Key(sf::Key::F7);
     Key         C_statisticsKey =           Key(sf::Key::Tab);
     std::string C_configPath =              "";
     std::string C_dataPath =                "";
@@ -182,7 +184,9 @@ namespace settings {
             outStream << "[resolutionX] "           << C_resX << std::endl;
             outStream << "[resolutionY] "           << C_resY << std::endl;
             outStream << "[colorDepth] "            << C_colorDepth << std::endl;
+            outStream << "[audioRandom] "           << (C_audioRandom ? "true" : "false") << std::endl;
             outStream << "[audioNextKey] "          << C_audioNextKey << std::endl;
+            outStream << "[audioPreviousKey] "      << C_audioPreviousKey << std::endl;
             outStream << "[screenShotKey] "         << C_screenShotKey << std::endl;
             outStream << "[statisticsKey] "         << C_statisticsKey << std::endl;
             outStream << "[screenShotFormat] "      << C_screenShotFormat << std::endl;
@@ -642,8 +646,18 @@ namespace settings {
                     iss >> value;
                     C_colorDepth = value;
                 }
+                else if (inputLine == "[audioRandom]") {
+                    std::string value;
+                    iss >> value;
+                    if (value == "true")        C_audioRandom = true;
+                    else if (value == "false")  C_audioRandom = false;
+                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                }
                 else if (inputLine == "[audioNextKey]") {
                     iss >> C_audioNextKey;
+                }
+                else if (inputLine == "[audioPreviousKey]") {
+                    iss >> C_audioPreviousKey;
                 }
                 else if (inputLine == "[screenShotKey]") {
                     iss >> C_screenShotKey;

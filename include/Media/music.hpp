@@ -35,6 +35,8 @@ namespace music {
     void playGameMusic();
     /// Switches to the next track.
     void next();
+    /// Switches to the previous track.
+    void previous();
     /// Stops playing Music.
     void stop();
 

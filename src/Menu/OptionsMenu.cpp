@@ -135,7 +135,9 @@ UiWindow* OptionsMenu::get() {
         tabAudio->addWidget(new Slider(locales::getLocale(locales::SoundVolume), locales::getLocale(locales::ttSoundVolume), &soundVolume_, 0, 100, Vector2f(20,80), 540, 200, true));
         tabAudio->addWidget(new Slider(locales::getLocale(locales::AnnouncerVolume), locales::getLocale(locales::ttAnnouncerVolume), &announcerVolume_, 0, 100, Vector2f(20,100), 540, 200, true));
         tabAudio->addWidget(new LabeledBox(locales::getLocale(locales::PlaybackSettings), Vector2f(10, 140), 560, 60));
-        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioNextKey), locales::getLocale(locales::ttAudioNextKey), &settings::C_audioNextKey, Vector2f(20,170), 540, 200));
+        tabAudio->addWidget(new Checkbox(locales::getLocale(locales::AudioRandom), locales::getLocale(locales::ttAudioRandom), &settings::C_audioRandom, Vector2f(20,170), 150));
+        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioNextKey), locales::getLocale(locales::ttAudioNextKey), &settings::C_audioNextKey, Vector2f(20,190), 540, 200));
+        tabAudio->addWidget(new KeyEdit(locales::getLocale(locales::AudioPreviousKey), locales::getLocale(locales::ttAudioPreviousKey), &settings::C_audioPreviousKey, Vector2f(20,210), 540, 200));
 
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));

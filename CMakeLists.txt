@@ -38,9 +38,12 @@ if(APPLE)
 endif(APPLE)
 
 # Xrandr library needed for unix
-if(UNIX)
-	find_library(XRANDR_LIBRARY Xrandr)
-endif(UNIX)
+# if(UNIX)
+#	find_library(XRANDR_LIBRARY Xrandr)
+# endif(UNIX)
+
+# tag library needed for reading tags of music files
+	find_library(TAG_LIBRARY tag)
 
 # Fribidi library needed for bi-directional texts
 	find_library(FRIBIDI_LIBRARY fribidi)
@@ -102,6 +105,7 @@ message( "  OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}" )
 message( "  OPENGL_LIBRARIES = ${OPENGL_LIBRARIES}" )
 message( "  XRANDR_LIBRARY = ${XRANDR_LIBRARY}" )
 message( "  FRIBIDI_LIBRARY = ${FRIBIDI_LIBRARY}" )
+message( "  TAG_LIBRARY = ${TAG_LIBRARY}" )
 message( "" )
 
 

@@ -96,6 +96,8 @@ namespace menus {
             window::screenShot();
         else if (down && key == settings::C_audioNextKey && !menus::keyboardFixed())
             music::next();
+        else if (down && key == settings::C_audioPreviousKey && !menus::keyboardFixed())
+            music::previous();
         if (visible()) {
             if (keyboardFixTarget_) {
                 keyboardFixTarget_->keyEvent(down, key);
