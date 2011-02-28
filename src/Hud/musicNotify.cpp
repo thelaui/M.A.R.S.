@@ -36,8 +36,8 @@ namespace musicNotify {
         sf::String artist_;
         sf::String album_;
 
-        sf::String* by_ = locales::getLocale(locales::Artist);
-        sf::String* from_ = locales::getLocale(locales::Album);
+        sf::String* by_;
+        sf::String* from_;
 
     }
 
@@ -52,9 +52,10 @@ namespace musicNotify {
 
             const float artistLength(text::getCharacterPos(artist_, artist_.GetSize(), 12.f, TEXT_ALIGN_LEFT));
             const float albumLength(text::getCharacterPos(album_, album_.GetSize(), 12.f, TEXT_ALIGN_LEFT));
-            const float byLength(text::getCharacterPos(*by_, by_->GetSize(), 12.f, TEXT_ALIGN_LEFT));
             const float fromLength(text::getCharacterPos(*from_, from_->GetSize(), 12.f, TEXT_ALIGN_LEFT));
+            const float byLength(text::getCharacterPos(*by_, by_->GetSize(), 12.f, TEXT_ALIGN_LEFT));
             const float spaceLength(text::getCharacterPos(" ", 1, 12.f, TEXT_ALIGN_LEFT));
+
 
 
             float byLineLenght(0.f);
@@ -65,6 +66,8 @@ namespace musicNotify {
             const float titleLenght(text::getCharacterPos(title_, title_.GetSize(), 20.f, TEXT_ALIGN_LEFT));
 
             const float cornerRadius(8.f);
+
+
 
             int   height((byLineLenght == 0.f) ? 38 : 50);
             int   width(std::max(titleLenght, byLineLenght) + 10);
@@ -185,6 +188,8 @@ namespace musicNotify {
     }
 
     void show(std::string const& fileName) {
+        by_ = locales::getLocale(locales::Artist);
+        from_ = locales::getLocale(locales::Album);
 
         TagLib::FileRef ref((settings::C_dataPath + "/audio/music/" + fileName).c_str());
 
