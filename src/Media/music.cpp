@@ -68,7 +68,7 @@ namespace music {
     }
 
     void update() {
-        if (musicChannel_.GetStatus() == sf::Music::Stopped)
+        if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0)
             playGameMusic();
 
         float slowMoTime(timer::slowMoTime());
@@ -97,27 +97,32 @@ namespace music {
     void playGameMusic() {
         if (!initialized_) init();
 
-        int nextTrack(0);
+        if (files_.size() > 0) {
 
-        if (files_.size() > 1) {
-            if (settings::C_audioRandom) {
-                if (playList_.empty())
-                    nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
-                else {
-                    nextTrack = playList_.back();
-                    while (nextTrack == playList_.back())
+            int nextTrack(0);
+
+            if (files_.size() > 1) {
+                if (settings::C_audioRandom) {
+                    if (playList_.empty())
                         nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                    else {
+                        nextTrack = playList_.back();
+                        while (nextTrack == playList_.back())
+                            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                    }
+                }
+                else {
+                    if (!playList_.empty())
+                        nextTrack = (playList_.back()+1)%files_.size();
                 }
             }
-            else {
-                if (!playList_.empty())
-                    nextTrack = (playList_.back()+1)%files_.size();
-            }
+
+            playList_.push_back(nextTrack);
+
+            play(nextTrack);
         }
-
-        playList_.push_back(nextTrack);
-
-        play(nextTrack);
+        else
+            stop();
     }
 
     void next() {
