@@ -28,11 +28,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <taglib/fileref.h>
 # include <taglib/tag.h>
 
-#include <taglib/id3v2tag.h>
-#include <taglib/id3v2frame.h>
-#include <taglib/id3v2header.h>
-#include <taglib/flacfile.h>
-
 namespace musicNotify {
     namespace {
         float timer_(0.f);
@@ -190,7 +185,9 @@ namespace musicNotify {
     }
 
     void show(std::string const& fileName) {
+
         TagLib::FileRef ref((settings::C_dataPath + "/audio/music/" + fileName).c_str());
+
         TagLib::Tag *tag(ref.tag());
 
         sf::String title(tag->title().toWString());
