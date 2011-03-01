@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Specials/Blast.hpp"
 # include "Specials/Freezer.hpp"
 # include "Specials/Heal.hpp"
+# include "Specials/FireWall.hpp"
 # include "Specials/NoSpecial.hpp"
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
@@ -42,10 +43,11 @@ namespace specials {
             settings::C_playerIISpecial = type;
 
         switch (type) {
-            case sHeal:   return new Heal(parent);
-            case sBlast:  return new Blast(parent);
-            case sFreeze: return new Freezer(parent);
-            default:      return new NoSpecial(parent);
+            case sHeal:      return new Heal(parent);
+            case sBlast:     return new Blast(parent);
+            case sFireWall:  return new FireWall(parent);
+            case sFreeze:    return new Freezer(parent);
+            default:         return new NoSpecial(parent);
         }
     }
 

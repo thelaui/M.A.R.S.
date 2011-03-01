@@ -33,6 +33,8 @@ class Blast: public Special {
         /// Blasts away nearby ships.
         void activate() const;
 
+        float radius() const;
+
         /// Draws the special.
         void draw(float alpha) const;
 

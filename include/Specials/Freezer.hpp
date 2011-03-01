@@ -33,6 +33,8 @@ class Freezer: public Special {
         /// Freezes nearby ships.
         void activate() const;
 
+        float radius() const;
+
         /// Draws the special.
         void draw(float alpha) const;
 

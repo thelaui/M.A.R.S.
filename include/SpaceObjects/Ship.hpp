@@ -69,6 +69,7 @@ class Ship: public MobileSpaceObject {
         friend class Tutorial;
         friend class Blast;
         friend class Freezer;
+        friend class FireWall;
         friend class Heal;
         friend class Special;
         friend class Weapon;

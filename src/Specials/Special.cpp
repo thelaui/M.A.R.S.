@@ -35,3 +35,6 @@ void Special::previous() {
     delete this;
 }
 
+void Special::stop() {
+    timer_ = 0.f;
+}

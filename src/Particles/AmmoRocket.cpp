@@ -114,10 +114,12 @@ void AmmoRocket::update() {
             }
 
             Ball* ball(balls::getBall());
-            float distance((location_ - ball->location()).lengthSquare());
-            if ( distance < closest && ball->isVisible()) {
-                ballTarget_ = ball;
-                shipTarget_ = NULL;
+            if (ball) {
+                float distance((location_ - ball->location()).lengthSquare());
+                if (distance < closest && ball->isVisible()) {
+                    ballTarget_ = ball;
+                    shipTarget_ = NULL;
+                }
             }
         }
     }
@@ -192,7 +194,7 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoShotgun:
-            amount = strength*0.005f;
+            amount = strength*0.01f;
             unfreeze = 1.f;
             break;
 
@@ -206,7 +208,7 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoBurner:
-            amount = timer::frameTime();
+            amount = timer::frameTime()*2.f;
             unfreeze = 1.f;
             break;
 

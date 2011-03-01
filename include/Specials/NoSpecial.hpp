@@ -32,6 +32,8 @@ class NoSpecial: public Special {
         /// Does nothing.
         void activate() const {}
 
+        float radius() const {}
+
         /// Draws the special.
         void draw(float alpha) const;
 };

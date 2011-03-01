@@ -72,41 +72,45 @@ namespace announcer {
     }
 
     void update() {
-        float slowMoTime(timer::slowMoTime());
-        if (slowMoTime > 0.75f) {
-            soundChannel_.SetPitch(slowMoTime*0.666f);
+        if (settings::C_announcerVolume > 0) {
+            float slowMoTime(timer::slowMoTime());
+            if (slowMoTime > 0.75f) {
+                soundChannel_.SetPitch(slowMoTime*0.666f);
+            }
+            else if (slowMoTime > 0.25f) {
+                soundChannel_.SetPitch(0.5f);
+            }
+            else if (slowMoTime > 0.0f) {
+                soundChannel_.SetPitch(1.f-slowMoTime*2.f);
+            }
+            else soundChannel_.SetPitch(1.f);
         }
-        else if (slowMoTime > 0.25f) {
-            soundChannel_.SetPitch(0.5f);
-        }
-        else if (slowMoTime > 0.0f) {
-            soundChannel_.SetPitch(1.f-slowMoTime*2.f);
-        }
-        else soundChannel_.SetPitch(1.f);
     }
 
     void announce (SoundMood mood) {
-        switch (mood) {
-            case Affronting:
-                switch (sf::Randomizer::Random(0,2)) {
-                    case 0: playSound(YouSuck); break;
-                    case 1: playSound(NotFunny); break;
-                    default:;
-                } break;
-            case Praising:
-                switch (sf::Randomizer::Random(0,4)) {
-                    case 0: playSound(Impressive); break;
-                    case 1: playSound(NiceOne); break;
-                    case 2: playSound(ThatWasGreat); break;
-                    case 3: playSound(WellDone); break;
-                    default:;
-                } break;
-            case Neutral:
-                switch (sf::Randomizer::Random(0,1)) {
-                    case 0: playSound(Bam); break;
-                    default:;
-                } break;
-            default:;
+        if (settings::C_announcerVolume > 0) {
+            switch (mood) {
+                case Affronting:
+                    switch (sf::Randomizer::Random(0,2)) {
+                        case 0: playSound(YouSuck); break;
+                        case 1: playSound(NotFunny); break;
+                        default:;
+                    } break;
+                case Praising:
+                    switch (sf::Randomizer::Random(0,4)) {
+                        case 0: playSound(Impressive); break;
+                        case 1: playSound(NiceOne); break;
+                        case 2: playSound(ThatWasGreat); break;
+                        case 3: playSound(WellDone); break;
+                        default:;
+                    } break;
+                case Neutral:
+                    switch (sf::Randomizer::Random(0,1)) {
+                        case 0: playSound(Bam); break;
+                        default:;
+                    } break;
+                default:;
+            }
         }
     }
 }

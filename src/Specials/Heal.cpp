@@ -77,7 +77,7 @@ void Heal::draw(float alpha) const {
 
 void Heal::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*50.f +50.f;
+        radius_                         = radius();
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
             if ((*it)!=parent_) {
@@ -97,5 +97,7 @@ void Heal::activate() const {
     }
 }
 
-
+float Heal::radius() const {
+    return (parent_->fragStars_ > 0 ? parent_->fragStars_*50.f+50.f : 0.f);
+}
 

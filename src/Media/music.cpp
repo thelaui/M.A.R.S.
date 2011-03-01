@@ -68,72 +68,82 @@ namespace music {
     }
 
     void update() {
-        if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0)
-            playGameMusic();
+        if (settings::C_musicVolume > 0) {
+            if (!initialized_) init();
 
-        float slowMoTime(timer::slowMoTime());
-        if (slowMoTime > 0.75f) {
-            musicChannel_.SetPitch(slowMoTime*0.666f);
-        }
-        else if (slowMoTime > 0.25f) {
-            musicChannel_.SetPitch(0.5f);
-        }
-        else if (slowMoTime > 0.0f) {
-            musicChannel_.SetPitch(1.f-slowMoTime*2.f);
-        }
-        else musicChannel_.SetPitch(1.f);
-    }
+            if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0)
+                playGameMusic();
 
-    void playMenuMusic() {
-        if (!initialized_) init();
-
-        musicChannel_.SetLoop(true);
-        sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
-        musicChannel_.OpenFromFile(fileName);
-        musicChannel_.Play();
-        playList_.clear();
-    }
-
-    void playGameMusic() {
-        if (!initialized_) init();
-
-        if (files_.size() > 0) {
-
-            int nextTrack(0);
-
-            if (files_.size() > 1) {
-                if (settings::C_audioRandom) {
-                    if (playList_.empty())
-                        nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
-                    else {
-                        nextTrack = playList_.back();
-                        while (nextTrack == playList_.back())
-                            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
-                    }
-                }
-                else {
-                    if (!playList_.empty())
-                        nextTrack = (playList_.back()+1)%files_.size();
-                }
+            float slowMoTime(timer::slowMoTime());
+            if (slowMoTime > 0.75f) {
+                musicChannel_.SetPitch(slowMoTime*0.666f);
             }
-
-            playList_.push_back(nextTrack);
-
-            play(nextTrack);
+            else if (slowMoTime > 0.25f) {
+                musicChannel_.SetPitch(0.5f);
+            }
+            else if (slowMoTime > 0.0f) {
+                musicChannel_.SetPitch(1.f-slowMoTime*2.f);
+            }
+            else musicChannel_.SetPitch(1.f);
         }
-        else
+        else if (musicChannel_.GetStatus() == sf::Music::Playing)
             stop();
     }
 
+    void playMenuMusic() {
+        if (settings::C_musicVolume > 0) {
+            if (!initialized_) init();
+
+            musicChannel_.SetLoop(true);
+            sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
+            musicChannel_.OpenFromFile(fileName);
+            musicChannel_.Play();
+            playList_.clear();
+        }
+    }
+
+    void playGameMusic() {
+        if (settings::C_musicVolume > 0) {
+            if (!initialized_) init();
+
+            if (files_.size() > 0) {
+
+                int nextTrack(0);
+
+                if (files_.size() > 1) {
+                    if (settings::C_audioRandom) {
+                        if (playList_.empty())
+                            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                        else {
+                            nextTrack = playList_.back();
+                            while (nextTrack == playList_.back())
+                                nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                        }
+                    }
+                    else {
+                        if (!playList_.empty())
+                            nextTrack = (playList_.back()+1)%files_.size();
+                    }
+                }
+
+                playList_.push_back(nextTrack);
+
+                play(nextTrack);
+            }
+            else
+                stop();
+        }
+    }
+
     void next() {
-        if (!playList_.empty()) {
+        if (!playList_.empty() && settings::C_musicVolume) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
         }
     }
 
     void previous() {
-        if (!playList_.empty()) {
+        if (!playList_.empty() && settings::C_musicVolume) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::PreviousTrackNotify));
 

@@ -65,7 +65,7 @@ void Sun::onCollision(SpaceObject* with, Vector2f const& location,
                       Vector2f const& direction, Vector2f const& velocity) {
     float strength = velocity.length();
 
-    if (with->type() != spaceObjects::oFuel && strength > 50)
+    if (with->type() != spaceObjects::oFuel && with->type() != spaceObjects::oAmmoBurner  && strength > 50)
         particles::spawnMultiple(5, particles::pMud, location, direction, velocity, Color3f(1.0f, 0.9f, 0.2f));
 
     if (((with->type() == spaceObjects::oShip) | (with->type() == spaceObjects::oBall)) && (strength > 50)) {

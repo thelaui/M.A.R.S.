@@ -45,8 +45,16 @@ class Special {
         /// With this method it's possible to cycle through the specials.
         void previous();
 
+        /// Returns the active radius of the Special.
+        virtual float radius() const = 0;
+
+        /// Stops the current animation. Called when ship is killed.
+        void stop();
+
         /// Returns the name of the special.
         sf::String const& getName() const {return name_;}
+
+        /// Returns the type of the Special.
         specials::SpecialType getType() const {return type_;}
 
     protected:

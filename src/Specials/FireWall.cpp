@@ -1,4 +1,4 @@
-/* Blast.cpp
+/* FireWall.cpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,20 +15,20 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# include "Specials/Blast.hpp"
+# include "Specials/FireWall.hpp"
 
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
 # include "Players/Player.hpp"
 # include "System/timer.hpp"
-# include "SpaceObjects/physics.hpp"
+# include "Particles/particles.hpp"
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
 # include "Teams/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 
-void Blast::draw(float alpha) const {
+void FireWall::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
@@ -37,7 +37,7 @@ void Blast::draw(float alpha) const {
     if (tmp.s() < 0.5f) tmp.s(0.5f);
     tmp.gl4f(0.8f*alpha);
 
-    const int posX = 0;
+    const int posX = 3;
     const int posY = 0;
 
     float scale(4 + std::sin(timer::totalTime()*6)*0.3f);
@@ -51,46 +51,35 @@ void Blast::draw(float alpha) const {
 
     // draw effect
     if (timer_ > 0.f) {
-        if (parent_->getLife() <= 0.f)
-            timer_ = 0.f;
-
-        float alpha(0.f);
-        if(timer_ > 0.4f)
-            alpha = std::pow(0.5f-timer_,2)*100.f;
-        else
-            alpha = -2.5f*(0.5f-timer_)+1.25f;
-
-        float scale(1.f-timer_*2.f);
-
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glColor4f(1.0f, 1.0f, 1.0f, alpha);
-
-        const int posX = 0;
-        const int posY = 1;
-
-        glBegin(GL_QUADS);
-            glTexCoord2f( posX*0.25f,    posY*0.25f);    glVertex2f(-radius_*scale,-radius_*scale);
-            glTexCoord2f( posX*0.25f,   (posY+1)*0.25f); glVertex2f(-radius_*scale, radius_*scale);
-            glTexCoord2f((posX+1)*0.25f,(posY+1)*0.25f); glVertex2f( radius_*scale, radius_*scale);
-            glTexCoord2f((posX+1)*0.25f, posY*0.25f);    glVertex2f( radius_*scale,-radius_*scale);
-        glEnd();
-
         if (!menus::visible() || games::type() == games::gMenu)
             timer_ -= timer::frameTime();
+
+        if (burnTimer_ - timer_ > 0.04f) {
+            burnTimer_ = timer_;
+            Vector2f dir(std::cos(timer::totalTime()*3), std::sin(timer::totalTime()*3));
+            for (int i=0; i<20; ++i) {
+                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.x_,  dir.y_)*parent_->radius()*1.25f, Vector2f( dir.x_,  dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
+                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.x_, -dir.y_)*parent_->radius()*1.25f, Vector2f(-dir.x_, -dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
+                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.y_, -dir.x_)*parent_->radius()*1.25f, Vector2f( dir.y_, -dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
+                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.y_,  dir.x_)*parent_->radius()*1.25f, Vector2f(-dir.y_,  dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
+            }
+        }
     }
 }
 
-void Blast::activate() const {
+void FireWall::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = radius();
+        timer_ = parent_->fragStars_*1.5f;
+        burnTimer_ = timer_;
         parent_->fragStars_ = 0;
-        physics::causeShockWave(parent_->getOwner(), parent_->location(), 1000.f, radius_*0.8f, 0.f);
-        timer_ = 0.5f;
+
+        particles::spawnMultiple(50,         particles::pDust,     parent_->location_);
+        particles::spawnMultiple(20,         particles::pExplode,  parent_->location_);
     }
 }
 
-float Blast::radius() const {
-    return (parent_->fragStars_ > 0 ? parent_->fragStars_*150.f+150.f : 0.f);
+float FireWall::radius() const {
+    return (parent_->fragStars_ > 0 ? 250.f : 0.f);
 }
 
 

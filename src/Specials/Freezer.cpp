@@ -79,7 +79,7 @@ void Freezer::draw(float alpha) const {
 void Freezer::activate() const {
     if (parent_->fragStars_ > 0) {
 
-        radius_              = parent_->fragStars_*50.f+150.f;
+        radius_              = radius();
         const float strength = parent_->fragStars_*14.f;
 
         std::vector<Ship*> const& ships = ships::getShips();
@@ -125,4 +125,6 @@ void Freezer::activate() const {
     }
 }
 
-
+float Freezer::radius() const {
+    return (parent_->fragStars_ > 0 ? parent_->fragStars_*50.f+150.f : 0.f);
+}

@@ -1,4 +1,4 @@
-/* Heal.hpp
+/* FireWall.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,22 +15,22 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HEAL_HPP_INCLUDED
-# define HEAL_HPP_INCLUDED
+# ifndef FIREWALL_HPP_INCLUDED
+# define FIREWALL_HPP_INCLUDED
 
 # include "Specials/Special.hpp"
 
-/// Special: Heal.
-/// A healing wave.
+/// Special: FireWall.
+/// A fire wave.
 
-class Heal: public Special {
+class FireWall: public Special {
     public:
         /// Ctor which constructs the special.
-        Heal(Ship* parent):
-              Special(specials::sHeal, parent, sf::String("HEAL")),
-              radius_(0.f) {};
+        FireWall(Ship* parent):
+              Special(specials::sFireWall, parent, sf::String("FIRE WALL")),
+              burnTimer_(0.f) {};
 
-        /// Heals nearby friends.
+        /// Blasts away nearby ships.
         void activate() const;
 
         float radius() const;
@@ -39,10 +39,12 @@ class Heal: public Special {
         void draw(float alpha) const;
 
     private:
-        mutable float radius_;
+        mutable float burnTimer_;
 };
 
-# endif // HEAL_HPP_INCLUDED
+# endif // FIREWALL_HPP_INCLUDED
+
+
 
 
 

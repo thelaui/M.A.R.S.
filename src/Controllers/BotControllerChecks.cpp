@@ -91,25 +91,23 @@ void BotController::checkEnergy() {
 }
 
 void BotController::checkSpecial() {
-    if (ship()->fragStars_ > 0 && sf::Randomizer::Random(0, 10) == 1)
+    if (ship()->fragStars_ > 0 && sf::Randomizer::Random(0, 10) == 1) {
+        float radius(ship()->currentSpecial_->radius());
         switch (ship()->currentSpecial_->getType()) {
             case specials::sHeal:
                 if (ship()->getLife() < 10)
                     slaveSpecial(100);
                 break;
 
-            case specials::sBlast: {
+            case specials::sBlast: case specials::sFireWall: {
                 int decision(0);
-                float blastRadius = ship()->fragStars_*100.f + 50.f;
-                blastRadius *= blastRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
                     if ((*it)->collidable() && (*it)->frozen_ <= 0 && (*it) != slave_->ship()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
-                        if (distance <= blastRadius) {
-                            if ((*it)->owner_->team() == slave_->team())
-                                --decision;
-                            else ++decision;
+                        if (distance <= radius*radius) {
+                            if ((*it)->owner_->team() == slave_->team()) --decision;
+                            else                                         ++decision;
                         }
                     }
                 }
@@ -120,16 +118,13 @@ void BotController::checkSpecial() {
 
             default: {
                 int decision(0);
-                float freezeRadius = ship()->fragStars_*50.f + 150.f;
-                freezeRadius *= freezeRadius;
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
                     if ((*it)->attackable() && (*it) != slave_->ship()) {
                         float distance(((*it)->location_-ship()->location_).lengthSquare());
-                        if (distance <= freezeRadius) {
-                            if ((*it)->owner_->team() == slave_->team())
-                                --decision;
-                            else ++decision;
+                        if (distance <= radius*radius) {
+                            if ((*it)->owner_->team() == slave_->team()) --decision;
+                            else                                         ++decision;
                         }
                     }
                 }
@@ -138,6 +133,7 @@ void BotController::checkSpecial() {
                 break;
             }
         }
+    }
 }
 
 void BotController::checkCloseEnemies() {
