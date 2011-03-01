@@ -51,7 +51,7 @@ void BotController::kickBallToEnemy() {
         ballLocation = calcPath(ballLocation, false);
 
         // is ship, ball and target planet in row?
-        if (spaceObjects::isOnLine(shipLocation, ballLocation-shipLocation, targetPlanetLocation, teams::getEnemy(slave_->team())->home()->radius()*1.5f)) {
+        if (spaceObjects::isOnLine(shipLocation, ballLocation-shipLocation, targetPlanetLocation, 20.f)) {
             // if so, is the ship correctly oriented
             if (shipDirection*(ballLocation - shipLocation) > 0.8f) {
                 // kick ball
@@ -64,8 +64,25 @@ void BotController::kickBallToEnemy() {
         }
         else {
             // move behind the ball
-            Vector2f aimPosition = ballLocation + (ballLocation - targetPlanetLocation).normalize()*70 + ballVelocity*0.5f;
-            moveTo(aimPosition, 0.2f, true);
+            Vector2f aimPosition = ballLocation + (ballLocation - targetPlanetLocation).normalize()*30 + ballVelocity*0.5f;
+
+            if ((balls::getBall()->location_-shipLocation).lengthSquare() < 5000.f) {
+                bool ballIsCloseToPlanet(false);
+                for (std::vector<SpaceObject*>::const_iterator it = spaceObjects::getObjects().begin(); it != spaceObjects::getObjects().end(); ++it)
+                    if ((*it)->type() != spaceObjects::oBlackHole && ((*it)->location() - aimPosition).lengthSquare() < std::pow((*it)->radius(), 2)) {
+                        ballIsCloseToPlanet = true;
+                        break;
+                    }
+                // if ball lies on planet surface, shoot it
+                if (ballIsCloseToPlanet) {
+                    shootPoint(balls::getBall()->location_, false);
+                    moveTo(balls::getBall()->location_, 0.f, false);
+                }
+                else
+                    moveTo(aimPosition, 0.2f, true);
+            }
+            else
+                moveTo(aimPosition, 0.2f, true);
         }
         shootEnemies();
     }
@@ -81,7 +98,7 @@ void BotController::kickBallOutHome() {
     Vector2f ballShip = shipLocation - ballLocation;
 
     // is ship between ball and planet?
-    if (spaceObjects::isOnLine(ballLocation, ballShip, homeLocation, slave_->team()->home()->radius())) {
+    if (spaceObjects::isOnLine(ballLocation, ballShip, homeLocation, 45.f)) {
         // wait a bit and face ball
         if (ballShip.lengthSquare() > 2500.f) {
             if (turnTo(ballLocation))

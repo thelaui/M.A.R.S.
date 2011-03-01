@@ -46,7 +46,8 @@ namespace spaceObjects {
     Home* addHome(Vector2f const& location, Color3f const& color);
 
     SpaceObject const* getObstacle(Vector2f const& start, Vector2f const& end, bool avoidBall = false, float minDistance = 0.f);
-    bool               isOnLine(Vector2f source, Vector2f direction, Vector2f target, float radius);
+    bool               isOnLine   (Vector2f const& source, Vector2f const& direction, Vector2f const& target, float maxAngle);
+
     std::vector<Home*>const&                getHomes();
     std::vector<SpaceObject*> const&        getObjects();
 

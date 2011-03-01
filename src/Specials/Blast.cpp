@@ -79,9 +79,9 @@ void Blast::draw(float alpha) const {
 
 void Blast::activate() const {
     if (parent_->fragStars_ > 0) {
-        radius_ = parent_->fragStars_*100.f+100.f;
+        radius_ = parent_->fragStars_*150.f+150.f;
         parent_->fragStars_ = 0;
-        physics::causeShockWave(parent_->getOwner(), parent_->location(), 1000.f, radius_*1.5f, 0.f);
+        physics::causeShockWave(parent_->getOwner(), parent_->location(), 1000.f, radius_*0.8f, 0.f);
         timer_ = 0.5f;
     }
 }

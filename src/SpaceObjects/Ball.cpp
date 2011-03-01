@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "Particles/particles.hpp"
 # include "Shaders/postFX.hpp"
+# include "Players/Player.hpp"
 # include "defines.hpp"
 
 # include <cmath>
@@ -80,12 +81,6 @@ void Ball::update() {
                 }
             }
 
-            if (frozen_ < 0.f) {
-                frozen_ = 0.f;
-                mass_ = 7.f;
-                particles::spawnMultiple(10, particles::pCrushedIce, location_);
-            }
-
             // heating of ball
             if (heatTimer_ > 0.f) {
                 heatTimer_ -= time;
@@ -102,6 +97,12 @@ void Ball::update() {
         else {
             velocity_ = Vector2f();
             frozen_ -= timer::frameTime()*3.f;
+
+            if (frozen_ <= 0.f) {
+                frozen_ = 0.f;
+                mass_ = 7.f;
+                particles::spawnMultiple(10, particles::pCrushedIce, location_);
+            }
         }
     }
     else {
@@ -236,13 +237,19 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
         default:;
     }
 
-    if (frozen_ > 0)
+    if (frozen_ > 0) {
         frozen_ -= unfreeze;
+        if (frozen_ <= 0.f) {
+            frozen_ = 0.f;
+            mass_ = 7.f;
+            particles::spawnMultiple(10, particles::pCrushedIce, location_);
+        }
+    }
 }
 
-void Ball::onShockWave(SpaceObject* source, float intensity) {
+void Ball::onShockWave(Player* source, float intensity) {
     sticky_ = false;
-    setDamageSource(source->damageSource());
+    setDamageSource(source->ship()->damageSource());
 }
 
 void Ball::explode() {
@@ -261,7 +268,7 @@ void Ball::explode() {
     physics::removeMobileObject(this);
     visible_ = false;
     heatTimer_ = 0.f;
-    respawnTimer_ = 10.f;
+    respawnTimer_ = 5.f;
 }
 
 void Ball::respawn() {

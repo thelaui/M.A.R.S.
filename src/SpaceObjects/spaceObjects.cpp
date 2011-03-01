@@ -146,7 +146,6 @@ namespace spaceObjects {
                  && (end   - (*it)->location()).lengthSquare() > std::pow((*it)->radius() + minDistance, 2))
                     checkRadius += minDistance;
 
-                //if (isOnLine(start, end-start, (*it)->location(), checkRadius)) {
                 if (((end-start)*((*it)->location() - start) > 0 && (std::pow(((end-start)*((*it)->location() - start))/(end-start).lengthSquare(), 2) - (((*it)->location() -start).lengthSquare() - std::pow(checkRadius, 2))/(end-start).lengthSquare()) > 0)) {
                     // check if object is in between or endpoint inside of obstacle
                     if ((end - start)*(end - (*it)->location()) >= 0.f || (end - (*it)->location()).lengthSquare() < std::pow((*it)->radius(), 2)) {
@@ -169,7 +168,7 @@ namespace spaceObjects {
              && (end   - ball->location()).lengthSquare() > std::pow(ball->radius() + minDistance, 2))
                 checkRadius += minDistance;
 
-            if (isOnLine(start, end-start, ball->location(), checkRadius)) {
+            if (((end-start)*(ball->location() - start) > 0 && (std::pow(((end-start)*(ball->location() - start))/(end-start).lengthSquare(), 2) - ((ball->location() -start).lengthSquare() - std::pow(checkRadius, 2))/(end-start).lengthSquare()) > 0)) {
                 // check if object is in between
                 if ((end - start)*(end - ball->location()) >= 0.f) {
                     // hacky... should check for distańce to impactlocation, but does not...
@@ -185,8 +184,8 @@ namespace spaceObjects {
         return closest;
     }
 
-    bool isOnLine(Vector2f source, Vector2f direction, Vector2f target, float radius) {
-        return std::acos(direction.normalize()*(target - source).normalize()) < radius*M_PI/360;
+    bool isOnLine(Vector2f const& source, Vector2f const& direction, Vector2f const& target, float maxAngle) {
+        return std::acos(direction.normalize()*(target - source).normalize()) < maxAngle*M_PI/360;
     }
 
     void clear() {

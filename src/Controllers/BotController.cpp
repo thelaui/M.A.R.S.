@@ -193,14 +193,12 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     // 0 - 100, based on distance and few fuel
                     float dist = ((static_cast<Ball*>(it->first.object_)->location()-ship()->location()).length());
                     dist *= 0.075f;
-                    dist = 50 - dist;
+                    dist = 70 - dist;
                     if (dist < 0) dist = 0;
                     Vector2f ballLocation (calcPath(static_cast<Ball*>(it->first.object_)->location(), false));
                     Vector2f targetPlanetLocation = calcPath(teams::getEnemy(slave_->team())->home()->location(), false);
-                    float dir = spaceObjects::isOnLine(ship()->location(), ballLocation-ship()->location(), targetPlanetLocation, teams::getEnemy(slave_->team())->home()->radius()*2.f) ? 50 : 0;
+                    float dir = spaceObjects::isOnLine(ship()->location(), ballLocation-ship()->location(), targetPlanetLocation, 25.f) ? 15 : 0;
                     need = 1 + dist + dir + didThisJobLAstTimeToo;
-                    if (need > 85)
-                        need = 85;
                     break;
                 }
                 case Job::jKickOutHome: {
@@ -211,7 +209,7 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     if (dist < 0) dist = 0;
                     Vector2f ballLocation (calcPath(static_cast<Ball*>(it->first.object_)->location(), false));
                     Vector2f targetPlanetLocation = calcPath(teams::getEnemy(slave_->team())->home()->location(), false);
-                    float dir = spaceObjects::isOnLine(ballLocation, ship()->location() - ballLocation, slave_->team()->home()->location(), slave_->team()->home()->radius()) ? 50 : 0;
+                    float dir = spaceObjects::isOnLine(ballLocation, ship()->location() - ballLocation, slave_->team()->home()->location(), 45.f) ? 50 : 0;
                     need = dist + dir + didThisJobLAstTimeToo;
                     break;
                 }
@@ -219,22 +217,20 @@ void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotContr
                     // 0 - 100, based on distance and few fuel
                     float dist = ((static_cast<TacticalZone*>(it->first.object_)->location()-ship()->location()).length());
                     dist *= 0.1f;
-                    dist = 100 - dist;
+                    dist = 60 - dist;
                     if (dist < 0) dist = 0;
                     if (currentJob_.type_ == it->first.type_ && currentJob_.object_ == it->first.object_)
                         didThisJobLAstTimeToo = 10;
                     else
                         didThisJobLAstTimeToo = 0;
                     need = 1 + dist + didThisJobLAstTimeToo;
-                    if (need > 60)
-                        need = 60;
                     break;
                 }
                 case Job::jWaitForBall: {
                     // 0 - 100, based on distance and few fuel
                     float dist = (static_cast<Ball*>(it->first.object_)->location()-ship()->location()).length();
                     dist *= 0.1f;
-                    dist = 100 - dist;
+                    dist = 60 - dist;
                     if (dist < 0) dist = 0;
                     need = 10 + dist + didThisJobLAstTimeToo;
                     break;

@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/Color3f.hpp"
 
 class Ship;
+class Ball;
 
 class AmmoRocket: public Particle<AmmoRocket> {
     public:
@@ -42,7 +43,8 @@ class AmmoRocket: public Particle<AmmoRocket> {
     private:
         Color3f color_;
         float timer_;
-        Ship* target_;
+        Ship* shipTarget_;
+        Ball* ballTarget_;
         Player* parent_;
         float rotation_;
         float life_;

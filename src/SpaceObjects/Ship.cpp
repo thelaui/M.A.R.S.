@@ -63,7 +63,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
                fuel_(100.f),
                maxFuel_(fuel_),
                collectedPowerUps_(items::COUNT, NULL),
-               fragStars_(0),
+               fragStars_(5),
                damageByLocalPlayer_(0.f),
                damageCheckTimer_(0.f),
                damageDirection_(0.f, 0.f),
@@ -220,7 +220,14 @@ void Ship::update() {
             }
             else {
                 frozen_ -= timer::frameTime()*3.f;
-                life_ -= timer::frameTime()*10.f;
+                life_ -= timer::frameTime()*7.f;
+
+                if (frozen_ <= 0.f) {
+                    frozen_ = 0.f;
+                    mass_ = 10.f;
+                    particles::spawnMultiple(10, particles::pCrushedIce, location_);
+                }
+
                 velocity_ = Vector2f();
                 if(damageSource_==players::getPlayerI() || damageSource_==players::getPlayerII() || owner_==players::getPlayerI() || owner_==players::getPlayerII()) {
                     damageByLocalPlayer_ -= timer::frameTime()*10.f;
@@ -234,11 +241,6 @@ void Ship::update() {
             // check for death
             if (getLife() <= 0) explode();
 
-            if (frozen_ < 0.f) {
-                frozen_ = 0.f;
-                mass_ = 10.f;
-                particles::spawnMultiple(10, particles::pCrushedIce, location_);
-            }
         }
     }
     else {
@@ -348,7 +350,6 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oSun:
             amount = strength*0.08f + 20;
             if (strength > 50) sound::playSound(sound::BallPlanetCollide, location, (strength-50)/3);
-            unfreeze = 40.f;
             break;
 
         case spaceObjects::oShip:
@@ -361,13 +362,11 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oPlanet:
             if (strength > 75) amount = strength*0.08f;
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
-            unfreeze = 10.f;
             break;
 
         case spaceObjects::oHome:
             if (strength > 150) amount = strength*0.06f;
             if (strength > 50) sound::playSound(sound::ShipPlanetCollide, location, (strength-50)/3);
-            unfreeze = 10.f;
             break;
 
         case spaceObjects::oBall:
@@ -389,7 +388,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             amount = strength*0.04f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(20, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.5f, velocity_, owner_->color());
-            unfreeze = 1.f;
+            unfreeze = 20.f;
             break;
 
         case spaceObjects::oAmmoShotgun:
@@ -403,7 +402,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oAmmoFlubba:
             amount = sf::Randomizer::Random(2.5f, 3.f);
             setDamageSource(with->damageSource());
-            unfreeze = 1.f;
+            unfreeze = 4.f;
             break;
 
         case spaceObjects::oMiniAmmoFlubba:
@@ -415,7 +414,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         case spaceObjects::oCannonBall:
             amount = life_;
             setDamageSource(owner_);
-            unfreeze = 40.f;
+            unfreeze = frozen_;
             break;
 
         case spaceObjects::oAmmoBurner:
@@ -425,32 +424,37 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             // chance to spawn smoke
             if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
             setDamageSource(with->damageSource());
-            unfreeze = 0.1f;
+            unfreeze = 0.05f;
             break;
 
         case spaceObjects::oAmmoRocket:
             amount = 10.f;
             setDamageSource(with->damageSource());
-            unfreeze = 4.f;
+            unfreeze = 10.f;
             break;
 
         case spaceObjects::oAmmoFist:
             amount = 25.f+sf::Randomizer::Random(-3.f, 3.f);
             setDamageSource(with->damageSource());
-            unfreeze = 5.f;
+            unfreeze = 15.f;
             break;
 
         case spaceObjects::oAmmoInsta:
             amount = life_;
             setDamageSource(with->damageSource());
-            unfreeze = 100;
             break;
 
         default:;
     }
 
-    if (frozen_ > 0)
+    if (frozen_ > 0) {
         frozen_ -= unfreeze;
+        if (frozen_ <= 0.f) {
+            frozen_ = 0.f;
+            mass_ = 10.f;
+            particles::spawnMultiple(10, particles::pCrushedIce, location_);
+        }
+    }
 
     if (attackable()) {
         // double the amount done to weak bots

@@ -83,13 +83,13 @@ void Heal::activate() const {
             if ((*it)!=parent_) {
                 float distance(((*it)->location()-parent_->location()).length());
                 if ((*it)->collidable() && parent_->getOwner()->team() == (*it)->getOwner()->team() && distance <= radius_) {
-                    (*it)->heal(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*10);
-                    (*it)->refuel(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*10);
+                    (*it)->heal(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*30);
+                    (*it)->refuel(parent_->getOwner(), ((radius_/distance)-0.8f)*parent_->fragStars_*30);
                 }
             }
             else {
-                parent_->heal(parent_->getOwner(), parent_->fragStars_*10);
-                parent_->refuel(parent_->getOwner(), parent_->fragStars_*10);
+                parent_->heal(parent_->getOwner(), parent_->fragStars_*30);
+                parent_->refuel(parent_->getOwner(), parent_->fragStars_*30);
             }
         }
         timer_ = 0.5f;

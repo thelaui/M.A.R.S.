@@ -53,8 +53,10 @@ namespace items {
                 // check for collisions with other objects
                 newPowerUpFits = true;
                 for (std::vector<SpaceObject*>::const_iterator it = spaceObjects::getObjects().begin(); it != spaceObjects::getObjects().end(); ++it)
-                    if (((*it)->location() - position).lengthSquare() < std::pow((*it)->radius() + 50, 2))
+                    if (((*it)->location() - position).lengthSquare() < std::pow((*it)->radius() + 50, 2)) {
                         newPowerUpFits = false;
+                        break;
+                    }
 
                 if (newPowerUpFits) break;
             }

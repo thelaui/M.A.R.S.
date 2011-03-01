@@ -24,6 +24,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "SpaceObjects/Ship.hpp"
 # include "SpaceObjects/ships.hpp"
+# include "SpaceObjects/Ball.hpp"
+# include "SpaceObjects/balls.hpp"
 # include "Shaders/postFX.hpp"
 # include "Players/Player.hpp"
 
@@ -34,7 +36,8 @@ std::list<AmmoRocket*> AmmoRocket::activeParticles_;
 AmmoRocket::AmmoRocket(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
          Particle<AmmoRocket>(spaceObjects::oAmmoRocket, location, 10.f, 3.0f, 10000.f),
          timer_(1.f),
-         target_(NULL),
+         shipTarget_(NULL),
+         ballTarget_(NULL),
          parent_(damageSource),
          rotation_(0.f),
          life_(50.f),
@@ -59,21 +62,28 @@ void AmmoRocket::update() {
     if (frozen_ <= 0) {
         physics::collide(this, STATICS | MOBILES | PARTICLES);
 
-        if (target_) {
-            if (target_->getLife() == 0.f) {
-                target_ = NULL;
+        if (shipTarget_ || ballTarget_) {
+
+            MobileSpaceObject* target(NULL);
+            if (ballTarget_) target = ballTarget_;
+            else if (shipTarget_) target = shipTarget_;
+
+            float const speed(velocity_.length());
+            velocity_ /= speed;
+            Vector2f const toTarget(target->location() - location_);
+            rotation_ = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
+            float const phi(time*5.f);
+            if (rotation_ > 0.f)
+                velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
+            else
+                velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
+            velocity_ *= 300.f;
+
+            if (shipTarget_ && dynamic_cast<Ship*>(shipTarget_)->getLife() <= 0.f) {
+                shipTarget_ = NULL;
             }
-            else {
-                float const speed(velocity_.length());
-                velocity_ /= speed;
-                Vector2f const toTarget(target_->location() - location_);
-                rotation_ = toTarget.y_*velocity_.x_ - toTarget.x_*velocity_.y_;
-                float const phi(time*5.f);
-                if (rotation_ > 0.f)
-                    velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)+phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)+phi));
-                else
-                    velocity_ = Vector2f (std::cos(std::atan2(velocity_.y_, velocity_.x_)-phi), std::sin(std::atan2(velocity_.y_, velocity_.x_)-phi));
-                velocity_ *= 300.f;
+            else if (ballTarget_ && !(dynamic_cast<Ball*>(ballTarget_)->isVisible())) {
+                ballTarget_ = NULL;
             }
         }
 
@@ -86,28 +96,40 @@ void AmmoRocket::update() {
 
         lifeTime_ += time;
         timer_ -= time;
+
         if (timer_ < 0.f) {
             timer_ = 0.5f;
+
+            ballTarget_ = NULL;
+            shipTarget_ = NULL;
+
             std::vector<Ship*> const& ships (ships::getShips());
             float closest(FLT_MAX);
             for (std::vector<Ship*>::const_iterator it = ships.begin(); it != ships.end(); ++it) {
                 float distance((location_ - (*it)->location()).lengthSquare());
                 if ( distance < closest && (*it)->collidable()) {
-                    target_ = *it;
+                    shipTarget_ = *it;
                     closest = distance;
                 }
+            }
+
+            Ball* ball(balls::getBall());
+            float distance((location_ - ball->location()).lengthSquare());
+            if ( distance < closest && ball->isVisible()) {
+                ballTarget_ = ball;
+                shipTarget_ = NULL;
             }
         }
     }
     else {
-        frozen_  -= time*3.f;
-        life_    -= time*10.f;
-        velocity_ = Vector2f();
+        physics::collide(this, STATICS | MOBILES | PARTICLES);
 
+        frozen_  -= time*3.f;
+        life_    -= time*5.f;
 
         if (frozen_ < 0.f) {
             frozen_ = 0.f;
-            mass_ = 10000.f;
+            mass_ = 3.f;
             particles::spawnMultiple(10, particles::pCrushedIce, location_);
         }
     }
@@ -140,12 +162,16 @@ void AmmoRocket::draw() const {
     glTexCoord2f((posX+4)*0.125f, posY*0.125f);    glVertex2f(bottomRight.x_, bottomRight.y_);
     glTexCoord2f(posX*0.125f,     posY*0.125f);    glVertex2f(topRight.x_, topRight.y_);
 
-    if (target_ && frozen_ <= 0) {
+    MobileSpaceObject* target(NULL);
+    if (ballTarget_) target = ballTarget_;
+    else if (shipTarget_) target = shipTarget_;
+
+    if (target && frozen_ <= 0) {
         glColor3f(1.f, 0.7f, 0.9f);
         const int posX = 5;
         const int posY = 5;
         float const size = std::sin(lifeTime_*5.f)*4.f + 26.f;
-        Vector2f const loc(target_->location());
+        Vector2f const loc(target->location());
         glTexCoord2f(posX*0.125f,    (posY+3)*0.125f); glVertex2f(loc.x_ - size, loc.y_ - size);
         glTexCoord2f((posX+3)*0.125f,(posY+3)*0.125f); glVertex2f(loc.x_ + size, loc.y_ - size);
         glTexCoord2f((posX+3)*0.125f, posY*0.125f);    glVertex2f(loc.x_ + size, loc.y_ + size);

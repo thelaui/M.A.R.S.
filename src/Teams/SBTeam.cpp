@@ -33,8 +33,8 @@ void SBTeam::createJobs() {
     checkPowerUps();
 
      for (int i=0; i<botControllers_.size(); ++i) {
-        addJob(Job(Job::jLand, 30));
-        addJob(Job(Job::jCharge, 30));
+        addJob(Job(Job::jLand, 20));
+        addJob(Job(Job::jCharge, 20));
     }
 }
 
@@ -69,11 +69,11 @@ void SBTeam::checkPowerUps() {
         if (!(*it)->isCollected()) {
             powerUpLocations_.push_back((*it)->location());
             switch ((*it)->type()) {
-                case items::puFuel:     addJob(Job(Job::jGetPUFuel,    70, &powerUpLocations_.back())); break;
-                case items::puHealth:   addJob(Job(Job::jGetPUHealth,  70, &powerUpLocations_.back())); break;
-                case items::puReverse:  if (existAny) addJob(Job(Job::jGetPUReverse, 70, &powerUpLocations_.back())); break;
-                case items::puShield:   addJob(Job(Job::jGetPUShield,  70, &powerUpLocations_.back())); break;
-                default:                if (existAny) addJob(Job(Job::jGetPUSleep,   70, &powerUpLocations_.back())); break;
+                case items::puFuel:                   addJob(Job(Job::jGetPUFuel,    30, &powerUpLocations_.back())); break;
+                case items::puHealth:                 addJob(Job(Job::jGetPUHealth,  30, &powerUpLocations_.back())); break;
+                case items::puReverse:  if (existAny) addJob(Job(Job::jGetPUReverse, 40, &powerUpLocations_.back())); break;
+                case items::puShield:                 addJob(Job(Job::jGetPUShield,  30, &powerUpLocations_.back())); break;
+                default:                if (existAny) addJob(Job(Job::jGetPUSleep,   40, &powerUpLocations_.back())); break;
             }
         }
     }
@@ -85,7 +85,7 @@ void SBTeam::checkBall() {
         if (!ball->isVisible()) {
             int waitCount(settings::C_iDumb*(botControllers_.size()+1)/200);
             for (int i=0; i<waitCount; ++i)
-                addJob(Job(Job::jWaitForBall, 20, ball));
+                addJob(Job(Job::jWaitForBall, 5, ball));
         }
         else {
             int ballZone(zones::isInside(this, *ball));
@@ -101,7 +101,7 @@ void SBTeam::checkBall() {
                     int protectJobs(botControllers_.size()*0.5);
                     while(protectJobs > 0) {
                         for (int i=0; i<(protectJobs+1)*0.5; ++i)
-                            addJob(Job(Job::jProtectZone, 20,  currentZone->second));
+                            addJob(Job(Job::jProtectZone, 30,  currentZone->second));
                         protectJobs /= 2;
                         if (++currentZone == zones.end())
                             currentZone = zones.begin();
@@ -124,7 +124,7 @@ void SBTeam::checkBall() {
                         if (++currentZone == zones.end())
                             currentZone = zones.begin();
                     }
-                    for (int i=botControllers_.size()*0.6f; i<botControllers_.size(); ++i)
+                    for (int i=0; i<botControllers_.size()*0.6f; ++i)
                         addJob(Job(Job::jKickToEnemy, 60, ball));
                 }
             }

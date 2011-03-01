@@ -72,7 +72,7 @@ void Freezer::draw(float alpha) const {
         glEnd();
 
         if (!menus::visible() || games::type() == games::gMenu)
-            timer_ -= timer::frameTime();
+            timer_ -= timer::frameTime()*2.f;
     }
 }
 
@@ -80,7 +80,7 @@ void Freezer::activate() const {
     if (parent_->fragStars_ > 0) {
 
         radius_              = parent_->fragStars_*50.f+150.f;
-        const float strength = parent_->fragStars_*8.f;
+        const float strength = parent_->fragStars_*14.f;
 
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
@@ -112,7 +112,7 @@ void Freezer::activate() const {
         for (std::list<AmmoRocket*>::iterator it=AmmoRocket::activeParticles_.begin(); it!=AmmoRocket::activeParticles_.end(); ++it) {
             float distance(((*it)->location()-parent_->location()).length());
             if (distance <= radius_) {
-                (*it)->velocity_=Vector2f();
+                (*it)->velocity_ = (*it)->velocity_*0.00001f;
                 (*it)->mass_=9999999999.f;
                 if ((*it)->frozen_ <= 0)
                     decoObjects::addIce(*it);
