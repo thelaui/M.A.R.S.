@@ -191,7 +191,11 @@ void Home::explode() {
     physics::removeStaticObject(this);
     location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;
-    restartTimer_ = 5.f;
+
+    if (games::ended()) restartTimer_ = FLT_MAX;
+    else                                restartTimer_ = 0.5f;
+
     teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
     hud::displayPoints();
+    timer::enableExtremSlowMo(true);
 }

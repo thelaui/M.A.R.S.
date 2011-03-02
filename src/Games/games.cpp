@@ -45,6 +45,7 @@ namespace games {
         float fadeFactor_(1.f);
 
         void fade() {
+            timer::enableExtremSlowMo(false);
             if (fadeIn_) {
                 fadeFactor_ -= timer::frameTime()*2.f;
                 if (fadeFactor_ <= 0.f) {

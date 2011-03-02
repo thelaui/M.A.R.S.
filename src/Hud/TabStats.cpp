@@ -48,7 +48,7 @@ TabStats::TabStats():
 
 void TabStats::update() {
     if (visible_ || refresh_) {
-        // check for necessityof a map-update
+        // check for necessity of a map-update
         int currentPoints(0);
         for (std::vector<Team*>::const_iterator it = teams::getAllTeams().begin(); it != teams::getAllTeams().end(); ++it)
             currentPoints += (*it)->points();
@@ -328,6 +328,9 @@ void TabStats::draw() const {
 }
 
 void TabStats::display(bool show) {
+    if (show) timer::enableExtremSlowMo(true);
+    else if (!show && visible_) timer::enableExtremSlowMo(false);
+
     visible_ = show;
 }
 

@@ -22,6 +22,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/hud.hpp"
 # include "Locales/locales.hpp"
 # include "defines.hpp"
+# include "Games/games.hpp"
 # include "Hud/musicNotify.hpp"
 
 # include <sys/types.h>
@@ -51,6 +52,7 @@ namespace music {
             }
             closedir(dp);
 
+            musicChannel_.SetLoop(false);
             musicChannel_.SetRelativeToListener(true);
             sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             setGlobalVolume();
@@ -61,7 +63,6 @@ namespace music {
             sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
             musicChannel_.OpenFromFile(fileName);
             musicChannel_.Play();
-            musicChannel_.SetLoop(false);
             musicNotify::show(files_[nextTrack]);
         }
 
@@ -71,8 +72,10 @@ namespace music {
         if (settings::C_musicVolume > 0) {
             if (!initialized_) init();
 
-            if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0)
-                playGameMusic();
+            if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0) {
+                if (games::type() == games::gMenu) playMenuMusic();
+                else                               playGameMusic();
+            }
 
             float slowMoTime(timer::slowMoTime());
             if (slowMoTime > 0.75f) {
@@ -94,7 +97,6 @@ namespace music {
         if (settings::C_musicVolume > 0) {
             if (!initialized_) init();
 
-            musicChannel_.SetLoop(true);
             sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
             musicChannel_.OpenFromFile(fileName);
             musicChannel_.Play();

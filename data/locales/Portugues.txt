@@ -1,18 +1,18 @@
-﻿// Botões do menu
+﻿// botões do menu
 
-000 Iniciar Jogo Local
+000 Iniciar um Jogo Local
 105 Iniciar Tutorial
-001 Iniciar Jogo em Rede
-002 Entrar num Jogo em Rede   
+001 Iniciar um Jogo em Rede
+002 Entrar em um Jogo em Rede
 003 Opções
 004 Sobre
 005 Sair do M.A.R.S.
 006 Continuar
-007 Reiniciar jogo
+007 Reiniciar Jogo
 008 Esconder Menu
-009 Sair do Jogo Atual
+009 Retornar ao Menu principal
 
-// Botões por padrão
+// standard buttons
 
 010 Iniciar
 011 Cancelar
@@ -21,7 +21,7 @@
 014 Licença
 015 Ok
 106 Próximo
-016 Mostrar esta informação novamente.
+016 Mostrar Estas Informações Novamente.
 
 // pregame options
 
@@ -30,11 +30,15 @@
 019 Robôs da Esquerda
 020 Robôs da Direita
 021 Robôs
-022 Limite de Extermínios  
+022 Limite de Frags
 162 Limite de Pontos
-056 Weapon Options
-203 Weapons
-204 Specials
+056 Opções de Armas
+203 Armas
+204 Habilidades Especiais
+166 Taxa de Renovação dos PowerUps
+167 Difficuldade dos Robôs
+159 Opções do Jogo
+257 Jogadores
 
 // story information
 
@@ -54,6 +58,10 @@
 
 030 Pegue o controle remoto e segure-o o máximo possível!
 
+206 Como a GRANDE GUERRA reduz os seus recursos drasticamente, cientistas conseguiram encontrar uma maneira eficiente de destruir seu inimigo facilmente limitando a entrada. Eles realizaram uma infinidade de pesquisas e criaram uma nova arma de incrível capacidade: Matar instantaneamente, mas os projéteis possuem grande afinidade gravitacional e são difíceis de manobrar. Por isso foi batizado de INSTA-GRAVE!   \n \nInfelizmente alguém roubou a tecnologia, então seus inimigos podem também utilizar desta arma maléfica. Agora é a sua vez: Derrote estes bandidos no grande BURACO GRAVITACIONAL para reobter a vantagem. \n \nVença esta batalha, e a vitória da GRANDE GUERRA pode ser sua.
+
+207 Destrua quantos inimigos for possível!
+
 // display options
 // tabs
 
@@ -62,6 +70,8 @@
 102 Gráficos
 103 Áudio
 
+// interface Options
+
 104 Configurações da Janela
 031 Mostrar Informação de Debug
 032 Orientação dos Robôs
@@ -69,35 +79,41 @@
 034 Caminhos da IA 
 035 Mostrar Informações do Jogo
 036 Quadros por Segundo
-152 Language
-153 Hotkey for Screenshots
-054 File Format for Screenshots
+215 Configurações Gerais
+152 Idioma
+153 Tecla de Atalho para Screenshots
+054 Formato de Arquivo para Screenshots
+242 Tecla de Atalho para Estatísticas
+
+// graphics options
+
 037 Contagem de Partículas
 038 Contagem de Partículas
 039 Tempo de Vida das Partículas
-040 Estrelas
+040 Configurações do Jogo
 041 Tela Cheia
 042 V-Sync
-055 Display Tool Tips
+055 Mostrar Dicas de Ferramentas
 163 Efeitos de Sombra
 164 Infelizmente a sua máquina não suporta os efeitos de Sombra!
-
-151 High Starfield Resolution
-173 Resolution
-174 Color Depth
+151 Alta Resolução do campo Estelar
+173 Resolução
+174 Profundidade de Color
 
 // gameplay options
 
-166 Taxa de Aparecimento de Bônus 
-167 Dificuldade dos Robôs
-168 Explosões para Câmera Lenta
-169 Desligado
+216 Efeitos Especiais
+168 Explosões em Câmera lenta
+169 Desabilitado
 
 // audio options
 
-043 Volume da Música
-044 Volume do Som
-045 Volume dos Anúncios
+123 Configurações de Volume
+043 Música
+044 Som
+045 Anúncios
+128 Tocar Próxima Faixa
+129 Configurações de Reprodução
 
 // player options
 
@@ -106,10 +122,11 @@
 048 Virar à Esquerda
 049 Virar à Direita
 050 Arma
-175 Special
+175 Habilidade Epecial 
+217 Configurações da Nave
 051 Nave
-052 Player Color
-053 Team Color  
+052 Cor do Jogador
+053 Cor do Time
 
 // about
 
@@ -123,7 +140,7 @@
 
 170 Créditos
 171 Agradecimentos especiais para:
-172 Traduções:\n    Alemão: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTestes e Suporte criativo:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traduções:\n Árabe: Majid\n Chinês: Wecing\n Tcheco: Mates\n Finlandês: Paavo\n Francês: Astohan\n Alemão: Sandra\n Hindú: Antriksh & Aakanksh\n Húngaro: Papp Bence\n Italiano: Proch\n Polonês: command_dos\n Português: Vitor\n Russo: Drakmail\n Espanhol: Gastón\n Sueco: Henrik\n\nSuporte de Código:\n Werner and Deubeuliou\n\nTestes e suporte criativo:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
@@ -141,7 +158,6 @@
 
 // key names
 
-//064 Add
 064 Mais
 065 Barra invertida
 066 vírgula
@@ -169,7 +185,7 @@
 088 Alt Direito
 089 Parênteses Direito
 090 Control Direito
-091 Return
+0091 Return
 092 Direita
 093 Shift Direito
 094 Super Direito
@@ -179,10 +195,42 @@
 098 Menos
 099 Til
 100 Tab
+101 Cima
+
+// Joystick button names
+
+218 Botão A 
+219 Botão B 
+220 Botão X 
+221 Botão Y 
+222 Start 
+223 BBotão Traseiro
+224 Bumper Direito
+225 Bumper Esquerdo
+226 Trigger Direito
+227 Trigger Esquerdo
+228 Cima
+229 Baixo
+230 Esquerda
+231 Direita
+232 Stick1 Cima
+233 Stick1 Baixo
+234 Stick1 Esquerda
+235 Stick1 Direita
+236 Stick2 Cima
+237 Stick2 Baixo
+238 Stick2 Esquerda
+239 Stick2 Direita
+240 Joystick
+241 Botão
+
 
 // tutorial texts
 
-107 Bem Vindo Cadete Espacial!
+212 Ei, {PLAYER1_NAME}!
+213 Esse é um nome feio... Sinta-se à vontade para escolher um melhor!
+
+1107 Bem Vindo Cadete Espacial!
 108 Estamos felizes em recrutar um heroi em ascensão como você para se unir à GRANDE GUERRA!\nNós observamos que você precisa de um pouco de prática com sua nava.\nVamos começar o treinamento...
 
 109 Movimentação Básica
@@ -204,16 +252,13 @@
 120 Você é o melhor recruta que já vi.\nAgora se prepare para algo mais explosivo.
 
 121 Atirando...
-122 Para derrotar seus inimigos, você deve saber como atirar!\n para isso pressione
-123 Divirta-se enquanto atira por aí e então aterrise sua nave para continuar o tutorial.
+122 Para derrotar seus inimigos, você deve saber como atirar!\n para isso pressione. \nDivirta-se enquanto atira por aí e então aterrise sua nave para continuar o tutorial.
 
 124 Boa Aterrisagem!
 125 Você parece ser um ótimo piloto.\n\nAgora que tal mais algumas armas?
 
 126 As Armas...
 127 Eu sei que você estava esperando por isso. Quando estiver pousado você pode alternar entre incríveis armas maléficas.\npressione
-128 para abrir seu arsenal.\nEntão use
-129 para escolher sua arma! Levante voo quando estiver pronto!
 
 130 Batalha!
 131 Agora vamos ver como você se sai contra um recruta de outro planeta.\nParece que ele está tentando melhorar suas habilidades de voo.\nDestrua-o!
@@ -221,11 +266,41 @@
 132 Impressionante!
 133 você consegiu! Como já deve ter percebido, você ganha pontos de reputação para cada inimigo morto.\nO número verde pequeno aparecendo sobre sua nave representa a quantidade. Ele aumentará se você matar vários inimigos de vez.
 
-134 Cuidado!
-135 Não há tempo para descanso.\nNossos inimigos enviaram um de seus guerreiros de verdade!\nNão há nada que eu possa fazer por você...
+208 Habilidades Especiais...
+209 como prometido, lhe contaremos o significado das estrelas. Elas são um recurso de incríveis habilidades extras para sua nave. Por exemplo você pode curar a ti a a teus colegas próximos, repulsar ou congelar naves a certa distância! \nQuanto mais estrelas possuir, maior será o alcance e a força da habilidade.
+
+
+210 Seleção...
+211 para alternar entre as habilidades, basta pressionar <{PLAYER1_KEY_SPECIAL}>. para escolher uma, você deve alternar utilizando <{PLAYER1_KEY_LEFT}> e <{PLAYER1_KEY_RIGHT}>! \nPara esta aula, selecione o "Congelador"! Escolha-o quando consegui-lo!
+
+
+245 Pare, {PLAYER1_NAME}!
+246 Lhe foi dito para selecionar o Congelador, mas outra habilidade foi escolhida!\nPor favor aterrise novamente e escolha o Congelador!
+
+
+247 The Congelador...
+248 Esta é uma poderosa habilidade especial que congela naves próximas. \nvocê deve voar próximo ao inimigo e pressionar <{PLAYER1_KEY_SPECIAL}> para o congelar. Observe-o perdendo vida calmamente... até ele morrer!
+
+
+249 Pratique!
+250 Agora tente congelar seu inimigo! \nPara este tutorial te daremos algumas estrelas. Mas lembre-se: Na vida real você deve destruir oponentes para adquirir estas estrelas!
+
+
+251 Você não o acertou, {PLAYER1_NAME}!
+252 tente novamente. devolveremos suas estrelas.
+
+253 Você conseguiu!
+254 Agora volte ao seu planeta nalat e seleciona outra habilidade especial!
+
+
+255 Cuidado, {PLAYER1_NAME}!
+256 Não há tempo para mais testes!\nNossos inimigos enviaram dois guerreiros de verdade para vingança!
+
+
+134 Derrote-os!
+135 Prove suas habilidades! Marque pelo menos cinco pontos os matando! Seus pontos são exibidos próximo a seu nome!\nEnviaremos um guerreiro experiente para te assistir, {PLAYER1_NAME}!
 
 136 Inacreditável!
-
 137 Vovê consegiu cumprir todas as tarefas sucessivamente. Agora o que vamos fazer?\nVamos dar uma olhada nas opções do menu. Nele você pode ajustar um monte de... bem... opções.\nPor exemplo você pode escolher o seu estilo de nave e sua cor ou mudar o seu nome...
 
 138 Quem é melhor?
@@ -249,47 +324,54 @@
 // tabmenu collumns
 
 154 Pontos
-155 Extermínios
-156 Extermínios em time
+155 Frags
+244 Tiros de Canhão
+156 Frags em time
 157 Suicídios
 158 Mortes
-159 Reputação
 160 Total:
 161 Estatísticas
 
 // Tool tips options menu
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Exibe a quantidade de quadros calculados por segundo.\nSe estiver sempre muito baixo (<20), você deve ajustar algumas configurações na aba de gráficos!
+177 Exibe a quantidade de partículas ativas.
+178 Elimina as dicas de ferramentas como esta.
+179 Ajusta o formato utilizado ao salvar os Screenshots.
+180 Quando este botão é pressionado, um screenshot é salvo em {CONFIG_PATH}screenshots/
+181 Pressionando esta tecla alterna para a próxima trilha musical.
+182 Se múltiplas naves explodirem simultaneamente, ocorrerá um efeito em câmera lenta.
+183 Exibe a função de cada robô.
+184 Exibe as zonas táticas, que são importantes para a inteligência artificial.
+185 Exibe os caminhos calculados pelos robôs
+186 Maximiza a janela, fazendo com que ocupa toda a tela.
+187 Faz o jogo se atualizar de acordo com a taxa de atualização de seu monitor.\nHabilitar esta opção geralmente faz o jogo funcionar mais suavemente.
+188 Habilita efeitos legais como névoa de fogo, mas redua a performance do jogo.
+189 Ajusta o tamanho da tela.\nAfeta tanto o modo de janela quanto a tela cheia.
+190 Com monitores de alta resolução, esta opção faz o campo estelar mais duradouro.\n Desabilitar esta opção pode melhorar a performance do jogo.
+191 Ajusta a contagem global de partículas.\nValores menores melhorarão a performance significativamente.
+192 Ajusta o tempo de vida global das partículas.\nValores menores melhorarão a performance significativamente.
+193 Ajusta o volume da música de fundo.
+194 Ajusta o volume dos efeitos sonoros.
+195 Ajusta o volume da voz dos anúncios.
+243 Quando esta tecla é pressionada dirante o jogo, uma janela aparece exibindo as estatísticas atuais.
+
 
 // Tool tips in the start-a-new-game-window
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
+196 Ajusta o time dos jogadores locais
+197 Habilita jogadores locais.
+198 Ajusta a quantidade de naves controladas pele inteligência artificial.
+199 Limite de pontos a ser alcançado por um time para vencer o jogo.
+200 Limite de pontos a ser alcançado por um jogador para vencer o jogo.
+201 Ajusta a força dos robôs
+202 ajusta a quantidade de Power-Ups que aparecerão durante o jogo.\n Zero desabilita os Power-Ups.
 202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
 
-// 205
+// Interface notifications
 
+205 Screenshot salvo!
+214 próxima trilha musical!
+
+// 258
 

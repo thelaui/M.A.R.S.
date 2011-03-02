@@ -35,6 +35,7 @@ namespace timer {
 
         // for slow-motion
         float slowMoTimer_(0.f);
+        bool  extremSlowMo_(false);
         float exploCounterResetTimer_(0.f);
         int   exploCounter_(0);
     }
@@ -50,8 +51,7 @@ namespace timer {
             fpsTimer_   = 0.f;
         }
 
-        // get frametime, occasionally with slow motion
-        if (!menus::visible() && hud::statsVisible()) {
+        if (!menus::visible() && extremSlowMo_) {
             frameTime_ =  frameTime*0.05f;
             totalTime_ += frameTime_;
         }
@@ -97,6 +97,8 @@ namespace timer {
             exploCounterResetTimer_ = 0.1f;
         }
     }
+
+    void enableExtremSlowMo(bool enable) { extremSlowMo_ = enable; }
 
     float frameTime() { return frameTime_; }
 

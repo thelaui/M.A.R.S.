@@ -58,7 +58,7 @@ namespace hud {
         if (games::type() == games::gMenu)   logo_->update();
 
         if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey)) {
-            tabStats_->display();
+            tabStats_->display(true);
             gamePoints_->display();
         }
         else tabStats_->display(false);

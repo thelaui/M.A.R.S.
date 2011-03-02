@@ -67,6 +67,7 @@ Game::~Game() {
     decoObjects::clear();
     trailEffects::clear();
     timer::resetSlowMotion();
+    timer::enableExtremSlowMo(false);
 }
 
 void Game::update() {
