@@ -42,7 +42,8 @@ namespace file {
                 // Convert it to utf-32
                 int inSize = line.size();
                 FriBidiChar logical[inSize];
-                int outSize = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8, line.c_str(), inSize, logical);
+                const char* tmp(line.c_str());
+                int outSize = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8, tmp, inSize, logical);
 
                 FriBidiChar visual[outSize];
                 FriBidiParType base = FRIBIDI_PAR_LTR;
