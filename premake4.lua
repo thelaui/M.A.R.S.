@@ -4,7 +4,7 @@ solution "MarsProject"
 project "mars"
   language "C++"
   kind     "ConsoleApp"
-  files  { "include/**.hpp", "src/**.cpp", "data/shaders/*" }
+  files  { "include/**.hpp", "src/**.cpp", "data/shaders/*", "resources/*"  }
   includedirs { "include/" }
  
   configuration { "Release*" }

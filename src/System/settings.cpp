@@ -27,6 +27,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 # include <iostream>
 
+# ifdef __WIN32__
+    # include <shlobj.h>
+    # include <windows.h>
+# endif
+
 inline int clamp(int x, int min, int max) {
     return x < min ? min : (x > max ? max : x);
 }
@@ -212,7 +217,10 @@ namespace settings {
         # endif
 
         # ifdef __WIN32__
-
+            TCHAR szAppData[MAX_PATH];
+            SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, 0, szAppData);
+            std::string home(szAppData);
+            CreateDirectory((home + "/.marsshooter/").c_str(), NULL);
         # endif
 
         # ifdef __APPLE__
@@ -237,14 +245,23 @@ namespace settings {
                     C_configPath =      home + ".marsshooter/";
                     success = true;
                 }
-                else {
+                else
                     C_configPath =      home + ".marsshooter/";
-                }
             # endif
 
             # ifdef __WIN32__
+                TCHAR szAppData[MAX_PATH];
+                SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, 0, szAppData);
+                std::string home(szAppData);
+
                 if (std::ifstream((C_configPath + "mars.cfg").c_str()))
                     success = true;
+                else if (std::ifstream((home + "/.marsshooter/mars.cfg").c_str())) {
+                    C_configPath =      home + "/.marsshooter/";
+                    success = true;
+                }
+                else
+                    C_configPath =      home + "/.marsshooter/";
             # endif
 
             # ifdef __APPLE__

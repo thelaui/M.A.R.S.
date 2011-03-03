@@ -1,0 +1,3 @@
+# ifdef __WIN32__
+    IDR_ICO_MAIN ICON "resources/icon.ico"
+# endif

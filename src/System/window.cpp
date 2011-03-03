@@ -35,6 +35,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <time.h>
 # include <sys/stat.h>
 
+# ifdef __WIN32__
+    # include <windows.h>
+# endif
+
 
 namespace window {
 
@@ -197,7 +201,7 @@ namespace window {
         # ifndef __APPLE__
             // apple uses bundle icon instead
             sf::Image icon;
-            icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
+            icon.LoadFromFile("resources/icon.png");
             window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
         # endif
 
@@ -361,11 +365,12 @@ namespace window {
         # endif
 
         # ifdef __WIN32__
-            if (shot.SaveToFile(settings::C_configPath + filename.str())) {
-                std::cout << "Saved screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+            CreateDirectory((settings::C_configPath + "screenshots/").c_str(), NULL);
+            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
                 hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
             } else {
-                std::cout << "Failed saving screenshot to " << settings::C_configPath << filename.str() << "." << std::endl;
+                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
             }
         # endif
     }
