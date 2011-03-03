@@ -143,7 +143,7 @@ bool Tab::tabPrevious() {
 }
 
 
-void Tab::textEntered(int keyCode) {
+void Tab::textEntered(sf::Uint32 keyCode) {
     if (active_ && focusedWidget_)
         focusedWidget_->textEntered(keyCode);
 }

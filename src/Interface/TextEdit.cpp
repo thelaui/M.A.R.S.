@@ -82,58 +82,60 @@ void TextEdit::mouseLeft(bool down) {
 }
 
 void TextEdit::keyEvent(bool down, Key const& key) {
-    if (pressed_) {
-        if (down && key.type_ == Key::kKeyBoard) {
-            // backspace
-            if (key.code_.keyBoard_ == sf::Key::Back && cursorPos_ > 0) {
-                value_->Erase(cursorPos_-1, 1);
-                --cursorPos_;
-                cursorTimer_ = 0;
-            }
-            // delete
-            else if (key.code_.keyBoard_ == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
-                value_->Erase(cursorPos_, 1);
-            }
-            // move cursor
-            else if (key.code_.keyBoard_ == sf::Key::Left && cursorPos_ > 0) {
-                --cursorPos_;
-                cursorTimer_ = 0;
-            }
-            else if (key.code_.keyBoard_ == sf::Key::Right && cursorPos_ < value_->GetSize()) {
-                ++cursorPos_;
-                cursorTimer_ = 0;
-            }
-            else if (key.code_.keyBoard_ == sf::Key::Escape || key.code_.keyBoard_ == sf::Key::Up || key.code_.keyBoard_ == sf::Key::Down || key.code_.keyBoard_ == sf::Key::Return) {
-                menus::unFixKeyboard();
-            pressed_ = false;
+    if (key.type_ == Key::kKeyBoard) {
+        if (pressed_) {
+            if (down) {
+                // backspace
+                if (key.code_.keyBoard_ == sf::Key::Back && cursorPos_ > 0) {
+                    value_->Erase(cursorPos_-1, 1);
+                    --cursorPos_;
+                    cursorTimer_ = 0;
+                }
+                // delete
+                else if (key.code_.keyBoard_ == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
+                    value_->Erase(cursorPos_, 1);
+                }
+                // move cursor
+                else if (key.code_.keyBoard_ == sf::Key::Left && cursorPos_ > 0) {
+                    --cursorPos_;
+                    cursorTimer_ = 0;
+                }
+                else if (key.code_.keyBoard_ == sf::Key::Right && cursorPos_ < value_->GetSize()) {
+                    ++cursorPos_;
+                    cursorTimer_ = 0;
+                }
+                else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Key::Up || key.code_.keyBoard_ == sf::Key::Down || key.navi_ == Key::nConfirm) {
+                    menus::unFixKeyboard();
+                pressed_ = false;
+                }
             }
         }
-    }
-    else if (down && (key.navi_ == Key::nConfirm)) {
-        menus::fixKeyboardOn(this);
-        pressed_ = true;
+        else if (down && (key.navi_ == Key::nConfirm)) {
+            menus::fixKeyboardOn(this);
+            pressed_ = true;
+        }
     }
 }
 
-void TextEdit::textEntered(int keyCode) {
+void TextEdit::textEntered(sf::Uint32 keyCode) {
     if (pressed_) {
         if (type_ == TEXT_EDIT) {
-            if (keyCode > 32 && keyCode < 126 && value_->GetSize() < maxLength_) {
-                value_->Insert(cursorPos_, static_cast<char>(keyCode));
+            if (value_->GetSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32) {
+                value_->Insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == IP_EDIT) {
              if (((keyCode > 47 && keyCode < 58) || keyCode == 46) && value_->GetSize() < maxLength_) {
-                value_->Insert(cursorPos_, static_cast<char>(keyCode));
+                value_->Insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == PORT_EDIT) {
              if (value_->GetSize() < maxLength_) {
-                value_->Insert(cursorPos_, static_cast<char>(keyCode));
+                value_->Insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }

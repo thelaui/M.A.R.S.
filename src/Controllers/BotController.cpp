@@ -94,7 +94,6 @@ void BotController::evaluate() {
     checkCloseEnemies();
     checkAggro();
     checkSpecial();
-    checkControl();
 }
 
 void BotController::applyForJob(std::multimap<Job, std::multimap<short, BotController*> >& jobMap) {

@@ -114,7 +114,7 @@ bool TabList::tabPrevious() {
     return true;
 }
 
-void TabList::textEntered(int keyCode) {
+void TabList::textEntered(sf::Uint32 keyCode) {
     if (focusedTab_)
         focusedTab_->textEntered(keyCode);
 }

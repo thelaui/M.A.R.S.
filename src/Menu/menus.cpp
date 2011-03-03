@@ -113,13 +113,13 @@ namespace menus {
                 else
                     hideWindow();
             }
-            else if (down && key.navi_ == Key::nUp) {
+            else if (down && key.navi_ == Key::nUp && !hidden_) {
                 windowStack_.back()->tabPrevious();
             }
-            else if (down && key.navi_ == Key::nDown) {
+            else if (down && key.navi_ == Key::nDown && !hidden_) {
                 windowStack_.back()->tabNext();
             }
-            else {
+            else if (!hidden_) {
                 windowStack_.back()->keyEvent(down, key);
                 windowStack_.back()->checkWidgets();
             }
@@ -128,7 +128,7 @@ namespace menus {
             showPause();
     }
 
-    void textEntered(int keyCode) {
+    void textEntered(sf::Uint32 keyCode) {
         if (visible())
             windowStack_.back()->textEntered(keyCode);
     }

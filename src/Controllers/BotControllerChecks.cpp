@@ -149,14 +149,4 @@ void BotController::checkCloseEnemies() {
         }
     }
 }
-void BotController::checkControl() {
-    CannonControl* control(items::getCannonControl());
-    if (control) {
-        Player* carrier(control->getCarrier());
-        if (carrier == slave_) {
-            for (std::map<Ship*, float>::iterator it = aggroTable_.begin(); it != aggroTable_.end(); ++it)
-                if (it->second > 0)
-                    slave_->team()->addJob(Job(Job::jAttackTarget, it->second, it->first));
-        }
-    }
-}
+

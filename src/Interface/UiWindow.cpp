@@ -84,7 +84,7 @@ bool UiWindow::tabPrevious() {
     return false;
 }
 
-void UiWindow::textEntered(int keyCode) {
+void UiWindow::textEntered(sf::Uint32 keyCode) {
     if (focusedWidget_)
         focusedWidget_->textEntered(keyCode);
 }

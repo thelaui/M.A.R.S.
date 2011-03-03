@@ -32,7 +32,7 @@ class TabList: public UiElement {
         void mouseWheelMoved(Vector2f const& position, int delta);
         void mouseLeft(bool down);
         void keyEvent(bool down, Key const& key);
-        void textEntered(int keyCode);
+        void textEntered(sf::Uint32 keyCode);
 
         bool tabNext();
         bool tabPrevious();

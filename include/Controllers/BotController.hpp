@@ -27,19 +27,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class TacticalZone;
 
-/// A basic controller with artificial intelligence.
-/// It provides some basic actions for bots, like landing,
-/// kicking the ball, switching weapons, attacking enemies
-/// and so on. Each BotController has got a value from 0 to 100
-/// for each of these actions, describing it's priority. It will
-/// perform the action with the highest priority.
-/// Twice a second the pure virtual protected member function
-/// evaluate is called, which will change the priorities.
-/// Furthermore, each BotController has got an aggro-table which
-/// stores a threat-value for each opponent. Enemies gain threat
-/// when they attack tha Player controlled by this bot. The enemiy
-/// with the highest threat is most likely to be attacked.
-
 class BotController: public Controller {
     public:
         /// Constructs the BotController, initializing it's members.
@@ -72,7 +59,6 @@ class BotController: public Controller {
         void checkEnergy();
         void checkSpecial();
         void checkCloseEnemies();
-        void checkControl();
 
         // team actions
         void     performJob();

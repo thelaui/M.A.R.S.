@@ -33,7 +33,7 @@ class TextEdit: public UiElement {
         void mouseMoved(Vector2f const& position);
         void mouseLeft(bool down);
         void keyEvent(bool down, Key const& key);
-        void textEntered(int keyCode);
+        void textEntered(sf::Uint32 keyCode);
 
         void draw() const;
 

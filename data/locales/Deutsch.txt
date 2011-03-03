@@ -100,7 +100,7 @@
 123 Lautstärke
 043 Musik
 044 Sound
-045 Sprach
+045 Sprache
 128 Spiele nächsten Titel
 129 Wiedergabeoptionen 
 

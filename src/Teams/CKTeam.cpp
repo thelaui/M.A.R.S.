@@ -90,6 +90,8 @@ void CKTeam::checkControl() {
         if (carrier) {
             if (carrier->team() == this) {
                 addJob(Job(Job::jEscape, 100));
+                for (int i=0; i<botControllers_.size()-1; ++i)
+                    addJob(Job(Job::jAttackAny, 80));
             }
             else {
                 for (int i=0; i<botControllers_.size(); ++i)

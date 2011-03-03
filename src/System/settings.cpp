@@ -155,7 +155,13 @@ namespace settings {
             outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
             outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
             outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
-            outStream << "[playerIName] "           <<  C_playerIName.ToAnsiString() << std::endl;
+            outStream << "[playerIName] ";
+            int i(0);
+            while (i < 12 && i < C_playerIName.GetSize()) {
+                outStream<<C_playerIName[i]<<" ";
+                ++i;
+            }
+            outStream << "0" << std::endl;
             outStream << "[playerIKeys] "           <<  C_playerIup << " "<< C_playerIright << " " << C_playerIleft << " " << C_playerIfire << " " << C_playerISpecialKey << std::endl;
             outStream << "[playerIColor] "          <<  C_playerIColor.r() << " "<< C_playerIColor.g() << " " << C_playerIColor.b() << std::endl;
             outStream << "[playerITeamColor] "      <<  C_playerITeamColor.r() << " "<< C_playerITeamColor.g() << " " << C_playerITeamColor.b() << std::endl;
@@ -164,7 +170,13 @@ namespace settings {
             outStream << "[playerIShip] "           <<  C_playerIShip << std::endl;
             outStream << "[playerIWeapon] "         <<  C_playerIWeapon << std::endl;
             outStream << "[playerISpecial] "        <<  C_playerISpecial << std::endl;
-            outStream << "[playerIIName] "          <<  C_playerIIName.ToAnsiString() << std::endl;
+            outStream << "[playerIIName] ";
+            i = 0;
+            while (i < 12 && i < C_playerIIName.GetSize()) {
+                outStream<<C_playerIIName[i]<<" ";
+                ++i;
+            }
+            outStream << "0" << std::endl;
             outStream << "[playerIIKeys] "          <<  C_playerIIup << " "<< C_playerIIright << " " << C_playerIIleft << " " << C_playerIIfire << " " << C_playerIISpecialKey <<  std::endl;
             outStream << "[playerIIColor] "         <<  C_playerIIColor.r() << " "<< C_playerIIColor.g() << " " << C_playerIIColor.b() << std::endl;
             outStream << "[playerIITeamColor] "     <<  C_playerIITeamColor.r() << " "<< C_playerIITeamColor.g() << " " << C_playerIITeamColor.b() << std::endl;
@@ -462,14 +474,24 @@ namespace settings {
                     C_slowMoKickIn = clamp(value, 0, 10);
                 }
                 else if (inputLine == "[playerIName]") {
-                    std::string tmp(iss.str());
-                    tmp.erase(0, inputLine.size()+1);
-                    C_playerIName = sf::String(std::string(tmp, 0, 12));
+                    sf::String tmp;
+                    sf::Uint32 character(0);
+                    iss >> character;
+                    while (character != 0) {
+                        tmp.Insert(tmp.GetSize(), character);
+                        iss >> character;
+                    }
+                    C_playerIName = tmp;
                 }
                 else if (inputLine == "[playerIIName]") {
-                    std::string tmp(iss.str());
-                    tmp.erase(0, inputLine.size()+1);
-                    C_playerIIName = sf::String(std::string(tmp, 0, 12));
+                    sf::String tmp;
+                    sf::Uint32 character(0);
+                    iss >> character;
+                    while (character != 0) {
+                        tmp.Insert(tmp.GetSize(), character);
+                        iss >> character;
+                    }
+                    C_playerIIName = tmp;
                 }
                 else if (inputLine == "[playerIKeys]") {
                     iss >> C_playerIup >> C_playerIright >> C_playerIleft >> C_playerIfire >> C_playerISpecialKey;

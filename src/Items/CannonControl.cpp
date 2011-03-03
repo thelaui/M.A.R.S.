@@ -112,7 +112,7 @@ void CannonControl::draw() const {
         }
 
         glDisable(GL_TEXTURE_2D);
-
+        glLineWidth(2.f);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         ship_->owner_->color().gl3f();
 
