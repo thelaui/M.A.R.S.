@@ -85,7 +85,7 @@ UiWindow* NewGameMenu::get() {
         tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
         tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
         tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::GameOptions), Vector2f(10, 120), 540, 100));
-        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 10, Vector2f(20,150), 520, 270, true));
+        tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 100, Vector2f(20,150), 520, 270, true));
         tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
         tabSpaceBall_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabSpaceBall_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
@@ -134,7 +134,7 @@ UiWindow* NewGameMenu::get() {
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsLeft, 0, 10, Vector2f(20,80), 230, 120, true));
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsRight, 0, 10, Vector2f(310,80), 230, 120, true));
         tabCannonKeep_->addWidget(new LabeledBox(locales::getLocale(locales::GameOptions), Vector2f(10, 120), 540, 100));
-        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 10, Vector2f(20,150), 520, 270, true));
+        tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::Pointlimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimit, 1, 100, Vector2f(20,150), 520, 270, true));
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, Vector2f(20,170), 520, 270, true));
         tabCannonKeep_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, Vector2f(20,190), 520, 270, true));
         tabCannonKeep_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));

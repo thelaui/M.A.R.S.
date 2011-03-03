@@ -37,7 +37,7 @@ void GamePoints::draw() const {
         float midPoint = viewPort.x_/2;
         float top;
         if (timer_ < 1.1578f) {
-            if (timer_+timer::frameTime() >= 0.7f && timer_ < 0.7f) sound::playSound(sound::Swish);
+            if (timer_+timer::realFrameTime() >= 0.7f && timer_ < 0.7f) sound::playSound(sound::Swish);
             top = -75.f/0.64*std::pow((timer_-0.8f), 2) +15.f;
         }
         else if (timer_ < 8.06f)
@@ -97,7 +97,7 @@ void GamePoints::draw() const {
         glBindTexture(GL_TEXTURE_2D, 0);
 
         std::stringstream sstr;
-        sstr << teams::getTeamL()->points() << " : " << teams::getTeamR()->points();
+        sstr << teams::getTeamL()->victories() << " : " << teams::getTeamR()->victories();
         text::drawFooText();
         text::drawScreenText(sf::String(sstr.str()), Vector2f(midPoint, viewPort.y_-60.f-top), 20.f, TEXT_ALIGN_CENTER, Color3f(1.f,0.5f,0.8f));
     }
@@ -105,7 +105,7 @@ void GamePoints::draw() const {
 
 void GamePoints::update() {
     if (timer_ > 0.f)
-        timer_ -= timer::frameTime();
+        timer_ -= timer::realFrameTime();
 }
 
 void GamePoints::display() {

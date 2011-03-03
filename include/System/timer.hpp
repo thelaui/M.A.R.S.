@@ -31,14 +31,17 @@ namespace timer {
     /// Notifies the timer when a ship exploded, for slow motion managing.
     void onShipExplode();
 
-    /// Enables extrem slowmotion. For tabstats and end of the game.
-    void enableExtremSlowMo(bool enable);
-
-    /// Returns the duration of the last frame in seconds.
+    /// Returns the duration of the last frame in seconds. Modified by slow motion effects.
     float frameTime();
 
-    /// Returns the total duration of the game in seconds.
+    /// Returns the total duration of the game in seconds.  Modified by slow motion effects.
     float totalTime();
+
+    /// Returns the duration of the last frame in seconds. Not affected by slow motion effects.
+    float realFrameTime();
+
+    /// Returns the total duration of the game in seconds.  Not affected by slow motion effects.
+    float realTotalTime();
 
     /// Returns the remaining Slow-Mo-time.
     float slowMoTime();

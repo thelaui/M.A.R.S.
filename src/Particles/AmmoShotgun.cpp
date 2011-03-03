@@ -24,11 +24,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 std::list<AmmoShotgun*> AmmoShotgun::activeParticles_;
 
 AmmoShotgun::AmmoShotgun(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.5f, 0.5f, sf::Randomizer::Random(0.5f, 1.0f)),
+         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.5f, 0.5f, sf::Randomizer::Random(0.3f, 0.7f)),
          color_(1.f, 0.7f, 0.2f) {
 
     setDamageSource(damageSource);
-    velocity_ = direction*1000.f + Vector2f::randDirLen()*250.f;
+    velocity_ = direction*1000.f + Vector2f::randDirLen()*400.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
     trailEffects::attach(this, 0.02f, 0.1f, 4.f, Color3f(0.3f, 0.2f, 0.05f), false);

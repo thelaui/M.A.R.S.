@@ -63,10 +63,10 @@ void UiElement::mouseLeft(bool down) {
 
 void UiElement::draw() const {
     if      (hovered_)             hoveredFadeTime_ = 1.f;
-    else if (hoveredFadeTime_ > 0) hoveredFadeTime_ -= timer::frameTime()*5.f;
+    else if (hoveredFadeTime_ > 0) hoveredFadeTime_ -= timer::realFrameTime()*5.f;
     if      (hoveredFadeTime_ < 0) hoveredFadeTime_ = 0.f;
     if      (focused_)             focusedFadeTime_ = 1.f;
-    else if (focusedFadeTime_ > 0) focusedFadeTime_ -= timer::frameTime()*5.f;
+    else if (focusedFadeTime_ > 0) focusedFadeTime_ -= timer::realFrameTime()*5.f;
     if      (focusedFadeTime_ < 0) focusedFadeTime_ = 0.f;
 }
 

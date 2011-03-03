@@ -439,7 +439,7 @@ namespace settings {
                 else if (inputLine == "[pointLimit]") {
                     int value;
                     iss >> value;
-                    C_pointLimit = clamp(value, 1, 20);
+                    C_pointLimit = clamp(value, 1, 100);
                 }
                 else if (inputLine == "[pointLimitDM]") {
                     int value;

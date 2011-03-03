@@ -37,9 +37,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 Home::Home(Vector2f const& location, float radius, Color3f const& color):
                SpaceObject(spaceObjects::oHome, location, radius, radius*150.f),
                color_(color),
-               life_(1000.f),
-               visible_(true),
-               restartTimer_(0.f) {
+               life_(settings::C_pointLimit),
+               visible_(true) {
 
     if (color_.v() < 0.5f) color_.v(0.5f);
     if (color_.s() < 0.5f) color_.s(0.5f);
@@ -49,11 +48,7 @@ Home::Home(Vector2f const& location, float radius, Color3f const& color):
 }
 
 void Home::update() {
-    if (restartTimer_ > 0.f) {
-        restartTimer_ -= timer::frameTime();
-        if (restartTimer_ <= 0.f) games::restart();
-    }
-    else if (life_ <= 0.f && visible_) explode();
+    if (life_ <= 0.f && visible_) explode();
 }
 
 void Home::draw() const {
@@ -86,8 +81,7 @@ void Home::drawLife() const {
 }
 
 int Home::getLife() const {
-    int life = static_cast<int>(ceil(life_/10.f));
-    return life < 0 ? 0 : life;
+    return life_ < 0 ? 0 : life_;
 }
 
 void Home::createShips(std::vector<Player*>& inhabitants) const {
@@ -162,13 +156,17 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
                 particles::spawnMultiple(10, particles::pMud, location, direction, velocity, color_);
             break;
 
-        case spaceObjects::oBall:
-            life_ -= (strength + dynamic_cast<Ball*>(with)->heatAmount());
-            teams::getTeamL()->home() == this ? teams::getTeamR()->addStars() : teams::getTeamL()->addStars();
-            break;
-
+        case spaceObjects::oBall: {
+                int amount =  1 + (dynamic_cast<Ball*>(with)->heatAmount() > 10 ? 1 : 0);
+                life_ -= amount;
+                teams::getTeamL()->home() == this ? teams::getTeamR()->addStars() : teams::getTeamL()->addStars();
+                for (int i=0; i<amount; ++i)
+                    teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
+                break;
+        }
         case spaceObjects::oCannonBall:
-            life_ -= sf::Randomizer::Random(40, 60);
+            life_ -= 1;
+            teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
             if (life_ <= 0) explode();
             break;
 
@@ -192,10 +190,5 @@ void Home::explode() {
     location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;
 
-    if (games::ended()) restartTimer_ = FLT_MAX;
-    else                                restartTimer_ = 0.5f;
-
-    teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
     hud::displayPoints();
-    timer::enableExtremSlowMo(true);
 }

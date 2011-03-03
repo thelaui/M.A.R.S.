@@ -42,9 +42,8 @@ class Home: public SpaceObject {
         void explode();
 
         Color3f color_;
-        float life_;
+        int life_;
         bool visible_;
-        float restartTimer_;
 };
 
 # endif // HOME_HPP_INCLUDED

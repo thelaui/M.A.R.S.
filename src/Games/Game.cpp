@@ -41,7 +41,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 Game::Game(games::GameType const& type):
     type_(type),
-    startTime_(timer::totalTime()) {
+    startTime_(timer::totalTime()),
+    ended_(false) {
         switch (type_) {
             case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit;    break;
             case games::gDeathMatch:                         pointLimit_ = settings::C_pointLimitDM;  break;
@@ -67,7 +68,6 @@ Game::~Game() {
     decoObjects::clear();
     trailEffects::clear();
     timer::resetSlowMotion();
-    timer::enableExtremSlowMo(false);
 }
 
 void Game::update() {
@@ -81,8 +81,21 @@ void Game::update() {
         postFX::update();
         trailEffects::update();
 
-        if (ended())
+        if (teams::getFirstPoints() >= pointLimit_) {
+            if (!ended_) {
+                Team* best(NULL);
+                int   most(0);
+                for (std::vector<Team*>::const_iterator it = teams::getAllTeams().begin(); it != teams::getAllTeams().end(); ++it)
+                    if (most < (*it)->points()) {
+                        best = *it;
+                        most = (*it)->points();
+                    }
+                if (best)
+                    best->addVictory();
+                ended_ = true;
+            }
             hud::displayStats();
+        }
         else {
             decoObjects::update();
             ships::update();
@@ -118,17 +131,14 @@ void Game::restart() {
     zones::clear();
     decoObjects::clear();
     trailEffects::clear();
-    if (teams::getFirstPoints() >= pointLimit_) {
-        teams::resetTeamPoints();
-        players::resetPlayerPoints();
-    }
-    if (games::type() == games::gCannonKeep || games::type() == games::gSpaceBall)
-        players::resetPlayerPoints();
+    teams::resetTeamPoints();
+    players::resetPlayerPoints();
     startTime_ = timer::totalTime();
     controllers::resetBots();
     stars::init();
     hud::displayStats(false);
     timer::resetSlowMotion();
+    ended_ = false;
 }
 
 games::GameType Game::type() const {
@@ -140,7 +150,7 @@ float Game::elapsedTime() const {
 }
 
 bool Game::ended() const {
-    return teams::getFirstPoints() >= pointLimit_;
+    return ended_;
 }
 
 

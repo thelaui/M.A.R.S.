@@ -328,9 +328,6 @@ void TabStats::draw() const {
 }
 
 void TabStats::display(bool show) {
-    if (show) timer::enableExtremSlowMo(true);
-    else if (!show && visible_) timer::enableExtremSlowMo(false);
-
     visible_ = show;
 }
 

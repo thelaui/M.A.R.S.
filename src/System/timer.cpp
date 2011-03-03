@@ -26,7 +26,9 @@ namespace timer {
 
     namespace {
         float frameTime_(0.f);
+        float realFrameTime_(0.f);
         float totalTime_(0.f);
+        float realTotalTime_(0.f);
         float fps_(0.f);
 
         // for fps counting:
@@ -35,12 +37,13 @@ namespace timer {
 
         // for slow-motion
         float slowMoTimer_(0.f);
-        bool  extremSlowMo_(false);
         float exploCounterResetTimer_(0.f);
         int   exploCounter_(0);
     }
 
     void update(float frameTime) {
+        realFrameTime_ = frameTime;
+
         // fps
         fpsTimer_  += frameTime;
         ++frameCount_;
@@ -51,25 +54,22 @@ namespace timer {
             fpsTimer_   = 0.f;
         }
 
-        if (!menus::visible() && extremSlowMo_) {
+        if (!menus::visible() && hud::statsVisible())
             frameTime_ =  frameTime*0.05f;
-            totalTime_ += frameTime_;
-        }
         else if (slowMoTimer_ > 1.f) {
             if (!menus::visible() || games::type() == games::gMenu)
                 slowMoTimer_ -= frameTime;
             frameTime_ =  frameTime*0.15f;
-            totalTime_ += frameTime_;
         }
         else if (slowMoTimer_ > 0.f) {
             slowMoTimer_ -= frameTime;
             frameTime_ =  frameTime*(1.f-0.75f*slowMoTimer_);
-            totalTime_ += frameTime_;
         }
-        else {
+        else
             frameTime_ =  frameTime;
-            totalTime_ += frameTime_;
-        }
+
+        totalTime_     += frameTime_;
+        realTotalTime_ += realFrameTime_;
 
         if (settings::C_slowMoKickIn > 0) {
             // reset explosion counter
@@ -98,11 +98,13 @@ namespace timer {
         }
     }
 
-    void enableExtremSlowMo(bool enable) { extremSlowMo_ = enable; }
-
     float frameTime() { return frameTime_; }
 
+    float realFrameTime() { return realFrameTime_; }
+
     float totalTime() { return totalTime_; }
+
+    float realTotalTime() { return realTotalTime_; }
 
     float slowMoTime() { return slowMoTimer_ < 0.f ? 0.f : slowMoTimer_*0.2f; }
 

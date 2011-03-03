@@ -132,7 +132,7 @@ void AmmoRocket::update() {
         if (frozen_ < 0.f) {
             frozen_ = 0.f;
             mass_ = 3.f;
-            particles::spawnMultiple(10, particles::pCrushedIce, location_);
+            particles::spawnMultiple(2, particles::pCrushedIce, location_);
         }
     }
 
@@ -237,6 +237,13 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
 
     if (frozen_ <= 0)
         life_ -= amount;
-    else frozen_ -= unfreeze;
+    else {
+        frozen_ -= unfreeze;
+        if (frozen_ < 0.f) {
+            frozen_ = 0.f;
+            mass_ = 3.f;
+            particles::spawnMultiple(2, particles::pCrushedIce, location_);
+        }
+    }
 }
 

@@ -32,6 +32,7 @@ Team::Team(Color3f const& color):
     color_(color),
     homeZone_(NULL),
     teamZone_(NULL),
+    victories_(0),
     points_(0) {}
 
 void Team::update() {
@@ -78,6 +79,10 @@ void Team::addPoint() const {
 
 void Team::subtractPoint() const {
     --points_;
+}
+
+void Team::addVictory() const {
+    ++victories_;
 }
 
 void Team::addStars() const {

@@ -39,13 +39,15 @@ class Team {
 
         void addJob(Job const& job);
 
-        std::vector<Player*> const& members()  const {return members_;}
-        Home                 const* home()     const {return home_;}
-        Color3f              const& color()    const {return color_;}
-        int                         points()   const {return points_;}
-        void                        addStars() const;
-        void                        addPoint() const;
+        std::vector<Player*> const& members()   const {return members_;}
+        Home                 const* home()      const {return home_;}
+        Color3f              const& color()     const {return color_;}
+        int                         points()    const {return points_;}
+        int                         victories() const {return victories_;}
+        void                        addStars()  const;
+        void                        addPoint()  const;
         void                        subtractPoint() const;
+        void                        addVictory()    const;
         void                        resetPoints()   const;
 
         friend short zones::isInside(Team* checker, SpaceObject const& toBeChecked);
@@ -67,6 +69,7 @@ class Team {
         Color3f color_;
         Zone* homeZone_;
         Zone* teamZone_;
+        mutable int victories_;
         mutable int points_;
 };
 

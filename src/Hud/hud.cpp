@@ -55,13 +55,10 @@ namespace hud {
         gamePoints_->update();
         tabStats_->update();
 
-        if (games::type() == games::gMenu)   logo_->update();
+        if (games::type() == games::gMenu)
+            logo_->update();
 
-        if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey)) {
-            tabStats_->display(true);
-            gamePoints_->display();
-        }
-        else tabStats_->display(false);
+        tabStats_->display(games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey));
 
         std::list<Message*>::iterator it = messages_.begin();
         while (it != messages_.end()) {
@@ -94,9 +91,8 @@ namespace hud {
                 std::vector<Home*> const& homes = spaceObjects::getHomes();
                 for (std::vector<Home*>::const_iterator it = homes.begin(); it != homes.end(); ++it)
                     (*it)->drawLife();
-                gamePoints_->draw();
             }
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            gamePoints_->draw();
             rightLife_->draw();
             leftLife_ ->draw();
         }

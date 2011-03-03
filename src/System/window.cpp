@@ -125,23 +125,23 @@ namespace window {
                         menus::mouseLeft(false);
                 }
                 else if (event.Type == sf::Event::JoyButtonPressed) {
-                    if (timer::totalTime() - joyButtonTimer_ > 0.1f) {
+                    if (timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
                             controllers::singleKeyEvent(Key(event.JoyButton.JoystickId, event.JoyButton.Button));
                         menus::keyEvent(true, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
-                        joyButtonTimer_ = timer::totalTime();
+                        joyButtonTimer_ = timer::realTotalTime();
                     }
                 }
                 else if (event.Type == sf::Event::JoyButtonReleased)
                     menus::keyEvent(false, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
                 else if (event.Type == sf::Event::JoyMoved) {
                     Key key(event.JoyButton.JoystickId, event.JoyMove.Axis, event.JoyMove.Position);
-                    if (key.strength_ >= 95 && timer::totalTime() - joyButtonTimer_ > 0.1f) {
+                    if (key.strength_ >= 95 && timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
                             controllers::singleKeyEvent(key);
                         if(key.strength_ >= 95)
                             menus::keyEvent(true, key);
-                        joyButtonTimer_ = timer::totalTime();
+                        joyButtonTimer_ = timer::realTotalTime();
                     }
                 }
                 else if (event.Type == sf::Event::MouseWheelMoved) {

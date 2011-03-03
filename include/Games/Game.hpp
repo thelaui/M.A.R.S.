@@ -60,14 +60,10 @@ class Game {
         bool ended() const;
 
     private:
-        /// Stores the game's GameType
         games::GameType type_;
-
-        /// Stores the time when the games was created.
-        float startTime_;
-
-        /// Stores the maximum points until the game finishes.
-        int pointLimit_;
+        float           startTime_;
+        int             pointLimit_;
+        bool            ended_;
 };
 
 # endif // GAME_HPP_INCLUDED

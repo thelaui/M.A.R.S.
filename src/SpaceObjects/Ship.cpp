@@ -225,7 +225,7 @@ void Ship::update() {
                 if (frozen_ <= 0.f) {
                     frozen_ = 0.f;
                     mass_ = 10.f;
-                    particles::spawnMultiple(10, particles::pCrushedIce, location_);
+                    particles::spawnMultiple(2, particles::pCrushedIce, location_);
                 }
 
                 velocity_ = Vector2f();
@@ -452,7 +452,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
         if (frozen_ <= 0.f) {
             frozen_ = 0.f;
             mass_ = 10.f;
-            particles::spawnMultiple(10, particles::pCrushedIce, location_);
+            particles::spawnMultiple(2, particles::pCrushedIce, location_);
         }
     }
 
