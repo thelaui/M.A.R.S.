@@ -58,7 +58,7 @@ namespace locales {
                      JoyA1right, JoyA2up, JoyA2down, JoyA2left, JoyA2right, JoyStick, JoyButton,
                      StatisticsKey, ttStatisticsKey, CannonShots, Tut23, TutText23, Tut24, TutText24, Tut25, TutText25,
                      Tut26, TutText26, Tut27, TutText27, Tut28, TutText28, PlayerOptions, Artist, Album, PreviousTrackNotify,
-                     AudioPreviousKey, AudioRandom, ttAudioPreviousKey, ttAudioRandom,
+                     AudioPreviousKey, AudioRandom, ttAudioPreviousKey, ttAudioRandom, StarField, ttStarField,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

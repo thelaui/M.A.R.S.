@@ -39,6 +39,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "System/generateName.hpp"
 # include "Media/music.hpp"
+# include "Particles/Star.hpp"
 # include "Media/sound.hpp"
 # include "Locales/locales.hpp"
 # include "Menu/ChooseLanguage.hpp"
@@ -61,6 +62,7 @@ bool OptionsMenu::kOk_(false);
 bool OptionsMenu::fullscreen_(false);
 bool OptionsMenu::vsync_(false);
 bool OptionsMenu::shaders_(false);
+bool OptionsMenu::starfield_(false);
 sf::String OptionsMenu::resolution_("");
 sf::String OptionsMenu::colorDepth_("");
 sf::String OptionsMenu::format_("");
@@ -70,12 +72,12 @@ int  OptionsMenu::announcerVolume_(0);
 
 UiWindow* OptionsMenu::get() {
     if (instance_ == NULL) {
-        instance_ = new OptionsMenu(600, 370);
+        instance_ = new OptionsMenu(600, 390);
 
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(500,340), 90, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Ok), NULL, &kOk_, Vector2f(500,360), 90, 20));
         instance_->addWidget(new Label(locales::getLocale(locales::Options), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 
-        TabList* tabList  = new TabList(Vector2f(10,55), 580, 250);
+        TabList* tabList  = new TabList(Vector2f(10,55), 580, 270);
         Tab* tabInterface = new Tab(locales::getLocale(locales::Interface), 90);
         Tab* tabGameplay  = new Tab(locales::getLocale(locales::Gameplay), 90);
         Tab* tabGraphics  = new Tab(locales::getLocale(locales::Display), 80);
@@ -127,8 +129,9 @@ UiWindow* OptionsMenu::get() {
         tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), locales::getLocale(locales::ttResolution), &resolution_, resolutions, Vector2f(20,120), 540, 200));
         tabGraphics->addWidget(new LabeledBox(locales::getLocale(locales::GameSettings), Vector2f(10, 170), 560, 90));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarsHigh), locales::getLocale(locales::ttStarsHigh), &settings::C_StarsHigh, Vector2f(20,200), 150));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), locales::getLocale(locales::ttParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(20,220), 540, 200));
-        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), locales::getLocale(locales::ttParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(20,240), 540, 200));
+        tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::StarField), locales::getLocale(locales::ttStarField), &starfield_, Vector2f(20,220), 150));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleCountSlider), locales::getLocale(locales::ttParticleCountSlider), &settings::C_globalParticleCount, 1, 300, Vector2f(20,240), 540, 200));
+        tabGraphics->addWidget(new Slider(locales::getLocale(locales::ParticleLifetime), locales::getLocale(locales::ttParticleLifetime), &settings::C_globalParticleLifeTime, 1, 300, Vector2f(20,260), 540, 200));
 
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));
@@ -237,6 +240,13 @@ void OptionsMenu::checkWidgets() {
     if (announcerVolume_ != settings::C_announcerVolume) {
         settings::C_announcerVolume = announcerVolume_;
     }
+    if (starfield_ != settings::C_StarField) {
+        settings::C_StarField = starfield_;
+        if (settings::C_StarField)
+            Star::init();
+        else
+            Star::clear();
+    }
 }
 
 void OptionsMenu::onShow() {
@@ -246,6 +256,7 @@ void OptionsMenu::onShow() {
     soundVolume_     = settings::C_soundVolume;
     musicVolume_     = settings::C_musicVolume;
     announcerVolume_ = settings::C_announcerVolume;
+    starfield_       = settings::C_StarField;
 
     if      (settings::C_screenShotFormat == "bmp") format_ = "BITMAP (*.bmp)";
     else if (settings::C_screenShotFormat == "gif") format_ = "GIF (*.gif)";

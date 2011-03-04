@@ -51,6 +51,7 @@ namespace settings {
     extern bool           C_fullScreen;
     extern bool           C_vsync;
     extern bool           C_StarsHigh;
+    extern bool           C_StarField;
     extern int            C_globalParticleCount;
     extern bool           C_adaptiveParticleCount;
     extern int            C_globalParticleLifeTime;

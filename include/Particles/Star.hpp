@@ -1,4 +1,4 @@
-/* AmmoFist.hpp
+/* Star.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,30 +15,34 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef AMMOFIST_HPP_INCLUDED
-# define AMMOFIST_HPP_INCLUDED
+# ifndef STAR_HPP_INCLUDED
+# define STAR_HPP_INCLUDED
 
 # include "Particles/Particle.hpp"
 
 # include "System/Color3f.hpp"
 
-class AmmoFist: public Particle<AmmoFist> {
+class Star: public Particle<Star> {
     public:
-        AmmoFist(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
+        Star(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource);
 
         void update();
+        void update(float time);
+
         void draw() const;
 
-        void onCollision(SpaceObject* with, Vector2f const& location,
-                         Vector2f const& direction, Vector2f const& velocity);
+        friend class Particle<Star>;
 
-        friend class Particle<AmmoFist>;
+        static void init();
 
     private:
-        static std::list<AmmoFist*> activeParticles_;
+        Color3f color_;
+        float   depth_;
+        float   alpha_;
+        static std::list<Star*> activeParticles_;
 };
 
-# endif // AMMOFIST_HPP_INCLUDED
+# endif // STAR_HPP_INCLUDED
 
 
 

@@ -61,11 +61,15 @@ namespace particles {
         pAmmoFist,          ///< Spawned by the Fist.
         pNumber,            ///< Spawned when damage is done.
         pCrushedIce,        ///< Spawned when damage is done.
-        pAmmoInsta          ///< Spawned by the InstaGib rifle.
+        pAmmoInsta,         ///< Spawned by the InstaGib rifle.
+        pStar               ///< For the background starfield.
     };
 
     /// Updates all particles.
     void update();
+
+    /// Draws the stars.
+    void drawStars();
 
     /// Draws some particles.
     void drawLower();

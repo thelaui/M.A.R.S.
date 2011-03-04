@@ -33,7 +33,7 @@ namespace spaceObjects {
                      oMud, oSmoke, oEruption, oDust, oExplode, oFragment, oBurningFragment, oFragmentFlame,
                      oMiniFlame, oAmmoFlubba, oMiniAmmoFlubba, oCannonBall, oSpark, oAmmoBurner, oAmmoH2OMG, oHeat,
                      oHeatJet, oShockWave, oHeatBurner, oMiniFlameSmoke, oAmmoRocket, oPowerUpCollect, oAmmoFist,
-                     oNumber, oAmmoInsta};
+                     oNumber, oAmmoInsta, oStar};
 
     void update();
     void draw();

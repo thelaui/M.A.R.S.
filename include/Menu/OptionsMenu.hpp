@@ -36,7 +36,7 @@ class OptionsMenu: public UiWindow {
 
         static bool kOk_;
 
-        static bool       fullscreen_, vsync_, shaders_;
+        static bool       fullscreen_, vsync_, shaders_, starfield_;
         static sf::String resolution_, colorDepth_, format_;
         static int        soundVolume_, musicVolume_, announcerVolume_;
 };

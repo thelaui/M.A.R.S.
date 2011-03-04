@@ -51,6 +51,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/AmmoFist.hpp"
 # include "Particles/Number.hpp"
 # include "Particles/CrushedIce.hpp"
+# include "Particles/Star.hpp"
 
 # include "TrailEffects/trailEffects.hpp"
 
@@ -86,6 +87,20 @@ namespace particles {
         Number::           updateAll();
         CrushedIce::       updateAll();
         AmmoInsta::        updateAll();
+        Star::             updateAll();
+    }
+
+    void drawStars() {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Star));
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+        glBegin(GL_QUADS);
+
+            Star::drawAll();
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     void drawLower() {
@@ -106,6 +121,7 @@ namespace particles {
             AmmoROFLE::        drawAll();
             BurningFragment::  drawAll();
             AmmoInsta::        drawAll();
+            FragmentFlame::    drawAll();
 
         glEnd();
 
@@ -132,9 +148,9 @@ namespace particles {
             AmmoBurner::       drawAll();
             Fuel::             drawAll();
             CannonBall::       drawAll();
-            FragmentFlame::    drawAll();
             Spark::            drawAll();
             CrushedIce::       drawAll();
+            //AmmoFist::         drawAll();
 
         glEnd();
 
@@ -220,6 +236,7 @@ namespace particles {
             case pNumber:           Number::           spawn(location, direction, velocity, color, damageSource); break;
             case pCrushedIce:       CrushedIce::       spawn(location, direction, velocity, color, damageSource); break;
             case pAmmoInsta:        AmmoInsta::        spawn(location, direction, velocity, color, damageSource); break;
+            case pStar:             Star::             spawn(location, direction, velocity, color, damageSource); break;
         }
     }
 
@@ -261,7 +278,7 @@ namespace particles {
                 + CannonBall::count() + Spark::count() + Fragment::count() + AmmoBurner::count()
                 + AmmoH2OMG::count() + Heat::count() + HeatJet::count() + ShockWave::count()
                 + HeatBurner::count() + MiniFlameSmoke::count() + AmmoRocket::count()+ PowerUpCollect::count()
-                + AmmoFist::count() + Number::count() + CrushedIce::count() + AmmoInsta::count();
+                + AmmoFist::count() + Number::count() + CrushedIce::count() + AmmoInsta::count() + Star::count();
     }
 
     void clear() {
@@ -295,5 +312,6 @@ namespace particles {
         Number::           clear();
         CrushedIce::       clear();
         AmmoInsta::        clear();
+        Star::             clear();
     }
 }

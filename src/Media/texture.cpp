@@ -92,6 +92,7 @@ namespace texture {
                 case Stars1_medium:            loadTexture_(type, settings::C_dataPath + "tex/background/starfield_1_medium.jpg");   break;
                 case Stars2_large:             loadTexture_(type, settings::C_dataPath + "tex/background/starfield_2_large.jpg");    break;
                 case Stars2_medium:            loadTexture_(type, settings::C_dataPath + "tex/background/starfield_2_medium.jpg");   break;
+                case Star:                     loadTexture_(type, settings::C_dataPath + "tex/background/star.png");        break;
                 case EnergyBars:               loadTexture_(type, settings::C_dataPath + "tex/interface/energyBars.png");   break;
                 case Widgets:                  loadTexture_(type, settings::C_dataPath + "tex/interface/widgets.png");      break;
                 case Interface:                loadTexture_(type, settings::C_dataPath + "tex/interface/interface.png");    break;

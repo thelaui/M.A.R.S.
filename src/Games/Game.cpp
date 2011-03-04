@@ -75,6 +75,7 @@ void Game::update() {
     announcer::update();
     hud::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
+        stars::update();
         spaceObjects::update();
         particles::update();
         items::update();
@@ -110,6 +111,8 @@ void Game::update() {
 }
 
 void Game::draw() const {
+    if (settings::C_StarField)
+        particles::drawStars();
     particles::drawLower();
     trailEffects::draw();
     controllers::draw();

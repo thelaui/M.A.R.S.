@@ -40,11 +40,13 @@ AmmoROFLE::~AmmoROFLE() {
 
 
 void AmmoROFLE::update() {
-    float time = timer::frameTime();
-    physics::collide(this, STATICS | MOBILES);
-    location_ += velocity_*time;
+    float time = timer::frameTime()*0.5f;
 
-    lifeTime_ += time;
+    for (int i=0; i<2; ++i) {
+        physics::collide(this, STATICS | MOBILES);
+        location_ += velocity_*time;
+        lifeTime_ += time;
+    }
 
     if (location_.x_ < -100 || location_.x_ > SPACE_X_RESOLUTION + 100 || location_.y_ < -100 || location_.y_ > SPACE_Y_RESOLUTION + 100) {
         killMe();
