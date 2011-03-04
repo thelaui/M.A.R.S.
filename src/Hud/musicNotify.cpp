@@ -45,7 +45,9 @@ namespace musicNotify {
         if (timer_ > 0.f) {
 
             float alpha(1.f);
-            if (timer_ < 1.f)
+            if (timer_ > 4.f)
+                alpha = 5 - timer_;
+            else if (timer_ < 1.f)
                 alpha = timer_;
             else if (timer_ < 0.f)
                 alpha = 0.f;
@@ -184,7 +186,7 @@ namespace musicNotify {
 
     void update() {
          if (timer_ > 0.f)
-            timer_ -= timer::frameTime();
+            timer_ -= timer::realFrameTime();
     }
 
     void show(std::string const& fileName) {
@@ -201,7 +203,11 @@ namespace musicNotify {
         else             title_ = fileName;
         artist_ = tag->artist().toWString();
         album_  = tag->album().toWString();
-        timer_ = 4.f;
+
+        if (timer_ <= 0)
+            timer_ = 5.f;
+        else if (timer_ < 4)
+            timer_ = 4.f;
     }
 }
 

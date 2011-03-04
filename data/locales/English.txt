@@ -88,6 +88,7 @@
 163 Shader Effects
 164 Sadly, shaders are not supported by your hardware!
 151 High Star Field Resolution
+265 Moving Stars
 173 Resolution
 174 Color Depth
 
@@ -337,6 +338,7 @@
 188 Enables cool effects like heat haze, but reduces game performance.
 189 Sets the size of the window.\nAffects both, full screen and windowed mode.
 190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+266 Draws some moving stars on the background. Eye candy, but reduces game performance.
 191 Adjusts the global particle count.\nLower values will increase performance significantly.
 192 Adjusts the global particle life time.\nLower values will increase performance significantly.
 193 Adjusts volume of background music.
@@ -362,4 +364,4 @@
 258 Artist: 
 259 Album: 
 
-// 265
+// 267

@@ -34,11 +34,11 @@ void Message::draw() const {
 }
 
 void Message::update() {
-    timer_ += timer::frameTime();
+    timer_ += timer::realFrameTime();
     if (timer_ > 1.f) {
-        speed_       += timer::frameTime();
+        speed_       += timer::realFrameTime();
         location_.y_ += speed_;
-        alpha_       -= timer::frameTime();
+        alpha_       -= timer::realFrameTime();
     }
 }
 

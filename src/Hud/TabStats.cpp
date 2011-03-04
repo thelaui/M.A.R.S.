@@ -174,6 +174,25 @@ void TabStats::draw() const {
         sstr << std::setfill('0') << std::setw(2) << (seconds-seconds%60)/60 << " : " << std::setw(2) << seconds%60;
         text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(width-10*mirror, 18), 12.f, TEXT_ALIGN_RIGHT, Color3f(1.f, 0.5f, 0.8f));
 
+        int pointlimit;
+        sf::String name = *locales::getLocale(locales::Fraglimit);
+
+         switch (games::type()) {
+            case games::gSpaceBall: case games::gCannonKeep:
+                pointlimit = settings::C_pointLimit;
+                name       = *locales::getLocale(locales::Pointlimit);
+                break;
+            case games::gDeathMatch:
+                pointlimit = settings::C_pointLimitDM;
+                break;
+            default:
+                pointlimit = settings::C_pointLimitTDM;
+        }
+
+        sstr.str("");
+        sstr << ": " << pointlimit;
+        text::drawScreenText(name + sf::String(sstr.str()), topLeft + Vector2f(width*0.5f, 18), 12.f, TEXT_ALIGN_CENTER, Color3f(1.f, 0.5f, 0.8f));
+
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         glLineWidth(2.f);
 

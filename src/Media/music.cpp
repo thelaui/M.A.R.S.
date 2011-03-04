@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "defines.hpp"
 # include "Games/games.hpp"
 # include "Hud/musicNotify.hpp"
+# include "System/window.hpp"
 
 # include <sys/types.h>
 # include <dirent.h>
@@ -88,6 +89,10 @@ namespace music {
                 musicChannel_.SetPitch(1.f-slowMoTime*2.f);
             }
             else musicChannel_.SetPitch(1.f);
+
+
+            if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey))
+                musicNotify::show(files_[playList_.back()]);
         }
         else if (musicChannel_.GetStatus() == sf::Music::Playing)
             stop();
