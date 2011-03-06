@@ -290,11 +290,16 @@ void Tutorial::update() {
                 if (evilPlayer1_->ship()->getLife() > 0)
                     evilPlayer1_->ship()->explode();
                 evilPlayer1_->ship()->respawnTimer_ = FLT_MAX;
+                timer_ = timer::totalTime();
+                ++state_;
+            } break;
+         case 28:
+            if (timer::totalTime() > timer_ + 1.5f) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut27), locales::getLocale(locales::TutText27), 17, true, false));
                 zones::addTutorialZone(Vector2f(SPACE_X_RESOLUTION+20, 450.f), 190.f);
                 ++state_;
             } break;
-        case 28:
+        case 29:
             if (players::getPlayerI()->ship()->docked_ && !menus::visible()) {
                 zones::clear();
                 zones::createRaster(4, 3);
@@ -307,7 +312,7 @@ void Tutorial::update() {
                 hud::init();
                 ++state_;
             } break;
-        case 29:
+        case 30:
             if (!menus::visible()) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut13), locales::getLocale(locales::TutText13), 19, false, false));
                 players::addPlayer(players::getPlayerI()->team(), controllers::cBot);
@@ -320,28 +325,28 @@ void Tutorial::update() {
                 players::resetPlayerPoints();
                 ++state_;
             } break;
-        case 30:
+        case 31:
             if (players::getPlayerI()->team()->points() >= 5) {
                 timer_ = timer::totalTime();
                 ++state_;
             } break;
 
-        case 31:
+        case 32:
             if (timer::totalTime() > timer_ + 1.f) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut14), locales::getLocale(locales::TutText14), 20, false, false));
                 ++state_;
             } break;
-        case 32:
+        case 33:
             if (!menus::visible()) {
                 menus::showWindow(OptionsMenu::get());
                 ++state_;
             } break;
-        case 33:
+        case 34:
             if (!menus::visible()) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut15), locales::getLocale(locales::TutText15), 21, false, true));
                 ++state_;
             } break;
-        case 34:
+        case 35:
             if (!menus::visible()) {
                 menus::showWindow(TutorialWindow::get(locales::getLocale(locales::Tut16), locales::getLocale(locales::TutText16), 22, false, false));
                 ++state_;

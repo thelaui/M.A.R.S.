@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define BALL_HPP_INCLUDED
 
 # include "SpaceObjects/MobileSpaceObject.hpp"
+# include "Players/Player.hpp"
 
 class Ball: public MobileSpaceObject {
     public:
@@ -36,6 +37,9 @@ class Ball: public MobileSpaceObject {
         bool isVisible() const      {return visible_;}
         float heatAmount() const {return heatTimer_*5.f;}
 
+        Player* lastShooter() const {return lastShooter_;}
+        void resetShooter() {lastShooter_ = NULL;}
+
         friend class BotController;
         friend class Freezer;
         template <typename Object> friend class Ice;
@@ -52,6 +56,8 @@ class Ball: public MobileSpaceObject {
         float respawnRotation_;
 
         float heatTimer_, smokeTimer_, respawnTimer_;
+
+        Player* lastShooter_;
 };
 
 # endif // BALL_HPP_INCLUDED

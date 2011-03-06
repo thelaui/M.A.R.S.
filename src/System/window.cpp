@@ -201,7 +201,7 @@ namespace window {
         # ifndef __APPLE__
             // apple uses bundle icon instead
             sf::Image icon;
-            icon.LoadFromFile("resources/icon.png");
+            icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
             window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
         # endif
 

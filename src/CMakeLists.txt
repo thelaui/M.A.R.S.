@@ -25,7 +25,7 @@ if(APPLE)
 	set(MACOSX_BUNDLE_LONG_VERSION_STRING "${mars_VERSION}")
 	set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${mars_VERSION}")
 	set(MACOSX_BUNDLE_BUNDLE_VERSION "${mars_VERSION}")
-  set(MACOSX_BUNDLE_ICON_FILE ${MARS_SOURCE_DIR}/data/tex/icon.icns)
+  set(MACOSX_BUNDLE_ICON_FILE ${MARS_SOURCE_DIR}/resources/icon.icns)
 
 	# Let gcc 4.0 compile the executable even on Mac OS X 10.6
 	# so that the executable also runs on Mac OS X 10.4

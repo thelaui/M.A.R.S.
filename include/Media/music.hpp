@@ -40,6 +40,9 @@ namespace music {
     /// Stops playing Music.
     void stop();
 
+    /// Silences the music slowly.
+    void fadeOut();
+
     /// Applies the global music Volume.
     /// Which is set in \a settings::C_musicVolume. This is useful
     /// when this variable has been changed to apply the effect.

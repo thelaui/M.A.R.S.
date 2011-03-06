@@ -35,6 +35,7 @@ namespace music {
         // for Music there is only one channel... who wants to have multiple music files played at once?
         sf::Music                musicChannel_;
         bool                     initialized_(false);
+        float                    fadeOutTimer_(0.f);
         std::vector<std::string> files_;
         std::vector<int>         playList_;
 
@@ -61,6 +62,7 @@ namespace music {
         }
 
         void play(int nextTrack) {
+            setGlobalVolume();
             sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
             musicChannel_.OpenFromFile(fileName);
             musicChannel_.Play();
@@ -72,6 +74,11 @@ namespace music {
     void update() {
         if (settings::C_musicVolume > 0) {
             if (!initialized_) init();
+
+            if (fadeOutTimer_ > 0.f) {
+                fadeOutTimer_ -= timer::realFrameTime();
+                musicChannel_.SetVolume(settings::C_musicVolume*fadeOutTimer_*2.5f);
+            }
 
             if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0) {
                 if (games::type() == games::gMenu) playMenuMusic();
@@ -102,6 +109,7 @@ namespace music {
         if (settings::C_musicVolume > 0) {
             if (!initialized_) init();
 
+            setGlobalVolume();
             sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
             musicChannel_.OpenFromFile(fileName);
             musicChannel_.Play();
@@ -165,7 +173,12 @@ namespace music {
         musicChannel_.Stop();
     }
 
+    void fadeOut() {
+        fadeOutTimer_ = 0.5f;
+    }
+
     void setGlobalVolume() {
         musicChannel_.SetVolume(static_cast<float>(settings::C_musicVolume));
+        fadeOutTimer_ = 0.f;
     }
 }

@@ -23,7 +23,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/particles.hpp"
 # include "System/timer.hpp"
 # include "System/settings.hpp"
-# include "Media/music.hpp"
 # include "Players/players.hpp"
 # include "Teams/Team.hpp"
 # include "Hud/hud.hpp"
@@ -33,7 +32,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "System/window.hpp"
 # include "Media/announcer.hpp"
-# include "Media/music.hpp"
 # include "Shaders/postFX.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "TrailEffects/trailEffects.hpp"
@@ -71,7 +69,6 @@ Game::~Game() {
 }
 
 void Game::update() {
-    music::update();
     announcer::update();
     hud::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
@@ -96,6 +93,9 @@ void Game::update() {
                 ended_ = true;
             }
             hud::displayStats();
+
+            if (type_ != games::gDeathMatch)
+                hud::displayPoints();
         }
         else {
             decoObjects::update();
@@ -140,6 +140,7 @@ void Game::restart() {
     controllers::resetBots();
     stars::init();
     hud::displayStats(false);
+    hud::displayPoints(false);
     timer::resetSlowMotion();
     ended_ = false;
 }

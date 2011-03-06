@@ -313,6 +313,7 @@
 154 Points
 155 Frags
 244 CannonShots
+267 Goals
 156 Teamkills
 157 Suicides
 158 Deaths
@@ -364,4 +365,4 @@
 258 Artist: 
 259 Album: 
 
-// 267
+// 268

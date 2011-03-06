@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/Tutorial.hpp"
 # include "System/settings.hpp"
 # include "System/timer.hpp"
+# include "Media/music.hpp"
 # include "Menu/menus.hpp"
 # include "Hud/hud.hpp"
 # include "System/window.hpp"
@@ -75,6 +76,7 @@ namespace games {
     }
 
     void update() {
+        music::update();
         if (!fadeIn_ && !fadeOut_) currentGame_->update();
         if (restart_ && !fadeOut_) restart();
         if (newGame_ && !fadeOut_) start(newGameType_);

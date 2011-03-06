@@ -28,6 +28,7 @@ Player::Player(controllers::ControlType controlType):
     deaths_(0),
     teamKills_(0),
     cannonShots_(0),
+    goals_(0),
     controlType_(controlType) {}
 
 void Player::resetPoints() {
@@ -37,4 +38,5 @@ void Player::resetPoints() {
     deaths_ = 0;
     teamKills_ = 0;
     cannonShots_ = 0;
+    goals_ = 0;
 }

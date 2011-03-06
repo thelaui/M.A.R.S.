@@ -107,12 +107,11 @@ namespace hud {
         musicNotify::draw();
     }
 
-    void displayPoints() {
-        gamePoints_->display();
+    void displayPoints(bool show) {
+        gamePoints_->display(show);
     }
 
     void displayStats(bool show) {
-        gamePoints_->display();
         tabStats_->display(show);
     }
 

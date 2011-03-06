@@ -46,7 +46,7 @@ DeathMatch::DeathMatch():
         players::addPlayer(newTeam, controllers::cBot, color);
     }
 
-    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
+    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(0.9f, 0.7f, 1.0f)));
     players::createShips();
 
     spaceObjects::populateSpace(5.f, 10.f, 4);

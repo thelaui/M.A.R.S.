@@ -22,7 +22,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/ships.hpp"
 # include "Media/sound.hpp"
 # include "Media/announcer.hpp"
-# include "Hud/hud.hpp"
 # include "Media/text.hpp"
 # include "System/window.hpp"
 # include "Games/games.hpp"
@@ -139,7 +138,7 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
     float strength = velocity.length();
 
     switch (with->type()) {
-        case spaceObjects::oAmmoROFLE:
+        case spaceObjects::oAmmoROFLE: case spaceObjects::oAmmoInsta:
             particles::spawnMultiple(20, particles::pMud, location, direction, velocity, color_);
             break;
 
@@ -157,11 +156,23 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oBall: {
-                int amount =  1 + (dynamic_cast<Ball*>(with)->heatAmount() > 10 ? 1 : 0);
+                Ball* ball = dynamic_cast<Ball*>(with);
+                int amount =  1 + (ball->heatAmount() > 10 ? 1 : 0);
                 life_ -= amount;
                 teams::getTeamL()->home() == this ? teams::getTeamR()->addStars() : teams::getTeamL()->addStars();
                 for (int i=0; i<amount; ++i)
                     teams::getTeamL()->home() == this ? teams::getTeamR()->addPoint() : teams::getTeamL()->addPoint();
+
+                if (ball->lastShooter() != NULL) {
+                    // If an oponnent threw the ball to the home, give him a
+                    // point
+                    if (ball->lastShooter()->team()->home() != this) {
+                        ball->lastShooter()->goals_inc();
+                    } else {
+                        //someone goaled against his own team... bad!
+                        ball->lastShooter()->goals_dec(); }
+                }
+                ball->resetShooter();
                 break;
         }
         case spaceObjects::oCannonBall:
@@ -189,6 +200,4 @@ void Home::explode() {
     physics::removeStaticObject(this);
     location_ = Vector2f(5000.f, 5000.f);
     visible_ = false;
-
-    hud::displayPoints();
 }

@@ -108,9 +108,15 @@ void GamePoints::update() {
         timer_ -= timer::realFrameTime();
 }
 
-void GamePoints::display() {
-    if (timer_ <= 0.f) {
-        sound::playSound(sound::Score);
-        timer_ = 10.f;
+void GamePoints::display(bool show) {
+    if (show) {
+        if (timer_ <= 0.f) {
+            sound::playSound(sound::Score);
+            timer_ = 10.f;
+        }
+        else if (timer_ > 1.1578f && timer_ < 8.06f)
+            timer_ = 8.f;
     }
+    else
+        timer_ = 0.f;
 }

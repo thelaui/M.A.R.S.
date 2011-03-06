@@ -27,7 +27,7 @@ class GamePoints: public HudElement {
         void draw() const;
         void update();
 
-        void display();
+        void display(bool show);
 
     private:
         float timer_;

@@ -119,7 +119,7 @@ namespace settings {
     bool        C_drawBotJobs =             false;
     bool        C_drawZones =               false;
     bool        C_drawAIPath =              false;
-    int         C_iDumb =                   0;
+    int         C_iDumb =                   70;
 
     // network settings ----- adjustable via options menu
     sf::String C_ip =                      "192.168.0.1";
@@ -479,7 +479,8 @@ namespace settings {
                     sf::String tmp;
                     sf::Uint32 character(0);
                     iss >> character;
-                    while (character != 0) {
+                    int i(0);
+                    while (character != 0 && i++ < 12) {
                         tmp.Insert(tmp.GetSize(), character);
                         iss >> character;
                     }
@@ -489,7 +490,8 @@ namespace settings {
                     sf::String tmp;
                     sf::Uint32 character(0);
                     iss >> character;
-                    while (character != 0) {
+                    int i(0);
+                    while (character != 0 && i++ < 12) {
                         tmp.Insert(tmp.GetSize(), character);
                         iss >> character;
                     }

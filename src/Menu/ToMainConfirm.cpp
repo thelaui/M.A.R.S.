@@ -45,6 +45,7 @@ void ToMainConfirm::checkWidgets() {
         menus::hideWindow();
         menus::hideWindow();
         games::start(games::gMenu);
+        music::fadeOut();
     }
     else if (kCancel_) {
         kCancel_ = false;

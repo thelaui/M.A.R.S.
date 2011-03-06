@@ -309,6 +309,7 @@
 154 Points
 155 Frags
 244 CannonShots
+267 Buts
 156 Teamkills
 157 Suicides
 158 Morts

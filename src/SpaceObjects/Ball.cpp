@@ -38,7 +38,8 @@ Ball::Ball(Vector2f const& location):
            respawnRotation_(0),
            heatTimer_(0.f),
            smokeTimer_(0.f),
-           respawnTimer_(0.f) {
+           respawnTimer_(0.f),
+           lastShooter_(NULL) {
     physics::addMobileObject(this);
 }
 
@@ -172,6 +173,9 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
     float strength = velocity.length();
 
     setDamageSource(with->damageSource());
+    // If it is a player that shot or hit the ball
+    if (damageSource() != NULL)
+       lastShooter_ = damageSource(); 
 
     float unfreeze(0);
 
@@ -185,7 +189,6 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oShip:
-            setDamageSource(with->damageSource());
             particles::spawnMultiple(1, particles::pSpark, location, direction, velocity_, Color3f(0.3f, 0.3f, 0.3f));
             if (strength > 50) {
                 sound::playSound(sound::ShipBallCollide, location, (strength-50)/3);
@@ -205,32 +208,27 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoAFK47:
-            setDamageSource(with->damageSource());
             particles::spawnMultiple(1, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, Color3f(0.3f, 0.3f, 0.3f));
             unfreeze = 1.f;
             break;
 
         case spaceObjects::oAmmoROFLE:
-            setDamageSource(with->damageSource());
             particles::spawnMultiple(10, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.5f, velocity_, Color3f(0.3f, 0.3f, 0.3f));
             unfreeze = 10.f;
             break;
 
         case spaceObjects::oAmmoShotgun:
-            setDamageSource(with->damageSource());
             particles::spawnMultiple(1, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.7f, velocity_, Color3f(0.3f, 0.3f, 0.3f));
             unfreeze = 1.f;
             break;
 
         case spaceObjects::oAmmoFlubba:
-            setDamageSource(with->damageSource());
             unfreeze = 10.f;
             break;
 
         case spaceObjects::oAmmoBurner:
             if (heatTimer_ < 20.f) heatTimer_ += 0.01f;
             velocity_ += velocity*0.03f*timer::frameTime();
-            setDamageSource(with->damageSource());
             unfreeze = 1.f;
             break;
 

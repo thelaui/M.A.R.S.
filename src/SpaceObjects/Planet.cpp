@@ -54,7 +54,7 @@ void Planet::onCollision(SpaceObject* with, Vector2f const& location,
     float strength = velocity.length();
 
     switch (with->type()) {
-        case spaceObjects::oAmmoROFLE:
+        case spaceObjects::oAmmoROFLE: case spaceObjects::oAmmoInsta:
             particles::spawnMultiple(20, particles::pMud, location, location-location_, velocity, color_);
             break;
 

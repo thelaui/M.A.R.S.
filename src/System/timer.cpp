@@ -56,6 +56,8 @@ namespace timer {
 
         if (!menus::visible() && hud::statsVisible())
             frameTime_ =  frameTime*0.05f;
+        else if (games::type() == games::gMenu)
+            frameTime_ =  frameTime*0.5f;
         else if (slowMoTimer_ > 1.f) {
             if (!menus::visible() || games::type() == games::gMenu)
                 slowMoTimer_ -= frameTime;

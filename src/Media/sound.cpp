@@ -18,8 +18,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 
 # include "System/settings.hpp"
+# include "Games/games.hpp"
 
-# define CHANNELCOUNT 16
+# define CHANNELCOUNT 64
 
 namespace sound {
 
@@ -41,7 +42,7 @@ namespace sound {
     }
 
     void playSound(SoundType sound, Vector2f const& position, float volume) {
-        if (settings::C_soundVolume > 0) {
+        if (settings::C_soundVolume > 0 && (games::type() != games::gMenu || sound == Tab || sound == Click || sound == Check)) {
             if (!initialized_) init_();
             // check if sound is already loaded
             if (sounds_[sound] != NULL) {
