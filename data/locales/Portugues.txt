@@ -31,7 +31,7 @@
 020 Robôs da Direita
 021 Robôs
 022 Limite de Frags
-162 Limite de Pontos
+162 Pontos de Vida do Planeta
 056 Opções de Armas
 203 Armas
 204 Habilidades Especiais
@@ -97,6 +97,7 @@
 163 Efeitos de Sombra
 164 Infelizmente a sua máquina não suporta os efeitos de Sombra!
 151 Alta Resolução do campo Estelar
+265 Estrelas em Movimento
 173 Resolução
 174 Profundidade de Color
 
@@ -114,6 +115,8 @@
 045 Anúncios
 128 Tocar Próxima Faixa
 129 Configurações de Reprodução
+261 Tocar Trilha Anterior
+262 Tocar Trilhas em Ordem Aleatória
 
 // player options
 
@@ -326,6 +329,7 @@
 154 Pontos
 155 Frags
 244 Tiros de Canhão
+267 Gols
 156 Frags em time
 157 Suicídios
 158 Mortes
@@ -340,6 +344,8 @@
 179 Ajusta o formato utilizado ao salvar os Screenshots.
 180 Quando este botão é pressionado, um screenshot é salvo em {CONFIG_PATH}screenshots/
 181 Pressionando esta tecla alterna para a próxima trilha musical.
+263 Pressionando esta tecla alterna para a música anterior.
+264 Habilita a reprodução de música em sequência aleatória.
 182 Se múltiplas naves explodirem simultaneamente, ocorrerá um efeito em câmera lenta.
 183 Exibe a função de cada robô.
 184 Exibe as zonas táticas, que são importantes para a inteligência artificial.
@@ -349,6 +355,7 @@
 188 Habilita efeitos legais como névoa de fogo, mas redua a performance do jogo.
 189 Ajusta o tamanho da tela.\nAfeta tanto o modo de janela quanto a tela cheia.
 190 Com monitores de alta resolução, esta opção faz o campo estelar mais duradouro.\n Desabilitar esta opção pode melhorar a performance do jogo.
+266 Desenha algumas estrelas em movimento no fundo. Visualmente agradável, mas reduz o desempenho do jogo.
 191 Ajusta a contagem global de partículas.\nValores menores melhorarão a performance significativamente.
 192 Ajusta o tempo de vida global das partículas.\nValores menores melhorarão a performance significativamente.
 193 Ajusta o volume da música de fundo.
@@ -372,6 +379,9 @@
 
 205 Screenshot salvo!
 214 próxima trilha musical!
+260 Trilha musical anterior!
+258 Artista:
+269 Album:
 
-// 258
+// 268
 

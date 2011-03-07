@@ -31,7 +31,7 @@
 020 Bots Right
 021 Bots
 022 Frag Limit
-162 Point Limit
+162 Planet Life Points
 056 Weapon Options
 203 Weapons
 204 Special Abilities

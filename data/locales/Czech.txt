@@ -31,7 +31,7 @@
 020 Boti vpravo
 021 Boti
 022 Limit fragů
-162 Limit bodů
+162 Životy planety
 056 Nastavení zbraní
 203 Zbraně
 204 Speciality
@@ -88,6 +88,7 @@
 163 Shader efekty
 164 Bohužel, shadery nejsou vaším hardware podporovány!
 151 Vysoké rozlišení hvězd
+265 Poletující hvězdy
 173 Rozlišení
 174 Barevná hloubka
 
@@ -105,6 +106,8 @@
 045 Hlas
 128 Přehrát další skladbu
 129 Nastavení přehrávání
+261 Přehrát předchozí skladbu
+262 Přehrávat skladby v náhodném pořadí
 
 // player options
 
@@ -311,6 +314,7 @@
 154 Body
 155 Fragy
 244 Výstřely kanónu
+267 Cíle
 156 Teamkilly
 157 Sebevraždy
 158 Smrti
@@ -325,6 +329,8 @@
 179 Nastaví formát pro ukládání snímků obrazovky.
 180 Když je stisknuta tato klávesa, je do složky {CONFIG_PATH}screenshots/ uložen snímek obrazovky.
 181 Stisknutí této klávesy přeskočí na další hudební skladbu.
+263 Stisknutí této klávesy přepne na předchozí hudební skladbu.
+264 Zapne přehrávání skladeb v náhodném pořadí.
 182 Pokud vybouchne tento počet lodí současně, projeví se efekt zpomalení.
 183 Zobrazí současný úkol každého bota.
 184 Zobrazí taktické oblasti, které jsou důležité pro umělou inteligenci.
@@ -334,6 +340,7 @@
 188 Aktivuje dobře vypadající efekty jako tepelná mlha, ale redukuje celkový výkon.
 189 Nastaví velikost okna.\nOvlivní jak režim v okně tak režim přes celou obrazovku.
 190 U monitorů s vysokým rozlišením způsobují lepší vzhled pozadí.\nVypnutí této volby může lehce zvýšit výkon.
+266 Vykreslí na pozadí několik poletujících hvězd. Pěkný efekt, ale snižuje herní výkon.
 191 Upravuje celkový počet částic.\nNižší hodnoty znatelně zvýší výkon.
 192 Upravuje celkovou dobu života částic.\nNižší hodnoty znatelně zvýší výkon.
 193 Upravuje hlasitost hudby v pozadí.
@@ -355,5 +362,8 @@
 
 205 Snímek uložen!
 214 Další hudební skladba!
+260 Předchozí hudební skladba!
+258 Umělec:
+259 Album:
 
-// 258
+// 268

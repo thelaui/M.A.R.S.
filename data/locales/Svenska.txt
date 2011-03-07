@@ -31,7 +31,7 @@
 020 Höger bottar
 021 Bottar
 022 Frag-gräns
-162 Poänggräns
+162 Planetens livspoäng
 056 Vapeninställningar
 203 Vapen
 204 Specialförmågor
@@ -88,8 +88,8 @@
 055 Visa inforutor
 163 Shader-effekter
 164 Tyvärr så stödjer inte din hårdvara shaders!
-
 151 Hög upplösning på stjärnfältet
+265 Rörliga stjärnor
 173 Upplösning
 174 Färgdjup
 
@@ -107,6 +107,8 @@
 045 Annonsör
 128 Spela nästa spår
 129 Uppspelningsinställningar
+261 Spela föregående spår
+262 Slumpvis uppspelning
 
 // player options
 
@@ -313,6 +315,7 @@
 154 Poäng
 155 Frags
 244 Kanonskott
+267 Mål
 156 Vådaskott
 157 Självmord
 158 Dödsfall
@@ -327,6 +330,8 @@
 179 Ställer in filformatet som används när skärmdumpar sparas.
 180 Trycker man på den här tangenten, kommer en skärmdump att sparas på {CONFIG_PATH}screenshots/
 181 Trycker man på den här tangenten växlar musiken till nästa spår.
+263 Trycker man på den här tangenten växlar musiken till föregående spår.
+264 Gör så att bakgrundsmusiken spelas i slumpvis ordning.
 182 Om så många skepp exploderar samtidigt, aktiveras slowmotioneffekten.
 183 Visar varje bots jobb.
 184 Visar taktiska zoner, vilket är viktigt för den artificiella intelligensen.
@@ -336,6 +341,7 @@
 188 Aktiverar häftiga effekter som t.ex soldis, men kan minska prestandan.
 189 Sätter storleken på fönstret.\nPåverkar både fullskärm och fönsterläge.
 190 Med högupplösta skärmar, gör detta val att stjärnfältet loopar senare.\nInaktivering kan öka prestandan något.
+266 Ritar några rörliga stjärnor i bakgrunden. Ögongodis, men reducerar prestandan på spelet.
 191 Justerar det globala antalet partiklar.\nLägre värden ökar prestandan avsevärt.
 192 Justerar partiklarnas livslängd.\nLägre värden ökar prestandan avsevärt.
 193 Justerar volumen på bakgrundsmusiken.
@@ -357,5 +363,8 @@
 
 205 Skärmdump sparad!
 214 Nästa musikspår!
+260 Föregående musikspår!
+258 Artist:
+259 Album:
  
 // 258

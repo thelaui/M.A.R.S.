@@ -211,7 +211,7 @@
 238 Stick2 Links
 239 Stick2 Rechts
 240 Joystick
-241 Tasten
+241 Taste
 
 // Tutorial Texte
 
@@ -307,6 +307,7 @@
 
 154 Punkte
 155 Frags
+244 Kanonenschüsse
 156 Teamkills
 157 Suizide
 158 Tode
@@ -353,4 +354,4 @@
 205 Screenshot gespeichert!
 214 Nächster Musiktitel!
 
-// 258
+// 268
