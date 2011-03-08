@@ -27,12 +27,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <iostream>
 
-TextEdit::TextEdit (sf::String* text, sf::String* value, Vector2f const& topLeft, int width, int labelWidth, int type, int maxLength):
+TextEdit::TextEdit (sf::String* text, sf::String* value, sf::String fallBack, Vector2f const& topLeft, int width, int labelWidth, int type, int maxLength):
     UiElement(topLeft, width, 20),
     value_(value),
+    fallBack_(fallBack),
     label_(NULL),
     maxLength_(maxLength),
-    cursorPos_(0),
+    cursorPos_(value->GetSize()),
     cursorTimer_(0),
     type_(type),
     labelWidth_(labelWidth) {
@@ -105,8 +106,10 @@ void TextEdit::keyEvent(bool down, Key const& key) {
                     cursorTimer_ = 0;
                 }
                 else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Key::Up || key.code_.keyBoard_ == sf::Key::Down || key.navi_ == Key::nConfirm) {
+                    if (*value_ == "")
+                        *value_ = fallBack_;
                     menus::unFixKeyboard();
-                pressed_ = false;
+                    pressed_ = false;
                 }
             }
         }
