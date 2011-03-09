@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Interface/Button.hpp"
 # include "Menu/menus.hpp"
 # include "Menu/ToMainConfirm.hpp"
-# include "Menu/NewGameConfirm.hpp"
+# include "Games/games.hpp"
 # include "Menu/OptionsMenu.hpp"
 # include "Menu/InfoHide.hpp"
 # include "System/settings.hpp"
@@ -55,7 +55,8 @@ void EndMenu::checkWidgets() {
     }
     else if (kNew_) {
         kNew_ = false;
-        menus::showWindow(NewGameConfirm::get());
+        menus::hideWindow();
+        games::restart();
     }
     else if (kHide_) {
         kHide_ = false;

@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Teams/Team.hpp"
 # include "Particles/particles.hpp"
 # include "SpaceObjects/Home.hpp"
+# include "SpaceObjects/ships.hpp"
 # include "Teams/teams.hpp"
 # include "defines.hpp"
 
@@ -45,30 +46,32 @@ void Cannon::update() {
 
     if (std::abs(angle-rotation_*M_PI/180) > 0.01f) {
         timer_ = 0.f;
+        const float rotSpeed(timer::frameTime()*4*ships::getShips().size());
         if (angle > 0.f) {
             if (angle > rotation_*M_PI/180)
-                rotation_ += timer::frameTime()*20;
+                rotation_ += rotSpeed;
             else
-                rotation_ -= timer::frameTime()*20;
+                rotation_ -= rotSpeed;
         }
         else {
             if (angle < rotation_*M_PI/180)
-                rotation_ -= timer::frameTime()*20;
+                rotation_ -= rotSpeed;
             else
-                rotation_ += timer::frameTime()*20;
+                rotation_ += rotSpeed;
         }
     }
     else if (std::abs(angle) > 0.1f) {
         timer_ += timer::frameTime();
         Vector2f direction(-std::sin(rotation_*M_PI/180), std::cos(rotation_*M_PI/180));
         Vector2f location(Vector2f(SPACE_X_RESOLUTION*0.5f, 0.f) + direction*180.f);
-        if (timer_ > 2.f) {
+        const float shootSpeed(15.f/ships::getShips().size());
+        if (timer_ > shootSpeed) {
             timer_ = 0.f;
             particles::spawn(particles::pCannonBall, location, direction);
             ++carrier->cannonShots_;
         }
-        if (timer_ > 1.f)
-            particles::spawnTimed(std::pow(timer_-1, 3), particles::pDust, location);
+        if (timer_ > shootSpeed*0.5f)
+            particles::spawnTimed(std::pow((timer_*2.f/shootSpeed)-1, 3), particles::pDust, location);
     }
 }
 

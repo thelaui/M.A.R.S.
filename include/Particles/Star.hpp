@@ -36,9 +36,10 @@ class Star: public Particle<Star> {
         static void init();
 
     private:
-        Color3f color_;
-        float   depth_;
-        float   alpha_;
+        Color3f  color_;
+        float    depth_;
+        float    alpha_;
+        Vector2f acceleration_;
         static std::list<Star*> activeParticles_;
 };
 

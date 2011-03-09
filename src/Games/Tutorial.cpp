@@ -56,17 +56,17 @@ Tutorial::Tutorial():
 
     settings::C_iDumb = 0;
 
-    music::playGameMusic();
+    music::play(settings::C_dataPath + "audio/tutorial.ogg");
 
     players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
     settings::C_playerIIteamL = false;
     settings::C_playerIIteamR = false;
     settings::C_playerIteamL = false;
     settings::C_playerIteamR = true;
-    teams::assignHomes(spaceObjects::addHome(Vector2f(SPACE_X_RESOLUTION+20, 450.f), settings::C_playerITeamColor));
+    teams::assignHomes(spaceObjects::addHome(Vector2f(SPACE_X_RESOLUTION+20, 450.f), 100, settings::C_playerITeamColor));
     players::createShips();
 
-    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), settings::C_playerITeamColor.inverted());
+    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), 100, settings::C_playerITeamColor.inverted());
 
     spaceObjects::addPlanet(Vector2f(680.f, 300.f), 150.f);
     spaceObjects::addPlanet(Vector2f(280.f, 650.f), 80.f);
@@ -407,10 +407,10 @@ void Tutorial::restart() {
     evilPlayer2_ = NULL;
 
     players::addPlayer(teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
-    teams::assignHomes(spaceObjects::addHome(Vector2f(SPACE_X_RESOLUTION+20, 450.f), settings::C_playerIColor));
+    teams::assignHomes(spaceObjects::addHome(Vector2f(SPACE_X_RESOLUTION+20, 450.f), 100, settings::C_playerIColor));
     players::createShips();
 
-    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), Color3f(0.5f, 0.f, 0.5f));
+    evilHome_ = spaceObjects::addHome(Vector2f(-40.f, 550.f), 100, Color3f(0.5f, 0.f, 0.5f));
 
     spaceObjects::addPlanet(Vector2f(680.f, 300.f), 150.f);
     spaceObjects::addPlanet(Vector2f(280.f, 650.f), 80.f);

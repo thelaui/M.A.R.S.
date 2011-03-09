@@ -30,7 +30,7 @@ TeamDeathMatch::TeamDeathMatch():
     settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
     settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
-    music::playGameMusic();
+    music::play();
 
     Team* myTeamL = NULL;
     Team* myTeamR = NULL;
@@ -72,8 +72,8 @@ TeamDeathMatch::TeamDeathMatch():
     for (int i=0; i<settings::C_botsLeft;  ++i)     players::addPlayer(myTeamL, controllers::cBot);
     for (int i=0; i<settings::C_botsRight; ++i)     players::addPlayer(myTeamR, controllers::cBot);
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, 100, myTeamL->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, myTeamR->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();
@@ -90,8 +90,8 @@ void TeamDeathMatch::draw() const {
 void TeamDeathMatch::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, 100, teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, teams::getTeamR()->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();

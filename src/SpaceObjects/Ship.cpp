@@ -82,7 +82,7 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
         currentSpecial_ = specials::create(settings::C_playerIISpecial, this);
     }
     else {
-        life_ = 50 + static_cast<float>(settings::C_iDumb)*1.5f;
+        life_ = 25.f + static_cast<float>(settings::C_iDumb)*1.75f;
         maxLife_ = life_;
         currentWeapon_  = weapons:: create(weapons::wAFK47, this);
         currentSpecial_ = specials::create(specials::sHeal, this);
@@ -418,7 +418,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoBurner:
-            amount = timer::frameTime()*0.5f;
+            amount = timer::frameTime()*0.8f;
             waitForOtherDamage = 0.15f;
             if (frozen_ <= 0) velocity_ += velocity*0.03f*timer::frameTime();
             // chance to spawn smoke
@@ -434,7 +434,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFist:
-            amount = 25.f+sf::Randomizer::Random(-3.f, 3.f);
+            amount = 18.f+sf::Randomizer::Random(-3.f, 3.f);
             setDamageSource(with->damageSource());
             unfreeze = 15.f;
             break;
@@ -459,8 +459,8 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     if (attackable()) {
         // double the amount done to weak bots
         // strong bots just take normal damage
-        if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
-            amount *= (2.f - 0.01f*settings::C_iDumb);
+       // if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
+        //    amount *= (2.f - 0.01f*settings::C_iDumb);
 
         life_ -= amount;
         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))

@@ -29,10 +29,10 @@ namespace music {
     /// chosen track will be played.
     void update();
 
-    /// Plays a music file, suitable for the menu.
-    void playMenuMusic();
-    /// Plays a music file, suitable for in-game action.
-    void playGameMusic();
+    /// Plays a music file.
+    void play(std::string fileName);
+    /// Plays a random music file.
+    void play();
     /// Switches to the next track.
     void next();
     /// Switches to the previous track.

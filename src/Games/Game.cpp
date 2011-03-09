@@ -42,10 +42,11 @@ Game::Game(games::GameType const& type):
     startTime_(timer::totalTime()),
     ended_(false) {
         switch (type_) {
-            case games::gSpaceBall: case games::gCannonKeep: pointLimit_ = settings::C_pointLimit;    break;
-            case games::gDeathMatch:                         pointLimit_ = settings::C_pointLimitDM;  break;
-            case games::gMenu:                               pointLimit_ = 9999999;                   break;
-            default:                                         pointLimit_ = settings::C_pointLimitTDM;
+            case games::gSpaceBall:  pointLimit_ = settings::C_pointLimitSB;    break;
+            case games::gCannonKeep: pointLimit_ = settings::C_pointLimitCK;    break;
+            case games::gDeathMatch: pointLimit_ = settings::C_pointLimitDM;  break;
+            case games::gMenu:       pointLimit_ = 9999999;                   break;
+            default:                 pointLimit_ = settings::C_pointLimitTDM;
         }
 
     hud::init();
@@ -72,7 +73,6 @@ void Game::update() {
     announcer::update();
     hud::update();
     if ((!menus::visible()) || (type_ == games::gMenu)) {
-        stars::update();
         spaceObjects::update();
         particles::update();
         items::update();

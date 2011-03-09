@@ -30,7 +30,7 @@ GraveItation::GraveItation():
     settings::C_EnabledWeapons  = weapons::wInsta;
     settings::C_EnabledSpecials = specials::sNoSpecial;
 
-    music::playGameMusic();
+    music::play();
 
     Team* myTeamL = NULL;
     Team* myTeamR = NULL;
@@ -72,13 +72,13 @@ GraveItation::GraveItation():
     for (int i=0; i<settings::C_botsLeft;  ++i)     players::addPlayer(myTeamL, controllers::cBot);
     for (int i=0; i<settings::C_botsRight; ++i)     players::addPlayer(myTeamR, controllers::cBot);
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT,  100, myTeamL->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, myTeamR->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace(40.f, 5.f, 2);
+    spaceObjects::populateSpace(25.f, 5.f, 2);
     zones::createRaster(4,3);
 }
 
@@ -90,13 +90,13 @@ void GraveItation::draw() const {
 void GraveItation::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, 100, teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, teams::getTeamR()->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();
 
-    spaceObjects::populateSpace(40.f, 5.f, 2);
+    spaceObjects::populateSpace(25.f, 5.f, 2);
     zones::createRaster(4,3);
 }
 

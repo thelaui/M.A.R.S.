@@ -1,4 +1,4 @@
-﻿// Valikkopainikkeet
+﻿// menu buttons
 
 000 Paikallinen peli
 105 Tutoriaali
@@ -12,7 +12,7 @@
 008 Piilota valikko
 009 Palaa päävalikkoon
 
-// Peruspainikkeet
+// standard buttons
 
 010 Aloita
 011 Peruuta
@@ -21,9 +21,9 @@
 014 Lisenssi
 015 Ok
 106 Seuraava
-016 Näytä tämä viesti uudelleen.
+016 Näytä tämä uudestaan
 
-// Esipelin asetukset
+// pregame options
 
 017 Vasen joukkue
 018 Oikea joukkue
@@ -31,107 +31,126 @@
 020 Botit oikealla
 021 Botit
 022 Tapporaja
-162 Pisteraja
+162 Planeetan elinvoima
+056 Aseiden asetukset
+203 Aseet
+204 Erikoistaidot
+166 Bonuksien ilmestymisnopeus
+167 Bottien vaikeusaste
+159 Pelin asetukset
+257 Pelaajat
 
-// Tarinainfo
+// story information
 
-023 Vuonna 3547, sivilisaatiot ympäri galaksia ovat asettuneet omille planeetoilleen, elämään rauhassa ja sovussa ympäristönsä kanssa.  \nMutta asuinpaikkojen ulkopuolella raivoaa SUURI SOTA.  \n Maineikkaana taistelijana kunnian ja menestyksen tiellä, sinun täytyy suojella planeettaasi lähestyvältä iskulta kateellisilta  \nnaapureiltasi! Ottele taistelussa, johon sinunlaisesi oikea sankari syntyi: AVARUUSPALLO. \nSuojele planeettaasi kuoleman pallolta ja päihitä vihollisesi antamalla sen murskaantua heidän naurettavaan planeettaansa.
-024 Potkaise tai ammu pallo vihollisesi planeettaa päin!
-025 SUUREN SODAN seurauksena olet menettänyt kaiken: Kotisi, perheesi ja \nitsekunnioituksesi. \nViimeinen mahdollisuutesi päästä pois onnettomasta elämästäsi, on tulla gladiaattoriksi loisteliaalla \nDEATHMATCH-areenalla. \nUhmaa muita taistelijoita ja ansaitse pisteitä tuhoamalla pähkinänkuoret, mitä he kutsuvat aluksiksi. \nValmistaudu! \nKuolema ja kunnia odottavat sinua.
+023 Vuonna 3547, sivilisaatiot ympäri galaksia ovat asettuneet omille planeetoilleen elämään rauhassa ja sovussa ympäristönsä kanssa.  \nMutta asuinpaikkojen ulkopuolella raivoaa SUURI SOTA.  \nMaineikkaana taistelijana kunnian ja menestyksen tiellä sinun täytyy suojella planeettaasi lähestyvältä tuholta.  \nSinunkaltaisesi oikea sankari syntyi tätä lajia varten: SPACEBALL. \nSuojele planeettaasi kuoleman pallolta ja tuhoa vihollisesi ampumalla se heidän naurettavaan planeettaansa päin.
+024 Potkaise tai ammu pallo vihollisesi planeettaan päin!
+025 SUUREN SODAN seurauksena olet menettänyt kaiken: Kotisi, perheesi sekä \nitsekunnioituksesi. \nViimeinen mahdollisuutesi päästä pois onnettomasta elämästä, johon olet juuttunut, on tulla gladiaattoriksi loistokkaalla \nDEATHMATCH-areenalla. \nUhmaa muita taistelijoita ja ansaitse pisteitä tuhoamalla pähkinänkuoret, joita he kutsuvat aluksiksi. \nValmistaudu! \nKuolema ja kunnia odottavat sinua.
 026 Tuhoa niin monta vihollista kuin mahdollista!
-027 Neuvottelut ovat epäonnistuneet! \nSinä ja naapurisi olette todistaneet monia häviöitä pysyvän SUUREN SODAN takia. \nViimeisenä yrityksenä niskalenkin saamiseksi, sinut on komennettu hävittämään vihollisesi voimavaroja, ja suojella omiasi. Ainoa keino onnistua tässä on eeppinen TEAMDEATHMATCH. \nSuojele tovereitasi tuhoa vihollisesi! \nAnna heille opetus, mitä he eivät ikinä unohda.
+027 Neuvottelut ovat epäonnistuneet! \nSinä ja naapurisi olette kärsineet valtavia häviöitä jatkuvan SUUREN SODAN lopputuloksena. \nViimeisenä yrityksenä niskalenkin saamiseksi sinut on komennettu hävittämään vihollisen voimavaroja ja suojelemaan omiasi. Ainoa keino tähän on eeppinen TEAMDEATHMATCH. \nSuojele tovereitasi ja tuhoa vihollisesi! \nAnna heille opetus, mitä he eivät tule koskaan unohtamaan.
 028 Tuhoa niin monta vihollista kuin mahdollista!
-029 Ikään kuin SUURI SOTA ei olisi kylliksi, planeettaasi nimittäin uhkaa uusi, uskomaton pahuuden lähde. Jättimäinen tuntematon alus leijuu galaksisi yläpuolella, tähdäten kotiplaneettaasi massiivisella joukkotuhoaseella. \nKyynisyyden merkkinä, hyökkääjät pudottivat kauko-ohjaimen tämän kuoleman ja pelon alkuperän virittämiseen. \nEhdi sen luokse ensin muuttaaksesi vihollisesi kotiplaneetan lohduttomaksi paikaksi! \nOle CANNONKEEPER.
-030 Poimi kauko-ohjain ja pidä se itselläsi niin kauan kuin mahdollista!
+029 Ikään kuin SUURESSA SODASSA ei olisi kylliksi kestämistä. Planeettaasi uhkaa uusi, uskomaton pahuuden lähde. Jättimäinen tuntemattomien hyökkääjien alus leijuu galaksisi yläpuolella tähdäten asutettuja planeettoja massiivisella joukkotuhoaseella. \nKyynisyyden merkkinä hyökkääjät pudottivat säätimen, jolla tätä kuoleman ja pelon alkuperää voidaan hallita. \nEhdi sen luokse ensin muuttaaksesi vihollisesi kotiplaneetan lohduttomaksi paikaksi! \nOle CANNONKEEPer.
+030 Poimi säädin ja pidä se itselläsi niin kauan kuin mahdollista!
+206 Koska SUURI SOTA vähentää voimavarojasi radikaalisti, tiedemiehet palkattiin löytämään tehokas keino vihollisen tuhoamiseksi rajoitetulla panoksella. He tekivät paljon tutkimustyötä ja lopulta loivat uuden, uskomattoman aseen. Se tappaa välittömästi, mutta painovoima vaikuttaa laukaistuihin ammuksiin suuresti ja siksi niitä on vaikea käsitellä. Sen vuoksi he kutsuvat sitä nimellä: INSTA-GRAVE!  \n \nValitettavasti joku varasti teknologiaamme, joten myös vihollisesi voivat käyttää tätä ilkeää asetta. Nyt on sinun vuorosi: Tuhoa ne varkaat mahtavassa GRAVE-ITATION-PITissä niskalenkin saamiseksi. \n \nVoita tämä taistelu, niin SUUREN SODAN voitto voi olla sinun nimissäsi. 
+207 Tuhoa niin monta vihollista kuin mahdollista!
 
-
-// Näytön asetukset
-// Välilehdet
+// display options
+// tabs
 
 150 Käyttöliittymä
-165 Pelattavuus
+165 Pelaaminen
 102 Grafiikka
-103 Ääni
+103 Audio
+
+// interface Options
 
 104 Ikkuna-asetukset
-031 Näytä debug-tiedot
-032 Bottien sopeutuminen
-033 Alueet
-034 AI-polut
-035 Näytä pelitiedot
+031 Näytä Debug-tiedot
+032 Näytä Bottien suunta
+033 Näytä Alueet
+034 Näytä AI-polut
+035 Näytä pelin tiedot
 036 Näytä FPS
+215 Yleiset asetukset
 152 Kieli
 153 Pikanäppäin kuvankaappaukselle
-037 Partikkelien lukumäärä
-038 Partikkelien lukumäärä
-039 Partikkelien kestoaika
+054 Tiedostomuoto kuvankaappaukselle
+242 Pikanäppäin tilastoille
+
+// graphics options
+
+037 Hiukkasten määrä
+038 Hiukkasten määrä
+039 Hiukkasten kestoaika
 040 Pelin asetukset
 041 Koko näyttö
 042 V-Sync
-163 Varjostimen tehosteet
-164 Valitettavasti laitteistosi ei tue varjostimia!
-
+055 Näytä työkaluvinkit
+163 Varjostus
+164 Laitteistosi ei tue varjostusta!
 151 Korkea tähtikentän resoluutio
+265 Liikkuvat tähdet
 173 Resoluutio
 174 Värin syvyys
 
-// Pelattavuusasetukset
+// gameplay options
 
-166 Nosta spawnaamisen nopeutta
-167 Botin vaikeusaste 
-168 Räjähdyksiä hidastukseen
-169 Off
+216 Erikoistehosteet
+168 Räjähdyksien määrä hidastukseen
+169 Pois päältä
 
-// Ääniasetukset
+// audio options
 
-043 Musiikin voimakkuus
-044 Äänien voimakkuus
-045 Tiedottajan äänen voimakkuus
+123 Äänenvoimakkuuden asetukset
+043 Musiikki
+044 Ääni
+045 Tiedottaja
+128 Soita seuraava musiikkikappale
+129 Toiston asetukset
+261 Soita edellinen musiikkikappale
+262 Soita musiikkikappaleet satunnaisessa järjestyksessä
 
-// Pelaajan asetukset
+// player options
 
 046 Nimi
 047 Kiihdytä
 048 Käänny vasempaan
 049 Käänny oikeaan
 050 Ase
-175 Erikoiskyky
+175 Erikoistaito
+217 Aluksen asetukset
 051 Alus
 052 Pelaajan väri
 053 Joukkueen väri
-054 ####
-055 Paina näppäintä!
-056 Syötä tekstiä!
 
-// Tietoja
+// about
 
-057 Tämä on ensimmäinen yritys tehdä peli OpenGL:n SFML:llä. Pelissä lennetään kaksiulotteisessa avaruusmaailmassa, jota painovoiman laki hallitsee. \n\nKotisivu: http://www.marsshooter.org
+057 This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage: \nhttp://www.marsshooter.org
 
-// Lisenssi
+// license
 
 058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
 
-// Lopputekstit
+// credits
 
 170 Lopputekstit
 171 Erityiskiitokset:
-172 Käännökset:\n  Saksa: Sandra\n Espanja: Gastón\n Portugali: Vitor\n Ranska: Astohan\n Venäjä: Drakmail\n Italia: Proch\n Ruotsi: Henrik\n\n Testaus ja luova tuki:\n Heinrich, Martin, Bastian, Sandra, Diana.
+172 Käännökset:\n Arabia: Majid\n Kiina: Wecing\n Tšekki: Mates\n Suomi: Paavo\n Ranska: Ludovic\n Saksa: Atto\n Hindi: Antriksh & Aakanksh\n Unkari: Papp Bence\n Italia: Proch\n Puola: command_dos\n Portugali: Vitor\n Venäjä: Drakmail\n Espanja: Gastón\n Ruotsi: Henrik\n\nKoodaustuki:\n Werner ja Deubeuliou\n\nTestaus ja luova tuki:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
-// Poistu
+// quit
 
 059 Haluatko varmasti poistua?
-060 Haluatko varmasti poistua tämänhetkisestä pelistä?
+060 Haluatko varmasti lopettaa tämänhetkisen pelin?
 
-// Verkkotiedot
+// network information
 
-061 M.A.R.S.-pelin pelaaminen verkossa tai paikallisessa verkossa on suunniteltu ominaisuus, muttei vielä toteutettu. \n\nOdota kärsivällisesti!
-062 M.A.R.S.-pelin pelaaminen verkossa tai paikallisessa verkossa on suunniteltu ominaisuus, muttei vielä toteutettu. \n\nOdota kärsivällisesti!
+061 M.A.R.S.-pelin pelaaminen internetissä tai lähiverkossa on suunniteltu muttei vielä toteutettu ominaisuus. \n\nPysy vireessä!
+062 M.A.R.S.-pelin pelaaminen internetissä tai lähiverkossa on suunniteltu muttei vielä toteutettu ominaisuus. \n\nPysy vireessä!
 
-// Piilota valikko
+// hide menu
 
-063 Pysäytit M.A.R.S.-pelin hullun taistelun keskellä? \nJos haluat ottaa kuvankaappauksen, tämä painike mahdollistaa eeppisten taustakuvien luomisen, piilottamalla kaikki ikkunat. \n\nTuo ne myöhemmin takaisin painamalla Esc-näppäintä.
+063 Pysäytit M.A.R.S-pelin hullun taistelun keskellä? \nJos haluat ottaa kuvankaappauksen, tämä painike tekee eeppisten taustakuvien luomisen mahdolliseksi piilottamalla kaikki ikkunat. \n\nTuo ne myöhemmin takaisin yksinkertaisesti painamalla ESC-näppäintä.
 
-// Painikkeiden nimet
+// key names
 
 064 Add
 065 Back Slash
@@ -139,115 +158,212 @@
 067 Dash
 068 Delete
 069 Divide
-070 Alas
+070 Down
 071 End
 072 Equal
 073 Home
 074 Insert
-075 Vasen Alt
+075 Left Alt
 076 Left Bracket
-077 Vasen Ctrl
-078 Vasen
-079 Vasen Shift
-080 Vasen Super
+077 Left Control
+078 Left
+079 Left Shift
+080 Left Super
 081 Menu
 082 Multiply
 083 Page Down
 084 Page Up
 085 Pause
-086 Piste
-087 Lainausmerkki
-088 Oikea Alt
+086 Period
+087 Quote
+088 Right Alt
 089 Right Bracket
-090 Oikea Ctrl
-091 Enter
-092 Oikea
-093 Oikea Shift
-094 Oikea Super
+090 Right Control
+091 Return
+092 Right
+093 Right Shift
+094 Right Super
 095 Semi Colon
 096 Slash
-097 Välilyönti
+097 Space
 098 Subtract
 099 Tilde
 100 Tab
-101 Ylös
+101 Up
 
-// Tutoriaalitekstit
+// Joystick button names
 
-107 Tervetuloa, avaruusnoviisi!
-108 Hienoa että saamme sinunlaisiasi nousevia sankareita liittymään meihin SUURESSA SODASSA!\nKäsitimme että tarvitset hieman harjoittelua uuden aluksesi kanssa.\nSaamasi pitää...
+218 A Button
+219 B Button
+220 X Button
+221 Y Button
+222 Start Button
+223 Back Button
+224 Right Bumper
+225 Left Bumper
+226 Right Trigger
+227 Left Trigger
+228 Direction Up
+229 Direction Down
+230 Direction Left
+231 Direction Right
+232 Stick1 Up
+233 Stick1 Down
+234 Stick1 Left
+235 Stick1 Right
+236 Stick2 Up
+237 Stick2 Down
+238 Stick2 Left
+239 Stick2 Right
+240 Joystick
+241 Button
 
-109 Liikkuminen...
-110 Aluksesi ohjaus on tärkeää hallita.\nPainovoima hallitsee liikkumistasi. Hidastaaksesi sinun täytyy kääntyä ympäri ja kiihdyttää vastakkaiseen suuntaan. Ohjaa alustasi nuolinäppäimillä.
 
-111 Lämmittely...!
-112 Lennä pinkille alueelle!\nYritä olla törmäämättä uuden aluksesi kanssa.
+// tutorial texts
 
-113 Hyvin tehty!
-114 Suuntaa nyt takaisin kotiplaneetallesi ja yritä laskeutua aluksellasi leijumalla hitaasti taaksepäin planeettaasi päin.
+212 Hei, {PLAYER1_NAME}!
+213 Tuo on sopimaton nimi... Ole hyvä ja anna parempi nimi!
+
+107 Tervetuloa, Avaruusnoviisi!
+108 Olemme iloisia värvätessämme kaltaisesi nousevan sankarin, {PLAYER1_NAME}, liittymään meihin SUURESSA SODASSA!\nTajusimme, että tarvitset hieman harjoitusta uuden aluksesi kanssa.\nHarjoitus alkakoon...
+
+109 Perusliikkuminen
+110 Aluksesi ohjaaminen on tärkein tehtävä hallita.\nKaikki liikkuminen on painovoiman hallinnassa. Hidastaaksesi sinun täytyy kääntyä vastakkaiseen suuntaan ja kiihdyttää. Ohjaa alustasi näppäimillä <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> ja <{PLAYER1_KEY_RIGHT}>!
+
+111 Lämmitellään!
+112 Mene pinkille alueelle!\nYritä olla törmäilemättä uuden aluksesi kanssa.
+
+113 Hyvin tehty, {PLAYER1_NAME}!
+114 Nyt, suuntaa takaisin kotiplaneetallesi ja yritä laskeutua aluksellasi leijumalla hitaasti taaksepäin planeettaasi kohti.
 
 115 Hyvää työtä!
 116 Oikeaoppinen laskeutuminen ei ole mikään helppo nakki, eihän?\nSinun täytyy omistautua sille sydämesi pohjasta.
 
-117 Jotakin vähän hankalempaa...
-118 Yritä seurata pinkillä värillä merkittyä polkua!\n\nOtamme yhteyttä uudestaan, kunhan onnistut siinä. Anna mennä vain!
+117 Jotakin vaikeampaa...
+118 Yritä seurata pinkeillä alueilla merkittyä reittiä!\nOtamme sinuun yhteyttä, kun hallitset tämän.\nAnna mennä!
 
 119 Mahtavaa!
-120 Olet paras näkemäni avaruusnoviisi.\nValmistaudu seuraavaksi räjähtävään toimintaan.
+120 Olet paras noviisi mitä olemme nähneet.\nValmistaudu seuraavaksi räjähtävään toimintaan.
 
 121 Ampuminen...
-122 Tuhotaksesi vihollisesi, sinun täytyy osata ampua!\nAmmu näppäimellä
-123 Pidä hauskaa ampumalla ympäriinsä ja laskeudu aluksella planeetallesi kun olet valmis jatkamaan tutoriaalia.
+122 Tuhotaksesi vihollisesi, sinun täytyy tietää kuinka ampua heidät!\nSiihen tarkoitukseen paina <{PLAYER1_KEY_FIRE}>. \nPidä hauskaa ampumalla ympäriinsä ja laskeudu sitten planeetallesi jatkaaksesi tutoriaalia.
 
-124 Hyvä laskeutuminen!
-125 Sinustahan on tullut hyvä pilotti.\n\nKatsotaanpa muita aseita.
+124 Hieno laskeutuminen, {PLAYER1_NAME}!
+125 Olet osoittautunut olemaan hieno ohjaaja.\nMiten on muiden aseiden laita?
 
 126 Aseet...
-127 Tiedän, että olet odottanut tätä. Telakoituneena voit valita monenlaisia ilkeitä aseita.\nPidä pohjassa
-128 avataksesi arsenaalin.\nPaina
-129 valitaksesi aseen! Lähde lentoon, kun olet valmis!
+127 Tiedämme, että olet odottanut tätä. Telakoituneena voit vaihdella ilkeitä aseitasi. Paina <{PLAYER1_KEY_FIRE}> avataksesi arsenaalisi.\nSitten paina <{PLAYER1_KEY_LEFT}> tai <{PLAYER1_KEY_RIGHT}> valitaksesi aseen! \nLähde liikkeelle, kun olet valmis!
 
 130 Taistele!
-131 Katsotaanpa miten pärjäät toiselta planeetalta tulevaa noviisia vastaan.\nVaikuttaa siltä että hän yrittää kehittää lentotaitojaan.\nPäihitä hänet!
+131 Katsotaanpa miten pärjäät toisen planeetan noviisia vastaan. Näyttää siltä, että hän yrittää kehittää lentotaitojaan.\nPäihitä hänet!
 
 132 Vaikuttavaa!
-133 Sinä teit sen! Kuten ehkä huomasit, saat jonkin verran mainepisteitä jokaisesta tapetusta vihollisesta.\nPieni vihreä numero joka pulpahtaa aluksestasi kuvaa pisteiden määrää. Se kasvaa jos tapat monta vihollista perättäin.
+133 Sinä teit sen! Kuten varmaan huomasit, pieni tähti ilmestyi aluksesi päälle. Mitä enemmän vihollisia tapat, sitä enemmän tähtiä saat. Mutta ne eivät ole vain tappojen ilmaisimia! \nLaskeudu uudestaan, niin me näytämme mihin tähdet kelpaavat.
 
-134 Varo!
-135 Lepoon ei ole aikaa.\nVihollisemme ovat lähettäneet yhden heidän oikeista taistelijoistaan kostoretkelle!\nEnkä minä voi tehdä asialle mitään...
+208 Erikoistaidot...
+209 Kuten lupasimme, kerromme nyt tähtien merkityksen. Ne ovat aluksesi erikoistaidon voimanlähde. Voit esimerkiksi parantaa itsesi ja lähellä olevat ystäväsi, räjäytellä tai jäädyttää aluksia tietyllä etäisyydellä! \nMitä enemmän tähtiä sinulla on, sitä voimakkaampi ja laajempi taito on.
+
+210 Valitseminen...
+211 Selataksesi taitoja, sinun täytyy vain painaa <{PLAYER1_KEY_SPECIAL}>. Valitaksesi yhden niistä, paina <{PLAYER1_KEY_LEFT}> tai <{PLAYER1_KEY_RIGHT}>! \nTälle oppitunnille, valitse "Freezer"! Lähde liikkeelle, kun olet valinnut sen!
+
+245 Pysähdy, {PLAYER1_NAME}!
+246 Käskimme sinun valita taidon Freezer, mutta olet valinnut toisen erikoistaidon!\nLaskeudu uudelleen ja valitse Freezer!
+
+247 Freezer...
+248 Tämä voimakas erikoistaito jäädyttää lähettyvillä olevat alukset. \nSinun täytyy lentää vihollisesi lähelle ja painaa <{PLAYER1_KEY_SPECIAL}> jäädyttääksesi hänet. Katso kun hän menettää elinvoimaansa hitaasti... kunnes hän kuolee!
+
+249 Harjoittele!
+250 Yritä jäädyttää vihollisesi! \nAnnamme sinulle muutaman tähden jo valmiiksi. Mutta muista: Oikeassa elämässä sinun täytyy murskata vastustajasi tähtien saamiseksi!
+
+251 Ohi meni, {PLAYER1_NAME}!
+252 Yritä uudelleen. Annamme sinulle lisää tähtiä.
+
+253 Sinä teit sen!
+254 Suuntaa nyt takaisin planeetallesi valitaksesi uuden erikoistaidon!
+
+255 Pidä varasi, {PLAYER1_NAME}!
+256 Pidempään kokeiluun ei ole aikaa!\nVihollisemme ovat lähettäneet kaksi  oikeaa taistelijaa kostoretkelle!
+
+134 Päihitä ne!
+135 Osoita taitosi! Hanki ainakin viisi pistettä tappamalla niitä! Tämänhetkinen pistemääräsi näytetään aluksesi vieressä!\nLähetämme sotilaan auttamaan sinua, {PLAYER1_NAME}!
 
 136 Uskomatonta!
-
-137 Suoriuduit kaikista tehtävistä onnistuneesti. Mitä seuraavaksi?\nKatsotaanpa hieman Asetukset-valikkoa. Siellä voit säätää monenlaisia... No... Asetuksia. Voi esimerkiksi valita aluksesi mallin ja värin, muuttaa nimeäsi...
+137 Hoidit kaikki tehtävämme onnistuneesti. Mitä seuraavaksi?\nKatsotaanpa asetukset-valikkoa. Siellä voit säätää paljon... no... asetuksia.\nVoit esimerkiksi valita aluksesi mallin ja värin tai vaihtaa nimesi...
 
 138 Kuka on paras?
-139 Voit tarkastaa tappojen, pisteiden yms. määrän pitämällä Tab-näppäintä pohjassa.\nNumerot nimesi vieressä kuvaavat tappojesi määrää ja pisintä tapon etäisyyttä .
+139 Voit ottaa esille tappojen, pisteiden yms. määrän painamalla 
+<{STATISTICS_KEY}>.\nLisäksi luvut nimesi vieressä kuvaavat tappojesi määrää ja kaukaisinta etäisyyttä. 
 
-140 Onnittelut
-141 Olet läpäissyt tämän tutoriaalin. Olet nyt valmis taistelemaan SUURESSA SODASSA. Jos haluat jatkaa harjoittelua, odota kunnes seuraava vihollinen ilmestyy. Voit päättää harjoittelun Esc-näppäimellä. \n\nPidä hauskaa M.A.R.S.-pelin parissa!
+140 Onnittelut, {PLAYER1_NAME}!
+141 Olet suorittanut tämän tutoriaalin loppuun. Olet nyt valmis taistelemaan SUURESSA SODASSA. Jos haluat jatkaa harjoittelua, odota vain, kunnes uusi vihollinen ilmestyy. Voit päättää koulutuksesi painamalla <Esc>.\n\nPidä hauskaa M.A.R.S.-pelin parissa!
 
 142 Epäonnistuit!
-143 Mahtavaa, tuhosit upouuden aluksesi! Hyvä on, me hankimme sinulle uuden. Odota muutama sekunti...
+143 Mahtavaa, {PLAYER1_NAME}! Tuhosit upouuden aluksesi. Hyvä on, me hankimme sinulle uuden. Odota muutama sekunti...
 
 144 Huomasitko?
-145 Elinvoimasi kuluu! Pidä silmällä vihreää elinvoimamittaria. On parasta laskeutua jos se on melkein tyhjä.
+145 Elinvoimasi kuluu! Pidä silmällä ylempää elinvoimamittaria. On parasta laskeutua, jos se on melkein tyhjä.
 
 146 Huomasitko?
-147 Polttoaineesi kuluu! Pidä silmällä keltaista polttoainemittaria. On parasta laskeutua jos se on melkein tyhjä.
+147 Polttoaineesi kuluu! Pidä silmällä keltaista polttoainemittaria. On parasta laskeutua, jos se on melkein tyhjä.
 
-148 Olet melkein voittanut hänet!
-149 Tarkkaile vihollisesi nimeä. Sen väri kuvaa aluksen elinvoimaa. Mitä punaisempi se on, sitä heikompi vihollisesikin.
+148 Melkein sait hänet!
+149 Tarkkaile vihollisesi nimeä. Nimen väri ilmaisee elinvoiman määrää. Mitä punaisemmaksi se muuttuu, sitä heikommaksi vihollisesi on tullut.
 
-// Tab-valikon sarakkeet
+// tabmenu collumns
 
 154 Pisteet
 155 Tapot
-156 Tiimitapot
-157 Itsemurhat
-158 Kuolemat
-159 Maine
-160 Yhteensä:
+244 Cannon-ampumisia
+267 Maaleja
+156 Tiimitappoja
+157 Itsemurhia
+158 Kuolemia
+160 Yhteensä
 161 Tilasto
 
-// 176
+// Tool tips options menu
 
+176 Näyttää kuvaruutujen päivitysnopeuden sekunneissa.\nJos tämä on aina hyvin alhainen (<20), sinun pitäisi säätää asetuksia grafiikka-välilehdessä!
+177 Näyttää aktiivisten hiukkasten määrän.
+178 Poistaa työkaluvinkit kuten tämän käytöstä.
+179 Asettaa tiedostomuodon mitä kuvankaappauksissa käytetään.
+180 Kun tätä näppäintä painetaan, kuvankaappaus tallennetaan {CONFIG_PATH}screenshots/
+181 Tätä näppäintä painamalla siirryt seuraavaan musiikkikappaleeseen.
+263 Tätä näppäintä painamlla siirryt edelliseen musiikkikappaleeseen.
+264 Soittaa musiikkia satunnaisessa järjestyksessä. 
+182 Jos tämän verran aluksia räjähtää samanaikaisesti, hidastus-efekti astuu voimaan.
+183 Näyttää kunkin botin tehtävän.
+184 Näyttää taktiset alueet, mitkä ovat tärkeitä tekoälylle.
+185 Näyttää bottien laskemat polut.
+186 Maksimoi ikkunan koon peittäen koko näytön.
+187 Ajantasaistaa peliäsi näytön virkistystaajuudesta riippuen.\nYleensä tämän valitseminen tekee pelistä sulavamman.
+188 Sallii siistit tehosteet kuten usvan, mutta vähentää suorituskykyä.
+189 Asettaa ikkunan koon.\nVaikuttaa sekä koko näyttö- että ikkunatilaan.
+190 Näytöillä, joilla on korkea resoluutio, tämä valinta saa tähtikentän kiertämään myöhemmin.\nSen pois päältä kytkeminen saattaa nopeuttaa peliä.
+266 Piirtää jonkin verran liikkuvia tähtiä taustalle. Silmänruokaa, mutta vähentää suorituskykyä.
+191 Säätää hiukkasten määrää.\nAlhaisemmat arvot lisäävät suorituskykyä huomattavasti.
+192 Säätää hiukkasten elinaikaa.\nAlhaisemmat arvot lisäävät suorituskykyä huomattavasti..
+193 Säätää taustamusiikin voimakkuutta.
+194 Säätää äänitehosteiden voimakkuutta..
+195 Säätää tiedottajan äänen voimakkuutta.
+243 Kun tätä näppäintä painetaan pelatessa, tilastoja näyttävä ikkuna pulpahtaa esiin.
+
+// Tool tips in the start-a-new-game-window
+
+196 Asettaa paikallisten pelaajien joukkueen.
+197 Sallii paikalliset pelaajat.
+198 Asettaa tekoälyllä ohjattavien pelaajien määrän.
+199 Tarvittava joukkueen pistemäärä pelin voittamista varten.
+200 Tarvittava pelaajan pistemäärä pelin voittamista varten.
+201 Asettaa bottien vahvuuden.
+202 Asettaa Bonuksien lukumäärän peliä kohti.\n 0 poistaa Bonukset käytöstä kokonaan.
+
+// Interface notifications
+
+205 Kuvankaappaus tallennettu!
+214 Seuraava musiikkikappale!
+260 Edellinen musiikkikappale!
+258 Artisti: 
+259 Albumi: 
+
+// 268

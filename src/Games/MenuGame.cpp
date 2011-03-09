@@ -33,7 +33,7 @@ MenuGame::MenuGame():
     settings::C_EnabledWeapons  = weapons::wInsta;
     settings::C_EnabledSpecials = specials::sNoSpecial;
 
-    music::playMenuMusic();
+    music::play(settings::C_dataPath + "audio/menu.ogg");
 
     Color3f rand = Color3f::random();
 
@@ -43,8 +43,8 @@ MenuGame::MenuGame():
     for (int i=0; i<4;  ++i)    players::addPlayer(myTeamL, controllers::cBot);
     for (int i=0; i<4; ++i)     players::addPlayer(myTeamR, controllers::cBot);
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, 100, myTeamL->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, myTeamR->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();
@@ -63,8 +63,8 @@ MenuGame::MenuGame():
 void MenuGame::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, 100, teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, 100, teams::getTeamR()->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();

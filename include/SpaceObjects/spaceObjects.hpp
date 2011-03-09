@@ -42,8 +42,8 @@ namespace spaceObjects {
     void  addPlanet(Vector2f const& location, float radius);
     void  addSun();
     void  addBlackHole();
-    Home* addHome(int where, Color3f const& color);
-    Home* addHome(Vector2f const& location, Color3f const& color);
+    Home* addHome(int where, int life, Color3f const& color);
+    Home* addHome(Vector2f const& location, int life, Color3f const& color);
 
     SpaceObject const* getObstacle(Vector2f const& start, Vector2f const& end, bool avoidBall = false, float minDistance = 0.f);
     bool               isOnLine   (Vector2f const& source, Vector2f const& direction, Vector2f const& target, float maxAngle);

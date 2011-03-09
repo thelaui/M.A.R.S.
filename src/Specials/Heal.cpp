@@ -32,13 +32,9 @@ void Heal::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
-    Color3f tmp = parent_->getOwner()->team()->color();
-    if (tmp.v() < 0.5f) tmp.v(0.5f);
-    if (tmp.s() < 0.5f) tmp.s(0.5f);
-
     alpha *= 0.6 + std::sin(timer::totalTime()*6)*0.1f;
+    parent_->getOwner()->team()->color().brightened().gl4f(alpha);
 
-    tmp.gl4f(alpha);
 
     const int posX = 1;
     const int posY = 0;

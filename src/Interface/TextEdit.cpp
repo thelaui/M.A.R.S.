@@ -123,7 +123,7 @@ void TextEdit::keyEvent(bool down, Key const& key) {
 void TextEdit::textEntered(sf::Uint32 keyCode) {
     if (pressed_) {
         if (type_ == TEXT_EDIT) {
-            if (value_->GetSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32) {
+            if (value_->GetSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32 && keyCode != 127) {
                 value_->Insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
@@ -233,6 +233,8 @@ void TextEdit::setFocus (UiElement* toBeFocused, bool isPrevious) {
 void TextEdit::clearFocus() {
     UiElement::clearFocus();
     pressed_ = false;
+    if (*value_ == "")
+        *value_ = fallBack_;
     menus::unFixKeyboard();
     if (label_)
         label_->clearFocus();

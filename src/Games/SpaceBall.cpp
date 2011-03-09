@@ -31,7 +31,7 @@ SpaceBall::SpaceBall():
     settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
     settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
-    music::playGameMusic();
+    music::play();
 
     Team* myTeamL = NULL;
     Team* myTeamR = NULL;
@@ -73,8 +73,8 @@ SpaceBall::SpaceBall():
     for (int i=0; i<settings::C_botsLeft;  ++i)                       players::addPlayer(myTeamL, controllers::cBot);
     for (int i=0; i<settings::C_botsRight;  ++i)                      players::addPlayer(myTeamR, controllers::cBot);
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  myTeamL->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, myTeamR->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, settings::C_pointLimitSB, myTeamL->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, settings::C_pointLimitSB, myTeamR->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();
@@ -95,8 +95,8 @@ void SpaceBall::draw() const {
 void SpaceBall::restart() {
     Game::restart();
 
-    Home* homeL = spaceObjects::addHome(HOME_LEFT,  teams::getTeamL()->color());
-    Home* homeR = spaceObjects::addHome(HOME_RIGHT, teams::getTeamR()->color());
+    Home* homeL = spaceObjects::addHome(HOME_LEFT, settings::C_pointLimitSB, teams::getTeamL()->color());
+    Home* homeR = spaceObjects::addHome(HOME_RIGHT, settings::C_pointLimitSB, teams::getTeamR()->color());
 
     teams::assignHomes(homeL, homeR);
     players::createShips();

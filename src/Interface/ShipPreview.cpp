@@ -42,21 +42,19 @@ void ShipPreview::draw() const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
-    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
-    Color3f bg = *teamColor_;
-    if (bg.v() < 0.5f) bg.v(0.5f);
-    if (bg.s() < 0.5f) bg.s(0.5f);
-    bg.gl4f(0.6f);
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Weapons));
+    teamColor_->brightened().gl4f(0.6f);
     glBegin(GL_QUADS);
-        glTexCoord2f(0, 0.75f); glVertex2f(-16.f*3.2f,-16.f*3.2f);
-        glTexCoord2f(0, 0.875f); glVertex2f(-16.f*3.2f, 16.f*3.2f);
-        glTexCoord2f(0.125f, 0.875f); glVertex2f( 16.f*3.2f, 16.f*3.2f);
-        glTexCoord2f(0.125f, 0.75f); glVertex2f( 16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0.75f, 0.75f); glVertex2f(-16.f*3.2f,-16.f*3.2f);
+        glTexCoord2f(0.75f, 1.f); glVertex2f(-16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(1.f, 1.f); glVertex2f( 16.f*3.2f, 16.f*3.2f);
+        glTexCoord2f(1.f, 0.75f); glVertex2f( 16.f*3.2f,-16.f*3.2f);
     glEnd();
 
     // draw ship
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glRotatef(timer::totalTime()*100, 0.f, 0.f, 1.f);
+    glBindTexture(GL_TEXTURE_2D, texture::getTexture(texture::Ships));
 
     float x, y;
 

@@ -41,13 +41,6 @@ namespace stars {
         Star::init();
     }
 
-    void update() {
-        if (settings::C_StarField && timer::totalTime() - spawnTimer_ > 0.5) {
-            spawnTimer_ = timer::totalTime();
-            particles::spawn(particles::pStar, Vector2f(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f));
-        }
-    }
-
     void draw() {
         glDisable(GL_BLEND);
         glEnable(GL_TEXTURE_2D);

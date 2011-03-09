@@ -21,12 +21,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/particles.hpp"
 # include "Media/sound.hpp"
 # include "Players/Player.hpp"
+# include "Teams/Team.hpp"
 
 # include <SFML/Graphics.hpp>
 
 void Flubba::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor4f(1.0f, 1.0f, 1.0f, alpha);
+    parent_->getOwner()->team()->color().brightened().gl4f(alpha);
     const int posX = 0;
     const int posY = 29;
     glBegin(GL_QUADS);
@@ -43,7 +44,7 @@ void Flubba::fire() const {
         timer_ = time;
         float angleRad = parent_->rotation()*M_PI / 180.f;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoFlubba, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+        particles::spawn(particles::pAmmoFlubba, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), parent_->getOwner()->team()->color().brightened(), parent_->getOwner());
         parent_->velocity() -= faceDirection*10.f;
         sound::playSound(sound::Blub, parent_->location());
     }

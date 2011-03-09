@@ -109,18 +109,18 @@ namespace spaceObjects {
         if (position != Vector2f(0,0)) objectList_.push_back(new BlackHole(position, radius));
     }
 
-    Home* addHome(int where, Color3f const& color) {
+    Home* addHome(int where, int life, Color3f const& color) {
         Vector2f position;
         switch (where) {
             case HOME_LEFT:  position = Vector2f(-50,     (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
             case HOME_RIGHT: position = Vector2f(SPACE_X_RESOLUTION+50, (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
             default:         position = possiblePlanetLocation(HOME_PLANET_RADIUS, 100);
         }
-        return addHome(position, color);
+        return addHome(position, life, color);
     }
 
-    Home* addHome(Vector2f const& location, Color3f const& color) {
-        Home* home = new Home(location, 100, color);
+    Home* addHome(Vector2f const& location, int life, Color3f const& color) {
+        Home* home = new Home(location, life, 100, color);
         objectList_.push_back(home);
         homeList_.push_back(home);
         return home;

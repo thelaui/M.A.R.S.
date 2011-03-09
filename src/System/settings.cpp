@@ -51,11 +51,12 @@ namespace settings {
     int         C_globalParticleCount =     100;
     int         C_globalParticleLifeTime =  100;
     bool        C_StarsHigh =               true;
-    bool        C_StarField =               true;
+    int         C_StarField =               500;
     int         C_botsLeft =                4;
     int         C_botsRight =               4;
     int         C_botsDeath =               10;
-    int         C_pointLimit =              5;
+    int         C_pointLimitSB =            10;
+    int         C_pointLimitCK =            10;
     int         C_pointLimitDM =            20;
     int         C_pointLimitTDM =           50;
     int         C_powerUpRate =             40;
@@ -151,7 +152,8 @@ namespace settings {
             outStream << "[botsLeft] "              << C_botsLeft << std::endl;
             outStream << "[botsRight] "             << C_botsRight << std::endl;
             outStream << "[botsDeath] "             << C_botsDeath << std::endl;
-            outStream << "[pointLimit] "            << C_pointLimit << std::endl;
+            outStream << "[pointLimitSB] "          << C_pointLimitSB << std::endl;
+            outStream << "[pointLimitCK] "          << C_pointLimitCK << std::endl;
             outStream << "[pointLimitDM] "          << C_pointLimitDM << std::endl;
             outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
             outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
@@ -198,7 +200,7 @@ namespace settings {
             outStream << "[showToolTips] "          << (C_showToolTips ? "true" : "false") << std::endl;
             outStream << "[languageID] "            <<  C_languageID << std::endl;
             outStream << "[highStarResolution] "    << (C_StarsHigh ? "true" : "false") << std::endl;
-            outStream << "[starField] "             << (C_StarField ? "true" : "false") << std::endl;
+            outStream << "[starField] "             <<  C_StarField << std::endl;
             outStream << "[shaders] "               << (C_shaders ? "true" : "false") << std::endl;
             outStream << "[resolutionX] "           << C_resX << std::endl;
             outStream << "[resolutionY] "           << C_resY << std::endl;
@@ -450,10 +452,15 @@ namespace settings {
                     iss >> value;
                     C_botsDeath = clamp(value, 0, 50);
                 }
-                else if (inputLine == "[pointLimit]") {
+                else if (inputLine == "[pointLimitSB]") {
                     int value;
                     iss >> value;
-                    C_pointLimit = clamp(value, 1, 100);
+                    C_pointLimitSB = clamp(value, 1, 100);
+                }
+                else if (inputLine == "[pointLimitCK]") {
+                    int value;
+                    iss >> value;
+                    C_pointLimitCK = clamp(value, 1, 100);
                 }
                 else if (inputLine == "[pointLimitDM]") {
                     int value;
@@ -661,11 +668,9 @@ namespace settings {
                     else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
                 }
                 else if (inputLine == "[starField]") {
-                    std::string value;
+                    int value;
                     iss >> value;
-                    if (value == "true")        C_StarField = true;
-                    else if (value == "false")  C_StarField = false;
-                    else std::cout << value << " is a bad value for " << inputLine << ". Use true or false instead.\n";
+                    C_StarField = value;
                 }
                 else if (inputLine == "[showSelectLanguage]") {
                     std::string value;

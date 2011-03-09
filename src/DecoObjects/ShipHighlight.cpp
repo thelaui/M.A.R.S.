@@ -44,9 +44,7 @@ void ShipHighlight::draw() const {
         if ((ship_->docked_ && (ship_->getLife() < 100.f) | (ship_->getFuel() < 100.f)))
             glScalef(std::sin(timer::totalTime()*10.f)*0.15f + 1.f, std::sin(timer::totalTime()*10.f)*0.15f + 1.f, 0.f);
 
-        Color3f color = ship_->owner_->color();
-        if (color.v() < 0.5f) color.v(0.5f);
-        color.gl4f(0.6f);
+        ship_->owner_->color().brightened().gl4f(0.6f);
         glBegin(GL_QUADS);
             glTexCoord2f(0.f, 0.875f);   glVertex2f(-ship_->radius_*2.7f,-ship_->radius_*2.7f);
             glTexCoord2f(0.f, 1.f);      glVertex2f(-ship_->radius_*2.7f, ship_->radius_*2.7f);

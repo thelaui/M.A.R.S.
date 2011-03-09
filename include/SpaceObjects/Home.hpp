@@ -25,7 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class Home: public SpaceObject {
     public:
-        Home(Vector2f const& location, float radius, Color3f const& color);
+        Home(Vector2f const& location, int life, float radius, Color3f const& color);
 
         void update();
         void draw() const;

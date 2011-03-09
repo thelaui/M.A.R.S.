@@ -28,7 +28,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 void Insta::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    parent_->getOwner()->team()->color().gl4f(alpha);
+    parent_->getOwner()->team()->color().brightened().gl4f(alpha);
     const int posX = 2;
     const int posY = 31;
     glBegin(GL_QUADS);
@@ -45,9 +45,7 @@ void Insta::fire() const {
         timer_ = time;
         float angleRad = parent_->rotation()*M_PI / 180;
         Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        Color3f tmp = parent_->getOwner()->team()->color();
-        if (tmp.v() < 0.5f) tmp.v(0.5f);
-        if (tmp.s() < 0.5f) tmp.s(0.5f);
+        Color3f tmp = parent_->getOwner()->team()->color().brightened();
         particles::spawn(particles::pAmmoInsta, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), tmp, parent_->getOwner());
         sound::playSound(sound::Sniper, parent_->location());
     }

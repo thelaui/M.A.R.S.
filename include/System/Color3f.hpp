@@ -72,6 +72,9 @@ struct Color3f {
         /// Inverts the color.
         Color3f const inverted() const;
 
+        /// Brightens the color if it is too dark
+        Color3f const brightened() const;
+
         /// Calls glColor3f() with the values of this color.
         void gl3f() const;
 

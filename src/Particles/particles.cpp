@@ -150,6 +150,7 @@ namespace particles {
             CannonBall::       drawAll();
             Spark::            drawAll();
             CrushedIce::       drawAll();
+            //HeatJet::       drawAll();
             //AmmoFist::         drawAll();
 
         glEnd();

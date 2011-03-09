@@ -180,8 +180,12 @@ void TabStats::draw() const {
         sf::String name = *locales::getLocale(locales::Fraglimit);
 
          switch (games::type()) {
-            case games::gSpaceBall: case games::gCannonKeep:
-                pointlimit = settings::C_pointLimit;
+            case games::gSpaceBall:
+                pointlimit = settings::C_pointLimitSB;
+                name       = *locales::getLocale(locales::Pointlimit);
+                break;
+            case games::gCannonKeep:
+                pointlimit = settings::C_pointLimitCK;
                 name       = *locales::getLocale(locales::Pointlimit);
                 break;
             case games::gDeathMatch:

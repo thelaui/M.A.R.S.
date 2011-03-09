@@ -27,11 +27,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/OpenGL.hpp>
 # include <sstream>
 
-Slider::Slider (sf::String* text, sf::String* toolTip, int* value, int minValue, int maxValue, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<sf::String> const& sliderNames):
+Slider::Slider (sf::String* text, sf::String* toolTip, int* value, int minValue, int maxValue, int step, Vector2f const& topLeft, int width, int labelWidth, bool showValue, std::vector<sf::String> const& sliderNames):
     UiElement(topLeft, width, 20),
     value_(value),
     minValue_(minValue),
     maxValue_(maxValue),
+    step_(step),
     labelWidth_(labelWidth),
     showValue_(showValue),
     sliderNames_(sliderNames),
@@ -77,17 +78,20 @@ void Slider::mouseWheelMoved(Vector2f const& position, int delta) {
 void Slider::keyEvent(bool down, Key const& key) {
     if (down) {
         if (locales::getCurrentLocale().LTR_) {
-            if (key.navi_ == Key::nLeft && *value_ > minValue_)
-                --(*value_);
+            if (key.navi_ == Key::nLeft)
+                *value_ -= step_;
             else if (key.navi_ == Key::nRight && *value_ < maxValue_)
-                ++(*value_);
+                *value_ += step_;
         }
         else {
             if (key.navi_ == Key::nLeft && *value_ < maxValue_)
-                ++(*value_);
+                *value_ += step_;
             else if (key.navi_ == Key::nRight && *value_ > minValue_)
-                --(*value_);
+                *value_ -= step_;
         }
+
+        if (*value_ < minValue_) *value_ = minValue_;
+        if (*value_ > maxValue_) *value_ = maxValue_;
     }
 }
 

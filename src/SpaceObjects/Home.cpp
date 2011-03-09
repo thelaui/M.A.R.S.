@@ -33,14 +33,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <sstream>
 
-Home::Home(Vector2f const& location, float radius, Color3f const& color):
+Home::Home(Vector2f const& location, int life, float radius, Color3f const& color):
                SpaceObject(spaceObjects::oHome, location, radius, radius*150.f),
-               color_(color),
-               life_(settings::C_pointLimit),
+               color_(color.brightened()),
+               life_(life),
                visible_(true) {
-
-    if (color_.v() < 0.5f) color_.v(0.5f);
-    if (color_.s() < 0.5f) color_.s(0.5f);
 
     physics::addStaticObject(this);
     physics::addGravitySource(this);

@@ -160,6 +160,13 @@ Color3f const Color3f::inverted() const {
     return inverted;
 }
 
+Color3f const Color3f::brightened() const {
+    Color3f brightened(*this);
+    if (brightened.v() < 0.5f) brightened.v(0.5f);
+    if (brightened.s() < 0.5f) brightened.s(0.5f);
+    return brightened;
+}
+
 void Color3f::gl3f() const {
     glColor3f(r_, g_, b_);
 }

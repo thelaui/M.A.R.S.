@@ -28,11 +28,7 @@ void NoSpecial::draw(float alpha) const {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
     // draw glow
-    Color3f tmp = parent_->getOwner()->team()->color();
-    if (tmp.v() < 0.5f) tmp.v(0.5f);
-    if (tmp.s() < 0.5f) tmp.s(0.5f);
-
-    tmp.gl4f(0.7f*alpha);
+    parent_->getOwner()->team()->color().brightened().gl4f(0.7f*alpha);
 
     const int posX = 3;
     const int posY = 3;

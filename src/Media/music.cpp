@@ -61,14 +61,6 @@ namespace music {
             initialized_ = true;
         }
 
-        void play(int nextTrack) {
-            setGlobalVolume();
-            sf::String fileName(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
-            musicChannel_.OpenFromFile(fileName);
-            musicChannel_.Play();
-            musicNotify::show(files_[nextTrack]);
-        }
-
     }
 
     void update() {
@@ -81,8 +73,8 @@ namespace music {
             }
 
             if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0) {
-                if (games::type() == games::gMenu) playMenuMusic();
-                else                               playGameMusic();
+                if (games::type() == games::gMenu) play(settings::C_dataPath + "audio/menu.ogg");
+                else                               play();
             }
 
             float slowMoTime(timer::slowMoTime());
@@ -99,25 +91,22 @@ namespace music {
 
 
             if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey))
-                musicNotify::show(files_[playList_.back()]);
+                musicNotify::show(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
         }
         else if (musicChannel_.GetStatus() == sf::Music::Playing)
             stop();
     }
 
-    void playMenuMusic() {
+    void play(std::string fileName) {
         if (settings::C_musicVolume > 0) {
-            if (!initialized_) init();
-
             setGlobalVolume();
-            sf::String fileName(settings::C_dataPath + "/audio/thisistheday.ogg");
             musicChannel_.OpenFromFile(fileName);
             musicChannel_.Play();
-            playList_.clear();
+            musicNotify::show(fileName);
         }
     }
 
-    void playGameMusic() {
+    void play() {
         if (settings::C_musicVolume > 0) {
             if (!initialized_) init();
 
@@ -143,7 +132,7 @@ namespace music {
 
                 playList_.push_back(nextTrack);
 
-                play(nextTrack);
+                play(settings::C_dataPath + "/audio/music/" + files_[nextTrack]);
             }
             else
                 stop();
@@ -151,21 +140,21 @@ namespace music {
     }
 
     void next() {
-        if (!playList_.empty() && settings::C_musicVolume) {
+        if (settings::C_musicVolume > 0) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
         }
     }
 
     void previous() {
-        if (!playList_.empty() && settings::C_musicVolume) {
+        if (!playList_.empty() && settings::C_musicVolume > 0) {
             stop();
             hud::displayMessage(*locales::getLocale(locales::PreviousTrackNotify));
 
             if (playList_.size() > 1)
                 playList_.pop_back();
 
-            play(playList_.back());
+            play(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
         }
     }
 

@@ -193,7 +193,7 @@ namespace musicNotify {
         by_ = locales::getLocale(locales::Artist);
         from_ = locales::getLocale(locales::Album);
 
-        TagLib::FileRef ref((settings::C_dataPath + "/audio/music/" + fileName).c_str());
+        TagLib::FileRef ref(fileName.c_str());
 
         TagLib::Tag *tag(ref.tag());
 

@@ -31,7 +31,7 @@ DeathMatch::DeathMatch():
     settings::C_EnabledWeapons  = settings::C_EnabledWeaponsByUser;
     settings::C_EnabledSpecials = settings::C_EnabledSpecialsByUser;
 
-    music::playGameMusic();
+    music::play();
 
     if (settings::C_playerIteamL  | settings::C_playerIteamR)
         players::addPlayer (teams::addTeam(new DMTeam(settings::C_playerITeamColor)), controllers::cPlayer1);
@@ -46,7 +46,7 @@ DeathMatch::DeathMatch():
         players::addPlayer(newTeam, controllers::cBot, color);
     }
 
-    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(0.9f, 0.7f, 1.0f)));
+    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, 100, Color3f(0.9f, 0.7f, 1.0f)));
     players::createShips();
 
     spaceObjects::populateSpace(5.f, 10.f, 4);
@@ -61,7 +61,7 @@ void DeathMatch::draw() const {
 void DeathMatch::restart() {
     Game::restart();
 
-    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, Color3f(1.f, 1.f, 1.f)));
+    teams::assignHomes(spaceObjects::addHome(HOME_MIDDLE, 100, Color3f(1.f, 1.f, 1.f)));
     players::createShips();
 
     spaceObjects::populateSpace(5.f, 10.f, 4);

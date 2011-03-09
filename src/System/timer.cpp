@@ -42,6 +42,7 @@ namespace timer {
     }
 
     void update(float frameTime) {
+
         realFrameTime_ = frameTime;
 
         // fps
