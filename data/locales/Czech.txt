@@ -363,7 +363,7 @@
 205 Snímek uložen!
 214 Další hudební skladba!
 260 Předchozí hudební skladba!
-258 Umělec:
-259 Album:
+258 Umělec: 
+259 Album: 
 
 // 268

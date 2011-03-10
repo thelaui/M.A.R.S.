@@ -380,8 +380,8 @@
 205 Screenshot salvo!
 214 próxima trilha musical!
 260 Trilha musical anterior!
-258 Artista:
-269 Album:
+258 Artista: 
+269 Album: 
 
 // 268
 

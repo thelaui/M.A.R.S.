@@ -364,7 +364,7 @@
 205 Skärmdump sparad!
 214 Nästa musikspår!
 260 Föregående musikspår!
-258 Artist:
-259 Album:
+258 Artist: 
+259 Album: 
  
 // 268

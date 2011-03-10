@@ -88,6 +88,7 @@
 163 Effets Shaders
 164 164 Désolé, les effets shaders ne sont pas supportés par votre matériel !
 151 Champs d'Étoiles Haute Résolution
+265 Étoiles dynamiques
 173 Résolution
 174 Couleurs
 
@@ -105,6 +106,8 @@
 045 Présentateur
 128 Jouer la piste suivante
 129 Options du Playback
+261 Jouer la piste précédente
+262 Lecture aléatoire
 
 // player options
 
@@ -324,6 +327,8 @@
 179 Change le format d'enregistrement des captures d'écran.
 180 Quand cette touche est pressée, une capture d'écran est enregistrée dans {CONFIG_PATH}screenshots/
 181 Permet de passer à la piste musicale suivante.
+263 Appuyer sur cette touche lancera la piste musicale précédente.
+264 Lance la musique dans une séquence aléatoire.
 182 Active l'effet de ralenti lors d'explosions simultanées de vaisseaux. 
 183 Affiche le rôle de chaque bot.
 184 Affiche les zones tactiques, importantes pour l'intelligence artificielle.
@@ -333,6 +338,7 @@
 188 Active les effets additionnels, mais réduit les performances du jeu.
 189 Change la taille de la fenêtre.\nAffecte le plein-écran et le mode fenêtré.
 190 Avec une haute résolution, cette option repousse le rafraichissement du champs d'étoiles.\nDésactiver pour accroître les performances.
+266 Affiche quelques étoiles dynamiques en arrière-plan. Visuellement agréable, mais réduit les performances du jeu.
 191 Ajuste le compteur global de particules.\nDes valeurs basses accroissent les performances.
 192 Ajuste la durée de vie des particules.\nDes valeurs basses accroissent les performances.
 193 Ajuste le volume du fond musical.
@@ -354,5 +360,8 @@
 
 205 Capture d'écran enregistrée !
 214 Piste musicale suivante !
+260 Piste musicale précédente !
+258 Artiste: 
+259 Album: 
 
-// 258
+// 268

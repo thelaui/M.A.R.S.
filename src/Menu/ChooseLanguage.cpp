@@ -35,7 +35,7 @@ UiWindow* ChooseLanguage::get() {
     if (instance_ == NULL) {
         std::vector<Locale>const& localeList = locales::getLocales();
 
-        instance_ = new ChooseLanguage(220, 100 + 24*localeList.size());
+        instance_ = new ChooseLanguage(220, 110 + 24*localeList.size());
 
         for (int i=0; i<localeList.size(); ++i)
             sortedLocales_.insert(std::make_pair(localeList[i].name_, i));
@@ -53,8 +53,9 @@ UiWindow* ChooseLanguage::get() {
             top += 24;
         }
 
-        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(120,top+20), 90, 20));
+        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(120,top+30), 90, 20));
         instance_->addWidget(new Label(new sf::String("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+        instance_->addWidget(new Label(new sf::String("* Incomplete"), TEXT_ALIGN_LEFT, Vector2f(10,top+10), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(210, 35)));
     }
     return instance_;
