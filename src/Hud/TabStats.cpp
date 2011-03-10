@@ -34,12 +34,17 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <iomanip>
 
 // helper function
+void inline writeScoreAtCol(sf::String value, int col, Vector2f topLeft, int mirror, Color3f drawColor) {
+    text::drawScreenText(value, topLeft+Vector2f((170+70*col + 1)*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+    text::drawScreenText(value, topLeft+Vector2f((170+70*col)*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+}
+
 void inline writeScoreAtCol(int value, int col, Vector2f topLeft, int mirror, Color3f drawColor) {
     std::stringstream sstr;
     sstr << value;
-    text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f((170+70*col + 1)*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-    text::drawScreenText(sf::String(sstr.str()), topLeft+Vector2f((170+70*col)*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+    writeScoreAtCol(sf::String(sstr.str()), col, topLeft, mirror, drawColor);
 }
+
 
 TabStats::TabStats():
     visible_(false),
@@ -232,7 +237,7 @@ void TabStats::draw() const {
         topLeft.y_ += 15;
 
         for (std::multimap<Team*, std::multiset<Player*, playerPtrCmp>, teamPtrCmp >::const_iterator it = teamMap_.begin(); it != teamMap_.end(); ++it) {
-            int totalPoints(0), totalFrags(0), totalCannonShots(0), totalGoals(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
+            int totalPoints(0), totalFrags(0), totalCannonShots(0), totalGoals(0), totalSelfGoals(0), totalSuicides(0), totalTeamKills(0), totalDeaths(0);
             Color3f teamColor = it->first->color();
             teamColor.v(1.f);
             teamColor.s(0.5f);
@@ -277,13 +282,17 @@ void TabStats::draw() const {
                     writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                     totalCannonShots += value;
                 }
+                // draw goals
                 else if (games::type() == games::gSpaceBall) {
-                    value = (*currentPlayer)->goals_;
+                    value = (*currentPlayer)->goals_ + (*currentPlayer)->selfGoals_;
+                    std::stringstream sstr;
+                    sstr << (*currentPlayer)->goals_ << "/" << (*currentPlayer)->selfGoals_;
                     if (value > 0)      drawColor = Color3f(0.3,1,0.3);
                     else if (value < 0) drawColor = Color3f(1,0.3,0.3);
                     else                drawColor = Color3f(1,1,0.3);
-                    writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
-                    totalGoals += value;
+                    writeScoreAtCol(sf::String(sstr.str()), col++, topLeft, mirror, drawColor);
+                    totalGoals += (*currentPlayer)->goals_;
+                    totalSelfGoals += (*currentPlayer)->selfGoals_;
                 }
                 // draw frags
                 value = (*currentPlayer)->frags_;
@@ -334,20 +343,23 @@ void TabStats::draw() const {
                 else                              drawColor = Color3f(1,1,0.3);
                 writeScoreAtCol(totalPoints, col++, topLeft, mirror, drawColor);
 
-                if (totalFrags > 0)     drawColor = Color3f(0.3,1,0.3);
-                else                    drawColor = Color3f(1,1,0.3);
-                writeScoreAtCol(totalFrags, col++, topLeft, mirror, drawColor);
-
                 if (games::type() == games::gCannonKeep) {
                     if (totalCannonShots > 0)     drawColor = Color3f(0.3,1,0.3);
                     else                          drawColor = Color3f(1,1,0.3);
                     writeScoreAtCol(totalCannonShots, col++, topLeft, mirror, drawColor);
                 } else if (games::type() == games::gSpaceBall) {
-                    if (totalGoals > 0)      drawColor = Color3f(0.3,1,0.3);
-                    else if (totalGoals < 0) drawColor = Color3f(1,0.3,0.3);
-                    else                              drawColor = Color3f(1,1,0.3);
-                    writeScoreAtCol(totalGoals, col++, topLeft, mirror, drawColor);
+                    const int goalDiff (totalGoals + totalSelfGoals);
+                    if (goalDiff > 0)      drawColor = Color3f(0.3,1,0.3);
+                    else if (goalDiff < 0) drawColor = Color3f(1,0.3,0.3);
+                    else                   drawColor = Color3f(1,1,0.3);
+                    std::stringstream sstr;
+                    sstr << totalGoals << "/" <<totalSelfGoals;
+                    writeScoreAtCol(sf::String(sstr.str()), col++, topLeft, mirror, drawColor);
                 }
+
+                if (totalFrags > 0)     drawColor = Color3f(0.3,1,0.3);
+                else                    drawColor = Color3f(1,1,0.3);
+                writeScoreAtCol(totalFrags, col++, topLeft, mirror, drawColor);
 
                 if (totalTeamKills > 0) drawColor = Color3f(1,0.3,0.3);
                 else                    drawColor = Color3f(0.3,1,0.3);

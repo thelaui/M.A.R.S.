@@ -38,8 +38,8 @@ class Player {
         virtual sf::String const& name()    const = 0;
         virtual int               graphic() const = 0;
 
-        void                      goals_inc() {++goals_;}
-        void                      goals_dec() {--goals_;}
+        void                      addGoal();
+        void                      subGoal();
 
         friend class Team;
         friend class Ship;
@@ -51,7 +51,7 @@ class Player {
         Ship* ship_;
         Team* team_;
         int points_, frags_, suicides_, deaths_, teamKills_, cannonShots_,
-            goals_;
+            goals_, selfGoals_;
         controllers::ControlType controlType_;
 };
 

@@ -69,6 +69,7 @@ void Cannon::update() {
             timer_ = 0.f;
             particles::spawn(particles::pCannonBall, location, direction);
             ++carrier->cannonShots_;
+            ++carrier->points_;
         }
         if (timer_ > shootSpeed*0.5f)
             particles::spawnTimed(std::pow((timer_*2.f/shootSpeed)-1, 3), particles::pDust, location);

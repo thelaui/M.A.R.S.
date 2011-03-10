@@ -35,8 +35,7 @@ MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& directi
 
     radius_ = sf::Randomizer::Random(2.f, 3.f);
 
-    //color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
-    color_ = color;
+    color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
 }
 
 void MiniAmmoFlubba::update() {

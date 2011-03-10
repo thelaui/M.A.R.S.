@@ -163,12 +163,13 @@ void Home::onCollision(SpaceObject* with, Vector2f const& location,
                 if (ball->lastShooter() != NULL) {
                     // If an oponnent threw the ball to the home, give him a
                     // point
-                    if (ball->lastShooter()->team()->home() != this) {
-                        ball->lastShooter()->goals_inc();
-                    } else {
+                    if (ball->lastShooter()->team()->home() != this)
+                        ball->lastShooter()->addGoal();
+                    else
                         //someone goaled against his own team... bad!
-                        ball->lastShooter()->goals_dec(); }
+                        ball->lastShooter()->subGoal();
                 }
+
                 ball->resetShooter();
                 break;
         }

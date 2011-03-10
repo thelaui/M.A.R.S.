@@ -33,8 +33,7 @@ AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vect
 
     radius_ = sf::Randomizer::Random(6.f, 8.f);
 
-    //color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
-    color_ = color;
+    color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
 }
 
 void AmmoFlubba::update() {
@@ -57,7 +56,7 @@ void AmmoFlubba::update() {
         int rand = sf::Randomizer::Random(8, 20);
         sound::playSound(sound::BlubCollide, location_);
         for (int i=0; i<rand; ++i)
-            particles::spawn(particles::pMiniAmmoFlubba, location_, Vector2f(), Vector2f(), color_, damageSource_);
+            particles::spawn(particles::pMiniAmmoFlubba, location_, Vector2f(), Vector2f(), Color3f(), damageSource_);
     }
 }
 

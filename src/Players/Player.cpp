@@ -29,6 +29,7 @@ Player::Player(controllers::ControlType controlType):
     teamKills_(0),
     cannonShots_(0),
     goals_(0),
+    selfGoals_(0),
     controlType_(controlType) {}
 
 void Player::resetPoints() {
@@ -39,4 +40,16 @@ void Player::resetPoints() {
     teamKills_ = 0;
     cannonShots_ = 0;
     goals_ = 0;
+    selfGoals_ = 0;
+}
+
+void Player::addGoal() {
+    ++goals_;
+    points_ += 10;
+}
+
+void Player::subGoal() {
+    --selfGoals_;
+    points_ -= 5;
+
 }
