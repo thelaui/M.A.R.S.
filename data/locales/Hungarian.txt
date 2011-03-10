@@ -39,7 +39,7 @@
 020 Jobboldali Botok
 021 Botok
 022 Találat Limit
-162 Pont Limit
+
 
 // story information
 
@@ -204,15 +204,12 @@
 
 121 Lövés...
 122 Ahhoz hogy legyőzd az ellenségeid, tudnod kell hogyan lődd ki őket!\nEhhez nyomd meg:
-123 Lövöldözz egy kicsit és utána landolj a hajóddal\na tréning folytatásához.
 
 124 Szép Landolás!
 125 Csodálatos pilóta lett belőled.\n\nNos, jöhet még pár fegyver?
 
 126 Fegyverek...
 127 Tudom, hogy csak erre vártál. Amíg a bolygódon dokkolsz hihetetlen gonosz fegyverek között váltogathatsz.\nNyomj
-128 -t hogy megnyisd a fegyver arzenálod.\nEzután használd a 
-129 fegyver kiválasztásához! Szállj fel, ha készen vagy!
 
 130 Harc!
 131 Most lássuk, hogy milyen vagy egy másik bolygóról érkező újonc ellen.\n\nÚgy tűnik. hogy a repülési képességeit próbálja javítani.\n\nLődd ki!
@@ -252,7 +249,6 @@
 156 Társ Megölve
 157 Önhalál
 158 Meghalva
-159 Hírnév
 160 Összesen:
 161 Statisztika
 

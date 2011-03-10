@@ -31,7 +31,6 @@
 020 Bots Derecha
 021 Bots
 022 Límite de Frag
-162 Límite de Puntos
 056 Weapon Options
 203 Weapons
 204 Specials
@@ -197,16 +196,12 @@
 
 121 Disparar...
 122 Para derrotar a tus enemigos ¡tienes que saber cómo disparar!\nPara eso presiona
-123 Diviértete disparando por ahí y luego aterriza tu nave para continuar el tutorial.
 
 124 ¡Buen aterrizaje!
 125 Resultaste ser un gran piloto. \n\n Ahora ¿qué tal unas armas más?
 
 126 Las Armas...
 127 Sé que has estado esperando esto. Con la nave en tierra puedes cambiar de arma, pudiendo elegir entre algunas armas increíblemente malvadas.\n Presiona
-128 para abrir tu arsenal.\n¡Luego usa
-129 para elegir un arma! ¡Despega cuando estés listo!
-
 
 130 ¡Lucha!
 131 Ahora vamos a ver cómo lo haces contra un novato de otro planeta.\nParece que está tratando de mejorar sus habilidades de vuelo.\n¡Golpéalo!
@@ -246,7 +241,6 @@
 156 Matanzas en equipo
 157 Suicidios
 158 Muertes
-159 Reputación
 160 Total:
 161 Estadísticas
 

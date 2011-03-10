@@ -31,7 +31,6 @@
 020 Bot Destra
 021 Bot
 022 Limite Di Uccisioni
-162 Limite Di Punti
 056 Weapon Options
 203 Weapons
 204 Specials
@@ -199,15 +198,12 @@
 
 121 Sparare...
 122 Per uccidere i tuoi nemici, devi prima conoscere come sparargli addosso!\nPer far ciò premi
-123 Divertiti sparando un po in giro, e poi atterra sul tuo pianeta per continuare il tuo tutorial.
 
 124 Buon atterraggio!
 125 Sembra che tu sia un gran pilota.\n\nAdesso che ne dici di qualche arma in più?
 
 126 Le armi...
 127 Lo so che lo stavi aspettando. Quando sei appoggiato al tuo pianeta puoi scegliere tra alcune armi incredibilmente maligne.\nTieni premuto
-128 per aprire il tuo arsenale.\nQuindi
-129 per sceglire la tua arma! Parti, quando sei pronto!
 
 130 Combatti!
 131 Adesso vediamo come te la cavi contro una recluta di un altro pianeta.\nSembra stia cercando di migliorare le sue abilità di volo.\nBattilo!
@@ -247,7 +243,6 @@
 156 Compagni Uccisi
 157 Suicidi
 158 Morti
-159 Reputazione
 160 Totale:
 161 Statistiche
 
