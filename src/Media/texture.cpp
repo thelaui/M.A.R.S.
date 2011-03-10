@@ -72,6 +72,8 @@ namespace texture {
                 case Planet11:                 loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/planet11.png");  break;
                 case Planet12:                 loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/planet12.png");  break;
                 case Planet13:                 loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/planet13.png");  break;
+                case Planet14:                 loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/planet14.png");  break;
+                case Planet15:                 loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/planet15.png");  break;
                 case Sun1:                     loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/sun1.png");      break;
                 case SunHeat:                  loadTexture_(type, settings::C_dataPath + "tex/spaceObjects/sunHeat.png");   break;
                 case Ice:                      loadTexture_(type, settings::C_dataPath + "tex/ice.png");                    break;
@@ -110,7 +112,7 @@ namespace texture {
     }
 
     TextureType const randomPlanet() {
-        int randomInt = sf::Randomizer::Random(1, 13);
+        int randomInt = sf::Randomizer::Random(1, 15);
         switch (randomInt) {
             case  1: return Planet1;
             case  2: return Planet2;
@@ -124,25 +126,29 @@ namespace texture {
             case 10: return Planet10;
             case 11: return Planet11;
             case 12: return Planet12;
-            default: return Planet13;
+            case 13: return Planet13;
+            case 14: return Planet14;
+            default: return Planet15;
         }
     }
 
     Color3f const getMudColor(TextureType type) {
         switch (type) {
-            case Planet1:   return Color3f(0.3f, 0.8f, 1.f);
-            case Planet2:   return Color3f(1.f, 0.1f, 0.1f);
-            case Planet3:   return Color3f(0.5f, 0.8f, 1.f);
-            case Planet4:   return Color3f(0.6f, 0.3f, 1.f);
-            case Planet5:   return Color3f(0.5f, 0.5f, 0.5f);
-            case Planet6:   return Color3f(0.f, 0.8f, 1.0f);
+            case Planet1:   return Color3f(1.0f, 1.0f, 0.3f);
+            case Planet2:   return Color3f(1.0f, 0.3f, 0.9f);
+            case Planet3:   return Color3f(1.0f, 0.6f, 1.0f);
+            case Planet4:   return Color3f(0.6f, 0.3f, 1.0f);
+            case Planet5:   return Color3f(1.0f, 0.5f, 0.8f);
+            case Planet6:   return Color3f(0.0f, 0.8f, 1.0f);
             case Planet7:   return Color3f(0.3f, 0.3f, 0.3f);
-            case Planet8:   return Color3f(0.2f, 1.f, 0.2f);
-            case Planet9:   return Color3f(0.6f, 1.f, 0.1f);
-            case Planet10:  return Color3f(1.f, 1.f, 0.5f);
+            case Planet8:   return Color3f(0.2f, 1.0f, 0.2f);
+            case Planet9:   return Color3f(1.0f, 0.0f, 0.0f);
+            case Planet10:  return Color3f(1.0f, 1.0f, 0.5f);
             case Planet11:  return Color3f(0.7f, 0.7f, 0.2f);
-            case Planet12:  return Color3f(0.2f, 0.6f, 0.8f);
-            case Planet13:  return Color3f(0.7f, 0.7f, 0.4f);
+            case Planet12:  return Color3f(1.0f, 0.6f, 0.8f);
+            case Planet13:  return Color3f(0.5f, 1.0f, 1.0f);
+            case Planet14:  return Color3f(1.0f, 1.0f, 0.0f);
+            case Planet15:  return Color3f(1.0f, 0.7f, 0.0f);
             default :       return Color3f(1.f, 1.f, 1.f);
         }
     }

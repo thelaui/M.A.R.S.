@@ -82,8 +82,8 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
         currentSpecial_ = specials::create(settings::C_playerIISpecial, this);
     }
     else {
-        life_ = 25.f + static_cast<float>(settings::C_iDumb)*1.75f;
-        maxLife_ = life_;
+        //life_ = 25.f + static_cast<float>(settings::C_iDumb)*1.75f;
+        //maxLife_ = life_;
         currentWeapon_  = weapons:: create(weapons::wAFK47, this);
         currentSpecial_ = specials::create(specials::sHeal, this);
     }
@@ -457,10 +457,13 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
     }
 
     if (attackable()) {
-        // double the amount done to weak bots
+        // increase the amount done to weak bots
         // strong bots just take normal damage
-       // if (damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
-        //    amount *= (2.f - 0.01f*settings::C_iDumb);
+        if (damageSource_
+            && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2)
+            && (owner_->controlType_ != controllers::cPlayer1 && owner_->controlType_ != controllers::cPlayer2)
+            && amount < life_)
+            amount *= (10.f - 0.09f*settings::C_iDumb);
 
         life_ -= amount;
         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))

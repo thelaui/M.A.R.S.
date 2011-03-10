@@ -31,7 +31,7 @@
 020 Bots Rechts
 021 Bots
 022 Fraglimit
-162 Punktelimit
+162 Planetenlebenspunkte
 056 Waffenoptionen
 203 Waffen
 204 Besondere Fähigkeiten
@@ -86,6 +86,7 @@
 163 Shadereffekte
 164 Shader sind mit deiner Hardware leider nicht möglich!
 151 Hochauflösende Sterne
+265 Bewegte Sterne
 173 Auflösung
 174 Farbtiefe
 
@@ -103,6 +104,8 @@
 045 Sprache
 128 Spiele nächsten Titel
 129 Wiedergabeoptionen 
+261 Spiele vorherigen Titel
+262 Zufällige Wiedergabereihenfolge
 
 // Spieleroptionen
 
@@ -308,6 +311,7 @@
 154 Punkte
 155 Frags
 244 Kanonenschüsse
+267 Tore
 156 Teamkills
 157 Suizide
 158 Tode
@@ -322,7 +326,9 @@
 178 Schaltet solche Tooltipps aus.
 179 Stellt das bei Screenshots verwendete Dateiformat ein.
 180 Speichert bei Knopfdruck einen Screenshot in {CONFIG_PATH}screenshots/
-181 Nächsten Musiktitel abspielen
+181 Spielt den nächsten Musiktitel ab.
+263 Spielt den vorherigen Musiktitel ab.
+264 Aktiviert zufällige Wiedergabereihenfolge.
 182 Bei dieser Anzahl an gleichzeitigen Explosionen wird ein Zeitlupeneffekt aktiviert.
 183 Zeigt den Job jedes Bots.
 184 Zeigt taktische Zonen, die für die KI wichtig sind.
@@ -332,6 +338,7 @@
 188 Schaltet tolle Effekte, wie Hitzeflimmern ein, aber reduziert die Spielleistung.
 189 Stellt die Fenstergröße ein.\nBeeinflusst sowohl den Vollbildmodus als auch den Fenstermodus.
 190 Bei hohen Auflösungen wird eine Wiederholung des Sternenhintergrundes vermieden.\nBei Deaktivierung erhöht sich die Spielleistung leicht.
+266 Zeichnet ein paar bewegte Sterne in den Hintergrund. Sieht hübsch aus, reduziert aber die Spielleistung.
 191 Stellt die globale Partikelanzahl ein!\nKleine Werte erhöhen die Spielleistung!
 192 Stellt die globale Partikellebensdauer ein.\nKleine Werte erhöhen die Spielleistung!
 193 Stellt die Musiklautstärke ein.
@@ -353,5 +360,8 @@
 
 205 Screenshot gespeichert!
 214 Nächster Musiktitel!
+260 Vorheriger Musiktitel!
+258 Von: 
+259 Aus: 
 
 // 268

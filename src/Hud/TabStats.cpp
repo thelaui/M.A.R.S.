@@ -219,12 +219,13 @@ void TabStats::draw() const {
         int col = 0;
 
         text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f((170+70*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gCannonKeep)
             text::drawScreenText(*locales::getLocale(locales::CannonShots), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gSpaceBall)
-            text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+             text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        if (games::type() != games::gDeathMatch)
+            text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
@@ -268,12 +269,6 @@ void TabStats::draw() const {
                 else                drawColor = Color3f(1,1,0.3);
                 writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalPoints += value;
-                // draw frags
-                value = (*currentPlayer)->frags_;
-                if (value > 0)      drawColor = Color3f(0.3,1,0.3);
-                else                drawColor = Color3f(1,1,0.3);
-                writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
-                totalFrags += value;
                 // draw cannonShots
                 if (games::type() == games::gCannonKeep) {
                     value = (*currentPlayer)->cannonShots_;
@@ -281,7 +276,8 @@ void TabStats::draw() const {
                     else                drawColor = Color3f(1,1,0.3);
                     writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                     totalCannonShots += value;
-                } else if (games::type() == games::gSpaceBall) {
+                }
+                else if (games::type() == games::gSpaceBall) {
                     value = (*currentPlayer)->goals_;
                     if (value > 0)      drawColor = Color3f(0.3,1,0.3);
                     else if (value < 0) drawColor = Color3f(1,0.3,0.3);
@@ -289,12 +285,20 @@ void TabStats::draw() const {
                     writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                     totalGoals += value;
                 }
-                // draw teamKills
-                value = (*currentPlayer)->teamKills_;
-                if (value > 0)      drawColor = Color3f(1,0.3,0.3);
-                else                drawColor = Color3f(0.3,1,0.3);
+                // draw frags
+                value = (*currentPlayer)->frags_;
+                if (value > 0)      drawColor = Color3f(0.3,1,0.3);
+                else                drawColor = Color3f(1,1,0.3);
                 writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
-                totalTeamKills += value;
+                totalFrags += value;
+                // draw teamKills
+                if (games::type() != games::gDeathMatch) {
+                    value = (*currentPlayer)->teamKills_;
+                    if (value > 0)      drawColor = Color3f(1,0.3,0.3);
+                    else                drawColor = Color3f(0.3,1,0.3);
+                    writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
+                    totalTeamKills += value;
+                }
                 // draw suicides
                 value = (*currentPlayer)->suicides_;
                 if (value > 0)      drawColor = Color3f(1,0.3,0.3);

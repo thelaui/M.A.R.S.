@@ -224,17 +224,18 @@ namespace toolTip {
     void draw() {
         if (currentLocale_ && lines_.size() > 0) {
             float alpha(0.f);
+            float time(timer::realFrameTime()*1.3f);
 
             switch (state_) {
                 case WAITING:
-                    timer_ += timer::frameTime();
+                    timer_ += time;
                     if (timer_ > 1.f) {
                         timer_ = 0.f;
                         state_ = FADE_IN;
                     }
                     break;
                 case FADE_IN:
-                    timer_ += timer::frameTime()*5.f;
+                    timer_ += time*5.f;
                     alpha = timer_;
                     if (timer_ > 1.f) {
                         state_ = VISIBLE;
@@ -244,7 +245,7 @@ namespace toolTip {
                     alpha = 1.f;
                     break;
                 case FADE_OUT:
-                    timer_ -= timer::frameTime()*5;
+                    timer_ -= time*5;
                     alpha = timer_;
                     if (timer_ < 0.f) {
                         state_ = INVISIBLE;
