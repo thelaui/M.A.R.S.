@@ -1,7 +1,7 @@
 
-*******************************
-M.A.R.S. - a ridiculous Shooter
-*******************************
+*************************************
+M.A.R.S. - a ridiculous Shooter 0.7.0
+*************************************
 
 Credits:
 ********
@@ -14,23 +14,28 @@ Textures:
    (http://creativecommons.org/licenses/by/3.0/)
    
 Sound Files:
- - some soundfiles are modified with Audacity
-   (http://audacity.sourceforge.net/)
+ - some soundfiles are modified with Audacity       (http://audacity.sourceforge.net/)
  - Credits go to:
-   - http://www.pacdv.com/sounds/free-music.html    (thisistheday.ogg, dancezone.ogg, technodog.ogg)
-   - http://www.soundjay.com/                       (interface-sounds, midnightride.ogg)
- - all toon sounds are public domain
- - announcer sounds are created with eSpeak 
-   (http://espeak.sourceforge.net/)
+   - music by Obsidian Shell, CC-BY-NC-ND 3.0       (http://www.obsidianshell.com/index.php )
+   - interface-sounds                               (http://www.soundjay.com/)
+ - all weapon sounds are public domain
+ - announcer sounds are created with eSpeak         (http://espeak.sourceforge.net/)
    
 Fonts
- - 
+ - For copyright notices, have a look at the corresponding meta-data fields within the font files.
 
 Translations
  - German: Sandra
- - French: Astohan
+ - French: Ludovic
  - Portuguese: Vitor
  - Spanish: Gaston
  - Russian: Drakmail
  - Italian: Proch
  - Swedish: Henrik
+ - Arabic: Majid Al-Dharrab
+ - Chinese: Wecing
+ - Finnish: Paavo
+ - Hindi: Antriksh & Aakanksh
+ - Polish: command_dos
+ - Czech: Mates
+ - Hungarian: Papp Bence

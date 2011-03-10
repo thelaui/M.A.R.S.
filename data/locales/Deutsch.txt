@@ -132,7 +132,7 @@
 
 170 Credits
 171 Besonderer Dank geht an:
-172 Übersetzungen:\n Arabisch: Majid\n Chinesisch: Wecing\n Tschechisch: Mates\n Finnisch: Paavo\n Französisch: Ludovic\n Deutsch: Atto\n Hindi: Antriksh & Aakanksh\n Ungarisch: Papp Bence\n Italienisch: Proch\n Polnisch: command_dos\n Portugisisch: Vitor\n Russisch: Drakmail\n Spanisch: Gastón\n Schwedisch: Henrik\n\nQuellcodebeiträge:\n Werner and Deubeuliou\n\nTests und kreativer Support:\n Heinrich, Martin, Bastian, Atto, Diana.
+172 Übersetzungen:\n Arabisch: Majid\n Chinesisch: Wecing\n Tschechisch: Mates\n Finnisch: Paavo\n Französisch: Ludovic\n Deutsch: Atto\n Hindi: Antriksh & Aakanksh\n Ungarisch: Papp Bence\n Italienisch: Proch\n Polnisch: command_dos\n Portugisisch: Vitor\n Russisch: Drakmail\n Spanisch: Gastón\n Schwedisch: Henrik\n\nQuellcodebeiträge:\n Werner und Deubeuliou\n\nTests und kreativer Support:\n Heinrich, Martin, Bastian, Atto, Diana.
 
 // Beenden
 

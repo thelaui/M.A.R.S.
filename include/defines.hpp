@@ -21,7 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define VERSION_MAJOR               "0"
 # define VERSION_MINOR               "7"
 # define VERSION_PATCH               "0"
-# define VERSION_REVIS               "171"
+# define VERSION_REVIS               "175"
 
 # define SHIP_GRAPHICS_COUNT         14
 

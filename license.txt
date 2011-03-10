@@ -3,7 +3,7 @@
 M.A.R.S. - a ridiculous Shooter
 *******************************
 
-Copyright (C) 2010 Simon Schneegans and Felix Lauer
+Copyright (C) 2010-2011 Simon Schneegans and Felix Lauer
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -18,4 +18,4 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>.
 
-The Sourcecode of M.A.R.S. can be found at http://www.marsshooter.org
+The Sourcecode of M.A.R.S. can be found at http://www.marsshooter.org/
