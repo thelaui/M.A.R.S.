@@ -35,8 +35,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 // helper function
 void inline writeScoreAtCol(sf::String value, int col, Vector2f topLeft, int mirror, Color3f drawColor) {
-    text::drawScreenText(value, topLeft+Vector2f((170+70*col + 1)*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
-    text::drawScreenText(value, topLeft+Vector2f((170+70*col)*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
+    text::drawScreenText(value, topLeft+Vector2f((140+80*col + 1)*mirror,1), 12.f, TEXT_ALIGN_CENTER, Color3f(0.f, 0.f, 0.f));
+    text::drawScreenText(value, topLeft+Vector2f((140+80*col)*mirror,0), 12.f, TEXT_ALIGN_CENTER, drawColor);
 }
 
 void inline writeScoreAtCol(int value, int col, Vector2f topLeft, int mirror, Color3f drawColor) {
@@ -84,12 +84,12 @@ void TabStats::draw() const {
         // Points, Frags, TeamKills, Suicides
         int nbColumns = 5;
         // CannonShots
-        if (games::type() == games::gCannonKeep)
+        if (games::type() == games::gCannonKeep || games::type() == games::gSpaceBall)
             nbColumns++;
-        if (games::type() == games::gSpaceBall)
-            nbColumns++;
+        if (games::type() == games::gDeathMatch)
+            nbColumns--;
         // Padding, Name, [BOT], Padding, Columns, Padding
-        int width = (3 + 77 + 20 + 70 + (nbColumns*70) + 5)*mirror;
+        int width = (3 + 77 + 20 + 70 + (nbColumns*80) + 5)*mirror;
 
         // draw background
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -223,16 +223,16 @@ void TabStats::draw() const {
         // Index of the column we are writing
         int col = 0;
 
-        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f((170+70*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f((140+80*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gCannonKeep)
-            text::drawScreenText(*locales::getLocale(locales::CannonShots), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+            text::drawScreenText(*locales::getLocale(locales::CannonShots), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gSpaceBall)
-             text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+             text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() != games::gDeathMatch)
-            text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((170+70*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+            text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
         topLeft.y_ += 15;
 
