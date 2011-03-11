@@ -90,8 +90,8 @@ namespace music {
             else musicChannel_.SetPitch(1.f);
 
 
-            if (games::type() != games::gMenu && window::isKeyDown(settings::C_statisticsKey))
-                musicNotify::show(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
+            if (games::type() != games::gMenu && games::type() != games::gTutorial && window::isKeyDown(settings::C_statisticsKey))
+                    musicNotify::show(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
         }
         else if (musicChannel_.GetStatus() == sf::Music::Playing)
             stop();
