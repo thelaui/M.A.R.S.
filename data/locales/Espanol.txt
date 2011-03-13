@@ -25,26 +25,33 @@
 
 // Opciones antes del partido
 
-017 Equipo Izquierda
-018 Equipo Derecha
+017 Equipo Izquierdo
+018 Equipo Derecho
 019 Bots Izquierda
 020 Bots Derecha
 021 Bots
-022 Límite de Frag
-056 Weapon Options
-203 Weapons
-204 Specials
+022 Límite de Frags
+162 Puntos de Vida del Planeta
+056 Opciones de Armas
+203 Armas
+204 Habilidades Especiales
+166 Velocidad de generación de Power-Up
+167 Dificultad de los Bots
+159 Opciones de Juego
+257 Jugadores
 
-// Historia de la información
+// Información de historias
 
-023 En el año 3547, las civilizaciones de toda la galaxia han establecido sus propios planetas, viviendo en paz y armonía con su entorno.\nPero fuera de los hábitats contemplativos, la GRAN GUERRA está en auge. \nComo un famoso luchador en su camino al honor y prosperidad sin fin, ¡tienes que proteger tu planeta de la inminiente muerte por parte de tus celosos \nvecinos! Pelea la batalla, un verdadero héroe como tú nació para: LA PELOTA ESPACIAL.\nProtege tu planeta de la esfera de la muerte y derrota a tus enemigos al dejarlos que se aplasten en su ridículo mundo.
+023 En el año 3547, las civilizaciones de toda la galaxia han establecido sus propios planetas, viviendo en paz y armonía con su entorno.\nPero fuera de los hábitats contemplativos, la GRAN GUERRA está en auge. \nComo un famoso luchador en su camino al honor y prosperidad sin fin, ¡tienes que proteger tu planeta de la inminiente muerte por parte de tus celosos \nvecinos! Pelea la batalla, un verdadero héroe como tú nació para: SPACEBALL.\nProtege tu planeta de la esfera de la muerte y derrota a tus enemigos al dejarlos que se aplasten en su ridículo mundo.
 024 Patea o tira la bola al planeta de tu enemigo!
-025 Como resultado de la GRAN GUERRA has perdido todo: tu casa, tu familia y \ntu la autoestima. \nTu última oportunidad para salir de la miserable vida en la que estás atrapados, es convertirte en un gladiador en la gloriosa \nARENA DE LA MUERTE. \nResiste a los otros combatientes y gana puntos destruyendo la cáscara de nuez que ellos llaman naves. \n¡Prepárate! \nMuerte y Gloria esperan por ti.
+025 Como resultado de la GRAN GUERRA has perdido todo: tu casa, tu familia y \ntu la autoestima. \nTu última oportunidad para salir de la miserable vida en la que estás atrapado es convertirte en un gladiador en la gloriosa \narena-DEATHMATCH. \nResiste a los otros combatientes y gana puntos destruyendo la cáscara de nuez que ellos llaman naves. \n¡Prepárate! \nMuerte y Gloria esperan por ti.
 026 ¡Destruye tantos enemigos como te sea posible!
 027 ¡Las negociaciones han fracasado! \nAmbos, tú y tus vecinos tuvieron que registrar enormes pérdidas en conclusión de la permanente GRAN GUERRA.\nEn un último intento por ganar ventaja, se te ha ordenado diezmar a los recursos de tu enemigo y proteger los propios. La única manera de hacerlo es un épico TEAMDEATHMATCH. \n¡Protege tus camaradas y destruye a tus enemigos! \nEnséñales una lección que nunca olvidarán.
 028 ¡Destruye tantos enemigos como te sea posible!
 029 Como si la GRAN GUERRA no fuera suficiente, su sistema planetario se ve amenazada por una nueva fuente de maldad increíble: Una nave gigante de invasores desconocidos está levitando por sobre tu galaxia, apuntando a los planetas con un arma monoĺítica de destrucción masiva. \nComo una muestra de cinismo, los atacantes han dejado caer un control remoto para ajustar la procedencia de la muerte y el miedo. \n¡Se el primero en alcanzarlo y vuelve el planeta de tu enemigo en un lugar de desolación! \n Se el CANNONKEEPER.
 030 ¡Toma el control remoto y mantenlo en tu poder el mayor tiempo posible!
+206 Mientras que la GRAN GUERRA reduce tus recursos drásticamente, los científicos se comprometieron a encontrar una forma eficiente para destruir a tus enemigos limitando la potencia dada. Hicieron muchas investigaciones y eventualmente crearon una nueva arma con una propiedad increíble: Mata instantáneamente, pero los proyectiles lanzados son afectados por cualquier gravedad y son bastante difíciles de maniobrar. Por lo tanto lo llamaron: ¡INSTA-GRAVE! \n \nPor desgracia alguien robó la tecnología, así que tus enemigos pueden usar esta malvada arma también. Ahora es tu turno: Derrota a esos ladrones en el gran GRAVE-ITATION-PIT para tomar de nuevo la delantera. \n \nGana esta batalla y la victoria en la GRAN GUERRA puede ser tuya.
+207 ¡Destruye a cuantos enemigos puedas!
 
 // Pestañas de Opciones de visualización
 
@@ -53,6 +60,8 @@
 102 Gráficos
 103 Audio
 
+//Opciones de la interfaz
+
 104 Configuración de la ventana
 031 Mostrar información de depuración
 032 Orientación de Bots
@@ -60,35 +69,44 @@
 034 Recorridos de la IA
 035 Ver Información del Juego
 036 Cuadros Por Segundo (FPS)
+215 Configuraciones Generales
 152 Idioma
-153 Tecla rápida para las Capturas de pantalla
-054 Formato de capturas de pantalla
+153 Tecla Rápida para las Capturas de Pantalla
+054 Formato de Capturas de Pantalla
+242 Tecla Rápida para las Estadísticas
+
+// Opciones gráficas
+
 037 Conteo de Partículas
 038 Conteo de Partículas
 039 Duración de Partículas
 040 Opciones del Juego
 041 Pantalla Completa
 042 V-Sync
-055 Display Tool Tips
+055 Mostrar Tooltips
 163 Efectos de Sombreado
 164 ¡Lamentablemente, tu hardware no soporta los shaders!
-
+265 Estrellas Animadas
 151 Alta Resolución para el Campo Estelar
 173 Resolución
 174 Profundidad del color
 
 // Opciones de juego
 
-166 Velocidad de generación de PowerUp
-167 Dificultad de los Bots
-168 Explosiones para Slow Motion
+168 Explosiones para Cámara Lenta
 169 Apagado
+216 Efectos Especiales
 
 // Opciones de audio
 
+123 Ajustes de Volumen
 043 Volumen de Música 
 044 Volumen del sonido
 045 Volumen del Presentador
+128 Reproducir Siguiente Pista
+129 Opciones de Reproducción
+261 Reproducir Pista Anterior
+262 Reproducir Pistas en Orden Aleatorio
 
 // Opciones del Jugador
 
@@ -97,10 +115,11 @@
 048 Girar a la izquierda
 049 Girar a la derecha
 050 Arma
-175 Special
+175 Habilidad Especial
 051 Nave
 052 Color del Jugador
 053 Color del Equipo
+217 Opciones de la Nave
 
 // Sobre
 
@@ -114,14 +133,14 @@
 
 170 Créditos
 171 Gracias especiales a:
-172 Traducciones: \n   Alemán: Sandra\n   Spanish: Gastón\n   Portuguese: Vitor\n   French: Astohan\n   Russian: Drakmail\n   Italian: Proch\n   Swedish: Henrik\n\nTests und creative support:\n   Heinrich, Martin, Bastian, Sandra, Diana.
+172 Traducciones:\n Alemán: Atto\n Arábico: Majid\n Chino: Wecing\n Checo: Mates\n Español: Gastón & HaPK\n Italiano: Proch\n Finlandés: Paavo\n Francés: Ludovic\n Hindi: Antriksh & Aakanksh\nHúngaro: Papp Bence\n Polaco: command_dos\n Portugués: Vitor\n   Ruso: Drakmail\n   Sueco: Henrik\n\nSoporte de código:\n Werner and Deubeuliou\n\nPruebas y soporte creativo:\n   Heinrich, Martin, Bastian, Sandra, Diana.
 
 // Abandonar
 
 059 ¿Seguro que quieres abandonar M.A.R.S?
 060 ¿Seguro que quieres terminar el juego actual?
 
-// Red de información
+// Información de Red
 
 061 Jugar a M.A.R.S. en la World Wide Web o en una Red de Área Local (LAN) es una característica prevista, pero aún no implementada.\n\n ¡Manténte atento!
 062 Jugar a M.A.R.S. en la World Wide Web o en una Red de Área Local (LAN) es una característica prevista, pero aún no implementada.\n\n ¡Manténte atento!
@@ -132,8 +151,8 @@
 
 // Nombres de las teclas
 
-064 Agregar
-065 Contrabarra
+064 Suma
+065 Contrabarra (backslash)
 066 Coma
 067 Guión
 068 Suprimir
@@ -159,61 +178,114 @@
 088 Alt Derecho
 089 Paréntesis Derecho
 090 Control Derecho
-091 Volver
-092 Derecho
+091 Enter
+092 Flecha Derecha
 093 Shift Derecho
 094 Super Derecho
 095 Punto y Coma
-096 Barra
+096 Barra (slash)
 097 Espacio
 098 Restar
 099 Virgulilla (~)
 100 Tabulador
 101 Flecha Arriba
 
+//Nombre de botones del Joystick
+218 Botón A
+219 Botón B
+220 Botón X
+221 Botón Y
+222 Botón Inicio
+223 Botón Atrás
+224 Bumper Derecho
+225 Bumper Izquierdo
+226 Disparador Derecho
+227 Disparador Izquierdo
+228 Dirección Arriba
+229 Dirección Abajo
+230 Dirección Izquierda
+231 Dirección Derecha
+232 Barra1 Arriba
+233 Barra1 Abajo
+234 Barra1 Derecha
+235 Barra1 Izquierda
+236 Barra2 Arriba
+237 Barra2 Abajo
+238 Barra2 Derecha
+239 Barra2 Izquierda
+240 Control (Joystick)
+241 Botón
+
 // Textos tutorial
 
+212 ¡Hey, {PLAYER1_NAME}!
+213 Ese es un mal nombre... Puedes ingresar uno mejor!
+
 107 Bienvenido, Novato Espacial!
-108 ¡Estamos contentos de reclutar a un nuevo héroe como tú a que nos acompañen en la GRAN GUERRA! \n Nos imaginamos que necesitabas un poco de práctica con tu nueva nave.\nQue empiece el entrenamiento...
+108 ¡Estamos contentos de reclutar a un nuevo héroe como tú, {PLAYER1_NAME}, a que nos acompañes en la GRAN GUERRA! \n Nos imaginamos que necesitas un poco de práctica con tu nueva nave.\nQue empiece el entrenamiento...
 
 109 Movimiento básicos...
-110 Controlar tu nave es la tarea más importante para dominar. \n Todo movimiento se rige por la Leyes de la Gravedad. Para desacelerar, debes girar y acelerar en la dirección opuesta. Controla tu nave, usando las teclas
+110 Controlar tu nave es la tarea más importante para dominar. \n Todo movimiento se rige por la Leyes de la Gravedad. Para desacelerar, debes girar y acelerar en la dirección opuesta. ¡Controla tu nave, usando las teclas <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> y <{PLAYER1_KEY_RIGHT}>!
 
 111 ¡Calentando!
-112 ¡Llega a la zona rosa! \n Intenta no destrozar tu nueva nave.
+112 ¡Llega a la zona rosa!\n Intenta no destrozar tu nueva nave.
 
-113 ¡Bien Hecho!
+113 ¡Bien Hecho, {PLAYER1_NAME}!
 114 Ahora regresa a tu planeta de origen y trata de aterrizar tu nave flotando lentamente mientras te acercas a tu planeta.
 
 115 ¡Buen Trabajo!
 116 Aterrizar adecuadamente no es tan fácil, ¿no? \n Deberías aprenderlo de memoria.
 
 117 Algo más difícil ...
-118 ¡Trata de seguir el camino marcado por las zonas de color rosa! \n\n Nos pondremos en contacto contigo cuando lo tengas dominado. ¡Ahora, ve a por ello!
+118 ¡Trata de seguir el camino marcado por las zonas de color rosa! \nNos pondremos en contacto contigo cuando lo tengas dominado.\n¡Ahora, ve a por ello!
 
 119 ¡Impresionante!
 120 Eres el mejor novato que he visto.\n Ahora prepárate para algo explosivo.
 
 121 Disparar...
-122 Para derrotar a tus enemigos ¡tienes que saber cómo disparar!\nPara eso presiona
+122 Para derrotar a tus enemigos ¡tienes que saber cómo disparar!\nPara eso presiona <{PLAYER1_KEY_FIRE}>. \nDiviértete disparando por ahí y luego aterriza tu nave para continuar el tutorial.
 
-124 ¡Buen aterrizaje!
+124 ¡Buen aterrizaje, {PLAYER1_NAME}!
 125 Resultaste ser un gran piloto. \n\n Ahora ¿qué tal unas armas más?
 
 126 Las Armas...
-127 Sé que has estado esperando esto. Con la nave en tierra puedes cambiar de arma, pudiendo elegir entre algunas armas increíblemente malvadas.\n Presiona
+127 Sé que has estado esperando esto. Con la nave en tierra puedes cambiar de arma, pudiendo elegir entre algunas armas increíblemente malvadas.\n Presiona <{PLAYER1_KEY_FIRE}> para abrir tu arsenal.\n¡Luego usa <{PLAYER1_KEY_LEFT}> y <{PLAYER1_KEY_RIGHT}> para elegir un arma! \n¡Despega cuando estés listo!
+
 
 130 ¡Lucha!
 131 Ahora vamos a ver cómo lo haces contra un novato de otro planeta.\nParece que está tratando de mejorar sus habilidades de vuelo.\n¡Golpéalo!
 
 132 ¡Impresionante!
-133 ¡Lo lograste! Como te habrás dado cuenta, ganas algunos puntos de reputación por cada enemigo muerto.\nEl pequeño número verde que aparece en tu nave representa la cantidad. Aumentará si matas a un montón de enemigos a la vez.
+133 ¡Lo lograste! Como te habrás dado cuenta, una pequeña estrella apareció sobre tu nave. Entre más enemigos mates, mas estrellas tendrás. ¡Pero no son sólo un indicador de cuantos frags llevas! \nAterriza de nuevo y te diremos para que más sirven las estrellas.
 
-134 ¡Cuidado!
-135 No hay tiempo para el descanso.\n¡Nuestros enemigos han enviado uno de sus verdaderos guerreros para vengarse! \nNo hay nada que yo pueda hacer por ti...
+208 Habilidades Especiales...
+209 Como prometimos te diremos el significado de las estrellas. Son un recurso para las habilidades increíblemente poderosas de tu nave. Por ejemplo, ¡Puedes curar a los amigos que estén cerca a ti, empujar o congelar naves alrededor de cierta distancia! \nEntre más estrellas tengas, más grande es el rango y la fuerza de habilidad es mayor.
+
+210 Selección...
+211 Para seleccionar habilidades sólo debes presionar <{PLAYER1_KEY_SPECIAL}>. Puedes cambiarla usando <{PLAYER1_KEY_LEFT}> y <{PLAYER1_KEY_RIGHT}>. \nPara esta lección selecciona la ¡"Freezer"! ¡Despega cuando la tengas!
+
+245 ¡Alto, {PLAYER1_NAME}!
+246 Te dijimos que seleccionaras la Freezer, pero has escogido otra habilidad!\n¡Por favor aterriza de nuevo y toma la Freezer!
+
+247 Freezer...
+248 Ésta es una habilidad especial poderosa que congela las naves cercanas. \nTienes que volar cerca a tu enemigo y presionar <{PLAYER1_KEY_SPECIAL}> para congelarlo. Observa como pierde su vida lentamente... ¡Hasta morir!
+
+249 ¡Practica!
+250 Ahora trata de congelar a tu enemigo! \nPara este tutorial te vamos a dar algunas Estrellas. Pero recuerda: ¡En la vida real tienes que machacar tus oponentes para obtener esas estrellas!
+
+251 ¡Fallaste, {PLAYER1_NAME}!
+252 Intenta de nuevo. Te volveremos a dar Estrellas.
+
+253 ¡Lo lograste!
+254 ¡Ahora vuelve a tu planeta para seleccionar otra habilidad especial!
+
+255 ¡Cuidado, {PLAYER1_NAME}!
+256 No hay tiempo para seguir probando.\n¡Nuestros enemigos han enviado uno de sus verdaderos guerreros para vengarse!
+
+134 ¡Derrótalos!
+135 ¡Prueba tus destrezas! ¡Anota al menos cinco puntos matándolos! Tu puntaje actual está siendo mostrado al lado de tu nombre.\n¡Te esnviaremos un guerrero experimentado para asistirte, {PLAYER1_NAME}!
 
 136 ¡Increíble!
-
 137 Has completado todas mis tareas con éxito. Ahora, ¿qué hacer? \nEchémos un vistazo en el Menú de Opciones. Allí puedes ajustar un montón de...bueno...opciones.\nPor ejemplo, puedes elegir el estilo de tu nave, su color, cambiar tu nombre ...
 
 138 ¿Quién es mejor?
@@ -223,59 +295,72 @@
 141 Has terminado este tutorial. Ahora estás listo para luchar en la GRAN GUERRA. Si quieres seguir practicando, espera a que enemigo reaparezca. Puedes terminar tu entrenamiento presionando <Esc>. \n\n¡Qué pases un buen rato con M.A.R.S.!
 
 142 ¡Has Fallado!
-143 ¡Impresionante, has destruído tu nave nueva! Muy bien, vamos a conseguirte otra nueva. Sólo tienes que esperar unos segundos ...
+143 ¡Impresionante, has destruido tu nave nueva! Muy bien, vamos a conseguirte otra nueva. Sólo tienes que esperar unos segundos ...
 
 144 ¿Te diste cuenta?
-145 ¡Tu vida se está agotando! Mantén un ojo en la barra verde de vida. Es mejor que aterrices si está demasiado vacía.
+145 ¡Tu vida se está agotando! Mantén un ojo en la barra superior de vida. Es mejor que aterrices si está demasiado vacía.
 
 146 ¿Te diste cuenta?
 147 ¡Tu combustible se está agotando! Mantén un ojo en la barra amarilla de combustible. Es mejor que aterrices si está demasiado vacía.
 
-148 ¡Casi lo atrapas!
+148 ¡Casi lo logras!
 149 Fíjate en el nombre de tu oponente. Su color indica sus puntos de vida. Cuanto más rojo, más débil está tu enemigo.
 
 // Columnas de Pestañas del menú
 
 154 Puntos
 155 Frags
-156 Matanzas en equipo
+244 Disparos de cañón
+267 Metas
+156 Muertes en equipo
 157 Suicidios
 158 Muertes
 160 Total:
 161 Estadísticas
 
-// Tool tips options menu
+// Tool tips menú opciones
 
-176 Displays the amount of Frames calculated per Second.\nIf this is always very low (<20), you should adjust some settings in graphics tab!
-177 Displays the amount of active particles.
-178 Dismisses tool tips like this one.
-179 Sets the format being used when screen shots are saved.
-180 When this key is pressed, a screen shot is saved to ~/.marsshooter/screenshots.
-181 When this key is pressed, a screen shot is saved to the directory M.A.R.S.
-182 If that many ships explode simultaneously, the slow motion effect kicks in.
-183 Displays the job of each bot.
-184 Displays tactical zones, which are important for the artificial intelligence.
-185 Displays paths calculated by bots.
-186 Maximizes the window, making it cover the entire screen.
-187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
-188 Enables cool effects like heat haze, but reduces game performance.
-189 Sets the size of the window.\nAffects both, full screen and windowed mode.
-190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
-191 Adjusts the global particle count.\nLower values will increase performance significantly.
-192 Adjusts the global particle life time.\nLower values will increase performance significantly.
-193 Adjusts volume of background music.
-194 Adjusts volume of sound effects.
-195 Adjusts volume of announcers voice.
+176 Muestra la cantidad de cuadros (Frames) calculados por segundo.\n¡Si siempre se muestran muy bajos (<20), deberías cambiar algunos ajustes en la pestaña Gráficos!
+177 Muestra la cantidad de partículas activas.
+178 No muestra tooltips como este.
+179 Fija el formato a usar cuando son tomadas las capturas de pantalla.
+180 Cuando esta tecla es presionada, una captura de pantalla es guardada en {CONFIG_PATH}screenshots/.
+181 Presionar esta tecla cambia a la pista musical anterior.
+263 Presionar esta tecla cambia a la pista musical siguiente.
+264 Permite reproducir la música en un orden aleatorio.
+182 Si esta cantidad de naves explotan el efecto de cámara lenta se activa.
+183 Muestra el trabajo de cada bot.
+184 Muestra zonas tácticas, importantes para la inteligencia artificial.
+185 Muestra caminos calculados por los bots.
+186 Maximiza la ventana, haciendo que ocupe toda la pantalla.
+187 Hace que el juego se redibuje al igual que el tiempo de refresco de tu monitor.\nActivar esta opción típicamente hace que el juego corra más suavemente.
+188 Activa efectos como la neblina de calor, pero reduce el rendimiento del juego.
+189 Fija el tamaño de la ventana.\nAfecta ambos modos, pantalla completa y modo ventana.
+190 Con pantallas a alta resolución esta opción hace que el campo estelar se repita despues.\nDesactivarlo puede incrementar el rendimiento del juego ligeramente.
+266 Dibuja algunas estrellas que se mueven. Visualmente atractivo, pero reduce el rendimiento del juego
+191 Ajusta el conteo de partículas global.\nValores bajos incrementaran el rendimiento significativamente.
+192 Ajusta el tiempo de vida de las partículas global.\nValores bajos incrementaran el rendimiento significativamente.
+193 Ajusta el volumen de la música de fondo.
+194 Ajusta el volumen de los efectos de sonido.
+195 Ajusta el volumen del presentador.
+243 Cuando esta tecla se presiona en medio del juego, una ventana aparece y muestra las estadísticas del juego actual.
 
-// Tool tips in the start-a-new-game-window
+// Tool tips en la ventana iniciar un nuevo juego
 
-196 Sets the team of the local players.
-197 Enables local players.
-198 Adjusts the amount of ships controlled by the artificial intelligence.
-199 Point limit to be reached by a team in order to win the game.
-200 Point limit to be reached by a player in order to win the game.
-201 Adjusts the strength of the bots.
-202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+196 Fija el equipo de jugadores locales.
+197 Permite jugadores locales.
+198 Ajusta la cantidad de naves controladas por la inteligencia artificial.
+199 Límite de puntos que debe alcanzar un equipo para ganar el juego.
+200 Límite de puntos que debe alcanzar un jugador para ganar el juego.
+201 Ajusta la fuerza de los bots.
+202 Ajusta la cantidad de Power-Ups que aparecerán durante el juego. \nCero deshabilita los Power-Ups
 
-// 205
+// Notificaciones de la interfaz
 
+205 ¡Captura de pantalla guardada!
+214 ¡Siguiente pista musical!
+260 ¡Pista musical anterior!
+258 Artista:
+259 Álbum:
+
+//268
