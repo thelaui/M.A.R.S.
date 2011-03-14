@@ -41,7 +41,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 
 Ship::Ship(Vector2f const& location, float rotation, Player* owner):
-               MobileSpaceObject(spaceObjects::oShip, location, 16.f, 10.f),
+               MobileSpaceObject(spaceObjects::oShip, location, SHIP_RADIUS, 10.f),
                owner_(owner),
                rotation_(rotation),
                rotateSpeed_(1.f),

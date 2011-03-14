@@ -93,7 +93,7 @@ void Home::createShips(std::vector<Player*>& inhabitants) const {
          for (std::vector<Player*>::iterator it = inhabitants.begin(); it != inhabitants.end(); ++it) {
             // calc location of ship
             angle += deltaAngle*shipCounter*std::pow(-1.0, shipCounter);
-            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+16)+location_;
+            Vector2f location = Vector2f(std::cos(angle), std::sin(angle)) * (radius_+SHIP_RADIUS)+location_;
             float    rotation = angle*180/M_PI;
             ships::addShip(location, rotation, *it);
             ++shipCounter;
