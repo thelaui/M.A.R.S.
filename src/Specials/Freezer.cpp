@@ -26,6 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "Games/games.hpp"
 # include "Teams/Team.hpp"
+# include "Items/items.hpp"
 
 # include <SFML/Graphics.hpp>
 # include <vector>
@@ -81,7 +82,7 @@ void Freezer::activate() const {
 
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {
-            if ((*it)!=parent_ && (*it)->collidable()) {
+            if ((*it)!=parent_ && (*it)->collidable() && !(*it)->collectedPowerUps_[items::puShield]) {
                 float distance(((*it)->location()-parent_->location()).length());
                 if (distance <= radius_) {
                     (*it)->setDamageSource(parent_->getOwner());

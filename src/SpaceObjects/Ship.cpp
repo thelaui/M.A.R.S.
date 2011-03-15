@@ -377,7 +377,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoAFK47:
-            amount = strength*0.002f;
+            amount = strength*0.003f;
             waitForOtherDamage = 0.15f;
             setDamageSource(with->damageSource());
             particles::spawnMultiple(2, particles::pSpark, location, dynamic_cast<MobileSpaceObject*>(with)->velocity()*0.3f, velocity_, owner_->color());
@@ -418,7 +418,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoBurner:
-            amount = timer::frameTime()*0.8f;
+            amount = timer::frameTime();
             waitForOtherDamage = 0.15f;
             if (frozen_ <= 0) velocity_ += velocity*0.03f*timer::frameTime();
             // chance to spawn smoke

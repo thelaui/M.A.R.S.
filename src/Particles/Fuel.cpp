@@ -26,7 +26,7 @@ Fuel::Fuel(Vector2f const& location, Vector2f const& direction, Vector2f const& 
 
     Vector2f distortion(Vector2f::randDirLen());
     location_ = location + distortion;
-    velocity_ = velocity + direction*(-60.f) + distortion*20.f;
+    velocity_ = velocity + direction*(-90.f) + distortion*30.f;
 
     color_.h(50.f);
     color_.v(0.6f);
@@ -42,7 +42,7 @@ void Fuel::update() {
     color_.s(lifeTime_/100.f + 0.8f);
 
     // update Size
-    radius_ = lifeTime_*30 + 1;
+    radius_ = lifeTime_*40 + 1;
 
     location_ += velocity_*time;
     velocity_ += velocity_*(-1.f)*time;

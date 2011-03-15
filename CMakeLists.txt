@@ -6,8 +6,8 @@
 
 # version number
 set(mars_MAJOR 0)
-set(mars_MINOR 6)
-set(mars_PATCH 9)
+set(mars_MINOR 7)
+set(mars_PATCH 1)
 set(mars_VERSION ${mars_MAJOR}.${mars_MINOR}.${mars_PATCH})
 set(mars_DESCRIPTION "M.A.R.S. - a ridiculous Shooter")
 set(mars_HOMEPAGE "http://www.marsshooter.org")

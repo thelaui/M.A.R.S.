@@ -25,16 +25,16 @@ void ShipHighlight::draw() const {
     if (ship_->visible_) {
         // wobble when charging
         if ((ship_->docked_ && (ship_->getLife() < 100.f) | (ship_->getFuel() < 100.f)))
-            draw(ship_->location(), std::sin(timer::totalTime()*10.f)*0.15f + 1.f);
+            draw(ship_->location(), std::sin(timer::totalTime()*10.f)*0.15f + 1.f, 0.6f);
         else
-            draw(ship_->location(), 1.f);
+            draw(ship_->location(), 1.f, 0.6f);
     }
     else if (ship_->respawnTimer_ < 0.5f) {
-        draw(ship_->respawnLocation_, 1.f + ship_->respawnTimer_*10.f);
+        draw(ship_->respawnLocation_, 1.f + ship_->respawnTimer_*7.f, 0.6f - ship_->respawnTimer_);
     }
 }
 
-void ShipHighlight::draw(Vector2f const& location, float scale) const {
+void ShipHighlight::draw(Vector2f const& location, float scale, float alpha) const {
     const float    maxAngle     (ship_->currentWeapon_->maxAngle());
     const float    shipRotation (ship_->rotation_*M_PI/180.f);
     const Vector2f shipDirection(Vector2f(std::cos(shipRotation), std::sin(shipRotation)));
@@ -51,7 +51,7 @@ void ShipHighlight::draw(Vector2f const& location, float scale) const {
     glTranslatef(location.x_, location.y_, 0.f);
     glRotatef(fmod(timer::totalTime()*100.f, 360.f), 0.f, 0.f, 1.f);
 
-    ship_->owner_->color().brightened().gl4f(0.6f);
+    ship_->owner_->color().brightened().gl4f(alpha);
     glBegin(GL_QUADS);
         glTexCoord2f(0.f, 0.875f);       glVertex2f(-ship_->radius_*2.7f*scale,-ship_->radius_*2.7f*scale);
         glTexCoord2f(0.f, 1.f);          glVertex2f(-ship_->radius_*2.7f*scale, ship_->radius_*2.7f*scale);

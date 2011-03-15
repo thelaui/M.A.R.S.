@@ -33,7 +33,7 @@ class ShipHighlight: public DecoObject {
         void draw() const;
 
     private:
-        void draw(Vector2f const& location, float scale) const;
+        void draw(Vector2f const& location, float scale, float alpha) const;
 
         Ship* ship_;
 };
