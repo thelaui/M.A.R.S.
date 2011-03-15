@@ -48,17 +48,21 @@ void FireWall::draw(float alpha) const {
 
     // draw effect
     if (timer_ > 0.f) {
-        if (!menus::visible() || games::type() == games::gMenu)
-            timer_ -= timer::frameTime();
+        if (parent_->frozen_ > 0)
+            timer_ = 0;
+        else {
+            if (!menus::visible() || games::type() == games::gMenu)
+                timer_ -= timer::frameTime();
 
-        if (burnTimer_ - timer_ > 0.04f) {
-            burnTimer_ = timer_;
-            Vector2f dir(std::cos(timer::totalTime()*3), std::sin(timer::totalTime()*3));
-            for (int i=0; i<20; ++i) {
-                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.x_,  dir.y_)*parent_->radius()*1.25f, Vector2f( dir.x_,  dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
-                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.x_, -dir.y_)*parent_->radius()*1.25f, Vector2f(-dir.x_, -dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
-                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.y_, -dir.x_)*parent_->radius()*1.25f, Vector2f( dir.y_, -dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
-                particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.y_,  dir.x_)*parent_->radius()*1.25f, Vector2f(-dir.y_,  dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
+            if (burnTimer_ - timer_ > 0.04f) {
+                burnTimer_ = timer_;
+                Vector2f dir(std::cos(timer::totalTime()*3), std::sin(timer::totalTime()*3));
+                for (int i=0; i<20; ++i) {
+                    particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.x_,  dir.y_)*parent_->radius()*1.25f, Vector2f( dir.x_,  dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
+                    particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.x_, -dir.y_)*parent_->radius()*1.25f, Vector2f(-dir.x_, -dir.y_), parent_->velocity(), Color3f(), parent_->getOwner());
+                    particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f( dir.y_, -dir.x_)*parent_->radius()*1.25f, Vector2f( dir.y_, -dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
+                    particles::spawn(particles::pAmmoBurner, parent_->location_+Vector2f(-dir.y_,  dir.x_)*parent_->radius()*1.25f, Vector2f(-dir.y_,  dir.x_), parent_->velocity(), Color3f(), parent_->getOwner());
+                }
             }
         }
     }
