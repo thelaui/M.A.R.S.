@@ -62,21 +62,77 @@ target_link_libraries(
 # Installation
 #####################################################################
 
-# executable
-install(
-	TARGETS mars
-		RUNTIME DESTINATION .
-		BUNDLE DESTINATION .
-)
+if(UNIX)
+	install(
+		TARGETS 
+			mars
+		RUNTIME DESTINATION
+			/usr/local/bin
+	)
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/credits.txt
+			${MARS_SOURCE_DIR}/license.txt
+		DESTINATION
+			/usr/share/local/doc/marsshooter
+	)
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/data/botnames.txt
+			${MARS_SOURCE_DIR}/data/shipnames.txt
+		DESTINATION
+			/usr/local/share/marsshooter
+	)
+	install(
+		DIRECTORY 
+			${CMAKE_SOURCE_DIR}/data/audio
+			${CMAKE_SOURCE_DIR}/data/fonts
+			${CMAKE_SOURCE_DIR}/data/locales
+			${CMAKE_SOURCE_DIR}/data/shaders
+			${CMAKE_SOURCE_DIR}/data/tex
+		DESTINATION 
+			/usr/local/share/marsshooter
+		PATTERN 
+			".svn" EXCLUDE
+	)
+	# icons
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars.png
+		DESTINATION
+			/usr/share/icons/hicolor/512x512/apps
+	)
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars.svg
+		DESTINATION
+			/usr/share/icons/hicolor/scalable/apps
+	)
+	# desktop file
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars.desktop
+		DESTINATION
+			/usr/share/applications
+	)
 
-# install license and credits as well
-install(
-	FILES
-		${MARS_SOURCE_DIR}/credits.txt
-		${MARS_SOURCE_DIR}/license.txt
-	DESTINATION
-		.
-)
+else(UNIX)
+	# executable
+	install(
+		TARGETS mars
+			RUNTIME DESTINATION .
+			BUNDLE DESTINATION .
+	)
+
+	# install license and credits as well
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/credits.txt
+			${MARS_SOURCE_DIR}/license.txt
+		DESTINATION
+			.
+	)
+endif(UNIX)
 
 if(APPLE)
 	# install data directory

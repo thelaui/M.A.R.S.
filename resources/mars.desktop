@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=M.A.R.S.
+GenericName=Shooter Game
+Comment=M.A.R.S. - a ridiculous shooter
+Exec=mars
+Icon=mars
+Terminal=false
+Categories=Game;ActionGame; 
+StartupNotify=false
+MimeType=application;

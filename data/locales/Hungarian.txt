@@ -1,147 +1,162 @@
-// Hungarian Translation made by Papp Bence
-// Contact: ubilulu@gmail.com
-// Have a nice Game!!!﻿
-// Magyar fordítást készítette: Papp Bence
-// Kapcsolat: ubilulu@gmail.com
-// Jó Játékot Kívánok!!!
-
+﻿// Hungarian translation made by Papp Bence (ubilulu@gmail.com) and alyr
 
 // menu buttons
 
-000 Helyi Játék Indítása
-105 Oktatómód Indítása
-001 Hálózati Játék Indítása
-002 Belépés Hálózati Játékba
+000 Helyi játék indítása
+105 Oktatómód indítása
+001 Hálózati játék indítása
+002 Csatlakozás hálózati játékhoz
 003 Beállítások
 004 Névjegy
 005 Kilépés
 006 Folytatás
-007 Játék Újrakezdése
-008 Menü Elrejtése
-009 Vissza a Főmenübe
+007 Játék újraindítása
+008 Menü elrejtése
+009 Vissza a főmenübe
 
 // standard buttons
 
 010 Indítás
 011 Mégse
-012 Infó
+012 Információ
 013 Bezárás
-014 Licence
+014 Licensz
 015 Ok
 106 Következő
-016 Mutassa ezt az Infót újra.
+016 Mutasd később is.
 
 // pregame options
 
-017 Baloldali Csapat
-018 Jobboldali Csapat
-019 Baloldali Botok
-020 Jobboldali Botok
+017 Bal oldali csapat
+018 Jobb oldali csapat
+019 Bal oldali botok
+020 Jobb oldali botok
 021 Botok
-022 Találat Limit
-
+022 Találat limit
+162 Bolygó életeinek száma
+056 Fegyver beállítások
+203 Fegyverek
+204 Különleges képességek
+166 PowerUp megjelenési idő
+167 Botok ereje
+159 Játék beállítások
+257 Játékosok
 
 // story information
 
-023 A világ 3547. esztendejében a galaxisban élő összes civilizáció letelepedett a saját bolygójára, harmóniában és békében éltek környezetükkel. \nDe a külvilágból szemlélődő teremtmények miatt a NAGY HÁBORÚ kitörőben van.  \nA jólét és becsület védelmében neked, mint híres vadásznak kell megvédeni bolygónkat a szomszédságunkban élő irigy szörnyek özönétől.  \nHarcolj a csatában, egy hozzád hasonló hős fog segíteni ebben: CSILLAGGÖMB.  \nVédd a bolygónkat a halál gömbjétől és győzd le az ellenségeinket a gömböt neki lökve nevetséges \nviláguknak.
-024 Lökd vagy lődd neki a gömböt az ellenség bolygójának!
-025 A NAGY HÁBORÚ során elvesztetted mindened: az otthonod, a családod és az önbecsülésed. \nAz utolsó esélyed, hogy kitörj ebből a szörnyű világból mibe beleragadtál az, hogy gladiátor légy a dicső DEATHMATCH-arénában. \nKüzdj a többi harcos ellen és szerezz pontokat úgy, hogy megsemmisíted a dióhéjukat, ahogy ők hívják a hajójukat.  \nKészülj a küzdelemre. \n\nA Halál és a Dicsőség szintén rád vár!
+023 3547-ben a galaxis civilizációi saját bolygóikon éltek békében és harmóniában környezetükkel.\nÁm ezen nyugodt, szemlélődő bolygókon kívül épp a Nagy Háború dúl.\nA végtelen dicsőség és gazdagság reményében híres hősként meg kell védened bolygódat az irigy szomszédok közelgő pusztításától.\nA SPACEBALL az, amire születtél, harcolj hát a csatában! Védd meg bolygódat a halál gömbjétől és győzd le az ellenségeidet azzal, hogy a gömböt nevetséges bolygójukra irányítod.
+024 Lökd vagy lődd a gömböt az ellenség bolygójának!
+025 A Nagy Háború során elvesztettél mindent: az otthonod, a családod, és az önbecsülésed.\nAz utolsó esélyed, hogy kitörj ebből a nyomorúságos életből, hogy a dicső DEATHMATCH-aréna gladiátora légy.\nSzállj szembe a többi harcossal és szerezz pontokat űrhajónak nevezett ócskaságaik kilövésével.\nKészülj a küzdelemre!\nHalál és dicsőség vár rád!
 026 Semmisíts meg annyi ellenséget amennyit csak tudsz!
-027 A tárgyalások eredménytelen voltak! \nTe és a szomszédos lények egyaránt jelentős veszteségeket könyvelhettetek el a NAGY HÁBORÚ miatt. \nMint egy utolsó esély a végső győzelemért elrendelted, hogy megtizedeled az ellenség erőit és védelmezed a sajátod. Az egyetlen módja ennek a hőskölteménybe illő TEAMDEATHMATCH.  \nVédelmezd a bajtársaid és semmisítsd meg az ellenséget! \n\nTanítsd őket Móresre, hogy soha ne feledjenek el.
-028 Semmisíts meg annyi ellenséget amennyit csak tudsz!
-029 Mintha a NAGY HÁBORÚ nem lett volna elég bolygórendszered újabb szörnyűséges lények fenyegetik: Egy óriási hajó ismeretlen támadókkal hatolt be a galaxisodba, céljuk hogy elpusztítsák a bolygódat egy hatalmas tömegpusztító fegyverrel.  \nCinizmusuk jeleként a támadok ledobtak egy távirányítót, hogy növeljék a halált és a félelmet köztünk. Érd el elsőként a távirányítót, hogy az ellenség kopár bolygója felé fordítsd! \n\nLegyél te a TŰZPARANCSNOK.
-030 Vedd fel a távirányítót és tartsd magadnál ameddig csak tudod!
-
+027 A tárgyalások eredménytelenek voltak!\nA Nagy Háború során mind Ti, mind szomszédjaitok hatalmas veszteségeket könyvelhettek el.\nAz erőfölény megszerzése céljából feladatod az ellenfél készleteinek megtizedelése és sajátunk védelme. Ennek egyetlen módja az epikus TEAMDEATHMATCH.\nVédd meg társid és pusztítsd el ellenségeid!\nTanítsd őket móresre!
+028 Pusztíts el annyi ellenséget amennyit csak tudsz!
+029 Mintha a Nagy Háború nem lenne elég, bolygórendszeredet egy újabb szörnyűséges veszély fenyegeti: ismeretlen lények hatalmas űrhajója hatolt be a galaxisba, céljuk a bolygók elpusztítása óriási tömegpusztító fegyverükkel.\nCinizmusuk jeleként a támadók egy távirányítót dobtak a halál és félelem eme forrásának irányítására.\nSzerezd meg elsőként, hogy az ellenség bolygóját egy sivár pusztává változtathasd!\nLegyél Te a CANNONKEEPer.
+030 Szerezd meg a távirányítót és tartsd magadnál minél tovább!
+206 Mivel a Nagy Háború nagymértékben csökkenti a készleteket, a tudósok igyekeztek egy hatékonyabb módot keresni az ellenség legyőzésére. Kutatásaikat siker koronázta, és végül egy hihetetlen tulajdonságokkal rendelkező fegyvert alkottak meg: azonnal öl, ám a kilőtt lövedékekre igen erősen hat a gravitáció, így a fegyvert nem könnyű kezelni. Épp ezért elnevezték INSTA-GRAVE-nek.\nSajnos valaki ellopta a technológiát, így az ellenségeid is tudják használni. Itt az idő: győzd le azokat a tolvajokat a hatalmas GRAVE-ITERATION-PIT-ben hogy visszaszerezzük az erőfölényt!\n\nNyerd meg a csatát, és a Nagy Háborúban is győzedelmeskedünk!
+207 Pusztíts el annyi ellenséget amennyit csak tudsz!
 
 // display options
 // tabs
 
-150 Felület
-165 Játék
+150 Kezelőfelület
+165 Játékmenet
 102 Grafika
 103 Hang
 
-104 Ablak Beállítások
-031 Hibakeresési Infók Mutatása
-032 Botok Tájékozódása
-033 Zónák
-034 AI-Útvonala
-035 Játék Információk Mutatása
-036 Képkockák / másodperc (FPS)
-152 Nyelv
-153 Screenshot Gyorsbillentyűje
-037 Részecske Számláló
-038 Részecske Számláló
-039 Részecske Élettartalma
-040 Játék Beállítások
-041 Teljes-képernyő
-042 V-Sync
-163 Shader Effektek
-164 Sajnos a Shader Effekt a Videókártya által Nem Támogatott!
+// interface Options
 
-151 Nagy Felbontású Csillagmező 
+104 Ablak beállítások
+031 Hibakeresési információk megjelenítése
+032 Botok céljai
+033 Területek
+034 MI útvonalak
+035 Játék információk megjelenítése
+036 Másodpercenkénti képkockák száma (FPS)
+215 Általános beállítások
+152 Nyelv
+153 Gyorsbillentyű képernyőkép készítéséhez
+054 Képernyőkép formátuma
+242 Gyorsbillentyű a statisztikákhoz
+
+// graphics options
+
+037 Részecskék száma
+038 Részecskék száma
+039 Részecskék élettartama
+040 Játék beállítások
+041 Teljes képernyő
+042 V-Sync
+055 Segítség megjelenítése
+163 Shader effektek
+164 Sajnos a grafikus kártyád nem támogatja a shader-eket.
+151 Nagy felbontású csillagmező
+265 Mozgó csillagok
 173 Felbontás
 174 Színmélység
 
 // gameplay options
 
-166 Extrák Megjelenésének Ideje
-167 Botok Nehézsége
-168 Lassítás-Effekt x Robbanás Után
+216 Különleges hatások
+168 Lassítás-effekt x robbanás után
 169 Ki
 
 // audio options
 
-043 Zene Hangereje
-044 Hang Hangereje
-045 Bemondó Hangereje
+123 Hangerő
+043 Zene
+044 Hang
+045 Bemondó
+128 Következő zeneszám lejátszása
+129 Zenelejátszás
+261 Előző zeneszám lejátszása
+262 Zeneszámok véletlenszerű lejátszása
 
 // player options
 
 046 Név
-047 Gyorsulás
-048 Balra Fordulás
-049 Jobbra Fordulás
+047 Gyorsítás
+048 Balra fordulás
+049 Jobbra fordulás
 050 Fegyver
-175 Speciális
-051 Hajó
-052 Játékos Színe
-053 Csapat Színe
-054 ####
-055 Nyomj egy billentyűt amíg villog!
-056 Írd be a szöveget amíg villog!
+175 Speciális képesség
+217 Űrhajó beállításai
+051 Űrhajó
+052 Játékos színe
+053 Csapat színe
 
 // about
 
-057 Ez az első próbálkozás, hogy játék készül OpenGL-ben SFML segítségével. Ez egy kétemberes játék, ahol hajókkal repülhetsz két dimenziós űrben, persze a gravitáció törvényeinek érvényesülése mellett.  \n\nWeboldal: \nhttp://www.marsshooter.org
+057 Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett. \n\nHonlap: \nhttp://www.marsshooter.org
 
 // license
 
-058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+058 Ez a program szabad szoftver; terjeszthető illetve módosítható a Free Software Foundation által kiadott GNU General Public License dokumentumában leírtak; akár a licensz 3-as, akár (tetszőleges) későbbi változata szerint. \n\nEz a program abban a reményben kerül közreadásra, hogy hasznos lesz, de minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve. További részleteket a GNU General Public License tartalmaz.\n\nA licensz megtekinthető a http://www.gnu.org/licenses/gpl-3.0.html honlapon.
+
 
 // credits
 
 170 Készítők
-171 Nagy Köszönet az alábbi Személyeknek:
-172 Fordítók:\n   Német: Sandra\n   Spanyol: Gastón\n   Portugál: Vitor\n   Magyar: Papp Bence\n  Francia: Astohan\n   Orosz: Drakmail\n   Olasz: Proch\n   Svéd: Henrik\n\nTesztelés és egyéb támogatás:\n    Heinrich, Martin, Bastian, Sandra, Diana.
+171 Nagy köszönet az alábbi személyeknek:
+172 Fordítók:\n Arab: Majid\n Kínai: Wecing\n Cseh: Mates\n Finn: Paavo\n Francia: Ludovic\n Német: Atto\n Hindi: Antriksh és Aakanksh\n Magyar: Papp Bence és alyr\n Olasz: Proch\n Lengyel: command_dos\n Portugál: Vitor\n Orosz: Drakmail\n Spanyol: Gastón\n Svéd: Henrik\n\nKódolási támogatás:\n Werner és Deubeuliou\n\nTesztelés és kreatív támogatás:\n Heinrich, Martin, Bastian, Sandra, Diana.
 
 // quit
 
-059 Biztos benne, hogy kilép?
-060 Biztos benne, hogy befejezi a jelenlegi játékot?
+059 Biztos, hogy ki akarsz lépni?
+060 Biztos be akarod fejezni a jelenlegi játékot?
 
 // network information
 
-061 M.A.R.S. játszható lesz majd a világhálón vagy helyi hálózaton, de még nincs kész! \n\nNE csüggedj, figyeld a weboldalunkat!
-062 M.A.R.S. játszható lesz majd a világhálón vagy helyi hálózaton, de még nincs kész! \n\nNE csüggedj, figyeld a weboldalunkat!
+061 A M.A.R.S játszható lesz helyi hálózaton vagy a világhálón keresztül, ez a funkció azonban még nincs kész. \n\nNe csüggedj, figyeld weboldalunkat!
+062 A M.A.R.S játszható lesz helyi hálózaton vagy a világhálón keresztül, ez a funkció azonban még nincs kész. \n\nNe csüggedj, figyeld weboldalunkat!
+
 // hide menu
 
-063 Megállítottad a M.A.R.S-ot a heves csata közepén? \nHa Screenshotot szeretnél készíteni, e gomb segítségével csodálatos háttérképeket készíthetsz a menü elrejtése mellett.\n\nHa készen vagy egyszerűen visszahozhatod a menüt az ESC billentyű lenyomásával.
+063 Megállítottad a M.A.R.S-ot egy heves csata kellős közepén? \nHa képernyőképet szeretnél készíteni, e gomb segítségével csodálatos háttérképeket készíthetsz az ablakok elrejtésével. \n\nKésőbb az ESC billentyű lenyomásával visszahozhatod őket.
 
 // key names
 
 064 Add
-065 Back Slash
+065 Backslash
 066 Comma
 067 Dash
 068 Delete
@@ -156,101 +171,202 @@
 077 Bal Control
 078 Balra
 079 Bal Shift
-080 Left Super
-081 Menu
+080 Bal Super/Windows
+081 Menü
 082 Multiply
 083 Page Down
 084 Page Up
-085 Szünet
+085 Pause
 086 Period
 087 Quote
 088 Jobb Alt
 089 Right Bracket
 090 Jobb Control
-091 Vissza
+091 Enter
 092 Jobbra
 093 Jobb Shift
-094 Right Super
+094 Jobb Super/Windows
 095 Semi Colon
 096 Slash
-097 Space
+097 Szóköz
 098 Subtract
 099 Tilde
 100 Tab
 101 Fel
 
+// Joystick button names
+
+218 A Button
+219 B Button
+220 X Button
+221 Y Button
+222 Start Button
+223 Back Button
+224 Right Bumper
+225 Left Bumper
+226 Right Trigger
+227 Left Trigger
+228 Direction Up
+229 Direction Down
+230 Direction Left
+231 Direction Right
+232 Stick1 Up
+233 Stick1 Down
+234 Stick1 Left
+235 Stick1 Right
+236 Stick2 Up
+237 Stick2 Down
+238 Stick2 Left
+239 Stick2 Right
+240 Joystick
+241 Button
+
+
 // tutorial texts
 
-107 Üdvözöllek, Csillag Harcos!
-108 Nagyon örülünk, hogy egy olyan hőst tudtunk toborzásunk során arra rábírni, hogy csatlakozzon hozzánk a NAGY HÁBORÚBAN mint te! \nÚgy gondoljuk, hogy szükséged van pár tanácsra az új hajóddal kapcsolatban. \n\nKezdődjön hát a tréning...
+212 Szia {PLAYER1_NAME}!
+213 Ez egy elég gyenge név... Nyugodtan adj meg egy jobbat!
 
-109 Alap Mozgások...
-110 Hajód irányítása a legfontosabb feladat, hogy mesterré válj. \nMozgásodat befolyásolják a gravitációs törvények. Lassuláshoz például meg kell fordulnod az ellenkező irányba és arra kell gyorsítani a hajód. Hajód \nirányításához használd a köv. billentyűket:
+107 Üdvözöllek, újonc!
+108 Örülünk, hogy sikerült egy hozzád hasonló tehetséget meggyőzni, hogy csatlakozzon hozzánk a Nagy Háborúban, {PLAYER1_NAME}!\nÚgy gondoltuk szükséged lehet némi gyakorlásra az új űrhajóddal.\nKezdődjön hát a tréning...
+
+109 Alapvető irányítás...
+110 Hajód irányítása a legfontosabb, amit el kell sajátítanod.\nMozgásodat befolyásolják a gravitációs törvények. Lassításhoz meg kell fordítanod a hajód és abba az irányba kell gyorsulnod. Hajód irányításához használd a(z) <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> és a(z) <{PLAYER1_KEY_RIGHT}> billentyűket!
 
 111 Bemelegítés!
-112 Menj a rózsaszín zónához!\nPróbáld meg nem összetörni a vadi új hajód.
+112 Menj a rózsaszín zónához!\nA vadiúj hajódat azért próbáld meg nem összetörni...
 
-113 Remek!
-114 Most repülj vissza a bolygódra és próbálj meg landolni. Nagyon lassan hátrafelé repülve közelítsd meg amíg el nem éred a bolygód.
+113 Szép munka, {PLAYER1_NAME}!
+114 Most repülj vissza a bolygódra, és próbálj meg landolni! Lassan, hátrafele szállva közelítsd meg a felszínt!
 
-115 Szép Munka!
-116 A tökéletes landolás nem piskóta, mi? \n\nSzívvel kell megtanulnod.
+115 Remek!
+116 A tökéletes landolás nem piskóta, mi?\nTanuld meg jól, később szükség lesz még rá!
 
-117 Következzen Valami Nehezzebb...
-118 Próbáld meg követni a rózsaszínnel jelölt zónákat!\n\nÚjra jelentkezem, ha készen vagy vele. \n\nMost menj!
+117 És most jöjjön valami nehezebb...
+118 Próbáld meg követni a rózsaszín területekkel kijelölt útvonalat!\nHa sikerült, újra jelentkezünk.\nMost menj!
 
 119 Csodálatos!
-120 Te vagy a legügyesebb újonc, akivel valaha találkoztam. \n\nMost következzen egy kis robbantgatás.
+120 Te vagy a legjobb újonc, akit valaha láttunk.\nMost készülj fel egy kis robbantgatásra!
 
 121 Lövés...
-122 Ahhoz hogy legyőzd az ellenségeid, tudnod kell hogyan lődd ki őket!\nEhhez nyomd meg:
+122 Ellenségeid legyőzéséhez tudnod kell, hogyan lődd ki őket!\nEhhez nyomd meg a(z) <{PLAYER1_KEY_FIRE}> billentyűt. \nPróbáld ki, lövöldözz egy kicsit, majd szállj le a bolygódon a folytatáshoz.
 
-124 Szép Landolás!
-125 Csodálatos pilóta lett belőled.\n\nNos, jöhet még pár fegyver?
+124 Szép landolás, {PLAYER1_NAME}!
+125 Csodás pilóta lett belőled!\nNos, jöhet még pár fegyver?
 
-126 Fegyverek...
-127 Tudom, hogy csak erre vártál. Amíg a bolygódon dokkolsz hihetetlen gonosz fegyverek között váltogathatsz.\nNyomj
+126 A fegyverek...
+127 Tudjuk, hogy csak erre vártál. Míg a bolygódon dokkolsz, hihetetlenül gonosz fegyverek közül válogathatsz. Nyomd meg a(z) <{PLAYER1_KEY_FIRE}> billentyűt, hogy feltérképezd a lehetőségeid.\nEzután használd a(z) <{PLAYER1_KEY_LEFT}> és <{PLAYER1_KEY_RIGHT}> billentyűket a megfelelő fegyver kiválasztásához.\nSzállj fel, ha készen vagy!
 
-130 Harc!
-131 Most lássuk, hogy milyen vagy egy másik bolygóról érkező újonc ellen.\n\nÚgy tűnik. hogy a repülési képességeit próbálja javítani.\n\nLődd ki!
+130 Harcolj!
+131 Lássuk hogy megy egy másik bolygó újonca ellen! Úgy tűnik, épp az űrhajó irányítását gyakorolja.\nLődd ki!
 
 132 Lenyűgöző!
-133 Megcsináltad! Ahogy észrevehetted, minden egyes legyőzött ellenség után hírnév pontokat kapsz.\nEzt a kicsi csillagok száma mutatja a hajód felett. Növekedni fog, ahogy  minél több ellenséget fogsz \nsorban megsemmisíteni.
+133 Megcsináltad! Ahogy bizonyára észrevetted, egy kis csillag jelent meg a hajód felett. Minél több ellenséget ölsz meg, annál több fog megjelenni. Ám ezek nem egyszerűen a pontszámodat jelzik!\nLandolj, és megmutatjuk mire is jók ezek a csillagok.
 
-134 Vigyázz!
-135 Nincs idő lustálkodásra.\nAz ellenségeink most bosszúból igazi harcost küldtek ellened. Nem tehetek most érted semmit...
+208 Különleges képességek...
+209 Ahogy ígértük, jöhet a magyarázat: a csillagok űrhajód hihetetlen erejű különleges képességeinek használatához szükségesek. Például meggyógyíthatod magad és körülötted lévő társaid, messzire lökheted vagy épp megfagyaszthatod a közelben lévő űrhajókat.\nMinél több csillagod van, a kiválasztott képesség ereje és hatótávja annál nagyobb lesz.
+
+210 Kiválasztás...
+211 A különleges képességek közötti váltáshoz nyomd meg a(z) <{PLAYER1_KEY_SPECIAL}>-t. A választáshoz a(z) <{PLAYER1_KEY_LEFT}> és <{PLAYER1_KEY_RIGHT}> billentyűket használd.\nEhhez a leckéhez válaszd a "Freezer" nevű képességet! Szállj fel ha megvan!
+
+245 Állj, {PLAYER1_NAME}!
+246 Mondtuk, hogy a "Freezer"-t válaszd, de te nem ezt tetted!\nSzállj le és válaszd a "Freezer"-t!
+
+247 A Freezer...
+248 Ez a különleges képesség megfagyasztja a körülötted lévő hajókat.\nHasználatához közel kell repülnöd ellenségedhez, majd a(z) <{PLAYER1_KEY_SPECIAL}> megnyomásával megfagyasztani őt. Figyeld csak meg ahogy lassan elveszti az életerejét... és végül meghal!
+
+249 Gyakorolj!
+250 Most próbáld lefagyasztani az ellenséged!\nAdunk néhány csillagot, de jól jegyezd meg: a valóságban megszerzésükhöz el kell pusztítanod ellenfeleidet!
+
+251 Elvétetted, {PLAYER1_NAME}!
+252 Próbáld újra! Újratöltjük a csillagjaidat.
+
+253 Megcsináltad!
+254 Térj vissza a bolygódra és válassz egy másik képességet!
+
+255 Vigyázz, {PLAYER1_NAME}!
+256 Nincs idő a próbára!\nEllenségeink két valódi harcost küldtek, hogy bosszút álljanak!
+
+134 Győzd le őket!
+135 Mutasd meg, mit tudsz, {PLAYER1_NAME}! Szerezz legalább öt pontot azzal, hogy kilövöd őket! Az aktuális pontjaid a neved mellett vannak kiírva.\nKüldünk egy tapasztalt harcost is, hogy segítsen neked.
 
 136 Hihetetlen!
-
-137 Az összes feladatomat sikeresen teljesítetted. Most mi követezzen? \nVessünk egy pillantást a Beállítások menüre. Itt sok... nos... beállítást kezelhetsz.\nPéldául kiválaszthatód a hajód stílusát és \nszínét vagy módosíthatod a neved...
+137 Az összes feladatot sikerült teljesítened. Most mi legyen?\nVess egy pillantást a "Beállítások" menüre. Itt sok.. nos.. beállítást kezelhetsz.\nPéldául kiválaszthatod az űrhajód stílusát és színét, vagy megváltoztathatod a neved...
 
 138 Ki a legjobb?
-139 A <Tab> billentyűvel megnézheted a találataid, pontod számát és így tovább.\nRáadásul a neved melletti számok mutatják a találataid számát és a legjobbtól való távolságot. 
+139 A(z) <{STATISTICS_KEY}> segítségével megnézheted találataid, pontjaid számát és még sok más adatot.\nA neved melletti számok pedig a találataid számát és a legjobbtól való távolságot mutatják.
 
-140 Gratulálok!
-141 Sikeresen befejezted ezt a kiképzést. Most már készen állsz, hogy eredményesen szembe szállj az ellenséggel a NAGY HÁBORÚBAN. Ha folyatni szeretnéd a gyakorlást, csak várj egy kicsit hogy az ellenség újra szülessen. Tréningből való kilépéshez nyomj <Esc>-et.\n\nJó időtöltést kívánok a  M.A.R.S.-al!
+140 Gratulálunk, {PLAYER1_NAME}!
+141 Sikeresen bafejezted a kiképzést! Most már készen állsz, hogy eredményesen harcolhass a Nagy Háborúban! Ha folytatni szeretnéd a gyakorlást, csak várj, míg ellenségeid újraszületnek. A befejezéshez nyomj <Esc>-et.\nJó időtöltést kívánunk a M.A.R.S.-sal!
 
 142 Elestél!
-143 Csodálatos, teljesen tönkre tetted az új hajód. Jól van, kapsz tőlünk egy másikat. Pillanat...
+143 Csodálatos, {PLAYER1_NAME}! Sikerült teljesen tönkre tenned a vadiúj űrhajód! Jól van, kapsz egy másikat. Csak néhány másodperc...
 
 144 Észrevetted?
-145 Az életed szintje csökken! Tartsd szemmel a zöld élet csíkot (első csík). Jobb ha landolsz, ha már nincs sok.
+145 Csökken az életed! Tartsd szemmel a felül lévő élet csíkot. Jobb ha landolsz, ha már nincs sok.
 
 146 Észrevetted?
-147 Az üzemanyagod szintje csökken! Tartsd szemmel a sárga üzemanyag csíkot (második csík). Jobb ha landolsz, ha már nincs sok.
+147 Fogy az üzemanyagod! Tartsd szemmel az alul lévő üzemanyag csíkot. Jobb ha landolsz, ha már nincs sok.
 
-148 Már Majdnem Kilőtted!
-149 Figyeld az ellenfeled nevét. Ennek színe mutatja az élet pontjait. Minél jobban pirossá válik, annál gyengébb lesz.
+148 Majdnem kilőtted!
+149 Figyeld ellefeled nevét. Ennek színe mutatja az élet pontjait. Minél pirosabb, az ellenség annál gyengébb.
 
 // tabmenu collumns
 
 154 Pontok
-155 Találat
-156 Társ Megölve
-157 Önhalál
-158 Meghalva
+155 Találatok
+244 CannonShots
+267 Gólok
+156 Társ megölve
+157 Öngyilkosság
+158 Halál
 160 Összesen:
 161 Statisztika
 
-// 176
+// Tool tips options menu
 
+176 Megjeleníti a másodpercenkénti képkockák számát.\nHa ez az érték folyamatosan alacsony (<20), változtass a grafikus beállításokon.
+177 Megjeleníti az aktív részecskék mennyiségét.
+178 Az ehhez hasonló segítségek megjelenítésének beállítása.
+179 Beállítja a képernyőkép formátumát.
+180 Ennek a gombnak a megnyomásával képernyőképet készíthetsz, mely a(z) {CONFIG_PATH}screenshots/ könyvtárba lesz elmentve.
+181 Ennek a gombnak a lenyomásával a következő zeneszám kerül lejátszásra.
+263 Ennek a gombnak a lenyomásával az előző zeneszám kerül lejátszásra.
+264 Lehetővé teszi a zeneszámok véletlenszerű lejátszását.
+182 Ennyi űrhajónak kell egyszerre felrobbannia, hogy a lassítás-effekt bekövetkezzen.
+183 Megjeleníti az egyes botok feladatát.
+184 Megjeleníti a taktikai zónákat, melyek fontosak a mesterséges intelligencia számára.
+185 Megjeleníti a botok által kiszámított útvonalakat.
+186 Felnagyítja az ablakot, hogy az a teljes képernyőt lefedje.
+187 A játékot a képernyő megjelenítési frekvenciájához hangolja.\nEnnek a beállításnak az engedélyezése általában gördülékenyebbé teszi a játék futását.
+188 Látványos hatásokat kapcsol be (mint például hőpára), ez viszont ronthatja a játék teljesítményét.
+189 Beállítja az ablak méretét.\nMind a teljes képernyős, mind az ablak-módra hatással van.
+190 Nagy felbontású képernyőkön ez az opció késlelteti a csillagmező ismétlődését.\nKikapcsolása javíthatja a játék teljesítményét.
+266 Mozgó csillagokat rajzol a háttérre. Jól néz ki, de csökkenti a játék teljesítményét.
+191 Beállítja a globális részecskeszámot.\nAz alacsonyabb értékek jelentősen növelik a játék teljesítményét.
+192 Beállítja a globális részecske-élettartamot.\nAz alacsonyabb értékek jelentősen növelik a játék teljesítményét.
+193 A háttérzene hangerejét állítja be.
+194 A hanghatások hangerejét állítja be.
+195 A bemondó hangerejét állítja be.
+243 Ennek a gombnak a játék közben való megnyomásával egy az aktuális játékkal kapcsolatos statisztikákat tartalmazó ablak jelenik meg.
+
+// Tool tips in the start-a-new-game-window
+
+196 Beállítja a helyi játékosok csapatait.
+197 Helyi játékosokat beállít.
+198 Beállítja a mesterséges intelligencia által irányított űrhajók számát.
+199 A csapatok által elérendő pontok száma a játék megnyeréséhez.
+200 A játékosok által elérendő pontok száma a játék megnyeréséhez.
+201 A botok erejének beállítása.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+202 A játék közben megjelenő PowerUp-ok mennyiségét állítja be.\nA nulla érték kikapcsolja a PowerUp-okat.
+
+// Interface notifications
+
+205 Képernyőkép elmentve!
+214 Következő zeneszám!
+260 Előző zeneszám!
+258 Előadó: 
+259 Album: 
+
+// 268
