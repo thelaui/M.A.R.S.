@@ -1,0 +1,371 @@
+﻿// menu buttons
+
+000 Start lokalt spill
+105 Start tutorial
+001 Start et nettverkspill
+002 Bli med i nettverkspill
+003 Brukervalg
+004 Om
+005 Avslutt M.A.R.S.
+006 Fortsett
+007 Begynn på nytt
+008 Gjem menyen
+009 Tilbake til hovedmeny
+
+// standard buttons
+
+010 Start
+011 Avbryt
+012 Info
+013 Steng
+014 Lisens
+015 Ok
+106 Neste
+016 Vis denne informasjonen på nytt.
+
+// pregame options
+
+017 Venstre Lag
+018 Høyre Lag
+019 "Bots" Venstre
+020 "Bots" Høyre
+021 "Bots"
+022 "Frag" Grense
+162 Planet Liv Poeng
+056 Våpen valg
+203 Våpen
+204 Spesielle egenskaper
+166 PowerUp gjenfødelses frekvens
+167 "Bot" Vanskelighetsgrad 
+159 Spill brukervalg
+257 Spillere
+
+// story information
+
+023 Året er 3547. Sivilisasjoner over hele galasksen har bosatt sine planeter hvor de lever i fred og harmoni med sine omgivelser. \nMen utenfor sine trygge omgivelser raser DEN STORE KRIGEN. \nSom en berømt soldat på vei mot evig ære og velstand må du beskytte planeten din mot en evig strøm av misunnelige naboer! \nUtkjemp slaget. En ekte helt som deg er født for: SPACEBALL. \nBeskytt planeten dim mot en sky av død og fordervelse ved å sende dem i småbiter tilbake til deres latterlige hjemplanet.
+024 Spark eller skyt ballen mot fiendens planet!
+025 Som et resulat av DEN STORE KRIGEN har du mistet alt: hjemmet ditt, familien din og \ndin egen selvtillit. \nDin siste sjanse til å komme deg ut av det tragiske livet du nå har fortapt deg i, er å bli en gladiator på den storslagne \nDEATHMATCH-arenaen. \nStå imot de andre skipene og opptjen poeng ved å knuse nøtteskallene som de kalle romskip. \nGjør deg klar! \nDød og ære venter deg.
+026 Knus så mange fiender som mulig!
+027 Forhandlingene har feilet! \nBåde deg og dine naboer har måttet føre enorme tapslogger i avslutningen av DEN STORE KRIGEN. \nI et siste forsøk på å få overtaket er du dømt til å ødelegge fienden sine ressurser for å beskytte dine egne. Den eneste måten å avgjøre dette på er i en episk TEAMDEATHMATCH. \nBeskytt dine kamerater og ødelegg dine fiender! \nGi dem en lærepenge de sent vil glemme.
+028 Tillintetgjør så mage fiendtlige skip som mulig!
+029 Som om ikke DEN STORE KRIGEN skulle være nok, er planetsystemet ditt truet av en ny kilde av ufattelig ondskap: Et gigantisk skip med en ukjent invasjonsstyrke svever over galaksen din. De sikter på hjemplaneten din med et enestående masseødeleggelsesvåpen. \nSom et tegn på kynisme har angriperne mistet en fjernkontroll som kontrollerer dette gigantiske dødsvåpenet. \nOm du finner den før dem kan du bruke våpenet mot angripernes planet og fjerne trusselen en gang for alle! \nBli CANNONKEEPeren.
+030 Plukk opp fjernkontrollen og behold den så lenge som mulig!
+206 Siden DEN STORE KRIGEN dramatisk reduserer ressursene dine, er en gruppe forskere engasjert for å finne en ny og effektiv måte å ødelegge fienden på. Etter å ha forsket lenge og vel klarte de til slutt å finne opp et våpen med en utrolig egenskap: Det dreper umiddelbart, men utskutte prosjektiler er svært følsomme for gravitasjonskrefter og er følgelig svært vanskelig og kontrollere. Våpenet har fått navnet. INSTA-GRAVE! \n \nUheldigvis har teknologien allerede blitt stjålet, så fienden kan også benytte seg av samme våpen. Nå er det din tur: Nedkjemp disse simple tyvene i den store GRAVE-ITATION-PIT for igjen å få overtaket. \n \nVinn dette slaget, og DEN STORE KRIGENs seier kan bli din. 
+207 Ødelegg så mange fiender som mulig!
+
+// display options
+// tabs
+
+150 Grensesnitt
+165 Spillvalg
+102 Grafikk
+103 Lyd
+
+// interface Options
+
+104 Vindusinstillinger
+031 Vis informasjon om feil
+032 Orientering for bot'er
+033 Soner
+034 AI-Mønster
+035 Vis spill informasjon
+036 Bilder i sekundet
+215 Generelle instillinger
+152 Språk
+153 Hurtigknapper for å ta skjermbilde
+054 Fil format for skjermbilde
+242 Hurtigknapper for statistikker
+
+// graphics options
+
+037 Antall partikler
+038 Antall partikler
+039 partikkel varighet
+040 Spill Innstillinger
+041 Fullskjerm modus
+042 Vertikal synkronisering
+055 Display Tool Tips
+163 Shader Effekter
+164 Beklager, men din maskinvare støtter ikke shadere!
+151 Høy oppløsning på stjernefelt
+265 Bevegelige stjerner
+173 oppløsning
+174 Fargedybde
+
+// gameplay options
+
+216 Spesial effekter
+168 Eksplosjoner for "Slow Motion"
+169 Av
+
+// audio options
+
+123 Volum innstillinger
+043 Musikk
+044 Lyd
+045 Annonsør
+128 Spill neste lydspor
+129 Avspillings instillinger
+261 Spill forrige lydspor
+262 Spill lydspor i tilfeldig rekkefølge
+
+// player options
+
+046 Navn
+047 Aksellerer
+048 Sving til venstre
+049 Sving til høyre
+050 Våpen
+175 Super evner
+217 Romskip instillinger
+051 Romskip
+052 Spiller farge
+053 Farge på laget ditt
+
+// about
+
+057 Dette er første forsøk på å lage et spill i OpenGL ved hjelp av SFML. Dette er et spill for to spillere hvor dere styrer romskipene i et todimensjonalt spillmiljø, begrenset av tyngdekraftens påvirkning. \n\nHomepage: \nhttp://www.marsshooter.org
+
+// license
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+058 Dette programmet er fri programvare; du kan redistribuere det og/eller modifisere det innenfor rettighetene beskrevet i GNU "General Public License" utgitt av "the Free Software Foundation"; enten versjon 3 av lisensen eller(om du ønsker det) nyere utgaver. \n\nDette programmet er distribuert i håp om at det vil være fult brukbart, men UTEN NOEN FORM FOR GARANTI; selv uten underforståtte garantier om salgbarhet eller anvendelighet FOR ET SPESIELT FORMÅL. Se GNU "General Public License" for flere detaljer. \n\nTilgjengelig på nettet under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Takk til
+171 Spesielt takk til:
+172 Oversettelser:\n Arabic: Majid\n Chinese: Wecing\n Czech: Mates\n Finnish: Paavo\n French: Ludovic\n German: Atto\n Hindi: Antriksh & Aakanksh\n Hungarian: Papp Bence\n Italian: Proch\n Polish: command_dos\n Portuguese: Vitor\n Russian: Drakmail\n Spanish: Gastón\n Swedish: Henrik\n Norwegian: Thomas\n\nProgramerings støtte:\n Werner and Deubeuliou\n\nTesting og kreative støttespillere:\n Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Vil du virkelig å avslutte?
+060 Ønsker du virkelig å avslutte gjeldende spill?
+
+// network information
+
+061 M.A.R.S. Spilling over verdensveven eller lokale nettverk er planlagt, men så langt ikke inkludert. \n\nKommer snart!
+062 M.A.R.S. Spilling over verdensveven eller lokale nettverk er planlagt, men så langt ikke inkludert. \n\nKommer snart!
+
+// hide menu
+
+063 You paused M.A.R.S. right in the middle of an insane battle? \nIf you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows. \n\nSimply bring them back afterwards by pressing ESC.
+
+063 Pauser du M.A.R.S midt i en intens kamp? \nØnsker du å ta et skjermbilde, gjør denne knappen det mulig å generere episke skrivebordsbakgrunner, ved å hjemme alle vinduene. \n\nDu kan enkelt bringe dem tilbake igjen ved hjelp av ESC.
+// key names
+
+064 Pluss
+065 Back Slash
+066 Komma
+067 Dash
+068 Delete
+069 Dele
+070 Ned
+071 End
+072 Er lik
+073 Home
+074 Insert
+075 Venstre Alt
+076 Venstre Bracket
+077 Venstre Control
+078 Venstre
+079 Venstre Shift
+080 Venstre Super
+081 Meny
+082 Gange
+083 Page Down
+084 Page Up
+085 Pause
+086 Punktum
+087 Hermetegn
+088 Høyre Alt
+089 Høyre Bracket
+090 Høyre Control
+091 Enter
+092 Høyre
+093 Høyre Shift
+094 Høyre Super
+095 Semi Kolon
+096 Slash
+097 Space
+098 Minus
+099 Tilde
+100 Tab
+101 Opp
+
+// Joystick button names
+
+218 A Knappen
+219 B Knappen
+220 X Knappen
+221 Y Knappen
+222 Start Knappen
+223 Back Knappen
+224 Høyre Bumper
+225 Venstre Bumper
+226 Høyre Trigger
+227 Venstre Trigger
+228 Direction Up
+229 Direction Down
+230 Direction Left
+231 Direction Right
+232 Stick1 Opp
+233 Stick1 Ned
+234 Stick1 Venstre
+235 Stick1 Høyre
+236 Stick2 Opp
+237 Stick2 Ned
+238 Stick2 Venstre
+239 Stick2 Høyre
+240 Joystick
+241 Knapp
+
+
+// tutorial texts
+
+212 Hei, {PLAYER1_NAME}!
+213 Det var et dårlig navn... Skriv gjerne inn et bedre!
+
+107 Velkommen, Nybegynner!
+108 Det gleder oss alle å ansette en stigende stjerne som, {PLAYER1_NAME}, til å bli med i DEN STORE KRIGEN!\nVi regner med at du trenger litt praktisk trening i det nye romskipet ditt.\nLa treningen begynne...
+
+109 Grunnleggende bevegelser...
+110 Den viktigste oppgaven er å mestre styresystemet.\nAlle bevegelser er innenfor loven om tyngdekraft. For å bremse må du akselerere i motsatt retning. Styr skipet ved hjelp av knappene <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!
+
+111 Oppvarming!
+112 Ta deg til den rosa sonen!\nPrøv nå å ikke ødelegge det flunka nye romskipet ditt.
+
+113 Bra gjort, {PLAYER1_NAME}!
+114 Nå kan du føre romskipet ditt tilbake til din hjemplanet og prøve å lande det ved å drive sakte bakover mot planeten.
+
+115 Godt jobbet!
+116 Det er ikke så enkelt å få til en perfekt landing, er det vel?\nDette bør du øve på til du kan gjøre det i blinde.
+
+117 Så øker vi vanskelighetsgraden litt...
+118 Prøv å følge stien av rosa felter!\nVi tar kontakt med deg igjen så snart du har mestret dette.\nKjør på!
+
+119 Herlig!
+120 Du må være den beste ferskingen noensinne.\nNå kan du forberede deg på noe litt mer eksplosivt.
+
+121 Skyting...
+122 Fo å kunne beseire dine fiender må du vite hvordan du kan skyte dem til himmels!\nPress in <{PLAYER1_KEY_FIRE}> for å skyte. \nHa det moro og skyt noen runder, så kan du lande skipet for å fortsette læringen.
+
+124 Flott landing, {PLAYER1_NAME}!
+125 Du begynner å bli en bra pilot.\nKa sier du til å prøve noen nye våpen?
+
+126 Våpenutvalget...
+127 Vi vet du har ventet på dette!. Fra din hjemplanet kan du velge mellom en hel del heftige våpen. Press <{PLAYER1_KEY_FIRE}> for å få tilgang til arsenalet ditt.\nSå kan du bruke <{PLAYER1_KEY_LEFT}> og <{PLAYER1_KEY_RIGHT}> for å velge et våpen etter din smak! \nTa av så snart du er klar for action!
+
+130 La kampen starte!
+131 Først kan du prøve deg mot en fersking fra en annen planet. Ser ut som han prøver å forbedre sine flyveferdigheter.\nKnus ham!
+
+132 Imponerende!
+133 Du klarte det! Om ikke du har merket det allerede, så har en liten stjerne dukket opp over skipet ditt. You flere fiender du gjør kål på jo flere stjerner vil du se. Men det er ikke bare en seiersindikator! \nom du lander romskipet ditt igjen skal vi vise deg hva det er godt for.
+
+208 Super ferdigheter...
+209 Som vi lovet deg skal vi nå fortelle deg poenget med stjernene. De er en ressurs for romskipet ditt sine svært kraftige ekstra ferdigheter. For eksempel kan du helbrede allierte romskip som befinner seg i nærheten av deg, blåse vekk eller fryse fiendtlige skip innenfor en viss rekkevidde! \nFår du flere stjerner øker både rekkevidden og kraften på ferdighetene dine.
+
+210 Valgmuligheter...
+211 For å bla gjennom ferdighetene dine trenger du bare å trykke  <{PLAYER1_KEY_SPECIAL}>. For å velge, bla gjennom ved å trykke <{PLAYER1_KEY_LEFT}> og <{PLAYER1_KEY_RIGHT}>! \nFor denne leksjonen kan du velge "Fryseren"! Ta av når du er klar!
+
+245 Stopp, {PLAYER1_NAME}!
+246 Vi sa jo du skulle velge "Fryseren", men du har valgt en annen ferdighet!\nVennligst land igjen og velg "Fryseren" denne gangen!
+
+247 Fryseren...
+248 Dette er en kraftig spesialferdighet som fryser fiendtlige romskip i nærheten. \nDu må bevege deg i nærheten av dine motstandere og trykke <{PLAYER1_KEY_SPECIAL}> for å fryse de. Føh med ham mens lifskraften sakte ebber ut... til han blir tillintetgjort!
+
+249 Øvelse!
+250 Nå kan du prøve å fryse noen fiender! \nFor denne leksjonen skal du få noen ferdigopptjente ressursstjerner. Men husk: Når alvoret begynner må du selv opptjene stjernene ved å knuse fiendene dine!
+
+251 Du bommet, {PLAYER1_NAME}!
+252 Prøv igjen. Vi gir deg påfyll av stjerner.
+
+253 Du klarte det!
+254 Nå kan du dra tilbake til planeten din for å prøve noen nye spesial ferdigheter!
+
+255 Gjør deg klar, {PLAYER1_NAME}!
+256 Nå er det ikke tid til mer øvelse!\nFienden vår har sendt to seriøse og hevngjerrige krigere!
+
+134 Knus dem!
+135 Bevis dine ferdigheter! Skaff deg minst fem poeng ved å tillintetgjøre dem! Poengene du har i øyeblikket vises ved siden av navnet ditt!\nVi sender in en erfaren kriger for å assistere deg, {PLAYER1_NAME}!
+
+136 Det er nesten ikke til å tro!
+137 Du gjennomførte alle dine oppgaver til det fulle. Hva skal vi gjøre nå?\nVi kan begynne med å ta en titt på valgmenyen. Der kan dujustere en hel del... vel... valg.\nFor eksempel kan du velge stil og farge på romskipet ditt, eller du kan endre navnet ditt om du ønsker...
+
+138 Hvem er best?
+139 Du kan vise en liste over seire, poeng osv. via <{STATISTICS_KEY}>.\nVidere kan du se noen numre ved siden av navnet ditt som viser antall seire og hvor langt opp du har til de beste.
+
+140 Gratulerer, {PLAYER1_NAME}!
+141 Du har fullført disse leksjonene. Du er nå klar til kamp i DEN STORE KRIGEN. Om du ønsker å trene mer kan du bare vente på at de fiendtlige skipene skal gjenoppstå. Du kan avslutte teningen ved å trykke <Esc>.\n\nKos deg med M.A.R.S.!
+
+142 Du feilet!
+143 Nydelig {PLAYER1_NAME}! Du ødela det flett nye romskipet ditt. Vel, vel. Vi får vel gi deg et nytt. Bare vent noen sekunder...
+
+144 Merket du det?
+145 Livet ditt er på vei ned! Hol et øye med den øvre livsindikatoren. Det er best du lander om den begynner å gå tom.
+
+146 Merket du det?
+147 Drivstoffet ditt tappes ned! Hold et øye med den gule drivstoffindikatoren. Det er best du lander om det begynner å gå tomt.
+
+148 Du hadde ham nesten!
+149 Hold et øye med motstanderens navn. fargen dens indikerer hvor mye liv som er igjen. Jo mer rød farge, jo svakere er fienden din.
+
+// tabmenu collumns
+
+154 Poenger
+155 Seire
+244 Kanonskudd
+267 Mål
+156 Lagets seire
+157 Selvmord
+158 Død
+160 Totalt:
+161 Statistikk
+
+// Tool tips options menu
+
+176 Viser antallet bilder som utregnes per sekund.\nHvis denne er svært lav (<20), bør du justere noen av instillingene under grafikk fanen!
+177 Viser antallet aktive partikler.
+178 Fjerner verktøystips som denne.
+179 Velger formatet som skjermbilder blir lagret i.
+180 Når denn knappen blir trykket, blir et skjermbilde lagret i {CONFIG_PATH}screenshots/
+181 Ved å trykke på denne knappen velger du neste musikkspor.
+263 Ved å trykke på denne knappen velger du forrige musikkspor.
+264 Slår på avspilling av tilfeldige spor. 
+182 Om så mage skip eksploderer samtidig  slår "slow motion" effekten inn.
+183 Viser jobben til hver bot.
+184 Viser taktiske soner, hvilke er viktige for den kunstige intelligensen.
+185 Viser stier som er utregnet av bot'ene.
+186 Maksimerer vinduet, slik at det dekker hele skjermen.
+187 Gjør slik at spillet oppdateres i henhold til oppdateringsfrekvensen på skjermen din.\nVed å velge dette vil spillet typisk kjøre mye jevnere.
+188 Slår på kule effekter som "haze", men dette går utover spillets ytelse.
+189 Velger størrelsen på vinduet.\nVirker inn på både, full skjerm og vindumodus.
+190 På høyoppløste skjermer gjør dette valget at stjernefeltet går senere i loop.\nSpilletsytelse kan forbedres noe ved å slå av denne.
+266 Tegner noen få bevegelige stjerner i bakgrunnen. Eye candy, men reduserer spillytelsen.
+191 Justerer det globale partikkelantallet.\nLavere verdier vil øke ytelsen merkbart.
+192 Justerer levetiden til de globale partiklene.\nLavere verdier vil øke ytelsen merkbart.
+193 Justerer volumet på bakgrunnsmusikken.
+194 Justerer volumet på lydeffekter.
+195 Justerer volumet på annonsøren.
+243 Når du trykker på denne knappen iløpet av et spill, vil et vindu poppe opp med statistikk for akkurat dette spillet.
+
+// Tool tips in the start-a-new-game-window
+
+196 Velger laget til de lokale spillerne.
+197 Slår på lokale spillere.
+198 Justerer antallet skip som kontrolleres av kunstig intelligens.
+199 Poenggrense som laget må oppnå for å vinne kampen.
+200 Poenggrense som må oppnås av spilleren for å vinne kampen.
+201 Justerer ferdighetene til bot'ene.
+202 Justerer mengden av Power-Ups som vil dukke opp iløpet av spillet.\n Null, slår Power-Ups helt av.
+
+// Interface notifications
+
+205 Skjermbilde lagret!
+214 Neste musikkspor!
+260 Forrige musikkspor!
+258 Artist: 
+259 Album: 
+
+// 268
