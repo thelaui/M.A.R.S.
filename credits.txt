@@ -39,3 +39,4 @@ Translations
  - Polish: command_dos
  - Czech: Mates
  - Hungarian: Papp Bence
+ - Norwegian: Thomas (http://iglo.no)
