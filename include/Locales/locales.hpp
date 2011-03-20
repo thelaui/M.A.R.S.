@@ -59,6 +59,7 @@ namespace locales {
                      StatisticsKey, ttStatisticsKey, CannonShots, Tut23, TutText23, Tut24, TutText24, Tut25, TutText25,
                      Tut26, TutText26, Tut27, TutText27, Tut28, TutText28, PlayerOptions, Artist, Album, PreviousTrackNotify,
                      AudioPreviousKey, AudioRandom, ttAudioPreviousKey, ttAudioRandom, StarField, ttStarField, SpaceBallGoals,
+                     GameSpeed, ttGameSpeed,
                      COUNT///< COUNT contains the amount of entries in the enum. Keep it the last!
     };
 

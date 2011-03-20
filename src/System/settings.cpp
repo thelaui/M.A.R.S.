@@ -61,6 +61,7 @@ namespace settings {
     int         C_pointLimitTDM =           50;
     int         C_powerUpRate =             40;
     int         C_slowMoKickIn =            3;
+    int         C_gameSpeed =               1;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;

@@ -64,6 +64,7 @@ namespace settings {
     extern int            C_pointLimitTDM;
     extern int            C_powerUpRate;
     extern int            C_slowMoKickIn;
+    extern int            C_gameSpeed;
     extern bool           C_showInfoHide;
     extern bool           C_showInfoSB;
     extern bool           C_showInfoDM;
