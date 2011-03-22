@@ -61,7 +61,7 @@ namespace settings {
     int         C_pointLimitTDM =           50;
     int         C_powerUpRate =             40;
     int         C_slowMoKickIn =            3;
-    int         C_gameSpeed =               1;
+    int         C_gameSpeed =               100;
     bool        C_showInfoHide =            true;
     bool        C_showInfoSB =              true;
     bool        C_showInfoDM =              true;
@@ -159,6 +159,7 @@ namespace settings {
             outStream << "[pointLimitTDM] "         << C_pointLimitTDM << std::endl;
             outStream << "[powerUpRate] "           << C_powerUpRate << std::endl;
             outStream << "[slowMoKickIn] "          << C_slowMoKickIn << std::endl;
+            outStream << "[gameSpeed] "             << C_gameSpeed << std::endl;
             outStream << "[playerIName] ";
             int i(0);
             while (i < 12 && i < C_playerIName.GetSize()) {
@@ -482,6 +483,11 @@ namespace settings {
                     int value;
                     iss >> value;
                     C_slowMoKickIn = clamp(value, 0, 10);
+                }
+                else if (inputLine == "[gameSpeed]") {
+                    int value;
+                    iss >> value;
+                    C_gameSpeed = clamp(value, 25, 150);
                 }
                 else if (inputLine == "[playerIName]") {
                     sf::String tmp;

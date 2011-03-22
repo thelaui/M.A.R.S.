@@ -347,7 +347,7 @@
 194 Adjusts volume of sound effects.
 195 Adjusts volume of announcers voice.
 243 When this key is pressed while playing a game, a window pops up displaying statistics for the current game.
-269 Adjusts the game speed.
+269 Adjusts the game speed in percent.
 
 // Tool tips in the start-a-new-game-window
 

@@ -44,7 +44,7 @@ namespace timer {
     void update(float frameTime) {
 
         realFrameTime_ = frameTime;
-        frameTime *= settings::C_gameSpeed;
+        frameTime *= settings::C_gameSpeed*0.01;
         // fps
         fpsTimer_  += frameTime;
         ++frameCount_;
