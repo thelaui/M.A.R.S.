@@ -67,21 +67,21 @@ if(UNIX)
 		TARGETS 
 			mars
 		RUNTIME DESTINATION
-			/usr/local/bin
+			${CMAKE_INSTALL_PREFIX}/games
 	)
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/credits.txt
 			${MARS_SOURCE_DIR}/license.txt
 		DESTINATION
-			/usr/share/local/doc/marsshooter
+			${CMAKE_INSTALL_PREFIX}/share/doc/marsshooter
 	)
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/data/botnames.txt
 			${MARS_SOURCE_DIR}/data/shipnames.txt
 		DESTINATION
-			/usr/local/share/marsshooter
+			${CMAKE_INSTALL_PREFIX}/share/games/marsshooter
 	)
 	install(
 		DIRECTORY 
@@ -91,7 +91,7 @@ if(UNIX)
 			${CMAKE_SOURCE_DIR}/data/shaders
 			${CMAKE_SOURCE_DIR}/data/tex
 		DESTINATION 
-			/usr/local/share/marsshooter
+			${CMAKE_INSTALL_PREFIX}/share/games/marsshooter
 		PATTERN 
 			".svn" EXCLUDE
 	)
@@ -100,20 +100,32 @@ if(UNIX)
 		FILES
 			${MARS_SOURCE_DIR}/resources/mars.png
 		DESTINATION
-			/usr/share/icons/hicolor/512x512/apps
+			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/512x512/apps
 	)
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/mars.svg
 		DESTINATION
-			/usr/share/icons/hicolor/scalable/apps
+			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps
+	)
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars.xpm
+		DESTINATION
+			${CMAKE_INSTALL_PREFIX}/share/pixmaps
 	)
 	# desktop file
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/mars.desktop
 		DESTINATION
-			/usr/share/applications
+			${CMAKE_INSTALL_PREFIX}/share/applications
+	)
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars
+		DESTINATION
+			${CMAKE_INSTALL_PREFIX}/share/menu
 	)
 
 else(UNIX)

@@ -1,0 +1,6 @@
+?package(mars): needs="X11"\
+        section="Games/Action"\
+        title="M.A.R.S."\
+        command="mars"\
+        icon="/usr/share/pixmaps/mars.xpm"\
+        hints="2D,Shooter,Multiplayer,Mars,Space"

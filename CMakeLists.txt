@@ -63,8 +63,8 @@ endif(APPLE)
 #####################################################################
 
 # compile source
- add_subdirectory(src)
- 
+set(CMAKE_CXX_FLAGS "-s -O2")
+ add_subdirectory(src) 
  
 #####################################################################
 # Create package
