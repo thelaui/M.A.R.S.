@@ -312,6 +312,12 @@ namespace settings {
                 else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {
                     C_dataPath = "/usr/share/marsshooter/";
                     success = true;
+                } else if (std::ifstream("/usr/share/games/marsshooter/locales/English.txt")) {
+                    C_dataPath = "/usr/share/games/marsshooter/";
+                    success = true;
+                } else if (std::ifstream("/usr/local/share/games/marsshooter/locales/English.txt")) {
+                    C_dataPath = "/usr/local/share/games/marsshooter/";
+                    success = true;
                 } else if (std::ifstream("/usr/local/share/marsshooter/locales/English.txt")) {
                     C_dataPath = "/usr/local/share/marsshooter/";
                     success = true;
