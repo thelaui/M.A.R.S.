@@ -1,3 +1,9 @@
+﻿// Spanish translation made by:
+// - Gastón - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// Botones de menú
 
 000 Empezar Juego Local

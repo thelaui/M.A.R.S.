@@ -1,3 +1,9 @@
+﻿// Polish translation made by:
+// - Command_dos - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// menu buttons 
 
 000 Gra Lokalna

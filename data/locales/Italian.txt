@@ -1,3 +1,9 @@
+﻿// Italian translation made by:
+// - Proch - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// menu buttons
 
 000 Inizia Una Partita In Locale
@@ -353,6 +359,7 @@
 197 Attiva giocatori in locale.
 198 Imposta il numero di navi controllate dall' intelligenza artificiale.
 199 Imposta il punteggio da raggiungere affinchè una squadra vinca.
+
 
 200 Imposta il punteggio da raggiungere affinchè un giocatore vinca.
 201 Imposta la difficoltà dei bots.

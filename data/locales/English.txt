@@ -1,3 +1,9 @@
+﻿// English translation made by:
+// - Felix & Simon - original translators
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// menu buttons
 
 000 Start Local Game

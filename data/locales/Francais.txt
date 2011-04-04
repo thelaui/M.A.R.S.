@@ -1,3 +1,9 @@
+﻿// French translation made by:
+// - Ludovic - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// Interface du Menu Principal
 
 000 Démarrer une partie locale

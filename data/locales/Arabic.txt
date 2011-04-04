@@ -1,3 +1,9 @@
+﻿// Arabic translation made by:
+// - Majid - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// menu buttons
 
 000 ابدأ لعبة محلية

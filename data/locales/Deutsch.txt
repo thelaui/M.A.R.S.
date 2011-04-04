@@ -1,3 +1,9 @@
+﻿// German translation made by:
+// - Atto - original translator
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
 ﻿// Menü Knöpfe
 
 000 Lokales Spiel starten
