@@ -70,7 +70,7 @@ namespace postFX {
     }
 
     bool supported() {
-        return (sf::Shader::IsAvailable() && sf::RenderImage::IsAvailable());
+        return (sf::Shader::IsAvailable());
     }
 
     void load() {
