@@ -146,7 +146,7 @@ UiWindow* OptionsMenu::get() {
 
         tabGameplay->addWidget(new LabeledBox(locales::getLocale(locales::SpecialEffects), Vector2f(10, 30), 560, 90));
         tabGameplay->addWidget(new Slider(locales::getLocale(locales::SlowMoKickIn), locales::getLocale(locales::ttSlowMoKickIn), &settings::C_slowMoKickIn, 0, 10, 1, Vector2f(20,60), 540, 240, true, off));
-        tabGameplay->addWidget(new Slider(locales::getLocale(locales::GameSpeed), locales::getLocale(locales::ttGameSpeed), &settings::C_gameSpeed, 25, 150, 5, Vector2f(20,80), 540, 240, true));
+       // tabGameplay->addWidget(new Slider(locales::getLocale(locales::GameSpeed), locales::getLocale(locales::ttGameSpeed), &settings::C_gameSpeed, 25, 150, 5, Vector2f(20,80), 540, 240, true));
         tabGameplay->addWidget(new LabeledBox(locales::getLocale(locales::DebuggingInformation), Vector2f(10, 140), 560, 90));
         tabGameplay->addWidget(new Checkbox(locales::getLocale(locales::AIJobs), locales::getLocale(locales::ttBotsOrientation), &settings::C_drawBotJobs, Vector2f(20,170), 140));
         tabGameplay->addWidget(new Checkbox(locales::getLocale(locales::Zones), locales::getLocale(locales::ttZones), &settings::C_drawZones, Vector2f(20,190), 140));
