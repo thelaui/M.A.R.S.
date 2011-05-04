@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/SpaceBall.hpp"
 # include "Games/GraveItation.hpp"
 # include "Games/TeamDeathMatch.hpp"
+# include "Games/Rally.hpp"
 # include "Games/Tutorial.hpp"
 # include "System/settings.hpp"
 # include "System/timer.hpp"
@@ -116,6 +117,7 @@ namespace games {
                 case gCannonKeep:        currentGame_ = new CannonKeep();     break;
                 case gGraveItation:      currentGame_ = new GraveItation();   break;
                 case gTutorial:          currentGame_ = new Tutorial();       break;
+                case gRally:          currentGame_ = new Rally();       break;
                 default: break;
             }
 

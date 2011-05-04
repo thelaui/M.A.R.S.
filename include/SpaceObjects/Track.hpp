@@ -1,4 +1,4 @@
-/* Home.hpp
+/* Track.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,36 +15,36 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef HOME_HPP_INCLUDED
-# define HOME_HPP_INCLUDED
+# ifndef TRACK_HPP_INCLUDED
+# define TRACK_HPP_INCLUDED
 
-# include "SpaceObjects/SpaceObject.hpp"
-# include "Players/Player.hpp"
+# include "System/Vector2f.hpp"
+# include "System/Color3f.hpp"
 
-# include <float.h>
+# include <vector>
 
-class Home: public SpaceObject {
+class Home;
+
+class Track {
     public:
-        Home(Vector2f const& location, int life, float radius, float mass, Color3f const& color);
+        Track(Home* home);
 
-        void update();
         void draw() const;
-        void drawLife() const;
-
-        int getLife() const;
-
-        void createShips(std::vector<Player*>& inhabitants) const;
-
-        void onCollision(SpaceObject* with, Vector2f const& location,
-                         Vector2f const& direction, Vector2f const& velocity);
 
     private:
-        void explode();
+        void calcTrack();
+        void findAnchors();
+        void addAnchor(Vector2f const& point);
+        void sortAnchors();
+        void sortLTR();
+        void sortHalf (Vector2f const& origin, int startIndex, int endIndex, bool rightHalf, bool CW);
+        void removeSharpCorners();
+        void createBezier();
 
-        Color3f color_;
-        int life_;
-        bool visible_;
+        std::vector<Vector2f> points_;
+        std::vector<Vector2f> anchors_;
 };
 
-# endif // HOME_HPP_INCLUDED
+# endif // TRACK_HPP_INCLUDED
+
 

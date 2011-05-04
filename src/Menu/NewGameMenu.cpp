@@ -51,12 +51,14 @@ bool NewGameMenu::tDM_(false);
 bool NewGameMenu::tTDM_(false);
 bool NewGameMenu::tCK_(false);
 bool NewGameMenu::tGI_(false);
+bool NewGameMenu::tRLY_(false);
 bool NewGameMenu::kWeaponOptions_(false);
 Tab* NewGameMenu::tabSpaceBall_(NULL);
 Tab* NewGameMenu::tabDeathMatch_(NULL);
 Tab* NewGameMenu::tabTeamDeathMatch_(NULL);
 Tab* NewGameMenu::tabCannonKeep_(NULL);
 Tab* NewGameMenu::tabGraveItation_(NULL);
+Tab* NewGameMenu::tabRally_(NULL);
 
 UiWindow* NewGameMenu::get() {
     if (instance_ == NULL) {
@@ -71,6 +73,7 @@ UiWindow* NewGameMenu::get() {
         tabTeamDeathMatch_  = new Tab(new sf::String("Team-DeathMatch"), 120, &tTDM_);
         tabCannonKeep_      = new Tab(new sf::String("CannonKeep"), 100, &tCK_);
         tabGraveItation_    = new Tab(new sf::String("Grave-Itation Pit"), 125, &tGI_);
+        tabRally_           = new Tab(new sf::String("Rally"), 80, &tRLY_);
 
         tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::LeftTeam), Vector2f(10, 30), 250, 80));
         tabSpaceBall_->addWidget(new LabeledBox(locales::getLocale(locales::RightTeam), Vector2f(300, 30), 250, 80));
@@ -157,11 +160,23 @@ UiWindow* NewGameMenu::get() {
         tabGraveItation_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, 5, Vector2f(20,170), 520, 270, true));
         tabGraveItation_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
 
+        tabRally_->addWidget(new LabeledBox(locales::getLocale(locales::PlayerOptions), Vector2f(10, 30), 540, 80));
+        tabRally_->addWidget(new Checkbox(&settings::C_playerIName, locales::getLocale(locales::ttPlayersWho), &playerI_, Vector2f(20,60), 100));
+        tabRally_->addWidget(new Checkbox(&settings::C_playerIIName, locales::getLocale(locales::ttPlayersWho), &playerII_, Vector2f(310,60), 100));
+        tabRally_->addWidget(new Slider(locales::getLocale(locales::Bots), locales::getLocale(locales::ttBotCount), &settings::C_botsDeath, 0, 20, 1, Vector2f(20,80), 520, 270, true));
+        tabRally_->addWidget(new LabeledBox(locales::getLocale(locales::GameOptions), Vector2f(10, 120), 540, 100));
+        tabRally_->addWidget(new Slider(locales::getLocale(locales::Fraglimit), locales::getLocale(locales::ttPointLimitTeam), &settings::C_pointLimitDM, 1, 100, 1, Vector2f(20,150), 520, 270, true));
+        tabRally_->addWidget(new Slider(locales::getLocale(locales::iDumb), locales::getLocale(locales::ttBotStrength), &settings::C_iDumb, 0, 100, 5, Vector2f(20,170), 520, 270, true));
+        tabRally_->addWidget(new Slider(locales::getLocale(locales::PowerUpRate), locales::getLocale(locales::ttPowerUpRate), &settings::C_powerUpRate, 0, 100, 5, Vector2f(20,190), 520, 270, true));
+        tabRally_->addWidget(new Button(locales::getLocale(locales::Info), NULL, &kInfo_, Vector2f(10,235), 90, 20));
+        tabRally_->addWidget(new Button(locales::getLocale(locales::WeaponOptions), NULL, &kWeaponOptions_, Vector2f(110,235), 120, 20));
+
         tabList->addTab(tabSpaceBall_);
         tabList->addTab(tabDeathMatch_);
         tabList->addTab(tabTeamDeathMatch_);
         tabList->addTab(tabCannonKeep_);
         tabList->addTab(tabGraveItation_);
+        //tabList->addTab(tabRally_);
 
         instance_->addWidget(tabList);
 
@@ -211,6 +226,18 @@ void NewGameMenu::checkWidgets() {
             settings::C_powerUpRate = 0;
             games::start(games::gGraveItation);
         }
+        else if (tabRally_->isActive()) {
+            menus::hideWindow();
+            menus::hideWindow();
+            settings::C_playerIteamR = false;
+            settings::C_playerIteamL = false;
+            settings::C_playerIIteamR = false;
+            settings::C_playerIIteamL = false;
+            if (playerI_)  settings::C_playerIteamL  = true;
+            if (playerII_) settings::C_playerIIteamL = true;
+            settings::save();
+            games::start(games::gRally);
+        }
     }
     else if (kInfo_) {
         kInfo_ = false;
@@ -227,6 +254,9 @@ void NewGameMenu::checkWidgets() {
             menus::showWindow(InfoCK::get());
         }
         else if (tabGraveItation_->isActive()) {
+            menus::showWindow(InfoGIP::get());
+        }
+        else if (tabRally_->isActive()) {
             menus::showWindow(InfoGIP::get());
         }
     }
@@ -252,6 +282,11 @@ void NewGameMenu::checkWidgets() {
     }
     else if (tGI_) {
         tGI_ = false;
+        if(settings::C_showInfoCK)
+            menus::showWindow(InfoGIP::get());
+    }
+    else if (tRLY_) {
+        tRLY_ = false;
         if(settings::C_showInfoCK)
             menus::showWindow(InfoGIP::get());
     }

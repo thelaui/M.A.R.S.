@@ -1,4 +1,4 @@
-/* defines.hpp
+/* Rally.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,26 +15,38 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef DEFINES_HPP_INCLUDED
-# define DEFINES_HPP_INCLUDED
+# ifndef RALLY_HPP_INCLUDED
+# define RALLY_HPP_INCLUDED
 
-# define VERSION_MAJOR               "0"
-# define VERSION_MINOR               "7"
-# define VERSION_PATCH               "2"
-# define VERSION_REVIS               "193"
+# include "Games/Game.hpp"
 
-# define SHIP_GRAPHICS_COUNT         14
-# define SHIP_RADIUS                 18.f
+/// Game: Rally (RLY).
+/// Be the first to reach a goal.
 
-# define SPACE_X_RESOLUTION          1440
-# define SPACE_Y_RESOLUTION          810
+class Track;
 
-# define INITIAL_WINDOW_X            960
-# define INITIAL_WINDOW_Y            540
+class Rally: public Game {
+    public:
+        /// Ctor starts a new game.
+        Rally();
+        ~Rally();
 
-# define HOME_PLANET_RADIUS          100
-# define SPACEOBJECT_MIN_RADIUS      50
-# define SPACEOBJECT_MAX_RADIUS      120
-# define SPACEOBJECT_MIN_GAP         150
+        /// Draws the game.
+        void draw() const;
 
-# endif //DEFINES_HPP_INCLUDED
+        /// Restarts the game.
+        void restart();
+
+    private:
+        Track* track_;
+};
+
+# endif // RALLY_HPP_INCLUDED
+
+
+
+
+
+
+
+

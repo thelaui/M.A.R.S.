@@ -75,7 +75,7 @@ void TabStats::draw() const {
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
         //get height of list
         int height;
-        if (games::type() == games::gDeathMatch)
+        if (games::type() == games::gDeathMatch || games::type() == games::gRally)
             height = ships::getShips().size()*12 + teamMap_.size()*2 + 85;
         else
             height = ships::getShips().size()*12 + teamMap_.size()*20 + 85;
@@ -86,7 +86,7 @@ void TabStats::draw() const {
         // CannonShots
         if (games::type() == games::gCannonKeep || games::type() == games::gSpaceBall)
             nbColumns++;
-        if (games::type() == games::gDeathMatch)
+        if (games::type() == games::gDeathMatch || games::type() == games::gRally)
             nbColumns--;
         // Padding, Name, [BOT], Padding, Columns, Padding
         int width = (3 + 77 + 20 + 70 + (nbColumns*80) + 5)*mirror;
@@ -229,7 +229,7 @@ void TabStats::draw() const {
         if (games::type() == games::gSpaceBall)
              text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        if (games::type() != games::gDeathMatch)
+        if (games::type() != games::gDeathMatch && games::type() != games::gRally)
             text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
@@ -301,7 +301,7 @@ void TabStats::draw() const {
                 writeScoreAtCol(value, col++, topLeft, mirror, drawColor);
                 totalFrags += value;
                 // draw teamKills
-                if (games::type() != games::gDeathMatch) {
+                if (games::type() != games::gDeathMatch && games::type() != games::gRally) {
                     value = (*currentPlayer)->teamKills_;
                     if (value > 0)      drawColor = Color3f(1,0.3,0.3);
                     else                drawColor = Color3f(0.3,1,0.3);
@@ -323,7 +323,7 @@ void TabStats::draw() const {
 
                 topLeft.y_ += 12;
             }
-            if (games::type() != games::gDeathMatch) {
+            if (games::type() != games::gDeathMatch && games::type() != games::gRally) {
                 topLeft.y_ += 2;
                 col = 0;
 

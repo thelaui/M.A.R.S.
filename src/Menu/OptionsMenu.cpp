@@ -267,7 +267,8 @@ void OptionsMenu::onShow() {
     else if (settings::C_screenShotFormat == "jpg") format_ = "JPEG (*.jpg)";
 
     sf::VideoMode mode(settings::C_resX, settings::C_resY);
-    if (!mode.IsValid()) {
+    std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
+    if (modes.size() > 0 && !mode.IsValid()) {
         mode = sf::VideoMode::GetFullscreenModes().front();
         settings::C_resX = mode.Width;
         settings::C_resY = mode.Height;

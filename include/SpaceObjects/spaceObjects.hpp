@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define HOME_LEFT   0
 # define HOME_RIGHT  1
 # define HOME_MIDDLE 2
+# define HOME_RALLY  3
 
 # include "System/Color3f.hpp"
 # include "System/Vector2f.hpp"
@@ -43,7 +44,7 @@ namespace spaceObjects {
     void  addSun();
     void  addBlackHole();
     Home* addHome(int where, int life, Color3f const& color);
-    Home* addHome(Vector2f const& location, int life, Color3f const& color);
+    Home* addHome(Vector2f const& location, int life, Color3f const& color, float radius, float mass);
 
     SpaceObject const* getObstacle(Vector2f const& start, Vector2f const& end, bool avoidBall = false, float minDistance = 0.f);
     bool               isOnLine   (Vector2f const& source, Vector2f const& direction, Vector2f const& target, float maxAngle);

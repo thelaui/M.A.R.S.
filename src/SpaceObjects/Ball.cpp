@@ -175,7 +175,7 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
     setDamageSource(with->damageSource());
     // If it is a player that shot or hit the ball
     if (damageSource() != NULL)
-       lastShooter_ = damageSource(); 
+       lastShooter_ = damageSource();
 
     float unfreeze(0);
 
@@ -252,7 +252,7 @@ void Ball::onShockWave(Player* source, float intensity) {
 
 void Ball::explode() {
     sound::playSound(sound::BallExplode, location_, 100.f);
-    physics::causeShockWave(damageSource(), location_, 50.f, 300.f, 10.f);
+    physics::causeShockWave(damageSource(), location_, 50.f, 300.f, 3.f);
     particles::spawnMultiple(5 , particles::pFragment, location_, location_, location_, Color3f(0.3f, 0.3f, 0.3f));
     particles::spawnMultiple(70, particles::pDust, location_);
     particles::spawnMultiple(20, particles::pExplode, location_);

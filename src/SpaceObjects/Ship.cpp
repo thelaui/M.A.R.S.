@@ -134,7 +134,7 @@ void Ship::update() {
                     if (left_  > 15) fmod(rotation_-= rotateSpeed_*time*0.3f*left_, 360.f);
                 }
                 if (right_ == 0 && left_ == 0) rotateSpeed_ = 1.0;
-                else if (rotateSpeed_ < 10.f) rotateSpeed_ += time*30.f;
+                else if (rotateSpeed_ < 13.f) rotateSpeed_ += time*40.f;
 
                 // accelerate
                 float angleRad = rotation_ * M_PI / 180.f;
@@ -142,7 +142,7 @@ void Ship::update() {
                 Vector2f acceleration;
                 if (up_ > 15 && getFuel() > 0.f) {
                     fuel_ -= time*0.03f * up_;
-                    acceleration = faceDirection * 3.f * up_;
+                    acceleration = faceDirection * 4.f * up_;
                     particles::spawnTimed(1.5f/settings::C_globalParticleCount*up_, particles::pFuel, location_-faceDirection*radius_, faceDirection, velocity_);
                     particles::spawnTimed(0.1f/settings::C_globalParticleCount*up_, particles::pHeatJet, location_-faceDirection*radius_*1.5f, faceDirection, velocity_);
                 }

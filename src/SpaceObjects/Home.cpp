@@ -33,8 +33,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include <sstream>
 
-Home::Home(Vector2f const& location, int life, float radius, Color3f const& color):
-               SpaceObject(spaceObjects::oHome, location, radius, radius*150.f),
+Home::Home(Vector2f const& location, int life, float radius, float mass, Color3f const& color):
+               SpaceObject(spaceObjects::oHome, location, radius, mass),
                color_(color.brightened()),
                life_(life),
                visible_(true) {

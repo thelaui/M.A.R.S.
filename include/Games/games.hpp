@@ -38,6 +38,7 @@ namespace games {
                         ///< destruction in order to smash the oponents home planet. The team which is the first to
                         ///< destroy the others planet will win the match.
         gGraveItation,  ///< InstaGib with only one Weapon, which kills instantly.
+        gRally,         ///< Be the first to reach a goal.
         gTutorial       ///< This is the tutorial which, in fact, is a special game.
     };
 

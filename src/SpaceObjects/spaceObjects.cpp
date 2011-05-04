@@ -50,7 +50,7 @@ namespace spaceObjects {
                 // check for collisions with other objects
                 newPlanetFits = true;
                 for (std::vector<SpaceObject*>::iterator it = objectList_.begin(); it != objectList_.end(); ++it)
-                    if (((*it)->location() - position).lengthSquare() < std::pow((*it)->radius() + radius + 150, 2))
+                    if (((*it)->location() - position).lengthSquare() < std::pow((*it)->radius() + radius + SPACEOBJECT_MIN_GAP, 2))
                         newPlanetFits = false;
                 // check for collisions with balls
                 Ball* ball = balls::getBall();
@@ -111,16 +111,23 @@ namespace spaceObjects {
 
     Home* addHome(int where, int life, Color3f const& color) {
         Vector2f position;
+        float    radius(100.f);
+        float    mass(radius*150.f);
+
         switch (where) {
             case HOME_LEFT:  position = Vector2f(-50,     (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
             case HOME_RIGHT: position = Vector2f(SPACE_X_RESOLUTION+50, (rand()%(SPACE_Y_RESOLUTION-300)) + 150); break;
+            case HOME_RALLY: position = Vector2f(-150, (rand()%(SPACE_Y_RESOLUTION-300)) + 150);
+                             radius   = 180.f;
+                             mass     *= 0.8f;
+                             break;
             default:         position = possiblePlanetLocation(HOME_PLANET_RADIUS, 100);
         }
-        return addHome(position, life, color);
+        return addHome(position, life, color, radius, mass);
     }
 
-    Home* addHome(Vector2f const& location, int life, Color3f const& color) {
-        Home* home = new Home(location, life, 100, color);
+    Home* addHome(Vector2f const& location, int life, Color3f const& color, float radius, float mass) {
+        Home* home = new Home(location, life, radius, mass, color);
         objectList_.push_back(home);
         homeList_.push_back(home);
         return home;

@@ -72,7 +72,7 @@ namespace settings {
     int         C_languageID =              0;
     int         C_resX =                    INITIAL_WINDOW_X;
     int         C_resY =                    INITIAL_WINDOW_Y;
-    int         C_colorDepth =              sf::VideoMode::GetDesktopMode().BitsPerPixel;
+    int         C_colorDepth =              32;
     bool        C_shaders =                 false;
     Key         C_screenShotKey =           Key(sf::Key::F12);
     bool        C_audioRandom =             true;
