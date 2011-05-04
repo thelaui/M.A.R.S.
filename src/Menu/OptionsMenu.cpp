@@ -108,7 +108,7 @@ UiWindow* OptionsMenu::get() {
         std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
         std::vector<sf::String> resolutions;
         std::vector<sf::String> colorDepths;
-        for (std::vector<sf::VideoMode>::iterator it = modes.begin(); it != modes.end(); ++it) {
+     /*   for (std::vector<sf::VideoMode>::iterator it = modes.begin(); it != modes.end(); ++it) {
             if (it->Width >= 800 && it->BitsPerPixel >= 8) {
                 std::stringstream res, depth;
                 res << it->Width << " x " << it->Height;
@@ -125,7 +125,7 @@ UiWindow* OptionsMenu::get() {
                 if (newDepth)
                     colorDepths.push_back(depth.str());
             }
-        }
+        }*/
         std::vector<sf::String> off;
         off.push_back(*locales::getLocale(locales::SlowMoOff));
         tabGraphics->addWidget(new ComboBox(locales::getLocale(locales::Resolution), locales::getLocale(locales::ttResolution), &resolution_, resolutions, Vector2f(20,120), 540, 240));
