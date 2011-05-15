@@ -27,14 +27,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Ball.hpp"
 # include "SpaceObjects/Home.hpp"
 # include "Zones/TacticalZone.hpp"
+# include "System/randomizer.hpp"
 
 # include <cfloat>
 
 BotController::BotController(Player* slave, float strength):
     Controller(slave),
     target_(NULL),
-    weaponChangeTimer_(sf::Randomizer::Random(0.f, 0.5f)),
-    specialChangeTimer_(sf::Randomizer::Random(0.f, 0.5f)),
+    weaponChangeTimer_(randomizer::random(0.f, 0.5f)),
+    specialChangeTimer_(randomizer::random(0.f, 0.5f)),
     currentJob_(Job::jCharge, 1),
     nextRoutePoint_(FLT_MAX, FLT_MAX),
     toCover_(NULL),

@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/SpaceObject.hpp"
 # include "SpaceObjects/ships.hpp"
 # include "SpaceObjects/Ship.hpp"
+# include "System/randomizer.hpp"
 
 # include <cfloat>
 
@@ -69,7 +70,7 @@ void RasterZone::draw() const {
 Vector2f RasterZone::getRandomPoint() const {
     Vector2f randomPoint;
     for (int i=0; i<100; ++i) {
-        randomPoint = Vector2f(sf::Randomizer::Random(bottomLeft_.x_, topRight_.x_), sf::Randomizer::Random(bottomLeft_.y_, topRight_.y_));
+        randomPoint = Vector2f(randomizer::random(bottomLeft_.x_, topRight_.x_), randomizer::random(bottomLeft_.y_, topRight_.y_));
         bool fits = true;
         for (std::vector<SpaceObject*>::const_iterator it = spaceObjects::getObjects().begin(); it != spaceObjects::getObjects().end(); ++it) {
             if ((randomPoint - (*it)->location()).lengthSquare() < std::pow((*it)->radius() + 50, 2))

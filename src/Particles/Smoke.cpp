@@ -19,11 +19,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Smoke*> Smoke::activeParticles_;
 
 Smoke::Smoke(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Smoke>(spaceObjects::oSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, sf::Randomizer::Random(0.8f, 2.0f)*settings::C_globalParticleLifeTime/100.f) {
+           Particle<Smoke>(spaceObjects::oSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, randomizer::random(0.8f, 2.0f)*settings::C_globalParticleLifeTime/100.f) {
 
     color_ = Color3f(0.7, 0.7, 0.7);
 }

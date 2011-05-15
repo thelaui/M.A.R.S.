@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/sound.hpp"
 # include "System/timer.hpp"
 # include "Particles/particles.hpp"
+# include "System/randomizer.hpp"
 
 Sun::Sun(Vector2f const& location, float radius):
          SpaceObject(spaceObjects::oSun,location, radius, radius*50),
@@ -37,9 +38,9 @@ void Sun::update() {
         // get random direction
         Vector2f direction = Vector2f::randDir();
         Vector2f eruptionLocation = location_ + direction * radius_ * 0.9;
-        float intensity = sf::Randomizer::Random(0.5f, 2.0f);
+        float intensity = randomizer::random(0.5f, 2.0f);
         particles::spawnMultiple(intensity*5, particles::pEruption, eruptionLocation, direction, direction*intensity);
-        eruptionTimer_ = sf::Randomizer::Random(1.0f, 2.5f);
+        eruptionTimer_ = randomizer::random(1.0f, 2.5f);
     }
 }
 
@@ -72,6 +73,6 @@ void Sun::onCollision(SpaceObject* with, Vector2f const& location,
         Vector2f direction = location - location_;
         Vector2f eruptionLocation = location_ + direction * 0.9;
         particles::spawnMultiple(strength*0.1, particles::pEruption, eruptionLocation, direction, direction*strength*0.00005);
-        eruptionTimer_ = sf::Randomizer::Random(0.5f, 1.5f);
+        eruptionTimer_ = randomizer::random(0.5f, 1.5f);
     }
 }

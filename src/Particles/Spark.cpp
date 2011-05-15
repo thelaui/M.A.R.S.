@@ -18,17 +18,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/Spark.hpp"
 
 # include "System/timer.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Spark*> Spark::activeParticles_;
 
 Spark::Spark(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<Spark>(spaceObjects::oSpark, location, 1, 0, sf::Randomizer::Random(0.3f, 0.4f)),
+         Particle<Spark>(spaceObjects::oSpark, location, 1, 0, randomizer::random(0.3f, 0.4f)),
          color_(color) {
 
     Vector2f distortion(Vector2f::randDirLen());
     velocity_ = direction + velocity_*0.5f + distortion*150.f;
 
-    if (sf::Randomizer::Random(0, 1) == 0) color_ = Color3f(1.0f, 0.8f, 0.0f);
+    if (randomizer::random(0, 1) == 0) color_ = Color3f(1.0f, 0.8f, 0.0f);
 }
 
 void Spark::update() {

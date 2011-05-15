@@ -18,14 +18,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/Eruption.hpp"
 
 # include "System/timer.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Eruption*> Eruption::activeParticles_;
 
 Eruption::Eruption(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<Eruption>(spaceObjects::oEruption, location, 1.f, 0.f, sf::Randomizer::Random(1.0f, 2.5f)),
+         Particle<Eruption>(spaceObjects::oEruption, location, 1.f, 0.f, randomizer::random(1.0f, 2.5f)),
          color_(Color3f(1.0f, 0.9f, 0.2f)) {
 
-    Vector2f distortion(Vector2f::randDir()*sf::Randomizer::Random(0.9f, 1.1f));
+    Vector2f distortion(Vector2f::randDir()*randomizer::random(0.9f, 1.1f));
     velocity_ = velocity*50.f + distortion*70.f;
 }
 

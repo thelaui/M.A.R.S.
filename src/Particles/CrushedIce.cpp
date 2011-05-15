@@ -19,13 +19,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<CrushedIce*> CrushedIce::activeParticles_;
 
 CrushedIce::CrushedIce(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<CrushedIce>(spaceObjects::oDust, location, 4, 0, sf::Randomizer::Random(0.5f, 1.5f)*settings::C_globalParticleLifeTime/100.f) {
+           Particle<CrushedIce>(spaceObjects::oDust, location, 4, 0, randomizer::random(0.5f, 1.5f)*settings::C_globalParticleLifeTime/100.f) {
 
-    velocity_ = Vector2f::randDir()*20*sf::Randomizer::Random(1.f, 2.f)*sf::Randomizer::Random(1.f, 2.f);
+    velocity_ = Vector2f::randDir()*20*randomizer::random(1.f, 2.f)*randomizer::random(1.f, 2.f);
 
     color_ = Color3f::random();
     color_.s(0.0);

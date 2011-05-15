@@ -18,11 +18,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/Fuel.hpp"
 
 # include "System/timer.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Fuel*> Fuel::activeParticles_;
 
 Fuel::Fuel(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Fuel>(spaceObjects::oFuel, location, 1.f, 0.f, sf::Randomizer::Random(0.2f, 0.4f)) {
+           Particle<Fuel>(spaceObjects::oFuel, location, 1.f, 0.f, randomizer::random(0.2f, 0.4f)) {
 
     Vector2f distortion(Vector2f::randDirLen());
     location_ = location + distortion;

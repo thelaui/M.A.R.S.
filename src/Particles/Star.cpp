@@ -20,13 +20,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Star*> Star::activeParticles_;
 
 Star::Star(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
            Particle<Star>(spaceObjects::oStar, location, 0.f, 0.f, 1.f) {
 
-    location_     += Vector2f::randDir()*sf::Randomizer::Random(0.2f, 5.f);
+    location_     += Vector2f::randDir()*randomizer::random(0.2f, 5.f);
     depth_        =  0.2f/(location-location_).lengthSquare();
     velocity_     =  (location_ - location)*depth_*0.005f;
     acceleration_ = velocity_*depth_*100.f;
@@ -73,6 +74,6 @@ void Star::init() {
         spawn(Vector2f(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f), Vector2f(), Vector2f(), Color3f(), NULL);
 
     for (std::list<Star*>::iterator it=activeParticles_.begin(); it!=activeParticles_.end(); ++it)
-        (*it)->update(sf::Randomizer::Random(0.f, 100.f));
+        (*it)->update(randomizer::random(0.f, 100.f));
 }
 

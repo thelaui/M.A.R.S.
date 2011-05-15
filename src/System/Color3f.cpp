@@ -17,6 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Color3f.hpp"
 
+# include "System/randomizer.hpp"
+
 # include <SFML/OpenGL.hpp>
 
 Color3f::Color3f ():
@@ -180,7 +182,7 @@ sf::Color const Color3f::sfColor() const {
 }
 
 Color3f const Color3f::random() {
-    Color3f result(sf::Randomizer::Random(0.0f, 1.0f), sf::Randomizer::Random(0.0f, 1.0f), sf::Randomizer::Random(0.0f, 1.0f));
+    Color3f result(randomizer::random(0.0f, 1.0f), randomizer::random(0.0f, 1.0f), randomizer::random(0.0f, 1.0f));
     result.s(result.s() + 0.5);
     result.v(result.v() + 0.5);
     return result;

@@ -61,9 +61,9 @@ namespace items {
                 if (newPowerUpFits) break;
             }
             if(newPowerUpFits) {
-                if (sf::Randomizer::Random(0, 4) == 0) {
+                if (randomizer::random(0, 4) == 0) {
                     // rare powerUps
-                    switch (sf::Randomizer::Random(0, 1)) {
+                    switch (randomizer::random(0, 1)) {
                         case 0:
                             powerUps_.push_back(new PUReverse(position)); break;
                         case 1:
@@ -72,7 +72,7 @@ namespace items {
                 }
                 else {
                     // common powerUps
-                    switch (sf::Randomizer::Random(0, 2)) {
+                    switch (randomizer::random(0, 2)) {
                         case 0:
                             powerUps_.push_back(new PUShield(position)); break;
                         case 1:
@@ -94,7 +94,7 @@ namespace items {
             spawnTimer -= timer::frameTime();
             if (spawnTimer <= 0.f) {
                 spawnPowerUp();
-                spawnTimer = sf::Randomizer::Random(0.5f, 1.5f) * ((101-settings::C_powerUpRate) * 0.23f + 1.5f);
+                spawnTimer = randomizer::random(0.5f, 1.5f) * ((101-settings::C_powerUpRate) * 0.23f + 1.5f);
             }
         }
 

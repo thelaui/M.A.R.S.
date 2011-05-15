@@ -19,13 +19,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Explode*> Explode::activeParticles_;
 
 Explode::Explode(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Explode>(spaceObjects::oExplode, location, 4, 0, sf::Randomizer::Random(0.4f, 0.8f)) {
+           Particle<Explode>(spaceObjects::oExplode, location, 4, 0, randomizer::random(0.4f, 0.8f)) {
 
-    velocity_ = Vector2f::randDir()*200*sf::Randomizer::Random(0.5f, 2.f);
+    velocity_ = Vector2f::randDir()*200*randomizer::random(0.5f, 2.f);
 
     color_.h(50.f);
     color_.v(0.8f);

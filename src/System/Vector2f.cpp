@@ -17,6 +17,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/Vector2f.hpp"
 
+# include "System/randomizer.hpp"
+
 # include <SFML/System.hpp>
 # include <cmath>
 
@@ -48,12 +50,12 @@ float Vector2f::lengthSquare() const {
 }
 
 Vector2f const Vector2f::randDir() {
-    float random = sf::Randomizer::Random(0.0f, 2*M_PI);
+    float random = randomizer::random(0.0f, 2*M_PI);
     return Vector2f(std::sin(random), std::cos(random));
 }
 
 Vector2f const Vector2f::randDirLen() {
-    return randDir()*sf::Randomizer::Random(0.0f, 1.0f);
+    return randDir()*randomizer::random(0.0f, 1.0f);
 }
 
 Vector2f& Vector2f::operator+=(Vector2f const& rhs) {

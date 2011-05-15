@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Zones/zones.hpp"
 # include "Zones/RasterZone.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 Track::Track(Home* home){
     calcTrack();
@@ -82,18 +83,18 @@ void Track::calcTrack() {
 }
 
 void Track::findAnchors() {
-    if (sf::Randomizer::Random(0,1)==1)
+    if (randomizer::random(0,1)==1)
         addAnchor(Vector2f(40.f,40.f));
-    if (sf::Randomizer::Random(0,1)==1)
+    if (randomizer::random(0,1)==1)
         addAnchor(Vector2f(SPACE_X_RESOLUTION-40.f, 40.f));
-    if (sf::Randomizer::Random(0,1)==1)
+    if (randomizer::random(0,1)==1)
         addAnchor(Vector2f(SPACE_X_RESOLUTION-40.f, SPACE_Y_RESOLUTION-40.f));
-    if (sf::Randomizer::Random(0,1)==1)
+    if (randomizer::random(0,1)==1)
         addAnchor(Vector2f(40.f, SPACE_Y_RESOLUTION-40.f));
 
     int tries(0);
     while (anchors_.size() < 10 && ++tries<100)
-        addAnchor(Vector2f(sf::Randomizer::Random(0, SPACE_X_RESOLUTION), sf::Randomizer::Random(0, SPACE_Y_RESOLUTION)));
+        addAnchor(Vector2f(randomizer::random(0, SPACE_X_RESOLUTION), randomizer::random(0, SPACE_Y_RESOLUTION)));
 }
 
 void Track::addAnchor(Vector2f const& point) {

@@ -19,17 +19,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<FragmentFlame*> FragmentFlame::activeParticles_;
 
 FragmentFlame::FragmentFlame(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<FragmentFlame>(spaceObjects::oFragmentFlame, location, 1.f, 0.f, sf::Randomizer::Random(0.15f, 0.25f)) {
+           Particle<FragmentFlame>(spaceObjects::oFragmentFlame, location, 1.f, 0.f, randomizer::random(0.15f, 0.25f)) {
 
     Vector2f distortion(Vector2f::randDirLen());
     location_ = location + distortion;
     velocity_ = velocity*0.5f + distortion*20.f;
 
-    radius_ = sf::Randomizer::Random(1.f, 3.f);
+    radius_ = randomizer::random(1.f, 3.f);
 
     color_.h(50.f);
     color_.v(0.6f);

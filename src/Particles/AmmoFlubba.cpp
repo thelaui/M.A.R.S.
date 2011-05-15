@@ -21,19 +21,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
 # include "Media/sound.hpp"
+# include "System/randomizer.hpp"
 
 std::list<AmmoFlubba*> AmmoFlubba::activeParticles_;
 
 AmmoFlubba::AmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 1.0f, sf::Randomizer::Random(12.f, 15.f)) {
+         Particle<AmmoFlubba>(spaceObjects::oAmmoFlubba, location, 8.f, 1.0f, randomizer::random(12.f, 15.f)) {
 
     setDamageSource(damageSource);
     velocity_ = velocity + direction*900;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    radius_ = sf::Randomizer::Random(6.f, 8.f);
+    radius_ = randomizer::random(6.f, 8.f);
 
-    color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
+    color_ = Color3f(randomizer::random(0.0f, 0.4f), randomizer::random(0.8f, 1.f), randomizer::random(0.0f, 0.4f));
 }
 
 void AmmoFlubba::update() {
@@ -53,7 +54,7 @@ void AmmoFlubba::update() {
 
     if (lifeTime_ > totalLifeTime_) {
         particles::spawnMultiple(2, particles::pMud, location_, Vector2f(), Vector2f(), color_);
-        int rand = sf::Randomizer::Random(8, 20);
+        int rand = randomizer::random(8, 20);
         sound::playSound(sound::BlubCollide, location_);
         for (int i=0; i<rand; ++i)
             particles::spawn(particles::pMiniAmmoFlubba, location_, Vector2f(), Vector2f(), Color3f(), damageSource_);

@@ -19,14 +19,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Fragment*> Fragment::activeParticles_;
 
 Fragment::Fragment(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<Fragment>(spaceObjects::oFragment, location, 2.f, 0.5f, sf::Randomizer::Random(2.5f, 5.0f)),
+         Particle<Fragment>(spaceObjects::oFragment, location, 2.f, 0.5f, randomizer::random(2.5f, 5.0f)),
          color_(color) {
 
-    velocity_ = Vector2f::randDir()*300.f*sf::Randomizer::Random(0.8f, 1.0f);
+    velocity_ = Vector2f::randDir()*300.f*randomizer::random(0.8f, 1.0f);
 }
 
 void Fragment::update() {

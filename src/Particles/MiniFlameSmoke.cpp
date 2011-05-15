@@ -19,11 +19,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<MiniFlameSmoke*> MiniFlameSmoke::activeParticles_;
 
 MiniFlameSmoke::MiniFlameSmoke(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<MiniFlameSmoke>(spaceObjects::oMiniFlameSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, sf::Randomizer::Random(0.8f, 2.0f)) {
+           Particle<MiniFlameSmoke>(spaceObjects::oMiniFlameSmoke, location+Vector2f::randDirLen()*2.f, 4, 0, randomizer::random(0.8f, 2.0f)) {
 
     color_ = Color3f(0.9, 0.8, 0.7);
 }

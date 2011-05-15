@@ -26,6 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 # include "DecoObjects/decoObjects.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 # include <vector>
 
@@ -203,10 +204,10 @@ namespace spaceObjects {
     }
 
     void populateSpace(float holePercentage, float sunPercentage, int maxObjects) {
-        int count = sf::Randomizer::Random(1, maxObjects);
+        int count = randomizer::random(1, maxObjects);
 
         while (--count >= 0) {
-            float percentage = sf::Randomizer::Random(0.f, 100.f);
+            float percentage = randomizer::random(0.f, 100.f);
 
             int type(2);
             if (percentage < holePercentage)                      type = 0;

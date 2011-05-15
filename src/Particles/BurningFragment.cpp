@@ -21,17 +21,18 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
 # include "TrailEffects/trailEffects.hpp"
+# include "System/randomizer.hpp"
 
 std::list<BurningFragment*> BurningFragment::activeParticles_;
 
 BurningFragment::BurningFragment(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<BurningFragment>(spaceObjects::oBurningFragment, location, 1.f, 0, sf::Randomizer::Random(4.5f, 5.5f)),
-         color_(sf::Randomizer::Random(0.7f, 1.f), sf::Randomizer::Random(0.7f, 1.f), 0.f),
+         Particle<BurningFragment>(spaceObjects::oBurningFragment, location, 1.f, 0, randomizer::random(4.5f, 5.5f)),
+         color_(randomizer::random(0.7f, 1.f), randomizer::random(0.7f, 1.f), 0.f),
          timer1_(0.5f),
          timer2_(0.25f) {
 
-    radius_   = sf::Randomizer::Random(0.5f, 5.0f);
-    velocity_ = Vector2f::randDir()*sf::Randomizer::Random(200, 600);
+    radius_   = randomizer::random(0.5f, 5.0f);
+    velocity_ = Vector2f::randDir()*randomizer::random(200, 600);
 
     trailEffects::attach(this, 0.05f, 0.5f, radius_*2.f, Color3f(0.5f, 0.f, 0.f), false);
     trailEffects::attach(this, 0.05f, 0.2f, radius_, color_, false);

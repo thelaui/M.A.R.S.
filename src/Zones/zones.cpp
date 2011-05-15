@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Home.hpp"
 # include "SpaceObjects/balls.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 # include <iostream>
 
@@ -304,7 +305,7 @@ namespace zones {
         while (++count < rasterZones_.size() && rasterZones_[(++i)%rasterZones_.size()]->covered())
             i %= rasterZones_.size();
         i %= rasterZones_.size();
-        lastZone_ = count < rasterZones_.size() ? i : sf::Randomizer::Random(0, rasterZones_.size()-1);
+        lastZone_ = count < rasterZones_.size() ? i : randomizer::random(0, rasterZones_.size()-1);
         return rasterZones_[lastZone_];
     }
 

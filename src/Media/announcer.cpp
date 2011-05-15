@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "System/timer.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 # include <iostream>
 # include <SFML/Audio.hpp>
@@ -91,13 +92,13 @@ namespace announcer {
         if (settings::C_announcerVolume > 0) {
             switch (mood) {
                 case Affronting:
-                    switch (sf::Randomizer::Random(0,2)) {
+                    switch (randomizer::random(0,2)) {
                         case 0: playSound(YouSuck); break;
                         case 1: playSound(NotFunny); break;
                         default:;
                     } break;
                 case Praising:
-                    switch (sf::Randomizer::Random(0,4)) {
+                    switch (randomizer::random(0,4)) {
                         case 0: playSound(Impressive); break;
                         case 1: playSound(NiceOne); break;
                         case 2: playSound(ThatWasGreat); break;
@@ -105,7 +106,7 @@ namespace announcer {
                         default:;
                     } break;
                 case Neutral:
-                    switch (sf::Randomizer::Random(0,1)) {
+                    switch (randomizer::random(0,1)) {
                         case 0: playSound(Bam); break;
                         default:;
                     } break;

@@ -19,13 +19,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "System/timer.hpp"
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 std::list<Dust*> Dust::activeParticles_;
 
 Dust::Dust(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<Dust>(spaceObjects::oDust, location, 4, 0, sf::Randomizer::Random(0.5f, 1.5f)*settings::C_globalParticleLifeTime/100.f) {
+           Particle<Dust>(spaceObjects::oDust, location, 4, 0, randomizer::random(0.5f, 1.5f)*settings::C_globalParticleLifeTime/100.f) {
 
-    velocity_ = Vector2f::randDir()*250*sf::Randomizer::Random(1.f, 1.2f)*sf::Randomizer::Random(1.f, 1.2f);
+    velocity_ = Vector2f::randDir()*250*randomizer::random(1.f, 1.2f)*randomizer::random(1.f, 1.2f);
 
     color_ = Color3f::random();
     color_.s(0.0);

@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/texture.hpp"
 
 # include "System/settings.hpp"
+# include "System/randomizer.hpp"
 
 # include <SFML/System.hpp>
 # include <vector>
@@ -112,7 +113,7 @@ namespace texture {
     }
 
     TextureType const randomPlanet() {
-        int randomInt = sf::Randomizer::Random(1, 15);
+        int randomInt = randomizer::random(1, 15);
         switch (randomInt) {
             case  1: return Planet1;
             case  2: return Planet2;

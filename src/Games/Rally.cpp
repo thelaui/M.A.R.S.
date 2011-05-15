@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Teams/teams.hpp"
 # include "TrailEffects/trailEffects.hpp"
 # include "TrailEffects/Trail.hpp"
+# include "System/randomizer.hpp"
 
 Rally::Rally():
     Game(games::gRally) {
@@ -44,8 +45,8 @@ Rally::Rally():
     for (int i=0; i<settings::C_botsDeath; ++i) {
         Team* newTeam = teams::addTeam(new DMTeam());
         Color3f color(newTeam->color());
-        color.h(newTeam->color().h()+10*sf::Randomizer::Random(-5, 5));
-        color.v(newTeam->color().v()+sf::Randomizer::Random(-0.5f, 0.5f));
+        color.h(newTeam->color().h()+10*randomizer::random(-5, 5));
+        color.v(newTeam->color().v()+randomizer::random(-0.5f, 0.5f));
         players::addPlayer(newTeam, controllers::cBot, color);
     }
 

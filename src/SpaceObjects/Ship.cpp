@@ -36,6 +36,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Items/items.hpp"
 # include "SpaceObjects/Home.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 # include <cmath>
 # include <sstream>
@@ -400,13 +401,13 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFlubba:
-            amount = sf::Randomizer::Random(2.5f, 3.f);
+            amount = randomizer::random(2.5f, 3.f);
             setDamageSource(with->damageSource());
             unfreeze = 4.f;
             break;
 
         case spaceObjects::oMiniAmmoFlubba:
-            amount = sf::Randomizer::Random(0.7f, 1.f);
+            amount = randomizer::random(0.7f, 1.f);
             waitForOtherDamage = 0.3f;
             setDamageSource(with->damageSource());
             break;
@@ -422,7 +423,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             waitForOtherDamage = 0.15f;
             if (frozen_ <= 0) velocity_ += velocity*0.03f*timer::frameTime();
             // chance to spawn smoke
-            if (sf::Randomizer::Random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
+            if (randomizer::random(0.f, 100.f)/settings::C_globalParticleCount < 0.01f) particles::spawn(particles::pSmoke, location, velocity);
             setDamageSource(with->damageSource());
             unfreeze = 0.05f;
             break;
@@ -434,7 +435,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFist:
-            amount = 18.f+sf::Randomizer::Random(-3.f, 3.f);
+            amount = 18.f+randomizer::random(-3.f, 3.f);
             setDamageSource(with->damageSource());
             unfreeze = 15.f;
             break;

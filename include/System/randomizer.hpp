@@ -1,6 +1,7 @@
-/* PUSleep.hpp
+/* randomizer.hpp
 
-Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
+This code is taken from a previous version of SFML, since this namespace
+has been dropped. So credits go to Laurent Gomila (laurent.gom@gmail.com)
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -15,32 +16,11 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef PUSLEEP_HPP_INCLUDED
-# define PUSLEEP_HPP_INCLUDED
+namespace randomizer {
 
-# include "System/Vector2f.hpp"
-# include "Items/PowerUp.hpp"
-# include "System/randomizer.hpp"
+    void setSeed(unsigned int seed);
+    unsigned int getSeed();
 
-# include <SFML/System.hpp>
-
-class PUSleep: public PowerUp{
-    public:
-        PUSleep(Vector2f const& location):
-            PowerUp(items::puSleep, location, 15.f, randomizer::random(8.f, 12.f), 2, 0, Color3f(0.6f, 1.f, 0.4f)){}
-
-        void draw() const;
-
-    private:
-        void refreshLifeTime();
-};
-
-# endif // PUSLEEP_HPP_INCLUDED
-
-
-
-
-
-
-
-
+    float random(float begin, float end);
+    int random(int begin, int end);
+}

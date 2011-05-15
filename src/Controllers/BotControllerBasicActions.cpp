@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Players/Player.hpp"
 # include "Teams/Team.hpp"
 # include "SpaceObjects/Home.hpp"
+# include "System/randomizer.hpp"
 
 void BotController::charge() {
     Vector2f direction = ship()->location() - slave_->team()->home()->location();
@@ -42,10 +43,10 @@ void BotController::switchWeapon() {
         slaveLeft();
         slaveFire();
 
-        if (sf::Randomizer::Random(0, 2) == 0)
-            weaponChangeTimer_ = sf::Randomizer::Random(20.f, 60.f);
+        if (randomizer::random(0, 2) == 0)
+            weaponChangeTimer_ = randomizer::random(20.f, 60.f);
         else
-            weaponChangeTimer_ = sf::Randomizer::Random(0.25f, 0.35f);
+            weaponChangeTimer_ = randomizer::random(0.25f, 0.35f);
     }
 }
 
@@ -55,9 +56,9 @@ void BotController::switchSpecial() {
         slaveLeft();
         slaveSpecial();
 
-        if (sf::Randomizer::Random(0, 2) == 0)
-            specialChangeTimer_ = sf::Randomizer::Random(20.f, 60.f);
+        if (randomizer::random(0, 2) == 0)
+            specialChangeTimer_ = randomizer::random(20.f, 60.f);
         else
-            specialChangeTimer_ = sf::Randomizer::Random(0.25f, 0.35f);
+            specialChangeTimer_ = randomizer::random(0.25f, 0.35f);
     }
 }

@@ -18,13 +18,14 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/PlanetSign.hpp"
 
 # include "SpaceObjects/Planet.hpp"
+# include "System/randomizer.hpp"
 
 PlanetSign::PlanetSign(Planet* planet):
     texture_(texture::Sign1),
     rotation_(0.f),
-    scale_(sf::Randomizer::Random(0.5f, 1.f)) {
+    scale_(randomizer::random(0.5f, 1.f)) {
 
-    if (sf::Randomizer::Random(0, 1) == 1) texture_ = texture::Sign2;
+    if (randomizer::random(0, 1) == 1) texture_ = texture::Sign2;
 
     Vector2f direction = Vector2f::randDir();
     rotation_ = std::acos(direction.x_)*180.f/M_PI + 90.f;

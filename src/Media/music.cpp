@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "Hud/musicNotify.hpp"
 # include "System/window.hpp"
+# include "System/randomizer.hpp"
 
 # include <sys/types.h>
 # include <dirent.h>
@@ -117,11 +118,11 @@ namespace music {
                 if (files_.size() > 1) {
                     if (settings::C_audioRandom) {
                         if (playList_.empty())
-                            nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                            nextTrack = randomizer::random(0, static_cast<int>(files_.size()-1));
                         else {
                             nextTrack = playList_.back();
                             while (nextTrack == playList_.back())
-                                nextTrack = sf::Randomizer::Random(0, static_cast<int>(files_.size()-1));
+                                nextTrack = randomizer::random(0, static_cast<int>(files_.size()-1));
                         }
                     }
                     else {

@@ -21,11 +21,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
 # include "Media/sound.hpp"
+# include "System/randomizer.hpp"
 
 std::list<MiniAmmoFlubba*> MiniAmmoFlubba::activeParticles_;
 
 MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 0.2f, sf::Randomizer::Random(10.f, 17.f)) {
+           Particle<MiniAmmoFlubba>(spaceObjects::oMiniAmmoFlubba, location, 8.f, 0.2f, randomizer::random(10.f, 17.f)) {
 
     setDamageSource(damageSource);
 
@@ -33,9 +34,9 @@ MiniAmmoFlubba::MiniAmmoFlubba(Vector2f const& location, Vector2f const& directi
 
     location_ += Vector2f::randDir()*5.f;
 
-    radius_ = sf::Randomizer::Random(2.f, 3.f);
+    radius_ = randomizer::random(2.f, 3.f);
 
-    color_ = Color3f(sf::Randomizer::Random(0.0f, 0.4f), sf::Randomizer::Random(0.8f, 1.f), sf::Randomizer::Random(0.0f, 0.4f));
+    color_ = Color3f(randomizer::random(0.0f, 0.4f), randomizer::random(0.8f, 1.f), randomizer::random(0.0f, 0.4f));
 }
 
 void MiniAmmoFlubba::update() {

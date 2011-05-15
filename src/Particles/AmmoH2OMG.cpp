@@ -20,19 +20,20 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
+# include "System/randomizer.hpp"
 
 std::list<AmmoH2OMG*> AmmoH2OMG::activeParticles_;
 
 AmmoH2OMG::AmmoH2OMG(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoH2OMG>(spaceObjects::oAmmoH2OMG, location, 8.f, 0.4f, sf::Randomizer::Random(9.f, 11.f)) {
+         Particle<AmmoH2OMG>(spaceObjects::oAmmoH2OMG, location, 8.f, 0.4f, randomizer::random(9.f, 11.f)) {
 
     setDamageSource(damageSource);
     velocity_ = velocity + direction*400.f + Vector2f::randDirLen()*50.f;
     location_ += velocity_*timer::frameTime()*1.2f;
 
-    radius_ = sf::Randomizer::Random(3.f, 6.f);
+    radius_ = randomizer::random(3.f, 6.f);
 
-    color_ = Color3f(sf::Randomizer::Random(0.6f, 0.8f), sf::Randomizer::Random(0.6f, 0.8f), sf::Randomizer::Random(0.9f, 1.0f));
+    color_ = Color3f(randomizer::random(0.6f, 0.8f), randomizer::random(0.6f, 0.8f), randomizer::random(0.9f, 1.0f));
 }
 
 void AmmoH2OMG::update() {

@@ -22,15 +22,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/balls.hpp"
 # include "SpaceObjects/Ship.hpp"
 # include "Media/sound.hpp"
+# include "System/randomizer.hpp"
 
 std::list<AmmoBurner*> AmmoBurner::activeParticles_;
 
 AmmoBurner::AmmoBurner(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoBurner>(spaceObjects::oAmmoBurner, location, 1.f, 0.f, sf::Randomizer::Random(0.4f, 0.5f)) {
+         Particle<AmmoBurner>(spaceObjects::oAmmoBurner, location, 1.f, 0.f, randomizer::random(0.4f, 0.5f)) {
 
     setDamageSource(damageSource);
     Vector2f distortion(Vector2f::randDirLen()*3.f);
-    location_ = location + direction*sf::Randomizer::Random(0.f, 20.f);
+    location_ = location + direction*randomizer::random(0.f, 20.f);
     velocity_ = velocity + direction*700.f + distortion*70.f;
 
     color_.h(50.f);

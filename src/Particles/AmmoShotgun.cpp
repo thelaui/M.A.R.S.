@@ -20,11 +20,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/timer.hpp"
 # include "Media/sound.hpp"
 # include "TrailEffects/trailEffects.hpp"
+# include "System/randomizer.hpp"
 
 std::list<AmmoShotgun*> AmmoShotgun::activeParticles_;
 
 AmmoShotgun::AmmoShotgun(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.5f, 0.5f, sf::Randomizer::Random(0.3f, 0.7f)),
+         Particle<AmmoShotgun>(spaceObjects::oAmmoShotgun, location, 2.5f, 0.5f, randomizer::random(0.3f, 0.7f)),
          color_(1.f, 0.7f, 0.2f) {
 
     setDamageSource(damageSource);

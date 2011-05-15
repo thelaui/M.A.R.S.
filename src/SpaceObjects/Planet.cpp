@@ -18,6 +18,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Planet.hpp"
 
 # include "Particles/particles.hpp"
+# include "System/randomizer.hpp"
 # include "DecoObjects/decoObjects.hpp"
 
 Planet::Planet(Vector2f const& location, float radius):
@@ -27,7 +28,7 @@ Planet::Planet(Vector2f const& location, float radius):
     physics::addStaticObject(this);
     physics::addGravitySource(this);
 
-    if (sf::Randomizer::Random(0, 2) == 0)
+    if (randomizer::random(0, 2) == 0)
         decoObjects::addPlanetSign(this);
 }
 

@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Items/items.hpp"
 # include "Items/CannonControl.hpp"
+# include "System/randomizer.hpp"
 
 # include <cmath>
 
@@ -91,7 +92,7 @@ void BotController::checkEnergy() {
 }
 
 void BotController::checkSpecial() {
-    if (ship()->fragStars_ > 0 && sf::Randomizer::Random(0, 10) == 1) {
+    if (ship()->fragStars_ > 0 && randomizer::random(0, 10) == 1) {
         float radius(ship()->currentSpecial_->radius());
         switch (ship()->currentSpecial_->getType()) {
             case specials::sHeal:

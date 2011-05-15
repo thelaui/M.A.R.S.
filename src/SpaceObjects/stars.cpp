@@ -23,6 +23,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/particles.hpp"
 # include "Particles/Star.hpp"
 # include "defines.hpp"
+# include "System/randomizer.hpp"
 
 # include <SFML/System.hpp>
 
@@ -35,9 +36,9 @@ namespace stars {
     }
 
     void init() {
-        tex_ = sf::Randomizer::Random(0, 1);
-        top_ = sf::Randomizer::Random(0.f, 1.f);
-        left_= sf::Randomizer::Random(0.f, 1.f);
+        tex_ = randomizer::random(0, 1);
+        top_ = randomizer::random(0.f, 1.f);
+        left_= randomizer::random(0.f, 1.f);
         Star::init();
     }
 

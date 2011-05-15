@@ -18,11 +18,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Particles/PowerUpCollect.hpp"
 
 # include "System/timer.hpp"
+# include "System/randomizer.hpp"
 
 std::list<PowerUpCollect*> PowerUpCollect::activeParticles_;
 
 PowerUpCollect::PowerUpCollect(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<PowerUpCollect>(spaceObjects::oPowerUpCollect, location, 4.f, 0.f, sf::Randomizer::Random(0.6f, 0.8f)),
+         Particle<PowerUpCollect>(spaceObjects::oPowerUpCollect, location, 4.f, 0.f, randomizer::random(0.6f, 0.8f)),
          color_(1.f, 1.f, 1.f),
          texX_(direction.x_),
          texY_(direction.y_) {
