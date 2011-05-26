@@ -20,6 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Teams/Team.hpp"
 # include "SpaceObjects/Home.hpp"
 
+# include <climits>
+
 namespace teams {
     namespace {
         std::vector<Team*> allTeams_;

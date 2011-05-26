@@ -93,7 +93,7 @@ namespace window {
         }
 
         void update() {
-            timer::update(window_.GetFrameTime());
+            timer::update(window_.GetFrameTime()*0.001f);
             sf::Event event;
             while (window_.PollEvent(event)) {
                 if      (event.Type == sf::Event::Resized)

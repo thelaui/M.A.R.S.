@@ -25,6 +25,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "SpaceObjects/Home.hpp"
 # include "defines.hpp"
 
+# include <climits>
+
 namespace players {
     namespace {
         std::vector<Player*> allPlayers_;
