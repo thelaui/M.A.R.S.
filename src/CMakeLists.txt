@@ -44,6 +44,7 @@ else(APPLE)
 			main.cpp 
 			${MARS_SOURCES}
 			${MARS_HEADERS}
+			${MARS_SOURCE_DIR}/resources/resource.rc
 	)
 endif(APPLE)
 

@@ -29,7 +29,7 @@ find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
 
 # find the sfml2 headers and library
-find_package(SFML REQUIRED graphics system audio window)
+find_package(SFML REQUIRED audio graphics window system)
 include_directories(${SFML_INCLUDE_DIR})
 
 # Foundation library needed for apple

@@ -15,7 +15,7 @@ project "mars"
     elseif os.get() == "macosx" then
       links { "sfml-graphics.framework", "sfml-audio.framework", "sfml-system.framework", "sfml-window.framework", "opengl.framework", "fribidi", "tag" }
     else
-      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "fribidi", "tag" }
+      links { "GLU", "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "fribidi", "tag" }
       libdirs { "/usr/lib", "/usr/local/lib" }
     end
     
@@ -27,6 +27,6 @@ project "mars"
     elseif os.get() == "macosx" then
       links { "sfml-graphics.framework", "sfml-audio.framework", "sfml-system.framework", "sfml-window.framework", "opengl.framework", "fribidi", "tag" }
     else
-      links { "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "fribidi", "tag" }
+      links { "GLU", "sfml-graphics", "sfml-audio", "sfml-system", "sfml-window", "fribidi", "tag" }
       libdirs { "/usr/lib", "/usr/local/lib" }
     end

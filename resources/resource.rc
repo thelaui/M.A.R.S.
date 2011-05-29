@@ -1,3 +1,29 @@
 # ifdef __WIN32__
-    IDR_ICO_MAIN ICON "resources/icon.ico"
+
+    IDR_ICO_MAIN ICON "icon.ico"
+
+	1 VERSIONINFO
+	FILEVERSION     0,7,2,200
+	PRODUCTVERSION  0,7,2,200
+	BEGIN
+	  BLOCK "StringFileInfo"
+	  BEGIN
+		BLOCK "080904E4"
+		BEGIN
+		  VALUE "CompanyName", "M.A.R.S"
+		  VALUE "FileDescription", "A ridiculous Shooter"
+		  VALUE "FileVersion", "0.7.2.200"
+		  VALUE "InternalName", "mars"
+		  VALUE "LegalCopyright", "2010 - 2011 by Felix Lauer and Simon Schneegans"
+		  VALUE "OriginalFilename", "mars.exe"
+		  VALUE "ProductName", "M.A.R.S."
+		  VALUE "ProductVersion", "0.7.2.200"
+		END
+	  END
+	  BLOCK "VarFileInfo"
+	  BEGIN
+		VALUE "Translation", 0x809, 1252
+	  END
+	END
+	
 # endif
