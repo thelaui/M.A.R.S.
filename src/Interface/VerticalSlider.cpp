@@ -36,8 +36,7 @@ VerticalSlider::VerticalSlider (float* value, float minValue, float maxValue, Ve
 
 void VerticalSlider::mouseLeft(bool down) {
     UiElement::mouseLeft(hovered_ && down);
-    const sf::Input& input(window::getInput());
-    mouseMoved(window::PixelToCoord(Vector2f(input.GetMouseX(), input.GetMouseY())));
+    mouseMoved(window::PixelToCoord(window::getMousePosition()));
 }
 
 void VerticalSlider::mouseMoved(Vector2f const& position) {

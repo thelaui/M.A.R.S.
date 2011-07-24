@@ -56,11 +56,11 @@ void TextEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     if (label_)
         label_->mouseMoved(position);
-    if (pressed_ && window::getInput().IsMouseButtonDown(sf::Mouse::Left)) {
+    if (pressed_ && sf::Mouse::IsButtonPressed(sf::Mouse::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -77,7 +77,7 @@ void TextEdit::mouseLeft(bool down) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getInput().GetMouseX() - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->GetSize())
             ++ cursorPos_;
     }
 }
@@ -87,25 +87,25 @@ void TextEdit::keyEvent(bool down, Key const& key) {
         if (pressed_) {
             if (down) {
                 // backspace
-                if (key.code_.keyBoard_ == sf::Key::Back && cursorPos_ > 0) {
+                if (key.code_.keyBoard_ == sf::Keyboard::Back && cursorPos_ > 0) {
                     value_->Erase(cursorPos_-1, 1);
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
                 // delete
-                else if (key.code_.keyBoard_ == sf::Key::Delete && cursorPos_ < value_->GetSize()) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Delete && cursorPos_ < value_->GetSize()) {
                     value_->Erase(cursorPos_, 1);
                 }
                 // move cursor
-                else if (key.code_.keyBoard_ == sf::Key::Left && cursorPos_ > 0) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Left && cursorPos_ > 0) {
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
-                else if (key.code_.keyBoard_ == sf::Key::Right && cursorPos_ < value_->GetSize()) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Right && cursorPos_ < value_->GetSize()) {
                     ++cursorPos_;
                     cursorTimer_ = 0;
                 }
-                else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Key::Up || key.code_.keyBoard_ == sf::Key::Down || key.navi_ == Key::nConfirm) {
+                else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Keyboard::Up || key.code_.keyBoard_ == sf::Keyboard::Down || key.navi_ == Key::nConfirm) {
                     if (*value_ == "")
                         *value_ = fallBack_;
                     menus::unFixKeyboard();

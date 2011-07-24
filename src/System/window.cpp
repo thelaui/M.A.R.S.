@@ -124,18 +124,18 @@ namespace window {
                     if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
                         menus::mouseLeft(false);
                 }
-                else if (event.Type == sf::Event::JoyButtonPressed) {
+                else if (event.Type == sf::Event::JoystickButtonPressed) {
                     if (timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
-                            controllers::singleKeyEvent(Key(event.JoyButton.JoystickId, event.JoyButton.Button));
-                        menus::keyEvent(true, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
+                            controllers::singleKeyEvent(Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
+                        menus::keyEvent(true, Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
                         joyButtonTimer_ = timer::realTotalTime();
                     }
                 }
-                else if (event.Type == sf::Event::JoyButtonReleased)
-                    menus::keyEvent(false, Key(event.JoyButton.JoystickId, event.JoyButton.Button));
-                else if (event.Type == sf::Event::JoyMoved) {
-                    Key key(event.JoyButton.JoystickId, event.JoyMove.Axis, event.JoyMove.Position);
+                else if (event.Type == sf::Event::JoystickButtonReleased)
+                    menus::keyEvent(false, Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
+                else if (event.Type == sf::Event::JoystickMoved) {
+                    Key key(event.JoystickMove.JoystickId, event.JoystickMove.Axis, event.JoystickMove.Position);
                     if (key.strength_ >= 95 && timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
                             controllers::singleKeyEvent(key);
@@ -302,30 +302,30 @@ namespace window {
         glDisable(GL_TEXTURE_2D);
     }
 
-    sf::Input const& getInput() {
-        return window_.GetInput();
-    }
-
     int isKeyDown(Key const& key) {
         switch (key.type_) {
             case Key::kKeyBoard:
-                if (window_.GetInput().IsKeyDown(key.code_.keyBoard_))
+                if (sf::Keyboard::IsKeyPressed(key.code_.keyBoard_))
                     return 100;
                 break;
 
             case Key::kJoyButton:
-                if (window_.GetInput().IsJoystickButtonDown(key.joyID_, key.code_.joyButton_))
+                if (sf::Joystick::IsButtonPressed(key.joyID_, key.code_.joyButton_))
                     return 100;
                 break;
 
             case Key::kJoyAxis:
-                sf::Joy::Axis tmp(Key::convertToSFML(key.code_.joyAxis_));
-                int strength(window_.GetInput().GetJoystickAxis(key.joyID_, tmp));
+                sf::Joystick::Axis tmp(Key::convertToSFML(key.code_.joyAxis_));
+                int strength(sf::Joystick::GetAxisPosition(key.joyID_, tmp));
                 std::pair<Key::AxisType, int> result(Key::convertFromSFML(tmp,strength));
                 return result.first == key.code_.joyAxis_ ? result.second : 0;
                 break;
         }
         return 0;
+    }
+
+    Vector2f const getMousePosition() {
+        return Vector2f(sf::Mouse::GetPosition(window_).x, sf::Mouse::GetPosition(window_).y);
     }
 
     void screenShot() {

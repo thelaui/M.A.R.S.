@@ -46,10 +46,9 @@ void ColorPickerWindow::draw() const {
     origin.y_ = topLeft_.y_ + (viewPort.y_ - height_)/2;
 
     // update color according to mouse
-    sf::Input const& input = window::getInput();
-    Vector2f mouse = window::PixelToCoord(Vector2f(input.GetMouseX(), input.GetMouseY()));
+    Vector2f mouse = window::PixelToCoord(window::getMousePosition());
     int x(mouse.x_), y(mouse.y_);
-    if (input.IsMouseButtonDown(sf::Mouse::Left) && x>origin.x_ && x<origin.x_+190 && y>origin.y_ && y<origin.y_+150) {
+    if (sf::Mouse::IsButtonPressed(sf::Mouse::Left) && x>origin.x_ && x<origin.x_+190 && y>origin.y_ && y<origin.y_+150) {
         if (x>origin.x_+140) {
             float offset(y-origin.y_-10.f);
             if (offset > 119.9f) offset = 119.9f;

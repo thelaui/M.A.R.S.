@@ -56,11 +56,9 @@ namespace window {
     /// Draws a SFML drawable in the window.
     void draw(sf::Drawable const& toBeDrawn);
 
-    /// Returns a reference to the current input state of the window.
-    /// This can be used for getting pressed keys and stuff like this.
-    sf::Input const& getInput();
-
     int isKeyDown(Key const& key);
+
+    Vector2f const getMousePosition();
 
     void screenShot();
 

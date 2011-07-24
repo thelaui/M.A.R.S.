@@ -21,8 +21,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/Window.hpp>
 
 struct Key {
-    Key(sf::Key::Code code);
-    Key(unsigned int joyID, sf::Joy::Axis joyAxis, int strength);
+    Key(sf::Keyboard::Key code);
+    Key(unsigned int joyID, sf::Joystick::Axis joyAxis, int strength);
     Key(unsigned int joyID, unsigned int joyButton);
 
     enum KeyType  {kKeyBoard, kJoyButton, kJoyAxis} type_;
@@ -31,16 +31,16 @@ struct Key {
                    aALleft, aALright, aPOVup, aPOVdown, aPOVleft, aPOVright};
 
     union {
-        sf::Key::Code keyBoard_;
-        AxisType      joyAxis_;
-        unsigned int  joyButton_;
+        sf::Keyboard::Key keyBoard_;
+        AxisType          joyAxis_;
+        unsigned int      joyButton_;
     } code_;
 
     int strength_;
     unsigned int joyID_;
 
-    static std::pair<AxisType, int> convertFromSFML(sf::Joy::Axis joyAxis, int strength);
-    static sf::Joy::Axis convertToSFML(AxisType joyAxis);
+    static std::pair<AxisType, int> convertFromSFML(sf::Joystick::Axis joyAxis, int strength);
+    static sf::Joystick::Axis convertToSFML(AxisType joyAxis);
 };
 
 bool operator== (Key const& lhs, Key const& rhs);
