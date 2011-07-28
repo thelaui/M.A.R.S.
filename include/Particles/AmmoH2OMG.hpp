@@ -29,6 +29,9 @@ class AmmoH2OMG: public Particle<AmmoH2OMG> {
         void update();
         void draw() const;
 
+        void onCollision(SpaceObject* with, Vector2f const& location,
+                         Vector2f const& direction, Vector2f const& velocity);
+
         friend class Particle<AmmoH2OMG>;
 
     private:

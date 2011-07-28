@@ -35,7 +35,7 @@ class WeaponOptions: public UiWindow {
         static UiWindow* instance_;
 
         static bool kOk_;
-        static bool kAFK_, kBurner_, kFist_, kFlubba, kShotgun_, kRocket_, kRofle_;
+        static bool kAFK_, kBurner_, kFist_, kFlubba, kShotgun_, kRocket_, kRofle_, kH2OMG_;
         static bool kFreeze_, kHeal_, kBlast_, kFireWall_;
 };
 

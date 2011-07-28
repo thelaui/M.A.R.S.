@@ -35,6 +35,7 @@ bool WeaponOptions::kFlubba(false);
 bool WeaponOptions::kShotgun_(false);
 bool WeaponOptions::kRocket_(false);
 bool WeaponOptions::kRofle_(false);
+bool WeaponOptions::kH2OMG_(false);
 
 bool WeaponOptions::kFreeze_(false);
 bool WeaponOptions::kHeal_(false);
@@ -59,6 +60,7 @@ UiWindow* WeaponOptions::get() {
         instance_->addWidget(new Checkbox(new sf::String("SHOTGUN"), NULL, &kShotgun_, Vector2f(20,160), 100));
         instance_->addWidget(new Checkbox(new sf::String("ROCK'n'LOL"), NULL, &kRocket_, Vector2f(20,180), 100));
         instance_->addWidget(new Checkbox(new sf::String("ROFLE"), NULL, &kRofle_, Vector2f(20,200), 100));
+        instance_->addWidget(new Checkbox(new sf::String("H2-OMG"), NULL, &kH2OMG_, Vector2f(20,220), 100));
 
         instance_->addWidget(new Checkbox(new sf::String("FREEZER"), NULL, &kFreeze_, Vector2f(170,80), 100));
         instance_->addWidget(new Checkbox(new sf::String("HEAL"), NULL, &kHeal_, Vector2f(170,100), 100));
@@ -76,6 +78,7 @@ void WeaponOptions::onShow() {
     kShotgun_ = settings::C_EnabledWeaponsByUser & weapons::wShotgun;
     kRocket_ = settings::C_EnabledWeaponsByUser & weapons::wRocketLauncher;
     kRofle_ = settings::C_EnabledWeaponsByUser & weapons::wROFLE;
+    kH2OMG_ = settings::C_EnabledWeaponsByUser & weapons::wH2OMG;
 
     kFreeze_ = settings::C_EnabledSpecialsByUser & specials::sFreeze;
     kHeal_ = settings::C_EnabledSpecialsByUser & specials::sHeal;
@@ -89,7 +92,7 @@ void WeaponOptions::checkWidgets() {
 
         settings::C_EnabledWeaponsByUser  = (kAFK_ ? weapons::wAFK47:0) | (kBurner_ ? weapons::wBurner:0) | (kFist_ ? weapons::wFist:0) |
                                            (kFlubba ? weapons::wFlubba:0) | (kShotgun_ ? weapons::wShotgun:0) | (kRocket_ ? weapons::wRocketLauncher:0) |
-                                           (kRofle_ ? weapons::wROFLE:0);
+                                           (kRofle_ ? weapons::wROFLE:0) | (kH2OMG_ ? weapons::wH2OMG:0);
 
         settings::C_EnabledSpecialsByUser = (kFreeze_ ? specials::sFreeze:0) | (kHeal_ ? specials::sHeal:0) | (kBlast_ ? specials::sBlast:0) | (kFireWall_? specials::sFireWall:0);
 

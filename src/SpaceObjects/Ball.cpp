@@ -232,6 +232,11 @@ void Ball::onCollision(SpaceObject* with, Vector2f const& location,
             unfreeze = 1.f;
             break;
 
+        case spaceObjects::oAmmoH2OMG:
+            if (heatTimer_ > 0.f) heatTimer_ -= 0.1f;
+            unfreeze = 1.f;
+            break;
+
         default:;
     }
 

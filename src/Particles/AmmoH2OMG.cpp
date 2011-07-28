@@ -21,11 +21,12 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Particles/particles.hpp"
 # include "System/randomizer.hpp"
+# include "Media/sound.hpp"
 
 std::list<AmmoH2OMG*> AmmoH2OMG::activeParticles_;
 
 AmmoH2OMG::AmmoH2OMG(Vector2f const& location, Vector2f const& direction, Vector2f const& velocity, Color3f const& color, Player* damageSource):
-         Particle<AmmoH2OMG>(spaceObjects::oAmmoH2OMG, location, 8.f, 0.4f, randomizer::random(9.f, 11.f)) {
+         Particle<AmmoH2OMG>(spaceObjects::oAmmoH2OMG, location, 8.f, 2.4f, randomizer::random(9.f, 11.f)) {
 
     setDamageSource(damageSource);
     velocity_ = velocity + direction*400.f + Vector2f::randDirLen()*50.f;
@@ -40,7 +41,7 @@ void AmmoH2OMG::update() {
     float time = timer::frameTime();
 
     Vector2f acceleration = physics::attract(this);
-    physics::collide(this, STATICS | MOBILES);
+    physics::collide(this, STATICS | MOBILES | PARTICLES);
 
     // update Size
     if (lifeTime_ > totalLifeTime_-0.3f)
@@ -58,11 +59,18 @@ void AmmoH2OMG::update() {
 
 void AmmoH2OMG::draw() const {
     color_.gl4f(1.0f);
-    const int posX = 5;
-    const int posY = 1;
+    const int posX = 4;
+    const int posY = 0;
     glTexCoord2f(posX*0.125f,     posY*0.125f);     glVertex2f(location_.x_-radius_, location_.y_-radius_);
     glTexCoord2f(posX*0.125f,     (posY+1)*0.125f); glVertex2f(location_.x_-radius_, location_.y_+radius_);
     glTexCoord2f((posX+1)*0.125f, (posY+1)*0.125f); glVertex2f(location_.x_+radius_, location_.y_+radius_);
     glTexCoord2f((posX+1)*0.125f, posY*0.125f);     glVertex2f(location_.x_+radius_, location_.y_-radius_);
 }
 
+void AmmoH2OMG::onCollision(SpaceObject* with, Vector2f const& location,
+                        Vector2f const& direction, Vector2f const& velocity) {
+    if (!isDead() && with->type() != spaceObjects::oAmmoH2OMG) {
+        sound::playSound(sound::BlubCollide, location_);
+        killMe();
+    }
+}

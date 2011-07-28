@@ -406,6 +406,13 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             unfreeze = 4.f;
             break;
 
+        case spaceObjects::oAmmoH2OMG:
+            amount = strength*0.003f;
+            waitForOtherDamage = 0.15f;
+            setDamageSource(with->damageSource());
+            unfreeze = 0.1f;
+            break;
+
         case spaceObjects::oMiniAmmoFlubba:
             amount = randomizer::random(0.7f, 1.f);
             waitForOtherDamage = 0.3f;
