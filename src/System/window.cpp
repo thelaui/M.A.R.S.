@@ -100,12 +100,12 @@ namespace window {
                     resized();
                 else if (event.Type == sf::Event::Closed)
                     close();
-                else if (event.Type == sf::Event::KeyPressed && event.Key.Code != 0) {
+                else if (event.Type == sf::Event::KeyPressed) {
                     if (!menus::visible())
                         controllers::singleKeyEvent(Key(event.Key.Code));
                     menus::keyEvent(true, Key(event.Key.Code));
                 }
-                else if (event.Type == sf::Event::KeyReleased && event.Key.Code != 0) {
+                else if (event.Type == sf::Event::KeyReleased) {
                     menus::keyEvent(false, Key(event.Key.Code));
                 }
                 else if (event.Type == sf::Event::TextEntered) {

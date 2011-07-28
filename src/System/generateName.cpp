@@ -162,10 +162,10 @@ namespace generateName {
             case Key::kKeyBoard: {
                 sf::Keyboard::Key keyCode(key.code_.keyBoard_);
                 // "normal" character
-                if (static_cast<int>(keyCode) >= 97 && static_cast<int>(keyCode) <= 122) result = static_cast<char>(keyCode-32);
+                if (static_cast<int>(keyCode) >= 0 && static_cast<int>(keyCode) <= 25) result = static_cast<char>(keyCode+65);
 
                 // numbers
-                if (static_cast<int>(keyCode) >= 48 && static_cast<int>(keyCode) <= 57) result = static_cast<char>(keyCode);
+                if (static_cast<int>(keyCode) >= 26 && static_cast<int>(keyCode) <= 35) result = static_cast<char>(keyCode+22);
 
                 else if (keyCode == sf::Keyboard::Add) result =         *locales::getLocale(locales::Add);
                 else if (keyCode == sf::Keyboard::BackSlash) result =   *locales::getLocale(locales::BackSlash);
