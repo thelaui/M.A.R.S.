@@ -1,0 +1,368 @@
+﻿// menu buttons
+
+000 Start Lokaal Spel
+105 Start Tutorial
+001 Start Netwerk Spel
+002 Neem deel aan een Netwerk Spel
+003 Opties
+004 Over
+005 Beëindig M.A.R.S.
+006 Hervat
+007 Herstart Spel
+008 Verberg Menu
+009 Keer terug naar Hoofdmenu
+
+// standard buttons
+
+010 Start
+011 Annuleer
+012 Info
+013 Sluit
+014 Licentie
+015 Okay
+106 Volgende
+016 Toon deze info weer.
+
+// pregame options
+
+017 Linker Team
+018 Rechter Team
+019 Bots Links
+020 Bots Rechts
+021 Bots
+022 Frag Limiet
+162 Planeet Levens punten
+056 Wapen Opties
+203 Wapens
+204 Speciale Vaardigheden
+166 PowerUp Spawn snelheid
+167 Bot Moeilijkheidsgraad 
+159 Spel Opties
+257 Spelers
+
+// story information
+
+023 In het jaar 3547, hebben beschavingen van over het gehele heelal zich gevestigd op hun eigen planeten. Ze leven rustig in vrede met hun omgeving. \n Maar buiten hun leefomgevingen is de GROTE OORLOG gaande. \nAls een beroemd vechter onderweg naar de oneindige roem en rijkdom moet u uw planeet beschermen tegen de verdoemenis van jaloezie van uw buren!\nAls de ware held zoals u geboren bent met maar een bestemming: SPACEBALL.\nBescherm uw planeet van de dood en verdoemenis van uw vijanden door ze totaal te vernietigen!
+024 Trap of schiet de ball in de vijandige planeet!
+025 Door de uitkomst van de GROTE OORLOG heeft u alles verloren: uw huis, uw familie en uw zelfvertrouwen. \nUw laatste kans om te ontsnappen uit uw miezerige leven, is om als gladiator in de glorieuze \nDEATHMATCH-arena te vechten.\nWeersta de andere vechters en verdien punten door notendoppen te pletten dat zij ruimtevaartuigen noemen. \n\nMaakt u klaar! \nDood en glory wachten op u.
+026 Vernietig zoveel mogelijk vijanden!
+027 De onderhandelingen zijn mislukt.\nZowel u als uw buren hebben enorme verliezen te verwerken als het resultaat van de GROTE OORLOG. \nIn een laatste poging bent u bevolen om de hulpbronnen van uw vijanden te vernietigen en die van uzelf te beschermen. Dit kan alleen door een epische TEAMMATCH. \nBescherm uw kameraden en vernietig uw vijanden! \nLeer ze een les die ze nooit zullen vergeten.
+028 Vernietig zoveel mogelijk vijanden!
+029 Alsof de GROTE OORLOG nog niet genoeg was word uw heelal nu bedreigt door een nieuwe bron van kwad: Een gigantisch ruimtevaartuig van onbekende afkomst zweeft boven uw heelal. Deze richt zich op uw thuis planeet met een monolitisch massavernietigings wapen. \n Als teken van cynisme hebben de indringers een afstandsbediening gedropped van dit wapen. \nBereik deze afstandsbediening als eerste en voorkom dat uw thuisplaneet vernietigt word.
+030 Pak de afstandsbediening en hou deze zo lang mogelijk vast!
+206 Aangezien de grote oorlog uw hulpbronnen drastisch heeft verminderd hebben uw onderzoekers bezig om een manier te vinden om uw vijanden efficient te vernietigen door hun gegeven input te minderen. Ze hebben veel onderzoek gedaan en hebben nu een wapen gecreated met de volgende ongelooflijke eigenschap: Het vernietigt iets meteen en totaal maar de projectielen zijn lastig te beheersen. Ze worden sterk door de zwaartekrachten beinvloed. Daarom heten ze: INSTA-GRAVE! \n\nHelaas heeft iemand deze technology gestolen dus hebben uw vijanden nu ook deze technologie. Nu bent u aan zet: Versla die dieven in de GRAVE-ITATION-PIT. \n\n Win dit gevecht en de kans dat u de GROTE OORLOG zal winnen zal drastisch toenemen.
+207 Vernietig zoveel mogelijk vijanden!
+
+// display options
+// tabs
+
+150 Interface
+165 Gameplay
+102 Video
+103 Geluid
+
+// interface Options
+
+104 Scherm Instellingen
+031 Toon Debug Informatie
+032 Bots Orientatie
+033 Zones
+034 AI-Paden
+035 Toon Spel Informatie
+036 Frames per Seconde
+215 Algemente Instellingen
+152 Taal
+153 Hot Key voor Scherm Afdrukken
+054 Scherm Afdruk Bestandsformaat
+242 Hot Key voor Statistieken
+
+// graphics options
+
+037 Deeltjes (Particle) Hoeveelheid
+038 Deeltjes (Particle) Hoeveelheid
+039 Deeltjes (Particle) Levensduur
+040 Spel Instellingen
+041 Volledig Scherm
+042 V-Sync
+055 Toon Tool Tips
+163 Shader Effecten
+164 Helaas, shaders worden door uw hardware niet ondersteund!
+151 Hoog Sterren veld Resolutie
+265 Bewegende Sterren
+173 Resolutie
+174 Kleur Diepte
+
+// gameplay options
+
+216 Speciale Effecten
+168 Explosies voor Slow Motie
+169 Uit
+
+// audio options
+
+123 Volume Instellingen
+043 Muziek
+044 Geluid
+045 Omroeper
+128 Speel Volgende Track
+129 Afspeel Instellingen
+261 Speel Vorige Track
+262 Speel Tracks in Willekeurige Volgorde
+
+// player options
+
+046 Naam
+047 Versnel
+048 Draai Linksom
+049 Draai Rechtsom
+050 Wapen
+175 Speciale Vaardigheid
+217 ruimtevaartuig Instellingen
+051 Ruimtevaartuig
+052 Speler Kleur
+053 Team Kleur
+
+// about
+
+057 Dit is de eerste poging voor een spel in OenGL met SFML. Het is een spel voor twee spelers, met schepen in een twee-dimensionale omgeving die geregeerd word door de wetten der zwaartekracht. \n\nHomepage: \nhttp://www.marsshooter.org
+
+// license
+
+058 Dit programma is vrije software. U mag het herdistribueren en / of wijzigen onder de voorwaarden van het GNU General Public License zoals gepubliceerd door de Free Software Foundation; ofwel versie 3 van de Licentie, of (naar keuze) een latere versie. \ n \ nDit programma wordt verspreid in de hoop dat het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General Public License voor meer details. \ n \ nAvailable online onder: \ nhttp: / / www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Credits
+171 Speciale dank aan:
+172 Vertalingen:\n Arabic: Majid\n Chinese: Wecing\n Czech: Mates\n Finnish: Paavo\n French: Ludovic\n German: Atto\n Hindi: Antriksh & Aakanksh\n Hungarian: Papp Bence\n Italian: Proch\n Polish: command_dos\n Portuguese: Vitor\n Russian: Drakmail\n Spanish: Gastón\n Swedish\n Dutch: Carlo von Ranzow: Henrik\n\nCoding support:\n Werner en Deubeuliou\n\nTests and creative support:\n Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 Weet u zeker dat u M.A.R.S. wilt verlaten?
+060 Weet u zeker dat u de huidige sessie wilt verlaten?
+
+// network information
+
+061 M.A.R.S. spelen over het world wide web of lokaal netwerk staat in de planning maar is nog niet geimplementeerd. \n\nBlijft u op de hoogte!
+062 M.A.R.S. spelen over het world wide web of lokaal netwerk staat in de planning maar is nog niet geimplementeerd. \n\nBlijft u op de hoogte!
+
+// hide menu
+
+063 U heeft M.A.R.S. gepauzeerd in het midden van een waanzinnig gevecht? Indien u een schermafbeelding wilt maken, deze knop stelt u in staat om epic wallpapers te maken, door alle schermen te verbergen. \n\nDeze zijn weer terug te brengen door op ESC te drukken.
+
+// key names
+
+064 Voeg toe
+065 Back Slash
+066 Comma
+067 Minteken
+068 Delete
+069 Schuine streep
+070 Omlaag
+071 End
+072 Gelijkteken
+073 Home
+074 Insert
+075 Linker Alt
+076 Linker Bracket
+077 Linker Control
+078 Links
+079 Linker Shift
+080 Linker Super
+081 Menu
+082 Sterretje
+083 Page Down
+084 Page Up
+085 Pause
+086 Punt
+087 Quote
+088 Rechter Alt
+089 Rechter Bracket
+090 Rechter Control
+091 Enter
+092 Rechts
+093 Rechter Shift
+094 Rechter Super
+095 Dubbele Punt
+096 Schuine Streep
+097 Spatie
+098 Minteken
+099 Grave Accent
+100 Tab
+101 Omhoog
+
+// Joystick button names
+
+218 A Knop
+219 B Knop
+220 X Knop
+221 Y Knop
+222 Start Knop
+223 Terug Knop
+224 Rechter Bumper
+225 Linker Bumper
+226 Rechter Trigger
+227 Linker Trigger
+228 Richting Omhoog
+229 Richting Omlaag
+230 Richting Links
+231 Richting Rechts
+232 Stick1 Omhoog
+233 Stick1 Omlaag
+234 Stick1 Links
+235 Stick1 Rechts
+236 Stick2 Omhoog
+237 Stick2 Omlaag
+238 Stick2 Links
+239 Stick2 Rechts
+240 Joystick
+241 Knop
+
+
+// tutorial texts
+
+212 Hey, {PLAYER1_NAME}!
+213 Dat is een slechte naam... Voert u gerust een betere in!
+
+107 Welkom, Ruimte Groentje!
+108 We zijn blij om een snel stijgende held als jij, {PLAYER1_NAME} te werven, om samen met ons in de grote oorlog in te gaan!\nWe dachten dat je wel wat oefening met uw nieuwe ruimtevaartuig kon gebruiken. \nLaat de training te beginnen ...
+
+109 Basis Bewegingen...
+110 Het beheersen van uw ruimtevaartuig is de meest belangrijke taak.\nAlle bewegingen worden beheerd door de wetten der zwaartekracht. Om te vaart te minderen dient u in de tegenovergestelde richting te draaien. Beweeg uw ruimtevaartuig met de toetsen <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> en <{PLAYER1_KEY_RIGHT}>!
+
+111 Warming Up!
+112 Bereik de roze zone!\nProbeer uw gloednieuwe ruimtevaartuig niet te verongelukken.
+
+113 Goed Gedaan, {PLAYER1_NAME}!
+114 Keer nu terug naar uw moeder planeet door deze langzaam achteruit richting uw moeder planeet te benaderen.
+
+115 Goed gedaan!
+116 Een goede landing is niet makkelijk of wel?\nU kunt dit het beste goed onder de knie krijgen.
+
+117 Iets Moeilijkers...
+118 Probeer het pad dat met roze zones gemarkeerd is te volgen!\nNadat u dat gelukt is zullen we wederom contact met u opnemen. Ga nu!
+
+119 Geweldig!
+120 U bent het beste groentje die we ooit hebben gehad.\nMaak u nu klaar voor wat explosiefs.
+
+121 Schieten...
+122 Om uw vijanden te kunnen verslaan is het belangrijk dat u weet hoe u ze kunt neerschieten.\nDruk daarvoor <{PLAYER1_KEY_FIRE}>. \nVeel schietplezier en land uw ruimtevaartuig daarna weer om te tutorial te hervatten.
+
+124 Mooie landing, {PLAYER1_NAME}!
+125 U ben uitgegroeid tot een geweldige piloot.\nNu wat dacht u van wat meer wapens?
+
+126 De Wapens...
+127 We weten dat u hierop heeft staan wachten. Wanneer u zich in de haven bevind kunt u een aantal ongelooflijke gemene wapens switchen. Druk <{PLAYER1_KEY_FIRE}> om het arsenaal te openen.\nGebruik dan <{PLAYER1_KEY_LEFT}> en <{PLAYER1_KEY_RIGHT}> om een wapen te kiezen! \nLanceer wanneer u klaar bent!
+
+130 Vecht!
+131 Laten we nu eens kijken hoe u het doet tegen een groentje van een andere planeet. Het ziet erna uit dat hij zijn vliegvaardigheden probeert te verbeteren.\nVersla hem!
+
+132 Indrukwekkend!
+133 Het is u gelukt! Zoals u misschien al gemerkt heeft is er een kleine ster boven uw ruimtevaartuig verschenen. Hoe meer vijanden u verslaat hoe meer er verschijnen. Maar ze zijn niet alleen een frag-teller. \nLand weer en we zullen u laten zien waar deze sterren voor dienen.
+
+208 Speciale Vaardigheden...
+209 Zoals reeds beloofd vertellen we u nu waar de sterren voor dienen. Ze zijn een hulpbron voor uw ruimtevaartuigs speciale vaardigheden. Zo kunt u bijvoorbeeld uzelf en uw nabije vrienden genezen of het wegblazen of bevriezen van vijanden binnen een bepaald bereik! \nHoe meer sterren u heeft hoe groter het bereik en de kracht van de vaardigheid.
+
+210 Selectie...
+211 Voor het switchen tussen vaardigheden, kunt u <{PLAYER1_KEY_SPECIAL}> drukken. Om er een te kiezen kunt u ze switchen met <{PLAYER1_KEY_LEFT}> en <{PLAYER1_KEY_RIGHT}>! \nVoor deze les selecteer u de "Bevriezer"! Lanceer wanneer u dat gedaan heeft!
+
+245 Stop, {PLAYER1_NAME}!
+246 We hebben u verteld dat u de Bevriezer moest selecteren maar u heeft een andere gekozen.\n Keer terug en land en selecteer alsnog de Bevriezer.
+
+247 De bevriezer...
+248 Dit is een krachtige speciale vaardigheid die dichtbije vijandige schepen bevriest. \nOm uw nabije vijanden te bevriezen dient dichtbij uw vijanden te vliegen en <{PLAYER1_KEY_SPECIAL}> te drukken. U ziet dan langzaam zijn levenskracht afnemen... Totdat hij dood gaat.
+
+249 Oefen!
+250 Probeert nu uw vijand te bevriezen! \nVoor deze tutorial geven we u een aantal FragStars. Maar denk eraan: In de echte situatie dient u uw vijanden te vernietigen om deze sterren te bemachtigen!
+
+251 U heeft hem gemist, {PLAYER1_NAME}!
+252 Probeer het nogmaals. We herstellen uw FragStars.
+
+253 Het is u gelukt!
+254 Nu keer terug naar uw planeet en selecteer een andere speciale vaardigheid!
+
+255 Pas op, {PLAYER1_NAME}!
+256 Er is geen tijd meer om nog verder te testn!\nOnze vijanden hebben twee echte vechters gestuurd voor wraak!
+
+134 Versla ze!
+135 Toon uw vaardigheden! Score tenminste 5 punten door ze te doden. Uw huidige score staat naast uw naam vermeld.\nWe sturen een ervaren vechter met u mee om u te helpen, {PLAYER1_NAME}!
+
+136 Ongelooflijk!
+137 U heeft alle taken volbracht. Wat is er nu nog te doen?\nLaten we eens kijken naar het opties menu. Daar kunt u veel... nouja... zeer veel instellingen aanpassen.\nZo kunt u hier bijvoorbeeld uw naam of de kleur van uw ruimtevaartuig aanpassen...
+
+138 Wie is de man?
+139 U kunt een lijst van frags, punten, etc, tonen met de <{STATISTICS_KEY}>.\nDe nummers naast uw naam tonen uw frag-aantal en uw positie tenopichte van de beste piloot.
+
+140 Gefeliciteerd, {PLAYER1_NAME}!
+141 U heeft deze tutorial met succes volbracht. U bent nu klaar om mee te vechten in de GROTE OORLOG. Indien u nog verder wilt oefenen kunt u gewoon blijven wachten en er zullen nieuwe vijanden verschijnen. U kunt de training beëindigen met <Esc>\n\nVeel plezier met M.A.R.S.!
+
+142 U heeft gefaald!
+143 Te gek {PLAYER1_NAME}! U heeft uw gloednieuwe ruimtevaartuig vernietigd. Maar goed, we geven u een nieuwe. Wacht gewoon een paar seconden...
+
+144 Is het u opgevallen?
+145 Uw levenskracht mindert langzaam! Houdt uw levensenergie in de bovenste levensbalk goed in de gaten en land wanneer die bijna leeg is.
+
+146 Is het u opgevallen?
+147 Uw brandstof raakt langzaam op! Houdt uw brandstof meter in de gele balk goed in de gaten en land wanneer die bijna leeg is.
+
+148 U had hem bijna!
+149 Let goed op de naam van uw vijand. De kleur hiervan toont u hoeveel levensenergie hij nog over heeft. Hoe roder hoe zwakker deze vijand is.
+
+// tabmenu collumns
+
+154 Punten
+155 Frags
+244 Kannon schoten
+267 Doelen
+156 Gezamenlijke team punten
+157 Zelfmoords
+158 Keer Gestorven
+160 Totaal:
+161 Statistieken
+
+// Tool tips options menu
+
+176 Toont het aantal frames per seconde.\nWanneer dit erg laag is (<20), zou u de instellingen de video-tab moeten verlagen!
+177 Toont het aantal actieve deeltjes (Particles).
+178 Verwerpt tooltips zoals deze.
+179 Zet het formaat v.d. schermafbeeldingen.
+180 Wanneer deze toets is ingedrukt wordt er een schermafbeelding gemaakt in {CONFIG_PATH}screenshots/
+181 Deze toets switched naar het volgende muziek spoor.
+263 Deze toets switched naar de vorige muziek spoor.
+264 Speel de muziek af in willekeurige volgorde.
+182 Wanneer er zoveel schepen tegelijk exploderen dan kicked het slow motion effect in.
+183 Toont de taak van elke bot.
+184 Toont de tactische zones die belangrijke zijn voor de kunstmatige intelligentie.
+185 Toont de routes die de bots berekend hebben.
+186 Maximalizeerd het scherm en zal het volledige scherm dekken.
+187 Past het spel-update aan, aan de refresh snelheid van uw monitor\nWanneer deze optie ingeschakelt is speelt M.A.R.S. meestal soepeler.
+188 Schakelt coole effecten in zoals Warmte Waas maar reduceerd de performance.
+189 Stelt het scherm formaat in.\nDit heeft effect voor zowel Volledig Scherm- als de Scherm-modus.
+190 Indien u een hoge resolutie gebruikt dan zorgt deze optie ervoor dat de sterren veld loop later ingezet word.\nHet uitschakelen van deze optie kan uw performance een beetje verhogen.
+266 Toont een aantal bewegende sterren op de achtergrond. Dit is echt Eye Candy maar reduceert uw performance.
+191 Past de algemene Particle hoeveel aan.\nEen lagere waarde betekent meer performance.
+192 Past de Particle levensduur aan.\nEen lagere levensduur levert flink meer performance op.
+193 Past het volume van de achtergrond muziek aan.
+194 Past het volume van de geluidseffecten aan.
+195 Past het volume van de omroeper aan.
+243 Wanneer deze toets ingedrukt word tijdens het spelen van het spel dan word er een statistieken scherm getoond.
+
+// Tool tips in the start-a-new-game-window
+
+196 Stel het team van lokale spelers in.
+197 Activeer Lokale spelers.
+198 Pas het aantal schepen aan dat door de kunstmatige intelligentie bestuurd word.
+199 Punten limiet voor een team om het spel te winnen.
+200 Punten limiet voor een speler om het spel te winnen.
+201 Pas de sterkte van de bots aan
+202 Pas de hoeveel Power-Ups aan die verschijnen tijdens het spel.\nNul schakelt de Power-Ups geheel uit.
+
+// Interface notifications
+
+205 Scherm afdruk bewaard!
+214 Volgende song!
+260 Vorige song!
+258 Artiest: 
+259 Album: 
+
+// 268
