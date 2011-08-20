@@ -44,9 +44,9 @@ namespace window {
 
     namespace {
         // main window of the game
-        sf::RenderWindow window_;
-        sf::RenderImage  backBuffer_;
-        sf::Sprite       fxImage_;
+        sf::RenderWindow  window_;
+        sf::RenderTexture backBuffer_;
+        sf::Sprite        fxImage_;
 
         Vector2f         viewPort_;
         float            scale_(static_cast<float>(settings::C_resX)/SPACE_X_RESOLUTION);
@@ -268,7 +268,7 @@ namespace window {
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
-            fxImage_.SetImage(backBuffer_.GetImage(), true);
+            fxImage_.SetTexture(backBuffer_.GetTexture(), true);
 
             glEnable(GL_TEXTURE_2D);
             sf::Shader* shader = postFX::get();
@@ -329,12 +329,12 @@ namespace window {
     }
 
     void screenShot() {
-        sf::Image shot;
-        const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
-        if (static_cast<float>(windowWidth)/windowHeight > ratio)
-            shot.CopyScreen(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
-        else
-            shot.CopyScreen(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));
+        sf::Image shot = window_.Capture();
+       // const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+       // if (static_cast<float>(windowWidth)/windowHeight > ratio)
+       //     shot.Copy(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
+       // else
+       //     shot.Copy(window_, sf::IntRect(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_));
 
         time_t rawtime;
         struct tm* timeinfo;

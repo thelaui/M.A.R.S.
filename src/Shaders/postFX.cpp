@@ -30,10 +30,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace postFX {
 
     namespace {
-        sf::Shader      postFX_;
-        sf::RenderImage bumpMap_;
-        float           exposure_(1.f);
-        float           flashTimer_(0.f);
+        sf::Shader        postFX_;
+        sf::RenderTexture bumpMap_;
+        float             exposure_(1.f);
+        float             flashTimer_(0.f);
     }
 
     void update() {
@@ -81,7 +81,7 @@ namespace postFX {
             gluOrtho2D(0, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0);
             glEnable(GL_BLEND);
             glMatrixMode(GL_MODELVIEW);
-            postFX_.SetTexture("BumpMap", bumpMap_.GetImage());
+            postFX_.SetTexture("BumpMap", bumpMap_.GetTexture());
             postFX_.SetParameter("Exposure", exposure_);
         }
         else
