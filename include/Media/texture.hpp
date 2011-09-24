@@ -30,7 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 namespace texture {
     /// All different textures.
     enum TextureType {Home, Planet1, Planet2, Planet3, Planet4, Planet5, Planet6, Planet7, Planet8, Planet9, Planet10,
-                      Planet11, Planet12, Planet13, Planet14, Planet15, Sun1, SunHeat,Ice, Hole1, Ball, Particles, PowerUps, Ships, Weapons, MotherShip,
+                      Planet11, Planet12, Planet13, Planet14, Planet15, Sun1, SunHeat, Ice, Bolt, Cracks, Hole1, Ball, Particles, PowerUps, Ships, Weapons, MotherShip,
                       MotherShipPlayerLayer, Sign1, Sign2, Logo1, Cannon, CannonSocket, Stars1_large,
                       Stars1_medium, Stars2_large, Stars2_medium, Star, EnergyBars, Widgets, CountDown4, CountDown3,
                       CountDown2, CountDown1, CountDown0, ShockWave, Interface,

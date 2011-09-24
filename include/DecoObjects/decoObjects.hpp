@@ -26,7 +26,9 @@ class Ship;
 class Ball;
 class AmmoRocket;
 class Sun;
+class Bolt;
 class DecoObject;
+class SpaceObject;
 
 /// A namespace which handles objects in the space, which can't be interacted with.
 
@@ -72,6 +74,16 @@ namespace decoObjects {
     /// Removes an ice block from the list.
     /// \param toBeRemoved The ice block to be removed.
     void removeIce(DecoObject const* toBeRemoved);
+
+    /// Adds a Bolt between two Ships.
+    /// \param from The Ship the Bolt is coming from.
+    /// \param to The Ship the Bolt is going to.
+    /// \param width The Bolt's width.
+    void addBolt      (SpaceObject* from, SpaceObject* to, float width);
+
+    /// Removes a Bolt from the Bolt list.
+    /// \param toBeRemoved The Bolt to be removed.
+    void removeBolt   (DecoObject const* toBeRemoved);
 
     /// Adds a ShipName to the target Ship.
     /// \param ship The Ship to be named.

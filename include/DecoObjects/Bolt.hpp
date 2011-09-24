@@ -1,4 +1,4 @@
-/* specials.hpp
+/* Bolt.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,19 +15,32 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef SPECIALS_HPP_INCLUDED
-# define SPECIALS_HPP_INCLUDED
+# ifndef BOLT_HPP_INCLUDED
+# define BOLT_HPP_INCLUDED
 
-class Special;
-class Ship;
+# include "DecoObjects/DecoObject.hpp"
 
-namespace specials {
-    enum SpecialType {sFreeze=1, sHeal=2, sBlast=4, sFireWall=8, sShocker=16, sNoSpecial=32};
+class SpaceObject;
 
-    Special* create    (SpecialType type, Ship* parent);
-    Special* createNext(SpecialType type, Ship* parent);
-    Special* createPrev(SpecialType type, Ship* parent);
-}
+/// An object for drawing bolts between ships.
 
-# endif // SPECIALS_HPP_INCLUDED
+class Bolt: public DecoObject {
+    public:
+        Bolt(SpaceObject *from, SpaceObject *to, float width):
+            from_(from),
+            to_(to),
+            width_(width),
+            maxLifeTime_(0.3f),
+            lifeTime_(0.f) {}
+
+        void draw() const;
+
+    private:
+        SpaceObject *from_, *to_;
+        float width_;
+        mutable float maxLifeTime_, lifeTime_;
+};
+
+# endif // BOLT_HPP_INCLUDED
+
 

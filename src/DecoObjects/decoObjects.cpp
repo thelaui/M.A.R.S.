@@ -24,6 +24,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "DecoObjects/ShipHighlight.hpp"
 # include "DecoObjects/Evil.hpp"
 # include "DecoObjects/Ice.hpp"
+# include "DecoObjects/Bolt.hpp"
 
 # include <SFML/System.hpp>
 # include <vector>
@@ -37,6 +38,7 @@ namespace decoObjects {
         std::vector<DecoObject*> heats_;
         std::vector<DecoObject*> names_;
         std::list<DecoObject*> ices_ ;
+        std::list<DecoObject*> bolts_ ;
     }
 
     void update() {
@@ -54,7 +56,15 @@ namespace decoObjects {
             if((*it)!=NULL)
                 (*it)->draw();
             else {
-               it = ices_.erase(it);
+                it = ices_.erase(it);
+            }
+        }
+
+        for(std::list<DecoObject*>::iterator it=bolts_.begin(); it!=bolts_.end(); ++it) {
+            if((*it)!=NULL)
+                (*it)->draw();
+            else {
+                it = bolts_.erase(it);
             }
         }
     }
@@ -119,6 +129,19 @@ namespace decoObjects {
 
     void removeIce(DecoObject const* toBeRemoved) {
         for(std::list<DecoObject*>::iterator it=ices_.begin(); it!=ices_.end(); ++it)
+            if(*it==toBeRemoved) {
+                delete *it;
+                *it=NULL;
+                break;
+            }
+    }
+
+    void addBolt (SpaceObject* from, SpaceObject* to, float width) {
+        bolts_.push_back(new Bolt(from, to, width));
+    }
+
+    void removeBolt (DecoObject const* toBeRemoved) {
+        for(std::list<DecoObject*>::iterator it=bolts_.begin(); it!=bolts_.end(); ++it)
             if(*it==toBeRemoved) {
                 delete *it;
                 *it=NULL;

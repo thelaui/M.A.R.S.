@@ -36,7 +36,7 @@ class WeaponOptions: public UiWindow {
 
         static bool kOk_;
         static bool kAFK_, kBurner_, kFist_, kFlubba, kShotgun_, kRocket_, kRofle_, kH2OMG_;
-        static bool kFreeze_, kHeal_, kBlast_, kFireWall_;
+        static bool kFreeze_, kHeal_, kBlast_, kFireWall_, kShocker_;
 };
 
 # endif // WEAPONOPTIONS_HPP_INCLUDED

@@ -83,8 +83,9 @@ namespace settings {
     std::string C_dataPath =                "";
     std::string C_screenShotFormat =        "jpg";
     int         C_EnabledWeapons =          weapons::wAFK47 | weapons::wShotgun | weapons::wFlubba | weapons::wFist |
-                                            weapons::wRocketLauncher | weapons::wROFLE | weapons::wBurner;
-    int         C_EnabledSpecials =         specials::sBlast | specials::sFreeze | specials::sHeal | specials::sFireWall;
+                                            weapons::wRocketLauncher | weapons::wROFLE | weapons::wBurner | weapons::wH2OMG;
+    int         C_EnabledSpecials =         specials::sBlast | specials::sFreeze | specials::sHeal | specials::sFireWall |
+                                            specials::sShocker;
     int         C_EnabledWeaponsByUser =    C_EnabledWeapons;
     int         C_EnabledSpecialsByUser =   C_EnabledSpecials;
 

@@ -1,4 +1,4 @@
-/* specials.hpp
+/* Shocker.hpp
 
 Copyright (c) 2010 - 2011 by Felix Lauer and Simon Schneegans
 
@@ -15,19 +15,36 @@ more details.
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-# ifndef SPECIALS_HPP_INCLUDED
-# define SPECIALS_HPP_INCLUDED
+# ifndef SHOCKER_HPP_INCLUDED
+# define SHOCKER_HPP_INCLUDED
 
-class Special;
-class Ship;
+# include "Specials/Special.hpp"
 
-namespace specials {
-    enum SpecialType {sFreeze=1, sHeal=2, sBlast=4, sFireWall=8, sShocker=16, sNoSpecial=32};
+/// Special: Shocker.
+/// Fires shocking bolts.
 
-    Special* create    (SpecialType type, Ship* parent);
-    Special* createNext(SpecialType type, Ship* parent);
-    Special* createPrev(SpecialType type, Ship* parent);
-}
+class Shocker: public Special {
+    public:
+        /// Ctor which constructs the special.
+        Shocker(Ship* parent):
+              Special(specials::sBlast, parent, sf::String("SHOCKER")),
+              radius_(0.f) {};
 
-# endif // SPECIALS_HPP_INCLUDED
+        /// Blasts away nearby ships.
+        void activate() const;
+
+        float radius() const;
+
+        /// Draws the special.
+        void draw(float alpha) const;
+
+    private:
+        mutable float radius_;
+};
+
+# endif // SHOCKER_HPP_INCLUDED
+
+
+
+
 

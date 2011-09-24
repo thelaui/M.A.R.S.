@@ -42,6 +42,7 @@ class Ball: public MobileSpaceObject {
 
         friend class BotController;
         friend class Freezer;
+        friend class Shocker;
         template <typename Object> friend class Ice;
 
     private:

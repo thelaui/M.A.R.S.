@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Specials/Freezer.hpp"
 # include "Specials/Heal.hpp"
 # include "Specials/FireWall.hpp"
+# include "Specials/Shocker.hpp"
 # include "Specials/NoSpecial.hpp"
 # include "SpaceObjects/Ship.hpp"
 # include "Players/Player.hpp"
@@ -47,6 +48,7 @@ namespace specials {
             case sBlast:     return new Blast(parent);
             case sFireWall:  return new FireWall(parent);
             case sFreeze:    return new Freezer(parent);
+            case sShocker:   return new Shocker(parent);
             default:         return new NoSpecial(parent);
         }
     }

@@ -100,7 +100,7 @@ void BotController::checkSpecial() {
                     slaveSpecial(100);
                 break;
 
-            case specials::sBlast: case specials::sFireWall: {
+            case specials::sBlast: case specials::sFireWall: case specials::sShocker: {
                 int decision(0);
                 std::vector<Ship*> const& ships(ships::getShips());
                 for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {

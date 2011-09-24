@@ -36,6 +36,7 @@ bool WeaponOptions::kShotgun_(false);
 bool WeaponOptions::kRocket_(false);
 bool WeaponOptions::kRofle_(false);
 bool WeaponOptions::kH2OMG_(false);
+bool WeaponOptions::kShocker_(false);
 
 bool WeaponOptions::kFreeze_(false);
 bool WeaponOptions::kHeal_(false);
@@ -66,6 +67,7 @@ UiWindow* WeaponOptions::get() {
         instance_->addWidget(new Checkbox(new sf::String("HEAL"), NULL, &kHeal_, Vector2f(170,100), 100));
         instance_->addWidget(new Checkbox(new sf::String("BLAST"), NULL, &kBlast_, Vector2f(170,120), 100));
         instance_->addWidget(new Checkbox(new sf::String("FIRE WALL"), NULL, &kFireWall_, Vector2f(170,140), 100));
+        instance_->addWidget(new Checkbox(new sf::String("SHOCKER"), NULL, &kShocker_, Vector2f(170,160), 100));
     }
     return instance_;
 }
@@ -84,6 +86,7 @@ void WeaponOptions::onShow() {
     kHeal_ = settings::C_EnabledSpecialsByUser & specials::sHeal;
     kBlast_ = settings::C_EnabledSpecialsByUser & specials::sBlast;
     kFireWall_ = settings::C_EnabledSpecialsByUser & specials::sFireWall;
+    kShocker_ = settings::C_EnabledSpecialsByUser & specials::sShocker;
 }
 
 void WeaponOptions::checkWidgets() {
@@ -94,7 +97,8 @@ void WeaponOptions::checkWidgets() {
                                            (kFlubba ? weapons::wFlubba:0) | (kShotgun_ ? weapons::wShotgun:0) | (kRocket_ ? weapons::wRocketLauncher:0) |
                                            (kRofle_ ? weapons::wROFLE:0) | (kH2OMG_ ? weapons::wH2OMG:0);
 
-        settings::C_EnabledSpecialsByUser = (kFreeze_ ? specials::sFreeze:0) | (kHeal_ ? specials::sHeal:0) | (kBlast_ ? specials::sBlast:0) | (kFireWall_? specials::sFireWall:0);
+        settings::C_EnabledSpecialsByUser = (kFreeze_ ? specials::sFreeze:0) | (kHeal_ ? specials::sHeal:0) | (kBlast_ ? specials::sBlast:0) | (kFireWall_? specials::sFireWall:0) |
+                                            (kShocker_? specials::sShocker:0);
 
         if (settings::C_EnabledWeaponsByUser == 0)
             settings::C_EnabledWeaponsByUser = weapons::wNoWeapon;
