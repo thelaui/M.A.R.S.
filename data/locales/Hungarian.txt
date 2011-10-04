@@ -136,7 +136,7 @@
 
 // about
 
-057 Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett. \n\nHonlap: \nhttp://www.marsshooter.org
+057 Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett. \n\nHonlap: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

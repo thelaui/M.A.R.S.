@@ -97,7 +97,7 @@ void AmmoROFLE::onCollision(SpaceObject* with, Vector2f const& location,
         }
     }
 
-    if (with->type() != spaceObjects::oAmmoFlubba && with->type() != spaceObjects::oMiniAmmoFlubba)
+    if (with->type() != spaceObjects::oAmmoFlubba && with->type() != spaceObjects::oAmmoH2OMG && with->type() != spaceObjects::oMiniAmmoFlubba)
         killMe();
 }
 

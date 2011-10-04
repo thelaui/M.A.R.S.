@@ -19,6 +19,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # define SHOCKER_HPP_INCLUDED
 
 # include "Specials/Special.hpp"
+# include "SpaceObjects/Ball.hpp"
+
+# include <list>
 
 /// Special: Shocker.
 /// Fires shocking bolts.
@@ -27,8 +30,7 @@ class Shocker: public Special {
     public:
         /// Ctor which constructs the special.
         Shocker(Ship* parent):
-              Special(specials::sBlast, parent, sf::String("SHOCKER")),
-              radius_(0.f) {};
+              Special(specials::sBlast, parent, sf::String("SHOCKER")) {};
 
         /// Blasts away nearby ships.
         void activate() const;
@@ -39,7 +41,8 @@ class Shocker: public Special {
         void draw(float alpha) const;
 
     private:
-        mutable float radius_;
+        mutable std::list<Ship*> targets_;
+        mutable Ball* ballTarget_;
 };
 
 # endif // SHOCKER_HPP_INCLUDED

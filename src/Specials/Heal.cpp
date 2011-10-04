@@ -72,7 +72,7 @@ void Heal::draw(float alpha) const {
 }
 
 void Heal::activate() const {
-    if (parent_->fragStars_ > 0) {
+    if (parent_->fragStars_ > 0  && timer_ <= 0.f) {
         radius_                         = radius();
         std::vector<Ship*> const& ships = ships::getShips();
         for (std::vector<Ship*>::const_iterator it=ships.begin(); it!=ships.end(); ++it) {

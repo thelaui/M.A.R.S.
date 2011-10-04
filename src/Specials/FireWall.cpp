@@ -69,7 +69,7 @@ void FireWall::draw(float alpha) const {
 }
 
 void FireWall::activate() const {
-    if (parent_->fragStars_ > 0) {
+    if (parent_->fragStars_ > 0 && timer_ <= 0.f) {
         timer_ = parent_->fragStars_*1.5f;
         burnTimer_ = timer_;
         parent_->fragStars_ = 0;

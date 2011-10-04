@@ -132,7 +132,7 @@
 
 // about
 
-057 Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som styrs av gravitationslagen. \n\nHemsida: \nhttp://www.marsshooter.org
+057 Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som styrs av gravitationslagen. \n\nHemsida: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

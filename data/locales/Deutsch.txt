@@ -128,7 +128,7 @@
 
 // Über
 
-057 M.A.R.S. ist der erste Versuch, ein Spiel in OpenGL mit SFML zu erstellen. Steuer alleine oder zu zweit dein Weltraumschiff durch eine zweidimensionale Galaxis, beherrscht von den Kräften der Schwerkraft.\n\nHomepage: \nhttp://www.marsshooter.org
+057 M.A.R.S. ist der erste Versuch, ein Spiel in OpenGL mit SFML zu erstellen. Steuer alleine oder zu zweit dein Weltraumschiff durch eine zweidimensionale Galaxis, beherrscht von den Kräften der Schwerkraft.\n\nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // Lizenz
 

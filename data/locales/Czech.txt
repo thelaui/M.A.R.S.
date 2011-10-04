@@ -130,7 +130,7 @@
 
 // about
 
-057 Toto je první pokus o vytvoření hry v OpenGL se SFML. Jedná se o hru pro dva hráče, létání s loděmi v dvourozměrném prostoru, ovládaného zákony gravitace. \n\nDomovská stránka: \nhttp://www.marsshooter.org
+057 Toto je první pokus o vytvoření hry v OpenGL se SFML. Jedná se o hru pro dva hráče, létání s loděmi v dvourozměrném prostoru, ovládaného zákony gravitace. \n\nDomovská stránka: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

@@ -198,6 +198,7 @@ void AmmoRocket::onCollision(SpaceObject* with, Vector2f const& location,
             unfreeze = 1.f;
             break;
 
+        case spaceObjects::oAmmoH2OMG:
         case spaceObjects::oAmmoFlubba:
             amount = 5.f;
             unfreeze = 10.f;

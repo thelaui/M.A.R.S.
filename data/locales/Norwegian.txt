@@ -130,7 +130,7 @@
 
 // about
 
-057 Dette er første forsøk på å lage et spill i OpenGL ved hjelp av SFML. Dette er et spill for to spillere hvor dere styrer romskipene i et todimensjonalt spillmiljø, begrenset av tyngdekraftens påvirkning. \n\nHomepage: \nhttp://www.marsshooter.org
+057 Dette er første forsøk på å lage et spill i OpenGL ved hjelp av SFML. Dette er et spill for to spillere hvor dere styrer romskipene i et todimensjonalt spillmiljø, begrenset av tyngdekraftens påvirkning. \n\nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

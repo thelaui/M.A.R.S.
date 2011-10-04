@@ -37,7 +37,6 @@ inline int clamp(int x, int min, int max) {
 }
 
 namespace settings {
-
     // game settings ------ adjustable via options menu
     int         C_soundVolume =             30;
     int         C_announcerVolume =          0;
@@ -474,7 +473,7 @@ namespace settings {
                 else if (inputLine == "[pointLimitDM]") {
                     int value;
                     iss >> value;
-                    C_pointLimitDM = clamp(value, 1, 50);
+                    C_pointLimitDM = clamp(value, 1, 100);
                 }
                 else if (inputLine == "[pointLimitTDM]") {
                     int value;
@@ -494,7 +493,7 @@ namespace settings {
                 else if (inputLine == "[gameSpeed]") {
                     int value;
                     iss >> value;
-                    C_gameSpeed = clamp(value, 25, 150);
+                    C_gameSpeed = clamp(value, 50, 200);
                 }
                 else if (inputLine == "[playerIName]") {
                     sf::String tmp;

@@ -75,7 +75,7 @@ void Freezer::draw(float alpha) const {
 }
 
 void Freezer::activate() const {
-    if (parent_->fragStars_ > 0) {
+    if (parent_->fragStars_ > 0 && timer_ <= 0.f) {
 
         radius_              = radius();
         const float strength = parent_->fragStars_*14.f;

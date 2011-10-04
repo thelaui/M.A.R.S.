@@ -136,8 +136,8 @@ namespace decoObjects {
             }
     }
 
-    void addBolt (SpaceObject* from, SpaceObject* to, float width) {
-        bolts_.push_back(new Bolt(from, to, width));
+    void addBolt (SpaceObject* from, SpaceObject* to, float intensity) {
+        bolts_.push_back(new Bolt(from, to, intensity));
     }
 
     void removeBolt (DecoObject const* toBeRemoved) {

@@ -134,7 +134,7 @@
 
 // about
 
-057 M.A.R.S.是对用OpenGL和SFML制作游戏的一次尝试。\n这是一个适合最多两人进行的在二维宇宙中飞行的游戏，当然一切都是在重力的影响下进行的(:-P)。\n\n项目主页：\nhttp://www.marsshooter.org
+057 M.A.R.S.是对用OpenGL和SFML制作游戏的一次尝试。\n这是一个适合最多两人进行的在二维宇宙中飞行的游戏，当然一切都是在重力的影响下进行的(:-P)。\n\n项目主页：\nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

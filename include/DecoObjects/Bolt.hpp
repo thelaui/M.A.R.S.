@@ -26,19 +26,23 @@ class SpaceObject;
 
 class Bolt: public DecoObject {
     public:
-        Bolt(SpaceObject *from, SpaceObject *to, float width):
+        Bolt(SpaceObject *from, SpaceObject *to, float intensity):
             from_(from),
             to_(to),
-            width_(width),
+            intensity_(intensity >= 100.f ? 3 : (intensity >= 50.f ? 2 : 1)),
             maxLifeTime_(0.3f),
-            lifeTime_(0.f) {}
+            lifeTime_(0.f),
+            boltImage_(0),
+            flickerTimer_(0.f) {}
 
         void draw() const;
 
     private:
         SpaceObject *from_, *to_;
-        float width_;
+        int intensity_;
         mutable float maxLifeTime_, lifeTime_;
+        mutable int boltImage_;
+        mutable float flickerTimer_;
 };
 
 # endif // BOLT_HPP_INCLUDED

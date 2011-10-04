@@ -26,6 +26,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Hud/hud.hpp"
 # include "Media/text.hpp"
 # include "Players/Player.hpp"
+# include "Players/LocalPlayer.hpp"
 # include "Teams/Team.hpp"
 # include "Games/games.hpp"
 # include "Controllers/Controller.hpp"
@@ -83,8 +84,6 @@ Ship::Ship(Vector2f const& location, float rotation, Player* owner):
         currentSpecial_ = specials::create(settings::C_playerIISpecial, this);
     }
     else {
-        //life_ = 25.f + static_cast<float>(settings::C_iDumb)*1.75f;
-        //maxLife_ = life_;
         currentWeapon_  = weapons:: create(weapons::wAFK47, this);
         currentSpecial_ = specials::create(specials::sHeal, this);
     }
@@ -407,7 +406,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoH2OMG:
-            amount = strength*0.003f;
+            amount = strength*0.01f;
             waitForOtherDamage = 0.15f;
             setDamageSource(with->damageSource());
             unfreeze = 0.1f;
@@ -442,7 +441,7 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             break;
 
         case spaceObjects::oAmmoFist:
-            amount = 18.f+randomizer::random(-3.f, 3.f);
+            amount = 25.f+randomizer::random(-3.f, 3.f);
             setDamageSource(with->damageSource());
             unfreeze = 15.f;
             break;
@@ -473,19 +472,18 @@ void Ship::onCollision(SpaceObject* with, Vector2f const& location,
             && amount < life_)
             amount *= (10.f - 0.09f*settings::C_iDumb);
 
-        life_ -= amount;
         if ((damageSource_ && (damageSource_->controlType_ == controllers::cPlayer1 || damageSource_->controlType_ == controllers::cPlayer2))
             || owner_->controlType_ == controllers::cPlayer1 ||  owner_->controlType_ == controllers::cPlayer2) {
-                if (damageCheckTimer_ <= 0.f)
-                    damageCheckTimer_ = waitForOtherDamage;
-                damageByLocalPlayer_ -= amount;
+
+                Vector2f direction;
+
                 MobileSpaceObject* target = dynamic_cast<MobileSpaceObject*>(with);
                 if (target)
-                    damageDirection_ += target->velocity();
-                else
-                    damageDirection_ = Vector2f();
-                ++collisionCount_;
+                    direction = target->velocity();
+
+         drainLife(damageSource_, amount, direction, waitForOtherDamage);
         }
+        else life_ -= amount;
     }
 }
 
@@ -512,8 +510,23 @@ void Ship::onShockWave(Player* damageSource, float intensity) {
 void Ship::setDamageSource(Player* evilOne) {
     if(frozen_<=0.f) {
         damageSource_ = evilOne;
-        damageSourceResetTimer_ = 1.5f;
+        damageSourceResetTimer_ = 1.8f;
     }
+}
+
+void Ship::drainLife(Player* source, int amount, Vector2f const& direction, float waitForOtherDamage) {
+    if (dynamic_cast<LocalPlayer*>(source) != NULL) {
+        if (damageCheckTimer_ <= 0.f)
+            damageCheckTimer_ = waitForOtherDamage;
+        damageByLocalPlayer_ -= amount;
+
+        damageDirection_ += direction;
+
+        ++collisionCount_;
+    }
+
+    setDamageSource(source);
+    life_ -= amount;
 }
 
 void Ship::heal(Player* source, int amount) {

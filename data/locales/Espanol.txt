@@ -129,7 +129,7 @@
 
 // Sobre
 
-057 Este es un primer intento de crear un juego en OpenGL con SFML. Es un juego para dos jugadores, volando con naves en un entorno espacial de dos dimensiones, que se rige por las leyes de la gravedad. \n \nHomepage: \nhttp://www.marsshooter.org
+057 Este es un primer intento de crear un juego en OpenGL con SFML. Es un juego para dos jugadores, volando con naves en un entorno espacial de dos dimensiones, que se rige por las leyes de la gravedad. \n \nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // Licencia
 

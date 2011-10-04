@@ -124,7 +124,7 @@
 
 // about
 
-057 Dit is de eerste poging voor een spel in OenGL met SFML. Het is een spel voor twee spelers, met schepen in een twee-dimensionale omgeving die geregeerd word door de wetten der zwaartekracht. \n\nHomepage: \nhttp://www.marsshooter.org
+057 Dit is de eerste poging voor een spel in OenGL met SFML. Het is een spel voor twee spelers, met schepen in een twee-dimensionale omgeving die geregeerd word door de wetten der zwaartekracht. \n\nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

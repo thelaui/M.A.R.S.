@@ -131,7 +131,7 @@
 
 // about
 
-057 Questo è il primo tentativo di creare un gioco in OpenGL con SFML. È un gioco per due persone che controllano delle navicelle in uno spazio bidimensionale governato dalle leggi della gravità. \n\nHomepage: \nhttp://www.marsshooter.org
+057 Questo è il primo tentativo di creare un gioco in OpenGL con SFML. È un gioco per due persone che controllano delle navicelle in uno spazio bidimensionale governato dalle leggi della gravità. \n\nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 
