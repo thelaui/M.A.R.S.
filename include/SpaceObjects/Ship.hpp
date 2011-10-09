@@ -42,7 +42,7 @@ class Ship: public MobileSpaceObject {
         void onShockWave(Player* damageSource, float intensity);
 
         void setDamageSource(Player* evilOne);
-        void drainLife(Player* source, int amount, Vector2f const& direction, float waitForOtherDamage = 0.001f);
+        void drainLife(Player* source, float amount, Vector2f const& direction, float waitForOtherDamage = 0.001f);
 
         void heal(Player* source, int amount);
         void refuel(Player* source, int amount);

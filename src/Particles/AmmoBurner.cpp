@@ -80,30 +80,6 @@ void AmmoBurner::draw() const {
 
 void AmmoBurner::onCollision(SpaceObject* with, Vector2f const& location,
                         Vector2f const& direction, Vector2f const& velocity) {
-    float strength = (velocity-velocity_).length();
-
-    if (strength > 50.f) {
-
-        switch (with->type()) {
-            case spaceObjects::oShip:
-                sound::playSound(sound::LaserCollide, location, (strength-50)/3);
-                break;
-
-            case spaceObjects::oBall:
-                sound::playSound(sound::LaserCollide, location, (strength-50)/3);
-                break;
-
-            case spaceObjects::oPlanet: case spaceObjects::oHome:
-                sound::playSound(sound::LaserCollide, location, (strength-50)/3);
-                break;
-
-            case spaceObjects::oSun:
-                sound::playSound(sound::LaserCollide, location, (strength-50)/3);
-                break;
-
-            default:;
-        }
-    }
     killMe();
 }
 

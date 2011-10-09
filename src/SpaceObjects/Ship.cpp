@@ -514,8 +514,8 @@ void Ship::setDamageSource(Player* evilOne) {
     }
 }
 
-void Ship::drainLife(Player* source, int amount, Vector2f const& direction, float waitForOtherDamage) {
-    if (dynamic_cast<LocalPlayer*>(source) != NULL) {
+void Ship::drainLife(Player* source, float amount, Vector2f const& direction, float waitForOtherDamage) {
+    if (dynamic_cast<LocalPlayer*>(source) != NULL || dynamic_cast<LocalPlayer*>(owner_) != NULL) {
         if (damageCheckTimer_ <= 0.f)
             damageCheckTimer_ = waitForOtherDamage;
         damageByLocalPlayer_ -= amount;
