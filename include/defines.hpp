@@ -20,8 +20,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # define VERSION_MAJOR               "0"
 # define VERSION_MINOR               "7"
-# define VERSION_PATCH               "3"
-# define VERSION_REVIS               "213"
+# define VERSION_PATCH               "4"
+# define VERSION_REVIS               "215"
 
 # define SHIP_GRAPHICS_COUNT         15
 # define SHIP_RADIUS                 18.f
