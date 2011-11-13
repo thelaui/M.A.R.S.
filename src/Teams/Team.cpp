@@ -26,6 +26,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Games/games.hpp"
 # include "Controllers/BotController.hpp"
 
+# include <set>
+
 Team::Team(Color3f const& color):
     evaluationTimer_(0.f),
     home_(NULL),
