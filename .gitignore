@@ -1,0 +1,7 @@
+mars
+*.cbp
+*.depend
+*.layout
+*.workspace
+build
+obj
