@@ -50,10 +50,10 @@ void LeftLife::draw() const {
         int first(teams::getFirstPoints());
         if (player->team()->points() == first) {
             int second(teams::getSecondPoints());
-            sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ +" << first-second << ")";
+            sstr << player->name().toAnsiString() << " (" << player->team()->points() << "/ +" << first-second << ")";
         }
         else
-            sstr << player->name().ToAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
+            sstr << player->name().toAnsiString() << " (" << player->team()->points() << "/ -" << first-player->team()->points() << ")";
 
         text::drawScreenText(sf::String(sstr.str()), Vector2f(11, port.y_-74), 18.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
         text::drawScreenText(sf::String(sstr.str()), Vector2f(10, port.y_-75), 18.f, TEXT_ALIGN_LEFT, color);

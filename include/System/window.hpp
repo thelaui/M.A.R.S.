@@ -54,7 +54,7 @@ namespace window {
     void startDrawHUD();
 
     /// Draws a SFML drawable in the window.
-    void draw(sf::Drawable const& toBeDrawn);
+    void draw(sf::Drawable const& toBeDrawn, sf::RenderStates const& states, sf::Shader* shader = NULL);
 
     int isKeyDown(Key const& key);
 

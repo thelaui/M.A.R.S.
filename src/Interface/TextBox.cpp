@@ -34,7 +34,7 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         int lastSpace(0);
 
         // search for "\n" and replace them with '\n'
-        for (unsigned int i=0; i<wholeText.GetSize()-1; ++i) {
+        for (unsigned int i=0; i<wholeText.getSize()-1; ++i) {
             if (wholeText[i] == '\\' && wholeText[i+1] == 'n') {
                 wholeText[i]  = ' ';
                 wholeText[++i]= '\n';
@@ -42,12 +42,12 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         }
 
         // remove doubled spaces
-        for (unsigned int i=0; i<wholeText.GetSize()-1; ++i)
+        for (unsigned int i=0; i<wholeText.getSize()-1; ++i)
             if (wholeText[i] == ' ' && wholeText[i+1] == ' ')
-                wholeText.Erase(i--, 1);
+                wholeText.erase(i--, 1);
 
         // break lines
-        for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+        for (unsigned int i=0; i<wholeText.getSize(); ++i) {
             if (wholeText[i] == '\n') {
                 line = "";
                 word = "";
@@ -55,9 +55,9 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
             else if (wholeText[i] != ' ') {
                 word += wholeText[i];
                 sf::String tmp(line + word);
-                if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_-10) {
+                if (text::getCharacterPos(tmp, tmp.getSize(), 12.f, TEXT_ALIGN_LEFT) > width_-10) {
                     if (lastSpace == 0) {
-                        wholeText.Insert(i-1, '\n');
+                        wholeText.insert(i-1, '\n');
                         line = "";
                         word = wholeText[i];
                         ++i;
@@ -79,7 +79,7 @@ TextBox::TextBox(sf::String* text, Vector2f const& topLeft, int width, int heigh
         // create single labels
         line = "";
         int top(0);
-        for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+        for (unsigned int i=0; i<wholeText.getSize(); ++i) {
             if (wholeText[i] == '\n') {
                 texts_.push_back(new sf::String(line));
                 line = "";

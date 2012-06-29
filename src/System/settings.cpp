@@ -162,7 +162,7 @@ namespace settings {
             outStream << "[gameSpeed] "             << C_gameSpeed << std::endl;
             outStream << "[playerIName] ";
             int i(0);
-            while (i < 12 && i < C_playerIName.GetSize()) {
+            while (i < 12 && i < C_playerIName.getSize()) {
                 outStream<<C_playerIName[i]<<" ";
                 ++i;
             }
@@ -177,7 +177,7 @@ namespace settings {
             outStream << "[playerISpecial] "        <<  C_playerISpecial << std::endl;
             outStream << "[playerIIName] ";
             i = 0;
-            while (i < 12 && i < C_playerIIName.GetSize()) {
+            while (i < 12 && i < C_playerIIName.getSize()) {
                 outStream<<C_playerIIName[i]<<" ";
                 ++i;
             }
@@ -190,8 +190,8 @@ namespace settings {
             outStream << "[playerIIShip] "          <<  C_playerIIShip << std::endl;
             outStream << "[playerIIWeapon] "        <<  C_playerIIWeapon << std::endl;
             outStream << "[playerIISpecial] "       <<  C_playerIISpecial << std::endl;
-            outStream << "[connectIP] "             <<  C_ip.ToAnsiString() << std::endl;
-            outStream << "[connectPort] "           <<  C_port.ToAnsiString() << std::endl;
+            outStream << "[connectIP] "             <<  C_ip.toAnsiString() << std::endl;
+            outStream << "[connectPort] "           <<  C_port.toAnsiString() << std::endl;
             outStream << "[networkTeamRed] "        << (C_networkPlayerI ? "true" : "false") << std::endl;
             outStream << "[showInfoHide] "          << (C_showInfoHide ? "true" : "false") << std::endl;
             outStream << "[showInfoSB] "            << (C_showInfoSB ? "true" : "false") << std::endl;
@@ -349,7 +349,7 @@ namespace settings {
         std::vector<sf::String> lines;
         if (file::load(C_configPath + "mars.cfg", lines)) {
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                std::istringstream iss (it->ToAnsiString());
+                std::istringstream iss (it->toAnsiString());
                 std::string inputLine;
                 iss >> inputLine;
                 if      (inputLine == "[soundVolume]") {
@@ -501,7 +501,7 @@ namespace settings {
                     iss >> character;
                     int i(0);
                     while (character != 0 && i++ < 12) {
-                        tmp.Insert(tmp.GetSize(), character);
+                        tmp.insert(tmp.getSize(), character);
                         iss >> character;
                     }
                     C_playerIName = tmp;
@@ -512,7 +512,7 @@ namespace settings {
                     iss >> character;
                     int i(0);
                     while (character != 0 && i++ < 12) {
-                        tmp.Insert(tmp.GetSize(), character);
+                        tmp.insert(tmp.getSize(), character);
                         iss >> character;
                     }
                     C_playerIIName = tmp;

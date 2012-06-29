@@ -55,7 +55,7 @@ namespace file {
                 line = std::string(outstring);
 
                 std::basic_string<sf::Uint32> utf32line;
-                sf::Utf8::ToUtf32(line.begin(), line.end(), back_inserter(utf32line));
+                sf::Utf8::toUtf32(line.begin(), line.end(), back_inserter(utf32line));
 
                 // ignore comments and nearly empty lines
                 if(utf32line.size() > 2 && (utf32line[0] != 47 && utf32line[1] != 47))

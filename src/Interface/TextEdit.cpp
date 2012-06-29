@@ -33,7 +33,7 @@ TextEdit::TextEdit (sf::String* text, sf::String* value, sf::String fallBack, Ve
     fallBack_(fallBack),
     label_(NULL),
     maxLength_(maxLength),
-    cursorPos_(value->GetSize()),
+    cursorPos_(value->getSize()),
     cursorTimer_(0),
     type_(type),
     labelWidth_(labelWidth) {
@@ -56,11 +56,11 @@ void TextEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     if (label_)
         label_->mouseMoved(position);
-    if (pressed_ && sf::Mouse::IsButtonPressed(sf::Mouse::Left)) {
+    if (pressed_ && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->getSize())
             ++ cursorPos_;
     }
 }
@@ -77,7 +77,7 @@ void TextEdit::mouseLeft(bool down) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
-        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->GetSize())
+        while (text::getCharacterPos(*value_, cursorPos_, 12.f, TEXT_ALIGN_CENTER) + 2*mirror + getTopLeft().x_ +(width()+labelWidth_*mirror)/2 < window::getMousePosition().x_ - 3 && cursorPos_ < value_->getSize())
             ++ cursorPos_;
     }
 }
@@ -87,21 +87,21 @@ void TextEdit::keyEvent(bool down, Key const& key) {
         if (pressed_) {
             if (down) {
                 // backspace
-                if (key.code_.keyBoard_ == sf::Keyboard::Back && cursorPos_ > 0) {
-                    value_->Erase(cursorPos_-1, 1);
+                if (key.code_.keyBoard_ == sf::Keyboard::BackSpace && cursorPos_ > 0) {
+                    value_->erase(cursorPos_-1, 1);
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
                 // delete
-                else if (key.code_.keyBoard_ == sf::Keyboard::Delete && cursorPos_ < value_->GetSize()) {
-                    value_->Erase(cursorPos_, 1);
+                else if (key.code_.keyBoard_ == sf::Keyboard::Delete && cursorPos_ < value_->getSize()) {
+                    value_->erase(cursorPos_, 1);
                 }
                 // move cursor
                 else if (key.code_.keyBoard_ == sf::Keyboard::Left && cursorPos_ > 0) {
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
-                else if (key.code_.keyBoard_ == sf::Keyboard::Right && cursorPos_ < value_->GetSize()) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Right && cursorPos_ < value_->getSize()) {
                     ++cursorPos_;
                     cursorTimer_ = 0;
                 }
@@ -123,22 +123,22 @@ void TextEdit::keyEvent(bool down, Key const& key) {
 void TextEdit::textEntered(sf::Uint32 keyCode) {
     if (pressed_) {
         if (type_ == TEXT_EDIT) {
-            if (value_->GetSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32 && keyCode != 127) {
-                value_->Insert(cursorPos_, keyCode);
+            if (value_->getSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32 && keyCode != 127) {
+                value_->insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == IP_EDIT) {
-             if (((keyCode > 47 && keyCode < 58) || keyCode == 46) && value_->GetSize() < maxLength_) {
-                value_->Insert(cursorPos_, keyCode);
+             if (((keyCode > 47 && keyCode < 58) || keyCode == 46) && value_->getSize() < maxLength_) {
+                value_->insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }
         }
         else if (type_ == PORT_EDIT) {
-             if (value_->GetSize() < maxLength_) {
-                value_->Insert(cursorPos_, keyCode);
+             if (value_->getSize() < maxLength_) {
+                value_->insert(cursorPos_, keyCode);
                 ++cursorPos_;
                 cursorTimer_ = 0;
             }

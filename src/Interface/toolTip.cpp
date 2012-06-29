@@ -49,10 +49,10 @@ namespace toolTip {
 
             lines_.clear();
 
-            if (wholeText.GetSize() > 0) {
+            if (wholeText.getSize() > 0) {
 
                 // search for "\n" and replace them with '\n'
-                for (unsigned int i=0; i<wholeText.GetSize()-1; ++i) {
+                for (unsigned int i=0; i<wholeText.getSize()-1; ++i) {
                     if (wholeText[i] == '\\' && wholeText[i+1] == 'n') {
                         wholeText[i]  = ' ';
                         wholeText[++i]= '\n';
@@ -60,12 +60,12 @@ namespace toolTip {
                 }
 
                 // remove doubled spaces
-                for (unsigned int i=0; i<wholeText.GetSize()-1; ++i)
+                for (unsigned int i=0; i<wholeText.getSize()-1; ++i)
                     if (wholeText[i] == ' ' && wholeText[i+1] == ' ')
-                        wholeText.Erase(i--, 1);
+                        wholeText.erase(i--, 1);
 
                 // break lines
-                for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+                for (unsigned int i=0; i<wholeText.getSize(); ++i) {
                     if (wholeText[i] == '\n') {
                         line = "";
                         word = "";
@@ -73,9 +73,9 @@ namespace toolTip {
                     else if (wholeText[i] != ' ') {
                         word += wholeText[i];
                         sf::String tmp(line + word);
-                        if (text::getCharacterPos(tmp, tmp.GetSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
+                        if (text::getCharacterPos(tmp, tmp.getSize(), 12.f, TEXT_ALIGN_LEFT) > width_) {
                             if (lastSpace == 0) {
-                                wholeText.Insert(i-1, '\n');
+                                wholeText.insert(i-1, '\n');
                                 line = "";
                                 word = wholeText[i];
                                 ++i;
@@ -97,7 +97,7 @@ namespace toolTip {
                 // create single labels
                 line = "";
                 int top(0);
-                for (unsigned int i=0; i<wholeText.GetSize(); ++i) {
+                for (unsigned int i=0; i<wholeText.getSize(); ++i) {
                     if (wholeText[i] == '\n') {
                         lines_.push_back(line);
                         line = "";
@@ -117,7 +117,7 @@ namespace toolTip {
             int   width(10);
 
             for (std::vector<sf::String>::iterator it = lines_.begin(); it!=lines_.end(); ++it) {
-                int tmp(text::getCharacterPos(*it, it->GetSize(), 12.f, TEXT_ALIGN_LEFT) + 10);
+                int tmp(text::getCharacterPos(*it, it->getSize(), 12.f, TEXT_ALIGN_LEFT) + 10);
                 if (tmp > width)
                     width = tmp;
             }

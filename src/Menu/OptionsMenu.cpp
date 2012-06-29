@@ -105,14 +105,14 @@ UiWindow* OptionsMenu::get() {
         tabGraphics->addWidget(new LabeledBox(locales::getLocale(locales::WindowSettings), Vector2f(10, 30), 560, 110));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::VerticalSynchronisation), locales::getLocale(locales::ttVerticalSynchronisation), &vsync_, Vector2f(20,80), 150));
         tabGraphics->addWidget(new Checkbox(locales::getLocale(locales::Shaders), locales::getLocale(locales::ttShaders), &shaders_, Vector2f(20,100), 150));
-        std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
+        std::vector<sf::VideoMode> modes = sf::VideoMode::getFullscreenModes();
         std::vector<sf::String> resolutions;
         std::vector<sf::String> colorDepths;
         for (std::vector<sf::VideoMode>::iterator it = modes.begin(); it != modes.end(); ++it) {
-            if (it->Width >= 800 && it->BitsPerPixel >= 8) {
+            if (it->width >= 800 && it->bitsPerPixel >= 8) {
                 std::stringstream res, depth;
-                res << it->Width << " x " << it->Height;
-                depth << it->BitsPerPixel;
+                res << it->width << " x " << it->height;
+                depth << it->bitsPerPixel;
                 sf::String resString(res.str()), depthString(depth.str());
 
                 bool newDepth(true), newRes(true);
@@ -267,11 +267,11 @@ void OptionsMenu::onShow() {
     else if (settings::C_screenShotFormat == "jpg") format_ = "JPEG (*.jpg)";
 
     sf::VideoMode mode(settings::C_resX, settings::C_resY);
-    std::vector<sf::VideoMode> modes = sf::VideoMode::GetFullscreenModes();
-    if (modes.size() > 0 && !mode.IsValid()) {
-        mode = sf::VideoMode::GetFullscreenModes().front();
-        settings::C_resX = mode.Width;
-        settings::C_resY = mode.Height;
+    std::vector<sf::VideoMode> modes = sf::VideoMode::getFullscreenModes();
+    if (modes.size() > 0 && !mode.isValid()) {
+        mode = sf::VideoMode::getFullscreenModes().front();
+        settings::C_resX = mode.width;
+        settings::C_resY = mode.height;
     }
 
     std::stringstream sstr1;

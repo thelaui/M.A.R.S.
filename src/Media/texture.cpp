@@ -32,13 +32,13 @@ namespace texture {
         void loadTexture_(TextureType type, std::string fileName) {
             textures_[type] = new GLuint;
             sf::Image img;
-            img.LoadFromFile(fileName);
+            img.loadFromFile(fileName);
 
             // convert sf::Image to GLuint
-            const sf::Uint8* ptr = img.GetPixelsPtr();
+            const sf::Uint8* ptr = img.getPixelsPtr();
             glGenTextures(1, textures_[type]);
             glBindTexture(GL_TEXTURE_2D, *textures_[type]);
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.GetWidth(), img.GetHeight(), 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.getSize().x, img.getSize().y, 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);
             if (type == Interface || type == Stars1_large || type == Stars2_large || type == Stars1_medium || type == Stars2_medium) {
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
                 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);

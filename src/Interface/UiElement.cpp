@@ -40,13 +40,13 @@ UiElement::UiElement(Vector2f const& topLeft, int width, int height):
 void UiElement::mouseMoved(Vector2f const& position) {
     Vector2f topLeftAbs(getTopLeft());
     if (locales::getCurrentLocale().LTR_) {
-        if ((!sf::Mouse::IsButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
+        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
             hovered_ = true;
         else
             hovered_ = false;
     }
     else {
-        if ((!sf::Mouse::IsButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
+        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
             hovered_ = true;
         else
             hovered_ = false;

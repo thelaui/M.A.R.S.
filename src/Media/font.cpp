@@ -32,7 +32,7 @@ namespace font {
         if (it == fonts_.end()) {
             // load it from file and...
             sf::Font* font = new sf::Font();
-            font->LoadFromFile(settings::C_dataPath + "fonts/" + locales::getLocales()[languageID].font_);
+            font->loadFromFile(settings::C_dataPath + "fonts/" + locales::getLocales()[languageID].font_);
             fonts_.insert(std::make_pair(languageID, font));
             // ... return it afterwards
             return font;

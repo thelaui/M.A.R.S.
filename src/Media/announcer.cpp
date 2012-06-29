@@ -37,20 +37,20 @@ namespace announcer {
 
         void loadSound_(SoundType sound, std::string fileName) {
             sounds_[sound] = new sf::SoundBuffer;
-            if (!sounds_[sound]->LoadFromFile(fileName))
+            if (!sounds_[sound]->loadFromFile(fileName))
                 std::cout << "Failed to load Soundfile \"" << fileName << "\"!" << std::endl;
         }
 
         void playSound(SoundType sound) {
             // check if sound is already loaded
             if (sounds_[sound] != NULL) {
-                if (soundChannel_.GetStatus() != sf::Sound::Playing) {
+                if (soundChannel_.getStatus() != sf::Sound::Playing) {
                     // play sound
-                    soundChannel_.SetBuffer(*sounds_[sound]);
-                    soundChannel_.SetVolume(static_cast<float>(settings::C_announcerVolume));
-                    soundChannel_.SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 0.f);
-                    soundChannel_.SetAttenuation(0.f);
-                    soundChannel_.Play();
+                    soundChannel_.setBuffer(*sounds_[sound]);
+                    soundChannel_.setVolume(static_cast<float>(settings::C_announcerVolume));
+                    soundChannel_.setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 0.f);
+                    soundChannel_.setAttenuation(0.f);
+                    soundChannel_.play();
                 }
             }
             else {
@@ -76,15 +76,15 @@ namespace announcer {
         if (settings::C_announcerVolume > 0) {
             float slowMoTime(timer::slowMoTime());
             if (slowMoTime > 0.75f) {
-                soundChannel_.SetPitch(slowMoTime*0.666f);
+                soundChannel_.setPitch(slowMoTime*0.666f);
             }
             else if (slowMoTime > 0.25f) {
-                soundChannel_.SetPitch(0.5f);
+                soundChannel_.setPitch(0.5f);
             }
             else if (slowMoTime > 0.0f) {
-                soundChannel_.SetPitch(1.f-slowMoTime*2.f);
+                soundChannel_.setPitch(1.f-slowMoTime*2.f);
             }
-            else soundChannel_.SetPitch(1.f);
+            else soundChannel_.setPitch(1.f);
         }
     }
 

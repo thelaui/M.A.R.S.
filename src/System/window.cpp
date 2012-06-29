@@ -45,6 +45,7 @@ namespace window {
     namespace {
         // main window of the game
         sf::RenderWindow  window_;
+        sf::Clock         clock_;
         sf::RenderTexture backBuffer_;
         sf::Sprite        fxImage_;
 
@@ -55,19 +56,25 @@ namespace window {
         const float      ratio(static_cast<float>(SPACE_X_RESOLUTION)/static_cast<float>(SPACE_Y_RESOLUTION));
 
         void setViewPort() {
-            const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+            const int windowHeight(window_.getSize().y), windowWidth(window_.getSize().x);
+            sf::View view(sf::FloatRect(0,0, windowWidth, windowHeight));
             if (static_cast<float>(windowWidth)/windowHeight > ratio) {
+
+                view.setViewport(sf::FloatRect((windowWidth-viewPort_.x_)*0.5f / windowWidth, 0, 1, 1));
                 glViewport((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_);
             }
             else {
+                view.setViewport(sf::FloatRect(0, (windowHeight-viewPort_.y_)*0.5f / windowHeight, 1, 1));
                 glViewport(0, (windowHeight-viewPort_.y_)*0.5f, viewPort_.x_, viewPort_.y_);
             }
+
+            window_.setView(view);
         }
 
 
         void resized() {
-            window_.SetActive(true);
-            int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
+            window_.setActive(true);
+            int windowHeight(window_.getSize().y), windowWidth(window_.getSize().x);
             // if windows aspect ration is greater than aspect ratio of space
             if (static_cast<float>(windowWidth)/windowHeight > ratio) {
                 scale_ = static_cast<float>(windowHeight)/SPACE_Y_RESOLUTION;
@@ -84,58 +91,58 @@ namespace window {
             setViewPort();
 
             if (settings::C_shaders) {
-                backBuffer_.SetActive(true);
-                backBuffer_.Clear();
-                backBuffer_.Create(viewPort_.x_, viewPort_.y_);
+                backBuffer_.setActive(true);
+                backBuffer_.clear();
+                backBuffer_.create(viewPort_.x_, viewPort_.y_);
                 glViewport(0,0,viewPort_.x_, viewPort_.y_);
-                backBuffer_.SetSmooth(false);
+                backBuffer_.setSmooth(false);
             }
         }
 
         void update() {
-            timer::update(window_.GetFrameTime()*0.001f);
+            timer::update(clock_.restart().asSeconds());
             sf::Event event;
-            while (window_.PollEvent(event)) {
-                if      (event.Type == sf::Event::Resized)
+            while (window_.pollEvent(event)) {
+                if      (event.type == sf::Event::Resized)
                     resized();
-                else if (event.Type == sf::Event::Closed)
+                else if (event.type == sf::Event::Closed)
                     close();
-                else if (event.Type == sf::Event::KeyPressed) {
+                else if (event.type == sf::Event::KeyPressed) {
                     if (!menus::visible())
-                        controllers::singleKeyEvent(Key(event.Key.Code));
-                    menus::keyEvent(true, Key(event.Key.Code));
+                        controllers::singleKeyEvent(Key(event.key.code));
+                    menus::keyEvent(true, Key(event.key.code));
                 }
-                else if (event.Type == sf::Event::KeyReleased) {
-                    menus::keyEvent(false, Key(event.Key.Code));
+                else if (event.type == sf::Event::KeyReleased) {
+                    menus::keyEvent(false, Key(event.key.code));
                 }
-                else if (event.Type == sf::Event::TextEntered) {
+                else if (event.type == sf::Event::TextEntered) {
                     if (menus::visible())
-                        menus::textEntered(event.Text.Unicode);
+                        menus::textEntered(event.text.unicode);
                 }
-                else if (event.Type == sf::Event::MouseMoved) {
+                else if (event.type == sf::Event::MouseMoved) {
                     if (menus::visible())
-                        menus::mouseMoved(Vector2f(event.MouseMove.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseMove.Y - (window_.GetHeight() - viewPort_.y_)/2));
+                        menus::mouseMoved(Vector2f(event.mouseMove.x - (window_.getSize().x - viewPort_.x_)/2, event.mouseMove.y - (window_.getSize().y - viewPort_.y_)/2));
                 }
-                else if (event.Type == sf::Event::MouseButtonPressed) {
-                    if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                else if (event.type == sf::Event::MouseButtonPressed) {
+                    if (menus::visible() && event.mouseButton.button == sf::Mouse::Left)
                         menus::mouseLeft(true);
                 }
-                else if (event.Type == sf::Event::MouseButtonReleased) {
-                    if (menus::visible() && event.MouseButton.Button == sf::Mouse::Left)
+                else if (event.type == sf::Event::MouseButtonReleased) {
+                    if (menus::visible() && event.mouseButton.button == sf::Mouse::Left)
                         menus::mouseLeft(false);
                 }
-                else if (event.Type == sf::Event::JoystickButtonPressed) {
+                else if (event.type == sf::Event::JoystickButtonPressed) {
                     if (timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
-                            controllers::singleKeyEvent(Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
-                        menus::keyEvent(true, Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
+                            controllers::singleKeyEvent(Key(event.joystickButton.joystickId, event.joystickButton.button));
+                        menus::keyEvent(true, Key(event.joystickButton.joystickId, event.joystickButton.button));
                         joyButtonTimer_ = timer::realTotalTime();
                     }
                 }
-                else if (event.Type == sf::Event::JoystickButtonReleased)
-                    menus::keyEvent(false, Key(event.JoystickButton.JoystickId, event.JoystickButton.Button));
-                else if (event.Type == sf::Event::JoystickMoved) {
-                    Key key(event.JoystickMove.JoystickId, event.JoystickMove.Axis, event.JoystickMove.Position);
+                else if (event.type == sf::Event::JoystickButtonReleased)
+                    menus::keyEvent(false, Key(event.joystickButton.joystickId, event.joystickButton.button));
+                else if (event.type == sf::Event::JoystickMoved) {
+                    Key key(event.joystickMove.joystickId, event.joystickMove.axis, event.joystickMove.position);
                     if (key.strength_ >= 95 && timer::realTotalTime() - joyButtonTimer_ > 0.1f) {
                         if (!menus::visible())
                             controllers::singleKeyEvent(key);
@@ -144,15 +151,15 @@ namespace window {
                         joyButtonTimer_ = timer::realTotalTime();
                     }
                 }
-                else if (event.Type == sf::Event::MouseWheelMoved) {
+                else if (event.type == sf::Event::MouseWheelMoved) {
                     if (menus::visible())
-                        menus::mouseWheelMoved(Vector2f(event.MouseWheel.X - (window_.GetWidth() - viewPort_.x_)/2, event.MouseWheel.Y - (window_.GetHeight() - viewPort_.y_)/2), event.MouseWheel.Delta);
+                        menus::mouseWheelMoved(Vector2f(event.mouseWheel.x - (window_.getSize().x - viewPort_.x_)/2, event.mouseWheel.y - (window_.getSize().y - viewPort_.y_)/2), event.mouseWheel.delta);
                 }
             }
         }
 
         void display() {
-            window_.Display();
+            window_.display();
             if (++clearCount_ > 30) {
                 glClear(GL_COLOR_BUFFER_BIT);
                 clearCount_ = 0;
@@ -164,8 +171,8 @@ namespace window {
 
     bool open() {
         if (settings::load() && locales::load()) {
-            postFX::  load();
-            fxImage_.SetBlendMode(sf::Blend::None);
+            postFX::load();
+
             create();
             return true;
         }
@@ -174,13 +181,13 @@ namespace window {
 
     void close() {
         music::stop();
-        window_.Close();
+        window_.close();
     }
 
     void mainLoop() {
-        while (window_.IsOpened()) {
+        while (window_.isOpen()) {
             update();
-            if (window_.IsOpened()) {
+            if (window_.isOpen()) {
                 games::update();
                 games::draw();
                 display();
@@ -191,18 +198,18 @@ namespace window {
     void create() {
         sf::VideoMode mode(settings::C_resX, settings::C_resY, settings::C_colorDepth);
 
-        if (settings::C_fullScreen && mode.IsValid())
-            window_.Create(mode, "M.A.R.S. - a " + generateName::game(), sf::Style::Fullscreen);
+        if (settings::C_fullScreen && mode.isValid())
+            window_.create(mode, "M.A.R.S. - a " + generateName::game(), sf::Style::Fullscreen);
         else
-            window_.Create(mode, "M.A.R.S. - a " + generateName::game());
-        window_.EnableVerticalSync(settings::C_vsync);
+            window_.create(mode, "M.A.R.S. - a " + generateName::game());
+        window_.setVerticalSyncEnabled(settings::C_vsync);
         //window_.SetFramerateLimit(15);
 
         # ifndef __APPLE__
             // apple uses bundle icon instead
             sf::Image icon;
-            icon.LoadFromFile(settings::C_dataPath + "tex/icon.png");
-            window_.SetIcon(icon.GetWidth(), icon.GetHeight(), icon.GetPixelsPtr());
+            icon.loadFromFile(settings::C_dataPath + "tex/icon.png");
+            window_.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
         # endif
 
         resized();
@@ -236,7 +243,7 @@ namespace window {
 
     void startDrawSpace() {
         if (settings::C_shaders)
-            backBuffer_.SetActive(true);
+            backBuffer_.setActive(true);
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
@@ -255,9 +262,9 @@ namespace window {
 
     void startDrawHUD() {
         if (settings::C_shaders) {
-            backBuffer_.Display();
+            backBuffer_.display();
 
-            window_.SetActive(true);
+            window_.setActive(true);
 
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
@@ -268,13 +275,10 @@ namespace window {
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
-            fxImage_.SetTexture(backBuffer_.GetTexture(), true);
+            fxImage_.setTexture(backBuffer_.getTexture(), true);
 
-            glEnable(GL_TEXTURE_2D);
             sf::Shader* shader = postFX::get();
-            if (shader) window_.Draw(fxImage_, *shader);
-            else        window_.Draw(fxImage_);
-            glDisable(GL_TEXTURE_2D);
+            draw(fxImage_, sf::RenderStates(sf::BlendNone), shader);
 
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
@@ -284,39 +288,53 @@ namespace window {
 
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
+
+            glEnable(GL_BLEND);
         }
         else {
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
-            setViewPort();
             gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
         }
     }
 
-    void draw(sf::Drawable const& toBeDrawn) {
-        window_.SetActive(true);
+    void draw(sf::Drawable const& toBeDrawn, sf::RenderStates const& states, sf::Shader* shader) {
+        glPushAttrib(GL_ALL_ATTRIB_BITS);
+        glPushMatrix();
+        window_.pushGLStates();
+        window_.setActive(true);
         glEnable(GL_TEXTURE_2D);
-        window_.Draw(toBeDrawn);
-        glDisable(GL_TEXTURE_2D);
+
+        if (shader)
+            shader->bind();
+
+        window_.draw(toBeDrawn, states);
+
+        if (shader)
+            shader->unbind();
+
+        window_.popGLStates();
+        glPopMatrix();
+        glPopAttrib();
     }
 
     int isKeyDown(Key const& key) {
         switch (key.type_) {
             case Key::kKeyBoard:
-                if (sf::Keyboard::IsKeyPressed(key.code_.keyBoard_))
+                if (sf::Keyboard::isKeyPressed(key.code_.keyBoard_))
                     return 100;
                 break;
 
             case Key::kJoyButton:
-                if (sf::Joystick::IsButtonPressed(key.joyID_, key.code_.joyButton_))
+                if (sf::Joystick::isButtonPressed(key.joyID_, key.code_.joyButton_))
                     return 100;
                 break;
 
             case Key::kJoyAxis:
                 sf::Joystick::Axis tmp(Key::convertToSFML(key.code_.joyAxis_));
-                int strength(sf::Joystick::GetAxisPosition(key.joyID_, tmp));
+                int strength(sf::Joystick::getAxisPosition(key.joyID_, tmp));
                 std::pair<Key::AxisType, int> result(Key::convertFromSFML(tmp,strength));
                 return result.first == key.code_.joyAxis_ ? result.second : 0;
                 break;
@@ -325,11 +343,11 @@ namespace window {
     }
 
     Vector2f const getMousePosition() {
-        return Vector2f(sf::Mouse::GetPosition(window_).x, sf::Mouse::GetPosition(window_).y);
+        return Vector2f(sf::Mouse::getPosition(window_).x, sf::Mouse::getPosition(window_).y);
     }
 
     void screenShot() {
-        sf::Image shot = window_.Capture();
+        sf::Image shot = window_.capture();
        // const int windowHeight(window_.GetHeight()), windowWidth(window_.GetWidth());
        // if (static_cast<float>(windowWidth)/windowHeight > ratio)
        //     shot.Copy(window_, sf::IntRect((windowWidth-viewPort_.x_)*0.5f, 0, viewPort_.x_, viewPort_.y_));
@@ -346,7 +364,7 @@ namespace window {
 
         # ifdef __linux__
             mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+            if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
                 hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
             } else {
@@ -376,7 +394,7 @@ namespace window {
     }
 
     void showCursor(bool show) {
-        window_.ShowMouseCursor(show);
+        window_.setMouseCursorVisible(show);
     }
 
     Vector2f const coordToPixel(Vector2f const& spaceCoord) {
@@ -384,7 +402,7 @@ namespace window {
     }
 
     Vector2f const PixelToCoord(Vector2f const& screenCoord) {
-        return Vector2f(screenCoord.x_ - (window_.GetWidth() - viewPort_.x_)/2, screenCoord.y_ - (window_.GetHeight() - viewPort_.y_)/2);
+        return Vector2f(screenCoord.x_ - (window_.getSize().x - viewPort_.x_)/2, screenCoord.y_ - (window_.getSize().y - viewPort_.y_)/2);
     }
 
     Vector2f const& getViewPort() {

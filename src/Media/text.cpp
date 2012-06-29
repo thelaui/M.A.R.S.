@@ -30,28 +30,27 @@ namespace text {
                       float size, int align, Color3f const& color, float alpha, sf::Font* font) {
 
             sf::Text drawString(text, font ? *font : *font::getFont(), size);
-            drawString.SetColor(sf::Color(color.r()*255, color.g()*255, color.b()*255, alpha<0 ? 0 : alpha*255));
+            drawString.setColor(sf::Color(color.r()*255, color.g()*255, color.b()*255, alpha<0 ? 0 : alpha*255));
 
-            drawString.SetBlendMode(sf::Blend::Alpha);
 
             Vector2f loc(location);
-            sf::FloatRect boundingBox = drawString.GetRect();
+            sf::FloatRect boundingBox = drawString.getGlobalBounds();
 
             if (align == TEXT_ALIGN_CENTER)
-                loc.x_ -= static_cast<int>(boundingBox.Width*0.5f);
+                loc.x_ -= static_cast<int>(boundingBox.width*0.5f);
             else if ((align == TEXT_ALIGN_RIGHT && locales::getCurrentLocale().LTR_) || (align == TEXT_ALIGN_LEFT && !locales::getCurrentLocale().LTR_))
-                loc.x_ -= static_cast<int>(boundingBox.Width);
+                loc.x_ -= static_cast<int>(boundingBox.width);
 
             // prevent text from being outside of screen
             Vector2f const& port = window::getViewPort();
             if (loc.x_ < 0.f)                           loc.x_ = 0.f;
             if (loc.y_ < 0.f)                           loc.y_ = 0.f;
-            if (loc.x_ + boundingBox.Width  > port.x_)  loc.x_ = port.x_ - static_cast<int>(boundingBox.Width);
-            if (loc.y_ + boundingBox.Height > port.y_)  loc.y_ = port.y_ - static_cast<int>(boundingBox.Height);
+            if (loc.x_ + boundingBox.width  > port.x_)  loc.x_ = port.x_ - static_cast<int>(boundingBox.width);
+            if (loc.y_ + boundingBox.height > port.y_)  loc.y_ = port.y_ - static_cast<int>(boundingBox.height);
 
-            drawString.SetPosition(loc.x_, loc.y_);
+            drawString.setPosition(loc.x_, loc.y_);
 
-            window::draw(drawString);
+            window::draw(drawString, sf::RenderStates(sf::BlendAlpha));
         }
     }
 
@@ -75,22 +74,22 @@ namespace text {
     }
 
     void drawFooText() {
-        drawScreenText(sf::String("."), Vector2f(0.f, 0.f), 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
+       // drawScreenText(sf::String("."), Vector2f(0.f, 0.f), 1.f, TEXT_ALIGN_LEFT, Color3f(0.f, 0.f, 0.f));
     }
 
     float getCharacterPos(sf::String const& text, int pos, float size, int align, sf::Font* font) {
         sf::Text drawString(text, font ? *font : *font::getFont(), size);
-        float result = drawString.GetCharacterPos(pos).x;
+        float result = drawString.findCharacterPos(pos).x;
 
         switch (align) {
             case TEXT_ALIGN_CENTER: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                result -= boundingBox.Width*0.5f;
+                sf::FloatRect boundingBox = drawString.getLocalBounds();
+                result -= boundingBox.width*0.5f;
                 break;
             }
             case TEXT_ALIGN_RIGHT: {
-                sf::FloatRect boundingBox = drawString.GetRect();
-                result -= boundingBox.Width;
+                sf::FloatRect boundingBox = drawString.getLocalBounds();
+                result -= boundingBox.width;
                 break;
             }
             default: break;

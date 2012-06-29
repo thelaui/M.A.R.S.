@@ -68,11 +68,13 @@ void Home::draw() const {
 }
 
 void Home::drawLife() const {
-    int lifeSize = 20.f / 1440 * window::getViewPort().x_;
+    int lifeSize = 20.f / SPACE_X_RESOLUTION * window::getViewPort().x_;
     if (visible_) {
         std::stringstream sstr;
-        sstr << "  " << getLife() << "  ";
-	text::drawSpaceText(sf::String(sstr.str()), location_ + Vector2f(0.f, -30 + lifeSize), lifeSize, TEXT_ALIGN_LEFT, Color3f(0.6, 0.6, 0.6));
+        sstr << getLife();
+
+        int xOffset(location_.x_ > SPACE_X_RESOLUTION ? -65 : 65);
+        text::drawSpaceText(sf::String(sstr.str()), location_ + Vector2f(xOffset, -30 + lifeSize), lifeSize, TEXT_ALIGN_CENTER, Color3f(0.9, 0.9, 0.9));
     }
 }
 

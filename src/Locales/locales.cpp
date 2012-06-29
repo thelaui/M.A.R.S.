@@ -35,59 +35,59 @@ namespace locales {
             std::vector<sf::String> lines;
             if (file::load(fileName, lines)) {
                 for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                    std::stringstream sstr(it->ToAnsiString());
+                    std::stringstream sstr(it->toAnsiString());
                     int id;
                     sstr >> id;
-                    if (id < COUNT && it->GetSize() > 4) {
+                    if (id < COUNT && it->getSize() > 4) {
                         sf::String tmp(*it);
-                        tmp.Erase(0, 4);
+                        tmp.erase(0, 4);
 
-                        for (int i=0; i<tmp.GetSize(); ++i) {
+                        for (int i=0; i<tmp.getSize(); ++i) {
                             if (tmp[i] == '{') {
                                 int j(i+1);
                                 sf::String macro;
                                 while (tmp[j] != '}') {
-                                    macro.Insert(macro.GetSize(), tmp[j]);
+                                    macro.insert(macro.getSize(), tmp[j]);
                                     ++j;
-                                    if (j == tmp.GetSize()) {
-                                        std::cout << "Error parsing " << fileName << ": At ID " << id << " the macro " << macro.ToAnsiString() << " misses a trailing '}' !" << std::endl;
+                                    if (j == tmp.getSize()) {
+                                        std::cout << "Error parsing " << fileName << ": At ID " << id << " the macro " << macro.toAnsiString() << " misses a trailing '}' !" << std::endl;
                                         break;
                                     }
                                 }
-                                tmp.Erase(i, j-i+1);
+                                tmp.erase(i, j-i+1);
 
                                 if (macro == "PLAYER1_KEY_UP")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIup));
+                                    tmp.insert(i, generateName::key(settings::C_playerIup));
                                 else if (macro == "PLAYER2_KEY_UP")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIIup));
+                                    tmp.insert(i, generateName::key(settings::C_playerIIup));
                                 else if (macro == "PLAYER1_KEY_RIGHT")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIright));
+                                    tmp.insert(i, generateName::key(settings::C_playerIright));
                                 else if (macro == "PLAYER2_KEY_RIGHT")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIIright));
+                                    tmp.insert(i, generateName::key(settings::C_playerIIright));
                                 else if (macro == "PLAYER1_KEY_LEFT")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIleft));
+                                    tmp.insert(i, generateName::key(settings::C_playerIleft));
                                 else if (macro == "PLAYER2_KEY_LEFT")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIIleft));
+                                    tmp.insert(i, generateName::key(settings::C_playerIIleft));
                                 else if (macro == "PLAYER1_KEY_FIRE")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIfire));
+                                    tmp.insert(i, generateName::key(settings::C_playerIfire));
                                 else if (macro == "PLAYER2_KEY_FIRE")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIIfire));
+                                    tmp.insert(i, generateName::key(settings::C_playerIIfire));
                                 else if (macro == "PLAYER1_KEY_SPECIAL")
-                                    tmp.Insert(i, generateName::key(settings::C_playerISpecialKey));
+                                    tmp.insert(i, generateName::key(settings::C_playerISpecialKey));
                                 else if (macro == "PLAYER2_KEY_SPECIAL")
-                                    tmp.Insert(i, generateName::key(settings::C_playerIISpecialKey));
+                                    tmp.insert(i, generateName::key(settings::C_playerIISpecialKey));
                                 else if (macro == "PLAYER1_NAME")
-                                    tmp.Insert(i, settings::C_playerIName);
+                                    tmp.insert(i, settings::C_playerIName);
                                 else if (macro == "PLAYER2_NAME")
-                                    tmp.Insert(i, settings::C_playerIIName);
+                                    tmp.insert(i, settings::C_playerIIName);
                                 else if (macro == "DATA_PATH")
-                                    tmp.Insert(i, settings::C_dataPath);
+                                    tmp.insert(i, settings::C_dataPath);
                                 else if (macro == "CONFIG_PATH")
-                                    tmp.Insert(i, settings::C_configPath);
+                                    tmp.insert(i, settings::C_configPath);
                                 else if (macro == "STATISTICS_KEY")
-                                    tmp.Insert(i, generateName::key(settings::C_statisticsKey));
+                                    tmp.insert(i, generateName::key(settings::C_statisticsKey));
                                 else
-                                    std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.ToAnsiString() << "!" << std::endl;
+                                    std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.toAnsiString() << "!" << std::endl;
                             }
                         }
 
@@ -112,24 +112,24 @@ namespace locales {
             Locale newLocale;
             bool first(true);
             for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                if ((*it).ToAnsiString()[0] == '[') {
+                if ((*it).toAnsiString()[0] == '[') {
                     if (!first) {
                         locales_.push_back(newLocale);
                         newLocale = Locale();
                     }
                     newLocale.name_ = *it;
-                    newLocale.name_.Erase(0, 1);
-                    newLocale.name_.Erase(newLocale.name_.GetSize()-1, 1);
+                    newLocale.name_.erase(0, 1);
+                    newLocale.name_.erase(newLocale.name_.getSize()-1, 1);
 
                     first = false;
                 }
                 else {
-                    std::stringstream sstr(std::string((*it).ToAnsiString()));
+                    std::stringstream sstr(std::string((*it).toAnsiString()));
                     std::string flag;
                     sstr >> flag;
 
                     sf::String arg(*it);
-                    arg.Erase(0, flag.size()+1);
+                    arg.erase(0, flag.size()+1);
 
                     if (flag == "file:")
                         newLocale.fileName_ = arg;
@@ -154,7 +154,7 @@ namespace locales {
             load (settings::C_dataPath + "locales/English.txt");
             if (settings::C_languageID < locales_.size()) {
                 if (!load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
-                    std::cout << "Failed to load " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.ToAnsiString() << "! Falling back to English..." << std::endl;
+                    std::cout << "Failed to load " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.toAnsiString() << "! Falling back to English..." << std::endl;
                     settings::C_languageID = 0;
                 }
 

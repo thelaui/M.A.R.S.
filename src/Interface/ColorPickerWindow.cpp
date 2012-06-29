@@ -48,7 +48,7 @@ void ColorPickerWindow::draw() const {
     // update color according to mouse
     Vector2f mouse = window::PixelToCoord(window::getMousePosition());
     int x(mouse.x_), y(mouse.y_);
-    if (sf::Mouse::IsButtonPressed(sf::Mouse::Left) && x>origin.x_ && x<origin.x_+190 && y>origin.y_ && y<origin.y_+150) {
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && x>origin.x_ && x<origin.x_+190 && y>origin.y_ && y<origin.y_+150) {
         if (x>origin.x_+140) {
             float offset(y-origin.y_-10.f);
             if (offset > 119.9f) offset = 119.9f;

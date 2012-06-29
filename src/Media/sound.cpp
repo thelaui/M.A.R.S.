@@ -31,12 +31,12 @@ namespace sound {
 
         void loadSound_(SoundType sound, std::string fileName) {
             sounds_[sound] = new sf::SoundBuffer;
-            if (!sounds_[sound]->LoadFromFile(fileName))
+            if (!sounds_[sound]->loadFromFile(fileName))
                 std::cout << "Failed to load Soundfile \"" << fileName << "\"!" << std::endl;
         }
 
         void init_() {
-            sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
+            sf::Listener::setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             initialized_ = true;
         }
     }
@@ -48,16 +48,16 @@ namespace sound {
             if (sounds_[sound] != NULL) {
                 // if its already loaded search for free soundChannel_
                 int i(0);
-                while (soundChannel_[i].GetStatus() == sf::Sound::Playing && i<CHANNELCOUNT) ++i;
+                while (soundChannel_[i].getStatus() == sf::Sound::Playing && i<CHANNELCOUNT) ++i;
                 if (i < CHANNELCOUNT) {
                     // play sound with random pitch
-                    soundChannel_[i].SetBuffer(*sounds_[sound]);
+                    soundChannel_[i].setBuffer(*sounds_[sound]);
                     if (sound != Click && sound != Tab && sound != Check && sound != Countdown && sound != Start )
-                        soundChannel_[i].SetPitch(1 + static_cast<float>(rand()%100)/200.f - 0.25f);
-                    soundChannel_[i].SetVolume((volume < 0.f ? -volume : volume)*static_cast<float>(settings::C_soundVolume)/100.f);
-                    soundChannel_[i].SetPosition(position.x_, 0.f, 0.f);
-                    soundChannel_[i].SetAttenuation(0.f);
-                    soundChannel_[i].Play();
+                        soundChannel_[i].setPitch(1 + static_cast<float>(rand()%100)/200.f - 0.25f);
+                    soundChannel_[i].setVolume((volume < 0.f ? -volume : volume)*static_cast<float>(settings::C_soundVolume)/100.f);
+                    soundChannel_[i].setPosition(position.x_, 0.f, 0.f);
+                    soundChannel_[i].setAttenuation(0.f);
+                    soundChannel_[i].play();
                 }
             }
             else {

@@ -39,13 +39,13 @@ namespace postFX {
     void update() {
         if (settings::C_shaders) {
 
-            bumpMap_.SetActive(true);
-            bumpMap_.Clear(sf::Color(127, 0, 127));
+            bumpMap_.setActive(true);
+            bumpMap_.clear(sf::Color(127, 0, 127));
 
             particles::drawHeat();
             decoObjects::drawHeat();
 
-            bumpMap_.Display();
+            bumpMap_.display();
 
             if (flashTimer_ > 0) {
                 flashTimer_ -= timer::frameTime();
@@ -57,7 +57,7 @@ namespace postFX {
                     exposure_ = 1.f;
             }
 
-            postFX_.SetParameter("Exposure", exposure_);
+            postFX_.setParameter("Exposure", exposure_);
         }
     }
 
@@ -70,19 +70,19 @@ namespace postFX {
     }
 
     bool supported() {
-        return (sf::Shader::IsAvailable());
+        return (sf::Shader::isAvailable());
     }
 
     void load() {
         if (supported()) {
-            postFX_.LoadFromFile(settings::C_dataPath + "shaders/bump.frag");
-            bumpMap_.Create(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f);
+            postFX_.loadFromFile(settings::C_dataPath + "shaders/bump.frag", sf::Shader::Fragment);
+            bumpMap_.create(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f);
             glViewport(0,0,SPACE_X_RESOLUTION*0.5f,SPACE_Y_RESOLUTION*0.5f);
             gluOrtho2D(0, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0);
             glEnable(GL_BLEND);
             glMatrixMode(GL_MODELVIEW);
-            postFX_.SetTexture("BumpMap", bumpMap_.GetTexture());
-            postFX_.SetParameter("Exposure", exposure_);
+            postFX_.setParameter("BumpMap", bumpMap_.getTexture());
+            postFX_.setParameter("Exposure", exposure_);
         }
         else
             std::cout << "Shaders are not supported on your hardware! There will be no fancy graphics..." << std::endl;

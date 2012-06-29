@@ -55,9 +55,9 @@ namespace music {
             }
             closedir(dp);
 
-            musicChannel_.SetLoop(false);
-            musicChannel_.SetRelativeToListener(true);
-            sf::Listener::SetPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
+            musicChannel_.setLoop(false);
+            musicChannel_.setRelativeToListener(true);
+            sf::Listener::setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
             setGlobalVolume();
             initialized_ = true;
         }
@@ -70,39 +70,39 @@ namespace music {
 
             if (fadeOutTimer_ > 0.f) {
                 fadeOutTimer_ -= timer::realFrameTime();
-                musicChannel_.SetVolume(settings::C_musicVolume*fadeOutTimer_*2.5f);
+                musicChannel_.setVolume(settings::C_musicVolume*fadeOutTimer_*2.5f);
             }
 
-            if (musicChannel_.GetStatus() == sf::Music::Stopped && files_.size() > 0) {
+            if (musicChannel_.getStatus() == sf::Music::Stopped && files_.size() > 0) {
                 if (games::type() == games::gMenu) play(settings::C_dataPath + "audio/menu.ogg");
                 else                               play();
             }
 
             float slowMoTime(timer::slowMoTime());
             if (slowMoTime > 0.75f) {
-                musicChannel_.SetPitch(slowMoTime*0.666f);
+                musicChannel_.setPitch(slowMoTime*0.666f);
             }
             else if (slowMoTime > 0.25f) {
-                musicChannel_.SetPitch(0.5f);
+                musicChannel_.setPitch(0.5f);
             }
             else if (slowMoTime > 0.0f) {
-                musicChannel_.SetPitch(1.f-slowMoTime*2.f);
+                musicChannel_.setPitch(1.f-slowMoTime*2.f);
             }
-            else musicChannel_.SetPitch(1.f);
+            else musicChannel_.setPitch(1.f);
 
 
             if (games::type() != games::gMenu && games::type() != games::gTutorial && window::isKeyDown(settings::C_statisticsKey))
                     musicNotify::show(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
         }
-        else if (musicChannel_.GetStatus() == sf::Music::Playing)
+        else if (musicChannel_.getStatus() == sf::Music::Playing)
             stop();
     }
 
     void play(std::string fileName) {
         if (settings::C_musicVolume > 0) {
             setGlobalVolume();
-            musicChannel_.OpenFromFile(fileName);
-            musicChannel_.Play();
+            musicChannel_.openFromFile(fileName);
+            musicChannel_.play();
             musicNotify::show(fileName);
         }
     }
@@ -160,7 +160,7 @@ namespace music {
     }
 
     void stop() {
-        musicChannel_.Stop();
+        musicChannel_.stop();
     }
 
     void fadeOut() {
@@ -168,7 +168,7 @@ namespace music {
     }
 
     void setGlobalVolume() {
-        musicChannel_.SetVolume(static_cast<float>(settings::C_musicVolume));
+        musicChannel_.setVolume(static_cast<float>(settings::C_musicVolume));
         fadeOutTimer_ = 0.f;
     }
 }

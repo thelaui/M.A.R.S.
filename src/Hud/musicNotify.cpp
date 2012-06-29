@@ -52,10 +52,10 @@ namespace musicNotify {
             else if (timer_ < 0.f)
                 alpha = 0.f;
 
-            const float artistLength(text::getCharacterPos(artist_, artist_.GetSize(), 12.f, TEXT_ALIGN_LEFT));
-            const float albumLength(text::getCharacterPos(album_, album_.GetSize(), 12.f, TEXT_ALIGN_LEFT));
-            const float fromLength(text::getCharacterPos(*from_, from_->GetSize(), 12.f, TEXT_ALIGN_LEFT));
-            const float byLength(text::getCharacterPos(*by_, by_->GetSize(), 12.f, TEXT_ALIGN_LEFT));
+            const float artistLength(text::getCharacterPos(artist_, artist_.getSize(), 12.f, TEXT_ALIGN_LEFT));
+            const float albumLength(text::getCharacterPos(album_, album_.getSize(), 12.f, TEXT_ALIGN_LEFT));
+            const float fromLength(text::getCharacterPos(*from_, from_->getSize(), 12.f, TEXT_ALIGN_LEFT));
+            const float byLength(text::getCharacterPos(*by_, by_->getSize(), 12.f, TEXT_ALIGN_LEFT));
             const float spaceLength(text::getCharacterPos(" ", 1, 12.f, TEXT_ALIGN_LEFT));
 
 
@@ -65,7 +65,7 @@ namespace musicNotify {
             else if (artist_ != "")            byLineLenght = artistLength + byLength;
             else if (album_ != "")             byLineLenght = albumLength  + fromLength ;
 
-            const float titleLenght(text::getCharacterPos(title_, title_.GetSize(), 20.f, TEXT_ALIGN_LEFT));
+            const float titleLenght(text::getCharacterPos(title_, title_.getSize(), 20.f, TEXT_ALIGN_LEFT));
 
             const float cornerRadius(8.f);
 

@@ -41,19 +41,19 @@ namespace generateName {
             if (file::load(settings::C_dataPath + "botnames.txt", lines)) {
                 std::list<std::pair<sf::String, int> > newList;
                 for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                    if ((*it).ToAnsiString()[0] == '[') {
+                    if ((*it).toAnsiString()[0] == '[') {
                         if (newList.size() > 0) {
                             botNames_.push_back(newList);
                             newList.clear();
                         }
                     }
                     else {
-                        std::stringstream strengthStream(std::string((*it).ToAnsiString(), (*it).GetSize()-3));
+                        std::stringstream strengthStream(std::string((*it).toAnsiString(), (*it).getSize()-3));
                         int strength;
                         strengthStream >> strength;
-                        (*it).Erase((*it).GetSize()-3, 3);
-                        while ((*it)[(*it).GetSize()-1] == ' ' || (*it)[(*it).GetSize()-1] == '\t')
-                            (*it).Erase((*it).GetSize()-1);
+                        (*it).erase((*it).getSize()-3, 3);
+                        while ((*it)[(*it).getSize()-1] == ' ' || (*it)[(*it).getSize()-1] == '\t')
+                            (*it).erase((*it).getSize()-1);
                         newList.push_back(std::make_pair(*it, strength));
                     }
                 }

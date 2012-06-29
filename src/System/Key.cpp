@@ -31,8 +31,8 @@ Key::Key(sf::Keyboard::Key code):
         navi_ = nConfirm;
     else if (code == sf::Keyboard::Escape)
         navi_ = nAbort;
-    else if ((code == sf::Keyboard::Tab && (sf::Keyboard::IsKeyPressed(sf::Keyboard::LControl) || sf::Keyboard::IsKeyPressed(sf::Keyboard::RControl)))
-             || (code == sf::Keyboard::Tab && (sf::Keyboard::IsKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::IsKeyPressed(sf::Keyboard::RShift)))
+    else if ((code == sf::Keyboard::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) || sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)))
+             || (code == sf::Keyboard::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)))
              || (code == sf::Keyboard::Up))
         navi_ = nUp;
     else if (code == sf::Keyboard::Tab || code == sf::Keyboard::Down)
