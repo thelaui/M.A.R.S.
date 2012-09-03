@@ -1,4 +1,4 @@
-﻿// menu buttons
+// menu buttons
 
 000 Start Lokaal Spel
 105 Start Tutorial

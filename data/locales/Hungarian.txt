@@ -1,4 +1,4 @@
-﻿// Hungarian translation made by:
+// Hungarian translation made by:
 // - Papp Bence (ubilulu@gmail.com) - original translator,
 // - alyr (released translation: March 15, 2011 at 18:37 ),
 // - Gábor Udvari 'Udi' (gabor.udvari@gmail.com) (changes made at April 3rd, 2010):

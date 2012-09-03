@@ -1,10 +1,10 @@
-﻿// Czech translation made by:
+// Czech translation made by:
 // - Mates - original translator
 // 
 // Please comment any changes you make to the file (required by the GPL license),
 // and leave an e-mail address where later contributors can contact you!
 
-﻿// menu buttons
+// menu buttons
 
 000 Spustit místní hru
 105 Spustit tutoriál

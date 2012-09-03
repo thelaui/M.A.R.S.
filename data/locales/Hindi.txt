@@ -1,4 +1,4 @@
-﻿// Hindi translation made by:
+// Hindi translation made by:
 // - Antriksh & Aakanksh - original translator
 // 
 // Please comment any changes you make to the file (required by the GPL license),
