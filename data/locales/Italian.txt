@@ -1,11 +1,11 @@
-﻿// Italian translation made by:
+// Italian translation made by:
 // - Proch - original translator
 // - Alberto - improved a bit
 // 
 // Please comment any changes you make to the file (required by the GPL license),
 // and leave an e-mail address where later contributors can contact you!
 
-﻿﻿// menu buttons
+// menu buttons
 
 000 Inizia Una Partita In Locale
 105 Inizia Il Tutorial

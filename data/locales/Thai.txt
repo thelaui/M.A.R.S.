@@ -1,4 +1,4 @@
-﻿﻿// Thai translation made by:
+// Thai translation made by:
 // - Manoch - original translator
 // 
 // Please comment any changes you make to the file (required by the GPL license),

@@ -1,10 +1,10 @@
-﻿// Portuges translation made by:
+// Portuges translation made by:
 // - Vitor - original translator
 // 
 // Please comment any changes you make to the file (required by the GPL license),
 // and leave an e-mail address where later contributors can contact you!
 
-﻿// botões do menu
+// botões do menu
 
 000 Iniciar um Jogo Local
 105 Iniciar Tutorial
