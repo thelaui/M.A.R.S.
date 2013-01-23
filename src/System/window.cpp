@@ -307,13 +307,11 @@ namespace window {
         window_.setActive(true);
         glEnable(GL_TEXTURE_2D);
 
-        if (shader)
-            shader->bind();
+        sf::Shader::bind(shader);
 
         window_.draw(toBeDrawn, states);
 
-        if (shader)
-            shader->unbind();
+        sf::Shader::bind(NULL);
 
         window_.popGLStates();
         glPopMatrix();
