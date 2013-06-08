@@ -3,5 +3,6 @@ mars
 *.depend
 *.layout
 *.workspace
+*.DS_Store
 build
 obj
