@@ -61,10 +61,16 @@ int main(int argc, char* argv[]) {
             return 0;
         }
         else if (std::string(argv[i]) == "-cfg") {
-            settings::C_configPath = argv[++i];
+            if (++i < argc)
+                settings::C_configPath = argv[i];
+            else
+                std::cout << "Option \"-cfg\" expects a path to be provided following it.\n";
         }
         else if (std::string(argv[i]) == "-data") {
-            settings::C_dataPath = argv[++i];
+            if (++i < argc)
+                settings::C_dataPath = argv[i];
+            else
+                std::cout << "Option \"-data\" expects a path to be provided following it.\n";
         }
         else {
             std::cout << "Unknown option \"" << argv[i] << "\". Use -help for a complete list of supported flags.\n";
