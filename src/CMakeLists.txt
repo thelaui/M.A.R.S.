@@ -122,13 +122,12 @@ if(UNIX)
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/applications
 	)
-	install(
-		FILES
-			${MARS_SOURCE_DIR}/resources/mars
-		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/menu
-	)
-
+    #install(
+    #FILES
+    #${MARS_SOURCE_DIR}/resources/mars
+    #DESTINATION
+    #${CMAKE_INSTALL_PREFIX}/share/menu
+    #)
 else(UNIX)
 	# executable
 	install(
