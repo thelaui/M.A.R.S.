@@ -24,7 +24,7 @@ struct Locale {
     Locale():
         name_("NULL"),
         fileName_("NULL"),
-        font_("Ubuntu-R.ttf"),
+        font_("Comfortaa-Regular.ttf"),
         author_(""),
         LTR_(true) {}
 
