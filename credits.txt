@@ -24,8 +24,13 @@ Sound Files:
  - all weapon sounds are public domain
  - announcer sounds are created with eSpeak         (http://espeak.sourceforge.net/)
    
-Fonts
- - For copyright notices, have a look at the corresponding meta-data fields within the font files.
+Fonts licenses:
+ ae_AlMothnna-Bold.ttf:   GPL with font embedding exception
+ Comfortaa-Regular.ttf:   OFL
+ DejaVuSans.ttf:          Bitstream Vera and Public Domain
+ gargi.ttf:               GPLv2+
+ Waree.ttf:               GPLv2+ and Bitstream Vera
+ wqy-microhei.ttc:        ASL 2.0 or GPLv3 with exceptions
 
 Translations
  - German: Sandra
