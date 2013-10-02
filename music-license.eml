@@ -1,0 +1,344 @@
+Delivered-To: j.w.r.degoede@gmail.com
+Received: by 10.205.37.67 with SMTP id td3csp38333bkb;
+        Tue, 1 Oct 2013 10:11:27 -0700 (PDT)
+Return-Path: <havoccus@gmail.com>
+Received-SPF: pass (google.com: domain of havoccus@gmail.com designates 10.152.171.72 as permitted sender) client-ip=10.152.171.72
+Authentication-Results: mr.google.com;
+       spf=pass (google.com: domain of havoccus@gmail.com designates 10.152.171.72 as permitted sender) smtp.mail=havoccus@gmail.com;
+       dkim=pass header.i=@gmail.com
+X-Received: from mr.google.com ([10.152.171.72])
+        by 10.152.171.72 with SMTP id as8mr2755923lac.33.1380647486883 (num_hops = 1);
+        Tue, 01 Oct 2013 10:11:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=V+xMz3XLJLJmuWGHtl6G9kzmPAubM6BCP92sKzNjT98=;
+        b=Issds9QPX3ss4qfgbG+zkuOxHjHP26iQhZw2bGyH5S7RzJl3y8bwCeSXiQ5ehtrQp1
+         XnM7RljZ39kw4eSW5uEHYVzY8gQ41c6jKgYJOBj5nSU0XAZ0Z6mXz9m9cC5nwGpoxnF4
+         qqbwwsFluHXT8kuS+w+BEoKDr0ugifXHIWI1SUdTrsoPLtk+dBFuqgAALPIOBf0uaZPL
+         hEIUfervQqe1lrH4tWjBJO6XIKGUHSI9iWRT4YyLC50Qr/LKGS3zvNAGY6XnjsWIEBRi
+         vEiKmP+iX2o6E1mYLecawTeBF4QhBDFDm1yi6EAf6K3QGeQwaKYv6CgLX/q00YAgWUCT
+         waEg==
+MIME-Version: 1.0
+X-Received: by 10.152.171.72 with SMTP id as8mr2755923lac.33.1380647486878;
+ Tue, 01 Oct 2013 10:11:26 -0700 (PDT)
+Received: by 10.114.63.78 with HTTP; Tue, 1 Oct 2013 10:11:26 -0700 (PDT)
+In-Reply-To: <5246E537.5090208@gmail.com>
+References: <523DAF75.3090908@gmail.com>
+	<CAJcf8xnFMCz7PW5bdn-GGgd1s-qB9Ax5o+pJMDKLSi=L+aRj_g@mail.gmail.com>
+	<5246E537.5090208@gmail.com>
+Date: Tue, 1 Oct 2013 19:11:26 +0200
+Message-ID: <CAJcf8xkX+Ef5o=b5rRmvdf6So_Bp-VjprFaxgTFf4whnk_TMEw@mail.gmail.com>
+Subject: Re: Re-licensing Obsedian Shell music for use in a Free Software game
+From: =?ISO-8859-1?Q?Henrik_Csat=F3?= <havoccus@gmail.com>
+To: Hans de Goede <j.w.r.degoede@gmail.com>
+Content-Type: multipart/alternative; boundary=001a1135e5a403f82604e7b10ba8
+
+--001a1135e5a403f82604e7b10ba8
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hey,
+
+Alright, so:
+
+*I hereby give permisson to distribute all Obsidian Shell music tracks
+under a CC-BY-SA 3.0 license.
+
+*
+- Csat=F3 Henrik
+
+I hope that will be enough.
+
+Regards,
+Henrik
+
+PS: It's Obs*i*dian with double "i"s :)
+
+
+On 28 September 2013 16:18, Hans de Goede <j.w.r.degoede@gmail.com> wrote:
+
+> Hi,
+>
+>
+> On 09/26/2013 01:20 PM, Henrik Csat=F3 wrote:
+>
+>> Dear Hans,
+>>
+>> I hereby give you the permission to include any songs of Obsidian Shell
+>> in M.A.R.S. as long as the game remains free.
+>>
+>
+> Thanks that is very generous of you, unfortunately such a statement
+> is a little to vague I'm afraid. In order for Debian or Fedora to
+> be able to ship M.A.R.S. with Obsedian Shell music I really need
+> a statement (email is fine) from you among the lines of:
+>
+> "I hereby give permisson to distribute the Obsedian Shell music tracks
+> listed below under a CC-BY-SA 3.0 license"
+>
+> Again if you don't want to do such a relicensing, that is completely
+> fair and fine, you worked hard to create this wonderful music and you
+> decide how it gets used.
+>
+>
+> > My only request is to show the band's name in the credits at least.
+>
+> Of course we will show the band's name in the credits, that is the
+> least we can do :)
+>
+> Regards,
+>
+> Hans
+>
+>
+>  On 21 September 2013 16:38, Hans de Goede <j.w.r.degoede@gmail.com<mailt=
+o:
+>> j.w.r.degoede@gmail.**com <j.w.r.degoede@gmail.com>>> wrote:
+>>
+>>     Hi,
+>>
+>>     Short self intro: I'm a Free software (http://en.wikipedia.org/wiki/=
+*
+>> *__Free_software <http://en.wikipedia.org/wiki/__Free_software> <
+>> http://en.wikipedia.org/wiki/**Free_software<http://en.wikipedia.org/wik=
+i/Free_software>
+>> >)
+>>
+>>     developer and enthusiast. I'm currently working in my spare time to
+>> package
+>>     a game called M.A.R.S.:
+>>     http://mars-game.sourceforge._**_net/ <http://mars-game.sourceforge.=
+*
+>> *net/ <http://mars-game.sourceforge.net/>>
+>>
+>>
+>>     For the Fedora Linux distribution. I'm working on this together with
+>>     people from the Debian Linux distribution who also want to package
+>>     M.A.R.S.
+>>
+>>     Debian and Fedora both offer a fully Free operating system, includin=
+g
+>>     many productivity apps and games. Debian and Fedora are not only Fre=
+e
+>>     in the sense that they can be downloaded gratis. But they can also b=
+e
+>>     used as a base for others to build on, creating derivative works and
+>>     selling those.
+>>
+>>     As part of packaging M.A.R.S. I'm working on removing some non Free
+>>     parts from M.A.R.S.  I've already replaced 2 non free fonts and a
+>>     few non free sfx.  M.A.R.S. currently uses music made by Obesedian
+>>     Shell, this music fits the game really well, so I would rather not
+>>     replace it. But the current license for it (CC-BY-NC-ND 3.0) is not
+>>     compatible with the goals of a fully free operating system. Both
+>>     the NC and ND clauses are a problem.
+>>
+>>     Therefor I wonder if you are willing to give permission to
+>>     distribute Obesedian Shell's music as part of M.A.R.S. under
+>>     a different license?
+>>
+>>     Specifically either CC-BY 3.0 or CC-BY-SA 3.0. Note that people
+>>     in theory could take the tracks from the game and distribute them
+>>     standalone under the same license. This means that people could
+>>     take the tracks from M.A.R.S. and use them for example in a
+>>     commercial project.
+>>
+>>     If you choose the CC-BY-SA 3.0 license however then such a commercia=
+l
+>>     project need to give the same license for the tracks to the receiver=
+s
+>>     of the project, thus making it uninteresting to sell the tracks by
+>>     themselves (*).
+>>
+>>     M.A.R.S. uses the following tracks:
+>>
+>>     Ezer =C9v
+>>     Orphanage
+>>     Fear
+>>     Elveszett Lelkek
+>>     Starfall
+>>     V=E9rmocs=E1r
+>>     Second Birth
+>>     Wings of Cruelty
+>>     Farewell
+>>     Misanthropia
+>>     Megt=F6rt =C1lom
+>>     Farkask=F6nny
+>>
+>>     If you could give permission to distribute these under the CC-BY 3.0
+>>     or CC-BY-SA 3.0 license that would be great. If you don't want to do
+>>     this that of course is completely fine and I won't bother you again.
+>>
+>>     Regards,
+>>
+>>     Hans
+>>
+>>
+>>     *) I'm not a lawyer and this is not legal advise
+>>
+>>
+>>
+
+--001a1135e5a403f82604e7b10ba8
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div><div><div><div><div>Hey,<br><br></div>Alright, s=
+o: <br><br><b>I hereby give permisson to distribute all Obsidian Shell musi=
+c tracks<br>under a CC-BY-SA 3.0 license.<br><br></b></div>- Csat=F3 Henrik=
+<br>
+<br></div>I hope that will be enough. <br><br></div>Regards,<br></div>Henri=
+k<br><br></div>PS: It&#39;s Obs<i><b>i</b></i>dian with double &quot;i&quot=
+;s :)<br></div><div class=3D"gmail_extra"><br><br><div class=3D"gmail_quote=
+">
+On 28 September 2013 16:18, Hans de Goede <span dir=3D"ltr">&lt;<a href=3D"=
+mailto:j.w.r.degoede@gmail.com" target=3D"_blank">j.w.r.degoede@gmail.com</=
+a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0=
+ 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+Hi,<div class=3D"im"><br>
+<br>
+On 09/26/2013 01:20 PM, Henrik Csat=F3 wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+Dear Hans,<br>
+<br>
+I hereby give you the permission to include any songs of Obsidian Shell in =
+M.A.R.S. as long as the game remains free.<br>
+</blockquote>
+<br></div>
+Thanks that is very generous of you, unfortunately such a statement<br>
+is a little to vague I&#39;m afraid. In order for Debian or Fedora to<br>
+be able to ship M.A.R.S. with Obsedian Shell music I really need<br>
+a statement (email is fine) from you among the lines of:<br>
+<br>
+&quot;I hereby give permisson to distribute the Obsedian Shell music tracks=
+<br>
+listed below under a CC-BY-SA 3.0 license&quot;<br>
+<br>
+Again if you don&#39;t want to do such a relicensing, that is completely<br=
+>
+fair and fine, you worked hard to create this wonderful music and you<br>
+decide how it gets used.<div class=3D"im"><br>
+<br>
+&gt; My only request is to show the band&#39;s name in the credits at least=
+.<br>
+<br></div>
+Of course we will show the band&#39;s name in the credits, that is the<br>
+least we can do :)<br>
+<br>
+Regards,<br>
+<br>
+Hans<br>
+<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex"><div class=3D"im">
+On 21 September 2013 16:38, Hans de Goede &lt;<a href=3D"mailto:j.w.r.degoe=
+de@gmail.com" target=3D"_blank">j.w.r.degoede@gmail.com</a> &lt;mailto:<a h=
+ref=3D"mailto:j.w.r.degoede@gmail.com" target=3D"_blank">j.w.r.degoede@gmai=
+l.<u></u>com</a>&gt;&gt; wrote:<br>
+
+<br>
+=A0 =A0 Hi,<br>
+<br></div>
+=A0 =A0 Short self intro: I&#39;m a Free software (<a href=3D"http://en.wik=
+ipedia.org/wiki/__Free_software" target=3D"_blank">http://en.wikipedia.org/=
+wiki/<u></u>__Free_software</a> &lt;<a href=3D"http://en.wikipedia.org/wiki=
+/Free_software" target=3D"_blank">http://en.wikipedia.org/wiki/<u></u>Free_=
+software</a>&gt;)<div class=3D"im">
+<br>
+=A0 =A0 developer and enthusiast. I&#39;m currently working in my spare tim=
+e to package<br>
+=A0 =A0 a game called M.A.R.S.:<br></div>
+=A0 =A0 <a href=3D"http://mars-game.sourceforge." target=3D"_blank">http://=
+mars-game.sourceforge.</a>_<u></u>_net/ &lt;<a href=3D"http://mars-game.sou=
+rceforge.net/" target=3D"_blank">http://mars-game.sourceforge.<u></u>net/</=
+a>&gt;<div>
+<div class=3D"h5"><br>
+<br>
+=A0 =A0 For the Fedora Linux distribution. I&#39;m working on this together=
+ with<br>
+=A0 =A0 people from the Debian Linux distribution who also want to package<=
+br>
+=A0 =A0 M.A.R.S.<br>
+<br>
+=A0 =A0 Debian and Fedora both offer a fully Free operating system, includi=
+ng<br>
+=A0 =A0 many productivity apps and games. Debian and Fedora are not only Fr=
+ee<br>
+=A0 =A0 in the sense that they can be downloaded gratis. But they can also =
+be<br>
+=A0 =A0 used as a base for others to build on, creating derivative works an=
+d<br>
+=A0 =A0 selling those.<br>
+<br>
+=A0 =A0 As part of packaging M.A.R.S. I&#39;m working on removing some non =
+Free<br>
+=A0 =A0 parts from M.A.R.S. =A0I&#39;ve already replaced 2 non free fonts a=
+nd a<br>
+=A0 =A0 few non free sfx. =A0M.A.R.S. currently uses music made by Obesedia=
+n<br>
+=A0 =A0 Shell, this music fits the game really well, so I would rather not<=
+br>
+=A0 =A0 replace it. But the current license for it (CC-BY-NC-ND 3.0) is not=
+<br>
+=A0 =A0 compatible with the goals of a fully free operating system. Both<br=
+>
+=A0 =A0 the NC and ND clauses are a problem.<br>
+<br>
+=A0 =A0 Therefor I wonder if you are willing to give permission to<br>
+=A0 =A0 distribute Obesedian Shell&#39;s music as part of M.A.R.S. under<br=
+>
+=A0 =A0 a different license?<br>
+<br>
+=A0 =A0 Specifically either CC-BY 3.0 or CC-BY-SA 3.0. Note that people<br>
+=A0 =A0 in theory could take the tracks from the game and distribute them<b=
+r>
+=A0 =A0 standalone under the same license. This means that people could<br>
+=A0 =A0 take the tracks from M.A.R.S. and use them for example in a<br>
+=A0 =A0 commercial project.<br>
+<br>
+=A0 =A0 If you choose the CC-BY-SA 3.0 license however then such a commerci=
+al<br>
+=A0 =A0 project need to give the same license for the tracks to the receive=
+rs<br>
+=A0 =A0 of the project, thus making it uninteresting to sell the tracks by<=
+br>
+=A0 =A0 themselves (*).<br>
+<br>
+=A0 =A0 M.A.R.S. uses the following tracks:<br>
+<br>
+=A0 =A0 Ezer =C9v<br>
+=A0 =A0 Orphanage<br>
+=A0 =A0 Fear<br>
+=A0 =A0 Elveszett Lelkek<br>
+=A0 =A0 Starfall<br>
+=A0 =A0 V=E9rmocs=E1r<br>
+=A0 =A0 Second Birth<br>
+=A0 =A0 Wings of Cruelty<br>
+=A0 =A0 Farewell<br>
+=A0 =A0 Misanthropia<br>
+=A0 =A0 Megt=F6rt =C1lom<br>
+=A0 =A0 Farkask=F6nny<br>
+<br>
+=A0 =A0 If you could give permission to distribute these under the CC-BY 3.=
+0<br>
+=A0 =A0 or CC-BY-SA 3.0 license that would be great. If you don&#39;t want =
+to do<br>
+=A0 =A0 this that of course is completely fine and I won&#39;t bother you a=
+gain.<br>
+<br>
+=A0 =A0 Regards,<br>
+<br>
+=A0 =A0 Hans<br>
+<br>
+<br>
+=A0 =A0 *) I&#39;m not a lawyer and this is not legal advise<br>
+<br>
+<br>
+</div></div></blockquote>
+</blockquote></div><br></div>
+
+--001a1135e5a403f82604e7b10ba8--

@@ -16,8 +16,8 @@ Textures:
 Sound Files:
  - some soundfiles are modified with Audacity       (http://audacity.sourceforge.net/)
  - Credits go to:
-   - music by Obsidian Shell, CC-BY-NC-ND 3.0       (http://www.obsidianshell.com/index.php )
-   - interface-sounds                               (http://www.soundjay.com/)
+ - music by Obsidian Shell, CC-BY-SA 3.0          (http://www.obsidianshell.com/index.php )
+ - interface-sounds                               (http://www.soundjay.com/)
  - all weapon sounds are public domain
  - announcer sounds are created with eSpeak         (http://espeak.sourceforge.net/)
    
