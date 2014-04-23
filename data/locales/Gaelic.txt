@@ -1,0 +1,376 @@
+﻿// Scottish Gaelic translation made by:
+// GunChleoc
+// 
+// Please comment any changes you make to the file (required by the GPL license),
+// and leave an e-mail address where later contributors can contact you!
+
+﻿// menu buttons
+
+000 Geama ionadail
+105 Oideachadh
+001 Geama lìonraidh ùr
+002 Geama lìonraidh a' dol
+003 Roghainnean
+004 Mu dhèidhinn
+005 Fàg M.A.R.S.
+006 Lean air adhart
+007 Ath-thòisich an geama
+008 Falaich an clàr-taice
+009 Till gun phrìomh chlàr-taice
+
+// standard buttons
+
+010 Tòisich
+011 Sguir dheth
+012 Tuairisgeul
+013 Dùin
+014 Ceadachas
+015 Ceart ma-thà
+106 Air adhart
+016 Seall am fiosrachadh seo a-rithist.
+
+// pregame options
+
+017 Sgioba an taoibh chlì
+018 Sgioba an taoibh dheis
+019 Botaichean an taoibh chlì
+020 Botaichean an taoibh dheis
+021 Botaichean
+022 Frag Limit
+162 Puingean beatha nam planaid
+056 Na h-airm
+203 Airm
+204 Comasan sònraichte
+166 Uiread nan cumhachdan
+167 Duilgheadas nam bot 
+159 Roghainnean a' gheama
+257 Cluicheadairean
+
+// story information
+
+023 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.  \nBut outside the contemplative habitats, the GREAT WAR is raging.  \nAs a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous  \nneighbours! Fight the battle, a true hero as you are was born for: SPACEBALL. \nProtect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe.
+024 Breab no loisg am bàla gu planaid no nàmhaid!
+025 As a result of the GREAT WAR you have lost everything: your home, your family and \nyour self-esteem. \nYour last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious \nDEATHMATCH-arena. \nResist the other fighters and earn points by destroying the nutshells, they call ships. \nPrepare yourself! \nDeath and Glory awaits you.
+026 Mill an uiread de nàimhdean a ghabhas!
+027 The negotiations have failed! \nBoth of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR. \nAs a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH. \nProtect your comrades and destroy your enemies! \nTeach them a lesson, they will never forget.
+028 Mill an uiread de nàimhdean a ghabhas!
+029 As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction. \nAs a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear. \nReach it first to turn your enemy's home planet into a place of desolation! \nBe the CANNONKEEPer.
+030 Tog an t-inneal-smachd cèin agus cum e cho fada 's as urrainn dhut!
+206 As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!  \n \nUnfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand. \n \nWin this battle, and the victory of the GREAT WAR may be yours. 
+207 Mill an uiread de nàimhdean a ghabhas!
+
+// display options
+// tabs
+
+150 Eadar-aghaidh
+165 Cluiche
+102 Grafaigeachd
+103 Fuaim
+
+// interface Options
+
+104 Roghainnean na h-uinneige
+031 Seall am fiosrachadh dì-bhugachaidh
+032 Comhair nam bot
+033 Roinnean
+034 Slighean IF
+035 Seall fiosrachadh a' gheama
+036 Frèamaichean gach diog
+215 Roghainnean coitcheann
+152 Cànan
+153 Hot Key airson glacaidhean-sgrìn
+054 Fòrmat nan glacaidhean-sgrìn
+242 Hot Key airson na stadastaireachd
+
+// graphics options
+
+037 Àireamh nam mìrean
+038 Àireamh nam mìrean
+039 Beò nam mìrean
+040 Roghainnean a' gheama
+041 Làn-sgrìn
+042 Sioncronachadh-V
+055 Seall gliocasan-sgrìn
+163 Èifeachdan sgàileadair
+164 Gu mì-fhortanach, cha chuir am bathar-cruaidh agad taic ri sgàileadairean!
+151 Dùmhlachd-bhreacaidh àrd nan rionnagan sa chùlaibh
+265 Rionnagan a' gluasad
+173 Dùmhlachd-bhreacaidh
+174 Doimhne nan dath
+
+// gameplay options
+
+216 Èifeachdan sònraichte
+168 Mall-ghluasad nam spreadhadh
+169 Dheth
+268 Luaths a' gheama
+
+// audio options
+
+123 Roghainnean na h-àirde
+043 Ceòl
+044 Èifeachdan fuaime
+045 Naidheachdan
+128 Cluich an ath-thraca
+129 Roghainnean cluiche
+261 Cluich an traca roimhe
+262 Cluich tracaichean air thuaiream
+
+// player options
+
+046 Ainm
+047 Luathachadh
+048 Tionndadh gu clì
+049 Tionndadh gu deas
+050 Arm
+175 Comas sònraichte
+217 Roghainnean an t-soithich
+051 Soitheach
+052 Dath a' chluicheadair
+053 Dath an sgioba
+
+// about
+
+057 This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity. \n\nHomepage: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
+
+// license
+
+058 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nAvailable online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html
+
+// credits
+
+170 Cliù
+171 Taing shònraichte gu:
+172 Eadar-theangachaidhean:\n Arabais: Majid\n Sìnis: Wecing\n Seicis: Mates\n Fionnlannais: Paavo\n Frangais: Ludovic\n Gearmailtis: Atto\n Hindi: Antriksh ⁊ Aakanksh\n Ungairis: Papp Bence\n Eadailtis: Proch\n Pòlainnis: command_dos\n Portagailis: Vitor\n Ruisis: Drakmail\n Spàinntis: Gastón\n Suainis: Henrik\n\nTaic le còdachadh:\n Werner agus Deubeuliou\n\nDeuchainnean agus taic cruthachail:\n Heinrich, Martin, Bastian, Sandra, Diana.
+
+// quit
+
+059 A bheil thu airson fàgail gu dearbh?
+060 A bheil thu airson crìoch a chur air a' gheama?
+
+// network information
+
+061 Tha geamannan M.A.R.S. air loidhne no air lìonra ionadail fainear dhuinn ach cha do chruthaich sinn seo fhathast. \n\nCum sùil air seo!
+062 Tha geamannan M.A.R.S. air loidhne no air lìonra ionadail fainear dhuinn ach cha do chruthaich sinn seo fhathast. \n\nCum sùil air seo!
+
+// hide menu
+
+063 Na chuir thu M.A.R.S. 'na stad ann an teas-mheadhan blàir chruaidh? \nMa tha thu airson glacadh-sgrìn a thogail, leigidh am putan seo leat pàipearan-balla iongantach a chruthachadh on a thèid gach uinneag a' falach. \n\nBheir thu air ais iad le brùthadh air ESC.
+
+// key names
+
+064 Cuir ris
+065 Slais air ais
+066 Cromag
+067 Sgrìob
+068 Delete
+069 Roinneadh
+070 Sìos
+071 End
+072 Co-ionnanachd
+073 Home
+074 Insert
+075 Alt clì
+076 Bracaid chlì
+077 Control clì
+078 Gu clì
+079 Sioft chlì
+080 Super clì
+081 Clàr-taice
+082 Iomadachadh
+083 Duilleag sìos
+084 Duilleag suas
+085 Pause
+086 Puing
+087 Quote
+088 Alt deas
+089 Bracaid dheas
+090 Control deas
+091 Enter
+092 Gu deas
+093 Shioft dheas
+094 Super deas
+095 Leth-chòilean
+096 Slais
+097 Space
+098 Toirt air falbh
+099 Tonn
+100 Taba
+101 Suas
+
+// Joystick button names
+
+218 Putan A
+219 Putan B
+220 Putan X
+221 Putan Y
+222 Putan tòiseachaidh
+223 Putan air ais
+224 Bumpair deas
+225 Bumpair clì
+226 Trigear deas
+227 Trigear clì
+228 Comhair suas
+229 Comhair sìos
+230 Comhair gu clì
+231 Comhair gu deas
+232 Stick1 suas
+233 Stick1 sìos
+234 Stick1 gu clì
+235 Stick1 gu deas
+236 Stick2 suas
+237 Stick2 sìos
+238 Stick2 gu clì
+239 Stick2 gu deas
+240 Joystick
+241 Putan
+
+
+// tutorial texts
+
+212 Hoigh, {PLAYER1_NAME}!
+213 Abair ainm dona... An cuir thu fear as fhearr ann?
+
+107 Fàilte ort, a nuadh-mhìlidh!
+108 Tha sinn toilichte gun do thrus sinn mìlidh mar a tha thu fhèin, {PLAYER1_NAME} ach an cuidich thu leinn sa CHOGADH MHÒR!\nTha sinn an dùil gu bheil thu feumach air beagan cleachdaidh leis an t-soitheach ùr agad.\nTòisicheamaid air an trèanadh...
+
+109 Gluasad bunasach...
+110 'S e an comas as cudromaiche a dh'fheumas tu ionnsachadh gun cum thu smachd air an t-soitheach agad.\nTha gach gluasad fo smachd laghan na iom-tharraing. Gus maille a chur ort, feumaidh tu tionndadh dhan chùlaibh agus luathachadh dhan chaochladh chomhair. Cum smachd air an t-soitheach agad leis na h-iuchraichean <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> agus <{PLAYER1_KEY_RIGHT}>!
+
+111 A' teasachadh!
+112 Ruig an roinn pinc!\nFeuch nach buail thu ri planaid leis an t-soitheach spaideil ùr agad.
+
+113 Sin thu fhèin, {PLAYER1_NAME}!
+114 Till dhan phlanaid-dhachaigh agad a-nis agus laigh air an talamh leis an t-soitheach agad 's tu a' dol an comhair a' chùil gu slaodach nuair a theannas tu ris a' planaid agad.
+
+115 Sàr-obair!
+116 Chan eil e furasta laighe mar bu chòir, a bheil?\nBu chòir dhut a ionnsachadh gu math.
+
+117 Rudeigin beagan nas dorra...
+118 Feuch an lean thu an t-slighe a nochdaidh na roinnean pince dhut!\nFeuchaidh sinn gum bruidhinn sinn riut a-rithist nuair a bhios tu air seo ionnsachadh.\nSiuthad a-nis!
+
+119 Iongantach math!
+120 's tusa an nuadh-mhìlidh as fhearr a chunnaic sinn a-riamh.\nNise, dèan ullachadh airson stuth spreadhach.
+
+121 A' losgadh...
+122 Feumaidh tu ionnsachadh mar a loisgeas tu air an nàmhaid ach an cuir thu ruaig air!\nGus seo a dhèanamh, brùth air <{PLAYER1_KEY_FIRE}>. \nGabh tlachd às an losgadh agus an uairsin laigh an soitheach agad gus leantainn air adhart leis an oideachadh.
+
+124 Rinn thu laighe gu math, {PLAYER1_NAME}!
+125 'S e sàr-phaidhleat a th' annad.\nNise, nach toir sinn airm ùra dhut?
+
+126 Na h-airm...
+127 Tha fios againn gun robh fiughar agad ri seo. Nuair a bhios tu san doca, 's urrainn dhut taghadh eadar roghainn de dh'airm uabhasach olca. Brùth air <{PLAYER1_KEY_FIRE}> gus an arm-lann agad fhosgladh.\nAn uairsin, cleachd <{PLAYER1_KEY_LEFT}> agus <{PLAYER1_KEY_RIGHT}> gus arm a thaghadh! \nTog ort a-rithist nuair a bhios tu ullamh!
+
+130 Sabaid!
+131 Nise, chì sinn mar a thèid leat an aghaidh nuadh-mhìlidh o phlanaid eile. Tha e a' feuchainn ri piseach a thoirt air a chomas sabaide a-rèir coltais.\nCuir ruaig air!
+
+132 Drùidhteach!
+133 You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator! \nLand again and we will show you what else stars are good for.
+
+208 Comasan sònraichte...
+209 As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance! \nThe more stars you have, the larger range and strength of the ability grow.
+
+210 Taghadh...
+211 Gus leum a ghearradh tro na comasan, feumaidh tu brùthadh air <{PLAYER1_KEY_SPECIAL}>. Siubhal tromhpa le <{PLAYER1_KEY_LEFT}> agus <{PLAYER1_KEY_RIGHT}> gus fear a thaghadh! \nAirson an aonaid seo, tagh a' "Freezer"! Tog ort nuair a bhios e agad!
+
+245 Stad, {PLAYER1_NAME}!
+246 Dh'innis sinn dhut gun cleachd thu a' Freezer ach thagh thu comas eile!\nLaigh a-rithist agus tog a' Freezer!
+
+247 A' Freezer...
+248 Seo comas sònraichte cumhachdach a reòthas soithichean am fagas. \nFeumaidh tu teannadh dhan nàmhaid 's an uairsin brùthadh air <{PLAYER1_KEY_SPECIAL}> ach an reòth thu e. Coimhead air fhad 's a tha e a' call a bheatha gu slaodach... gus am faigh e bàs!
+
+249 Dèan cleachdadh!
+250 Now try to freeze your enemy! \nFor this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!
+
+251 Cha do bhuail thu air, {PLAYER1_NAME}!
+252 Try again. we will refill your FragStars.
+
+253 Rinn thu a' chùis air!
+254 Nise, till dhachaigh agus tagh comas sònraichte eile!
+
+255 Thoir an aire, {PLAYER1_NAME}!
+256 Chan eil barrachd ùine againn airson barrachd deuchainn!\nTha na nàimhdean againn air dithis fhìor-ghaisgeach a chur gus dìoghaltas a ghabhail oirnn!
+
+134 Cuir ruaig orra!
+135 Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\nWe will send in an experienced warrior assisting you, {PLAYER1_NAME}!
+
+136 Unbelievable!
+137 You managed all our tasks successfully. Now what to do?\nLet's have a look at the options menu. There you can adjust a lot of... well... options.\nFor example you may choose your ship style and color or change your name...
+
+138 Who's Best?
+139 You can display a list of frags, points and so on via <{STATISTICS_KEY}>.\nFurthermore the numbers next to your name illustrate your frag counter and your distance to the best one. 
+
+140 Congratulations, {PLAYER1_NAME}!
+141 You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n\nHave a great time with M.A.R.S.!
+
+142 You Failed!
+143 Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds...
+
+144 Did You Notice?
+145 Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty.
+
+146 Did You Notice?
+147 Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty.
+
+148 You Nearly Got Him!
+149 Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is.
+
+// tabmenu collumns
+
+154 Puingean
+155 Frags
+244 CannonShots
+267 Tadhalan
+156 Marbhadh sgioba
+157 Fèin-mhurt
+158 Bàs
+160 Iomlan:
+161 Stadastaireachd
+
+// Tool tips options menu
+
+176 Seallaidh seo an àireamh de fhrèamaichean a thèid a chunntadh gach diog\nMa tha seo glè ìseal (<20) an-còmhnaidh, feuch an cuir thu gleus air cuid a roghainnean ann an taba na grafaigeachd!
+177 Seallaidh seo an uiread de mhìrean gnìomhach.
+178 Leigidh seo seachad glìocasan-sgrin mar a tha am fear seo.
+179 Seo am fòrmat a thèid a chleachdadh nuair a shàbhaileas tu glacadh-sgrìn.
+180 Nuair a bhrùthas tu air an iuchair seo, thèid glacadh-sgrìn a shàbhaladh an-seo: {CONFIG_PATH}screenshots/
+181 Gearraidh tu leum dhan ath-thraca ciùil nuair a bhrùthas tu air an iuchair seo.
+263 Gearraidh tu leum dhan traca ciùil roimhe nuair a bhrùthas tu air an iuchair seo.
+264 Thèid an ceòl a chluich ann an òrdugh air thuaiream. 
+182 If that many ships explode simultaneously, the slow motion effect kicks in.
+183 Seallaidh seo an obair a tha aig gabh bot.
+184 Displays tactical zones, which are important for the artificial intelligence.
+185 Displays paths calculated by bots.
+186 Maximizes the window, making it cover the entire screen.
+187 Makes the game update according to the refresh rate of your monitor.\nEnabling this option typically makes the game run more smoothly.
+188 Enables cool effects like heat haze, but reduces game performance.
+189 Sets the size of the window.\nAffects both, full screen and windowed mode.
+190 With high resolution displays, this option makes the star field loop later.\nDisabling may increase game performance slightly.
+266 Draws some moving stars on the background. Eye candy, but reduces game performance.
+191 Adjusts the global particle count.\nLower values will increase performance significantly.
+192 Adjusts the global particle life time.\nLower values will increase performance significantly.
+193 Cuiridh seo àirde na fuaime airson a' chiùil air gleus.
+194 Cuiridh seo àirde na fuaime airson èifeachdan fuaime air gleus.
+195 Cuiridh seo àirde na fuaime airson naidheachdan air gleus.
+243 When this key is pressed while playing a game, a window pops up displaying statistics for the current game.
+269 Adjusts the game speed in percent.
+
+// Tool tips in the start-a-new-game-window
+
+196 Sets the team of the local players.
+197 Enables local players.
+198 Adjusts the amount of ships controlled by the artificial intelligence.
+199 Point limit to be reached by a team in order to win the game.
+200 Point limit to be reached by a player in order to win the game.
+201 Adjusts the strength of the bots.
+202 Adjusts the amount of Power-Ups which will spawn during the game.\n Zero disables Power-Ups entirely.
+
+// Interface notifications
+
+205 Chaidh glacadh-sgrìn a shàbhaladh!
+214 An ath-thraca ciùil!
+260 An traca ciùil roimhe!
+258 Neach-ciùil: 
+259 Albam: 
+
+// 270
