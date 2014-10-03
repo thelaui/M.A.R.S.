@@ -257,14 +257,9 @@ namespace settings {
                 std::string home(getenv("HOME"));
                 if (*home.rbegin() != '/') home += '/';
 
+                C_configPath =      home + ".marsshooter/";
                 if (std::ifstream((C_configPath + "mars.cfg").c_str()))
                     success = true;
-                else if (std::ifstream((home + ".marsshooter/mars.cfg").c_str())) {
-                    C_configPath =      home + ".marsshooter/";
-                    success = true;
-                }
-                else
-                    C_configPath =      home + ".marsshooter/";
             # endif
 
             # ifdef __WIN32__
@@ -304,27 +299,11 @@ namespace settings {
         if (C_dataPath == "") {
             bool success(false);
             std::cout << "Searching for data files... " << std::flush;
-            C_dataPath = "./data/";
+            C_dataPath = "@DATADIR@/marsshooter/";
 
             # ifdef __linux__
                 if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
                     success = true;
-                else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {
-                    C_dataPath = "/usr/share/marsshooter/";
-                    success = true;
-                } else if (std::ifstream("/usr/share/games/marsshooter/locales/English.txt")) {
-                    C_dataPath = "/usr/share/games/marsshooter/";
-                    success = true;
-                } else if (std::ifstream("/usr/local/share/games/marsshooter/locales/English.txt")) {
-                    C_dataPath = "/usr/local/share/games/marsshooter/";
-                    success = true;
-                } else if (std::ifstream("/usr/local/share/marsshooter/locales/English.txt")) {
-                    C_dataPath = "/usr/local/share/marsshooter/";
-                    success = true;
-                } else if (std::ifstream("/usr/local/games/marsshooter/locales/English.txt")) {
-                    C_dataPath = "/usr/local/games/marsshooter/";
-                    success = true;
-                }
             # endif
 
             # ifdef __WIN32__
