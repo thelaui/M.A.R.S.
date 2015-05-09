@@ -222,7 +222,7 @@ namespace window {
         glLoadIdentity();
 
         // Setup translation (according to left-upper corner)
-        gluOrtho2D(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f);
+        glOrtho(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f, -1, 1);
 
         // probably improves performance...
         glDisable(GL_LIGHTING);
@@ -247,7 +247,7 @@ namespace window {
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+        glOrtho(0.f, viewPort_.x_, viewPort_.y_, 0.f, -1, 1);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
@@ -255,7 +255,7 @@ namespace window {
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        gluOrtho2D(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f);
+        glOrtho(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f, -1, 1);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
     }
@@ -270,7 +270,7 @@ namespace window {
             glLoadIdentity();
             setViewPort();
 
-            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            glOrtho(0.f, viewPort_.x_, viewPort_.y_, 0.f, -1, 1);
 
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
@@ -284,7 +284,7 @@ namespace window {
             glLoadIdentity();
             setViewPort();
 
-            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            glOrtho(0.f, viewPort_.x_, viewPort_.y_, 0.f, -1, 1);
 
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
@@ -294,7 +294,7 @@ namespace window {
         else {
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
-            gluOrtho2D(0.f, viewPort_.x_, viewPort_.y_, 0.f);
+            glOrtho(0.f, viewPort_.x_, viewPort_.y_, 0.f, -1, 1);
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
         }
