@@ -70,6 +70,8 @@ namespace music {
 
             if (fadeOutTimer_ > 0.f) {
                 fadeOutTimer_ -= timer::realFrameTime();
+                if (fadeOutTimer_ < 0.f)
+                    fadeOutTimer_ = 0.f;
                 musicChannel_.setVolume(settings::C_musicVolume*fadeOutTimer_*2.5f);
             }
 
