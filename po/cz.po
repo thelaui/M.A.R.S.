@@ -1,0 +1,1043 @@
+# M.A.R.S. cz.po
+# Mates, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:26+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Spustit místní hru"
+
+msgid "Start Network Game"
+msgstr "Spustit síťovou hru"
+
+msgid "Join Network Game"
+msgstr "Připojit se k síťové hře"
+
+msgid "Options"
+msgstr "Nastavení"
+
+msgid "About"
+msgstr "O programu"
+
+msgid "Quit M.A.R.S."
+msgstr "Ukončit M.A.R.S."
+
+msgid "Continue"
+msgstr "Pokračovat"
+
+msgid "Restart Game"
+msgstr "Restartovat hru"
+
+msgid "Hide Menu"
+msgstr "Skrýt menu"
+
+msgid "Return to Main Menu"
+msgstr "Návrat do hlavního menu"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "License"
+msgstr "Licence"
+
+msgid "Show this Info again."
+msgstr "Zobrazit tyto informace i příště."
+
+msgid "Left Team"
+msgstr "Levý tým"
+
+msgid "Right Team"
+msgstr "Pravý tým"
+
+msgid "Bots Left"
+msgstr "Boti vlevo"
+
+msgid "Bots Right"
+msgstr "Boti vpravo"
+
+msgid "Bots"
+msgstr "Boti"
+
+msgid "Frag Limit"
+msgstr "Limit fragů"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"V roce 3547 civilizace po celé galaxii ustálili své vlastní planety a žili v "
+"míru a harmonii s jejich prostředím.  Ale mimo tato kontemplativní "
+"stanoviště zuří VELKÁ VÁLKA.  Jakožto slavný bojovník musíš na své cestě za "
+"nikdy nekončící slávou a prosperitou chránit svoji planetu proti blížící se "
+"zkáze v podobě tvých žárlivých  sousedů! Bojuj v bitvě, pro kterou byl "
+"opravdový hrdina jako ty stvořen: SPACEBALL. Chraň svou planetu před koulí "
+"smrti a poraž své nepřátele tak, že ji necháš narazit do jejich směšného "
+"glóbu."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Dokopej nebo dostřílej kouli na nepřátelskou planetu!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"Následkem VELKÉ VÁLKY jsi ztratil vše: svůj domov, svoji rodinu a "
+"svésebevědomí. Tvou poslední šancí dostat se z toho mizerného života ve "
+"kterém vězíš je stát se gladiátorem ve velkolepé DEATHMATCH aréně. Odolávej "
+"ostatním bojovníkům a získávej body ničením těch skořápek, které nazývají "
+"lodě. Připrav se! Čeká na tebe smrt a sláva."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Znič co nejvíce nepřátel!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"Vyjednávání selhala! Ty i tvoji sousedé jste zaznamenali velké ztráty při "
+"vyjednávání podmínek VELKÉ VÁLKY. Jakožto poslední pokus o získání převahy "
+"musíš ničit zdroje svých nepřátel a chránit své vlastní. Jediný způsob jak "
+"toho docílit je velkolepý TÝMOVÝ DEATHMATCH. Chraň své spolubojovníky a znič "
+"své nepřátele! Dej jim lekci na kterou nikdy nezapomenou."
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Jako kdyby VELKÁ VÁLKA nebyla dost, tvůj planetární systém je ohrožován "
+"novým zdrojem neuvěřitelného zla: Obrovská loď neznámých útočníků levituje "
+"nad tvou galaxií, mířící na domovské planety monolitickou zbraní hromadného "
+"ničení. Jako znak cynismu útočníci upustili dálkový ovladač tohoto původce "
+"smrti a strachu. Dostaň se k němu první abys přeměnil domovskou planetu "
+"tvých nepřátel na místo zkázy! Staň se STRÁŽCEM KANÓNU."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Seber dálkový ovladač a udrž si ho co nejdéle!"
+
+msgid "Show Debug Information"
+msgstr "Zobrazování debugovacích informací"
+
+msgid "Bots Orientation"
+msgstr "Orientace botů"
+
+msgid "Zones"
+msgstr "Zóny"
+
+msgid "AI-Paths"
+msgstr "Trasy AI"
+
+msgid "Show Game Information"
+msgstr "Zobrazování herních informací"
+
+msgid "Frames per Second"
+msgstr "Snímky za sekundu"
+
+msgid "Particle Count"
+msgstr "Počet částic"
+
+msgid "Particle Lifetime"
+msgstr "Životnost částic"
+
+msgid "Game Settings"
+msgstr "Herní nastavení"
+
+msgid "Full screen"
+msgstr "Celá obrazovka"
+
+msgid "Music"
+msgstr "Hudba"
+
+msgid "Sound"
+msgstr "Zvuky"
+
+msgid "Announcer"
+msgstr "Hlas"
+
+msgid "Name"
+msgstr "Jméno"
+
+msgid "Accelerate"
+msgstr "Akcelerace"
+
+msgid "Turn Left"
+msgstr "Vlevo"
+
+msgid "Turn Right"
+msgstr "Vpravo"
+
+msgid "Weapon"
+msgstr "Zbraň"
+
+msgid "Ship"
+msgstr "Loď"
+
+msgid "Player Color"
+msgstr "Barva hráče"
+
+msgid "Team Color"
+msgstr "Barva týmu"
+
+msgid "File Format for Screenshots"
+msgstr "Formát snímků obrazovky"
+
+msgid "Display Tool Tips"
+msgstr "Zobrazovat nápovědy"
+
+msgid "Weapon Options"
+msgstr "Nastavení zbraní"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Toto je první pokus o vytvoření hry v OpenGL se SFML. Jedná se o hru pro dva "
+"hráče, létání s loděmi v dvourozměrném prostoru, ovládaného zákony "
+"gravitace. Domovská stránka: http://www.marsshooter.org© 2010-2011 Felix "
+"Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Tento program je volný software; můžete ho šířit a/nebo upravovat pod "
+"podmínkami GNU General Public License vydanou Free Software Foundation ve "
+"verzi 3 nebo (dle vašeho rozhodnutí) jakoukoli pozdější verzí. Tento program "
+"je distribuován v naději, že bude užitečný, ale BEZ JAKÉKOLI ZÁRUKY; tedy i "
+"bez záruky PRODEJNOSTI nebo VHODNOSTI PRO KONKRÉTNÍ ÚČEL. Přečtěte si GNU "
+"General Public License pro více detailů. Dostupná online na:http://www.gnu."
+"org/licenses/gpl-3.0.html Česky na:http://www.gnugpl.cz"
+
+msgid "Do you really want to quit?"
+msgstr "Opravdu chcete skončit?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Opravdu chcete ukončit probíhající hru?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"Podpora pro hru po internetu nebo lokální síti je plánovaná, ale není ještě "
+"implementována. Zůstaňte naladěni!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Pauznul jsi M.A.R.S. právě uprostřed neuvěřitelný bitvy? Pokud chceš udělat "
+"snímek obrazovky, tohle tlačítko ti umožní udělat úžasný wallpaper skrytím "
+"všech oken. Poté je jednoduše znovu vyvolej stisknutím ESC."
+
+msgid "Add"
+msgstr "Plus"
+
+msgid "Back Slash"
+msgstr "Zpětné lomítko"
+
+msgid "Comma"
+msgstr "Čárka"
+
+msgid "Dash"
+msgstr "Pomlčka"
+
+msgid "Divide"
+msgstr "Lomítko"
+
+msgid "Down"
+msgstr "Dolů"
+
+msgid "Equal"
+msgstr "Rovnítko"
+
+msgid "Left Alt"
+msgstr "Levý Alt"
+
+msgid "Left Bracket"
+msgstr "Levá závorka"
+
+msgid "Left Control"
+msgstr "Levý Control"
+
+msgid "Left"
+msgstr "Vlevo"
+
+msgid "Left Shift"
+msgstr "Levý Shift"
+
+msgid "Left Super"
+msgstr "Levý Super"
+
+msgid "Multiply"
+msgstr "Hvězdička"
+
+msgid "Period"
+msgstr "Tečka"
+
+msgid "Quote"
+msgstr "Uvozovky"
+
+msgid "Right Alt"
+msgstr "Pravý Alt"
+
+msgid "Right Bracket"
+msgstr "Pravá závorka"
+
+msgid "Right Control"
+msgstr "Pravý Control"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Right"
+msgstr "Vpravo"
+
+msgid "Right Shift"
+msgstr "Pravý Shift"
+
+msgid "Right Super"
+msgstr "Pravý Super"
+
+msgid "Semi Colon"
+msgstr "Středník"
+
+msgid "Slash"
+msgstr "Lomítko"
+
+msgid "Space"
+msgstr "Mezerník"
+
+msgid "Subtract"
+msgstr "Mínus"
+
+msgid "Tilde"
+msgstr "Vlnovka"
+
+msgid "Up"
+msgstr "Nahoru"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Audio"
+msgstr "Zvuk"
+
+msgid "Window Settings"
+msgstr "Nastavení okna"
+
+msgid "Start Tutorial"
+msgstr "Spustit tutoriál"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Vítej, nováčku!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"Jsme rádi, že můžeme vycvičit nového hrdinu jako jsi ty, {PLAYER1_NAME}, aby "
+"se k nám přidal ve VELKÉ VÁLCE!Evidentně potřebuješ trochu cviku se svou "
+"novou lodí.Nechť výcvik začne..."
+
+msgid "Basic Movement..."
+msgstr "Základní pohyby..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Ovládání tvé lodě je nejdůležitější úkol ke zvládnutí.Všechny pohyby "
+"podléhají zákonům gravitace. Ke zpomalení se musíš otočit a zrychlit v "
+"opačném směru. Ovládej svou loď klávesami <{PLAYER1_KEY_UP}>, "
+"<{PLAYER1_KEY_LEFT}> a <{PLAYER1_KEY_RIGHT}>!"
+
+msgid "Warming Up!"
+msgstr "Zahřívání!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr "Dostaň se do růžové oblasti!Snaž se nezničit svoji novou loď."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Velmi dobře, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Teď se vrať na svoji domovskou planetu a pokus se pozadu přistát pomalým "
+"přibližováním se k planetě."
+
+msgid "Good Work!"
+msgstr "Dobrá práce!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr "Správné přistání není tak snadné, že?Musíš do toho vložit svoje srdce."
+
+msgid "Something More Difficult..."
+msgstr "Něco trošku obtížnějšího..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Pokus se následovat trasu označenou růžovými oblastmi!Kontaktujeme tě znovu "
+"až to zvládneš."
+
+msgid "Awesome!"
+msgstr "Úžasné!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Jsi ten nejlepší začátečník, kterého jsme kdy viděli.Teď se připrav na "
+"nějaké exploze."
+
+msgid "Shooting..."
+msgstr "Střílení..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"K poražení nepřátel musíš vědět jak střílet!Pro tento účel stiskni "
+"<{PLAYER1_KEY_FIRE}>. Trochu si to vyzkoušej a pak přistaň na své planetě "
+"pro pokračování."
+
+msgid "Volume Settings"
+msgstr "Nastavení hlasitosti"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Dobré přistání, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "Zdá se, že jsi dobrý pilot.Teď, co takhle trochu víc zbraní?"
+
+msgid "The Weapons..."
+msgstr "Zbraně..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Vím, že na tohle jsi čekal. Když stojíš na planetě, můžeš přepínat mezi "
+"některými neuvěřitelně ďábelskými zbraněmi.Stiskni <{PLAYER1_KEY_FIRE}> k "
+"otevření svého arzenálu.Poté použij <{PLAYER1_KEY_LEFT}> a "
+"<{PLAYER1_KEY_RIGHT}> k výběru zbraně! Vzleť až budeš hotov!"
+
+msgid "Play Next Track"
+msgstr "Přehrát další skladbu"
+
+msgid "Playback Settings"
+msgstr "Nastavení přehrávání"
+
+msgid "Fight!"
+msgstr "Bitva!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Teď se pojďme podívat jak si poradíš s nováčkem z jiné planety. Zdá se, že "
+"se snaží zlepšit si svoje pilotní dovednosti.Poraž ho!"
+
+msgid "Impressive!"
+msgstr "Působivé!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Dokázal jsi to! Jak sis možná všimnul, nad tvojí lodí se objevila malá "
+"hvězda. Čím více nepřátel zničíš, tím více se jich objeví. Neslouží ale "
+"jenom jako indikátor fragů! Přistaň opět na planetě a my ti ukážeme k čemu "
+"jsou hvězdy ještě dobré."
+
+msgid "Beat Them!"
+msgstr "Poraž je!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Prokaž své schopnosti! Získej alespoň pět bodů jejich ničením! Tvé současné "
+"skóre je zobrazeno vedle tvého jména!Pošleme ti zkušeného válečníka na "
+"pomoc, {PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "Neuvěřitelné!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Zvládl jsi všechny naše úkoly. Co teď?Pojďme se podívat do menu nastavení. "
+"Můžeš tam upravit spoustu... no... nastavení.Například si můžeš vybrat styl "
+"a barvu své lodi nebo změnit své jméno..."
+
+msgid "Who's Best?"
+msgstr "Kdo je nejlepší?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"Můžeš si zobrazit tabulku fragů, bodů apod. pomocí <{STATISTICS_KEY}>.Navíc, "
+"čísla vedle tvého jména ukazují počet tvých fragů a tvůj rozdíl od "
+"nejlepšího."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Gratulujeme, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Dokončil jsi tento tutoriál. Jsi teď připraven bojovat ve VELKÉ VÁLCE. Pokud "
+"chceš pokračovat v procvičování, stačí počkat až se nepřátelé znovu objeví. "
+"Můžeš svůj výcvik ukončit pomocí <Esc>.Užij si M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "Selhal jsi!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Úžasné, {PLAYER1_NAME}! Zničil jsi svoji úplně novou loď! Fajn, dáme ti "
+"novou. Jen počkej pár sekund..."
+
+msgid "Did You Notice?"
+msgstr "Všiml sis?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Dochází ti zdraví! Sleduj svůj zelený ukazatel života. Měl bys přistát, "
+"pokud je skoro prázdný."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Dochází ti palivo! Sleduj svůj žlutý ukazatel paliva. Měl bys přistát, pokud "
+"je skoro prázdný."
+
+msgid "You Nearly Got Him!"
+msgstr "Už ho skoro máš!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Sleduj jméno svého protivníka. Jeho barva značí jeho zdraví. Čím je "
+"červenější, tím slabší tvůj protivník je."
+
+msgid "Interface"
+msgstr "Rozhraní"
+
+msgid "High Star Field Resolution"
+msgstr "Vysoké rozlišení hvězd"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Hot Key for Screenshots"
+msgstr "Klávesa pro snímky obrazovky"
+
+msgid "Points"
+msgstr "Body"
+
+msgid "Frags"
+msgstr "Fragy"
+
+msgid "Teamkills"
+msgstr "Teamkilly"
+
+msgid "Suicides"
+msgstr "Sebevraždy"
+
+msgid "Deaths"
+msgstr "Smrti"
+
+msgid "Game Options"
+msgstr "Herní nastavení"
+
+msgid "Total:"
+msgstr "Celkem:"
+
+msgid "Statistics"
+msgstr "Statistika"
+
+msgid "Planet Life Points"
+msgstr "Životy planety"
+
+msgid "Shader Effects"
+msgstr "Shader efekty"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Bohužel, shadery nejsou vaším hardware podporovány!"
+
+msgid "Gameplay"
+msgstr "Hra"
+
+msgid "PowerUp Spawn Rate"
+msgstr "Četnost Power-Upů"
+
+msgid "Bot Difficulty"
+msgstr "Obtížnost botů"
+
+msgid "Explosions for Slow Motion"
+msgstr "Počet explozí pro zpomalení"
+
+msgid "Off"
+msgstr "Vypnuto"
+
+msgid "Credits"
+msgstr "Autoři"
+
+msgid "Special Thanks to:"
+msgstr "Speciální poděkování:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Překlady: Arabština: Majid Čínština: Wecing Čeština: Mates Finština: Paavo "
+"Francouzština: Astohan Němčina: Sandra Hindština: Antriksh & Aakanksh "
+"Maďarština: Papp Bence Italština: Proch Polština: command_dos Portugalština: "
+"Vitor Ruština: Drakmail Španělština: Gastón Švédština: HenrikPodpora "
+"kódování: Werner a DeubeuliouTesty a kreativní podpora: Heinrich, Martin, "
+"Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "Rozlišení"
+
+msgid "Color Depth"
+msgstr "Barevná hloubka"
+
+msgid "Special Ability"
+msgstr "Specialita"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Zobrazuje počet snímků za sekundu.Pokud je tato hodnota vždy nízká (<20), "
+"měli byste upravit některá nastavení v záložce Grafika!"
+
+msgid "Displays the amount of active particles."
+msgstr "Zobrazuje počet aktivních částic."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Skryje okna s nápovědou jako je toto."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Nastaví formát pro ukládání snímků obrazovky."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Když je stisknuta tato klávesa, je do složky {CONFIG_PATH}screenshots/ "
+"uložen snímek obrazovky."
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Stisknutí této klávesy přeskočí na další hudební skladbu."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Pokud vybouchne tento počet lodí současně, projeví se efekt zpomalení."
+
+msgid "Displays the job of each bot."
+msgstr "Zobrazí současný úkol každého bota."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Zobrazí taktické oblasti, které jsou důležité pro umělou inteligenci."
+
+msgid "Displays paths calculated by bots."
+msgstr "Zobrazí cesty vypočítané botmi."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maximalizuje okno aby zakrývalo celou obrazovku."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Způsobí obnovování hry podle obnovovací frekvence vašeho monitoru.Aktivace "
+"této volby většinou udělá hru více plynulou."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr ""
+"Aktivuje dobře vypadající efekty jako tepelná mlha, ale redukuje celkový "
+"výkon."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Nastaví velikost okna.Ovlivní jak režim v okně tak režim přes celou "
+"obrazovku."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"U monitorů s vysokým rozlišením způsobují lepší vzhled pozadí.Vypnutí této "
+"volby může lehce zvýšit výkon."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr "Upravuje celkový počet částic.Nižší hodnoty znatelně zvýší výkon."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Upravuje celkovou dobu života částic.Nižší hodnoty znatelně zvýší výkon."
+
+msgid "Adjusts volume of background music."
+msgstr "Upravuje hlasitost hudby v pozadí."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Upravuje hlasitost zvukových efektů."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Upravuje hlasitost hlasatele."
+
+msgid "Sets the team of the local players."
+msgstr "Nastavuje tým místních hráčů."
+
+msgid "Enables local players."
+msgstr "Aktivuje místní hráče."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Upravuje počet lodí ovládáných umělou inteligencí."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Limit bodů kterých musí tým dosáhnout pro výhru."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Limit bodů kterých musí hráč dosáhnout pro výhru."
+
+msgid "Adjusts the strength of the bots."
+msgstr "Upravuje odolnost botů."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"Upravuje počet vylepšení (Power-Upů), které se budou objevovat během hry. "
+"Nula vypne Power-Upy úplně."
+
+msgid "Weapons"
+msgstr "Zbraně"
+
+msgid "Special Abilities"
+msgstr "Speciality"
+
+msgid "Screenshot saved!"
+msgstr "Snímek uložen!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Jelikož VELKÁ VÁLKA snižuje drasticky tvé zdroje, vědci byli nuceni nalézt "
+"způsob jak efektivně likvidovat tvé nepřátele s využitím minimálních zdrojů. "
+"Provedli spoustu výzkumů a nakonec vytvořili novou zbraň s neuvěřitelnou "
+"vlastností: Zabijí instantně ale projektily jsou velice náchylné na "
+"gravitační pole a velice těžko se ovládají. Proto ji nazvali: INSTA-GRAVE!   "
+"Naneštěstí tuto technologii někdo ukradl, takže tví nepřátelé mohou tuto "
+"ďábelskou zbraň používat také. Teď je řada na tobě: Poraž ty zloděje ve "
+"velké GRAVE-ITATION-PIT pro znovuzískání nadvlády.  Zvítěz v této bitvě a "
+"vítězství ve VELKÉ VÁLCE může být tvoje."
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Znič co nejvíce nepřátel!"
+
+msgid "Special Abilities..."
+msgstr "Speciální schopnosti..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Jak jsme slíbili, řekneme ti význam hvězdiček. Jsou to zdroje pro působivě "
+"silné zvláštní schopnosti tvé lodě. Můžeš se například během bitvy ošetřit "
+"včetně přátel poblíž, odstrčit nebo zmrazit lodě v určité vzdálenosti! Čím "
+"více hvězdiček, tím větší dosah a sílu bude zvláštní schopnost mít."
+
+msgid "Selection..."
+msgstr "Výběr..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Pro aktivaci volby schopnosti stačí stisknout <{PLAYER1_KEY_SPECIAL}>. Mezi "
+"jednotlivými schopnostmi můžeš přepínat pomocí <{PLAYER1_KEY_LEFT}> a "
+"<{PLAYER1_KEY_RIGHT}>! Pro tuhle lekci zvol \"Freezer\"! Vzleť jakmile ho "
+"budeš mít!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Hej, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "To je ale divný jméno... Měl by sis ho změnit!"
+
+msgid "Next music track!"
+msgstr "Další hudební skladba!"
+
+msgid "General Settings"
+msgstr "Obecné nastavení"
+
+msgid "Special Effects"
+msgstr "Speciální efekty"
+
+msgid "Ship Settings"
+msgstr "Nastavení lodě"
+
+msgid "A Button"
+msgstr "Tlačítko A"
+
+msgid "B Button"
+msgstr "Tlačítko B"
+
+msgid "X Button"
+msgstr "Tlačítko X"
+
+msgid "Y Button"
+msgstr "Tlačítko Y"
+
+msgid "Start Button"
+msgstr "Tlačítko Start"
+
+msgid "Back Button"
+msgstr "Tlačítko Zpět"
+
+msgid "Right Bumper"
+msgstr "Pravý Bumper"
+
+msgid "Left Bumper"
+msgstr "Levý Bumper"
+
+msgid "Right Trigger"
+msgstr "Pravý Trigger"
+
+msgid "Left Trigger"
+msgstr "Levý Trigger"
+
+msgid "Direction Up"
+msgstr "Směr Nahoru"
+
+msgid "Direction Down"
+msgstr "Směr Dolů"
+
+msgid "Direction Left"
+msgstr "Směr Vlevo"
+
+msgid "Direction Right"
+msgstr "Směr Vpravo"
+
+msgid "Stick1 Up"
+msgstr "Stick1 Nahoru"
+
+msgid "Stick1 Down"
+msgstr "Stick1 Dolů"
+
+msgid "Stick1 Left"
+msgstr "Stick1 Vlevo"
+
+msgid "Stick1 Right"
+msgstr "Stick1 Vpravo"
+
+msgid "Stick2 Up"
+msgstr "Stick2 Nahoru"
+
+msgid "Stick2 Down"
+msgstr "Stick2 Dolů"
+
+msgid "Stick2 Left"
+msgstr "Stick2 Vlevo"
+
+msgid "Stick2 Right"
+msgstr "Stick2 Vpravo"
+
+msgid "Button"
+msgstr "Tlačítko"
+
+msgid "Hot Key for Statistics"
+msgstr "Klávesová zkratka pro statistiky"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Při stisknutí této klávesy během hry se zobrazí okno se statistikami "
+"současné hry."
+
+msgid "CannonShots"
+msgstr "Výstřely kanónu"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Počkej, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Říkali jsme aby sis vzal Freezer, ale vzal sis něco jiného!Prosím, přistaň "
+"znovu a vezmi si Freezer!"
+
+msgid "The Freezer..."
+msgstr "Freezer..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Tohle je mocná speciální schopnost, která zmrazí lodě poblíž. Musíš zaletět "
+"blízko k nepříteli a stisknout <{PLAYER1_KEY_SPECIAL}> abys ho zmrazil. "
+"Sleduj ho pomalu ztrácet životy... než umře!"
+
+msgid "Practice!"
+msgstr "Nácvik!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Teď zkus zmrazit svého nepřítele! Pro tento výcvik ti dáme nějaké hvězdy. "
+"Ale pamatuj: V reálu budeš muset drtit nepřátele abys tyhle hvězdy získal!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Netrefil jsi ho, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Zkus to znovu. Přidáme ti znovu hvězdy."
+
+msgid "You Did It!"
+msgstr "Dokázal jsi to!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Teď se vrať zpátky na planetu pro výběr další speciální schopnosti!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Pozor, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Už není čas na další zkoušení!Naši nepřátelé poslali dva jejich skutečné "
+"válečníky kvůli pomstě!"
+
+msgid "Players"
+msgstr "Hráči"
+
+msgid "Artist:"
+msgstr "Umělec:"
+
+msgid "Previous music track!"
+msgstr "Předchozí hudební skladba!"
+
+msgid "Play Previous Track"
+msgstr "Přehrát předchozí skladbu"
+
+msgid "Play Tracks in Random Order"
+msgstr "Přehrávat skladby v náhodném pořadí"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Stisknutí této klávesy přepne na předchozí hudební skladbu."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Zapne přehrávání skladeb v náhodném pořadí."
+
+msgid "Moving Stars"
+msgstr "Poletující hvězdy"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Vykreslí na pozadí několik poletujících hvězd. Pěkný efekt, ale snižuje "
+"herní výkon."
+
+msgid "Goals"
+msgstr "Cíle"

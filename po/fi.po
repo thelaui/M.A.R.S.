@@ -1,0 +1,867 @@
+# M.A.R.S. fi.po
+# Paavo, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Paikallinen peli"
+
+msgid "Start Network Game"
+msgstr "Aloita verkkopeli"
+
+msgid "Join Network Game"
+msgstr "Liity verkkopeliin"
+
+msgid "Options"
+msgstr "Asetukset"
+
+msgid "About"
+msgstr "Tietoja"
+
+msgid "Quit M.A.R.S."
+msgstr "Poistu"
+
+msgid "Continue"
+msgstr "Jatka"
+
+msgid "Restart Game"
+msgstr "Aloita alusta"
+
+msgid "Hide Menu"
+msgstr "Piilota valikko"
+
+msgid "Return to Main Menu"
+msgstr "Palaa päävalikkoon"
+
+msgid "Start"
+msgstr "Aloita"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Close"
+msgstr "Sulje"
+
+msgid "License"
+msgstr "Lisenssi"
+
+msgid "Show this Info again."
+msgstr "Näytä tämä uudestaan"
+
+msgid "Left Team"
+msgstr "Vasen joukkue"
+
+msgid "Right Team"
+msgstr "Oikea joukkue"
+
+msgid "Bots Left"
+msgstr "Botit vasemmalla"
+
+msgid "Bots Right"
+msgstr "Botit oikealla"
+
+msgid "Bots"
+msgstr "Botit"
+
+msgid "Frag Limit"
+msgstr "Tapporaja"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"Vuonna 3547, sivilisaatiot ympäri galaksia ovat asettuneet omille "
+"planeetoilleen elämään rauhassa ja sovussa ympäristönsä kanssa.  Mutta "
+"asuinpaikkojen ulkopuolella raivoaa SUURI SOTA.  Maineikkaana taistelijana "
+"kunnian ja menestyksen tiellä sinun täytyy suojella planeettaasi "
+"lähestyvältä tuholta.  Sinunkaltaisesi oikea sankari syntyi tätä lajia "
+"varten: SPACEBALL. Suojele planeettaasi kuoleman pallolta ja tuhoa "
+"vihollisesi ampumalla se heidän naurettavaan planeettaansa päin."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Potkaise tai ammu pallo vihollisesi planeettaan päin!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"SUUREN SODAN seurauksena olet menettänyt kaiken: Kotisi, perheesi sekä "
+"itsekunnioituksesi. Viimeinen mahdollisuutesi päästä pois onnettomasta "
+"elämästä, johon olet juuttunut, on tulla gladiaattoriksi loistokkaalla "
+"DEATHMATCH-areenalla. Uhmaa muita taistelijoita ja ansaitse pisteitä "
+"tuhoamalla pähkinänkuoret, joita he kutsuvat aluksiksi. Valmistaudu! Kuolema "
+"ja kunnia odottavat sinua."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Tuhoa niin monta vihollista kuin mahdollista!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"Neuvottelut ovat epäonnistuneet! Sinä ja naapurisi olette kärsineet valtavia "
+"häviöitä jatkuvan SUUREN SODAN lopputuloksena. Viimeisenä yrityksenä "
+"niskalenkin saamiseksi sinut on komennettu hävittämään vihollisen "
+"voimavaroja ja suojelemaan omiasi. Ainoa keino tähän on eeppinen "
+"TEAMDEATHMATCH. Suojele tovereitasi ja tuhoa vihollisesi! Anna heille "
+"opetus, mitä he eivät tule koskaan unohtamaan."
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Ikään kuin SUURESSA SODASSA ei olisi kylliksi kestämistä. Planeettaasi uhkaa "
+"uusi, uskomaton pahuuden lähde. Jättimäinen tuntemattomien hyökkääjien alus "
+"leijuu galaksisi yläpuolella tähdäten asutettuja planeettoja massiivisella "
+"joukkotuhoaseella. Kyynisyyden merkkinä hyökkääjät pudottivat säätimen, "
+"jolla tätä kuoleman ja pelon alkuperää voidaan hallita. Ehdi sen luokse "
+"ensin muuttaaksesi vihollisesi kotiplaneetan lohduttomaksi paikaksi! Ole "
+"CANNONKEEPer."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Poimi säädin ja pidä se itselläsi niin kauan kuin mahdollista!"
+
+msgid "Show Debug Information"
+msgstr "Näytä Debug-tiedot"
+
+msgid "Bots Orientation"
+msgstr "Näytä Bottien suunta"
+
+msgid "Zones"
+msgstr "Näytä Alueet"
+
+msgid "AI-Paths"
+msgstr "Näytä AI-polut"
+
+msgid "Show Game Information"
+msgstr "Näytä pelin tiedot"
+
+msgid "Frames per Second"
+msgstr "Näytä FPS"
+
+msgid "Particle Count"
+msgstr "Hiukkasten määrä"
+
+msgid "Particle Lifetime"
+msgstr "Hiukkasten kestoaika"
+
+msgid "Game Settings"
+msgstr "Pelin asetukset"
+
+msgid "Full screen"
+msgstr "Koko näyttö"
+
+msgid "Music"
+msgstr "Musiikki"
+
+msgid "Sound"
+msgstr "Ääni"
+
+msgid "Announcer"
+msgstr "Tiedottaja"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Accelerate"
+msgstr "Kiihdytä"
+
+msgid "Turn Left"
+msgstr "Käänny vasempaan"
+
+msgid "Turn Right"
+msgstr "Käänny oikeaan"
+
+msgid "Weapon"
+msgstr "Ase"
+
+msgid "Ship"
+msgstr "Alus"
+
+msgid "Player Color"
+msgstr "Pelaajan väri"
+
+msgid "Team Color"
+msgstr "Joukkueen väri"
+
+msgid "File Format for Screenshots"
+msgstr "Tiedostomuoto kuvankaappaukselle"
+
+msgid "Display Tool Tips"
+msgstr "Näytä työkaluvinkit"
+
+msgid "Weapon Options"
+msgstr "Aseiden asetukset"
+
+msgid "Do you really want to quit?"
+msgstr "Haluatko varmasti poistua?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Haluatko varmasti lopettaa tämänhetkisen pelin?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"M.A.R.S.-pelin pelaaminen internetissä tai lähiverkossa on suunniteltu "
+"muttei vielä toteutettu ominaisuus. Pysy vireessä!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Pysäytit M.A.R.S-pelin hullun taistelun keskellä? Jos haluat ottaa "
+"kuvankaappauksen, tämä painike tekee eeppisten taustakuvien luomisen "
+"mahdolliseksi piilottamalla kaikki ikkunat. Tuo ne myöhemmin takaisin "
+"yksinkertaisesti painamalla ESC-näppäintä."
+
+msgid "Graphics"
+msgstr "Grafiikka"
+
+msgid "Window Settings"
+msgstr "Ikkuna-asetukset"
+
+msgid "Start Tutorial"
+msgstr "Tutoriaali"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Tervetuloa, Avaruusnoviisi!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"Olemme iloisia värvätessämme kaltaisesi nousevan sankarin, {PLAYER1_NAME}, "
+"liittymään meihin SUURESSA SODASSA!Tajusimme, että tarvitset hieman "
+"harjoitusta uuden aluksesi kanssa.Harjoitus alkakoon..."
+
+msgid "Basic Movement..."
+msgstr "Perusliikkuminen"
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Aluksesi ohjaaminen on tärkein tehtävä hallita.Kaikki liikkuminen on "
+"painovoiman hallinnassa. Hidastaaksesi sinun täytyy kääntyä vastakkaiseen "
+"suuntaan ja kiihdyttää. Ohjaa alustasi näppäimillä <{PLAYER1_KEY_UP}>, "
+"<{PLAYER1_KEY_LEFT}> ja <{PLAYER1_KEY_RIGHT}>!"
+
+msgid "Warming Up!"
+msgstr "Lämmitellään!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr "Mene pinkille alueelle!Yritä olla törmäilemättä uuden aluksesi kanssa."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Hyvin tehty, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Nyt, suuntaa takaisin kotiplaneetallesi ja yritä laskeutua aluksellasi "
+"leijumalla hitaasti taaksepäin planeettaasi kohti."
+
+msgid "Good Work!"
+msgstr "Hyvää työtä!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"Oikeaoppinen laskeutuminen ei ole mikään helppo nakki, eihän?Sinun täytyy "
+"omistautua sille sydämesi pohjasta."
+
+msgid "Something More Difficult..."
+msgstr "Jotakin vaikeampaa..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Yritä seurata pinkeillä alueilla merkittyä reittiä!Otamme sinuun yhteyttä, "
+"kun hallitset tämän.Anna mennä!"
+
+msgid "Awesome!"
+msgstr "Mahtavaa!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Olet paras noviisi mitä olemme nähneet.Valmistaudu seuraavaksi räjähtävään "
+"toimintaan."
+
+msgid "Shooting..."
+msgstr "Ampuminen..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Tuhotaksesi vihollisesi, sinun täytyy tietää kuinka ampua heidät!Siihen "
+"tarkoitukseen paina <{PLAYER1_KEY_FIRE}>. Pidä hauskaa ampumalla ympäriinsä "
+"ja laskeudu sitten planeetallesi jatkaaksesi tutoriaalia."
+
+msgid "Volume Settings"
+msgstr "Äänenvoimakkuuden asetukset"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Hieno laskeutuminen, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr ""
+"Olet osoittautunut olemaan hieno ohjaaja.Miten on muiden aseiden laita?"
+
+msgid "The Weapons..."
+msgstr "Aseet..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Tiedämme, että olet odottanut tätä. Telakoituneena voit vaihdella ilkeitä "
+"aseitasi. Paina <{PLAYER1_KEY_FIRE}> avataksesi arsenaalisi.Sitten paina "
+"<{PLAYER1_KEY_LEFT}> tai <{PLAYER1_KEY_RIGHT}> valitaksesi aseen! Lähde "
+"liikkeelle, kun olet valmis!"
+
+msgid "Play Next Track"
+msgstr "Soita seuraava musiikkikappale"
+
+msgid "Playback Settings"
+msgstr "Toiston asetukset"
+
+msgid "Fight!"
+msgstr "Taistele!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Katsotaanpa miten pärjäät toisen planeetan noviisia vastaan. Näyttää siltä, "
+"että hän yrittää kehittää lentotaitojaan.Päihitä hänet!"
+
+msgid "Impressive!"
+msgstr "Vaikuttavaa!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Sinä teit sen! Kuten varmaan huomasit, pieni tähti ilmestyi aluksesi päälle. "
+"Mitä enemmän vihollisia tapat, sitä enemmän tähtiä saat. Mutta ne eivät ole "
+"vain tappojen ilmaisimia! Laskeudu uudestaan, niin me näytämme mihin tähdet "
+"kelpaavat."
+
+msgid "Beat Them!"
+msgstr "Päihitä ne!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Osoita taitosi! Hanki ainakin viisi pistettä tappamalla niitä! Tämänhetkinen "
+"pistemääräsi näytetään aluksesi vieressä!Lähetämme sotilaan auttamaan sinua, "
+"{PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "Uskomatonta!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Hoidit kaikki tehtävämme onnistuneesti. Mitä seuraavaksi?Katsotaanpa "
+"asetukset-valikkoa. Siellä voit säätää paljon... no... asetuksia.Voit "
+"esimerkiksi valita aluksesi mallin ja värin tai vaihtaa nimesi..."
+
+msgid "Who's Best?"
+msgstr "Kuka on paras?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr "Voit ottaa esille tappojen, pisteiden yms. määrän painamalla"
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Onnittelut, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Olet suorittanut tämän tutoriaalin loppuun. Olet nyt valmis taistelemaan "
+"SUURESSA SODASSA. Jos haluat jatkaa harjoittelua, odota vain, kunnes uusi "
+"vihollinen ilmestyy. Voit päättää koulutuksesi painamalla <Esc>.Pidä hauskaa "
+"M.A.R.S.-pelin parissa!"
+
+msgid "You Failed!"
+msgstr "Epäonnistuit!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Mahtavaa, {PLAYER1_NAME}! Tuhosit upouuden aluksesi. Hyvä on, me hankimme "
+"sinulle uuden. Odota muutama sekunti..."
+
+msgid "Did You Notice?"
+msgstr "Huomasitko?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Elinvoimasi kuluu! Pidä silmällä ylempää elinvoimamittaria. On parasta "
+"laskeutua, jos se on melkein tyhjä."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Polttoaineesi kuluu! Pidä silmällä keltaista polttoainemittaria. On parasta "
+"laskeutua, jos se on melkein tyhjä."
+
+msgid "You Nearly Got Him!"
+msgstr "Melkein sait hänet!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Tarkkaile vihollisesi nimeä. Nimen väri ilmaisee elinvoiman määrää. Mitä "
+"punaisemmaksi se muuttuu, sitä heikommaksi vihollisesi on tullut."
+
+msgid "Interface"
+msgstr "Käyttöliittymä"
+
+msgid "High Star Field Resolution"
+msgstr "Korkea tähtikentän resoluutio"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Hot Key for Screenshots"
+msgstr "Pikanäppäin kuvankaappaukselle"
+
+msgid "Points"
+msgstr "Pisteet"
+
+msgid "Frags"
+msgstr "Tapot"
+
+msgid "Teamkills"
+msgstr "Tiimitappoja"
+
+msgid "Suicides"
+msgstr "Itsemurhia"
+
+msgid "Deaths"
+msgstr "Kuolemia"
+
+msgid "Game Options"
+msgstr "Pelin asetukset"
+
+msgid "Total:"
+msgstr "Yhteensä"
+
+msgid "Statistics"
+msgstr "Tilasto"
+
+msgid "Planet Life Points"
+msgstr "Planeetan elinvoima"
+
+msgid "Shader Effects"
+msgstr "Varjostus"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Laitteistosi ei tue varjostusta!"
+
+msgid "Gameplay"
+msgstr "Pelaaminen"
+
+msgid "PowerUp Spawn Rate"
+msgstr "Bonuksien ilmestymisnopeus"
+
+msgid "Bot Difficulty"
+msgstr "Bottien vaikeusaste"
+
+msgid "Explosions for Slow Motion"
+msgstr "Räjähdyksien määrä hidastukseen"
+
+msgid "Off"
+msgstr "Pois päältä"
+
+msgid "Credits"
+msgstr "Lopputekstit"
+
+msgid "Special Thanks to:"
+msgstr "Erityiskiitokset:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Käännökset: Arabia: Majid Kiina: Wecing Tšekki: Mates Suomi: Paavo Ranska: "
+"Ludovic Saksa: Atto Hindi: Antriksh & Aakanksh Unkari: Papp Bence Italia: "
+"Proch Puola: command_dos Portugali: Vitor Venäjä: Drakmail Espanja: Gastón "
+"Ruotsi: HenrikKoodaustuki: Werner ja DeubeuliouTestaus ja luova tuki: "
+"Heinrich, Martin, Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "Resoluutio"
+
+msgid "Color Depth"
+msgstr "Värin syvyys"
+
+msgid "Special Ability"
+msgstr "Erikoistaito"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Näyttää kuvaruutujen päivitysnopeuden sekunneissa.Jos tämä on aina hyvin "
+"alhainen (<20), sinun pitäisi säätää asetuksia grafiikka-välilehdessä!"
+
+msgid "Displays the amount of active particles."
+msgstr "Näyttää aktiivisten hiukkasten määrän."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Poistaa työkaluvinkit kuten tämän käytöstä."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Asettaa tiedostomuodon mitä kuvankaappauksissa käytetään."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Kun tätä näppäintä painetaan, kuvankaappaus tallennetaan {CONFIG_PATH}"
+"screenshots/"
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Tätä näppäintä painamalla siirryt seuraavaan musiikkikappaleeseen."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr ""
+"Jos tämän verran aluksia räjähtää samanaikaisesti, hidastus-efekti astuu "
+"voimaan."
+
+msgid "Displays the job of each bot."
+msgstr "Näyttää kunkin botin tehtävän."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Näyttää taktiset alueet, mitkä ovat tärkeitä tekoälylle."
+
+msgid "Displays paths calculated by bots."
+msgstr "Näyttää bottien laskemat polut."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maksimoi ikkunan koon peittäen koko näytön."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Ajantasaistaa peliäsi näytön virkistystaajuudesta riippuen.Yleensä tämän "
+"valitseminen tekee pelistä sulavamman."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Sallii siistit tehosteet kuten usvan, mutta vähentää suorituskykyä."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr "Asettaa ikkunan koon.Vaikuttaa sekä koko näyttö- että ikkunatilaan."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"Näytöillä, joilla on korkea resoluutio, tämä valinta saa tähtikentän "
+"kiertämään myöhemmin.Sen pois päältä kytkeminen saattaa nopeuttaa peliä."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Säätää hiukkasten määrää.Alhaisemmat arvot lisäävät suorituskykyä "
+"huomattavasti."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Säätää hiukkasten elinaikaa.Alhaisemmat arvot lisäävät suorituskykyä "
+"huomattavasti.."
+
+msgid "Adjusts volume of background music."
+msgstr "Säätää taustamusiikin voimakkuutta."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Säätää äänitehosteiden voimakkuutta.."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Säätää tiedottajan äänen voimakkuutta."
+
+msgid "Sets the team of the local players."
+msgstr "Asettaa paikallisten pelaajien joukkueen."
+
+msgid "Enables local players."
+msgstr "Sallii paikalliset pelaajat."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Asettaa tekoälyllä ohjattavien pelaajien määrän."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Tarvittava joukkueen pistemäärä pelin voittamista varten."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Tarvittava pelaajan pistemäärä pelin voittamista varten."
+
+msgid "Adjusts the strength of the bots."
+msgstr "Asettaa bottien vahvuuden."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"Asettaa Bonuksien lukumäärän peliä kohti. 0 poistaa Bonukset käytöstä "
+"kokonaan."
+
+msgid "Weapons"
+msgstr "Aseet"
+
+msgid "Special Abilities"
+msgstr "Erikoistaidot"
+
+msgid "Screenshot saved!"
+msgstr "Kuvankaappaus tallennettu!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Koska SUURI SOTA vähentää voimavarojasi radikaalisti, tiedemiehet palkattiin "
+"löytämään tehokas keino vihollisen tuhoamiseksi rajoitetulla panoksella. He "
+"tekivät paljon tutkimustyötä ja lopulta loivat uuden, uskomattoman aseen. Se "
+"tappaa välittömästi, mutta painovoima vaikuttaa laukaistuihin ammuksiin "
+"suuresti ja siksi niitä on vaikea käsitellä. Sen vuoksi he kutsuvat sitä "
+"nimellä: INSTA-GRAVE!   Valitettavasti joku varasti teknologiaamme, joten "
+"myös vihollisesi voivat käyttää tätä ilkeää asetta. Nyt on sinun vuorosi: "
+"Tuhoa ne varkaat mahtavassa GRAVE-ITATION-PITissä niskalenkin saamiseksi.  "
+"Voita tämä taistelu, niin SUUREN SODAN voitto voi olla sinun nimissäsi."
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Tuhoa niin monta vihollista kuin mahdollista!"
+
+msgid "Special Abilities..."
+msgstr "Erikoistaidot..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Kuten lupasimme, kerromme nyt tähtien merkityksen. Ne ovat aluksesi "
+"erikoistaidon voimanlähde. Voit esimerkiksi parantaa itsesi ja lähellä "
+"olevat ystäväsi, räjäytellä tai jäädyttää aluksia tietyllä etäisyydellä! "
+"Mitä enemmän tähtiä sinulla on, sitä voimakkaampi ja laajempi taito on."
+
+msgid "Selection..."
+msgstr "Valitseminen..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Selataksesi taitoja, sinun täytyy vain painaa <{PLAYER1_KEY_SPECIAL}>. "
+"Valitaksesi yhden niistä, paina <{PLAYER1_KEY_LEFT}> tai <{PLAYER1_KEY_RIGHT}"
+">! Tälle oppitunnille, valitse \"Freezer\"! Lähde liikkeelle, kun olet "
+"valinnut sen!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Hei, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Tuo on sopimaton nimi... Ole hyvä ja anna parempi nimi!"
+
+msgid "Next music track!"
+msgstr "Seuraava musiikkikappale!"
+
+msgid "General Settings"
+msgstr "Yleiset asetukset"
+
+msgid "Special Effects"
+msgstr "Erikoistehosteet"
+
+msgid "Ship Settings"
+msgstr "Aluksen asetukset"
+
+msgid "Hot Key for Statistics"
+msgstr "Pikanäppäin tilastoille"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Kun tätä näppäintä painetaan pelatessa, tilastoja näyttävä ikkuna pulpahtaa "
+"esiin."
+
+msgid "CannonShots"
+msgstr "Cannon-ampumisia"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Pysähdy, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Käskimme sinun valita taidon Freezer, mutta olet valinnut toisen "
+"erikoistaidon!Laskeudu uudelleen ja valitse Freezer!"
+
+msgid "The Freezer..."
+msgstr "Freezer..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Tämä voimakas erikoistaito jäädyttää lähettyvillä olevat alukset. Sinun "
+"täytyy lentää vihollisesi lähelle ja painaa <{PLAYER1_KEY_SPECIAL}> "
+"jäädyttääksesi hänet. Katso kun hän menettää elinvoimaansa hitaasti... "
+"kunnes hän kuolee!"
+
+msgid "Practice!"
+msgstr "Harjoittele!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Yritä jäädyttää vihollisesi! Annamme sinulle muutaman tähden jo valmiiksi. "
+"Mutta muista: Oikeassa elämässä sinun täytyy murskata vastustajasi tähtien "
+"saamiseksi!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Ohi meni, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Yritä uudelleen. Annamme sinulle lisää tähtiä."
+
+msgid "You Did It!"
+msgstr "Sinä teit sen!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Suuntaa nyt takaisin planeetallesi valitaksesi uuden erikoistaidon!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Pidä varasi, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Pidempään kokeiluun ei ole aikaa!Vihollisemme ovat lähettäneet kaksi  oikeaa "
+"taistelijaa kostoretkelle!"
+
+msgid "Players"
+msgstr "Pelaajat"
+
+msgid "Artist:"
+msgstr "Artisti:"
+
+msgid "Album:"
+msgstr "Albumi:"
+
+msgid "Previous music track!"
+msgstr "Edellinen musiikkikappale!"
+
+msgid "Play Previous Track"
+msgstr "Soita edellinen musiikkikappale"
+
+msgid "Play Tracks in Random Order"
+msgstr "Soita musiikkikappaleet satunnaisessa järjestyksessä"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Tätä näppäintä painamlla siirryt edelliseen musiikkikappaleeseen."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Soittaa musiikkia satunnaisessa järjestyksessä."
+
+msgid "Moving Stars"
+msgstr "Liikkuvat tähdet"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Piirtää jonkin verran liikkuvia tähtiä taustalle. Silmänruokaa, mutta "
+"vähentää suorituskykyä."
+
+msgid "Goals"
+msgstr "Maaleja"

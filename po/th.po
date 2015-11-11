@@ -1,0 +1,975 @@
+# M.A.R.S. th.po
+# Manoch S. Xyteton, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:31+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "เริ่มเกมในเครื่อง"
+
+msgid "Start Network Game"
+msgstr "เริ่มเกมเครือข่าย"
+
+msgid "Join Network Game"
+msgstr "เข้าร่วมเกมเครือข่าย"
+
+msgid "Options"
+msgstr "ตัวเลือก"
+
+msgid "About"
+msgstr "เกี่ยวกับเกม"
+
+msgid "Quit M.A.R.S."
+msgstr "ออกจาก M.A.R.S."
+
+msgid "Continue"
+msgstr "ทำต่อไป"
+
+msgid "Restart Game"
+msgstr "เริ่มเกมอีกครั้ง"
+
+msgid "Hide Menu"
+msgstr "ซ่อนเมนู"
+
+msgid "Return to Main Menu"
+msgstr "กลับเมนูหลัก"
+
+msgid "Start"
+msgstr "เริ่ม"
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+msgid "Info"
+msgstr "ข้อมูล"
+
+msgid "Close"
+msgstr "ปิด"
+
+msgid "License"
+msgstr "การอนุญาต"
+
+msgid "Ok"
+msgstr "ตกลง"
+
+msgid "Show this Info again."
+msgstr "แสดงข้อมูลนี้อีก"
+
+msgid "Left Team"
+msgstr "ทีมซ้าย"
+
+msgid "Right Team"
+msgstr "ทีมขวา"
+
+msgid "Bots Left"
+msgstr "หุ่นซ้าย"
+
+msgid "Bots Right"
+msgstr "หุ่นขวา"
+
+msgid "Bots"
+msgstr "หุ่น"
+
+msgid "Frag Limit"
+msgstr "ขีดการสังหาร"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"ในปี 3547, ฝูงชนทั่วทั้งกาแล็กซี่ ต่างได้ตั้งถิ่นฐานบนดาวเคราะห์ของตนเอง, "
+"อยู่อย่างสันติสุขและสามัคคีท่ามกลางสิ่งแวดล้อม แต่ภายนอกของที่อยู่ที่เฝ้าฝันนั้น, "
+"มหาสงครามกำลังดุเดือด นักรบที่เลื่องชื่อที่ไม่เคยหมดเกียรติและศักดิ์ศรีเช่นคุณ, "
+"ต้องปกป้องดาวเคราะห์ของคุณ จากคำพิพากษาของเพื่อนบ้านผู้ริษยาที่ใกล้เข้ามา! จงต่อสู้กับศึกครั้งนี้, "
+"วีรบุรุษตัวจริงอย่างคุณได้กำเนิดมาเพื่อ: ลูกบอลอวกาศ "
+"ปกป้องดาวเคราะห์ของคุณจากลูกทรงกลมแห่งความตายและเอาชนะศัตรูของคุณ "
+"โดยให้พวกมันบดขยี้กับลูกทรงกลม"
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "เตะหรือยิงลูกปืนใหญ่ใส่ดาวเคราะห์ของศัตรู!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"ผลลัพธ์ของมหาสงคราม คุณได้สูญเสียทุกๆสิ่ง: บ้านของคุณ, ครอบครัวของคุณ และการนิยมนับถือในตัวคุณ "
+"โอกาสสุดท้ายของคุณ เพื่อกำจัดความเลวร้ายในชีวิตที่ติดอยู่,  คือการกลายเป็นนักรบที่น่าสรรเสริญ "
+"ในสังเวียน DEATHMATCH ต้านทานนักรบอื่น ๆ และเก็บคะแนน "
+"โดยการทำลายเกราะที่พวกเขาเรียกว่ายาน จงเตรียมตัวของคุณ! "
+"ความตายและการสรรเสริญรอคอยคุณอยู่"
+
+msgid "Destroy as many enemies as possible!"
+msgstr "ทำลายศัตรูให้ได้มากที่สุด!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"การเจรจาล้มเหลว! ทั้งคุณและเพื่อนบ้านต่างจารึกการสูญเสียครั้งยิ่งใหญ่ "
+"ในบทสรุปของมหาสงครามไปตลอดกาล ความพยายามครั้งสุดท้ายเพื่อชิงความได้เปรียบ, "
+"คุณถูกสั่งให้ทำลายทรัพยากรของศัตรูให้มากที่สุด และปกป้องส่วนที่เป็นของคุณเอง "
+"ทางเดียวที่จะทำแบบนั้นได้ คือ  TEAMDEATHMATCH. ปกป้องสหายและทำลายศัตรูของคุณ! "
+"สอนบทเรียนให้พวกมัน, แล้วพวกมันจะลืมไม่ลง"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"เหมือนว่ามหาสงครามจะไม่เพียงพอ ระบบดาวเคราะห์ของคุณ ยังถูกคุกคามโดยสิ่งชั่วร้ายจากแหล่งใหม่: "
+"ยานยักษ์ของผู้บุกรุกที่ไม่เคยรู้จัก ล่องลอยอยู่เหนือกาแล็กซี่ของคุณ, "
+"เล็งเป้าหมายมายังดาวเคราะห์ของคุณ ด้วยอาวุธอัคนีแห่งการทำลายล้างมหาศาล, "
+"ผู้โจมตีได้ทิ้งตัวควบคุมรีโมท ที่จะก่อแหล่งกำเนิดความตาย ความกลัว "
+"และเป็นสัญลักษณ์แห่งการเย้ยหยันประการแรกคือต้องไปให้ถึงรีโมทก่อน "
+"เพื่อเปลี่ยนดาวเคราะห์ของศัตรูให้เป็นสถานที่แห่งความเศร้าสลดแทน! คุณต้องเป็น CANNONKEEPer"
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "เก็บรีโมทและรักษาไว้ให้นานที่สุด!"
+
+msgid "Show Debug Information"
+msgstr "แสดงข้อมูล Debug"
+
+msgid "Bots Orientation"
+msgstr "ตำแหน่งทิศทางหุ่น"
+
+msgid "Zones"
+msgstr "บริเวณ"
+
+msgid "AI-Paths"
+msgstr "เส้นทางปัญญาเทียม"
+
+msgid "Show Game Information"
+msgstr "แสดงข้อมูลเกม"
+
+msgid "Frames per Second"
+msgstr "เฟรมต่อวินาที"
+
+msgid "Particle Count"
+msgstr "จำนวนอนุภาค"
+
+msgid "Particle Lifetime"
+msgstr "ระยะชีวิตอนุภาค"
+
+msgid "Game Settings"
+msgstr "การตั้งค่าเกม"
+
+msgid "Full screen"
+msgstr "เต็มจอ"
+
+msgid "Music"
+msgstr "ดนตรี"
+
+msgid "Sound"
+msgstr "เสียง"
+
+msgid "Announcer"
+msgstr "ผู้ประกาศ"
+
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Accelerate"
+msgstr "การเร่ง"
+
+msgid "Turn Left"
+msgstr "เลี้ยวซ้าย"
+
+msgid "Turn Right"
+msgstr "เลี้ยวขวา"
+
+msgid "Weapon"
+msgstr "อาวุธ"
+
+msgid "Ship"
+msgstr "ยาน"
+
+msgid "Player Color"
+msgstr "สีผู้เล่น"
+
+msgid "Team Color"
+msgstr "สีทีม"
+
+msgid "File Format for Screenshots"
+msgstr "รูปแบบแฟ้มสำหรับภาพหน้าจอ"
+
+msgid "Display Tool Tips"
+msgstr "แสดงเกร็ดคู่มือ"
+
+msgid "Weapon Options"
+msgstr "ตัวเลือกของอาวุธ"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"นี่คือความพยายามครั้งแรกของการสร้างเกมใน OpenGL กับ SFML มันเป็นเกมสำหรับ 2 ผู้เล่น, "
+"บินกับยานที่ตั้งค่าแบบ 2 มิติในอวกาศ, และถูกควบคุมโดยกฎของแรงโน้มถ่วง โฮมเพจ: http://www."
+"marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"โปรแกรมนี้เป็นซอฟต์แวร์ฟรี; คุณสามารถแจกจ่ายและ/หรือปรับเปลี่ยนมันได้ ภายใต้เงื่อนไขของ GNU "
+"General Public License ดังที่ตีพิมพ์โดย Free Software Foundation; ทั้งเวอร์ชัน 3, "
+"และเวอร์ชันต่อๆ มาของการอนุญาต(ที่ตัวเลือกของคุณ) โปรแกรมนี้ถูกเผยแพร่โดยหวังว่าจะมีประโยชน์, "
+"แต่\"ปราศจากการรับประกันใด ๆ\"; "
+"ปราศจากแม้กระทั่งนัยแห่งการใช้ซื้อขายหรือความเหมาะสมสำหรับเป้าประสงค์จำเพาะใดๆ  ดูที่ GNU "
+"General Public License สำหรับรายละเอียดเพิ่มเติม มีออนไลน์ที่:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+
+msgid "Do you really want to quit?"
+msgstr "คุณต้องการออกหรือไม่?"
+
+msgid "Do you really want to end the current game?"
+msgstr "คุณต้องการจบเกมในขณะนี้หรือไม่?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"M.A.R.S. การเล่นเกมผ่านทางอินเตอร์เน็ต(WWW) หรือเครือข่ายพื้นที่ภายใน(LAN) "
+"คือคุณสมบัติที่เป็นแผนการในอนาคต, ยังไม่ได้เพิ่มเข้าไว้ ยังคงปรับอยู่!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"คุณหยุด M.A.R.S. ท่ามกลางการต่อสู้ที่ไม่ปกติ? ถ้าคุณต้องการจับภาพหน้าจอ, "
+"ปุ่มนี้ช่วยให้คุณสร้างภาพหน้าจอที่สวยงาม, โดยการซ่อนหน้าต่างทั้งหมด นำมันกลับมาใหม่หลังจากนั้น "
+"ง่ายๆ โดยกด ESC"
+
+msgid "Add"
+msgstr "ปุ่มบวก"
+
+msgid "Back Slash"
+msgstr "ปุ่มทับกลับ"
+
+msgid "Comma"
+msgstr "ปุ่มลูกน้ำ"
+
+msgid "Dash"
+msgstr "ปุ่มขีด"
+
+msgid "Delete"
+msgstr "ปุ่ม Delete"
+
+msgid "Divide"
+msgstr "ปุ่มหาร(ทับ)"
+
+msgid "Down"
+msgstr "ปุ่มลง"
+
+msgid "End"
+msgstr "ปุ่ม End"
+
+msgid "Equal"
+msgstr "ปุ่มเท่ากับ"
+
+msgid "Home"
+msgstr "ปุ่ม Home"
+
+msgid "Insert"
+msgstr "ปุ่ม Insert"
+
+msgid "Left Alt"
+msgstr "Alt ซ้าย"
+
+msgid "Left Bracket"
+msgstr "วงเล็บใหญ่ซ้าย"
+
+msgid "Left Control"
+msgstr "Control ซ้าย"
+
+msgid "Left"
+msgstr "ปุ่มซ้าย"
+
+msgid "Left Shift"
+msgstr "Shift ซ้าย"
+
+msgid "Left Super"
+msgstr "Super ซ้าย"
+
+msgid "Menu"
+msgstr "ปุ่ม Menu"
+
+msgid "Multiply"
+msgstr "ปุ่มคูณ(ดอกจัน)"
+
+msgid "Period"
+msgstr "ปุ่มจุด"
+
+msgid "Quote"
+msgstr "ปุ่มอัญประกาศ"
+
+msgid "Right Alt"
+msgstr "Alt ขวา"
+
+msgid "Right Bracket"
+msgstr "วงเล็บใหญ่ขวา"
+
+msgid "Right Control"
+msgstr "Control ขวา"
+
+msgid "Right"
+msgstr "ปุ่มขวา"
+
+msgid "Right Shift"
+msgstr "Shift ขวา"
+
+msgid "Right Super"
+msgstr "Super ขวา"
+
+msgid "Semi Colon"
+msgstr "ปุ่มอัฒภาค"
+
+msgid "Slash"
+msgstr "ปุ่มทับ"
+
+msgid "Subtract"
+msgstr "ปุ่มลบ"
+
+msgid "Tilde"
+msgstr "ปุ่มตัวหนอน"
+
+msgid "Up"
+msgstr "ปุ่มขึ้น"
+
+msgid "Graphics"
+msgstr "ภาพกราฟิก"
+
+msgid "Audio"
+msgstr "เสียง"
+
+msgid "Window Settings"
+msgstr "การตั้งค่าหน้าต่าง"
+
+msgid "Start Tutorial"
+msgstr "เริ่มการฝึกซ้อม"
+
+msgid "Next"
+msgstr "ถัดไป"
+
+msgid "Welcome, Space Rookie!"
+msgstr "ยินดีต้อนรับ, นักบินอวกาศมือใหม่!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"เรารู้สึกดีใจ ที่ได้วีรบุรุษใหม่อย่างคุณ, {PLAYER1_NAME}, เพื่อเข้าร่วมกับเราในมหาสงคราม!"
+"เราเห็นว่าคุณจำเป็นต้องมีการฝึกซ้อมบางอย่างกับยานลำใหม่ของคุณก่อนโปรดให้การฝึกซ้อมได้เริ่มต้น..."
+
+msgid "Basic Movement..."
+msgstr "การเคลื่อนที่พื้นฐาน..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"การควบคุมยานเป็นงานที่สำคัญที่สุดในการที่จะเป็นผู้เชี่ยวชาญการเคลื่อนที่ทั้งหมดถูกกำหนดโดยกฎของแรงโน้มถ่วง "
+"เพื่อชะลอยานคุณต้องเลี้ยวและเร่งในทิศทางตรงข้าม ควบคุมยานของคุณ, โดยใช้ <{PLAYER1_KEY_UP}"
+">, <{PLAYER1_KEY_LEFT}> และ <{PLAYER1_KEY_RIGHT}>!"
+
+msgid "Warming Up!"
+msgstr "อุ่นเครื่อง!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr "ไปให้ถึงบริเวณสีชมพู!พยายามอย่าให้ยานใหม่เอี่ยมของคุณชน"
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "ทำได้ดี, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"ตอนนี้ กลับลำไปยังดาวเคราะห์บ้านของคุณ และพยายามนำยานลงจอดโดยการลอยอย่างช้าๆ "
+"ขณะที่เข้าใกล้ดาวเคราะห์ของคุณ"
+
+msgid "Good Work!"
+msgstr "ทำได้ดี!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr "การลงจอดอย่างเหมาะสมไม่ใช่งานหมู ๆ เลย, ใช่ไหมล่ะ?คุณควรเรียนรู้ด้วยหัวใจ"
+
+msgid "Something More Difficult..."
+msgstr "บางอย่างที่ยากยิ่งกว่า..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"พยายามไปตามเส้นทางที่ทำเครื่องหมายโดยบริเวณสีชมพู!เราจะกลับมาติดต่อคุณอีกครั้ง, "
+"หลังจากที่คุณชำนาญในสิ่งนี้แล้วตอนนี้ ไปลองทำดูก่อน!"
+
+msgid "Awesome!"
+msgstr "เยี่ยม!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr "คุณคือนักบินมือใหม่ที่ดีที่สุดเท่าที่เราเคยมีตอนนี้ เตรียมตัวของคุณสำหรับวัตถุที่ระเบิดได้บางอย่าง"
+
+msgid "Shooting..."
+msgstr "การยิง..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"เพื่อเอาชนะศัตรูของคุณ, คุณต้องเรียนรู้ว่าจะยิงพวกมันอย่างไร!เพื่อทำสิ่งนั้น กด "
+"<{PLAYER1_KEY_FIRE}> ลองยิงไปรอบๆ พอสนุกสนาน แล้วจอดยานของคุณเพื่อการฝึกซ้อมขั้นต่อไป"
+
+msgid "Volume Settings"
+msgstr "การตั้งค่าระดับเสียง"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "ลงจอดได้ดี, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "คุณได้กลายเป็นนักบินที่เก่งกาจตอนนี้ สนใจอาวุธเพิ่มเติมหรือเปล่า?"
+
+msgid "The Weapons..."
+msgstr "อาวุธ..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"เรารู้ว่าคุณกำลังรอคอยสิ่งนี้ เมื่อเทียบท่ายาน คุณสามารถสลับการใช้อาวุธร้ายแรงต่างๆได้ กด "
+"<{PLAYER1_KEY_FIRE}> เพื่อเปิดปืนใหญ่ของคุณแล้วใช้ <{PLAYER1_KEY_LEFT}> และ "
+"<{PLAYER1_KEY_RIGHT}> เพื่อเลือกอาวุธ! แล้วขึ้นยาน, เมื่อคุณพร้อม!"
+
+msgid "Play Next Track"
+msgstr "เล่นเพลงถัดไป"
+
+msgid "Playback Settings"
+msgstr "ตั้งค่าการเปิดเล่น"
+
+msgid "Fight!"
+msgstr "การต่อสู้!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"ตอนนี้ มาดูกันว่าจะรับมือกับนักบินใหม่จากดาวเคราะห์ดวงอื่นอย่างไร "
+"ดูเหมือนว่าเขากำลังพยายามปรับปรุงความสามารถในการบินของเขาอยู่เอาชนะเขาซะ!"
+
+msgid "Impressive!"
+msgstr "น่าประทับใจ!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"คุณทำได้! คุณอาจสังเกตเห็น, ดาวเล็กๆ ปรากฏเหนือยานของคุณ ยิ่งฆ่าศัตรูได้มาก, "
+"ดาวก็ยิ่งปรากฏมาก แต่ไม่ใช่แค่ดาวที่เป็นตัวบ่งชี้การสังหาร! ลงจอดอีกครั้ง "
+"แล้วเราจะแสดงให้เห็นว่าดาวยังมีอะไรดีๆ นอกจากนี้อีก"
+
+msgid "Beat Them!"
+msgstr "เอาชนะพวกเขาให้ได้!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"พิสูจน์ฝีมือของคุณ! ทำคะแนนให้ได้อย่างน้อย 5 คะแนนโดยการฆ่าพวกเขา! "
+"คะแนนปัจจุบันของคุณจะถูกแสดงถัดจากชื่อของคุณ!"
+"เราจะส่งนักรบผู้มีประสบการณ์รายหนึ่งเพื่อช่วยเหลือคุณ, {PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "ไม่น่าเชื่อ!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"คุณจัดการงานทั้งหมดของเราได้สำเร็จ ตอนนี้ต้องทำอะไรต่อล่ะ?ลองดูที่เมนูตัวเลือก "
+"ที่นั่นคุณสามารถปรับตัวเลือก...ดีๆ...จำนวนมากอย่างเช่น คุณอาจเลือกแบบของยานและสี "
+"หรือเปลี่ยนชื่อของคุณ..."
+
+msgid "Who's Best?"
+msgstr "ใครที่ทำได้ดีที่สุด?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"คุณสามารถแสดงสถิติการสังหาร, คะแนน และอื่นๆ ผ่านทาง <{STATISTICS_KEY}>นอกจากนี้ "
+"หมายเลขที่ถัดจากชื่อของคุณจะแสดงตัวนับการสังหาร และระยะห่างของคุณกับผู้ที่ทำได้ดีที่สุด"
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "ยินดีด้วย, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"คุณจบการฝึกซ้อมนี้แล้ว ตอนนี้คุณพร้อมแล้วเพื่อต่อสู้ในมหาสงคราม ถ้าคุณต้องการฝึกซ้อมต่อ, "
+"เพียงรอศัตรูของคุณให้กำเนิดใหม่ คุณสามารถจบการฝึกซ้อมโดย <Esc>ขอให้สนุกกับ M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "คุณล้มเหลว!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"เอาล่ะสิ {PLAYER1_NAME}! คุณทำลายยานใหม่เอี่ยมของคุณ  แต่แน่นอน เราจะให้ลำใหม่แก่คุณ "
+"เพียงรอสักครู่..."
+
+msgid "Did You Notice?"
+msgstr "คุณสังเกตไหม?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr "ชีวิตของคุณกำลังถดถอย! มองไปที่บนแถบชีวิต คุณควรลงจอดดีกว่าถ้ามันดูว่างเปล่ามากไป"
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"เชื้อเพลิงของคุณกำลังถดถอย! มองไปที่แถบเชื้อเพลิงสีเหลือง คุณควรลงจอดดีกว่าถ้ามันดูว่างเปล่ามากไป"
+
+msgid "You Nearly Got Him!"
+msgstr "คุณเกือบจะเก็บเขาได้!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"ดูชื่อฝ่ายตรงข้ามของคุณ สีของมันจะบ่งบอกระดับชีวิตของเขา ยิ่งมันกลายเป็นสีแดงมากขึ้น "
+"ศัตรูของคุณจะยิ่งอ่อนแอ"
+
+msgid "Interface"
+msgstr "แบบการใช้งาน"
+
+msgid "High Star Field Resolution"
+msgstr "การกระจายพื้นที่ดาวสูง"
+
+msgid "Language"
+msgstr "ภาษา"
+
+msgid "Hot Key for Screenshots"
+msgstr "ปุ่มลัดสำหรับภาพหน้าจอ"
+
+msgid "Points"
+msgstr "คะแนน"
+
+msgid "Frags"
+msgstr "สังหาร"
+
+msgid "Teamkills"
+msgstr "ฆ่าทีม"
+
+msgid "Suicides"
+msgstr "ฆ่าตัวตาย"
+
+msgid "Deaths"
+msgstr "ตาย"
+
+msgid "Game Options"
+msgstr "ตัวเลือกของเกม"
+
+msgid "Total:"
+msgstr "รวม:"
+
+msgid "Statistics"
+msgstr "สถิติ"
+
+msgid "Planet Life Points"
+msgstr "แต้มชีวิตของดาวเคราะห์"
+
+msgid "Shader Effects"
+msgstr "Shader effect"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "น่าเสียดาย, Shader effect ไม่รองรับโดยฮาร์ดแวร์ของคุณ!"
+
+msgid "Gameplay"
+msgstr "การเล่นเกม"
+
+msgid "PowerUp Spawn Rate"
+msgstr "อัตรากำเนิดพลังเติบโต"
+
+msgid "Bot Difficulty"
+msgstr "ความยากของหุ่น"
+
+msgid "Explosions for Slow Motion"
+msgstr "การระเบิดของภาพช้า"
+
+msgid "Off"
+msgstr "ปิด"
+
+msgid "Credits"
+msgstr "เครดิต"
+
+msgid "Special Thanks to:"
+msgstr "ขอขอบคุณ:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"การแปล: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo French: "
+"Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp Bence "
+"Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gast?n Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "ความละเอียด"
+
+msgid "Color Depth"
+msgstr "ความลึกสี"
+
+msgid "Special Ability"
+msgstr "ความสามารถพิเศษ"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"แสดงจำนวนเฟรมที่คำนวณได้ต่อวินาทีถ้ามันต่ำมากตลอด (<20), "
+"คุณควรปรับการตั้งค่าบางอย่างในหัวข้อภาพกราฟิก!"
+
+msgid "Displays the amount of active particles."
+msgstr "แสดงจำนวนอนุภาคที่แอ็คทีฟ"
+
+msgid "Dismisses tool tips like this one."
+msgstr "ยกเลิกเกร็ดคู่มือที่คล้ายสิ่งนี้"
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "ตั้งค่ารูปแบบที่จะใช้เมื่อภาพหน้าจอถูกบันทึก"
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr "เมื่อปุ่มนี้ถูกกด, ภาพหน้าจอจะถูกบันทึกสู่ {CONFIG_PATH}screenshots/"
+
+msgid "Pressing this key switches to the next music track."
+msgstr "การกดปุ่มนี้จะสลับไปยังดนตรีเพลงถัดไป"
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "ถ้ายานจำนวนมากระเบิดพร้อมๆกัน, การแสดงผลภาพช้าจะถูกนำมาใช้"
+
+msgid "Displays the job of each bot."
+msgstr "แสดงงานของแต่ละหุ่น"
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "แสดงเขตยุทธศาสตร์, ที่สำคัญสำหรับปัญญาเทียม"
+
+msgid "Displays paths calculated by bots."
+msgstr "แสดงเส้นทางที่คำนวณโดยหุ่น"
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "ขยายหน้าต่างใหญ่สุด, เพื่อให้ครอบคลุมทั้งหน้าจอ"
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"ปรับเกมให้สอดคล้องกับ refresh rate ของหน้าจอของคุณการเลือกใช้งานตัวเลือกนี้ "
+"โดยปกติจะทำให้เกมดำเนินราบรื่นขึ้น"
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "ใช้งานการแสดงผลแบบเย็นคล้ายหมอกความร้อน, แต่จะลดสมรรถนะของเกม"
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr "ตั้งค่าขนาดหน้าต่างมีผลต่อทั้งโหมดเต็มจอและโหมดหน้าต่าง"
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"การแสดงผลแบบการกระจายสูง, ตัวเลือกนี้ทำให้พื้นที่ของดาววนรอบการไม่ใช้งาน "
+"อาจเพิ่มสมรรถนะเกมได้เล็กน้อย"
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr "ปรับจำนวนอนุภาคโดยรวมค่ายิ่งต่ำ ยิ่งเพิ่มสมรรถนะของเกมอย่างชัดเจน"
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr "ปรับระยะชีวิตอนุภาคโดยรวมค่ายิ่งต่ำ ยิ่งเพิ่มสมรรถนะของเกมอย่างชัดเจน"
+
+msgid "Adjusts volume of background music."
+msgstr "ปรับระดับเสียงของดนตรีพื้นหลัง"
+
+msgid "Adjusts volume of sound effects."
+msgstr "ปรับระดับเสียงของเสียงประกอบ"
+
+msgid "Adjusts volume of announcers voice."
+msgstr "ปรับระดับเสียงของเสียงผู้ประกาศ"
+
+msgid "Sets the team of the local players."
+msgstr "ตั้งค่าทีมของผู้เล่นในเครื่อง"
+
+msgid "Enables local players."
+msgstr "ใช้งานผู้เล่นในเครื่อง"
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "ปรับจำนวนของยานที่ควบคุมโดยปัญญาเทียม"
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "คะแนนที่ทีมต้องได้ เพื่อที่จะชนะเกม"
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "คะแนนที่ผู้เล่นต้องได้ เพื่อที่จะชนะเกม"
+
+msgid "Adjusts the strength of the bots."
+msgstr "ปรับความแข็งแกร่งของหุ่น"
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr "ปรับจำนวนของพลังเติบโต ที่จะกำเนิดใหม่ระหว่างเกม ศูนย์ คือ ไม่ใช้งานพลังเติบโตทั้งหมด"
+
+msgid "Weapons"
+msgstr "อาวุธ"
+
+msgid "Special Abilities"
+msgstr "ความสามารถพิเศษ"
+
+msgid "Screenshot saved!"
+msgstr "ภาพหน้าจอถูกบันทึกแล้ว!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"มหาสงครามได้ลดทรัพยากรของคุณลงอย่างมาก, นักวิทยาศาสตร์ถูกจ้างให้ค้นหาหนทาง "
+"ที่มีประสิทธิภาพในการทำลายศัตรูของคุณ โดยการจำกัดสิ่งนำเข้า พวกเขาทำการค้นคว้ามากมาย "
+"ในที่สุดก็ได้สร้างอาวุธใหม่ที่มีคุณสมบัติเหลือเชื่อ: มันฆ่าได้โดยทันที, "
+"แต่การยิงออกมาได้นั้นเกี่ยวข้องกับแรงโน้มถ่วง "
+"และค่อนข้างจะใช้งานยากด้วยเหตุนี้พวกเขาเรียกมันว่า : INSTA-GRAVE!  โชคร้ายมาก "
+"มีบางคนได้ขโมยเทคโนโลยีนี้ไป, ดังนั้นศัตรูของคุณสามารถใช้อาวุธร้ายแรงนี้ได้เช่นกัน, "
+"ตอนนี้คือตาของคุณ: เอาชนะโจรเหล่านั้นในมหา GRAVE-ITATION-PIT เพื่อชิงความได้เปรียบ "
+"เอาชนะการต่อสู้ครั้งนี้, แล้วชัยชนะของมหาสงครามจะเป็นของคุณ"
+
+msgid "Destroy es many enemies as possible!"
+msgstr "ทำลายศัตรูให้ได้มากที่สุด!"
+
+msgid "Special Abilities..."
+msgstr "ความสามารถพิเศษ..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"ตามที่สัญญา, เราจะบอกความหมายของดาวต่อคุณ พวกมันคือ "
+"ทรัพยากรสำหรับความสามารถพิเศษอันทรงพลังที่น่าทึ่งสำหรับยานของคุณ ตัวอย่างเช่น "
+"คุณสามารถรักษาเยียวยาเพื่อนใกล้เคียง, ระเบิดหรือแช่แข็งยานอื่นภายในระยะทางที่แน่นอน! "
+"ยิ่งคุณมีดาวมาก, ความกว้างใหญ่ของช่วงและความแข็งแกร่งของความสามารถยิ่งเพิ่มขึ้น"
+
+msgid "Selection..."
+msgstr "การเลือกสรร..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"เพื่อสลับใช้ความสามารถต่างๆ, คุณเพียงกด <{PLAYER1_KEY_SPECIAL}> เพื่อเลือกหนึ่งอย่าง, "
+"คุณสามารถทำการวนดูแต่ละอย่างโดยใช้ <{PLAYER1_KEY_LEFT}> และ <{PLAYER1_KEY_RIGHT}"
+">! สำหรับบทเรียนนี้, เลือก \"ตัวแช่แข็ง\"! แล้วขึ้นยาน, เมื่อคุณได้มันแล้ว!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "คุณ!, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "เห็นชื่อแล้วดูไม่ค่อยเหมาะ.. โปรดเปลี่ยนชื่อใหม่ดีกว่า!"
+
+msgid "Next music track!"
+msgstr "ดนตรีเพลงถัดไป!"
+
+msgid "General Settings"
+msgstr "การตั้งค่าทั่วไป"
+
+msgid "Special Effects"
+msgstr "การแสดงผลพิเศษ"
+
+msgid "Ship Settings"
+msgstr "การตั้งค่ายาน"
+
+msgid "A Button"
+msgstr "ปุ่ม A"
+
+msgid "B Button"
+msgstr "ปุ่ม B"
+
+msgid "X Button"
+msgstr "ปุ่ม X"
+
+msgid "Y Button"
+msgstr "ปุ่ม Y"
+
+msgid "Hot Key for Statistics"
+msgstr "ปุ่มลัดสำหรับสถิติ"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr "เมื่อกดปุ่มนี้ขณะเล่นเกม, จะแสดงหน้าต่างสถิติของเกมปัจจุบัน"
+
+msgid "CannonShots"
+msgstr "นัดปืนใหญ่"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "หยุด, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"เราบอกให้คุณเลือกตัวแช่แข็ง, แต่คุณเลือกความสามารถอื่น!โปรดลงจอดอีกครั้งและเลือกตัวแช่แข็ง!"
+
+msgid "The Freezer..."
+msgstr "ตัวแช่แข็ง..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"นี่คือความสามารถพิเศษอันทรงพลังที่จะแช่แข็งยานใกล้เคียง คุณต้องบินใกล้ศัตรูของคุณและกด "
+"<{PLAYER1_KEY_SPECIAL}> เพื่อแช่แข็งเขา เฝ้ามองเขาสูญเสียชีวิตอย่างช้าๆ... "
+"จนกระทั่งเขาตาย!"
+
+msgid "Practice!"
+msgstr "ฝึกหัด!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"ตอนนี้ ลองแช่แข็งศัตรูของคุณ! สำหรับการสอนนี้ เราจะให้บางดาวสังหารแก่คุณ แต่จำไว้ว่า: "
+"ในเกมจริง คุณต้องปะทะกับฝ่ายตรงข้ามเพื่อที่จะได้ดาวเหล่านั้น!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "คุณพลาด, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "ลองอีกครั้ง เราจะเติมดาวสังหารให้คุณอีกครั้ง"
+
+msgid "You Did It!"
+msgstr "คุณทำได้!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "ตอนนี้ กลับลำสู่ดาวเคราะห์ของคุณ เพื่อเลือกความสามารถพิเศษอื่นๆ!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "ระวัง, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"ไม่มีเวลาสำหรับการทดสอบที่มากกว่านี้!ศัตรูของเราได้ส่ง 2 นักรบตัวจริงของพวกเขามาเพื่อแก้แค้น!"
+
+msgid "Players"
+msgstr "ผู้เล่น"
+
+msgid "Artist:"
+msgstr "ศิลปิน:"
+
+msgid "Album:"
+msgstr "อัลบั้ม:"
+
+msgid "Previous music track!"
+msgstr "ดนตรีเพลงก่อนหน้า!"
+
+msgid "Play Previous Track"
+msgstr "เล่นเพลงก่อนหน้า"
+
+msgid "Play Tracks in Random Order"
+msgstr "เล่นเพลงโดยสุ่มลำดับ"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "การกดปุ่มนี้จะสลับไปยังดนตรีเพลงก่อนหน้า"
+
+msgid "Enables music play back in a random sequence."
+msgstr "ใช้งานการเปิดเล่นดนตรีในแบบสุ่มลำดับ"
+
+msgid "Moving Stars"
+msgstr "ดาวเคลื่อนไหว"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr "วาดดาวที่เคลื่อนไหวบนพื้นหลังเป็นอาหารตา แต่จะลดสมรรถนะของเกม"
+
+msgid "Goals"
+msgstr "เป้าหมาย"

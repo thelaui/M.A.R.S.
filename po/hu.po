@@ -1,0 +1,1074 @@
+# M.A.R.S. hu.po
+# Papp Bence & alyr, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Helyi játék indítása"
+
+msgid "Start Network Game"
+msgstr "Hálózati játék indítása"
+
+msgid "Join Network Game"
+msgstr "Csatlakozás hálózati játékhoz"
+
+msgid "Options"
+msgstr "Beállítások"
+
+msgid "About"
+msgstr "Névjegy"
+
+msgid "Quit M.A.R.S."
+msgstr "Kilépés"
+
+msgid "Continue"
+msgstr "Folytatás"
+
+msgid "Restart Game"
+msgstr "Játék újraindítása"
+
+msgid "Hide Menu"
+msgstr "Menü elrejtése"
+
+msgid "Return to Main Menu"
+msgstr "Vissza a főmenübe"
+
+msgid "Start"
+msgstr "Indítás"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Info"
+msgstr "Információ"
+
+msgid "Close"
+msgstr "Bezárás"
+
+msgid "License"
+msgstr "Licenc"
+
+msgid "Ok"
+msgstr "Rendben"
+
+msgid "Show this Info again."
+msgstr "Mutasd később is."
+
+msgid "Left Team"
+msgstr "Bal oldali csapat"
+
+msgid "Right Team"
+msgstr "Jobb oldali csapat"
+
+msgid "Bots Left"
+msgstr "Bal oldali botok"
+
+msgid "Bots Right"
+msgstr "Jobb oldali botok"
+
+msgid "Bots"
+msgstr "Botok"
+
+msgid "Frag Limit"
+msgstr "Találat limit"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"3547-ben a galaxis civilizációi saját bolygóikon élnek békében és "
+"harmóniában környezetükkel.Ám ezen nyugodt, szemlélődő bolygókon kívül épp a "
+"nagy háború dúl.Híres hősként a végtelen dicsőség és gazdagság reményében "
+"meg kell védened bolygódat az irigy szomszédok közelgő pusztításától.A "
+"SPACEBALL az, amire születtél, harcolj hát a csatában! Védd meg bolygódat a "
+"halál gömbjétől, és győzd le ellenségeidet nevetséges bolygójukra irányítva "
+"a gömböt."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Lökd vagy lődd a gömböt az ellenség bolygójának!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"A nagy háború során elvesztettél mindent: az otthonod, a családod és az "
+"önbecsülésed.Az utolsó esélyed kitörni ebből a nyomorúságos életből, ha a "
+"dicső DEATHMATCH aréna gladiátora leszel.Szállj szembe a többi harcossal, és "
+"szerezz pontokat űrhajónak nevezett ócskaságaik kilövésével.Készülj a "
+"küzdelemre!Halál és dicsőség vár rád!"
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Semmisíts meg annyi ellenséget, amennyit csak tudsz!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"A tárgyalások eredménytelenek voltak!A nagy háború során mind Ti, mind "
+"szomszédjaitok hatalmas veszteségeket könyvelhettek el.Az erőfölény "
+"megszerzése érdekében feladatod az ellenfél készleteinek megtizedelése és "
+"sajátunk védelme. Ennek egyetlen módja a hatalmas TEAMDEATHMATCH.Védd meg "
+"társaid, és pusztítsd el ellenségeid!Tanítsd őket móresre!"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Mintha a nagy háború nem lenne elég, bolygórendszeredet egy újabb "
+"szörnyűséges veszély fenyegeti: ismeretlen lények hatalmas űrhajója hatolt "
+"be a galaxisba, céljuk a bolygók elpusztítása óriási tömegpusztító "
+"fegyverükkel.Cinizmusuk jeleként a támadók egy távirányítót dobtak a halál "
+"és félelem eme forrásának irányítására.Szerezd meg elsőként, hogy az "
+"ellenség bolygóját sivár pusztává változtathasd!Legyél Te a CANNONKEEPer."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Szerezd meg a távirányítót, és tartsd magadnál minél tovább!"
+
+msgid "Show Debug Information"
+msgstr "Hibakeresési információk megjelenítése"
+
+msgid "Bots Orientation"
+msgstr "Botok céljai"
+
+msgid "Zones"
+msgstr "Területek"
+
+msgid "AI-Paths"
+msgstr "MI útvonalak"
+
+msgid "Show Game Information"
+msgstr "Játék információk megjelenítése"
+
+msgid "Frames per Second"
+msgstr "Másodpercenkénti képkockák száma (FPS)"
+
+msgid "Particle Count"
+msgstr "Részecskék száma"
+
+msgid "Particle Lifetime"
+msgstr "Részecskék élettartama"
+
+msgid "Game Settings"
+msgstr "Játék beállítások"
+
+msgid "Full screen"
+msgstr "Teljes képernyő"
+
+msgid "Music"
+msgstr "Zene"
+
+msgid "Sound"
+msgstr "Hang"
+
+msgid "Announcer"
+msgstr "Bemondó"
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Accelerate"
+msgstr "Gyorsítás"
+
+msgid "Turn Left"
+msgstr "Balra fordulás"
+
+msgid "Turn Right"
+msgstr "Jobbra fordulás"
+
+msgid "Weapon"
+msgstr "Fegyver"
+
+msgid "Ship"
+msgstr "Űrhajó"
+
+msgid "Player Color"
+msgstr "Játékos színe"
+
+msgid "Team Color"
+msgstr "Csapat színe"
+
+msgid "File Format for Screenshots"
+msgstr "Képernyőkép formátuma"
+
+msgid "Display Tool Tips"
+msgstr "Segítség megjelenítése"
+
+msgid "Weapon Options"
+msgstr "Fegyverbeállítások"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék "
+"elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy "
+"kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett. Honlap: "
+"http://www.marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Ez a program szabad szoftver; terjeszthető illetve módosítható a Free "
+"Software Foundation által kiadott GNU General Public License dokumentumában "
+"leírtak; akár a licenc 3-as, akár (tetszőleges) későbbi változata szerint. "
+"Ez a program abban a reményben kerül közreadásra, hogy hasznos lesz, de "
+"minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ "
+"ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve.A felhasználónak "
+"a programmal együtt meg kell kapnia a GNU General Public License egy "
+"példányát; ha mégsem kapta meg, akkor tekintse meg a <http://www.gnu.org/"
+"licenses/> oldalon."
+
+msgid "Do you really want to quit?"
+msgstr "Biztos, hogy ki akarsz lépni?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Biztos be akarod fejezni a jelenlegi játékot?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"A M.A.R.S játszható lesz helyi hálózaton vagy a világhálón keresztül, ez a "
+"funkció azonban még nincs kész. Ne csüggedj, figyeld weboldalunkat!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Megállítottad a M.A.R.S-ot egy heves csata kellős közepén? Ha képernyőképet "
+"szeretnél készíteni, e gomb segítségével csodálatos háttérképeket "
+"készíthetsz az ablakok elrejtésével. Később az ESC billentyű lenyomásával "
+"visszahozhatod őket."
+
+msgid "Add"
+msgstr "Plusz"
+
+msgid "Back Slash"
+msgstr "Repjel"
+
+msgid "Comma"
+msgstr "Vessző"
+
+msgid "Dash"
+msgstr "Kötőjel"
+
+msgid "Divide"
+msgstr "Törtjel"
+
+msgid "Down"
+msgstr "Le"
+
+msgid "Equal"
+msgstr "Egyenlőségjel"
+
+msgid "Left Alt"
+msgstr "Bal Alt"
+
+msgid "Left Bracket"
+msgstr "Bal zárójel"
+
+msgid "Left Control"
+msgstr "Bal Control"
+
+msgid "Left"
+msgstr "Balra"
+
+msgid "Left Shift"
+msgstr "Bal Shift"
+
+msgid "Left Super"
+msgstr "Bal Szuper/Windows"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Multiply"
+msgstr "Szorzásjel"
+
+msgid "Period"
+msgstr "Pont"
+
+msgid "Quote"
+msgstr "Idézőjel"
+
+msgid "Right Alt"
+msgstr "Jobb Alt"
+
+msgid "Right Bracket"
+msgstr "Jobb zárójel"
+
+msgid "Right Control"
+msgstr "Jobb Control"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Right"
+msgstr "Jobbra"
+
+msgid "Right Shift"
+msgstr "Jobb Shift"
+
+msgid "Right Super"
+msgstr "Jobb Szuper/Windows"
+
+msgid "Semi Colon"
+msgstr "Pontosvessző"
+
+msgid "Slash"
+msgstr "Perjel"
+
+msgid "Space"
+msgstr "Szóköz"
+
+msgid "Subtract"
+msgstr "Mínusz"
+
+msgid "Tilde"
+msgstr "Hullámos vonal"
+
+msgid "Up"
+msgstr "Fel"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Audio"
+msgstr "Hang"
+
+msgid "Window Settings"
+msgstr "Ablak beállítások"
+
+msgid "Start Tutorial"
+msgstr "Oktatómód indítása"
+
+msgid "Next"
+msgstr "Következő"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Üdvözöllek, újonc!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"Örülünk, hogy sikerült egy hozzád hasonló tehetséget meggyőzni, hogy "
+"csatlakozzon hozzánk a nagy háborúban, {PLAYER1_NAME}!Úgy gondoltuk "
+"szükséged lehet némi gyakorlásra az új űrhajóddal.Kezdődjön hát a kiképzés..."
+
+msgid "Basic Movement..."
+msgstr "Alapvető irányítás..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Hajód irányítása a legfontosabb, amit el kell sajátítanod.Mozgásodat "
+"befolyásolják a gravitációs törvények. Lassításhoz meg kell fordítanod a "
+"hajód, és az új irányba kell gyorsulnod. Hajód irányításához használd a(z) "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> és <{PLAYER1_KEY_RIGHT}> "
+"billentyűket!"
+
+msgid "Warming Up!"
+msgstr "Bemelegítés!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr ""
+"Menj a rózsaszín zónához!A vadiúj hajódat azért próbáld meg nem összetörni..."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Szép munka, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Most repülj vissza a bolygódra, és próbálj meg landolni! Lassan, hátrafelé "
+"szállva közelítsd meg a felszínt!"
+
+msgid "Good Work!"
+msgstr "Remek!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"A tökéletes landolás nem piskóta, mi?Tanuld meg jól, később szükség lesz még "
+"rá!"
+
+msgid "Something More Difficult..."
+msgstr "És most jöjjön valami nehezebb..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Próbáld meg követni a rózsaszín területekkel kijelölt útvonalat!Ha sikerült, "
+"újra jelentkezünk.Most menj!"
+
+msgid "Awesome!"
+msgstr "Csodálatos!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Te vagy a legjobb újonc, akit valaha láttunk.Most készülj fel egy kis "
+"robbantgatásra!"
+
+msgid "Shooting..."
+msgstr "Lövés..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Ellenségeid legyőzéséhez tudnod kell, hogyan lődd ki őket!Ehhez nyomd meg "
+"a(z) <{PLAYER1_KEY_FIRE}> billentyűt. Próbáld ki, lövöldözz egy kicsit, majd "
+"szállj le a bolygódon a folytatáshoz."
+
+msgid "Volume Settings"
+msgstr "Hangerő"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Szép landolás, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "Csodás pilóta lett belőled!Nos, jöhet még pár fegyver?"
+
+msgid "The Weapons..."
+msgstr "A fegyverek..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Tudjuk, hogy csak erre vártál. Amikor a bolygódon dokkolsz, hihetetlenül "
+"gonosz fegyverek közül válogathatsz. Nyomd meg a(z) <{PLAYER1_KEY_FIRE}> "
+"billentyűt, hogy feltérképezd a lehetőségeid.Ezután használd a(z) "
+"<{PLAYER1_KEY_LEFT}> és <{PLAYER1_KEY_RIGHT}> billentyűket a megfelelő "
+"fegyver kiválasztásához.Szállj fel, ha készen vagy!"
+
+msgid "Play Next Track"
+msgstr "Következő zeneszám lejátszása"
+
+msgid "Playback Settings"
+msgstr "Zenelejátszás"
+
+msgid "Fight!"
+msgstr "Harcolj!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Lássuk hogy megy egy másik bolygó újonca ellen! Úgy tűnik, épp az űrhajója "
+"irányítását gyakorolja.Lődd ki!"
+
+msgid "Impressive!"
+msgstr "Lenyűgöző!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Megcsináltad! Ahogy bizonyára észrevetted, egy kis csillag jelent meg a "
+"hajód felett. Minél több ellenséget ölsz meg, annál több csillagot fogsz "
+"kapni. Ám ezek nem egyszerűen a pontszámodat jelzik!Landolj, és megmutatjuk "
+"mire is jók ezek a csillagok."
+
+msgid "Beat Them!"
+msgstr "Győzd le őket!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Mutasd meg, mit tudsz, {PLAYER1_NAME}! Szerezz legalább öt pontot azzal, "
+"hogy kilövöd őket! Az aktuális pontjaid a neved mellett vannak kiírva."
+"Küldünk egy tapasztalt harcost is, hogy segítsen neked."
+
+msgid "Unbelievable!"
+msgstr "Hihetetlen!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Az összes feladatot sikerült teljesítened. Most mi legyen?Vess egy "
+"pillantást a \"Beállítások\" menüre. Itt sok.. nos.. beállítást kezelhetsz."
+"Például kiválaszthatod az űrhajód stílusát és színét, vagy megváltoztathatod "
+"a neved..."
+
+msgid "Who's Best?"
+msgstr "Ki a legjobb?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"A(z) <{STATISTICS_KEY}> segítségével megnézheted találataid, pontjaid számát "
+"és még sok más adatot.A neved melletti számok pedig a találataid számát és a "
+"legjobbtól való távolságot mutatják."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Gratulálunk, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Sikeresen befejezted a kiképzést! Most már készen állsz, hogy eredményesen "
+"harcolhass a nagy háborúban! Ha folytatni szeretnéd a gyakorlást, csak várj, "
+"míg ellenségeid újraszületnek. A befejezéshez nyomj <Esc>-et.Jó időtöltést "
+"kívánunk a M.A.R.S.-sal!"
+
+msgid "You Failed!"
+msgstr "Elestél!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Csodálatos, {PLAYER1_NAME}! Sikerült teljesen tönkre tenned a vadiúj "
+"űrhajód! Jól van, kapsz egy másikat. Csak néhány másodperc..."
+
+msgid "Did You Notice?"
+msgstr "Észrevetted?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Csökken az életed! Tartsd szemmel a felül lévő élet csíkot. Jobb ha "
+"landolsz, ha már nincs sok."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Fogy az üzemanyagod! Tartsd szemmel az alul lévő üzemanyag csíkot. Jobb ha "
+"landolsz, ha már nincs sok."
+
+msgid "You Nearly Got Him!"
+msgstr "Majdnem kilőtted!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Figyeld ellenfeled nevét. Ennek színe mutatja az életpontjait. Minél "
+"pirosabb, annál gyengébb az ellenség."
+
+msgid "Interface"
+msgstr "Kezelőfelület"
+
+msgid "High Star Field Resolution"
+msgstr "Nagy felbontású csillagmező"
+
+msgid "Language"
+msgstr "Nyelv"
+
+msgid "Hot Key for Screenshots"
+msgstr "Gyorsbillentyű képernyőkép készítéséhez"
+
+msgid "Points"
+msgstr "Pontok"
+
+msgid "Frags"
+msgstr "Találatok"
+
+msgid "Teamkills"
+msgstr "Megölt társak"
+
+msgid "Suicides"
+msgstr "Öngyilkosság"
+
+msgid "Deaths"
+msgstr "Halál"
+
+msgid "Game Options"
+msgstr "Játék beállítások"
+
+msgid "Total:"
+msgstr "Összesen:"
+
+msgid "Statistics"
+msgstr "Statisztika"
+
+msgid "Planet Life Points"
+msgstr "Bolygó életpontjainak száma"
+
+msgid "Shader Effects"
+msgstr "Shader effektek"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Sajnos a grafikus kártyád nem támogatja a shadereket."
+
+msgid "Gameplay"
+msgstr "Játékmenet"
+
+msgid "PowerUp Spawn Rate"
+msgstr "Felvehető extrák megjelenési ideje"
+
+msgid "Bot Difficulty"
+msgstr "Botok ereje"
+
+msgid "Explosions for Slow Motion"
+msgstr "Lassítás-effekt x robbanás után"
+
+msgid "Off"
+msgstr "Ki"
+
+msgid "Credits"
+msgstr "Készítők"
+
+msgid "Special Thanks to:"
+msgstr "Nagy köszönet az alábbi személyeknek:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Fordítók: Arab: Majid Kínai: Wecing Cseh: Mates Finn: Paavo Francia: Ludovic "
+"Német: Atto Hindi: Antriksh és Aakanksh Magyar: Papp Bence, alyr és Udvari "
+"Gábor Olasz: Proch Lengyel: command_dos Portugál: Vitor Orosz: Drakmail "
+"Spanyol: Gastón Svéd: HenrikKódolási támogatás: Werner és "
+"DeubeuliouTesztelés és kreatív támogatás: Heinrich, Martin, Bastian, Sandra, "
+"Diana."
+
+msgid "Resolution"
+msgstr "Felbontás"
+
+msgid "Color Depth"
+msgstr "Színmélység"
+
+msgid "Special Ability"
+msgstr "Speciális képesség"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Megjeleníti a másodpercenkénti képkockák számát.Ha ez az érték folyamatosan "
+"alacsony (<20), változtass a grafikus beállításokon."
+
+msgid "Displays the amount of active particles."
+msgstr "Megjeleníti az aktív részecskék mennyiségét."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Az ehhez hasonló segítségek megjelenítésének beállítása."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Beállítja a képernyőkép formátumát."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Ennek a gombnak a megnyomásával képernyőképet készíthetsz, mely a(z)  "
+"{CONFIG_PATH}screenshots/ könyvtárba lesz elmentve."
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Ennek a gombnak a lenyomásával a következő zeneszám kerül lejátszásra."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr ""
+"Ennyi űrhajónak kell egyszerre felrobbannia, hogy a lassítás-effekt "
+"bekövetkezzen."
+
+msgid "Displays the job of each bot."
+msgstr "Megjeleníti az egyes botok feladatát."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr ""
+"Megjeleníti a taktikai zónákat, melyek fontosak a mesterséges intelligencia "
+"számára."
+
+msgid "Displays paths calculated by bots."
+msgstr "Megjeleníti a botok által kiszámított útvonalakat."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Felnagyítja az ablakot, hogy az a teljes képernyőt lefedje."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"A játékot a képernyő megjelenítési frekvenciájához hangolja.Ennek a "
+"beállításnak az engedélyezése általában gördülékenyebbé teszi a játék "
+"futását."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr ""
+"Látványos hatásokat kapcsol be (mint például hőpára), ez viszont ronthatja a "
+"játék teljesítményét."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Beállítja az ablak méretét.Mind a teljes képernyős, mind az ablak-módra "
+"hatással van."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"Nagy felbontású képernyőkön ez az opció késlelteti a csillagmező "
+"ismétlődését.Kikapcsolása javíthatja a játék teljesítményét."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Beállítja a globális részecskeszámot.Az alacsonyabb értékek jelentősen "
+"növelik a játék teljesítményét."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Beállítja a globális részecske-élettartamot.Az alacsonyabb értékek "
+"jelentősen növelik a játék teljesítményét."
+
+msgid "Adjusts volume of background music."
+msgstr "A háttérzene hangerejét állítja be."
+
+msgid "Adjusts volume of sound effects."
+msgstr "A hanghatások hangerejét állítja be."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "A bemondó hangerejét állítja be."
+
+msgid "Sets the team of the local players."
+msgstr "Beállítja a helyi játékosok csapatait."
+
+msgid "Enables local players."
+msgstr "Helyi játékosokat állít be."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Beállítja a mesterséges intelligencia által irányított űrhajók számát."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "A csapatok által elérendő pontok száma a játék megnyeréséhez."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "A játékosok által elérendő pontok száma a játék megnyeréséhez."
+
+msgid "Adjusts the strength of the bots."
+msgstr "A botok erejének beállítása."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"A játék közben megjelenő felvehető extrák mennyiségét állítja be.A nulla "
+"érték kikapcsolja a felvehető extrákat."
+
+msgid "Weapons"
+msgstr "Fegyverek"
+
+msgid "Special Abilities"
+msgstr "Különleges képességek"
+
+msgid "Screenshot saved!"
+msgstr "Képernyőkép elmentve!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Mivel a nagy háború nagymértékben csökkenti a készleteket, a tudósok "
+"igyekeztek egy hatékonyabb módot keresni az ellenség legyőzésére. "
+"Kutatásaikat siker koronázta, és végül egy hihetetlen tulajdonságokkal "
+"rendelkező fegyvert alkottak meg: azonnal öl, ám a kilőtt lövedékekre igen "
+"erősen hat a gravitáció, így a fegyvert nem könnyű kezelni. Épp ezért "
+"elnevezték INSTA-GRAVE-nek.Sajnos valaki ellopta a technológiát, így az "
+"ellenségeid is tudják használni. Itt az idő: győzd le azokat a tolvajokat a "
+"hatalmas GRAVE-ITERATION-PIT-ben, hogy visszaszerezzük az erőfölényt!Nyerd "
+"meg a csatát, és a nagy háborúban is győzedelmeskedünk!"
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Pusztíts el annyi ellenséget amennyit csak tudsz!"
+
+msgid "Special Abilities..."
+msgstr "Különleges képességek..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Ahogy ígértük, jöhet a magyarázat: a csillagok űrhajód hihetetlen erejű "
+"különleges képességeinek használatához szükségesek. Például meggyógyíthatod "
+"magad és körülötted lévő társaid, messzire lökheted vagy épp "
+"megfagyaszthatod a közelben lévő űrhajókat.Minél több csillagod van, a "
+"kiválasztott képesség ereje és hatótávolsága annál nagyobb lesz."
+
+msgid "Selection..."
+msgstr "Kiválasztás..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"A különleges képességek közötti váltáshoz nyomd meg a(z) "
+"<{PLAYER1_KEY_SPECIAL}> gombot. A választáshoz a(z) <{PLAYER1_KEY_LEFT}> és "
+"<{PLAYER1_KEY_RIGHT}> billentyűket használd.Ehhez a leckéhez válaszd a "
+"\"Freezer\" nevű képességet! Szállj fel, ha megvan!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Szia {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Ez egy elég béna név... Nyugodtan adj meg egy jobbat!"
+
+msgid "Next music track!"
+msgstr "Következő zeneszám!"
+
+msgid "General Settings"
+msgstr "Általános beállítások"
+
+msgid "Special Effects"
+msgstr "Különleges hatások"
+
+msgid "Ship Settings"
+msgstr "Űrhajó beállításai"
+
+msgid "A Button"
+msgstr "A gomb"
+
+msgid "B Button"
+msgstr "B gomb"
+
+msgid "X Button"
+msgstr "X gomb"
+
+msgid "Y Button"
+msgstr "Y gomb"
+
+msgid "Start Button"
+msgstr "Start gomb"
+
+msgid "Back Button"
+msgstr "Vissza gomb"
+
+msgid "Right Bumper"
+msgstr "Jobb bumper"
+
+msgid "Left Bumper"
+msgstr "Bal bumper"
+
+msgid "Right Trigger"
+msgstr "Jobb ravasz"
+
+msgid "Left Trigger"
+msgstr "Bal ravasz"
+
+msgid "Direction Up"
+msgstr "Fel iránygomb"
+
+msgid "Direction Down"
+msgstr "Le iránygomb"
+
+msgid "Direction Left"
+msgstr "Balra iránygomb"
+
+msgid "Direction Right"
+msgstr "Jobbra iránygomb"
+
+msgid "Stick1 Up"
+msgstr "Analógkar1 fel"
+
+msgid "Stick1 Down"
+msgstr "Analógkar1 le"
+
+msgid "Stick1 Left"
+msgstr "Analógkar1 balra"
+
+msgid "Stick1 Right"
+msgstr "Analógkar1 jobbra"
+
+msgid "Stick2 Up"
+msgstr "Analógkar2 fel"
+
+msgid "Stick2 Down"
+msgstr "Analógkar2 le"
+
+msgid "Stick2 Left"
+msgstr "Analógkar2 balra"
+
+msgid "Stick2 Right"
+msgstr "Analógkar2 jobbra"
+
+msgid "Button"
+msgstr "Gomb"
+
+msgid "Hot Key for Statistics"
+msgstr "Gyorsbillentyű a statisztikákhoz"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Ennek a gombnak a játék közben való megnyomásával egy, az aktuális játékkal "
+"kapcsolatos statisztikákat tartalmazó ablak jelenik meg."
+
+msgid "CannonShots"
+msgstr "Ágyúlövések"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Állj, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Mondtuk, hogy a \"Freezer\"-t válaszd, de te nem ezt tetted!Szállj le, és "
+"válaszd a \"Freezer\"-t!"
+
+msgid "The Freezer..."
+msgstr "A Freezer..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Ez a különleges képesség megfagyasztja a körülötted lévő hajókat."
+"Használatához közel kell repülnöd ellenségedhez, majd a(z) "
+"<{PLAYER1_KEY_SPECIAL}> megnyomásával megfagyasztani őt. Figyeld csak meg "
+"ahogy lassan elveszti az életerejét... és végül meghal!"
+
+msgid "Practice!"
+msgstr "Gyakorolj!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Most próbáld lefagyasztani az ellenséged!Adunk néhány csillagot, de jól "
+"jegyezd meg: a valóságban megszerzésükhöz el kell pusztítanod ellenfeleidet!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Elvétetted, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Próbáld újra! Újratöltjük a csillagjaidat."
+
+msgid "You Did It!"
+msgstr "Megcsináltad!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Térj vissza a bolygódra, és válassz egy másik képességet!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Vigyázz, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Nincs idő a próbára!Ellenségeink két valódi harcost küldtek, hogy bosszút "
+"álljanak!"
+
+msgid "Players"
+msgstr "Játékosok"
+
+msgid "Artist:"
+msgstr "Előadó:"
+
+msgid "Previous music track!"
+msgstr "Előző zeneszám!"
+
+msgid "Play Previous Track"
+msgstr "Előző zeneszám lejátszása"
+
+msgid "Play Tracks in Random Order"
+msgstr "Zeneszámok véletlenszerű lejátszása"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Ennek a gombnak a lenyomásával az előző zeneszám kerül lejátszásra."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Lehetővé teszi a zeneszámok véletlenszerű lejátszását."
+
+msgid "Moving Stars"
+msgstr "Mozgó csillagok"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Mozgó csillagokat rajzol a háttérre. Jól néz ki, de csökkenti a játék "
+"teljesítményét."
+
+msgid "Goals"
+msgstr "Gólok"

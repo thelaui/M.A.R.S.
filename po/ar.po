@@ -1,0 +1,658 @@
+# M.A.R.S. ar.po
+# Majid, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:26+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "ابدأ لعبة محلية"
+
+msgid "Start Network Game"
+msgstr "أنشئ لعبة شبكة"
+
+msgid "Join Network Game"
+msgstr "اشترك في لعبة شبكة"
+
+msgid "Options"
+msgstr "الخيارات"
+
+msgid "About"
+msgstr "عن"
+
+msgid "Quit M.A.R.S."
+msgstr "غادر M.A.R.S."
+
+msgid "Continue"
+msgstr "استمر"
+
+msgid "Restart Game"
+msgstr "أعد اللعبة"
+
+msgid "Hide Menu"
+msgstr "أخفِ القائمة"
+
+msgid "Return to Main Menu"
+msgstr "عُد إلى القائمة الرئيسية"
+
+msgid "Start"
+msgstr "ابدأ"
+
+msgid "Cancel"
+msgstr "ألغِ"
+
+msgid "Info"
+msgstr "معلومات"
+
+msgid "Close"
+msgstr "أغلق"
+
+msgid "License"
+msgstr "الرخصة"
+
+msgid "Ok"
+msgstr "موافق"
+
+msgid "Show this Info again."
+msgstr "أظهر هذه المعلومات مجددًا"
+
+msgid "Left Team"
+msgstr "الفريق الأيسر"
+
+msgid "Right Team"
+msgstr "الفريق الأيمن"
+
+msgid "Bots Left"
+msgstr "الآليون في اليسار"
+
+msgid "Bots Right"
+msgstr "الآليون في اليمين"
+
+msgid "Bots"
+msgstr "الآليون"
+
+msgid "Frag Limit"
+msgstr "الحد الأعلى للقتلات"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"في العام 3547 استقرت كل حضارة في المجرة على كوكبها الخاص، حيث عاشت في سلام "
+"وانسجام مع طبيعته وأرضه.ولكن خارج هذا الجو الهادئ تشتعل نيران الحرب العظيمة."
+"عليك أن تحمي كوكبك من الدمار الآتي من الجيران الحاسدين! فأنت المقاتل الشهير "
+"الذي يسعى إلى الفخر والازدهار.خض في الحرب فالبطل الحق مثلك يكون في: كرة "
+"الفضاء.احم كوكبك من كرة الموت وتغلب على أعدائك بجعلها تصطدم بعالمهم السخيف."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "اركل الكرة أو أطلق عليها لترتطم بكوكب عدوك!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"نتيجةً للحرب العظيمة خسرت كل شيء، وطنك، وعائلتك، وثقتك بنفسك.آخر فرصة لك "
+"للخروج من هذا البؤس الذي حُبست فيه هي أن تكون محاربًا في ساحة القتال حتى "
+"الموت. قاوم المقاتلين الآخرين واكسب النقاط بتحطيم الخردة التي يسمونها سفنًا "
+"فضائية. كن مستعدًا! الموت والمجد ينتظرانك."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "حطم أكبر عدد ممكن من الأعداء!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"لقد فشلت المفاوضات! وتكبدتَ وجيرانُك خسائر فادحة من جراء استمرار الحرب "
+"العظيمة. في آخر محاولة لتكون لك اليد العليا عليك القضاء على موارد الأعداء "
+"والحفاظ على مواردك. السبيل الوحيد لهذا هو قتال ملحمي في فِرَق حتى الموت. احمِ "
+"رفاقك واقضِ على أعداءك. لقنهم درسًا لن ينسوه!"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"وكأن الحرب العظيمة لم تكن كافية. أصبح نظامك الكوكبي مهددًا من قِبل مصدر شر "
+"مهول جديد، سفينة ضخمة تابعة لغزاة مجهولين تحلق فوق مجرتك وتستهدف الكواكب "
+"المأهولة بسلاح دمار شامل فتاك. من شدة الاستخفاف ألقى المهاجمون جهاز تحكم عن "
+"بعد لضبط رأس الموت والرعب هذا. كن أول من يصل إليه حتى تجعل كوكب عدوك أرضًا "
+"للخراب! كن حارس المدفع!"
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "التقط جهاز التحكم واحتفظ به لأطول وقت ممكن!"
+
+msgid "Show Debug Information"
+msgstr "إظهار معلومات التصحيح"
+
+msgid "Bots Orientation"
+msgstr "توجه الآليين"
+
+msgid "Zones"
+msgstr "المناطق"
+
+msgid "AI-Paths"
+msgstr "المسارات"
+
+msgid "Show Game Information"
+msgstr "إظهار معلومات اللعبة"
+
+msgid "Frames per Second"
+msgstr "عدد الإطارات في الثانية"
+
+msgid "Particle Count"
+msgstr "عدد الجُسيمات"
+
+msgid "Particle Lifetime"
+msgstr "مدة بقاة الجُسيمات"
+
+msgid "Game Settings"
+msgstr "إعدادات اللعبة"
+
+msgid "Full screen"
+msgstr "ملء الشاشة"
+
+msgid "V-Sync"
+msgstr "المزامنة الرأسية"
+
+msgid "Music"
+msgstr "صوت الموسيقى"
+
+msgid "Sound"
+msgstr "صوت المؤثرات"
+
+msgid "Announcer"
+msgstr "صوت التعليق"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Accelerate"
+msgstr "التسريع"
+
+msgid "Turn Left"
+msgstr "الدوران لليسار"
+
+msgid "Turn Right"
+msgstr "الدوران لليمين"
+
+msgid "Weapon"
+msgstr "إطلاق السلاح"
+
+msgid "Ship"
+msgstr "السفينة"
+
+msgid "Player Color"
+msgstr "لون اللاعب"
+
+msgid "Team Color"
+msgstr "لون الفريق"
+
+msgid "File Format for Screenshots"
+msgstr "صيغة ملف لقطة الشاشة"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"هذه أولى محاولاتي لإنشاء لعبة في أوبن‌جي‌إل باستخدام SFML. إنها لعبة لشخصين "
+"يقودان سفنًا في مشهد فضائي ثنائي الأبعاد تحكمه قوانين الجاذبية. الموقع "
+"الإلكتروني: http://www.marsshooter.org"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"هذا البرنامج من البرمجيات الحرة. يحق لك توزيعه وتعديله تحت شروط رخصة غنو "
+"العمومية كما نشرتها مؤسسة البرمجيات الحرة، سواء النسخة الثالثة من الرخصة أو "
+"أي نسخة تالية (أيهما تشاء). يوزَّع هذا البرنامج على أمل أن يكون مفيدًا، ولكنه "
+"يأتي بلا أي نوع من الضمان، هذا يشمل ضمان الرواج أو المناسبة لغرض معين. اقرأ "
+"رخصة غنو العمومية لمزيد من التفاصيل. متوفرة عبر الإنترنت في الموقع التالي:"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+
+msgid "Do you really want to quit?"
+msgstr "هل تود حقًا المغادرة؟"
+
+msgid "Do you really want to end the current game?"
+msgstr "هل تود حقًا إنهاء اللعبة الحالية؟"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"لعب M.A.R.S. على الشبكة العنكبوتية العالمية أو الشبكة المحلية جزء من خطتنا "
+"المستقبلية، ولكنه ليس متاحًا بعد. تابعونا!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"هل أوقفت اللعبة في لحظة حاسمة من المعركة؟ إذا أردت التقاط صورة للشاشة فهذا "
+"الزر يساعدك على تصوير خلفيات خرافية، ولذلك بأن يخفي كل النوافذ. يمكنك بعد "
+"ذلك استعادها ببساطة بالضغط على زر ESC."
+
+msgid "Add"
+msgstr "زائد"
+
+msgid "Back Slash"
+msgstr "شرطة مائلة للخلف"
+
+msgid "Comma"
+msgstr "فاصلة"
+
+msgid "Dash"
+msgstr "شرطة"
+
+msgid "Divide"
+msgstr "قسمة"
+
+msgid "Down"
+msgstr "أسفل"
+
+msgid "Equal"
+msgstr "يساوي"
+
+msgid "Left Alt"
+msgstr "Alt الأيسر"
+
+msgid "Left Bracket"
+msgstr "قوس الإغلاق"
+
+msgid "Left Control"
+msgstr "Ctrl الأيسر"
+
+msgid "Left"
+msgstr "يسار"
+
+msgid "Left Shift"
+msgstr "Shift الأيسر"
+
+msgid "Left Super"
+msgstr "Super الأيسر"
+
+msgid "Multiply"
+msgstr "ضرب"
+
+msgid "Period"
+msgstr "نقطة"
+
+msgid "Quote"
+msgstr "علامة تنصيص فردية"
+
+msgid "Right Alt"
+msgstr "Alt الأيمن"
+
+msgid "Right Bracket"
+msgstr "قوس الفتح"
+
+msgid "Right Control"
+msgstr "Ctrl الأيمن"
+
+msgid "Right"
+msgstr "يمين"
+
+msgid "Right Shift"
+msgstr "Shift الأيمن"
+
+msgid "Right Super"
+msgstr "Super الأيمن"
+
+msgid "Semi Colon"
+msgstr "فاصلة منقوطة"
+
+msgid "Slash"
+msgstr "شرطة مائلة"
+
+msgid "Space"
+msgstr "مسافة"
+
+msgid "Subtract"
+msgstr "طرح"
+
+msgid "Tilde"
+msgstr "~"
+
+msgid "Up"
+msgstr "أعلى"
+
+msgid "Graphics"
+msgstr "الرسوميات"
+
+msgid "Audio"
+msgstr "الصوت"
+
+msgid "Window Settings"
+msgstr "إعدادات النوافذ"
+
+msgid "Start Tutorial"
+msgstr "ابدأ التدريب"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Welcome, Space Rookie!"
+msgstr "مرحبًا أيها المبتدئ في الفضاء!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"يسعدنا أن نجند بطلاً صاعدًا مثلك لينضم إلينا في الحرب العظيمة!اكتشفنا أنك "
+"بحاجة إلى بعض التمرن على سفينتك الجديدة.فليبدأ التدريب!"
+
+msgid "Basic Movement..."
+msgstr "التحرك الأساسي"
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"التحكم بسفينتك أهم مهمة عليك إتقانها.كل التحركات محكومة بقوانين الجاذبية. "
+"إذا أردت التباطؤ فعليك أن تسير في الجهة المعاكسة. ابدأ التحكم بسفينتك "
+"باستخدام المفاتيح:"
+
+msgid "Warming Up!"
+msgstr "الإحماء!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr "اذهب إلى المنطقة الوردية!حاول أن لا تحطم سفينتك الجديدة."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "أحسنت!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"الآن عُد إلى كوكبك وحاول أن تهبط بسفينتك بالطيران إلى الوراء ببطء حتى تلامس "
+"الكوكب."
+
+msgid "Good Work!"
+msgstr "عمل جيد!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr "الهبوط السليم ليس سهلاً، أليس كذلك؟عليك أن تتقنه جيدًا."
+
+msgid "Something More Difficult..."
+msgstr "شيء أصعب قليلاً"
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"حاول اتباع المسار الذي ترسمه النقاط الوردية.سوف نتصل بك مرة أخرى بعد أن تنجز "
+"هذا. انطلق الآن!"
+
+msgid "Awesome!"
+msgstr "رائع!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr "أنت أفضل مبتدئ رأيته في حياتي.الآن استعد لبعض الانفجارات!"
+
+msgid "Shooting..."
+msgstr "إطلاق النار"
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"عليك أن تتعلم كيف تطلق على أعدائك حتى تتمكن من التغلب عليهم!لفعل ذلك اضغط زر"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "هبوط جيد!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "يبدو أنك طيار ممتاز.ما رأيك الآن بمزيد من الأسلحة؟"
+
+msgid "The Weapons..."
+msgstr "الأسلحة"
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"أعلم أنك كنت متلهفًا لهذا. أثناء رسوك تستطيع التبديل بين عدة أسلحة بالغة "
+"الخطورة.اضغط على زر"
+
+msgid "Fight!"
+msgstr "القتال!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"لنرى الآن ماذا ستفعل أمام مبتدئ من كوكب آخر.يبدو أنه يتدرب على الطيران.اضربه!"
+
+msgid "Impressive!"
+msgstr "مذهل!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"لقد نجحت! ربما لاحظت أنك تحصل على بعض نقاط السمعة مقابل كل عدو تقتله.الرقم "
+"الأخضر الصغير الذي يظهر فوق سفينتك يمثل قيمتها. سوف تزداد القيمة إن قتلت "
+"كثيرًا من الأعداء على التوالي."
+
+msgid "Beat Them!"
+msgstr "احذر!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"لا وقت للراحة.لقد أرسل الأعداء أحد محاربيهم الحقيقيين للثأر!لا أملك لك "
+"شيئًا ..."
+
+msgid "Unbelievable!"
+msgstr "غير معقول!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"لقد تمكنتَ من أداء جميع المهام جيدًا. ماذا نفعل الآن؟ لنلق نظرة على قائمة "
+"الخيارات. هناك تستطيع ضبط العديد من ال‍... ما اسمها؟ ... الخيارات.على سبيل "
+"المثال، يمكنك تغيير شكل سفينتك ولونها، ويمكنك تغيير اسمك."
+
+msgid "Who's Best?"
+msgstr "من الأفضل؟"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"يمكنك عرض عدد القتلات والنقاط وغيرها بالضغط على زر <Tab>.الأرقام التي تلي "
+"اسمك تمثل عداد قتلاتك والفرق بينه وبين الأفضل."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "تهانينا!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"لفد أتممت التدريب. أصبحت الآن مستعدًا للقتال في الحرب العظيمة. إن أردت "
+"الاستمرار في التمرن فانتظر حتى يولد العدو مرة أخرى. يمكنك إنهاء التدريب "
+"بالضغط على <Esc>.نتمنى لك وقتًا ممتعًا في M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "لقد أخفقت!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"رائع! لقد حطمت سفينتك الجديدة اللامعة! لا بأس، سنحضر لك سفينة جديدة. انتظر "
+"قليلاً ..."
+
+msgid "Did You Notice?"
+msgstr "هل لاحظت؟"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"قوتك تقل! انتبه إلى الشريط الأخضر. ننصحك بالهبوط إذا أوشك على الانتهاء."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"وقودك يقل! انتبه إلى الشريط الأصفر. ننصحك بالهبوط إذا أوشك على الانتهاء."
+
+msgid "You Nearly Got Him!"
+msgstr "لقد أوشكت على النيل منه!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"انتبه إلى اسم عدوك. اللون يدل على مقدار قوته المتبقية، كلما ازداد حمرة كلما "
+"كان أضعف."
+
+msgid "Interface"
+msgstr "الواجهة"
+
+msgid "High Star Field Resolution"
+msgstr "جودة عالية للمجال النجمي"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "Hot Key for Screenshots"
+msgstr "اختصار أخد لقطة للشاشة"
+
+msgid "Points"
+msgstr "النقاط"
+
+msgid "Frags"
+msgstr "القتلات"
+
+msgid "Teamkills"
+msgstr "قتلات الأصدقاء"
+
+msgid "Suicides"
+msgstr "الانتحارات"
+
+msgid "Deaths"
+msgstr "الموتات"
+
+msgid "Total:"
+msgstr "المجموع:"
+
+msgid "Statistics"
+msgstr "إحصائيات"
+
+msgid "Shader Effects"
+msgstr "مؤثرات المظلِّل"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "للأسف، عتادك لا يدعم المظللات!"
+
+msgid "Gameplay"
+msgstr "اللعب"
+
+msgid "PowerUp Spawn Rate"
+msgstr "معدل ظهور المساعدات"
+
+msgid "Bot Difficulty"
+msgstr "صعوبة الآليين"
+
+msgid "Explosions for Slow Motion"
+msgstr "عدد الانفجارات قبل الإبطاء"
+
+msgid "Off"
+msgstr "معطل"
+
+msgid "Credits"
+msgstr "إشادات"
+
+msgid "Special Thanks to:"
+msgstr "شكر خاص ل‍:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"الترجمات:   الألمانية: Sandra   الأسبانية: Gastón   البرتغالية: Vitor   "
+"الفرنسية: Astohan   الروسية: Drakmail   الإيطالية: Proch   السويدية: "
+"Henrik   العربية: Majidالاختبارات والدعم الإبداعي:    Heinrich, Martin, "
+"Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "الجودة"
+
+msgid "Color Depth"
+msgstr "عمق الألوان"
+
+msgid "Special Ability"
+msgstr "استخدام الميزة"
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Sets the format being used when screen shots are saved."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"When this key is pressed, a screen shot is saved to ~/.marsshooter/"
+"screenshots."
+
+msgid "Pressing this key switches to the next music track."
+msgstr ""
+"When this key is pressed, a screen shot is saved to the directory M.A.R.S."

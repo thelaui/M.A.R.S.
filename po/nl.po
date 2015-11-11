@@ -1,0 +1,1036 @@
+# M.A.R.S. nl.po
+# Carlo von Ranzow, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:29+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Start Lokaal Spel"
+
+msgid "Start Network Game"
+msgstr "Start Netwerk Spel"
+
+msgid "Join Network Game"
+msgstr "Neem deel aan een Netwerk Spel"
+
+msgid "Options"
+msgstr "Opties"
+
+msgid "About"
+msgstr "Over"
+
+msgid "Quit M.A.R.S."
+msgstr "Beëindig M.A.R.S."
+
+msgid "Continue"
+msgstr "Hervat"
+
+msgid "Restart Game"
+msgstr "Herstart Spel"
+
+msgid "Hide Menu"
+msgstr "Verberg Menu"
+
+msgid "Return to Main Menu"
+msgstr "Keer terug naar Hoofdmenu"
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+msgid "Close"
+msgstr "Sluit"
+
+msgid "License"
+msgstr "Licentie"
+
+msgid "Ok"
+msgstr "Okay"
+
+msgid "Show this Info again."
+msgstr "Toon deze info weer."
+
+msgid "Left Team"
+msgstr "Linker Team"
+
+msgid "Right Team"
+msgstr "Rechter Team"
+
+msgid "Bots Left"
+msgstr "Bots Links"
+
+msgid "Bots Right"
+msgstr "Bots Rechts"
+
+msgid "Frag Limit"
+msgstr "Frag Limiet"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"In het jaar 3547, hebben beschavingen van over het gehele heelal zich "
+"gevestigd op hun eigen planeten. Ze leven rustig in vrede met hun omgeving.  "
+"Maar buiten hun leefomgevingen is de GROTE OORLOG gaande. Als een beroemd "
+"vechter onderweg naar de oneindige roem en rijkdom moet u uw planeet "
+"beschermen tegen de verdoemenis van jaloezie van uw buren!Als de ware held "
+"zoals u geboren bent met maar een bestemming: SPACEBALL.Bescherm uw planeet "
+"van de dood en verdoemenis van uw vijanden door ze totaal te vernietigen!"
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Trap of schiet de ball in de vijandige planeet!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"Door de uitkomst van de GROTE OORLOG heeft u alles verloren: uw huis, uw "
+"familie en uw zelfvertrouwen. Uw laatste kans om te ontsnappen uit uw "
+"miezerige leven, is om als gladiator in de glorieuze DEATHMATCH-arena te "
+"vechten.Weersta de andere vechters en verdien punten door notendoppen te "
+"pletten dat zij ruimtevaartuigen noemen. Maakt u klaar! Dood en glory "
+"wachten op u."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Vernietig zoveel mogelijk vijanden!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"De onderhandelingen zijn mislukt.Zowel u als uw buren hebben enorme "
+"verliezen te verwerken als het resultaat van de GROTE OORLOG. In een laatste "
+"poging bent u bevolen om de hulpbronnen van uw vijanden te vernietigen en "
+"die van uzelf te beschermen. Dit kan alleen door een epische TEAMMATCH. "
+"Bescherm uw kameraden en vernietig uw vijanden! Leer ze een les die ze nooit "
+"zullen vergeten."
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Alsof de GROTE OORLOG nog niet genoeg was word uw heelal nu bedreigt door "
+"een nieuwe bron van kwad: Een gigantisch ruimtevaartuig van onbekende "
+"afkomst zweeft boven uw heelal. Deze richt zich op uw thuis planeet met een "
+"monolitisch massavernietigings wapen.  Als teken van cynisme hebben de "
+"indringers een afstandsbediening gedropped van dit wapen. Bereik deze "
+"afstandsbediening als eerste en voorkom dat uw thuisplaneet vernietigt word."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Pak de afstandsbediening en hou deze zo lang mogelijk vast!"
+
+msgid "Show Debug Information"
+msgstr "Toon Debug Informatie"
+
+msgid "Bots Orientation"
+msgstr "Bots Orientatie"
+
+msgid "AI-Paths"
+msgstr "AI-Paden"
+
+msgid "Show Game Information"
+msgstr "Toon Spel Informatie"
+
+msgid "Frames per Second"
+msgstr "Frames per Seconde"
+
+msgid "Particle Count"
+msgstr "Deeltjes (Particle) Hoeveelheid"
+
+msgid "Particle Lifetime"
+msgstr "Deeltjes (Particle) Levensduur"
+
+msgid "Game Settings"
+msgstr "Spel Instellingen"
+
+msgid "Full screen"
+msgstr "Volledig Scherm"
+
+msgid "Music"
+msgstr "Muziek"
+
+msgid "Sound"
+msgstr "Geluid"
+
+msgid "Announcer"
+msgstr "Omroeper"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Accelerate"
+msgstr "Versnel"
+
+msgid "Turn Left"
+msgstr "Draai Linksom"
+
+msgid "Turn Right"
+msgstr "Draai Rechtsom"
+
+msgid "Weapon"
+msgstr "Wapen"
+
+msgid "Ship"
+msgstr "Ruimtevaartuig"
+
+msgid "Player Color"
+msgstr "Speler Kleur"
+
+msgid "Team Color"
+msgstr "Team Kleur"
+
+msgid "File Format for Screenshots"
+msgstr "Scherm Afdruk Bestandsformaat"
+
+msgid "Display Tool Tips"
+msgstr "Toon Tool Tips"
+
+msgid "Weapon Options"
+msgstr "Wapen Opties"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Dit is de eerste poging voor een spel in OenGL met SFML. Het is een spel "
+"voor twee spelers, met schepen in een twee-dimensionale omgeving die "
+"geregeerd word door de wetten der zwaartekracht. Homepage: http://www."
+"marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Dit programma is vrije software. U mag het herdistribueren en / of wijzigen "
+"onder de voorwaarden van het GNU General Public License zoals gepubliceerd "
+"door de Free Software Foundation; ofwel versie 3 van de Licentie, of (naar "
+"keuze) een latere versie. Dit programma wordt verspreid in de hoop dat het "
+"nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete "
+"garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de "
+"GNU General Public License voor meer details. Available online onder: http://"
+"www.gnu.org/licenses/gpl-3.0.html"
+
+msgid "Do you really want to quit?"
+msgstr "Weet u zeker dat u M.A.R.S. wilt verlaten?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Weet u zeker dat u de huidige sessie wilt verlaten?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"M.A.R.S. spelen over het world wide web of lokaal netwerk staat in de "
+"planning maar is nog niet geimplementeerd. Blijft u op de hoogte!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"U heeft M.A.R.S. gepauzeerd in het midden van een waanzinnig gevecht? Indien "
+"u een schermafbeelding wilt maken, deze knop stelt u in staat om epic "
+"wallpapers te maken, door alle schermen te verbergen. Deze zijn weer terug "
+"te brengen door op ESC te drukken."
+
+msgid "Add"
+msgstr "Voeg toe"
+
+msgid "Dash"
+msgstr "Minteken"
+
+msgid "Divide"
+msgstr "Schuine streep"
+
+msgid "Down"
+msgstr "Omlaag"
+
+msgid "Equal"
+msgstr "Gelijkteken"
+
+msgid "Left Alt"
+msgstr "Linker Alt"
+
+msgid "Left Bracket"
+msgstr "Linker Bracket"
+
+msgid "Left Control"
+msgstr "Linker Control"
+
+msgid "Left"
+msgstr "Links"
+
+msgid "Left Shift"
+msgstr "Linker Shift"
+
+msgid "Left Super"
+msgstr "Linker Super"
+
+msgid "Multiply"
+msgstr "Sterretje"
+
+msgid "Period"
+msgstr "Punt"
+
+msgid "Right Alt"
+msgstr "Rechter Alt"
+
+msgid "Right Bracket"
+msgstr "Rechter Bracket"
+
+msgid "Right Control"
+msgstr "Rechter Control"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Right"
+msgstr "Rechts"
+
+msgid "Right Shift"
+msgstr "Rechter Shift"
+
+msgid "Right Super"
+msgstr "Rechter Super"
+
+msgid "Semi Colon"
+msgstr "Dubbele Punt"
+
+msgid "Slash"
+msgstr "Schuine Streep"
+
+msgid "Space"
+msgstr "Spatie"
+
+msgid "Subtract"
+msgstr "Minteken"
+
+msgid "Tilde"
+msgstr "Grave Accent"
+
+msgid "Up"
+msgstr "Omhoog"
+
+msgid "Graphics"
+msgstr "Video"
+
+msgid "Audio"
+msgstr "Geluid"
+
+msgid "Window Settings"
+msgstr "Scherm Instellingen"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Welkom, Ruimte Groentje!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"We zijn blij om een snel stijgende held als jij, {PLAYER1_NAME} te werven, "
+"om samen met ons in de grote oorlog in te gaan!We dachten dat je wel wat "
+"oefening met uw nieuwe ruimtevaartuig kon gebruiken. Laat de training te "
+"beginnen ..."
+
+msgid "Basic Movement..."
+msgstr "Basis Bewegingen..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Het beheersen van uw ruimtevaartuig is de meest belangrijke taak.Alle "
+"bewegingen worden beheerd door de wetten der zwaartekracht. Om te vaart te "
+"minderen dient u in de tegenovergestelde richting te draaien. Beweeg uw "
+"ruimtevaartuig met de toetsen <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> en "
+"<{PLAYER1_KEY_RIGHT}>!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr ""
+"Bereik de roze zone!Probeer uw gloednieuwe ruimtevaartuig niet te "
+"verongelukken."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Goed Gedaan, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Keer nu terug naar uw moeder planeet door deze langzaam achteruit richting "
+"uw moeder planeet te benaderen."
+
+msgid "Good Work!"
+msgstr "Goed gedaan!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"Een goede landing is niet makkelijk of wel?U kunt dit het beste goed onder "
+"de knie krijgen."
+
+msgid "Something More Difficult..."
+msgstr "Iets Moeilijkers..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Probeer het pad dat met roze zones gemarkeerd is te volgen!Nadat u dat "
+"gelukt is zullen we wederom contact met u opnemen. Ga nu!"
+
+msgid "Awesome!"
+msgstr "Geweldig!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"U bent het beste groentje die we ooit hebben gehad.Maak u nu klaar voor wat "
+"explosiefs."
+
+msgid "Shooting..."
+msgstr "Schieten..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Om uw vijanden te kunnen verslaan is het belangrijk dat u weet hoe u ze kunt "
+"neerschieten.Druk daarvoor <{PLAYER1_KEY_FIRE}>. Veel schietplezier en land "
+"uw ruimtevaartuig daarna weer om te tutorial te hervatten."
+
+msgid "Volume Settings"
+msgstr "Volume Instellingen"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Mooie landing, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr ""
+"U ben uitgegroeid tot een geweldige piloot.Nu wat dacht u van wat meer "
+"wapens?"
+
+msgid "The Weapons..."
+msgstr "De Wapens..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"We weten dat u hierop heeft staan wachten. Wanneer u zich in de haven bevind "
+"kunt u een aantal ongelooflijke gemene wapens switchen. Druk "
+"<{PLAYER1_KEY_FIRE}> om het arsenaal te openen.Gebruik dan "
+"<{PLAYER1_KEY_LEFT}> en <{PLAYER1_KEY_RIGHT}> om een wapen te kiezen! "
+"Lanceer wanneer u klaar bent!"
+
+msgid "Play Next Track"
+msgstr "Speel Volgende Track"
+
+msgid "Playback Settings"
+msgstr "Afspeel Instellingen"
+
+msgid "Fight!"
+msgstr "Vecht!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Laten we nu eens kijken hoe u het doet tegen een groentje van een andere "
+"planeet. Het ziet erna uit dat hij zijn vliegvaardigheden probeert te "
+"verbeteren.Versla hem!"
+
+msgid "Impressive!"
+msgstr "Indrukwekkend!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Het is u gelukt! Zoals u misschien al gemerkt heeft is er een kleine ster "
+"boven uw ruimtevaartuig verschenen. Hoe meer vijanden u verslaat hoe meer er "
+"verschijnen. Maar ze zijn niet alleen een frag-teller. Land weer en we "
+"zullen u laten zien waar deze sterren voor dienen."
+
+msgid "Beat Them!"
+msgstr "Versla ze!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Toon uw vaardigheden! Score tenminste 5 punten door ze te doden. Uw huidige "
+"score staat naast uw naam vermeld.We sturen een ervaren vechter met u mee om "
+"u te helpen, {PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "Ongelooflijk!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"U heeft alle taken volbracht. Wat is er nu nog te doen?Laten we eens kijken "
+"naar het opties menu. Daar kunt u veel... nouja... zeer veel instellingen "
+"aanpassen.Zo kunt u hier bijvoorbeeld uw naam of de kleur van uw "
+"ruimtevaartuig aanpassen..."
+
+msgid "Who's Best?"
+msgstr "Wie is de man?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"U kunt een lijst van frags, punten, etc, tonen met de <{STATISTICS_KEY}>.De "
+"nummers naast uw naam tonen uw frag-aantal en uw positie tenopichte van de "
+"beste piloot."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Gefeliciteerd, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"U heeft deze tutorial met succes volbracht. U bent nu klaar om mee te "
+"vechten in de GROTE OORLOG. Indien u nog verder wilt oefenen kunt u gewoon "
+"blijven wachten en er zullen nieuwe vijanden verschijnen. U kunt de training "
+"beëindigen met <Esc>Veel plezier met M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "U heeft gefaald!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Te gek {PLAYER1_NAME}! U heeft uw gloednieuwe ruimtevaartuig vernietigd. "
+"Maar goed, we geven u een nieuwe. Wacht gewoon een paar seconden..."
+
+msgid "Did You Notice?"
+msgstr "Is het u opgevallen?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Uw levenskracht mindert langzaam! Houdt uw levensenergie in de bovenste "
+"levensbalk goed in de gaten en land wanneer die bijna leeg is."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Uw brandstof raakt langzaam op! Houdt uw brandstof meter in de gele balk "
+"goed in de gaten en land wanneer die bijna leeg is."
+
+msgid "You Nearly Got Him!"
+msgstr "U had hem bijna!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Let goed op de naam van uw vijand. De kleur hiervan toont u hoeveel "
+"levensenergie hij nog over heeft. Hoe roder hoe zwakker deze vijand is."
+
+msgid "High Star Field Resolution"
+msgstr "Hoog Sterren veld Resolutie"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Hot Key for Screenshots"
+msgstr "Hot Key voor Scherm Afdrukken"
+
+msgid "Points"
+msgstr "Punten"
+
+msgid "Teamkills"
+msgstr "Gezamenlijke team punten"
+
+msgid "Suicides"
+msgstr "Zelfmoords"
+
+msgid "Deaths"
+msgstr "Keer Gestorven"
+
+msgid "Game Options"
+msgstr "Spel Opties"
+
+msgid "Total:"
+msgstr "Totaal:"
+
+msgid "Statistics"
+msgstr "Statistieken"
+
+msgid "Planet Life Points"
+msgstr "Planeet Levens punten"
+
+msgid "Shader Effects"
+msgstr "Shader Effecten"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Helaas, shaders worden door uw hardware niet ondersteund!"
+
+msgid "PowerUp Spawn Rate"
+msgstr "PowerUp Spawn snelheid"
+
+msgid "Bot Difficulty"
+msgstr "Bot Moeilijkheidsgraad"
+
+msgid "Explosions for Slow Motion"
+msgstr "Explosies voor Slow Motie"
+
+msgid "Off"
+msgstr "Uit"
+
+msgid "Special Thanks to:"
+msgstr "Speciale dank aan:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Vertalingen: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish Dutch: Carlo von Ranzow: HenrikCoding support: "
+"Werner en DeubeuliouTests and creative support: Heinrich, Martin, Bastian, "
+"Sandra, Diana."
+
+msgid "Resolution"
+msgstr "Resolutie"
+
+msgid "Color Depth"
+msgstr "Kleur Diepte"
+
+msgid "Special Ability"
+msgstr "Speciale Vaardigheid"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Toont het aantal frames per seconde.Wanneer dit erg laag is (<20), zou u de "
+"instellingen de video-tab moeten verlagen!"
+
+msgid "Displays the amount of active particles."
+msgstr "Toont het aantal actieve deeltjes (Particles)."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Verwerpt tooltips zoals deze."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Zet het formaat v.d. schermafbeeldingen."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Wanneer deze toets is ingedrukt wordt er een schermafbeelding gemaakt in "
+"{CONFIG_PATH}screenshots/"
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Deze toets switched naar het volgende muziek spoor."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr ""
+"Wanneer er zoveel schepen tegelijk exploderen dan kicked het slow motion "
+"effect in."
+
+msgid "Displays the job of each bot."
+msgstr "Toont de taak van elke bot."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr ""
+"Toont de tactische zones die belangrijke zijn voor de kunstmatige "
+"intelligentie."
+
+msgid "Displays paths calculated by bots."
+msgstr "Toont de routes die de bots berekend hebben."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maximalizeerd het scherm en zal het volledige scherm dekken."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Past het spel-update aan, aan de refresh snelheid van uw monitorWanneer deze "
+"optie ingeschakelt is speelt M.A.R.S. meestal soepeler."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr ""
+"Schakelt coole effecten in zoals Warmte Waas maar reduceerd de performance."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Stelt het scherm formaat in.Dit heeft effect voor zowel Volledig Scherm- als "
+"de Scherm-modus."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"Indien u een hoge resolutie gebruikt dan zorgt deze optie ervoor dat de "
+"sterren veld loop later ingezet word.Het uitschakelen van deze optie kan uw "
+"performance een beetje verhogen."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Past de algemene Particle hoeveel aan.Een lagere waarde betekent meer "
+"performance."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Past de Particle levensduur aan.Een lagere levensduur levert flink meer "
+"performance op."
+
+msgid "Adjusts volume of background music."
+msgstr "Past het volume van de achtergrond muziek aan."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Past het volume van de geluidseffecten aan."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Past het volume van de omroeper aan."
+
+msgid "Sets the team of the local players."
+msgstr "Stel het team van lokale spelers in."
+
+msgid "Enables local players."
+msgstr "Activeer Lokale spelers."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr ""
+"Pas het aantal schepen aan dat door de kunstmatige intelligentie bestuurd "
+"word."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Punten limiet voor een team om het spel te winnen."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Punten limiet voor een speler om het spel te winnen."
+
+msgid "Adjusts the strength of the bots."
+msgstr "Pas de sterkte van de bots aan"
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"Pas de hoeveel Power-Ups aan die verschijnen tijdens het spel.Nul schakelt "
+"de Power-Ups geheel uit."
+
+msgid "Weapons"
+msgstr "Wapens"
+
+msgid "Special Abilities"
+msgstr "Speciale Vaardigheden"
+
+msgid "Screenshot saved!"
+msgstr "Scherm afdruk bewaard!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Aangezien de grote oorlog uw hulpbronnen drastisch heeft verminderd hebben "
+"uw onderzoekers bezig om een manier te vinden om uw vijanden efficient te "
+"vernietigen door hun gegeven input te minderen. Ze hebben veel onderzoek "
+"gedaan en hebben nu een wapen gecreated met de volgende ongelooflijke "
+"eigenschap: Het vernietigt iets meteen en totaal maar de projectielen zijn "
+"lastig te beheersen. Ze worden sterk door de zwaartekrachten beinvloed. "
+"Daarom heten ze: INSTA-GRAVE! Helaas heeft iemand deze technology gestolen "
+"dus hebben uw vijanden nu ook deze technologie. Nu bent u aan zet: Versla "
+"die dieven in de GRAVE-ITATION-PIT.  Win dit gevecht en de kans dat u de "
+"GROTE OORLOG zal winnen zal drastisch toenemen."
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Vernietig zoveel mogelijk vijanden!"
+
+msgid "Special Abilities..."
+msgstr "Speciale Vaardigheden..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Zoals reeds beloofd vertellen we u nu waar de sterren voor dienen. Ze zijn "
+"een hulpbron voor uw ruimtevaartuigs speciale vaardigheden. Zo kunt u "
+"bijvoorbeeld uzelf en uw nabije vrienden genezen of het wegblazen of "
+"bevriezen van vijanden binnen een bepaald bereik! Hoe meer sterren u heeft "
+"hoe groter het bereik en de kracht van de vaardigheid."
+
+msgid "Selection..."
+msgstr "Selectie..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Voor het switchen tussen vaardigheden, kunt u <{PLAYER1_KEY_SPECIAL}> "
+"drukken. Om er een te kiezen kunt u ze switchen met <{PLAYER1_KEY_LEFT}> en "
+"<{PLAYER1_KEY_RIGHT}>! Voor deze les selecteer u de \"Bevriezer\"! Lanceer "
+"wanneer u dat gedaan heeft!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Dat is een slechte naam... Voert u gerust een betere in!"
+
+msgid "Next music track!"
+msgstr "Volgende song!"
+
+msgid "General Settings"
+msgstr "Algemente Instellingen"
+
+msgid "Special Effects"
+msgstr "Speciale Effecten"
+
+msgid "Ship Settings"
+msgstr "ruimtevaartuig Instellingen"
+
+msgid "A Button"
+msgstr "A Knop"
+
+msgid "B Button"
+msgstr "B Knop"
+
+msgid "X Button"
+msgstr "X Knop"
+
+msgid "Y Button"
+msgstr "Y Knop"
+
+msgid "Start Button"
+msgstr "Start Knop"
+
+msgid "Back Button"
+msgstr "Terug Knop"
+
+msgid "Right Bumper"
+msgstr "Rechter Bumper"
+
+msgid "Left Bumper"
+msgstr "Linker Bumper"
+
+msgid "Right Trigger"
+msgstr "Rechter Trigger"
+
+msgid "Left Trigger"
+msgstr "Linker Trigger"
+
+msgid "Direction Up"
+msgstr "Richting Omhoog"
+
+msgid "Direction Down"
+msgstr "Richting Omlaag"
+
+msgid "Direction Left"
+msgstr "Richting Links"
+
+msgid "Direction Right"
+msgstr "Richting Rechts"
+
+msgid "Stick1 Up"
+msgstr "Stick1 Omhoog"
+
+msgid "Stick1 Down"
+msgstr "Stick1 Omlaag"
+
+msgid "Stick1 Left"
+msgstr "Stick1 Links"
+
+msgid "Stick1 Right"
+msgstr "Stick1 Rechts"
+
+msgid "Stick2 Up"
+msgstr "Stick2 Omhoog"
+
+msgid "Stick2 Down"
+msgstr "Stick2 Omlaag"
+
+msgid "Stick2 Left"
+msgstr "Stick2 Links"
+
+msgid "Stick2 Right"
+msgstr "Stick2 Rechts"
+
+msgid "Button"
+msgstr "Knop"
+
+msgid "Hot Key for Statistics"
+msgstr "Hot Key voor Statistieken"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Wanneer deze toets ingedrukt word tijdens het spelen van het spel dan word "
+"er een statistieken scherm getoond."
+
+msgid "CannonShots"
+msgstr "Kannon schoten"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"We hebben u verteld dat u de Bevriezer moest selecteren maar u heeft een "
+"andere gekozen. Keer terug en land en selecteer alsnog de Bevriezer."
+
+msgid "The Freezer..."
+msgstr "De bevriezer..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Dit is een krachtige speciale vaardigheid die dichtbije vijandige schepen "
+"bevriest. Om uw nabije vijanden te bevriezen dient dichtbij uw vijanden te "
+"vliegen en <{PLAYER1_KEY_SPECIAL}> te drukken. U ziet dan langzaam zijn "
+"levenskracht afnemen... Totdat hij dood gaat."
+
+msgid "Practice!"
+msgstr "Oefen!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Probeert nu uw vijand te bevriezen! Voor deze tutorial geven we u een aantal "
+"FragStars. Maar denk eraan: In de echte situatie dient u uw vijanden te "
+"vernietigen om deze sterren te bemachtigen!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "U heeft hem gemist, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Probeer het nogmaals. We herstellen uw FragStars."
+
+msgid "You Did It!"
+msgstr "Het is u gelukt!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr ""
+"Nu keer terug naar uw planeet en selecteer een andere speciale vaardigheid!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Pas op, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Er is geen tijd meer om nog verder te testn!Onze vijanden hebben twee echte "
+"vechters gestuurd voor wraak!"
+
+msgid "Players"
+msgstr "Spelers"
+
+msgid "Artist:"
+msgstr "Artiest:"
+
+msgid "Previous music track!"
+msgstr "Vorige song!"
+
+msgid "Play Previous Track"
+msgstr "Speel Vorige Track"
+
+msgid "Play Tracks in Random Order"
+msgstr "Speel Tracks in Willekeurige Volgorde"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Deze toets switched naar de vorige muziek spoor."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Speel de muziek af in willekeurige volgorde."
+
+msgid "Moving Stars"
+msgstr "Bewegende Sterren"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Toont een aantal bewegende sterren op de achtergrond. Dit is echt Eye Candy "
+"maar reduceert uw performance."
+
+msgid "Goals"
+msgstr "Doelen"

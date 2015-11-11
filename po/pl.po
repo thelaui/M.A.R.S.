@@ -1,0 +1,1075 @@
+# M.A.R.S. pl.po
+# Command_dos, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Gra Lokalna"
+
+msgid "Start Network Game"
+msgstr "Gra Sieciowa"
+
+msgid "Join Network Game"
+msgstr "Dołącz Do Gry Sieciowej"
+
+msgid "Options"
+msgstr "Opcje"
+
+msgid "About"
+msgstr "O Grze"
+
+msgid "Quit M.A.R.S."
+msgstr "Opuść M.A.R.S."
+
+msgid "Continue"
+msgstr "Kontynuuj"
+
+msgid "Restart Game"
+msgstr "Zrestartuj Grę"
+
+msgid "Hide Menu"
+msgstr "Ukryj Menu"
+
+msgid "Return to Main Menu"
+msgstr "Powrót Do Głównego Menu"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "License"
+msgstr "Licencja"
+
+msgid "Show this Info again."
+msgstr "Pokazuj To Okno Ponownie"
+
+msgid "Left Team"
+msgstr "Lewa Drużyna"
+
+msgid "Right Team"
+msgstr "Prawa Drużyna"
+
+msgid "Bots Left"
+msgstr "Boty z Lewej"
+
+msgid "Bots Right"
+msgstr "Boty z Prawej"
+
+msgid "Bots"
+msgstr "Boty"
+
+msgid "Frag Limit"
+msgstr "Limit Fragów"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"W roku 3547, cywilizacje w całej galaktyce, które osiedliły własne planety, "
+"żyły w pokoju i harmonii z otoczeniem. Jednak poza kontemplacyjnymi "
+"siedliskami, WIELKA WOJNA szalała. Jako słynny wojownik na drodze do honoru "
+"i dobrobytu, musisz chronić planetę przed nadchodzącą zgubą ze strony swoich "
+"zazdrosnych sąsiadów! W walce - prawdziwy bohater, takim jesteś: urodzonym "
+"graczem w zabójczą grę: SpaceBall. Chroń naszą planetę od sfery śmierci i "
+"pokonaj swoich wrogów, pozwalając im zostać zmiażdżonym na ich śmiesznym "
+"globie."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr ""
+"Uderz, lub strzel w kulę tak, aby skierować ją na planetę Twoich "
+"przeciwników!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"W efekcie WIELKIEJ WOJNY, straciliśmy wszystko: nasze domy, rodziny, "
+"poczucie naszej godności. Twoją ostatnią szansą, aby uwolnić się z takiego "
+"marnego życia, w którym wszyscy utknęliśmy, to zostać gladiatorem na "
+"Chwalebnej Arenie Śmierci. Stawiaj opór innym wojownikom i zarabiaj punkty "
+"niszcząc muszelki, które oni zwą pojazdami kosmicznymi. Przygotuj się! Czeka "
+"na Ciebie Śmierć lub Chwała."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Zniszcz tylu przeciwników, ilu zdołasz!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"Negocjacje spełzły na niczym! Zarówno Ty, jak i Twoi sąsiedzi, musicie "
+"poniść straty w nadchodzącej nieuchronnie WIELKIEJ WOJNIE. Ostatecznie, aby "
+"mieć kontrolę, muisz zdziesiątkować zasoby swojego wroga i chronić swoje "
+"własne. Jedynym sposobem na to jest Drużynowy Mecz Śmierci. Chroń swoich "
+"kompanów i zniszcz wrogów! Daj im lekcję, którą popamiętają na zawsze!"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Jakby WIELKIEJ WOJNY nie było zbyt wiele... Twój system planetarny jest "
+"nękany przez nowe źródła niewyobrażalnego zła: Wielkie pojazdy kosmiczne "
+"nieznanych najeźdźców, lewitują nad galaktyką, grożąc domowym planetom "
+"bronią masowej zagłady. Jako znak cynizmu, najeźdźcy zrzucili zdalne "
+"sterowanie aby spotęgować strach i aby znane było pochodzenie śmierci. "
+"Zdobądź to pierwszy, aby obrócić planetę Twojego przeciwnika w miejsce "
+"spustoszenia! Bądź Trzymającym Władzę."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr ""
+"Zdobądź pilot zdalnego sterowania i trzymaj tak długo, jak tylko zdołasz!"
+
+msgid "Show Debug Information"
+msgstr "Pokazuj Informacje o Przetwarzaniu"
+
+msgid "Bots Orientation"
+msgstr "Status Pracy Botów"
+
+msgid "Zones"
+msgstr "Strefy"
+
+msgid "AI-Paths"
+msgstr "Ścieżki Sztucznej Inteligencji"
+
+msgid "Show Game Information"
+msgstr "Pokazuj Informacje w Grze"
+
+msgid "Frames per Second"
+msgstr "Klatki Na Sekundę"
+
+msgid "Particle Count"
+msgstr "Liczba Cząstek"
+
+msgid "Particle Lifetime"
+msgstr "Długość Życia Cząstki"
+
+msgid "Game Settings"
+msgstr "Ustawienia Gry"
+
+msgid "Full screen"
+msgstr "Pełny Ekran"
+
+msgid "V-Sync"
+msgstr "Synchronizacja Pionowa"
+
+msgid "Music"
+msgstr "Muzyka"
+
+msgid "Sound"
+msgstr "Dźwięki"
+
+msgid "Announcer"
+msgstr "Zapowiedzi"
+
+msgid "Name"
+msgstr "Imię"
+
+msgid "Accelerate"
+msgstr "Przyśpieszanie"
+
+msgid "Turn Left"
+msgstr "Skręt w Lewo"
+
+msgid "Turn Right"
+msgstr "Skręt w Prawo"
+
+msgid "Weapon"
+msgstr "Broń"
+
+msgid "Ship"
+msgstr "Pojazd"
+
+msgid "Player Color"
+msgstr "Kolor Gracza"
+
+msgid "Team Color"
+msgstr "Kolor Drużyny"
+
+msgid "File Format for Screenshots"
+msgstr "Format Pliku dla Zrzutów Ekranu"
+
+msgid "Display Tool Tips"
+msgstr "Wyświetlaj podpowiedzi"
+
+msgid "Weapon Options"
+msgstr "Ustawienia Broni"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Jest to pierwsza próba stworzenia gry w OpenGL z SFML (Simple and Fast "
+"Multimedia Library). Jest to gra dla dwóch graczy, gdzie lata się statkami "
+"kosmicznymi w dwuwymiarowej przestrzeni, w której rządzą prawa grawitacji. "
+"Strona domowa projektu: http://www.marsshooter.org© 2010-2011 Felix Lauer & "
+"Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Ten program jest wolnym oprogramowaniem; możesz go rozprowadzać dalej i/lub "
+"modyfikować na warunkach licencji GNU General Public License, opublikowanej "
+"przez Free Software Foundation w wersji 3 tej Licencji, lub (według Twojego "
+"wyboru) którejś z późniejszych wersji. Program ten jest rozprowadzany z "
+"nadzieją, że będzie on użyteczny, ale BEZ JAKICHKOLWIEK GWARANCJI, nawet "
+"domyślnej gwarancji PRZYDATNOŚCI HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONEGO "
+"CELU. Zobacz licencję GNU General Public License, aby zaznajomić się ze "
+"szczegółami. Licencja dostępna jest pod adresem:http://www.gnu.org/licenses/"
+"gpl-3.0.html"
+
+msgid "Do you really want to quit?"
+msgstr "Czy na serio chcesz opuścić grę?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Poważnie chcesz zakończyć rozgrywkę?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"Gra w M.A.R.S. przez internet, lub w sieci lokalnej jest dopiero w planach. "
+"Cierpliwości!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Zatrzymałeś M.A.R.S. w trakcie tak niewiarygodnej bitwy? Jeśli chcesz "
+"zrzucić obraz, ten klawisz pozwoli Ci stworzyć wspaniałe tapety, ukrywając "
+"wszystkie otwarte okna. Okna przywróć zwyczajnie naciskając klawisz ESC."
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Back Slash"
+msgstr "Odwrotny Ukośnik"
+
+msgid "Comma"
+msgstr "Przecinek"
+
+msgid "Dash"
+msgstr "Podkreślnik"
+
+msgid "Divide"
+msgstr "Ukośnik"
+
+msgid "Down"
+msgstr "Strzałka w Dół"
+
+msgid "Equal"
+msgstr "Równa Się"
+
+msgid "Left Alt"
+msgstr "Lewy Alt"
+
+msgid "Left Bracket"
+msgstr "Lewy Nawias"
+
+msgid "Left Control"
+msgstr "Lewy Control"
+
+msgid "Left"
+msgstr "Strzałka w Lewo"
+
+msgid "Left Shift"
+msgstr "Lewy Shift"
+
+msgid "Left Super"
+msgstr "Lewy Super"
+
+msgid "Multiply"
+msgstr "Gwiazdka"
+
+msgid "Pause"
+msgstr "Pause/Break"
+
+msgid "Period"
+msgstr "Kropka"
+
+msgid "Quote"
+msgstr "Cudzysłów"
+
+msgid "Right Alt"
+msgstr "Prawy Alt"
+
+msgid "Right Bracket"
+msgstr "Prawy Nawias"
+
+msgid "Right Control"
+msgstr "Prawy Control"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Right"
+msgstr "Strzałka w Prawo"
+
+msgid "Right Shift"
+msgstr "Prawy Shift"
+
+msgid "Right Super"
+msgstr "Prawy Super"
+
+msgid "Semi Colon"
+msgstr "Średnik"
+
+msgid "Slash"
+msgstr "Ukośnik"
+
+msgid "Space"
+msgstr "Spacja"
+
+msgid "Subtract"
+msgstr "Minus"
+
+msgid "Tilde"
+msgstr "Tylda"
+
+msgid "Up"
+msgstr "Strzałka w Górę"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Audio"
+msgstr "Dźwięk"
+
+msgid "Window Settings"
+msgstr "Opcje Okna"
+
+msgid "Start Tutorial"
+msgstr "Samouczek"
+
+msgid "Next"
+msgstr "Dalej"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Witaj Wojowniku Przestworzy!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"Jesteśmy dumni, że możemy przyjąć do swych szeregów wschodzącą gwiazdę taką "
+"jak Ty, {PLAYER1_NAME}, gotową przyłączyć się do WIELKIEJ WOJNY!Zauważyliśmy "
+"jednak, że potrzebujesz nieco praktyki i obycia ze swym nowym pojazdem "
+"kosmicznym.Zatem, rozpocznijmy trening..."
+
+msgid "Basic Movement..."
+msgstr "Podstawowe poruszanie się..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Kontrola pojazdu, to podstawowe zadanie dla mistrza.Każdy ruch tutaj podlega "
+"prawom grawitacji. Aby zwolnić musisz się obrócić i przyśpieszać w odwrotnym "
+"kierunku. Kontroluj swój pojazd używając klawiszy <{PLAYER1_KEY_UP}>, "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>"
+
+msgid "Warming Up!"
+msgstr "Rozgrzewka!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr ""
+"Leć do różowej strefy!Postaraj się nie zniszczyć swojego nowego pojazdu..."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Dobra Robota, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Teraz powróć do swojej planety i spróbuj wylądować swoim statkiem, powoli, "
+"lekko przyhamowując, kiedy będziesz zbliżał się do celu (wylądowania na "
+"swojej planecie)."
+
+msgid "Good Work!"
+msgstr "Świetna robota!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"Prawidłowe wylądowanie, to nie bułka z masłem, nieprawdaż?Powinieneś się "
+"tego nauczyć, aby mieć ten manewr we krwi..."
+
+msgid "Something More Difficult..."
+msgstr "Może coś trudniejszego..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Spróbuj podążać za ścieżką wyznaczoną przez różowe pola!Skontaktujemy się "
+"ponownie, kiedy zrealizujesz zadanie. Teraz do roboty!"
+
+msgid "Awesome!"
+msgstr "Niesamowicie!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Jesteś najlepszym rekrutem, jakiego widziałem.Teraz przygotuj się nieco do "
+"strzałów, ognia i wybuchów ;)"
+
+msgid "Shooting..."
+msgstr "Strzelanie..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Aby pokonać nieprzyjacół, musisz wiedzieć, jak ich zestrzelić!Aby tego "
+"dokonać naciśnij <{PLAYER1_KEY_FIRE}>. Pobaw się trochę strzelając, a kiedy "
+"będziesz gotów kontynuować szkolenie, to wyląduj."
+
+msgid "Volume Settings"
+msgstr "Opcje Głośności"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Dobre lądowanie!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr ""
+"Przeistaczasz się w wielkiego pilota.Co powiesz na powiększenie asortymentu "
+"z bronią?"
+
+msgid "The Weapons..."
+msgstr "Broń..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Wiem, że czekałeś na to. Po wylądowaniu można przebierać w iście diabelskim "
+"asortymencie broni.Naciśnij <{PLAYER1_KEY_FIRE}>, aby dostać się do arsenału."
+"Następnie użyj <{PLAYER1_KEY_LEFT}> i <{PLAYER1_KEY_RIGHT}>, aby wybrać "
+"broń! Odlatujesz z lądowiska i gotowe!"
+
+msgid "Play Next Track"
+msgstr "Następna ścieżka"
+
+msgid "Playback Settings"
+msgstr "Opcje odtwarzania"
+
+msgid "Fight!"
+msgstr "Walka!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Teraz zobaczmy, jak sobie poradzisz z rekrutem innej planety.Wygląda na to, "
+"że próbuje pokazać, czego się nauczył.Rozwal go!"
+
+msgid "Impressive!"
+msgstr "Doskonale!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Udało Ci się! Pewnie, jak zauważyłeś, zarobiłeś punkty reputacji - dostaje "
+"się je za każdego zestrzelonego nieprzyjaciela.Gwizdki (FragStars) "
+"pokazujące się nad Twoim statkiem mówą o ilości tych punktów. Pomnażają się, "
+"jeśli zestrzelisz więcej nieprzyjacielskich statków w jednym locie."
+
+msgid "Beat Them!"
+msgstr "Pokonaj ich!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Pokaż swoje umiejętności! Zdobądź przynajmniej pięć punktów zabijając ich! "
+"Twój wynik jest wyświetlany obok Twojej nazwy!{PLAYER1_NAME}, przyślemy Ci "
+"doświadczonego wojownika, który będzie udzielał Ci asysty!"
+
+msgid "Unbelievable!"
+msgstr "Niewiarygodne!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Z powodzeniem wykonałeś wszystkie zadania. Co teraz robić?Popartzmy na Menu "
+"Opcji. Tam możesz ustawić, ilość... hmmm... opcje.Na przykład, możesz wybrać "
+"sobie styl swojego pojazdu, jego kolor i zmienić nazwę..."
+
+msgid "Who's Best?"
+msgstr "Kto jest najlepszy?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"Możesz wyświetlić listę Fragów, punktów, statystyki naciskając "
+"<{STATISTICS_KEY}>.Obok Twojej nazwy, pokazują się  zdobyte przez Ciebie "
+"punkty i obrazują, jak daleko Ci do najlepszych."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Gratulacje, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Ukończyłeś samouczka. Teraz jesteś gotów do walki w WIELKIEJ WOJNIE. Jeśli "
+"chcesz ćwiczyć, poczekaj aż przeciwnik się pojawi ponownie. Możesz jednak "
+"zakończyć trening naciskając klawisz <Esc>.Udanej rozgrywki w  M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "Oblałeś!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Świetnie {PLAYER1_NAME}, właśnie rozwaliłeś swój nowiutki pojazd! W "
+"porządku... damy Ci nowego. Poczekaj sekundkę..."
+
+msgid "Did You Notice?"
+msgstr "Zaobserwowałeś?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Twojego życia ubywa! Zwracaj uwagę na zielony \"pasek życia\". Lepiej "
+"wyląduj, kiedy jest go zbyt mało."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Paliwo kończy się! Patrz na żółty wskaźnik paliwa. Kiedy ma się ku końcowi, "
+"lepiej wyląduj, aby uzupełnić."
+
+msgid "You Nearly Got Him!"
+msgstr "Prawie go miałeś!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Zwróć uwagę na nazwę przeciwnika. Kolor tej nazwy wskazuje poziom jego "
+"życia. Im bardziej czerwony, tym przeciwnik jest słabszy."
+
+msgid "Interface"
+msgstr "Interfejs"
+
+msgid "High Star Field Resolution"
+msgstr "Duża Rozdzielczość Gwiezdnego Pola"
+
+msgid "Language"
+msgstr "Język"
+
+msgid "Hot Key for Screenshots"
+msgstr "Klawisz do Zrzutu Ekranu"
+
+msgid "Points"
+msgstr "Punkty"
+
+msgid "Frags"
+msgstr "Wrogów"
+
+msgid "Teamkills"
+msgstr "Przyjaciół"
+
+msgid "Suicides"
+msgstr "Samobójstwa"
+
+msgid "Deaths"
+msgstr "Poległeś"
+
+msgid "Game Options"
+msgstr "Reputacja"
+
+msgid "Total:"
+msgstr "W sumie:"
+
+msgid "Statistics"
+msgstr "Statystyki"
+
+msgid "Planet Life Points"
+msgstr "Punkty Wytrzymałości Planety"
+
+msgid "Shader Effects"
+msgstr "Efekty Cieniowania (shader)"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Niestety, Cieniowanie Nie Jest Obsługiwane Przez Twój Sprzęt!"
+
+msgid "Gameplay"
+msgstr "Pole Gry"
+
+msgid "PowerUp Spawn Rate"
+msgstr "Częstotliwość Pojawiania Się Bonusu"
+
+msgid "Bot Difficulty"
+msgstr "Sprytność Botów"
+
+msgid "Explosions for Slow Motion"
+msgstr "Eksplozja w Zwolnionym Tempie"
+
+msgid "Off"
+msgstr "Wył."
+
+msgid "Special Thanks to:"
+msgstr "Specjalne Podziękowania za:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Tłumaczenia: Arabski: Majid Chiński: Wecing Czeski: Mates Fiński: Paavo "
+"Francuski: Ludovic Niemiecki: Atto Hinduski: Antriksh & Aakanksh Węgierski: "
+"Papp Bence Włoski: Proch Polski: command_dos Portugalski: Vitor Rosyjski: "
+"Drakmail Hiszpański: Gastón Szwedzki: HenrikWsparcie programowania: Werner "
+"and DeubeuliouTesty i wsparcie w tworzeniu: Heinrich, Martin, Bastian, "
+"Sandra, Diana."
+
+msgid "Resolution"
+msgstr "Rozdzielczość"
+
+msgid "Color Depth"
+msgstr "Głębia kolorów"
+
+msgid "Special Ability"
+msgstr "Specjalna Broń"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Pokazuje ilość klatek w przeliczeniu na jedną sekundę.Jeśli ta wartość jest "
+"zawsze mała (<20), powinieneś dopasować ustawienia w zakładce Grafika!"
+
+msgid "Displays the amount of active particles."
+msgstr "Wyświetla ilość aktywnych cząstek."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Wyłącza podpowiedzi - takie jak ta..."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Ustawia format pliku używany przy zrzucie ekranu."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Po naciśnięciu tego klawisza, zachowywany jest zrzut ekranu w {CONFIG_PATH}"
+"screenshots/"
+
+msgid "Pressing this key switches to the next music track."
+msgstr ""
+"Po naciśnięciu tego klawisza, odtwarzana jest następna ścieżka z muzyką."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr ""
+"Ilość statków eksplodująca jednocześnie, kiedy to załączany jest efekt "
+"zwolnionego tempa."
+
+msgid "Displays the job of each bot."
+msgstr "Wyświetla pracę każdego BOT'a."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Wyświetla strefy taktyczne, które są ważne dla sztucznej inteligencji."
+
+msgid "Displays paths calculated by bots."
+msgstr "Wyświetla ścieżkę wyliczoną przez BOT'y."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maksymalizuje okno, zakrywając cały ekran."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Aktualizuje obraz dopasowując do częstotliwości odświerzania Twojego "
+"monitora.Używając tej opcji, zazwyczaj obraz wyświetlany jest bardziej "
+"precyzyjnie."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr ""
+"Dostęp do takich efektów, jak mgiełka ciepła. Uwaga, zmniejsza wydajność gry."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Ustala wymiary okna.Dotyczy to zarówno trybu pełnoekranowego, jak i trybu w "
+"oknie."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"Z wyświetlaczami wysokiej rozdzielczości, opcja ta sprawia, że gwiezdne pole "
+"jest mniej razy powtarzane.Rezygnując z tej opcji, możesz nieznacznie "
+"podnieść wydajność gry."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Ustawia globalną liczbę cząstek.Mniejsze wartości podniosą wydajność gry "
+"dosyć znacznie."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Ustawia globalny czas życia cząstki.Mniejsze wartości podniosą wydajność gry "
+"dosyć znacznie."
+
+msgid "Adjusts volume of background music."
+msgstr "Ustawia głośność muzyki w tle."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Ustawia głośność efektów dźwiękowych."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Ustawia głośność głosu zapowiedzi."
+
+msgid "Sets the team of the local players."
+msgstr "Ustawiania w drużynie gracza lokalnego."
+
+msgid "Enables local players."
+msgstr "Włącza graczy lokalnych."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Ustawia ilość pojazdów kontrolowanych przez sztuczną inteligencję."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Limit punktów do osiągnięcia, aby wygrać grę przez drużynę."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Limit punktów do osiągnięcia, aby wygrać grę przez gracza."
+
+msgid "Adjusts the strength of the bots."
+msgstr "Ustawia siłę BOTów."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"Ustawia wartość z jaką częstotliwością będą pojawiać się Bonusu na planszy. "
+"Zero wyłącza dostępność Bonusów."
+
+msgid "Weapons"
+msgstr "Broń"
+
+msgid "Special Abilities"
+msgstr "Specialne wyposażenie"
+
+msgid "Screenshot saved!"
+msgstr "Zrzut ekranu zapisany!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"WIELKA WOJNA spowodowała niewyobrażalną redukcję zasobów, więc naukowcy "
+"zmuszeni zostali do wynalezienia skutecznej broni, której produkcja nie "
+"wymagała zużycia deficytowych zasobów planety. Stworzyli nową broń z "
+"niesomowitymi właściwościami: zabija natychmiastowo, ale duży wpływ na "
+"wystrzelony pocisk ma grawitacja, przez co trudno ją operować. Dlatego "
+"nazwali ją: INSTA-GRAVE!  Niestety, ktoś ukradł technologię, przez co "
+"wrogowie także mogą używać tej diabelskiej technologii. Teraz Twoja kolej: "
+"Rozgrom tych złodziei w wielkiej bitwie GRAVE-ITATION-PIT, aby odzyskać "
+"przewagę.  Wygraj tą bitwę, a zwycięstwo w WIELKIEJ WOJNIE może należeć do "
+"Ciebie."
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Zniszcz tyle wrogich pojazdów ile tylko zdołasz!"
+
+msgid "Special Abilities..."
+msgstr "Specialne Możliwości..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Jak było obiecane, opowiemy Ci o możliwościach gwiazd (FragStars). Gwiazdki "
+"to złoża mocy, które mogą być wykorzystane przez Twój statek i jego "
+"specjalne zdolności. Możesz, na przykład, uzdrowić siebie oraz "
+"przelatujących w pobliżu przyjaciół, przedmuchać lub zamrozić statki w "
+"niedalekiej odległości od siebie! Im więcej gwiazd, tym większy zasięg i moc "
+"Twoich zdolności."
+
+msgid "Selection..."
+msgstr "Wybór..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Aby móc przełączać się pomiędzy dostępnymi zdolnościami, wystarczy "
+"przytrzymać <{PLAYER1_KEY_SPECIAL}>. Aby wybrać jedną z nich, możesz "
+"przebierać między tymi zdolnościami używając <{PLAYER1_KEY_LEFT}> i "
+"<{PLAYER1_KEY_RIGHT}>! Na tej lekcji wybierz \"Freezer\"! Po dokonaniu "
+"wyboru wystartuj i gotowe - już masz!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Witaj, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Co to za nazwa... Spróbuj wprowadzić nieco lepszą!"
+
+msgid "Next music track!"
+msgstr "Następna ścieżka dźwiękowa!"
+
+msgid "General Settings"
+msgstr "Ogólne Ustawienia"
+
+msgid "Special Effects"
+msgstr "Efekty Specjalne"
+
+msgid "Ship Settings"
+msgstr "Opcje Pojazdu"
+
+msgid "A Button"
+msgstr "Przycisk A"
+
+msgid "B Button"
+msgstr "Przycisk B"
+
+msgid "X Button"
+msgstr "Przycisk X"
+
+msgid "Y Button"
+msgstr "Przycisk Y"
+
+msgid "Start Button"
+msgstr "Przycisk Start"
+
+msgid "Back Button"
+msgstr "Przycisk Back"
+
+msgid "Right Bumper"
+msgstr "Prawy Bumper"
+
+msgid "Left Bumper"
+msgstr "Lewy Bumper"
+
+msgid "Right Trigger"
+msgstr "Prawy cyngiel"
+
+msgid "Left Trigger"
+msgstr "Lewy cyngiel"
+
+msgid "Direction Up"
+msgstr "W górę"
+
+msgid "Direction Down"
+msgstr "W dół"
+
+msgid "Direction Left"
+msgstr "W lewo"
+
+msgid "Direction Right"
+msgstr "W prawo"
+
+msgid "Stick1 Up"
+msgstr "Drążek 1 Góra"
+
+msgid "Stick1 Down"
+msgstr "Drążek 1 Dół"
+
+msgid "Stick1 Left"
+msgstr "Drążek 1 Lewo"
+
+msgid "Stick1 Right"
+msgstr "Drążek 1 Prawo"
+
+msgid "Stick2 Up"
+msgstr "Drążek 2 Góra"
+
+msgid "Stick2 Down"
+msgstr "Drążek 2 Dół"
+
+msgid "Stick2 Left"
+msgstr "Drążek 2 Lewo"
+
+msgid "Stick2 Right"
+msgstr "Drążek 2 Prawo"
+
+msgid "Button"
+msgstr "Przycisk"
+
+msgid "Hot Key for Statistics"
+msgstr "Klawisz dla Statystyk"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Kiedy ten klawisz zostanie naciśnięty w trakcie gry, spowoduje wyświetlenie "
+"okna ze statystyką bieżącej rozgrywki."
+
+msgid "CannonShots"
+msgstr "Strzały Armaty"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Poczekaj, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Miałeś wybrać Freezer, a wybrałeś inną specjalną zdolność!Proszę wylądować i "
+"wybrać Freezer jeszcze raz!"
+
+msgid "The Freezer..."
+msgstr "Freezer..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"To jest zdolność, która pozwala zamrażać statki znajdujące się nieopodal "
+"Ciebie. Musisz podlecieć blisko wrogiego pojazdu i przycisnąć "
+"<{PLAYER1_KEY_SPECIAL}>, aby go zamrozić. Obserwuj, jak powoli uchodzi z "
+"niego życie... dopóki nie umrze!"
+
+msgid "Practice!"
+msgstr "Praktyka!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Teraz spróbuj zamrozić wroga! Będziesz do tego potrzebować nieco gwiazd. "
+"Pamiętaj jednak: w rzeczywistości musisz rozwalić przeciwnika, aby dostać te "
+"gwiazdy!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Spudłowałeś, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Spróbuj jeszcze raz. Napełnimy Twoją gwiezdną moc."
+
+msgid "You Did It!"
+msgstr "Udało Ci się!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Teraz wracaj na planetę i wybierz następną specjalną zdolność!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Strzeż się, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Nie ma czasu na dalsze nauki!Nasi wrogowie, żeby zemścić się, przysłali "
+"dwóch swoich wojowników!"
+
+msgid "Players"
+msgstr "Gracze"
+
+msgid "Artist:"
+msgstr "Artysta:"
+
+msgid "Previous music track!"
+msgstr "Poprzedni utwór!"
+
+msgid "Play Previous Track"
+msgstr "Graj poprzedni utwór"
+
+msgid "Play Tracks in Random Order"
+msgstr "Graj utwory losowo"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Naciśnięcie tego klawisza odtworzy poprzedni utwór."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Aktywuje losowe odtwarzanie utworów."
+
+msgid "Moving Stars"
+msgstr "Przemieszczające się planety"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Rysuje przemieszczające się gwiazdy w tle. Miłe dla oka, ale zmniejsza "
+"osiągi gry."
+
+msgid "Goals"
+msgstr "Gole"
