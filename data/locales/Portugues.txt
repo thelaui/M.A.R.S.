@@ -1,6 +1,6 @@
 // Portuges translation made by:
 // - Vitor - original translator
-// 
+//
 // Please comment any changes you make to the file (required by the GPL license),
 // and leave an e-mail address where later contributors can contact you!
 
@@ -82,7 +82,7 @@
 031 Mostrar Informação de Debug
 032 Orientação dos Robôs
 033 Zonas
-034 Caminhos da IA 
+034 Caminhos da IA
 035 Mostrar Informações do Jogo
 036 Quadros por Segundo
 215 Configurações Gerais
@@ -131,7 +131,7 @@
 048 Virar à Esquerda
 049 Virar à Direita
 050 Arma
-175 Habilidade Epecial 
+175 Habilidade Epecial
 217 Configurações da Nave
 051 Nave
 052 Cor do Jogador
@@ -208,11 +208,11 @@
 
 // Joystick button names
 
-218 Botão A 
-219 Botão B 
-220 Botão X 
-221 Botão Y 
-222 Start 
+218 Botão A
+219 Botão B
+220 Botão X
+221 Botão Y
+222 Start
 223 BBotão Traseiro
 224 Bumper Direito
 225 Bumper Esquerdo
@@ -239,7 +239,7 @@
 212 Ei, {PLAYER1_NAME}!
 213 Esse é um nome feio... Sinta-se à vontade para escolher um melhor!
 
-1107 Bem Vindo Cadete Espacial!
+107 Bem Vindo Cadete Espacial!
 108 Estamos felizes em recrutar um heroi em ascensão como você para se unir à GRANDE GUERRA!\nNós observamos que você precisa de um pouco de prática com sua nava.\nVamos começar o treinamento...
 
 109 Movimentação Básica
@@ -316,7 +316,7 @@
 139 Você pode mostrar uma lista de extermínios, pontos e outros via <tab>.\nAlém disso os números próximos ao seu nome ilustram seu contador de extermínios e distância ao melhor alvo.
 
 140 Parabéns!
-141 Você terminou o tutorial. Agora deve estar pronto para lutar na GRANDE GUERRA. Se deseja continuar praticando, apenas espere até o inimigo voltar. Você pode encerrar o treinamento com <Esc>.\n\nTenha bons momentos com M.A.R.S.! 
+141 Você terminou o tutorial. Agora deve estar pronto para lutar na GRANDE GUERRA. Se deseja continuar praticando, apenas espere até o inimigo voltar. Você pode encerrar o treinamento com <Esc>.\n\nTenha bons momentos com M.A.R.S.!
 
 142 Você falhou!
 143 Incrível, você destruiu sua nave! Tudo bem, vamos te dar uma nova. Apenas espere um pouco...
@@ -324,7 +324,7 @@
 144 Percebeu?
 145 Sua vida está diminuindo! Fique de olho na barra verde. Você deve aterrisar se esta decair muito.
 
-146 Percebeu? 
+146 Percebeu?
 147 Seu combustível está acabando! Fique de olho na barra amarela. Você deve aterrisar se esta decair muito.
 
 148 Você quase o pegou!
@@ -386,8 +386,8 @@
 205 Screenshot salvo!
 214 próxima trilha musical!
 260 Trilha musical anterior!
-258 Artista: 
-269 Album: 
+258 Artista:
+269 Album:
 
 // 268
 
