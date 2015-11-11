@@ -1,0 +1,1015 @@
+# M.A.R.S. zh_CN.po
+# Wecing, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:26+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "本地游戏"
+
+msgid "Start Network Game"
+msgstr "建立对战主机"
+
+msgid "Join Network Game"
+msgstr "加入网络对战"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Quit M.A.R.S."
+msgstr "退出"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Restart Game"
+msgstr "重新开始"
+
+msgid "Hide Menu"
+msgstr "隐藏菜单"
+
+msgid "Return to Main Menu"
+msgstr "回到主菜单"
+
+msgid "Start"
+msgstr "开始"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Info"
+msgstr "相关信息"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "License"
+msgstr "许可"
+
+msgid "Ok"
+msgstr "确定"
+
+msgid "Show this Info again."
+msgstr "下次仍然显示此信息"
+
+msgid "Left Team"
+msgstr "左队"
+
+msgid "Right Team"
+msgstr "右队"
+
+msgid "Bots Left"
+msgstr "左边的AI数"
+
+msgid "Bots Right"
+msgstr "右边的AI数"
+
+msgid "Bots"
+msgstr "AI数量"
+
+msgid "Frag Limit"
+msgstr "总杀敌数上限"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"公元3547年，银河系内的文明都已经定居在了各自的星球上，与环境和平而和谐地共存"
+"着。但是在安稳的居住地之外，星际大战正在进行。  做为一个赫赫有名的、永远追求"
+"着荣耀与繁荣的战士，你必须从贪婪的邻居带来的毁灭的阴影中拯救你的星球！现在就"
+"加入星际球战斗吧，你这样的勇士正是为它而降临的！  在星际球模式的战斗中，你需"
+"要保持这颗死亡之球远离你的星球，并通过使它撞击到敌人的星球上来打败你的对手。"
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "你可以通过碰撞或是射击的方式将球推向敌人的星球！"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"星际大战使你失去了一切：家园，家庭，甚至还有你的自尊。  在无上荣耀的死亡竞赛"
+"的竞技场中做一名角斗士，是你最后的摆脱这种痛苦的机会。  与其它的角斗士战斗，"
+"通过破坏那些坚果壳般的飞船来赢得分数。  做好准备！死亡和荣耀都在等着你。"
+
+msgid "Destroy as many enemies as possible!"
+msgstr "尽你所能来击败敌人吧！"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"谈判破裂了！  你和你的邻居都不得不承受持久的星际大战所带来的巨大的资源消"
+"耗。  做为取得上风的最后手段，你奉命毁灭敌人的资源并保护我方的仓库，这就免不"
+"了与敌人的小队进行一番殊死搏斗。  保护你的战友，毁灭你的敌人！给他们一点颜色"
+"瞧瞧，让他们永远记住你的厉害！"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"似乎星际大战并没有让命运的主宰者感到满足——现在，你的星球正遭受着一股新的邪恶"
+"力量的威胁：一艘不明身份的侵略者的巨型飞船正在你的星系中游荡，并用一种威力极"
+"大的石制武器瞄准了各个文明所依附的星球。  做为一种邪恶的嘲讽，飞船的所有者将"
+"死亡与恐惧的源泉——武器的控制器——留了下来。抢在敌人之前夺走它，使敌人的家园变"
+"成荒凉之地！  你就是邪恶力量的守卫者。"
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "拿起控制器，尽可能避免敌人从你手中夺走它！"
+
+msgid "Show Debug Information"
+msgstr "显示调试信息"
+
+msgid "Bots Orientation"
+msgstr "AI定向"
+
+msgid "Zones"
+msgstr "区域"
+
+msgid "AI-Paths"
+msgstr "AI轨迹"
+
+msgid "Show Game Information"
+msgstr "显示游戏信息"
+
+msgid "Frames per Second"
+msgstr "每秒帧数"
+
+msgid "Particle Count"
+msgstr "粒子数目"
+
+msgid "Particle Lifetime"
+msgstr "粒子周期"
+
+msgid "Game Settings"
+msgstr "游戏设置"
+
+msgid "Full screen"
+msgstr "全屏"
+
+msgid "V-Sync"
+msgstr "垂直同步"
+
+msgid "Music"
+msgstr "背景音乐"
+
+msgid "Sound"
+msgstr "游戏声音"
+
+msgid "Announcer"
+msgstr "游戏旁白"
+
+msgid "Name"
+msgstr "名字"
+
+msgid "Accelerate"
+msgstr "加速"
+
+msgid "Turn Left"
+msgstr "左转"
+
+msgid "Turn Right"
+msgstr "右转"
+
+msgid "Weapon"
+msgstr "武器"
+
+msgid "Ship"
+msgstr "飞船型号"
+
+msgid "Player Color"
+msgstr "玩家颜色"
+
+msgid "Team Color"
+msgstr "队伍颜色"
+
+msgid "File Format for Screenshots"
+msgstr "截屏图片格式"
+
+msgid "Display Tool Tips"
+msgstr "显示工具提示"
+
+msgid "Weapon Options"
+msgstr "武器选项"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"M.A.R.S.是对用OpenGL和SFML制作游戏的一次尝试。这是一个适合最多两人进行的在二"
+"维宇宙中飞行的游戏，当然一切都是在重力的影响下进行的(:-P)。项目主页：http://"
+"www.marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"本程序为自由软件;您可依据自由软件基金会所发表的GNU通用公共授权条款，对本程序"
+"再次发布和/或修改;无论您依据的是本授权的第三版，或(您可选的)任一日后发行的版"
+"本。本程序是基于使用目的而加以发布，然而不负任何担保责任;亦无对适售性或特定目"
+"的适用性所为的默示性担保。详情请参照GNU通用公共授权。您应已收到附随于本程序的"
+"GNU通用公共授权的副本;如果没有，请参照http://www.gnu.org/licenses/gpl-3.0."
+"html"
+
+msgid "Do you really want to quit?"
+msgstr "你确定要退出？"
+
+msgid "Do you really want to end the current game?"
+msgstr "结束当前游戏？"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"此项功能暂不支持：M.A.R.S.的互联网和局域网对战功能正在筹备中。请继续关注我"
+"们！"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"你在一场疯狂的战斗中叫了暂停？如果你想截图，这个按钮可以隐藏所有的窗口，从而"
+"使你获得一张超豪华的墙纸。截图完毕之后别忘了按ESC键继续战斗！"
+
+msgid "Add"
+msgstr "加号"
+
+msgid "Back Slash"
+msgstr "反斜杠"
+
+msgid "Comma"
+msgstr "逗号"
+
+msgid "Dash"
+msgstr "横杠"
+
+msgid "Delete"
+msgstr "Del"
+
+msgid "Divide"
+msgstr "除号"
+
+msgid "Down"
+msgstr "下"
+
+msgid "Equal"
+msgstr "等号"
+
+msgid "Left Alt"
+msgstr "左Alt"
+
+msgid "Left Bracket"
+msgstr "左方括号"
+
+msgid "Left Control"
+msgstr "左Ctrl"
+
+msgid "Left"
+msgstr "左"
+
+msgid "Left Shift"
+msgstr "左Shift"
+
+msgid "Left Super"
+msgstr "左Super"
+
+msgid "Menu"
+msgstr "菜单键"
+
+msgid "Multiply"
+msgstr "乘号"
+
+msgid "Period"
+msgstr "句号"
+
+msgid "Quote"
+msgstr "单引号"
+
+msgid "Right Alt"
+msgstr "右Alt"
+
+msgid "Right Bracket"
+msgstr "右方括号"
+
+msgid "Right Control"
+msgstr "右Ctrl"
+
+msgid "Return"
+msgstr "回车键"
+
+msgid "Right"
+msgstr "右"
+
+msgid "Right Shift"
+msgstr "右Shift"
+
+msgid "Right Super"
+msgstr "右Super"
+
+msgid "Semi Colon"
+msgstr "分号"
+
+msgid "Slash"
+msgstr "斜杠"
+
+msgid "Space"
+msgstr "空格"
+
+msgid "Subtract"
+msgstr "减号"
+
+msgid "Tilde"
+msgstr "波浪号"
+
+msgid "Up"
+msgstr "上"
+
+msgid "Graphics"
+msgstr "视觉效果"
+
+msgid "Audio"
+msgstr "声音"
+
+msgid "Window Settings"
+msgstr "窗口设置"
+
+msgid "Start Tutorial"
+msgstr "教程"
+
+msgid "Next"
+msgstr "下一步"
+
+msgid "Welcome, Space Rookie!"
+msgstr "欢迎，太空新生！"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"我们很高兴能召募到你，{PLAYER1_NAME}这样的未来之星加入星际大战！但是目前你需"
+"要进行一些操作练习。现在就开始吧……"
+
+msgid "Basic Movement..."
+msgstr "基本移动……"
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"想要掌握控制飞船的技术，必须先学会移动。所有的移动都是在重力定律下进行的。想"
+"要减速，唯一的方法是转到反方向，然后加速。操控飞船需要按键<{PLAYER1_KEY_UP}"
+">，<{PLAYER1_KEY_LEFT}>以及<{PLAYER1_KEY_RIGHT}>。"
+
+msgid "Warming Up!"
+msgstr "热身开始！"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr "飞到粉色区域里去！尽量不要撞毁你全新的飞船。"
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "干得漂亮，{PLAYER1_NAME}！"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"现在调头回到你的星球去，试着通过在它的重力场的作用下向后慢慢移动来降落。"
+
+msgid "Good Work!"
+msgstr "完美！"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr "准绝地降落并不像看上去那么简单，是不是？你应该试着用心体验。"
+
+msgid "Something More Difficult..."
+msgstr "进阶的挑战……"
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr "沿着粉色区域标记的轨迹移动！在你完成之后我们会继续下一课。开始吧！"
+
+msgid "Awesome!"
+msgstr "漂亮！"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr "你是我见过的表现最优秀的新手！现在做好准备，迎接更困难的挑战。"
+
+msgid "Shooting..."
+msgstr "射击……"
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"为了打败敌人，你必须了解怎样向他们射击！你需要做的只是按下<{PLAYER1_KEY_FIRE}"
+">。试着随便向四周开火。着陆之后我们将进行下一节的教学。"
+
+msgid "Volume Settings"
+msgstr "音量设定"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "漂亮的着陆，{PLAYER1_NAME}！"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "你绝对有成为一个优秀飞行员的潜质。现在试试其他武器怎么样？"
+
+msgid "The Weapons..."
+msgstr "各种武器……"
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"我知道，为这一刻你已经等了很久。停泊在星球上的时候，你可以切换到其他更具有威"
+"力的武器。按下<{PLAYER1_KEY_FIRE}>可以打开你的武器库。然后用"
+"<{PLAYER1_KEY_LEFT}>和<{PLAYER1_KEY_RIGHT}>选择武器！当你准备好了之后，起飞！"
+
+msgid "Play Next Track"
+msgstr "切换背景音乐"
+
+msgid "Playback Settings"
+msgstr "回放设置"
+
+msgid "Fight!"
+msgstr "战斗！"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"现在我们来看一看你和其他星球的新手间的对战会是什么样子。不过似乎对手的飞行技"
+"术还有待加强。战斗开始！"
+
+msgid "Impressive!"
+msgstr "太完美了！"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"你成功地打败了敌人！也许你已经注意到了，有一颗小星星出现在了飞船的上方。你打"
+"败的敌人越多，相应地，出现的星星也就越多。但是它们并不是对杀敌数目的统计！再"
+"次着陆，我们会告诉你这些星星到底是做什么的。"
+
+msgid "Beat Them!"
+msgstr "打败他们！"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"检验你操控飞船的技术！通过击败他们得到至少五分！在分数版里，你个人的当前得分"
+"就在你的名字旁边！我们会派一个久经沙场的战士协助你，{PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "难以置信！"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"你成功地完成了所有任务。接下来做什么呢？我们来看一下选项菜单。在那里你可以调"
+"节很多的……呃，选项。比如，你可以选择你喜欢的飞船外形及颜色，或是改变你的名"
+"字……"
+
+msgid "Who's Best?"
+msgstr "谁是最优秀的战士？"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"你可以通过按 <{STATISTICS_KEY}> 来查看数据统计。此外，在你名字旁边的数字显示"
+"了到目前为止你总共击毁的敌机数，以及与第一名之间的差距。"
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "祝贺，{PLAYER1_NAME}！"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"你已经完成了教程。现在的你已经可以参加星际大战了。如果想继续练习，只需要在这"
+"里等待——敌人会源源不断地出现。按<Esc>结束练习。祝你在M.A.R.S.的世界里玩得愉"
+"快！"
+
+msgid "You Failed!"
+msgstr "你失败了！"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"算你厉害，{PLAYER1_NAME}！你毁掉了自己全新的飞船！好吧，几秒之后，我们还会给"
+"你一艘新的……"
+
+msgid "Did You Notice?"
+msgstr "你注意到了吗？"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr "你的生命值正在下降！注意观察上方的生命条。如果它快空了，最好马上降落。"
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"你的燃料储备正在下降！注意观察黄色的燃料条。如果它快空了，最好马上降落母星。"
+
+msgid "You Nearly Got Him!"
+msgstr "胜利近在眼前！"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr "注意敌人的名字。它的颜色越红，敌人的生命值也就越低。"
+
+msgid "Interface"
+msgstr "界面"
+
+msgid "High Star Field Resolution"
+msgstr "高星图分辨率"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Hot Key for Screenshots"
+msgstr "截屏快捷键"
+
+msgid "Points"
+msgstr "得分"
+
+msgid "Frags"
+msgstr "击毁敌机"
+
+msgid "Teamkills"
+msgstr "误伤队友"
+
+msgid "Suicides"
+msgstr "自杀"
+
+msgid "Deaths"
+msgstr "死亡"
+
+msgid "Game Options"
+msgstr "游戏选项"
+
+msgid "Total:"
+msgstr "合计："
+
+msgid "Statistics"
+msgstr "数据统计"
+
+msgid "Planet Life Points"
+msgstr "行星生命值"
+
+msgid "Shader Effects"
+msgstr "启用shader"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "抱歉，您的显卡不支持shader！"
+
+msgid "Gameplay"
+msgstr "游戏"
+
+msgid "PowerUp Spawn Rate"
+msgstr "道具生成速率"
+
+msgid "Bot Difficulty"
+msgstr "AI强度"
+
+msgid "Explosions for Slow Motion"
+msgstr "慢动作爆炸数目"
+
+msgid "Off"
+msgstr "关闭"
+
+msgid "Credits"
+msgstr "贡献者"
+
+msgid "Special Thanks to:"
+msgstr "特别感谢："
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"翻译人员： 阿拉伯语：Majid 简体中文：Wecing 捷克语：Mates 芬兰语：Paavo 法"
+"语：Astohan 德语：Sandra 北印度语：Antriksh & Aakanksh 匈牙利语：Papp Bence "
+"意大利语： Proch 波兰语：command_dos 葡萄牙语：Vitor 俄语： Drakmail 西班牙"
+"语：Gastón 瑞典语：Henrik编程支持： Werner and Deubeuliou测试及创意提供： "
+"Heinrich, Martin, Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "分辨率"
+
+msgid "Color Depth"
+msgstr "色深"
+
+msgid "Special Ability"
+msgstr "特殊能力"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr "显示每秒帧数。如果这个数字总是低于20，你应该马上在选项中调整显示设置！"
+
+msgid "Displays the amount of active particles."
+msgstr "显示当前活跃的粒子数目。"
+
+msgid "Dismisses tool tips like this one."
+msgstr "屏蔽掉所有的工具提示，比如您现在看到的这个。"
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "设置截图的保存格式。"
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr "当这个键被按下的时候，截屏就会被保存到{CONFIG_PATH}screenshots/ 。"
+
+msgid "Pressing this key switches to the next music track."
+msgstr "按下这个键可以切换到下一条音轨。"
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "当有很多飞船同时爆炸时，慢动作效果会生效。"
+
+msgid "Displays the job of each bot."
+msgstr "显示每个AI的任务。"
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "显示对AI来说非常重要的战术区域。"
+
+msgid "Displays paths calculated by bots."
+msgstr "显示AI的运动路径。"
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "最大化窗口，使之覆盖整个屏幕。"
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"让游戏依照显示器的刷新频率来更新画面。一般来说，选择此选项可以让画面更加流"
+"畅。"
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "开启一些特殊效果，比如热雾；但是这会加重计算机的计算负担。"
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr "设置窗口大小。这会影响到全屏和窗口化两种模式。"
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr "这个选项会使星图的计算被延后。取消此选项可能会轻微地提高游戏速度。"
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr "调整全局粒子数目。选择更低的值会明显提高运行速度。"
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr "调整全局粒子生存周期。更低的值会让运行速度明显提高。"
+
+msgid "Adjusts volume of background music."
+msgstr "调整背景音乐的音量。"
+
+msgid "Adjusts volume of sound effects."
+msgstr "调整声音效果的音量。"
+
+msgid "Adjusts volume of announcers voice."
+msgstr "调整旁白的音量。"
+
+msgid "Sets the team of the local players."
+msgstr "设定本地玩家所属的队伍。"
+
+msgid "Enables local players."
+msgstr "开启本地玩家。"
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "调整AI所控制的飞船数。"
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "团队赢得比赛所需得到的分数。"
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "个人赢得比赛所需得到的分数。"
+
+msgid "Adjusts the strength of the bots."
+msgstr "调整AI的强度。"
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr "调整游戏中道具出现的速率。如果设置为零则会完全取消道具的出现。"
+
+msgid "Weapons"
+msgstr "武器"
+
+msgid "Special Abilities"
+msgstr "特殊能力"
+
+msgid "Screenshot saved!"
+msgstr "截屏已保存！"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"星际大战严重消耗了星球上的资源，因此科学家们需要找到一种仅仅消耗少量资源却能"
+"有效杀伤敌人的方法。最终，经过无数次的实验后，他们终于创造出了一种具有独特性"
+"质的新型武器：它可以在一瞬间将敌人杀死，但是射出的子弹却很容易受到万有引力的"
+"影响，因此非常难以控制。所以科学家们称之为：引力弹！ 不幸的是，有人偷走了它，"
+"于是这项邪恶的技术也落入了敌人的手中。现在，轮到你来大显神威了：在重力井的空"
+"间里击败敌人，夺回战斗的上风！如果能赢得这场战斗的话，星际大战的全局胜利也就"
+"指日可待了。"
+
+msgid "Destroy es many enemies as possible!"
+msgstr "尽可能多地打倒敌人！"
+
+msgid "Special Abilities..."
+msgstr "特殊能力……"
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"我们保证过会告诉你星星的涵义——事实上，它们是你的飞船的额外能力之源。比如你可"
+"以为你自己及附近的队友提供治疗，吹走或是冻结附近一段距离之间的飞船！你所拥有"
+"的星星越多，你的特殊能力的有效范围及强度就越大。"
+
+msgid "Selection..."
+msgstr "选择特殊能力……"
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"选择特殊能力只需要按下<{PLAYER1_KEY_SPECIAL}>，然后用<{PLAYER1_KEY_LEFT}>和"
+"<{PLAYER1_KEY_RIGHT}>选择你所偏爱的能力。 在这一课中，我们用“Freezer”来做示"
+"范。准备好了就起飞吧。"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Hello，{PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "这个名字太烂了……还是换个更好一点的吧。"
+
+msgid "Next music track!"
+msgstr "下一音轨！"
+
+msgid "General Settings"
+msgstr "一般设定"
+
+msgid "Special Effects"
+msgstr "特殊效果"
+
+msgid "Ship Settings"
+msgstr "飞船设置"
+
+msgid "A Button"
+msgstr "A"
+
+msgid "B Button"
+msgstr "B"
+
+msgid "X Button"
+msgstr "X"
+
+msgid "Y Button"
+msgstr "Y"
+
+msgid "Start Button"
+msgstr "Start"
+
+msgid "Back Button"
+msgstr "Back"
+
+msgid "Right Bumper"
+msgstr "R1"
+
+msgid "Left Bumper"
+msgstr "L1"
+
+msgid "Right Trigger"
+msgstr "R2"
+
+msgid "Left Trigger"
+msgstr "L2"
+
+msgid "Direction Up"
+msgstr "上"
+
+msgid "Direction Down"
+msgstr "下"
+
+msgid "Direction Left"
+msgstr "左"
+
+msgid "Direction Right"
+msgstr "右"
+
+msgid "Stick1 Up"
+msgstr "摇杆1 上"
+
+msgid "Stick1 Down"
+msgstr "摇杆1 下"
+
+msgid "Stick1 Left"
+msgstr "摇杆1 左"
+
+msgid "Stick1 Right"
+msgstr "摇杆1 右"
+
+msgid "Stick2 Up"
+msgstr "摇杆2 上"
+
+msgid "Stick2 Down"
+msgstr "摇杆2 下"
+
+msgid "Stick2 Left"
+msgstr "摇杆2 左"
+
+msgid "Stick2 Right"
+msgstr "摇杆2 右"
+
+msgid "Joystick"
+msgstr "游戏手柄"
+
+msgid "Button"
+msgstr "按键"
+
+msgid "Hot Key for Statistics"
+msgstr "统计数据快捷键"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr "当在游戏进行中按下这个键时，一个显示着统计数据的窗口就会弹出。"
+
+msgid "CannonShots"
+msgstr "加农炮射击次数"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "停，{PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"我们告诉过你要选择“Freezer”，但是你并没有这样做！请再次降落，并把特殊能力切换"
+"过去。"
+
+msgid "The Freezer..."
+msgstr "Freezer……"
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"这是一种能冻结附近飞船的特殊能力。你需要飞到目标飞船附近，然后按下"
+"<{PLAYER1_KEY_SPECIAL}>来冻住他们。看着对手的生命值慢慢下降直到变为零吧。"
+
+msgid "Practice!"
+msgstr "练习！"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"现在试着冻住你的敌人！在这个教程中我们会给你一些星星。但是请记住：在实际中只"
+"有击毁敌人的飞船才能得到星星！"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "被它逃掉了，{PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "再试一次吧。我们会再给你一些星星的。"
+
+msgid "You Did It!"
+msgstr "你做到了！"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr "现在回到你的星球，选择其他的特殊能力吧！"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "小心，{PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr "没有时间进行更多的教学了！我们的敌人送来了两个真正的复仇武士！"
+
+msgid "Players"
+msgstr "玩家"
+
+msgid "Artist:"
+msgstr "艺术家："
+
+msgid "Album:"
+msgstr "专辑："
+
+msgid "Previous music track!"
+msgstr "上一曲！"
+
+msgid "Play Previous Track"
+msgstr "播放上一首歌曲"
+
+msgid "Play Tracks in Random Order"
+msgstr "随机播放"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "按下此键播放上一曲。"
+
+msgid "Enables music play back in a random sequence."
+msgstr "允许随机回放。"
+
+msgid "Moving Stars"
+msgstr "动态背景星图"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr "在背景上绘制动态的星图。效果很好，但是会降低运行速度。"
+
+msgid "Goals"
+msgstr "撞击次数"

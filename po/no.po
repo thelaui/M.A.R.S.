@@ -1,0 +1,1033 @@
+# M.A.R.S. no.po
+# IGLO.no, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: no\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Start lokalt spill"
+
+msgid "Start Network Game"
+msgstr "Start et nettverkspill"
+
+msgid "Join Network Game"
+msgstr "Bli med i nettverkspill"
+
+msgid "Options"
+msgstr "Brukervalg"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Quit M.A.R.S."
+msgstr "Avslutt M.A.R.S."
+
+msgid "Continue"
+msgstr "Fortsett"
+
+msgid "Restart Game"
+msgstr "Begynn på nytt"
+
+msgid "Hide Menu"
+msgstr "Gjem menyen"
+
+msgid "Return to Main Menu"
+msgstr "Tilbake til hovedmeny"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Close"
+msgstr "Steng"
+
+msgid "License"
+msgstr "Lisens"
+
+msgid "Show this Info again."
+msgstr "Vis denne informasjonen på nytt."
+
+msgid "Left Team"
+msgstr "Venstre Lag"
+
+msgid "Right Team"
+msgstr "Høyre Lag"
+
+msgid "Bots Left"
+msgstr "\"Bots\" Venstre"
+
+msgid "Bots Right"
+msgstr "\"Bots\" Høyre"
+
+msgid "Bots"
+msgstr "\"Bots\""
+
+msgid "Frag Limit"
+msgstr "\"Frag\" Grense"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"Året er 3547. Sivilisasjoner over hele galasksen har bosatt sine planeter "
+"hvor de lever i fred og harmoni med sine omgivelser. Men utenfor sine trygge "
+"omgivelser raser DEN STORE KRIGEN. Som en berømt soldat på vei mot evig ære "
+"og velstand må du beskytte planeten din mot en evig strøm av misunnelige "
+"naboer! Utkjemp slaget. En ekte helt som deg er født for: SPACEBALL. Beskytt "
+"planeten dim mot en sky av død og fordervelse ved å sende dem i småbiter "
+"tilbake til deres latterlige hjemplanet."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Spark eller skyt ballen mot fiendens planet!"
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"Som et resulat av DEN STORE KRIGEN har du mistet alt: hjemmet ditt, familien "
+"din og din egen selvtillit. Din siste sjanse til å komme deg ut av det "
+"tragiske livet du nå har fortapt deg i, er å bli en gladiator på den "
+"storslagne DEATHMATCH-arenaen. Stå imot de andre skipene og opptjen poeng "
+"ved å knuse nøtteskallene som de kalle romskip. Gjør deg klar! Død og ære "
+"venter deg."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Knus så mange fiender som mulig!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"Forhandlingene har feilet! Både deg og dine naboer har måttet føre enorme "
+"tapslogger i avslutningen av DEN STORE KRIGEN. I et siste forsøk på å få "
+"overtaket er du dømt til å ødelegge fienden sine ressurser for å beskytte "
+"dine egne. Den eneste måten å avgjøre dette på er i en episk TEAMDEATHMATCH. "
+"Beskytt dine kamerater og ødelegg dine fiender! Gi dem en lærepenge de sent "
+"vil glemme."
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Som om ikke DEN STORE KRIGEN skulle være nok, er planetsystemet ditt truet "
+"av en ny kilde av ufattelig ondskap: Et gigantisk skip med en ukjent "
+"invasjonsstyrke svever over galaksen din. De sikter på hjemplaneten din med "
+"et enestående masseødeleggelsesvåpen. Som et tegn på kynisme har angriperne "
+"mistet en fjernkontroll som kontrollerer dette gigantiske dødsvåpenet. Om du "
+"finner den før dem kan du bruke våpenet mot angripernes planet og fjerne "
+"trusselen en gang for alle! Bli CANNONKEEPeren."
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Plukk opp fjernkontrollen og behold den så lenge som mulig!"
+
+msgid "Show Debug Information"
+msgstr "Vis informasjon om feil"
+
+msgid "Bots Orientation"
+msgstr "Orientering for bot'er"
+
+msgid "Zones"
+msgstr "Soner"
+
+msgid "AI-Paths"
+msgstr "AI-Mønster"
+
+msgid "Show Game Information"
+msgstr "Vis spill informasjon"
+
+msgid "Frames per Second"
+msgstr "Bilder i sekundet"
+
+msgid "Particle Count"
+msgstr "Antall partikler"
+
+msgid "Particle Lifetime"
+msgstr "partikkel varighet"
+
+msgid "Game Settings"
+msgstr "Spill Innstillinger"
+
+msgid "Full screen"
+msgstr "Fullskjerm modus"
+
+msgid "V-Sync"
+msgstr "Vertikal synkronisering"
+
+msgid "Music"
+msgstr "Musikk"
+
+msgid "Sound"
+msgstr "Lyd"
+
+msgid "Announcer"
+msgstr "Annonsør"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Accelerate"
+msgstr "Aksellerer"
+
+msgid "Turn Left"
+msgstr "Sving til venstre"
+
+msgid "Turn Right"
+msgstr "Sving til høyre"
+
+msgid "Weapon"
+msgstr "Våpen"
+
+msgid "Ship"
+msgstr "Romskip"
+
+msgid "Player Color"
+msgstr "Spiller farge"
+
+msgid "Team Color"
+msgstr "Farge på laget ditt"
+
+msgid "File Format for Screenshots"
+msgstr "Fil format for skjermbilde"
+
+msgid "Weapon Options"
+msgstr "Våpen valg"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Dette er første forsøk på å lage et spill i OpenGL ved hjelp av SFML. Dette "
+"er et spill for to spillere hvor dere styrer romskipene i et todimensjonalt "
+"spillmiljø, begrenset av tyngdekraftens påvirkning. Homepage: http://www."
+"marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Dette programmet er fri programvare; du kan redistribuere det og/eller "
+"modifisere det innenfor rettighetene beskrevet i GNU \"General Public License"
+"\" utgitt av \"the Free Software Foundation\"; enten versjon 3 av lisensen "
+"eller(om du ønsker det) nyere utgaver. Dette programmet er distribuert i håp "
+"om at det vil være fult brukbart, men UTEN NOEN FORM FOR GARANTI; selv uten "
+"underforståtte garantier om salgbarhet eller anvendelighet FOR ET SPESIELT "
+"FORMÅL. Se GNU \"General Public License\" for flere detaljer. Tilgjengelig "
+"på nettet under:http://www.gnu.org/licenses/gpl-3.0.html"
+
+msgid "Do you really want to quit?"
+msgstr "Vil du virkelig å avslutte?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Ønsker du virkelig å avslutte gjeldende spill?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"M.A.R.S. Spilling over verdensveven eller lokale nettverk er planlagt, men "
+"så langt ikke inkludert. Kommer snart!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Pauser du M.A.R.S midt i en intens kamp? Ønsker du å ta et skjermbilde, gjør "
+"denne knappen det mulig å generere episke skrivebordsbakgrunner, ved å "
+"hjemme alle vinduene. Du kan enkelt bringe dem tilbake igjen ved hjelp av "
+"ESC."
+
+msgid "Add"
+msgstr "Pluss"
+
+msgid "Comma"
+msgstr "Komma"
+
+msgid "Divide"
+msgstr "Dele"
+
+msgid "Down"
+msgstr "Ned"
+
+msgid "Equal"
+msgstr "Er lik"
+
+msgid "Left Alt"
+msgstr "Venstre Alt"
+
+msgid "Left Bracket"
+msgstr "Venstre Bracket"
+
+msgid "Left Control"
+msgstr "Venstre Control"
+
+msgid "Left"
+msgstr "Venstre"
+
+msgid "Left Shift"
+msgstr "Venstre Shift"
+
+msgid "Left Super"
+msgstr "Venstre Super"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Multiply"
+msgstr "Gange"
+
+msgid "Period"
+msgstr "Punktum"
+
+msgid "Quote"
+msgstr "Hermetegn"
+
+msgid "Right Alt"
+msgstr "Høyre Alt"
+
+msgid "Right Bracket"
+msgstr "Høyre Bracket"
+
+msgid "Right Control"
+msgstr "Høyre Control"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Right"
+msgstr "Høyre"
+
+msgid "Right Shift"
+msgstr "Høyre Shift"
+
+msgid "Right Super"
+msgstr "Høyre Super"
+
+msgid "Semi Colon"
+msgstr "Semi Kolon"
+
+msgid "Subtract"
+msgstr "Minus"
+
+msgid "Up"
+msgstr "Opp"
+
+msgid "Graphics"
+msgstr "Grafikk"
+
+msgid "Audio"
+msgstr "Lyd"
+
+msgid "Window Settings"
+msgstr "Vindusinstillinger"
+
+msgid "Start Tutorial"
+msgstr "Start tutorial"
+
+msgid "Next"
+msgstr "Neste"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Velkommen, Nybegynner!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"Det gleder oss alle å ansette en stigende stjerne som, {PLAYER1_NAME}, til å "
+"bli med i DEN STORE KRIGEN!Vi regner med at du trenger litt praktisk trening "
+"i det nye romskipet ditt.La treningen begynne..."
+
+msgid "Basic Movement..."
+msgstr "Grunnleggende bevegelser..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Den viktigste oppgaven er å mestre styresystemet.Alle bevegelser er innenfor "
+"loven om tyngdekraft. For å bremse må du akselerere i motsatt retning. Styr "
+"skipet ved hjelp av knappene <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and "
+"<{PLAYER1_KEY_RIGHT}>!"
+
+msgid "Warming Up!"
+msgstr "Oppvarming!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr ""
+"Ta deg til den rosa sonen!Prøv nå å ikke ødelegge det flunka nye romskipet "
+"ditt."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Bra gjort, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Nå kan du føre romskipet ditt tilbake til din hjemplanet og prøve å lande "
+"det ved å drive sakte bakover mot planeten."
+
+msgid "Good Work!"
+msgstr "Godt jobbet!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"Det er ikke så enkelt å få til en perfekt landing, er det vel?Dette bør du "
+"øve på til du kan gjøre det i blinde."
+
+msgid "Something More Difficult..."
+msgstr "Så øker vi vanskelighetsgraden litt..."
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Prøv å følge stien av rosa felter!Vi tar kontakt med deg igjen så snart du "
+"har mestret dette.Kjør på!"
+
+msgid "Awesome!"
+msgstr "Herlig!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Du må være den beste ferskingen noensinne.Nå kan du forberede deg på noe "
+"litt mer eksplosivt."
+
+msgid "Shooting..."
+msgstr "Skyting..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Fo å kunne beseire dine fiender må du vite hvordan du kan skyte dem til "
+"himmels!Press in <{PLAYER1_KEY_FIRE}> for å skyte. Ha det moro og skyt noen "
+"runder, så kan du lande skipet for å fortsette læringen."
+
+msgid "Volume Settings"
+msgstr "Volum innstillinger"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Flott landing, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "Du begynner å bli en bra pilot.Ka sier du til å prøve noen nye våpen?"
+
+msgid "The Weapons..."
+msgstr "Våpenutvalget..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Vi vet du har ventet på dette!. Fra din hjemplanet kan du velge mellom en "
+"hel del heftige våpen. Press <{PLAYER1_KEY_FIRE}> for å få tilgang til "
+"arsenalet ditt.Så kan du bruke <{PLAYER1_KEY_LEFT}> og <{PLAYER1_KEY_RIGHT}> "
+"for å velge et våpen etter din smak! Ta av så snart du er klar for action!"
+
+msgid "Play Next Track"
+msgstr "Spill neste lydspor"
+
+msgid "Playback Settings"
+msgstr "Avspillings instillinger"
+
+msgid "Fight!"
+msgstr "La kampen starte!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Først kan du prøve deg mot en fersking fra en annen planet. Ser ut som han "
+"prøver å forbedre sine flyveferdigheter.Knus ham!"
+
+msgid "Impressive!"
+msgstr "Imponerende!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Du klarte det! Om ikke du har merket det allerede, så har en liten stjerne "
+"dukket opp over skipet ditt. You flere fiender du gjør kål på jo flere "
+"stjerner vil du se. Men det er ikke bare en seiersindikator! om du lander "
+"romskipet ditt igjen skal vi vise deg hva det er godt for."
+
+msgid "Beat Them!"
+msgstr "Knus dem!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Bevis dine ferdigheter! Skaff deg minst fem poeng ved å tillintetgjøre dem! "
+"Poengene du har i øyeblikket vises ved siden av navnet ditt!Vi sender in en "
+"erfaren kriger for å assistere deg, {PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "Det er nesten ikke til å tro!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Du gjennomførte alle dine oppgaver til det fulle. Hva skal vi gjøre nå?Vi "
+"kan begynne med å ta en titt på valgmenyen. Der kan dujustere en hel del... "
+"vel... valg.For eksempel kan du velge stil og farge på romskipet ditt, eller "
+"du kan endre navnet ditt om du ønsker..."
+
+msgid "Who's Best?"
+msgstr "Hvem er best?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr ""
+"Du kan vise en liste over seire, poeng osv. via <{STATISTICS_KEY}>.Videre "
+"kan du se noen numre ved siden av navnet ditt som viser antall seire og hvor "
+"langt opp du har til de beste."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Gratulerer, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Du har fullført disse leksjonene. Du er nå klar til kamp i DEN STORE KRIGEN. "
+"Om du ønsker å trene mer kan du bare vente på at de fiendtlige skipene skal "
+"gjenoppstå. Du kan avslutte teningen ved å trykke <Esc>.Kos deg med M.A.R.S.!"
+
+msgid "You Failed!"
+msgstr "Du feilet!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"Nydelig {PLAYER1_NAME}! Du ødela det flett nye romskipet ditt. Vel, vel. Vi "
+"får vel gi deg et nytt. Bare vent noen sekunder..."
+
+msgid "Did You Notice?"
+msgstr "Merket du det?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr ""
+"Livet ditt er på vei ned! Hol et øye med den øvre livsindikatoren. Det er "
+"best du lander om den begynner å gå tom."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Drivstoffet ditt tappes ned! Hold et øye med den gule drivstoffindikatoren. "
+"Det er best du lander om det begynner å gå tomt."
+
+msgid "You Nearly Got Him!"
+msgstr "Du hadde ham nesten!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Hold et øye med motstanderens navn. fargen dens indikerer hvor mye liv som "
+"er igjen. Jo mer rød farge, jo svakere er fienden din."
+
+msgid "Interface"
+msgstr "Grensesnitt"
+
+msgid "High Star Field Resolution"
+msgstr "Høy oppløsning på stjernefelt"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Hot Key for Screenshots"
+msgstr "Hurtigknapper for å ta skjermbilde"
+
+msgid "Points"
+msgstr "Poenger"
+
+msgid "Frags"
+msgstr "Seire"
+
+msgid "Teamkills"
+msgstr "Lagets seire"
+
+msgid "Suicides"
+msgstr "Selvmord"
+
+msgid "Deaths"
+msgstr "Død"
+
+msgid "Game Options"
+msgstr "Spill brukervalg"
+
+msgid "Total:"
+msgstr "Totalt:"
+
+msgid "Statistics"
+msgstr "Statistikk"
+
+msgid "Planet Life Points"
+msgstr "Planet Liv Poeng"
+
+msgid "Shader Effects"
+msgstr "Shader Effekter"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Beklager, men din maskinvare støtter ikke shadere!"
+
+msgid "Gameplay"
+msgstr "Spillvalg"
+
+msgid "PowerUp Spawn Rate"
+msgstr "PowerUp gjenfødelses frekvens"
+
+msgid "Bot Difficulty"
+msgstr "\"Bot\" Vanskelighetsgrad"
+
+msgid "Explosions for Slow Motion"
+msgstr "Eksplosjoner for \"Slow Motion\""
+
+msgid "Off"
+msgstr "Av"
+
+msgid "Credits"
+msgstr "Takk til"
+
+msgid "Special Thanks to:"
+msgstr "Spesielt takk til:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Oversettelser: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: Henrik Norwegian: ThomasProgramerings støtte: "
+"Werner and DeubeuliouTesting og kreative støttespillere: Heinrich, Martin, "
+"Bastian, Sandra, Diana."
+
+msgid "Resolution"
+msgstr "oppløsning"
+
+msgid "Color Depth"
+msgstr "Fargedybde"
+
+msgid "Special Ability"
+msgstr "Super evner"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Viser antallet bilder som utregnes per sekund.Hvis denne er svært lav (<20), "
+"bør du justere noen av instillingene under grafikk fanen!"
+
+msgid "Displays the amount of active particles."
+msgstr "Viser antallet aktive partikler."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Fjerner verktøystips som denne."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Velger formatet som skjermbilder blir lagret i."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Når denn knappen blir trykket, blir et skjermbilde lagret i {CONFIG_PATH}"
+"screenshots/"
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Ved å trykke på denne knappen velger du neste musikkspor."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr ""
+"Om så mage skip eksploderer samtidig  slår \"slow motion\" effekten inn."
+
+msgid "Displays the job of each bot."
+msgstr "Viser jobben til hver bot."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr ""
+"Viser taktiske soner, hvilke er viktige for den kunstige intelligensen."
+
+msgid "Displays paths calculated by bots."
+msgstr "Viser stier som er utregnet av bot'ene."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maksimerer vinduet, slik at det dekker hele skjermen."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Gjør slik at spillet oppdateres i henhold til oppdateringsfrekvensen på "
+"skjermen din.Ved å velge dette vil spillet typisk kjøre mye jevnere."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr ""
+"Slår på kule effekter som \"haze\", men dette går utover spillets ytelse."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Velger størrelsen på vinduet.Virker inn på både, full skjerm og vindumodus."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr ""
+"På høyoppløste skjermer gjør dette valget at stjernefeltet går senere i loop."
+"Spilletsytelse kan forbedres noe ved å slå av denne."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Justerer det globale partikkelantallet.Lavere verdier vil øke ytelsen "
+"merkbart."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Justerer levetiden til de globale partiklene.Lavere verdier vil øke ytelsen "
+"merkbart."
+
+msgid "Adjusts volume of background music."
+msgstr "Justerer volumet på bakgrunnsmusikken."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Justerer volumet på lydeffekter."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Justerer volumet på annonsøren."
+
+msgid "Sets the team of the local players."
+msgstr "Velger laget til de lokale spillerne."
+
+msgid "Enables local players."
+msgstr "Slår på lokale spillere."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Justerer antallet skip som kontrolleres av kunstig intelligens."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Poenggrense som laget må oppnå for å vinne kampen."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Poenggrense som må oppnås av spilleren for å vinne kampen."
+
+msgid "Adjusts the strength of the bots."
+msgstr "Justerer ferdighetene til bot'ene."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr ""
+"Justerer mengden av Power-Ups som vil dukke opp iløpet av spillet. Null, "
+"slår Power-Ups helt av."
+
+msgid "Weapons"
+msgstr "Våpen"
+
+msgid "Special Abilities"
+msgstr "Spesielle egenskaper"
+
+msgid "Screenshot saved!"
+msgstr "Skjermbilde lagret!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Siden DEN STORE KRIGEN dramatisk reduserer ressursene dine, er en gruppe "
+"forskere engasjert for å finne en ny og effektiv måte å ødelegge fienden på. "
+"Etter å ha forsket lenge og vel klarte de til slutt å finne opp et våpen med "
+"en utrolig egenskap: Det dreper umiddelbart, men utskutte prosjektiler er "
+"svært følsomme for gravitasjonskrefter og er følgelig svært vanskelig og "
+"kontrollere. Våpenet har fått navnet. INSTA-GRAVE!  Uheldigvis har "
+"teknologien allerede blitt stjålet, så fienden kan også benytte seg av samme "
+"våpen. Nå er det din tur: Nedkjemp disse simple tyvene i den store GRAVE-"
+"ITATION-PIT for igjen å få overtaket.  Vinn dette slaget, og DEN STORE "
+"KRIGENs seier kan bli din."
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Ødelegg så mange fiender som mulig!"
+
+msgid "Special Abilities..."
+msgstr "Super ferdigheter..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Som vi lovet deg skal vi nå fortelle deg poenget med stjernene. De er en "
+"ressurs for romskipet ditt sine svært kraftige ekstra ferdigheter. For "
+"eksempel kan du helbrede allierte romskip som befinner seg i nærheten av "
+"deg, blåse vekk eller fryse fiendtlige skip innenfor en viss rekkevidde! Får "
+"du flere stjerner øker både rekkevidden og kraften på ferdighetene dine."
+
+msgid "Selection..."
+msgstr "Valgmuligheter..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"For å bla gjennom ferdighetene dine trenger du bare å trykke  "
+"<{PLAYER1_KEY_SPECIAL}>. For å velge, bla gjennom ved å trykke "
+"<{PLAYER1_KEY_LEFT}> og <{PLAYER1_KEY_RIGHT}>! For denne leksjonen kan du "
+"velge \"Fryseren\"! Ta av når du er klar!"
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Hei, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Det var et dårlig navn... Skriv gjerne inn et bedre!"
+
+msgid "Next music track!"
+msgstr "Neste musikkspor!"
+
+msgid "General Settings"
+msgstr "Generelle instillinger"
+
+msgid "Special Effects"
+msgstr "Spesial effekter"
+
+msgid "Ship Settings"
+msgstr "Romskip instillinger"
+
+msgid "A Button"
+msgstr "A Knappen"
+
+msgid "B Button"
+msgstr "B Knappen"
+
+msgid "X Button"
+msgstr "X Knappen"
+
+msgid "Y Button"
+msgstr "Y Knappen"
+
+msgid "Start Button"
+msgstr "Start Knappen"
+
+msgid "Back Button"
+msgstr "Back Knappen"
+
+msgid "Right Bumper"
+msgstr "Høyre Bumper"
+
+msgid "Left Bumper"
+msgstr "Venstre Bumper"
+
+msgid "Right Trigger"
+msgstr "Høyre Trigger"
+
+msgid "Left Trigger"
+msgstr "Venstre Trigger"
+
+msgid "Stick1 Up"
+msgstr "Stick1 Opp"
+
+msgid "Stick1 Down"
+msgstr "Stick1 Ned"
+
+msgid "Stick1 Left"
+msgstr "Stick1 Venstre"
+
+msgid "Stick1 Right"
+msgstr "Stick1 Høyre"
+
+msgid "Stick2 Up"
+msgstr "Stick2 Opp"
+
+msgid "Stick2 Down"
+msgstr "Stick2 Ned"
+
+msgid "Stick2 Left"
+msgstr "Stick2 Venstre"
+
+msgid "Stick2 Right"
+msgstr "Stick2 Høyre"
+
+msgid "Button"
+msgstr "Knapp"
+
+msgid "Hot Key for Statistics"
+msgstr "Hurtigknapper for statistikker"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr ""
+"Når du trykker på denne knappen iløpet av et spill, vil et vindu poppe opp "
+"med statistikk for akkurat dette spillet."
+
+msgid "CannonShots"
+msgstr "Kanonskudd"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Stopp, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Vi sa jo du skulle velge \"Fryseren\", men du har valgt en annen ferdighet!"
+"Vennligst land igjen og velg \"Fryseren\" denne gangen!"
+
+msgid "The Freezer..."
+msgstr "Fryseren..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Dette er en kraftig spesialferdighet som fryser fiendtlige romskip i "
+"nærheten. Du må bevege deg i nærheten av dine motstandere og trykke "
+"<{PLAYER1_KEY_SPECIAL}> for å fryse de. Føh med ham mens lifskraften sakte "
+"ebber ut... til han blir tillintetgjort!"
+
+msgid "Practice!"
+msgstr "Øvelse!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr ""
+"Nå kan du prøve å fryse noen fiender! For denne leksjonen skal du få noen "
+"ferdigopptjente ressursstjerner. Men husk: Når alvoret begynner må du selv "
+"opptjene stjernene ved å knuse fiendene dine!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Du bommet, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Prøv igjen. Vi gir deg påfyll av stjerner."
+
+msgid "You Did It!"
+msgstr "Du klarte det!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr ""
+"Nå kan du dra tilbake til planeten din for å prøve noen nye spesial "
+"ferdigheter!"
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Gjør deg klar, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Nå er det ikke tid til mer øvelse!Fienden vår har sendt to seriøse og "
+"hevngjerrige krigere!"
+
+msgid "Players"
+msgstr "Spillere"
+
+msgid "Previous music track!"
+msgstr "Forrige musikkspor!"
+
+msgid "Play Previous Track"
+msgstr "Spill forrige lydspor"
+
+msgid "Play Tracks in Random Order"
+msgstr "Spill lydspor i tilfeldig rekkefølge"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Ved å trykke på denne knappen velger du forrige musikkspor."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Slår på avspilling av tilfeldige spor."
+
+msgid "Moving Stars"
+msgstr "Bevegelige stjerner"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr ""
+"Tegner noen få bevegelige stjerner i bakgrunnen. Eye candy, men reduserer "
+"spillytelsen."
+
+msgid "Goals"
+msgstr "Mål"

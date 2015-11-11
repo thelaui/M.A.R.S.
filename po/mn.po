@@ -1,0 +1,1017 @@
+# M.A.R.S. mn.po
+# GaVaL TeaM, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: Widelands svnVERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
+"POT-Creation-Date: 2015-10-04 08:51+0100\n"
+"PO-Revision-Date: 2015-11-11 23:28+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language: mn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+msgid "Start Local Game"
+msgstr "Шинээр тоглох"
+
+msgid "Start Network Game"
+msgstr "Сүлжээгээр тоглох"
+
+msgid "Join Network Game"
+msgstr "Сүлжээрүү нэвтрэх"
+
+msgid "Options"
+msgstr "Тохиргоо"
+
+msgid "About"
+msgstr "Тухай..."
+
+msgid "Quit M.A.R.S."
+msgstr "Гарах"
+
+msgid "Continue"
+msgstr "Үргэлжлүүлэх"
+
+msgid "Restart Game"
+msgstr "Шинээр эхлэх"
+
+msgid "Hide Menu"
+msgstr "Цэсийг нуух"
+
+msgid "Return to Main Menu"
+msgstr "Үндсэн цэсрүү буцах"
+
+msgid "Start"
+msgstr "Эхлэх"
+
+msgid "Cancel"
+msgstr "Болих"
+
+msgid "Info"
+msgstr "Мэдээлэл"
+
+msgid "Close"
+msgstr "Хаах"
+
+msgid "License"
+msgstr "Лиценс"
+
+msgid "Ok"
+msgstr "Ок"
+
+msgid "Show this Info again."
+msgstr "Энэ мэдээлэлийг дахин харуулна уу."
+
+msgid "Left Team"
+msgstr "Зүүн баг"
+
+msgid "Right Team"
+msgstr "Баруун баг"
+
+msgid "Bots Left"
+msgstr "Зүүн бот"
+
+msgid "Bots Right"
+msgstr "Баруун бот"
+
+msgid "Bots"
+msgstr "Бот"
+
+msgid "Frag Limit"
+msgstr "Онооны лимит"
+
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own "
+"planets, living in peace and harmony with its environment.  But outside the "
+"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
+"your way to never ending honor and prosperity, you have to protect your "
+"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
+"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
+"sphere of death and defeat your enemies by letting it crush into their "
+"ridiculous globe."
+msgstr ""
+"3547 онд, бүх гариг ертөнцийн оршин суугчид өөрсдийн гаригтаа амар тайван "
+"сууршиж байв,  Гэвч эдгээр амгалан тайваны гадуур аймшигт дайн оршин байв.  "
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг "
+"хариуцлага тохогдож байна."
+
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Бөмбөгийг дайсныхаа гаригруу онилуулан цохь."
+
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your "
+"family and your self-esteem. Your last chance to get out of the miserable "
+"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
+"arena. Resist the other fighters and earn points by destroying the "
+"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
+msgstr ""
+"Дайны уршигаар та бүх зүйлээ алдсан: таны гэр, таны гэр бүл мөн өөрийгөө "
+"хүндлэх хүндлэлээ. Одоо таны од болох цаг иржээ гладиаторшиг тулалдан  "
+"тулааны тавцанг эзэгнэ."
+
+msgid "Destroy as many enemies as possible!"
+msgstr "Аль болох олон дайсан устга!"
+
+msgid ""
+"The negotiations have failed! Both of you and your neighbours had to record "
+"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
+"gaining the upper hand, you are ordered to decimate your enemy's resources "
+"and to protect your own one's. The only way to do so is an epic "
+"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
+"lesson, they will never forget."
+msgstr ""
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг "
+"хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч, оюун ухаанаа шавхан "
+"харийхантай тэмцэх хэрэгтэй. Тулааныг ялж өөрийн нэр хүндээ авчир!"
+
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a "
+"new source of incredible evilness: A giant ship of unknown invaders is "
+"levitating over your galaxy, aiming on the home planets with a monolithic "
+"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
+"remote control to adjust this provenance of death and fear. Reach it first "
+"to turn your enemy's home planet into a place of desolation! Be the "
+"CANNONKEEPer."
+msgstr ""
+"Чи оюун ухаанаа шавхан харийхантай тэмцэх хэрэгтэй. Чамд тэдний өөдөөс "
+"ашиглах хүчирхэг зэвсэг байгаа болов ч тэдэнд ч мөн чиний өөдөөс ашиглах "
+"аюулт зэвсэг байгаa. Канноныг удирда!"
+
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Удирдлагыг авч аль болох удаан өөртөө байлга!"
+
+msgid "Show Debug Information"
+msgstr "Дебуг"
+
+msgid "Bots Orientation"
+msgstr "Ботын зүг чиг"
+
+msgid "Zones"
+msgstr "Бүсүүд"
+
+msgid "AI-Paths"
+msgstr "AИ-зам"
+
+msgid "Show Game Information"
+msgstr "Танилцуулга"
+
+msgid "Frames per Second"
+msgstr "Дүрс/сэкунд"
+
+msgid "Game Settings"
+msgstr "Тоглоомын тохиргоо"
+
+msgid "Full screen"
+msgstr "Дэлгэц дүүрэн"
+
+msgid "Music"
+msgstr "Хөгжим"
+
+msgid "Sound"
+msgstr "Авиа"
+
+msgid "Announcer"
+msgstr "уншигч"
+
+msgid "Name"
+msgstr "Нэр"
+
+msgid "Accelerate"
+msgstr "Удирдлага"
+
+msgid "Turn Left"
+msgstr "Зүүн тийш"
+
+msgid "Turn Right"
+msgstr "Баруун тийш"
+
+msgid "Weapon"
+msgstr "Зэвсэг"
+
+msgid "Ship"
+msgstr "Хөлөг"
+
+msgid "Player Color"
+msgstr "Тоглогчын өнгө"
+
+msgid "Team Color"
+msgstr "Багын өнгө"
+
+msgid "File Format for Screenshots"
+msgstr "Зурагны формат"
+
+msgid "Display Tool Tips"
+msgstr "Тайлбарыг харуулах"
+
+msgid "Weapon Options"
+msgstr "Зэвсэгийн тохиргоо"
+
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game "
+"for two players, flying with ships in a two-dimensional space setting, "
+"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Энэ тоглоом нь анхны дэмжлэг болох OpenGL болон SFML дээр суурилсан. 2 "
+"тоглогчоос бүрдэх бөгөөд, сансар дээр явах хөлөгийг тухай ба, дэлхийн "
+"таталцлын хуулиас санаачласан болно. Вебсайт: http://www.marsshooter.org© "
+"2010-2011 Felix Lauer & Simon Schneegans"
+
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
+"Public License for more details. Available online under:http://www.gnu.org/"
+"licenses/gpl-3.0.html"
+msgstr ""
+"Энэ програм бол үнэгүй ба; та энэ тоглоомыг хөгжүүлэх, өөрчлөхийг хүсвэл "
+"тоглоом зохиосон баг болон GaVaL багаас зөвшөөрөлтэй байх хэрэгтэй."
+
+msgid "Do you really want to quit?"
+msgstr "Үнэхээр гарахдаа итгэлтэй байна уу?"
+
+msgid "Do you really want to end the current game?"
+msgstr "Үнэхээр тоглолтыг дуусгах уу?"
+
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned "
+"feature, but not implemented yet. Stay tuned!"
+msgstr ""
+"M.A.R.S. тоглоом нь онлайн болон LAN сүлжээ дээр танигдсан. Stay tuned!"
+
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
+"take a screenshot, this button enables you to generate epic wallpapers, by "
+"hiding all windows. Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Та M.A.R.S тоглоомыг түр зогсоолоо. Та тулаанаа үргэлжлүүлэхгүй юмуу? Хэрвээ "
+"та зураг авахыг хүсвэл зураг авах товч даран авна уу. Та авсан зургийг "
+"боловсруулан дэлгэцний зураг ч хийх боломжтой. Энгийнээр хийхийн тулд ESC "
+"товчыг дарна уу."
+
+msgid "Add"
+msgstr "Нэмэх"
+
+msgid "Comma"
+msgstr "Таслал"
+
+msgid "Dash"
+msgstr "Зураас"
+
+msgid "Delete"
+msgstr "Арилгах"
+
+msgid "Divide"
+msgstr "Хуваах"
+
+msgid "Down"
+msgstr "Доош"
+
+msgid "Equal"
+msgstr "Тэнцүү"
+
+msgid "Left Alt"
+msgstr "Зүүн Alt"
+
+msgid "Left Bracket"
+msgstr "Зүүн хаалт"
+
+msgid "Left Control"
+msgstr "Зүүн Control"
+
+msgid "Left"
+msgstr "Зүүн"
+
+msgid "Left Shift"
+msgstr "Зүүн Shift"
+
+msgid "Left Super"
+msgstr "Зүүн Super"
+
+msgid "Menu"
+msgstr "Цэс"
+
+msgid "Page Down"
+msgstr "Хуудас доош"
+
+msgid "Page Up"
+msgstr "Хуудас дээш"
+
+msgid "Pause"
+msgstr "Түр зогсоох"
+
+msgid "Period"
+msgstr "Ээлж"
+
+msgid "Quote"
+msgstr "Ишлэл"
+
+msgid "Right Alt"
+msgstr "Баруун Alt"
+
+msgid "Right Bracket"
+msgstr "Баруун хаалт"
+
+msgid "Right Control"
+msgstr "Баруун Control"
+
+msgid "Return"
+msgstr "Буцах"
+
+msgid "Right"
+msgstr "Баруун"
+
+msgid "Right Shift"
+msgstr "Баруун Shift"
+
+msgid "Right Super"
+msgstr "Баруун Super"
+
+msgid "Space"
+msgstr "Зай"
+
+msgid "Tab"
+msgstr "Тab"
+
+msgid "Up"
+msgstr "Дээш"
+
+msgid "Graphics"
+msgstr "График"
+
+msgid "Audio"
+msgstr "Дуу авиа"
+
+msgid "Window Settings"
+msgstr "Цонхны тохиргоо"
+
+msgid "Start Tutorial"
+msgstr "Сургуулилтанд орох"
+
+msgid "Next"
+msgstr "Дараачынх"
+
+msgid "Welcome, Space Rookie!"
+msgstr "Тавтай морил, Сансарын дайнд!"
+
+msgid ""
+"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
+"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
+"the training begin..."
+msgstr ""
+"{PLAYER1_NAME} та энэхүү хөлгөөр байлдах бөгөөд, сансарын дайнд оролцох "
+"болно.Таньд амжилт хүсье..."
+
+msgid "Basic Movement..."
+msgstr "Үндсэн хөдөлгөөнүүд..."
+
+msgid ""
+"Controlling your ship is the most important task to master.All movement is "
+"governed by the laws of gravity. To decelerate you have to turn and "
+"accelerate in the opposite direction. Control your ship, using the keys "
+"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+msgstr ""
+"Үндсэн хөдөлгөөнүүд нь Урагшаа, Баруун, Зүүн гэсэн хөдөлгөөнтэй.Та урагшаа "
+"явахдаа <{PLAYER1_KEY_UP}> дарна, зүүн тийшээ эргэхдээ <{PLAYER1_KEY_LEFT}> "
+"дарна мөн баруун тийшээ эргэхдээ <{PLAYER1_KEY_RIGHT}> тус тус дарж явна!"
+
+msgid "Warming Up!"
+msgstr "Анхаарлаа хандуулна уу!"
+
+msgid "Reach the pink zone!Try not to crash your brand new ship."
+msgstr ""
+"Яагаан гэрэл дээр очно уу!Та гарагуудыг мөргөвөл таны амь чинь багасах болно."
+
+msgid "Well Done, {PLAYER1_NAME}!"
+msgstr "Маш сайн, {PLAYER1_NAME}!"
+
+msgid ""
+"Now head back to your home planet and try to land your ship by slowly "
+"floating back while approaching your planet."
+msgstr ""
+"Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр "
+"хүлээнэ үү."
+
+msgid "Good Work!"
+msgstr "Сайн байна!"
+
+msgid ""
+"Proper landing is not a piece of cake, is it?You should learn it by heart."
+msgstr ""
+"Дараагийн даалгаварлуугаа оръё.Энэхүү даалгавар нь таныг хөлөг өө сайн "
+"жолоодож сурахад туслах болно."
+
+msgid "Something More Difficult..."
+msgstr "Даалгаварыг гүйцэтгэх заавар:"
+
+msgid ""
+"Try to follow the path marked up by the pink zones!We will contact you "
+"again, after you have mastered this.Now go for it!"
+msgstr ""
+"Яагаан өнгөтэй гэрлийг дагаж явна.Мөн заавал дарааллаар нь авах ёстой.Таньд "
+"амжилт хүсье!"
+
+msgid "Awesome!"
+msgstr "Баяр хүргье!"
+
+msgid ""
+"You are the best rookie we have ever seen.Now prepare yourself for some "
+"explosive stuff."
+msgstr ""
+"Та хамгийн сайн сансарын нисгэгч боллоо.Одоо таныг дайсантайгаа өрсөлдөхөд "
+"бэлэн болсон гэж бодож байна."
+
+msgid "Shooting..."
+msgstr "Устга..."
+
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!For that "
+"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
+"land your ship to continue the tutorial."
+msgstr ""
+"Та дайсны эсрэг тулалдах гэж байна, хамгийн гол нь өөрөө үхэхгүй өрсөлдөгчөө "
+"ялах юм.Та буудахдаа <{PLAYER1_KEY_FIRE}> товчийг дарна. Мөн та одоо "
+"Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+msgid "Volume Settings"
+msgstr "Дуу"
+
+msgid "Good Landing, {PLAYER1_NAME}!"
+msgstr "Сайн байна, {PLAYER1_NAME}!"
+
+msgid "You turn out to be a great pilot.Now how about some more weapons?"
+msgstr "За сансарын нисгэгч минь амжилт!"
+
+msgid "The Weapons..."
+msgstr "Таны буунууд..."
+
+msgid ""
+"We know you've been waiting for this. When docked you can switch through "
+"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
+"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
+"weapon! Take-off, when you're ready!"
+msgstr ""
+"Та <{PLAYER1_KEY_FIRE}> дараад <{PLAYER1_KEY_LEFT}> эсвэл "
+"<{PLAYER1_KEY_RIGHT}> товчийг дарж буугаа сольж болно. Таньд Shotgun, Rofle, "
+"AFK-47 гэсэн 3 буу байгаа дуртайгаа сонго. Тэгээд бэлэн болсон бол урагшаа "
+"дарна уу. Тэргүүлэгч - LeaDe[R]!!! миний бие таныг ялна гэдэгт итгэлтэй "
+"байна."
+
+msgid "Play Next Track"
+msgstr "Дараагын ая"
+
+msgid "Playback Settings"
+msgstr "Тоглуулагчын тохиргоо"
+
+msgid "Fight!"
+msgstr "Амжилт!"
+
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems "
+"like he is trying to improve his flying abilities.Beat him!"
+msgstr ""
+"Энэхүү даалгавар нь эсрэг талийн нисгэгчийг устгах юм.Бэлэн болсон бол Enter "
+"товчийг дарна уу."
+
+msgid "Impressive!"
+msgstr "Та амжилттай устгаж чадлаа!"
+
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. "
+"The more enemies you kill, the more of them will show. But they are not only "
+"a frag indicator! Land again and we will show you what else stars are good "
+"for."
+msgstr ""
+"Та сайн сансарын дайчин болж. Та одоо Өөрийнхөө гараг дээр очиж зогсоод "
+"дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+msgid "Beat Them!"
+msgstr "Устга!"
+
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current "
+"score is displayed next to your name!We will send in an experienced warrior "
+"assisting you, {PLAYER1_NAME}!"
+msgstr ""
+"Та ур чадваруудаа хэрэглэн дайснуудаа устга. Тэд маш хүчтэй болохоор басах "
+"хэрггүй, {PLAYER1_NAME}!"
+
+msgid "Unbelievable!"
+msgstr "Тохиргоо хийх!"
+
+msgid ""
+"You managed all our tasks successfully. Now what to do?Let's have a look at "
+"the options menu. There you can adjust a lot of... well... options.For "
+"example you may choose your ship style and color or change your name..."
+msgstr ""
+"Та тохиргооруугаа орж тохиргоо хиймээр байна уу?Нэр эсвэл онгоцны загвараа "
+"солимоор байна уу? мөн өөрийн нэрээ ч сольж болно."
+
+msgid "Who's Best?"
+msgstr "Тоглолтын статус-ыг яаж харах вэ?"
+
+msgid ""
+"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
+"Furthermore the numbers next to your name illustrate your frag counter and "
+"your distance to the best one."
+msgstr "Та <{STATISTICS_KEY}> товчийг дарж бүгдийг харах болно."
+
+msgid "Congratulations, {PLAYER1_NAME}!"
+msgstr "Баяр хүргэе, {PLAYER1_NAME}!"
+
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
+"you want to continue practising, just wait for the enemies to re-spawn. You "
+"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+msgstr ""
+"Ингээд заавараа өндөрлийдөө. Та одоо Сансарын дайнд бэлэн болсон. Мөн "
+"хүссэнээрээ тоглохыг хүсвэл <Esc> товчийг дарж дайнаас гараад өөр дайн "
+"эхлүүлж тоглож болно.Сайхан наадаарай таныг хүндэтгэсэн Тэргүүлэгч - "
+"LeaDe[R]!!!"
+
+msgid "You Failed!"
+msgstr "Та устгагдлаа!"
+
+msgid ""
+"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
+"will get you a new one. Just wait some seconds..."
+msgstr ""
+"{PLAYER1_NAME} та дайсанд буудуулж үхлээ. Хэсэг хугацааны дараа та төрөх "
+"учир түр хүлээнэ үү."
+
+msgid "Did You Notice?"
+msgstr "Анхааруулга?"
+
+msgid ""
+"Your life is draining! Keep an eye on the upper life bar. You better land if "
+"it's too empty."
+msgstr "Таны амь чинь багасаж байна! Амь чинь багасаад дуусвал та үхэх болно."
+
+msgid ""
+"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
+"if it's too empty."
+msgstr ""
+"Таны тийрэлтэд хөдөлгүүрийн цэнэг дуусч байна! Тийрэлтэд хөдөлгүүрийн цэнэг "
+"чинь дуусвал та явж чадахгүй болно. (Байрандаа юу ч дарахгүй зогсовол бага "
+"багаар тийрэлтэд хөдөлгүүрээ цэнэглэх болно)"
+
+msgid "You Nearly Got Him!"
+msgstr "Дайсны амь!"
+
+msgid ""
+"Watch your opponent's name. Its colour indicates his life points. The more "
+"it turns red, the weaker your enemy is."
+msgstr ""
+"Дайсныхаа амь ямар байгааг яаж харах вэ гэж үү? Маш амархан түүний нэр ямар "
+"өнгөтэй байна тэрүүгээр нь харж болно Ногооноос улаан руу гэсэн өнгө байх "
+"ёстой. Ногоон бол амь дүүрэн, шар бол дундуур, улаан бол үхэх гэж байгаа "
+"гэсэн үг."
+
+msgid "Interface"
+msgstr "Интерфайс"
+
+msgid "High Star Field Resolution"
+msgstr "Ододын өндөр нягтрал"
+
+msgid "Language"
+msgstr "Хэл"
+
+msgid "Hot Key for Screenshots"
+msgstr "Зураг авах товч"
+
+msgid "Points"
+msgstr "Оноо"
+
+msgid "Frags"
+msgstr "Туг"
+
+msgid "Teamkills"
+msgstr "Баг/аллага"
+
+msgid "Suicides"
+msgstr "Амиа Хоролсон"
+
+msgid "Deaths"
+msgstr "Үхсэн"
+
+msgid "Game Options"
+msgstr "Тоглоомын тохиргоо"
+
+msgid "Total:"
+msgstr "Нийт:"
+
+msgid "Statistics"
+msgstr "Дүн"
+
+msgid "Planet Life Points"
+msgstr "Гаригийн"
+
+msgid "Shader Effects"
+msgstr "Сүүдэр эффект"
+
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Муу л байна, сүүдэр танигдаагүй байна!"
+
+msgid "Gameplay"
+msgstr "Тоглолт"
+
+msgid "PowerUp Spawn Rate"
+msgstr "Нэмэлт гарж ирэх хугацаа"
+
+msgid "Bot Difficulty"
+msgstr "Ботын түвшин"
+
+msgid "Explosions for Slow Motion"
+msgstr "Тэсрэлтийг удаашруулах"
+
+msgid "Off"
+msgstr "Унтраах"
+
+msgid "Credits"
+msgstr "Бүтээсэн"
+
+msgid "Special Thanks to:"
+msgstr "Талархаж буй:"
+
+msgid ""
+"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
+"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
+"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
+"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
+"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Хөрвүүлсэн: Монгол: GaVaL TeaM Араб: Majid Хужаа: Wecing Чех: Mates "
+"Финланди: Paavo Францу: Astohan Герман: Sandra Хинди: Antriksh & Aakanksh "
+"Венгер: Papp Bence Италь: Proch Польш: command_dos Португаль: Vitor Орос: "
+"Drakmail Испан: Gastón Швед: HenrikПрограмчлалд туслалцаа үзүүлсэн: Werner "
+"and DeubeuliouТестэлсэн болон зураглал: Heinrich, Martin, Bastian, Sandra, "
+"Diana."
+
+msgid "Resolution"
+msgstr "Нягтрал"
+
+msgid "Color Depth"
+msgstr "Өнгөний гүн"
+
+msgid "Special Ability"
+msgstr "Онцгой чадвар"
+
+msgid ""
+"Displays the amount of Frames calculated per Second.If this is always very "
+"low (<20), you should adjust some settings in graphics tab!"
+msgstr "FPS. (Идвэхжүүлэх хэрэггүй)"
+
+msgid "Displays the amount of active particles."
+msgstr "Дэлгэцэнд идвэхтэй байгаа жижигхэн тоосыг гаргах."
+
+msgid "Dismisses tool tips like this one."
+msgstr "Үгэн дээр курсороо авчирхад тайлбарыг гаргах."
+
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Зургийг ямар өргөгдөлтэй (формат) хадгалахыг тохируулах."
+
+msgid ""
+"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
+msgstr ""
+"Дүрс авахдаа ямар товч дарж авах вэ? {CONFIG_PATH}screenshots/ гэсэн хавтас "
+"дотор таны авсан дүрсүүд байх болно."
+
+msgid "Pressing this key switches to the next music track."
+msgstr "Дараагийн хөгжимийг явуулах."
+
+msgid ""
+"If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Тэсрэлтийг удаашруулах хөдөлгөөний эффэктийг тохируулах."
+
+msgid "Displays the job of each bot."
+msgstr "БОТ-ыг хашаа явах гэж байгааг гаргах тохиргоо."
+
+msgid ""
+"Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Байлдааны тактикийг гаргах тохиргоо."
+
+msgid "Displays paths calculated by bots."
+msgstr "БОТ-ын тоцооллыг гаргах тохиргоо."
+
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Дэлгэц дүүрэн болгох."
+
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.Enabling "
+"this option typically makes the game run more smoothly."
+msgstr ""
+"Идвэхжүүлсэн байх ёстой тохиргоо. Өндөр хүчин чадалтай компьютерууд "
+"тоглоомыг түрүүлж тооцоолсоны улмаас тоглоом дүрс давахцах, үйлдэлүүд нь "
+"аймар хурдан болох гэх мэт асуудлууд..."
+
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Сүүдэрийг идвэхжүүлэх."
+
+msgid ""
+"Sets the size of the window.Affects both, full screen and windowed mode."
+msgstr ""
+"Дүрсний нягтаршилыг харуулах ба хэр нягтаршил сайтай тоглоомоо тоглохыг "
+"хүсэнэ тэр хэмжээгээрээ нягтаршилаа сонго. Ихэсгэх тусам нягтаршил сайжирна, "
+"багасгах тусам нягтаршил муудна."
+
+msgid ""
+"With high resolution displays, this option makes the star field loop later."
+"Disabling may increase game performance slightly."
+msgstr "Тоглоомын гэрэлт однуудыг гаргах тохиргоо.Идвэхжүүлвэл хамаагүй гоё."
+
+msgid ""
+"Adjusts the global particle count.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Дэлбэрэлтийн эффэктийг тохируулах.Хамгийн бага дээр нь тавибал ямарч "
+"дэлбэрэлтийн эффэкт байхгүй тоглоно."
+
+msgid ""
+"Adjusts the global particle life time.Lower values will increase performance "
+"significantly."
+msgstr ""
+"Жижигхэн тоосуудыг тохируулах.Хамгийн бага дээр нь тавибал ямарч жижигхэн "
+"тоосгүй тоглоно."
+
+msgid "Adjusts volume of background music."
+msgstr "Тоглоомны хөгжимийг чангалах, сулруулах тохиргоо."
+
+msgid "Adjusts volume of sound effects."
+msgstr "Тоглоомны дуу авиаг чангалах, сулруулах тохиргоо."
+
+msgid "Adjusts volume of announcers voice."
+msgstr "Тоглоомны дуу хоолойг чангалах, сулруулах тохиргоо."
+
+msgid "Sets the team of the local players."
+msgstr "Тоглогчийг идвэхжүүлэх."
+
+msgid "Enables local players."
+msgstr "Тоглогчийг идвэхжүүлэх."
+
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "БОТ-оруулах тохиргоо. 0 болговол БОТ-гүй тоглоно."
+
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Гарагуудыг мөргөхөд хэр их амь явахыг тохируулах."
+
+msgid "Point limit to be reached by a player in order to win the game."
+msgstr "Тоглогчид хоорондоо мөргөлдөхөд хэр их амь явахыг тохируулах."
+
+msgid "Adjusts the strength of the bots."
+msgstr "БОТ-уудыг хүчтэй болгох."
+
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
+"disables Power-Ups entirely."
+msgstr "Хүчний тохиргоо."
+
+msgid "Weapons"
+msgstr "Зэвсэгүүд"
+
+msgid "Special Abilities"
+msgstr "Онцгой чадварууд"
+
+msgid "Screenshot saved!"
+msgstr "Дэлгэцний зураг сануулагдлаа!"
+
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged "
+"to find a way of efficiently destroying your enemy by limiting the given "
+"input. They did a lot of research and eventually created a new weapon with "
+"an incredible property: It kills instantly, but launched projectiles are "
+"really affine to any gravitation and they're quite difficult to handle. "
+"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
+"technology, so your enemies can use this evil weapon, too. Now it is your "
+"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
+"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг "
+"хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч, оюун ухаанаа шавхан "
+"харийхантай тэмцэх хэрэгтэй. Чамд тэдний өөдөөс ашиглах хүчирхэг зэвсэг "
+"байгаа болов ч тэдэнд ч мөн чиний өөдөөс ашиглах аюулт зэвсэг байга.  "
+"Тулааныг ялж өөрийн нэр хүндээ авчир!"
+
+msgid "Destroy es many enemies as possible!"
+msgstr "Аль болох олон дайсан устга!"
+
+msgid "Special Abilities..."
+msgstr "Онцгой чадвар хэрэглэх..."
+
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for "
+"your ship's impressively powerful extra abilities. For example you can heal "
+"you including nearby friends, blast away or freeze ships within a certain "
+"distance! The more stars you have, the larger range and strength of the "
+"ability grow."
+msgstr ""
+"Онцгой чадварууд нь ойр байгаа дайсны талын хүмүүсээ бүгдийг нь хөлдөөх "
+"(FREEZER), цацардаг сум (BLAST), амиа нөхөх (HEAL) гэсэн 3 чадвар бий. Мөн "
+"дайсантайгаа ойртож байгаад хэрэглэвэл амийг нь их гүйлгэх болно."
+
+msgid "Selection..."
+msgstr "FREEZER-ийг сонго..."
+
+msgid ""
+"To switch through the abilities, you just have to press "
+"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
+"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
+"\"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Та <{PLAYER1_KEY_SPECIAL}> товчийг дараад <{PLAYER1_KEY_LEFT}> эсвэл "
+"<{PLAYER1_KEY_RIGHT}> дарж онцгой чадвараа солиж болно! Харин одоо таны "
+"биелүүлэх даалгавар бол \"FREEZER\"-ийг сонгох юм."
+
+msgid "Hey, {PLAYER1_NAME}!"
+msgstr "Сайн байна уу, {PLAYER1_NAME}!"
+
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr ""
+"Доорх хүснэгтэнд өөрийн нэрээ бичнэ үү! Би таны хөтөч байна би танд бүхнийг "
+"зааж өгөх болно надтай цуг байгаарай."
+
+msgid "Next music track!"
+msgstr "Дараачийн дуу!"
+
+msgid "General Settings"
+msgstr "Үндсэн тохиргоо"
+
+msgid "Special Effects"
+msgstr "Онцгой эффэкт"
+
+msgid "Ship Settings"
+msgstr "Хөлөгийн тохиргоо"
+
+msgid "A Button"
+msgstr "A товч"
+
+msgid "B Button"
+msgstr "B товч"
+
+msgid "X Button"
+msgstr "X товч"
+
+msgid "Y Button"
+msgstr "Y товч"
+
+msgid "Start Button"
+msgstr "Эхлэх товч"
+
+msgid "Back Button"
+msgstr "Буцах товч"
+
+msgid "Right Bumper"
+msgstr "Баруун Bumper"
+
+msgid "Left Bumper"
+msgstr "Зүүн Bumper"
+
+msgid "Right Trigger"
+msgstr "Баруун Trigger"
+
+msgid "Left Trigger"
+msgstr "Зүүн Trigger"
+
+msgid "Direction Up"
+msgstr "Чиглэл Дээш"
+
+msgid "Direction Down"
+msgstr "Чиглэл Дүүш"
+
+msgid "Direction Left"
+msgstr "Чиглэл Зүүн"
+
+msgid "Direction Right"
+msgstr "Чиглэл Баруун"
+
+msgid "Stick1 Up"
+msgstr "Stick1 Дээш"
+
+msgid "Stick1 Down"
+msgstr "Stick1 Доош"
+
+msgid "Stick1 Left"
+msgstr "Stick1 Зүүн"
+
+msgid "Stick1 Right"
+msgstr "Stick1 Баруун"
+
+msgid "Stick2 Up"
+msgstr "Stick2 Дээш"
+
+msgid "Stick2 Down"
+msgstr "Stick2 Доош"
+
+msgid "Stick2 Left"
+msgstr "Stick2 Зүүн"
+
+msgid "Stick2 Right"
+msgstr "Stick2 Баруун"
+
+msgid "Button"
+msgstr "Товч"
+
+msgid "Hot Key for Statistics"
+msgstr "Товчны статс"
+
+msgid ""
+"When this key is pressed while playing a game, a window pops up displaying "
+"statistics for the current game."
+msgstr "Тоглолтын статус-ыг харах."
+
+msgid "CannonShots"
+msgstr "Ихбуун буудалт"
+
+msgid "Stop, {PLAYER1_NAME}!"
+msgstr "Зогс, {PLAYER1_NAME}!"
+
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!"
+"Please land again and take the Freezer!"
+msgstr ""
+"Та заавал \"FREEZER\"-ийг сонго! Сонгож байж л даалгавараа гүйцэтгэнэ. Та "
+"одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр "
+"хүлээнэ үү."
+
+msgid "The Freezer..."
+msgstr "Яагаад заавал FREEZER..."
+
+msgid ""
+"This is a powerful special ability which freezes nearby ships. You have to "
+"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
+"Watch him loosing life slowly... until he dies!"
+msgstr ""
+"FREEZER бусад чадваруудаа бодвол маш хүчтэй юм. Та дайсны хажууд очиж "
+"байгаад <{PLAYER1_KEY_SPECIAL}> товчоо дарах юм бол дайсан чинь шууд хөлдөөд "
+"амь нь бага багаар явсаар байгаад үхэх болно."
+
+msgid "Practice!"
+msgstr "Хөлдөөж устга!"
+
+msgid ""
+"Now try to freeze your enemy! For this tutorial we will give you some "
+"FragStars. But remember: In real life you have to smash opponents to get "
+"those stars!"
+msgstr "Дайсныгаа хөлдөөж усгах хэрэгтэй! Ойртож байгаад хэрэглэнэ шүү!"
+
+msgid "You Missed Him, {PLAYER1_NAME}!"
+msgstr "Та онсонгүй, {PLAYER1_NAME}!"
+
+msgid "Try again. we will refill your FragStars."
+msgstr "Дахин оролдоно уу."
+
+msgid "You Did It!"
+msgstr "Зөв гүйцэтгэлээ!"
+
+msgid "Now head back to your planet to select another special ability!"
+msgstr ""
+"Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр "
+"хүлээнэ үү."
+
+msgid "Beware, {PLAYER1_NAME}!"
+msgstr "Анхаар, {PLAYER1_NAME}!"
+
+msgid ""
+"There is no time for further testing!Our enemies have sent two of their real "
+"warriors for vengeance!"
+msgstr ""
+"Одоо та 2 эсрэг 2 тулалдах гэж байна.Дайсан чинь 2уулаа, танайх мөн 2уулаа "
+"тийм учраас сайн тулалдаарай."
+
+msgid "Players"
+msgstr "Тоглогчид"
+
+msgid "Artist:"
+msgstr "Уран бүтээлч:"
+
+msgid "Album:"
+msgstr "Цомог:"
+
+msgid "Previous music track!"
+msgstr "Өмнөх дуу!"
+
+msgid "Play Previous Track"
+msgstr "Өмнөх ая"
+
+msgid "Play Tracks in Random Order"
+msgstr "Хамаагүй тоглуулах"
+
+msgid "Pressing this key switches to the previous music track."
+msgstr "Өмнөх хөгжимийг явуулах."
+
+msgid "Enables music play back in a random sequence."
+msgstr "Автоматаар хөгжимийг тохируулах."
+
+msgid "Moving Stars"
+msgstr "Хөдлөж буй одод"
+
+msgid ""
+"Draws some moving stars on the background. Eye candy, but reduces game "
+"performance."
+msgstr "Жижигхэн однуудыг хөдөлгөх."
