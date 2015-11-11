@@ -224,6 +224,7 @@ namespace window {
         // Setup translation (according to left-upper corner)
         glOrtho(0.f, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0.f, -1, 1);
 
+
         // probably improves performance...
         glDisable(GL_LIGHTING);
         glDisable(GL_POLYGON_SMOOTH);
@@ -307,11 +308,15 @@ namespace window {
         window_.setActive(true);
         glEnable(GL_TEXTURE_2D);
 
-        sf::Shader::bind(shader);
+        if (shader) {
+            sf::Shader::bind(shader);
+        }
 
         window_.draw(toBeDrawn, states);
 
-        sf::Shader::bind(NULL);
+        if (shader) {
+            sf::Shader::bind(NULL);
+        }
 
         window_.popGLStates();
         glPopMatrix();
