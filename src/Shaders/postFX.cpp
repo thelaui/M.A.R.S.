@@ -78,7 +78,7 @@ namespace postFX {
             postFX_.loadFromFile(settings::C_dataPath + "shaders/bump.frag", sf::Shader::Fragment);
             bumpMap_.create(SPACE_X_RESOLUTION*0.5f, SPACE_Y_RESOLUTION*0.5f);
             glViewport(0,0,SPACE_X_RESOLUTION*0.5f,SPACE_Y_RESOLUTION*0.5f);
-            gluOrtho2D(0, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0);
+            glOrtho(0, SPACE_X_RESOLUTION, SPACE_Y_RESOLUTION, 0, -1, 1);
             glEnable(GL_BLEND);
             glMatrixMode(GL_MODELVIEW);
             postFX_.setParameter("BumpMap", bumpMap_.getTexture());
