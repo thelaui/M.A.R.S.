@@ -145,14 +145,14 @@ namespace music {
     void next() {
         if (settings::C_musicVolume > 0) {
             stop();
-            hud::displayMessage(*locales::getLocale(locales::NextTrackNotify));
+				hud::displayMessage(*_("Next music track!"));
         }
     }
 
     void previous() {
         if (!playList_.empty() && settings::C_musicVolume > 0) {
             stop();
-            hud::displayMessage(*locales::getLocale(locales::PreviousTrackNotify));
+				hud::displayMessage(*_("Previous music track!"));
 
             if (playList_.size() > 1)
                 playList_.pop_back();

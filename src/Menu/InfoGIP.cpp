@@ -33,13 +33,22 @@ bool InfoGIP::kClose_(false);
 UiWindow* InfoGIP::get() {
     if (instance_ == NULL) {
         instance_ = new InfoGIP(320, 300);
-        instance_->addWidget(new Button(locales::getLocale(locales::Close), NULL, &kClose_, Vector2f(220,270), 90, 20));
+		  instance_->addWidget(new Button(_("Close"), NULL, &kClose_, Vector2f(220,270), 90, 20));
         instance_->addWidget(new Label(new sf::String("Grave-Itation Pit"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
-        instance_->addWidget(new Label(locales::getLocale(locales::Info), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
+		  instance_->addWidget(new Label(_("Info"), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::ShortDescriptionGIP), Vector2f(10,40), 300, 30, Color3f(1.f, 0.7f, 0.9f)));
-        instance_->addWidget(new TextBox(locales::getLocale(locales::InfoGIP), Vector2f(10, 80), 300, 160));
-        instance_->addWidget(new Checkbox(locales::getLocale(locales::ShowAgainButton), NULL, &settings::C_showInfoDM, Vector2f(10,270), 170));
+		  instance_->addWidget(new TextBox(_("Destroy es many enemies as possible!"), Vector2f(10,40), 300, 30, Color3f(1.f, 0.7f, 0.9f)));
+		  instance_->addWidget(new TextBox(
+										  _("As the GREAT WAR reduces your resources drastically, scientists were engaged "
+											 "to find a way of efficiently destroying your enemy by limiting the given input. "
+											 "They did a lot of research and eventually created a new weapon with an incredible property: "
+											 "It kills instantly, but launched projectiles are really affine to any gravitation "
+											 "and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n\n"
+											 "Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. "
+											 "Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n\n"
+											 "Win this battle, and the victory of the GREAT WAR may be yours."),
+										  Vector2f(10, 80), 300, 160));
+		  instance_->addWidget(new Checkbox(_("Show this info again."), NULL, &settings::C_showInfoDM, Vector2f(10,270), 170));
     }
     return instance_;
 }

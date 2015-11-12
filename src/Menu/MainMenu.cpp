@@ -43,12 +43,12 @@ UiWindow* MainMenu::get() {
     if (instance_ == NULL) {
         instance_ = new MainMenu(180, 220, Vector2f(0.f, 50.f));
 		  instance_->addWidget(new Button(_("Start Local Game"), NULL, &kStartLocal_,  Vector2f(10,10),  160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::StartTutorial),    NULL, &kStartTut_,    Vector2f(10,40),  160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::StartNetworkGame), NULL, &kStartMulti_,  Vector2f(10,70),  160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::JoinNetworkGame),  NULL, &kJoinMulti_,   Vector2f(10,100), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::Options),          NULL, &kOptions_,     Vector2f(10,130), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::About),            NULL, &kAbout_,       Vector2f(10,160), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::Quit),             NULL, &kExit_,        Vector2f(10,190), 160, 20));
+		  instance_->addWidget(new Button(_("Start Tutorial"),    NULL, &kStartTut_,    Vector2f(10,40),  160, 20));
+		  instance_->addWidget(new Button(_("Start Network Game"), NULL, &kStartMulti_,  Vector2f(10,70),  160, 20));
+		  instance_->addWidget(new Button(_("Join Network Game"),  NULL, &kJoinMulti_,   Vector2f(10,100), 160, 20));
+		  instance_->addWidget(new Button(_("Options"),          NULL, &kOptions_,     Vector2f(10,130), 160, 20));
+		  instance_->addWidget(new Button(_("About"),            NULL, &kAbout_,       Vector2f(10,160), 160, 20));
+		  instance_->addWidget(new Button(_("Quit M.A.R.S."),             NULL, &kExit_,        Vector2f(10,190), 160, 20));
     }
     return instance_;
 }
