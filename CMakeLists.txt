@@ -35,6 +35,13 @@ include_directories(${OPENGL_INCLUDE_DIR})
 # find the sfml2 headers and library
 find_package(SFML REQUIRED audio graphics)
 
+# libintl is not used on all systems, so only include it when we actually
+# found it.
+if (INTL_FOUND)
+	find_package(INTL REQUIRED)
+	include_directories(${INTL_INCLUDE_DIR})
+endif()
+
 # Foundation library needed for apple
 if(APPLE)
 	find_library(FOUNDATION_LIBRARY Foundation)

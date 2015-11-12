@@ -65,7 +65,7 @@ UiWindow* NewGameMenu::get() {
         instance_ = new NewGameMenu(580, 335);
         instance_->addWidget(new Button(locales::getLocale(locales::Start), NULL, &kStart_, Vector2f(475,300), 90, 20));
 
-        instance_->addWidget(new Label(locales::getLocale(locales::StartLocalGame), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+		  instance_->addWidget(new Label(_("Start Local Game"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 
         TabList* tabList        = new TabList(Vector2f(10,55), 560, 220);
         tabSpaceBall_       = new Tab(new sf::String("SpaceBall"), 90,  &tSB_);
