@@ -204,10 +204,6 @@ namespace locales {
         return locales_;
     }
 
-    sf::String* getLocale(LocaleType type) {
-        return &localeStrings_[type];
-    }
-
     Locale const& getCurrentLocale() {
         return locales_[settings::C_languageID];
     }

@@ -37,11 +37,11 @@ bool PauseMenu::kHide_(false);
 UiWindow* PauseMenu::get() {
     if (instance_ == NULL) {
         instance_ = new PauseMenu(180, 160);
-        instance_->addWidget(new Button(locales::getLocale(locales::Continue),        NULL, &kResume_,      Vector2f(10,10), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::RestartGame),     NULL, &kNew_,         Vector2f(10,40), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::Options),         NULL, &kOptions_,     Vector2f(10,70), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::HideMenu),        NULL, &kHide_,     Vector2f(10,100), 160, 20));
-        instance_->addWidget(new Button(locales::getLocale(locales::QuitCurrentGame), NULL, &kToMainMenu_,  Vector2f(10,130), 160, 20));
+		  instance_->addWidget(new Button(_("Continue"),        NULL, &kResume_,      Vector2f(10,10), 160, 20));
+		  instance_->addWidget(new Button(_("Restart Game"),     NULL, &kNew_,         Vector2f(10,40), 160, 20));
+		  instance_->addWidget(new Button(_("Options"),         NULL, &kOptions_,     Vector2f(10,70), 160, 20));
+		  instance_->addWidget(new Button(_("Hide Menu"),        NULL, &kHide_,     Vector2f(10,100), 160, 20));
+		  instance_->addWidget(new Button(_("Return to Main Menu"), NULL, &kToMainMenu_,  Vector2f(10,130), 160, 20));
     }
     return instance_;
 }

@@ -167,15 +167,24 @@ namespace generateName {
                 // numbers
                 if (static_cast<int>(keyCode) >= 26 && static_cast<int>(keyCode) <= 35) result = static_cast<char>(keyCode+22);
 
-                else if (keyCode == sf::Keyboard::Add) result =         *locales::getLocale(locales::Add);
-                else if (keyCode == sf::Keyboard::BackSlash) result =   *locales::getLocale(locales::BackSlash);
-                else if (keyCode == sf::Keyboard::Comma) result =       *locales::getLocale(locales::Comma);
-                else if (keyCode == sf::Keyboard::Dash) result =        *locales::getLocale(locales::Dash);
-                else if (keyCode == sf::Keyboard::Delete) result =      *locales::getLocale(locales::Delete);
-                else if (keyCode == sf::Keyboard::Divide) result =      *locales::getLocale(locales::Divide);
-                else if (keyCode == sf::Keyboard::Down) result =        *locales::getLocale(locales::Down);
-                else if (keyCode == sf::Keyboard::End) result =         *locales::getLocale(locales::End);
-                else if (keyCode == sf::Keyboard::Equal) result =       *locales::getLocale(locales::Equal);
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Add) result =         *_("Add");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::BackSlash) result =   *_("Back Slash");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Comma) result =       *_("Comma");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Dash) result =        *_("Dash");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Delete) result =      *_("Delete");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Divide) result =      *_("Divide");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Down) result =        *_("Down");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::End) result =         *_("End");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Equal) result =       *_("Equal");
                 else if (keyCode == sf::Keyboard::F1) result =          "F1";
                 else if (keyCode == sf::Keyboard::F2) result =          "F2";
                 else if (keyCode == sf::Keyboard::F3) result =          "F3";
@@ -188,16 +197,26 @@ namespace generateName {
                 else if (keyCode == sf::Keyboard::F10) result =         "F10";
                 else if (keyCode == sf::Keyboard::F11) result =         "F11";
                 else if (keyCode == sf::Keyboard::F12) result =         "F12";
-                else if (keyCode == sf::Keyboard::Home) result =        *locales::getLocale(locales::Home);
-                else if (keyCode == sf::Keyboard::Insert) result =      *locales::getLocale(locales::Insert);
-                else if (keyCode == sf::Keyboard::LAlt) result =        *locales::getLocale(locales::LeftAlt);
-                else if (keyCode == sf::Keyboard::LBracket) result =    *locales::getLocale(locales::LeftBracket);
-                else if (keyCode == sf::Keyboard::LControl) result =    *locales::getLocale(locales::LeftControl);
-                else if (keyCode == sf::Keyboard::Left) result =        *locales::getLocale(locales::Left);
-                else if (keyCode == sf::Keyboard::LShift) result =      *locales::getLocale(locales::LeftShift);
-                else if (keyCode == sf::Keyboard::LSystem) result =     *locales::getLocale(locales::LeftSuper);
-                else if (keyCode == sf::Keyboard::Menu) result =        *locales::getLocale(locales::Menu);
-                else if (keyCode == sf::Keyboard::Multiply) result =    *locales::getLocale(locales::Multiply);
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Home) result =        *_("Home");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Insert) result =      *_("Insert");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::LAlt) result =        *_("Left Alt");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::LBracket) result =    *_("Left Bracket");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::LControl) result =    *_("Left Control");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Left) result =        *_("Left");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::LShift) result =      *_("Left Shift");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::LSystem) result =     *_("Left Super");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Menu) result =        *_("Menu");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Multiply) result =    *_("Multiply");
                 else if (keyCode == sf::Keyboard::Numpad0) result =     "Num 0";
                 else if (keyCode == sf::Keyboard::Numpad1) result =     "Num 1";
                 else if (keyCode == sf::Keyboard::Numpad2) result =     "Num 2";
@@ -208,26 +227,44 @@ namespace generateName {
                 else if (keyCode == sf::Keyboard::Numpad7) result =     "Num 7";
                 else if (keyCode == sf::Keyboard::Numpad8) result =     "Num 8";
                 else if (keyCode == sf::Keyboard::Numpad9) result =     "Num 9";
-                else if (keyCode == sf::Keyboard::PageDown) result =    *locales::getLocale(locales::PageDown);
-                else if (keyCode == sf::Keyboard::PageUp) result =      *locales::getLocale(locales::PageUp);
-                else if (keyCode == sf::Keyboard::Pause) result =       *locales::getLocale(locales::Pause);
-                else if (keyCode == sf::Keyboard::Period) result =      *locales::getLocale(locales::Period);
-                else if (keyCode == sf::Keyboard::Quote) result =       *locales::getLocale(locales::Quote);
-                else if (keyCode == sf::Keyboard::RAlt) result =        *locales::getLocale(locales::RightAlt);
-                else if (keyCode == sf::Keyboard::RBracket) result =    *locales::getLocale(locales::RightBracket);
-                else if (keyCode == sf::Keyboard::RControl) result =    *locales::getLocale(locales::RightControl);
-                else if (keyCode == sf::Keyboard::Return) result =      *locales::getLocale(locales::Return);
-                else if (keyCode == sf::Keyboard::Right) result =       *locales::getLocale(locales::Right);
-                else if (keyCode == sf::Keyboard::RShift) result =      *locales::getLocale(locales::RightShift);
-                else if (keyCode == sf::Keyboard::RSystem) result =     *locales::getLocale(locales::RightSuper);
-                else if (keyCode == sf::Keyboard::SemiColon) result =   *locales::getLocale(locales::SemiColon);
-                else if (keyCode == sf::Keyboard::Slash) result =       *locales::getLocale(locales::Slash);
-                else if (keyCode == sf::Keyboard::Space) result =       *locales::getLocale(locales::Space);
-                else if (keyCode == sf::Keyboard::Subtract) result =    *locales::getLocale(locales::Subtract);
-                else if (keyCode == sf::Keyboard::Tilde) result =       *locales::getLocale(locales::Tilde);
-                else if (keyCode == sf::Keyboard::Tab) result =         *locales::getLocale(locales::Tab);
-                else if (keyCode == sf::Keyboard::Up) result =          *locales::getLocale(locales::Up);
-
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::PageDown) result =    *_("Page Down");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::PageUp) result =      *_("Page Up");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Pause) result =       *_("Pause");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Period) result =      *_("Period");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Quote) result =       *_("Quote");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::RAlt) result =        *_("Right Alt");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::RBracket) result =    *_("Right Bracket");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::RControl) result =    *_("Right Control");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Return) result =      *_("Return");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Right) result =       *_("Right");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::RShift) result =      *_("Right Shift");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::RSystem) result =     *_("Right Super");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::SemiColon) result =   *_("Semi Colon");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Slash) result =       *_("Slash");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Space) result =       *_("Space");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Subtract) result =    *_("Subtract");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Tilde) result =       *_("Tilde");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Tab) result =         *_("Tab");
+					 /** TRANSLATORS: A key on your keyboard */
+					 else if (keyCode == sf::Keyboard::Up) result =          *_("Up");
                 break;
             }
 
@@ -235,19 +272,28 @@ namespace generateName {
                 unsigned int keyCode(key.code_.joyButton_);
                 std::stringstream tmp;
                 tmp << key.joyID_;
-                result = *locales::getLocale(locales::JoyStick) + tmp.str() + " - ";
-                if (keyCode == 0) result +=             *locales::getLocale(locales::JoyButtonA);
-                else if (keyCode == 1) result +=        *locales::getLocale(locales::JoyButtonB);
-                else if (keyCode == 2) result +=        *locales::getLocale(locales::JoyButtonX);
-                else if (keyCode == 3) result +=        *locales::getLocale(locales::JoyButtonY);
-                else if (keyCode == 4) result +=        *locales::getLocale(locales::JoyButtonLB);
-                else if (keyCode == 5) result +=        *locales::getLocale(locales::JoyButtonRB);
-                else if (keyCode == 6) result +=        *locales::getLocale(locales::JoyButtonStart);
-                else if (keyCode == 10) result +=       *locales::getLocale(locales::JoyButtonBack);
+					 result = *_("Joystick") + tmp.str() + " - ";
+					 /** TRANSLATORS: A joystick button */
+					 if (keyCode == 0) result +=             *_("A Button");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 1) result +=        *_("B Button");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 2) result +=        *_("X Button");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 3) result +=        *_("Y Button");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 4) result +=        *_("Left Bumper");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 5) result +=        *_("Right Bumper");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 6) result +=        *_("Start Button");
+					 /** TRANSLATORS: A joystick button */
+					 else if (keyCode == 10) result +=       *_("Back Button");
                 else {
                     std::stringstream tmptmp;
                     tmptmp <<keyCode;
-                    result += *locales::getLocale(locales::JoyButton) +" " + tmptmp.str();
+						  /** TRANSLATORS: A joystick button */
+						  result += *_("Button") +" " + tmptmp.str();
                 }
                 break;
             }
@@ -256,21 +302,36 @@ namespace generateName {
                 Key::AxisType keyCode(key.code_.joyAxis_);
                 std::stringstream tmp;
                 tmp << key.joyID_;
-                result = *locales::getLocale(locales::JoyStick) + tmp.str() + " - ";
-                if (keyCode == Key::aLT) result +=             *locales::getLocale(locales::JoyAxisLT);
-                else if (keyCode == Key::aRT) result +=        *locales::getLocale(locales::JoyAxisRT);
-                else if (keyCode == Key::aARup) result +=      *locales::getLocale(locales::JoyA2up);
-                else if (keyCode == Key::aARdown) result +=    *locales::getLocale(locales::JoyA2down);
-                else if (keyCode == Key::aARleft) result +=    *locales::getLocale(locales::JoyA2left);
-                else if (keyCode == Key::aARright) result +=   *locales::getLocale(locales::JoyA2right);
-                else if (keyCode == Key::aALup) result +=      *locales::getLocale(locales::JoyA1up);
-                else if (keyCode == Key::aALdown) result +=    *locales::getLocale(locales::JoyA1down);
-                else if (keyCode == Key::aALleft) result +=    *locales::getLocale(locales::JoyA1left);
-                else if (keyCode == Key::aALright) result +=   *locales::getLocale(locales::JoyA1right);
-                else if (keyCode == Key::aPOVup) result +=     *locales::getLocale(locales::JoyPOVup);
-                else if (keyCode == Key::aPOVdown) result +=   *locales::getLocale(locales::JoyPOVdown);
-                else if (keyCode == Key::aPOVleft) result +=   *locales::getLocale(locales::JoyPOVleft);
-                else if (keyCode == Key::aPOVright) result +=  *locales::getLocale(locales::JoyPOVright);
+					 result = *_("Joystick") + tmp.str() + " - ";
+					 /** TRANSLATORS: A joystick axis type */
+					 if (keyCode == Key::aLT) result +=             *_("Left Trigger");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aRT) result +=        *_("Right Trigger");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aARup) result +=      *_("Stick2 Up");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aARdown) result +=    *_("Stick2 Down");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aARleft) result +=    *_("Stick2 Left");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aARright) result +=   *_("Stick2 Right");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aALup) result +=      *_("Stick1 Up");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aALdown) result +=    *_("Stick1 Down");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aALleft) result +=    *_("Stick1 Left");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aALright) result +=   *_("Stick1 Right");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aPOVup) result +=     *_("Direction Up");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aPOVdown) result +=   *_("Direction Down");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aPOVleft) result +=   *_("Direction Left");
+					 /** TRANSLATORS: A joystick axis type */
+					 else if (keyCode == Key::aPOVright) result +=  *_("Direction Right");
+					 /** TRANSLATORS: A joystick axis type */
                 break;
             }
         }

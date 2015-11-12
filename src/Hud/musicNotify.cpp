@@ -190,8 +190,8 @@ namespace musicNotify {
     }
 
     void show(std::string const& fileName) {
-        by_ = locales::getLocale(locales::Artist);
-        from_ = locales::getLocale(locales::Album);
+		  by_ = _("Artist:");
+		  from_ = _("Album:");
 
         TagLib::FileRef ref(fileName.c_str());
 

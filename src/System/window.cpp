@@ -369,7 +369,7 @@ namespace window {
             mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
             if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
+					 hud::displayMessage(*_("Screenshot saved!"));
             } else {
                 std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
             }
