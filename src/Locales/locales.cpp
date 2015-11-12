@@ -17,6 +17,10 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Locales/locales.hpp"
 
+#ifdef __FreeBSD__
+#  include <clocale>
+#endif
+
 # include "System/settings.hpp"
 # include "System/generateName.hpp"
 # include "Media/file.hpp"
@@ -25,7 +29,31 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 # include <iostream>
 
+#ifdef __APPLE__
+# if LIBINTL_VERSION >= 0x001201
+// for older libintl versions, setlocale is just fine
+#  define SETLOCALE libintl_setlocale
+# endif // LIBINTL_VERSION
+#else // __APPLE__
+# if defined _WIN32
+#  define SETLOCALE setlocale
+# else
+#  define SETLOCALE std::setlocale
+# endif
+#endif
+
+extern int _nl_msg_cat_cntr;
+
 namespace locales {
+	/**
+	 * Translate a string with gettext
+	 */
+	char const * translate(char const * const str) {
+		return gettext(str);
+	}
+	char const * translate(const std::string & str) {
+		return gettext(str.c_str());
+	}
 
     namespace {
         std::vector<Locale>     locales_;
@@ -186,6 +214,13 @@ namespace locales {
 
     void setCurrentLocale() {
         load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_);
+
+		  char const * const dom = "marsshooter";
+		  char const * const ldir = "locale";
+
+		  bindtextdomain(dom, ldir);
+		  bind_textdomain_codeset(dom, "UTF-8");
+		  textdomain(dom);
     }
 }
 

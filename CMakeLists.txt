@@ -13,7 +13,7 @@ set(mars_DESCRIPTION "M.A.R.S. - a ridiculous Shooter")
 set(mars_HOMEPAGE "http://www.marsshooter.org")
 set(mars_EXENAME "mars")
 set(mars_PACKAGENAME "mars")
- 
+
 # We require at least version 2.8.0
 cmake_minimum_required(VERSION 2.8.0)
 
@@ -31,6 +31,13 @@ include_directories(${OPENGL_INCLUDE_DIR})
 # find the sfml2 headers and library
 find_package(SFML REQUIRED audio graphics window system)
 include_directories(${SFML_INCLUDE_DIR})
+
+# libintl is not used on all systems, so only include it when we actually
+# found it.
+if (INTL_FOUND)
+	find_package(INTL REQUIRED)
+	include_directories(${INTL_INCLUDE_DIR})
+endif()
 
 # Foundation library needed for apple
 if(APPLE)
@@ -57,15 +64,15 @@ endif(APPLE)
 
 # include the 'include' directory
  include_directories(${MARS_SOURCE_DIR}/include)
- 
+
 #####################################################################
 # Create executable
 #####################################################################
 
 # compile source
 set(CMAKE_CXX_FLAGS "-s -O2")
- add_subdirectory(src) 
- 
+ add_subdirectory(src)
+
 #####################################################################
 # Create package
 #####################################################################

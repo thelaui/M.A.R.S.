@@ -21,10 +21,19 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/Locale.hpp"
 
 # include <vector>
+# include <libintl.h>
+# include <SFML/System/String.hpp>
+
+///A macro to make i18n more readable and aid in tagging strings for translation
+#define _(str) new sf::String(locales::translate(str))
 
 /// A namespace which handles translations for MARS.
 
 namespace locales {
+
+	char const * translate(char        const *) __attribute__ ((format_arg (1)));
+	char const * translate(const std::string &);
+
     /// The different texts included in MARS.
     enum LocaleType {StartLocalGame, StartNetworkGame, JoinNetworkGame, Options, About, Quit, Continue, RestartGame,
                      HideMenu, QuitCurrentGame, Start, Cancel, Info, Close, License, Ok, ShowAgainButton, LeftTeam,
