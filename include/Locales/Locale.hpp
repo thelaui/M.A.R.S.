@@ -23,13 +23,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 struct Locale {
     Locale():
         name_("NULL"),
-        fileName_("NULL"),
+		  iso_("NULL"),
         font_("Ubuntu-R.ttf"),
         author_(""),
         LTR_(true) {}
 
     sf::String name_;
-    sf::String fileName_;
+	 const char* iso_;
     sf::String font_;
     sf::String author_;
     bool       LTR_;
