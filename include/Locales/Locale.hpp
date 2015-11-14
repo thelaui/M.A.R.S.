@@ -29,7 +29,7 @@ struct Locale {
         LTR_(true) {}
 
     sf::String name_;
-	 const char* iso_;
+	 sf::String iso_;
     sf::String font_;
     sf::String author_;
     bool       LTR_;

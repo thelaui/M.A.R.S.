@@ -25,8 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/System/String.hpp>
 
 ///A macro to make i18n more readable and aid in tagging strings for translation
-//#define _(str) new sf::String(locales::translate(str), std::locale(locales::getCurrentLocale().iso_))
-#define _(str) new sf::String(locales::translate(str))
+#define _(str) locales::string2sfstring(std::string(locales::translate(str)))
 
 /// A namespace which handles translations for MARS.
 
@@ -36,9 +35,11 @@ namespace locales {
 	char const * translate(const std::string &);
 
 	/// Wrapper for sprintf. Formats 'format' with the variables var1...
-	sf::String* format_string(const sf::String* format, const char* var1);
-	sf::String* format_string(const sf::String* format, const char* var1, const char* var2);
-	sf::String* format_string(const sf::String* format, const char* var1, const char* var2, const char* var3);
+	sf::String* format_string(const char* format, const char* var1);
+	sf::String* format_string(const char* format, const char* var1, const char* var2);
+	sf::String* format_string(const char* format, const char* var1, const char* var2, const char* var3);
+
+	sf::String* string2sfstring(const std::string& string);
 
     /// Loa ds the current locale, accordind to settings::C_languageID.
     bool                       load();
@@ -47,10 +48,7 @@ namespace locales {
     std::vector<Locale> const& getLocales();
 
     Locale const&              getCurrentLocale();
-	 bool setCurrentLocale();
-
-	 // Turns an sf::String into a const* char according to the current locale.
-	 const char* get_string(const sf::String& string);
+	 void setCurrentLocale();
 }
 
 # endif // LOCALES_HPP_INCLUDED

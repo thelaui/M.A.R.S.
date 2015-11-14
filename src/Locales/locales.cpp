@@ -56,33 +56,33 @@ namespace locales {
 		return gettext(str.c_str());
 	}
 
-	sf::String* format_string(const sf::String* format, const char* var1) {
-		const std::string f = format->toAnsiString();
-		char buffer [f.size() + strlen(var1)];
-		sprintf(buffer, f.c_str(), var1);
-		return new sf::String(buffer);
+	sf::String* format_string(const char* format, const char* var1) {
+		char buffer [2 * (strlen(format) + strlen(var1))];
+		sprintf(buffer, format, var1);
+		return string2sfstring(std::string(buffer));
 	}
 
-	sf::String* format_string(const sf::String* format, const char* var1, const char* var2) {
-		const std::string f = format->toAnsiString();
-		char buffer [f.size() + strlen(var1) + strlen(var2)];
-		sprintf(buffer, f.c_str(), var1, var2);
-		return new sf::String(buffer);
+
+	sf::String* format_string(const char* format, const char* var1, const char* var2) {
+		char buffer [2 * (strlen(format) + strlen(var1) + strlen(var2))];
+		sprintf(buffer, format, var1, var2);
+		return string2sfstring(std::string(buffer));
 	}
 
-	sf::String* format_string(const sf::String* format, const char* var1, const char* var2, const char* var3) {
-		const std::string f = format->toAnsiString();
-		char buffer [f.size() + strlen(var1) + strlen(var2) + strlen(var3)];
-		sprintf(buffer, f.c_str(), var1, var2, var3);
-		return new sf::String(buffer);
+	sf::String* format_string(const char* format, const char* var1, const char* var2, const char* var3) {
+		char buffer [2 * (strlen(format) + strlen(var1) + strlen(var2) + strlen(var3))];
+		sprintf(buffer, format, var1, var2, var3);
+		return string2sfstring(std::string(buffer));
 	}
 
-    namespace {
-	 // NOCOM
-#define COUNT 1
-        std::vector<Locale>     locales_;
-        std::vector<sf::String> localeStrings_(COUNT, "Error");
-    }
+	sf::String* string2sfstring(const std::string& string) {
+		sf::String result = sf::String::fromUtf8(string.begin(), string.end());
+		return new sf::String(result);
+	}
+
+	 namespace {
+		  std::vector<Locale>     locales_;
+	 } // namespace
 
     bool load() {
         std::vector<sf::String> lines;
@@ -111,8 +111,8 @@ namespace locales {
                     arg.erase(0, flag.size()+1);
 
 						  if (flag == "iso:")
-								newLocale.iso_ = arg.toAnsiString().c_str();
-                    else if (flag == "font:")
+								newLocale.iso_ = arg;
+						  else if (flag == "font:")
                         newLocale.font_ = arg;
                     else if (flag == "author:")
                         newLocale.author_ = "By " + arg;
@@ -162,22 +162,171 @@ namespace locales {
         return locales_[settings::C_languageID];
     }
 
-	 bool setCurrentLocale() {
-		  // NOCOM bool success = load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].iso_);
-
+	 /**
+	  * Set the locale to the given string.
+	  * Code inspired by wesnoth.org
+	  */
+	 void setCurrentLocale() {
 		  char const * const dom = "marsshooter";
-		  char const * const ldir = (settings::C_dataPath + std::string("locale")).c_str();
-			std::cout << "localedir " << ldir;
-		  setlocale (LC_ALL, "");
-		  bindtextdomain(dom, ldir);
-		  bind_textdomain_codeset(dom, "UTF-8");
+
+		  char const * const localedir = (settings::C_dataPath + std::string("locale")).c_str();
+		  std::cout << "localedir " << localedir;
+
+		  char const * const loc =  getCurrentLocale().iso_.toAnsiString().c_str();
+		  std::cout << "localedir: " << localedir << " locale: " << loc << "\n";
+		  setlocale(LC_ALL, "");
+		  //setlocale(LC_NUMERIC, "C");
+		  //SETLOCALE(LC_MESSAGES, "de_DE.utf-8");
+/*
+		  std::pair<std::string, std::string> map_data[] = {
+				std::make_pair("de", "de,de_DE,de_AT,de_CH,de_LI,de_LU,de_BE"),
+			  std::make_pair("gd", "gd,gd_GB,gd_CA")
+		  };
+
+		  std::map<std::string, std::string> kAlternatives(map_data,
+				map_data + sizeof map_data / sizeof map_data[0]);
+
+
+		  //const std::map<std::string, std::string> kAlternatives;
+		  //kAlternatives.insert("ar", "ar,ar_AR,ar_AE,ar_BH,ar_DZ,ar_EG,ar_IN,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM,ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE");
+		  //kAlternatives.insert("ast", "ast,ast_ES");
+		  //kAlternatives.insert("ca", "ca,ca_ES,ca_ES@valencia,ca_FR,ca_IT");
+		  //kAlternatives.insert("cs", "cs,cs_CZ");
+		  //kAlternatives.insert("da", "da,da_DK");
+		  //kAlternatives.insert(std::pair<std::string, std::string>(std::string("de"), std::string("de,de_DE,de_AT,de_CH,de_LI,de_LU,de_BE")));
+		  //kAlternatives.insert("el", "el,el_GR,el_CY");
+		  //kAlternatives.insert("en", "en,en_US,en_GB,en_AU,en_CA,en_AG,en_BW,en_DK,en_HK,en_IE,en_IN,en_NG,en_NZ,en_PH,en_SG,en_ZA,en_ZW");
+		  //kAlternatives.insert("en_AU", "en_AU,en,en_US,en_GB");
+		  //kAlternatives.insert("en_CA", "en_CA,en,en_US,en_GB");
+		  //kAlternatives.insert("en_GB", "en_GB,en,en_US");
+		  //kAlternatives.insert("eo", "eo,eo_XX");
+		  //kAlternatives.insert("es", "es,es_ES,es_MX,es_US");
+
+		  std::string lang;
+		  std::string env_locale;
+		  std::string locale;
+
+		  env_locale = std::string();
+		  // Start init_locale - can this go?
+	  #ifdef _WIN32
+		  locale = "English";
+		  SETLOCALE(LC_ALL, "English");
+	  #else
+		  // first, save environment variable
+		  lang = getenv("LANG");
+		  if (!lang.empty()) {
+			  env_locale = lang;
+		  }
+		  if (env_locale.empty()) {
+			  lang = getenv("LANGUAGE");
+			  if (!lang.empty()) {
+				  env_locale = lang;
+			  }
+		  }
+		  locale = "C";
+		  SETLOCALE(LC_ALL, "C");
+		  SETLOCALE(LC_MESSAGES, "");
+	  #endif
+		  // End init_locale - can this go?
+		  lang = getCurrentLocale().iso_.toAnsiString();
+
+		  std::cout << "selected language: " << (lang.empty()?"(system language)":lang.c_str()) << "\n";
+
+	  #ifndef _WIN32
+	  #ifndef __AMIGAOS4__
+	  #ifndef __APPLE__
+		  unsetenv ("LANGUAGE"); // avoid problems with this variable
+	  #endif
+	  #endif
+	  #endif
+
+		  std::string alt_str;
+		  if (lang.empty()) {
+			  // reload system language, if selected
+			  lang = env_locale;
+			  alt_str = env_locale;
+		  } else {
+			  alt_str = lang;
+			  // otherwise, try alternatives.
+			  if (kAlternatives.count(lang.c_str())) {
+				  alt_str = kAlternatives.at(lang.c_str());
+			  }
+		  }
+		  alt_str += ",";
+
+		  // Somehow setlocale doesn't behave same on
+		  // some systems.
+	  #ifdef __BEOS__
+		  setenv ("LANG",   lang.c_str(), 1);
+		  setenv ("LC_ALL", lang.c_str(), 1);
+		  locale = lang;
+	  #endif
+	  #ifdef __APPLE__
+		  setenv ("LANGUAGE", lang.c_str(), 1);
+		  setenv ("LANG",     lang.c_str(), 1);
+		  setenv ("LC_ALL",   lang.c_str(), 1);
+		  locale = lang;
+	  #endif
+	  #ifdef _WIN32
+		  _putenv_s("LANG", lang.c_str());
+		  locale = lang;
+	  #endif
+
+	  #ifdef __linux__
+		  char * res = NULL;
+		  char const * encoding[] = {"", ".utf-8", "@euro", ".UTF-8"};
+		  std::size_t found = alt_str.find(',', 0);
+		  bool leave_while = false;
+		  // try every possible combination of alternative and encoding
+		  while (found != std::string::npos) {
+			  std::string base_locale = alt_str.substr(0, int(found));
+			  alt_str = alt_str.erase(0, int(found) + 1);
+
+			  for (int j = 0; j < 4; ++j) {
+				  std::string try_locale = base_locale + encoding[j];
+				  res = SETLOCALE(LC_MESSAGES, try_locale.c_str());
+				  if (res) {
+					  locale = try_locale;
+					  std::cout << "using locale " << try_locale.c_str() << "\n";
+					  leave_while = true;
+					  break;
+				  } else {
+					  //std::cout << "locale is not working: \n" << try_locale.c_str() << "\n";
+				  }
+			  }
+			  if (leave_while) break;
+
+			  found = alt_str.find(',', 0);
+		  }
+		  if (leave_while) {
+			  setenv("LANG",     locale.c_str(), 1);
+			  setenv("LANGUAGE", locale.c_str(), 1);
+		  } else {
+			  std::cout <<
+				 "No corresponding locale found - trying to set it via LANGUAGE="
+					<< lang.c_str() << ", LANG=" << lang.c_str() << "\n";
+			  setenv("LANGUAGE", lang.c_str(), 1);
+			  setenv("LANG",     lang.c_str(), 1);
+			  SETLOCALE(LC_MESSAGES, "");    // set locale according to the env. variables
+														// --> see  $ man 3 setlocale
+			  // assume that it worked
+			  // maybe, do another check with the return value (?)
+			  locale = lang;
+		  }
+
+		  // Finally make changes known.
+		  ++_nl_msg_cat_cntr;
+	  #endif
+
+
+		  SETLOCALE(LC_ALL, locale.c_str()); //  call to libintl
+		  SETLOCALE(LC_MESSAGES, locale.c_str());
+		  */
+
 		  textdomain(dom);
-		  return true;
+		  bindtextdomain(dom, localedir);
+		  bind_textdomain_codeset(dom, "UTF-8");
+
+		  //std::cout << "locale: " << locale << " lang: " << lang << " env_locale: " << env_locale << "\n";
     }
-
-	 const char* get_string(const sf::String& string) {
-		 return string.toAnsiString(std::locale(locales::getCurrentLocale().iso_)).c_str();
-	 }
-}
-
-
+} // namespace locales
