@@ -171,6 +171,7 @@ namespace window {
 
     bool open() {
 		  if (settings::load() && locales::load()) {
+			  locales::setCurrentLocale();
             postFX::load();
 
             create();
