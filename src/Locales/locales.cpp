@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 #ifdef __FreeBSD__
 #  include <clocale>
 #endif
+#  include <cstring>
 
 # include "System/settings.hpp"
 # include "System/generateName.hpp"
@@ -55,7 +56,30 @@ namespace locales {
 		return gettext(str.c_str());
 	}
 
+	sf::String* format_string(const sf::String* format, const char* var1) {
+		const std::string f = format->toAnsiString();
+		char buffer [f.size() + strlen(var1)];
+		sprintf(buffer, f.c_str(), var1);
+		return new sf::String(buffer);
+	}
+
+	sf::String* format_string(const sf::String* format, const char* var1, const char* var2) {
+		const std::string f = format->toAnsiString();
+		char buffer [f.size() + strlen(var1) + strlen(var2)];
+		sprintf(buffer, f.c_str(), var1, var2);
+		return new sf::String(buffer);
+	}
+
+	sf::String* format_string(const sf::String* format, const char* var1, const char* var2, const char* var3) {
+		const std::string f = format->toAnsiString();
+		char buffer [f.size() + strlen(var1) + strlen(var2) + strlen(var3)];
+		sprintf(buffer, f.c_str(), var1, var2, var3);
+		return new sf::String(buffer);
+	}
+
     namespace {
+	 // NOCOM
+#define COUNT 1
         std::vector<Locale>     locales_;
         std::vector<sf::String> localeStrings_(COUNT, "Error");
 
@@ -83,44 +107,8 @@ namespace locales {
                                     }
                                 }
                                 tmp.erase(i, j-i+1);
-
-                                if (macro == "PLAYER1_KEY_UP")
-                                    tmp.insert(i, generateName::key(settings::C_playerIup));
-                                else if (macro == "PLAYER2_KEY_UP")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIup));
-                                else if (macro == "PLAYER1_KEY_RIGHT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIright));
-                                else if (macro == "PLAYER2_KEY_RIGHT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIright));
-                                else if (macro == "PLAYER1_KEY_LEFT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIleft));
-                                else if (macro == "PLAYER2_KEY_LEFT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIleft));
-                                else if (macro == "PLAYER1_KEY_FIRE")
-                                    tmp.insert(i, generateName::key(settings::C_playerIfire));
-                                else if (macro == "PLAYER2_KEY_FIRE")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIfire));
-                                else if (macro == "PLAYER1_KEY_SPECIAL")
-                                    tmp.insert(i, generateName::key(settings::C_playerISpecialKey));
-                                else if (macro == "PLAYER2_KEY_SPECIAL")
-                                    tmp.insert(i, generateName::key(settings::C_playerIISpecialKey));
-                                else if (macro == "PLAYER1_NAME")
-                                    tmp.insert(i, settings::C_playerIName);
-                                else if (macro == "PLAYER2_NAME")
-                                    tmp.insert(i, settings::C_playerIIName);
-                                else if (macro == "DATA_PATH")
-                                    tmp.insert(i, settings::C_dataPath);
-                                else if (macro == "CONFIG_PATH")
-                                    tmp.insert(i, settings::C_configPath);
-                                else if (macro == "STATISTICS_KEY")
-                                    tmp.insert(i, generateName::key(settings::C_statisticsKey));
-                                else
-                                    std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.toAnsiString() << "!" << std::endl;
                             }
                         }
-
-                        //if (id == ttScreenShotKey)
-                        //    tmp += " " + settings::C_configPath + "screenshots/";
                         localeStrings_[id] = tmp;
                     }
                 }

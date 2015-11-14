@@ -34,6 +34,11 @@ namespace locales {
 	char const * translate(char        const *) __attribute__ ((format_arg (1)));
 	char const * translate(const std::string &);
 
+	/// Wrapper for sprintf. Formats 'format' with the variables var1...
+	sf::String* format_string(const sf::String* format, const char* var1);
+	sf::String* format_string(const sf::String* format, const char* var1, const char* var2);
+	sf::String* format_string(const sf::String* format, const char* var1, const char* var2, const char* var3);
+
     /// Loa ds the current locale, accordind to settings::C_languageID.
     bool                       load();
 

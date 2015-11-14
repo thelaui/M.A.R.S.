@@ -99,7 +99,10 @@ UiWindow* OptionsMenu::get() {
 											  &format_, fileFormats, Vector2f(20,80), 540, 240));
 		  tabInterface->addWidget(new KeyEdit(
 											  _("Hot Key for Screenshots"),
-											  _("When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"),
+											  locales::format_string(
+												  /** TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.*/
+												  _("When this key is pressed, a screenshot is saved to %s"),
+												  (settings::C_configPath + std::string("screenshots/")).c_str()),
 											  &settings::C_screenShotKey, Vector2f(20,100), 540, 240));
 		  tabInterface->addWidget(new KeyEdit(
 											  _("Hot Key for Statistics"),
