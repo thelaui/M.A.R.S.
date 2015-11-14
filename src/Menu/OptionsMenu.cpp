@@ -307,7 +307,7 @@ void OptionsMenu::checkWidgets() {
                 Star::clear();
         }
 
-		  locales::setCurrentLocale();
+		  locales::load();
         menus::reload();
 
         settings::save();

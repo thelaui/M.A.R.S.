@@ -50,7 +50,7 @@ void EnterName::checkWidgets() {
     if (kOk_) {
         kOk_ = false;
         menus::hideWindow();
-		  locales::setCurrentLocale();
+		  locales::load();
         menus::reload();
         settings::save();
     }
