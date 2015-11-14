@@ -25,6 +25,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <SFML/System/String.hpp>
 
 ///A macro to make i18n more readable and aid in tagging strings for translation
+//#define _(str) new sf::String(locales::translate(str), std::locale(locales::getCurrentLocale().iso_))
 #define _(str) new sf::String(locales::translate(str))
 
 /// A namespace which handles translations for MARS.
@@ -46,7 +47,10 @@ namespace locales {
     std::vector<Locale> const& getLocales();
 
     Locale const&              getCurrentLocale();
-    void                       setCurrentLocale();
+	 bool setCurrentLocale();
+
+	 // Turns an sf::String into a const* char according to the current locale.
+	 const char* get_string(const sf::String& string);
 }
 
 # endif // LOCALES_HPP_INCLUDED

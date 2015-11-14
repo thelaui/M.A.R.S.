@@ -82,43 +82,6 @@ namespace locales {
 #define COUNT 1
         std::vector<Locale>     locales_;
         std::vector<sf::String> localeStrings_(COUNT, "Error");
-
-        bool load(std::string const& fileName) {
-            std::vector<sf::String> lines;
-            if (file::load(fileName, lines)) {
-                for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                    std::stringstream sstr(it->toAnsiString());
-                    int id;
-                    sstr >> id;
-                    if (id < COUNT && it->getSize() > 4) {
-                        sf::String tmp(*it);
-                        tmp.erase(0, 4);
-
-                        for (int i=0; i<tmp.getSize(); ++i) {
-                            if (tmp[i] == '{') {
-                                int j(i+1);
-                                sf::String macro;
-                                while (tmp[j] != '}') {
-                                    macro.insert(macro.getSize(), tmp[j]);
-                                    ++j;
-                                    if (j == tmp.getSize()) {
-                                        std::cout << "Error parsing " << fileName << ": At ID " << id << " the macro " << macro.toAnsiString() << " misses a trailing '}' !" << std::endl;
-                                        break;
-                                    }
-                                }
-                                tmp.erase(i, j-i+1);
-                            }
-                        }
-                        localeStrings_[id] = tmp;
-                    }
-                }
-                return true;
-            }
-            else {
-                std::cout << "Failed to open locale " << fileName << "! Interface will be messed up with errors...\n";
-                return false;
-            }
-        }
     }
 
     bool load() {
@@ -147,8 +110,8 @@ namespace locales {
                     sf::String arg(*it);
                     arg.erase(0, flag.size()+1);
 
-                    if (flag == "file:")
-                        newLocale.fileName_ = arg;
+						  if (flag == "iso:")
+								newLocale.iso_ = arg.toAnsiString().c_str();
                     else if (flag == "font:")
                         newLocale.font_ = arg;
                     else if (flag == "author:")
@@ -165,20 +128,21 @@ namespace locales {
             if (!first)
                 locales_.push_back(newLocale);
 
-            bool loadSuccess(false);
-
-            load (settings::C_dataPath + "locales/English.txt");
+				/* NOCOM do something with gettext system here
             if (settings::C_languageID < locales_.size()) {
-                if (!load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
-                    std::cout << "Failed to load " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.toAnsiString() << "! Falling back to English..." << std::endl;
+
+					 if (!load (locales_[settings::C_languageID].iso_)) {
+						  std::cout << "Failed to load locale/" << locales_[settings::C_languageID].iso_.toAnsiString() << "! Falling back to English..." << std::endl;
                     settings::C_languageID = 0;
                 }
+
 
             }
             else {
                 std::cout << "Specified language in mars.conf doesn't match any in locales.conf! Falling back to English..." << std::endl;
                 settings::C_languageID = 0;
             }
+				*/
 
             return true;
         }
@@ -196,16 +160,22 @@ namespace locales {
         return locales_[settings::C_languageID];
     }
 
-    void setCurrentLocale() {
-        load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_);
+	 bool setCurrentLocale() {
+		  // NOCOM bool success = load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].iso_);
 
 		  char const * const dom = "marsshooter";
-		  char const * const ldir = "locale";
-
+		  char const * const ldir = (settings::C_dataPath + std::string("locale")).c_str();
+			std::cout << "localedir " << ldir;
+		  setlocale (LC_ALL, "");
 		  bindtextdomain(dom, ldir);
 		  bind_textdomain_codeset(dom, "UTF-8");
 		  textdomain(dom);
+		  return true;
     }
+
+	 const char* get_string(const sf::String& string) {
+		 return string.toAnsiString(std::locale(locales::getCurrentLocale().iso_)).c_str();
+	 }
 }
 
 

@@ -25,13 +25,12 @@ done
 # Now update the translation binaries
 pushd ..
 
-test -d build/locale || mkdir -p build/locale
-test -e locale || ln -s build/locale
+test -d data/locale || mkdir -p data/locale
 
 for file in po/*.po; do
 	echo "Updating translation binaries for $file";
 	file=${file##*/}
-	test -d "locale/"${file%.po} || mkdir -p "locale/"${file%.po}
-	test -d "locale/"${file%.po}"/LC_MESSAGES" || mkdir -p "locale/"${file%.po}"/LC_MESSAGES"
-	msgfmt -c -o "locale/"${file%.po}"/LC_MESSAGES/marsshooter.mo" "po/"${file%.mo}
+	test -d "data/locale/"${file%.po} || mkdir -p "data/locale/"${file%.po}
+	test -d "data/locale/"${file%.po}"/LC_MESSAGES" || mkdir -p "data/locale/"${file%.po}"/LC_MESSAGES"
+	msgfmt -c -o "data/locale/"${file%.po}"/LC_MESSAGES/marsshooter.mo" "po/"${file%.mo}
 done

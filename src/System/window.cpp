@@ -170,7 +170,8 @@ namespace window {
     // "public" methodes /////////////////////////////////////////////////
 
     bool open() {
-        if (settings::load() && locales::load()) {
+		  if (settings::load() && locales::load()) {
+				locales::setCurrentLocale();
             postFX::load();
 
             create();
