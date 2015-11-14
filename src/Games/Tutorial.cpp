@@ -19,6 +19,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Teams/TutTeam.hpp"
 # include "Teams/DMTeam.hpp"
+# include "System/generateName.hpp"
 # include "System/settings.hpp"
 # include "Media/music.hpp"
 # include "Items/items.hpp"
@@ -108,10 +109,13 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Welcome, Space Rookie!"),
-												 _("We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to "
-													"join us in the GREAT WAR!\n"
-													"We figured out you needed some practice with your new ship.\n"
-													"Let the training begin..."),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("We are glad to recruit a rising hero like you, %s, to "
+														"join us in the GREAT WAR!\n"
+														"We figured out you needed some practice with your new ship.\n"
+														"Let the training begin..."),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 1, false, true));
                 ++state_;
             } break;
@@ -119,11 +123,16 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Basic Movement..."),
-												 _("Controlling your ship is the most important task to master.\n"
-													"All movement is governed by the laws of gravity. To decelerate you "
-													"have to turn and accelerate in the opposite direction. Control your "
-													"ship, using the keys <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and "
-													"<{PLAYER1_KEY_RIGHT}>!"),
+												 locales::format_string(
+													 /** TRANSLATORS: all %s are hotkeys on the keyboard.*/
+													 _("Controlling your ship is the most important task to master.\n"
+														"All movement is governed by the laws of gravity. To decelerate you "
+														"have to turn and accelerate in the opposite direction. Control your "
+														"ship, using the keys %s, %s and "
+														"%s!"),
+													 generateName::key(settings::C_playerIup).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIleft).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIright).toAnsiString().c_str()),
 												 2, false, true));
                 ++state_;
             } break;
@@ -157,7 +166,10 @@ void Tutorial::update() {
         case 7:
             if (zones::updateTutZones()){
 					 menus::showWindow(TutorialWindow::get(
-												 _("Well Done, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Well Done, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 _("Now head back to your home planet and try to land your ship by slowly"
 													"floating back while approaching your planet."),
 												 4, false, false));
@@ -210,10 +222,13 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Shooting..."),
-												 _("To defeat your enemies, you have to know how to shoot them up!\n"
-													"For that purpose press <{PLAYER1_KEY_FIRE}>. \n"
-													"Have some fun shooting around and then land your ship to continue the "
-													"tutorial."),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is a hotkey on the keyboard.*/
+													 _("To defeat your enemies, you have to know how to shoot them up!\n"
+														"For that purpose press %s. \n"
+														"Have some fun shooting around and then land your ship to continue the "
+														"tutorial."),
+													 generateName::key(settings::C_playerIfire).toAnsiString().c_str()),
 												 8, false, false));
                 zones::addTutorialZone(Vector2f(SPACE_X_RESOLUTION+20, 450.f), 190.f);
                 ++state_;
@@ -223,7 +238,10 @@ void Tutorial::update() {
                 zones::clear();
                 zones::createRaster(4, 3);
 					 menus::showWindow(TutorialWindow::get(
-												 _("Good Landing, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Good Landing, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 _("You turn out to be a great pilot.\n"
 													"Now how about some more weapons?"),
 												 9, false, true));
@@ -233,12 +251,17 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("The Weapons..."),
-												 _("We know you've been waiting for this. When docked you can switch "
-													"through some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to "
-													"open your arsenal.\n"
-													"Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
-													"weapon! \n"
-													"Take-off, when you're ready!"),
+												 locales::format_string(
+													 /** TRANSLATORS: all %s are hotkeys on the keyboard.*/
+													 _("We know you've been waiting for this. When docked you can switch "
+														"through some incredibly evil weapons. Press %s to "
+														"open your arsenal.\n"
+														"Then use %s and %s to choose a "
+														"weapon! \n"
+														"Take-off, when you're ready!"),
+													 generateName::key(settings::C_playerIfire).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIleft).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIright).toAnsiString().c_str()),
 												 10, false, false));
                 ++state_;
             } break;
@@ -303,10 +326,15 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Selection..."),
-												 _("To switch through the abilities, you just have to press <{PLAYER1_KEY_SPECIAL}>. "
-													"To choose one, you may cycle through them using <{PLAYER1_KEY_LEFT}> and "
-													"<{PLAYER1_KEY_RIGHT}>!\nFor this lesson, select the \"Freezer\"! "
-													"Take off, when you got it!"),
+												 locales::format_string(
+													 /** TRANSLATORS: all %s are hotkeys on the keyboard.*/
+													 _("To switch through the abilities, you just have to press %s. "
+														"To choose one, you may cycle through them using %s and "
+														"%s!\nFor this lesson, select the \"Freezer\"! "
+														"Take off, when you got it!"),
+													 generateName::key(settings::C_playerISpecialKey).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIleft).toAnsiString().c_str(),
+													 generateName::key(settings::C_playerIright).toAnsiString().c_str()),
 												 14, false, false));
                 ++state_;
             } break;
@@ -321,15 +349,21 @@ void Tutorial::update() {
                 if (players::getPlayerI()->ship()->currentSpecial_->getType() == specials::sFreeze) {
 						  menus::showWindow(TutorialWindow::get(
 													  _("The Freezer..."),
-													  _("This is a powerful special ability which freezes nearby ships. \n"
-														 "You have to fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> "
-														 "to freeze him. Watch him loosing life slowly... until he dies!"),
+													  locales::format_string(
+														  /** TRANSLATORS: %s is a hotkey on the keyboard.*/
+														  _("This is a powerful special ability which freezes nearby ships. \n"
+															 "You have to fly close to your enemy and press %s "
+															 "to freeze him. Watch him loosing life slowly... until he dies!"),
+														  generateName::key(settings::C_playerISpecialKey).toAnsiString().c_str()),
 													  15, false, true));
                     state_ += 2;
                 }
                 else {
 						  menus::showWindow(TutorialWindow::get(
-													  _("Stop, {PLAYER1_NAME}!"),
+													  locales::format_string(
+														  /** TRANSLATORS: %s is the player's name.*/
+														  _("Stop, %s!"),
+														  settings::C_playerIName.toAnsiString().c_str()),
 													  _("We told you to select the Freezer, but you have chosen another ability!\n"
 														 "Please land again and take the Freezer!"),
 													  0, true, false));
@@ -370,7 +404,10 @@ void Tutorial::update() {
         case 26:
             if (timer::totalTime() > timer_ + 1.f) {
 					 menus::showWindow(TutorialWindow::get(
-												 _("You Missed Him, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("You Missed Him, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 _("Try again. we will refill your FragStars."),
 												 0, true, false));
                 players::getPlayerI()->ship()->fragStars_ = 3;
@@ -399,7 +436,10 @@ void Tutorial::update() {
                 zones::clear();
                 zones::createRaster(4, 3);
 					 menus::showWindow(TutorialWindow::get(
-												 _("Beware, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Beware, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 _("There is no time for further testing!\n"
 													"Our enemies have sent two of their real warriors for vengeance!"),
 												 18, true, true));
@@ -415,9 +455,12 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Beat Them!"),
-												 _("Prove your skills! Score at least five points by killing them! "
-													"Your current score is displayed next to your name!\n"
-													"We will send in an experienced warrior assisting you, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Prove your skills! Score at least five points by killing them! "
+														"Your current score is displayed next to your name!\n"
+														"We will send in an experienced warrior assisting you, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 19, false, false));
                 players::addPlayer(players::getPlayerI()->team(), controllers::cBot);
                 std::vector<Player*> friends(players::getPlayerI()->team()->members().begin()+1, players::getPlayerI()->team()->members().end());
@@ -455,16 +498,22 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Who's Best?"),
-												 _("You can display a list of frags, points and so on via <{STATISTICS_KEY}>.\n"
-													"Furthermore the numbers next to your name illustrate your frag counter "
-													"and your distance to the best one."),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is a hotkey on the keyboard.*/
+													 _("You can display a list of frags, points and so on via %s.\n"
+														"Furthermore the numbers next to your name illustrate your frag counter "
+														"and your distance to the best one."),
+													 generateName::key(settings::C_statisticsKey).toAnsiString().c_str()),
 												 21, false, true));
                 ++state_;
             } break;
         case 35:
-            if (!menus::visible()) {
+				if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
-												 _("Congratulations, {PLAYER1_NAME}!"),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Congratulations, %s!"),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 _("You finished this tutorial. You are now ready to fight in the GREAT WAR. "
 													"If you want to continue practising, just wait for the enemies to re-spawn. "
 													"You can end your training with <Esc>.\n\n"
@@ -478,8 +527,11 @@ void Tutorial::update() {
             if (!menus::visible() && timer::totalTime() > deadTimer_ + 1.f) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("You Failed!"),
-												 _("Awesome {PLAYER1_NAME}! You destroyed your brand new ship. "
-													"All right, we will get you a new one. Just wait some seconds..."),
+												 locales::format_string(
+													 /** TRANSLATORS: %s is the player's name.*/
+													 _("Awesome, %s! You destroyed your brand new ship. "
+														"All right, we will get you a new one. Just wait some seconds..."),
+													 settings::C_playerIName.toAnsiString().c_str()),
 												 0, true, false));
                 state_ = 99;
             } break;
