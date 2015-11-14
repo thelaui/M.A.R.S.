@@ -307,33 +307,33 @@ namespace settings {
             C_dataPath = "./data/";
 
             # ifdef __linux__
-                if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
+					 if (std::ifstream((C_dataPath + "locales/locales.conf").c_str()))
                     success = true;
-                else if (std::ifstream("/usr/share/marsshooter/locales/English.txt")) {
+					 else if (std::ifstream("/usr/share/marsshooter/locales/locales.conf")) {
                     C_dataPath = "/usr/share/marsshooter/";
                     success = true;
-                } else if (std::ifstream("/usr/share/games/marsshooter/locales/English.txt")) {
+					 } else if (std::ifstream("/usr/share/games/marsshooter/locales/locales.conf")) {
                     C_dataPath = "/usr/share/games/marsshooter/";
                     success = true;
-                } else if (std::ifstream("/usr/local/share/games/marsshooter/locales/English.txt")) {
+					 } else if (std::ifstream("/usr/local/share/games/marsshooter/locales/locales.conf")) {
                     C_dataPath = "/usr/local/share/games/marsshooter/";
                     success = true;
-                } else if (std::ifstream("/usr/local/share/marsshooter/locales/English.txt")) {
+					 } else if (std::ifstream("/usr/local/share/marsshooter/locales/locales.conf")) {
                     C_dataPath = "/usr/local/share/marsshooter/";
                     success = true;
-                } else if (std::ifstream("/usr/local/games/marsshooter/locales/English.txt")) {
+					 } else if (std::ifstream("/usr/local/games/marsshooter/locales/locales.conf")) {
                     C_dataPath = "/usr/local/games/marsshooter/";
                     success = true;
                 }
             # endif
 
             # ifdef __WIN32__
-                if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
+					 if (std::ifstream((C_dataPath + "locales/locales.conf").c_str()))
                     success = true;
             # endif
 
             # ifdef __APPLE__
-                if (std::ifstream("../Resources/data/locales/English.txt")) {
+					 if (std::ifstream("../Resources/data/locales/locales.conf")) {
                     C_dataPath = "../Resources/data/";
                     success = true;
                 }

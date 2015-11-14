@@ -126,7 +126,8 @@ namespace locales {
             }
 
             if (!first)
-                locales_.push_back(newLocale);
+					 locales_.push_back(newLocale);
+				setCurrentLocale();
 
 				/* NOCOM do something with gettext system here
             if (settings::C_languageID < locales_.size()) {
@@ -143,6 +144,7 @@ namespace locales {
                 settings::C_languageID = 0;
             }
 				*/
+
 
             return true;
         }
