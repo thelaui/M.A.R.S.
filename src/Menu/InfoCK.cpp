@@ -41,10 +41,10 @@ UiWindow* InfoCK::get() {
         instance_->addWidget(new TextBox(_("As if the GREAT WAR was not enough, your planetary system is threatened by "
                                            "a new source of incredible evilness: A giant ship of unknown invaders is "
                                            "levitating over your galaxy, aiming on the home planets with a monolithic "
-                                           "weapon of mass destruction. \n"
+                                           "weapon of mass destruction.\n"
                                            "As a sign of cynicism, the attackers dropped a remote control to adjust "
-                                           "this provenance of death and fear. \n"
-                                           "Reach it first to turn your enemy's home planet into a place of desolation! \n"
+                                           "this provenance of death and fear.\n"
+                                           "Reach it first to turn your enemy's home planet into a place of desolation!\n"
                                            "Be the CANNONKEEPer."), Vector2f(10, 80), 300, 160));
         instance_->addWidget(new Checkbox(_("Show this info again."), NULL, &settings::C_showInfoCK, Vector2f(10,270), 170));
     }

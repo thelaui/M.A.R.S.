@@ -1,1052 +1,1458 @@
 # M.A.R.S. de.po
 # Sandra, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: Widelands svnVERSION\n"
-"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
-"POT-Creation-Date: 2015-10-04 08:51+0100\n"
-"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"PO-Revision-Date: 2015-11-14 19:45+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Virtaal 0.7.1\n"
 "O-Revision-Date: 2015-10-04 07:52+0000\n"
 
-msgid "Start Local Game"
-msgstr "Lokales Spiel starten"
-
-msgid "Start Network Game"
-msgstr "Netzwerkspiel starten"
-
-msgid "Join Network Game"
-msgstr "Netzwerkspiel beitreten"
-
-msgid "Options"
-msgstr "Optionen"
-
-msgid "About"
-msgstr "Über"
-
-msgid "Quit M.A.R.S."
-msgstr "M.A.R.S. beenden"
-
-msgid "Continue"
-msgstr "Spiel fortsetzen"
-
-msgid "Restart Game"
-msgstr "Spiel neu starten"
-
-msgid "Hide Menu"
-msgstr "Menü verstecken"
-
-msgid "Return to Main Menu"
-msgstr "Zurück zum Hauptmenü"
-
-msgid "Cancel"
-msgstr "Abbrechen"
-
-msgid "Close"
-msgstr "Schließen"
-
-msgid "License"
-msgstr "Lizenz"
-
-msgid "Show this Info again."
-msgstr "Zeige dieses Fenster wieder an"
-
-msgid "Left Team"
-msgstr "Linkes Team"
-
-msgid "Right Team"
-msgstr "Rechtes Team"
-
-msgid "Bots Left"
-msgstr "Bots Links"
-
-msgid "Bots Right"
-msgstr "Bots Rechts"
-
-msgid "Frag Limit"
-msgstr "Fraglimit"
-
-msgid ""
-"In year 3547, civilizations all over the galaxy have settled their own "
-"planets, living in peace and harmony with its environment.  But outside the "
-"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
-"your way to never ending honor and prosperity, you have to protect your "
-"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
-"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
-"sphere of death and defeat your enemies by letting it crush into their "
-"ridiculous globe."
-msgstr ""
-"3547 Anno Domini: Unzählige Zivilisationen haben das Universum bevölkert und "
-"leben in Frieden und Harmonie zusammen.Aber außerhalb dieser beschaulichen "
-"Idylle tobt der GROßE KRIEG.Begib dich auf eine schicksalshafte Reise und "
-"beschütze deinen Planeten vor der zerstörerischen Wut deiner Nachbarn. Ruhm "
-"und Ehre werden deinen Weg säumen. Bereite dich auf die Schlacht vor, für "
-"die du geboren wurdest: SPACEBALL. Aus den Tiefen der Galaxis wurde die "
-"Kugel der Verderbnis geschaffen. Als Waffe gegen deine Feinde entfaltet sie "
-"ihre Macht und vernichtet den gegnerischen Planeten. Aber in den falschen "
-"Händen wird sie dich zerschmettern..."
-
-msgid "Kick or shoot the ball to your enemy's planet!"
-msgstr "Stoße oder Schieße den Ball zum gegnerischen Planeten!"
-
-msgid ""
-"As a result of the GREAT WAR you have lost everything: your home, your "
-"family and your self-esteem. Your last chance to get out of the miserable "
-"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
-"arena. Resist the other fighters and earn points by destroying the "
-"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
-msgstr ""
-"Der GROßE KRIEG hat dir alles genommen, wofür du gekämpft hast: dein "
-"Zuhause, deine Familie, deine Ehre! Befreie dich nun aus der Misere deines "
-"alten Lebens und beginne ein neues als Gladiator in der DEATHMATCH-Arena! "
-"Widersetze dich den Angriffen deiner Gegner und zerstöre ihre Schiffe! Sei "
-"bereit, denn Ruhm und Ehre erwarten dich!"
-
-msgid "Destroy as many enemies as possible!"
-msgstr "Vernichte möglichst viele Feinde!"
-
-msgid ""
-"The negotiations have failed! Both of you and your neighbours had to record "
-"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
-"gaining the upper hand, you are ordered to decimate your enemy's resources "
-"and to protect your own one's. The only way to do so is an epic "
-"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
-"lesson, they will never forget."
-msgstr ""
-"Die Verhandlungen sind gescheitert! Trotz der enormen Verluste auf beiden "
-"Seiten ist es nicht möglich, dem GROßEN KRIEG zu entkommen. Die letzten "
-"Krieger schließen sich zusammen zu einem gewaltigen TEAM-DEATHMATCH! "
-"Beschütze deine Mitstreiter und attakiere deine Feinde!Erteile ihnen eine "
-"Lektion, die sie nie vergessen werden!"
-
-msgid ""
-"As if the GREAT WAR was not enough, your planetary system is threatened by a "
-"new source of incredible evilness: A giant ship of unknown invaders is "
-"levitating over your galaxy, aiming on the home planets with a monolithic "
-"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
-"remote control to adjust this provenance of death and fear. Reach it first "
-"to turn your enemy's home planet into a place of desolation! Be the "
-"CANNONKEEPer."
-msgstr ""
-"Als ob der GROßE KRIEG nicht schon genug wäre, hat eine neue Quelle "
-"abgrundtiefer Boshaftigkeit sein Augenmerk auf dein Planetensystem gerichtet:"
-"Ein riesiges Schiff unbekannter Invasoren schwebt über der Galaxie und nimmt "
-"mit einer gigantischen Massenvernichtungswaffe die Heimatplaneten ins Visier!"
-"Als Zeichen ihres Zynismus' überlassen die Angreifer die Kontrolle über die "
-"todbringende Kanone dir und deinen Gegnern.Erreiche sie zuerst, um den "
-"Planeten deiner Feinde in Schutt und Asche zu legen!Sei der CANNONKEEPer."
-
-msgid "Pick up the remote and keep it as long as possible!"
-msgstr "Nimm die Fernbedienung und behalt sie möglichst lange!"
-
-msgid "Show Debug Information"
-msgstr "Debuginformationen"
-
-msgid "Bots Orientation"
-msgstr "Botverhalten"
-
-msgid "Zones"
-msgstr "Zonen"
-
-msgid "AI-Paths"
-msgstr "KI-Pfade"
-
-msgid "Show Game Information"
-msgstr "Zeige Spielinformationen"
-
-msgid "Frames per Second"
-msgstr "Bilder pro Sekunde"
-
-msgid "Particle Count"
-msgstr "Partikelzahl"
-
-msgid "Particle Lifetime"
-msgstr "Partikellebensdauer"
-
-msgid "Game Settings"
-msgstr "Spieleinstellungen"
-
-msgid "Full screen"
-msgstr "Vollbild"
-
-msgid "Music"
-msgstr "Musik"
-
-msgid "Announcer"
-msgstr "Sprache"
-
-msgid "Accelerate"
-msgstr "Beschleunigen"
-
-msgid "Turn Left"
-msgstr "Links"
-
-msgid "Turn Right"
-msgstr "Rechts"
-
-msgid "Weapon"
-msgstr "Schießen"
-
-msgid "Ship"
-msgstr "Schiff"
-
-msgid "Player Color"
-msgstr "Spielerfarbe"
-
-msgid "Team Color"
-msgstr "Teamfarbe"
-
-msgid "File Format for Screenshots"
-msgstr "Dateiformat für Screenshots"
-
-msgid "Display Tool Tips"
-msgstr "Zeige Tool-Tipps"
-
-msgid "Weapon Options"
-msgstr "Waffenoptionen"
-
-msgid ""
-"This is a first attempt to create a game in OpenGL with SFML. It is a game "
-"for two players, flying with ships in a two-dimensional space setting, "
-"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
-"2010-2011 Felix Lauer & Simon Schneegans"
-msgstr ""
-"M.A.R.S. ist der erste Versuch, ein Spiel in OpenGL mit SFML zu erstellen. "
-"Steuer alleine oder zu zweit dein Weltraumschiff durch eine zweidimensionale "
-"Galaxis, beherrscht von den Kräften der Schwerkraft.Homepage: http://www."
-"marsshooter.org© 2010-2011 Felix Lauer & Simon Schneegans"
-
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 3 of the License, or (at your option) "
-"any later version. This program is distributed in the hope that it will be "
-"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
-"Public License for more details. Available online under:http://www.gnu.org/"
-"licenses/gpl-3.0.html"
-msgstr ""
-"Dieses Programm ist kostenfreie Software; es kann entsprechend den "
-"Bedingungen der GNU General Public License (Version 3 oder spätere, "
-"veröffentlich von der Free Software Foundation) verbreitet und/oder "
-"verändert werden.Dieses Programm soll dem Nutzen dienen, dafür übernehmen "
-"die Entwickler aber KEINE GARANTIE, insbesondere nicht die der KOMMERZIELLEN "
-"VERBREITUNG oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Für weitere "
-"Informationen und die englische Originalversion sollte die GNU General "
-"Public License unterhttp://www.gnu.org/licenses/gpl-3.0.html eingesehen "
-"werden."
-
-msgid "Do you really want to quit?"
-msgstr "Willst du das Spiel wirklich verlassen?"
-
-msgid "Do you really want to end the current game?"
-msgstr "Willst du das laufende Spiel wirklich beenden?"
-
-msgid ""
-"M.A.R.S. gaming over the world wide web or a local area network is a planned "
-"feature, but not implemented yet. Stay tuned!"
-msgstr ""
-"Das Spielen von M.A.R.S. via Internet oder LAN ist in Planung, bis jetzt "
-"aber noch nicht eingebaut. Dranbleiben!"
-
-msgid ""
-"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
-"take a screenshot, this button enables you to generate epic wallpapers, by "
-"hiding all windows. Simply bring them back afterwards by pressing ESC."
-msgstr ""
-"Du hast M.A.R.S. mitten in einer Wahnsinnsschlacht angehalten? Wenn du einen "
-"Screenshot machen willst, erlaubt dir dieser Knopf epische Hintergrundbilder "
-"zu erstellen, indem er alle Fenster verbirgt.Danach kannst du sie einfach "
-"durch Drücken auf ESC wieder einblenden."
-
-msgid "Add"
-msgstr "Plus"
-
-msgid "Back Slash"
-msgstr "Backslash"
-
-msgid "Comma"
-msgstr "Komma"
-
-msgid "Dash"
-msgstr "Bindestrich"
-
-msgid "Delete"
-msgstr "Entfernen"
-
-msgid "Divide"
-msgstr "Geteilt"
-
-msgid "Down"
-msgstr "Runter"
-
-msgid "End"
-msgstr "Ende"
-
-msgid "Equal"
-msgstr "Gleich"
-
-msgid "Home"
-msgstr "Pos1"
-
-msgid "Insert"
-msgstr "Einfügen"
-
-msgid "Left Alt"
-msgstr "Alt Links"
-
-msgid "Left Bracket"
-msgstr "Klammer Auf"
-
-msgid "Left Control"
-msgstr "Steuerung Links"
-
-msgid "Left"
-msgstr "Links"
-
-msgid "Left Shift"
-msgstr "Umschalt Links"
-
-msgid "Left Super"
-msgstr "Super Links"
-
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Multiply"
-msgstr "Mal"
-
-msgid "Page Down"
-msgstr "Bild ab"
-
-msgid "Page Up"
-msgstr "Bild auf"
-
-msgid "Period"
-msgstr "Punkt"
-
-msgid "Quote"
-msgstr "Anführungszeichen"
-
-msgid "Right Alt"
-msgstr "Alt Rechts"
-
-msgid "Right Bracket"
-msgstr "Klammer Zu"
-
-msgid "Right Control"
-msgstr "Steuerung Rechts"
-
-msgid "Return"
-msgstr "Enter"
-
-msgid "Right"
-msgstr "Rechts"
-
-msgid "Right Shift"
-msgstr "Umschalt Rechts"
-
-msgid "Right Super"
-msgstr "Super Rechts"
-
-msgid "Semi Colon"
-msgstr "Semikolon"
-
-msgid "Space"
-msgstr "Leertaste"
-
-msgid "Subtract"
-msgstr "Minus"
-
-msgid "Up"
-msgstr "Hoch"
-
-msgid "Graphics"
-msgstr "Grafik"
-
-msgid "Window Settings"
-msgstr "Fenstereinstellungen"
-
-msgid "Start Tutorial"
-msgstr "Tutorial starten"
-
-msgid "Next"
-msgstr "Weiter"
-
+#: src/Games/Tutorial.cpp:111
 msgid "Welcome, Space Rookie!"
 msgstr "Willkommen, Space Rookie!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, c-format
 msgid ""
-"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
-"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
-"the training begin..."
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
 msgstr ""
-"Wir freuen uns, einen vielversprechenden Helden wie dich im GROßEN KRIEG auf "
-"unserer Seite zu haben!Wir glauben, dass du noch etwas Training mit deinem "
-"neuen Schiff brauchst.Lass uns anfangen..."
+"Wir freuen uns, einen vielversprechenden Helden wie dich, %s im GROßEN KRIEG auf unserer Seite zu haben!\n"
+"Wir glauben, dass du noch etwas Training mit deinem neuen Schiff brauchst.\n"
+"Lass uns anfangen..."
 
+#: src/Games/Tutorial.cpp:125
 msgid "Basic Movement..."
 msgstr "Grundlegende Steuerung..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
 msgid ""
-"Controlling your ship is the most important task to master.All movement is "
-"governed by the laws of gravity. To decelerate you have to turn and "
-"accelerate in the opposite direction. Control your ship, using the keys "
-"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
-"Das Wichtigste ist das Kontrollieren deines Schiffs.Jede Bewegung wird von "
-"der Gravitation beeinflusst. Zum Bremsen musst du dich in die "
-"entgegengesetzte Richtung drehen und Gas geben. Benutze zum Steuern die "
-"Tasten <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> und <{PLAYER1_KEY_RIGHT}>!"
+"Das Wichtigste ist das Kontrollieren deines Schiffs.\n"
+"Jede Bewegung wird von der Gravitation beeinflusst. Zum Bremsen musst du dich in die entgegengesetzte Richtung drehen und Gas geben. Benutze zum Steuern die Tasten %s, %s und %s!"
 
+#: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
 msgstr "Aufwärmen!"
 
-msgid "Reach the pink zone!Try not to crash your brand new ship."
-msgstr ""
-"Erreiche die rosa Zone!Flieg' dein nagelneues Schiff nicht gleich zu Schrott."
-
-msgid "Well Done, {PLAYER1_NAME}!"
-msgstr "Gut Gemacht, {PLAYER1_NAME}!"
-
+#: src/Games/Tutorial.cpp:143
 msgid ""
-"Now head back to your home planet and try to land your ship by slowly "
-"floating back while approaching your planet."
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
 msgstr ""
-"Jetzt bewege dich zurück zu deinem Heimatplaneten. Schwebe dazu langsam "
-"rückwärts an deinen Planeten heran."
+"Erreiche die rosa Zone!\n"
+"Flieg' dein nagelneues Schiff nicht gleich zu Schrott."
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "Gut Gemacht, %s!"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "Jetzt bewege dich zurück zu deinem Heimatplaneten. Schwebe dazu langsam rückwärts an deinen Planeten heran."
+
+#: src/Games/Tutorial.cpp:183
 msgid "Good Work!"
 msgstr "Gute Arbeit!"
 
+#: src/Games/Tutorial.cpp:184
 msgid ""
-"Proper landing is not a piece of cake, is it?You should learn it by heart."
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
 msgstr ""
-"Gutes Landen ist gar nicht so leicht, oder?Du solltest es bis zum Umfallen "
-"üben."
+"Gutes Landen ist gar nicht so leicht, oder?\n"
+"Du solltest es bis zum Umfallen üben."
 
+#: src/Games/Tutorial.cpp:192
 msgid "Something More Difficult..."
 msgstr "Jetzt Wird's Etwas Schwerer..."
 
+#: src/Games/Tutorial.cpp:193
 msgid ""
-"Try to follow the path marked up by the pink zones!We will contact you "
-"again, after you have mastered this.Now go for it!"
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
 msgstr ""
-"Versuche, dem durch die rosa Zonen markierten Pfad zu folgen!Wir melden uns, "
-"wenn du das geschafft hast. Worauf wartest du?"
+"Versuche, dem durch die rosa Zonen markierten Pfad zu folgen!\n"
+"\n"
+"Wir melden uns, wenn du das geschafft hast. Worauf wartest du?"
 
+#: src/Games/Tutorial.cpp:215
 msgid "Awesome!"
 msgstr "Ausgezeichnet!"
 
+#: src/Games/Tutorial.cpp:216
 msgid ""
-"You are the best rookie we have ever seen.Now prepare yourself for some "
-"explosive stuff."
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
 msgstr ""
-"Du bist der beste Rookie, den wir hier jemals hatten.Bereite dich nun auf "
-"etwas Explosives vor."
+"Du bist der beste Rookie, den wir hier jemals hatten.\n"
+"Bereite dich nun auf etwas Explosives vor."
 
+#: src/Games/Tutorial.cpp:224
 msgid "Shooting..."
 msgstr "Schießen..."
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
 msgid ""
-"To defeat your enemies, you have to know how to shoot them up!For that "
-"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
-"land your ship to continue the tutorial."
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
 msgstr ""
-"Um deine Feinde zu besiegen, musst du wissen, wie du sie wegpusten kannst!"
-"Drücke dazu auf <{PLAYER1_KEY_FIRE}>. Tob' dich etwas aus! Lande dein "
-"Schiff, um mit dem Tutorial fortzufahren."
+"Um deine Feinde zu besiegen, musst du wissen, wie du sie wegpusten kannst!\n"
+"Drücke dazu auf %s.\n"
+"Tob' dich etwas aus! Lande dein Schiff, um mit dem Tutorial fortzufahren."
 
-msgid "Volume Settings"
-msgstr "Lautstärke"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "Gut Gelandet, %s!"
 
-msgid "Good Landing, {PLAYER1_NAME}!"
-msgstr "Gut Gelandet!"
-
-msgid "You turn out to be a great pilot.Now how about some more weapons?"
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
 msgstr ""
-"Du scheinst ein guter Pilot zu sein.Wie wäre es mit ein paar mehr Waffen?"
+"Du scheinst ein guter Pilot zu sein.\n"
+"\n"
+"Wie wäre es mit ein paar mehr Waffen?"
 
+#: src/Games/Tutorial.cpp:253
 msgid "The Weapons..."
 msgstr "Die Waffen..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
 msgid ""
-"We know you've been waiting for this. When docked you can switch through "
-"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
-"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
-"weapon! Take-off, when you're ready!"
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
 msgstr ""
-"Darauf hast du sicher gewartet. Wenn du gelandet bist, kannst du zwischen "
-"ein paar wirklich fiesen Waffen wählen.Drücke <{PLAYER1_KEY_FIRE}>, um dein "
-"Arsenal zu öffnen.Benutze dann <{PLAYER1_KEY_LEFT}> und <{PLAYER1_KEY_RIGHT}"
-"> zum Auswählen einer Waffe!Flieg' los, wenn du fertig bist!"
+"Darauf hast du sicher gewartet. Wenn du gelandet bist, kannst du zwischen ein paar wirklich fiesen Waffen wählen.\n"
+"Drücke %s, um dein Arsenal zu öffnen.\n"
+"Benutze dann %s und %s zum Auswählen einer Waffe!\n"
+"Flieg' los, wenn du fertig bist!"
 
-msgid "Play Next Track"
-msgstr "Spiele nächsten Titel"
-
-msgid "Playback Settings"
-msgstr "Wiedergabeoptionen"
-
+#: src/Games/Tutorial.cpp:276
 msgid "Fight!"
 msgstr "Kämpfe!"
 
+#: src/Games/Tutorial.cpp:277
 msgid ""
-"Now let's see how you make it against a rookie from another planet. Seems "
-"like he is trying to improve his flying abilities.Beat him!"
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
 msgstr ""
-"Schauen wir doch mal, wie du dich gegen einen Rookie eines anderen Planeten "
-"schlägst.Anscheinend versucht er, seine Flugfertigkeiten zu verbessen.Mach' "
-"ihn fertig!"
+"Schauen wir doch mal, wie du dich gegen einen Rookie eines anderen Planeten schlägst.\n"
+"Anscheinend versucht er, seine Flugfertigkeiten zu verbessen.\n"
+"Mach' ihn fertig!"
 
+#: src/Games/Tutorial.cpp:302
 msgid "Impressive!"
 msgstr "Beeindruckend!"
 
+#: src/Games/Tutorial.cpp:303
 msgid ""
-"You did it! As you may have noticed, a little star appeared over your ship. "
-"The more enemies you kill, the more of them will show. But they are not only "
-"a frag indicator! Land again and we will show you what else stars are good "
-"for."
-msgstr ""
-"Du hast es geschafft! Wie du vielleicht bemerkt hast, hast du einen kleinen "
-"Stern über deinem Schiff erhalten. Je mehr Feinde du tötest, desto mehr "
-"Sterne bekommst du. Diese zeigen dir aber nicht nur die Anzahl der getöteten "
-"Feinde an...lande noch einmal und du wirst den tieferen Sinn der Sterne "
-"erfassen!"
-
-msgid "Beat Them!"
-msgstr "Zeig's ihnen!"
-
-msgid ""
-"Prove your skills! Score at least five points by killing them! Your current "
-"score is displayed next to your name!We will send in an experienced warrior "
-"assisting you, {PLAYER1_NAME}!"
-msgstr ""
-"Verbessere deine Fertigkeiten! Erreiche fünf Punkte, indem du sie tötest! "
-"Dein aktueller Punktestand wird neben deinem Namen angezeigt! Ein weiterer "
-"Rekrut wird dir beistehen!"
-
-msgid "Unbelievable!"
-msgstr "Unfassbar!"
-
-msgid ""
-"You managed all our tasks successfully. Now what to do?Let's have a look at "
-"the options menu. There you can adjust a lot of... well... options.For "
-"example you may choose your ship style and color or change your name..."
-msgstr ""
-"Du hast alle meine Aufgaben erfolgreich abgeschlossen. Was nun?Werfen wir "
-"einmal einen Blick auf das Einstellungsmenü. Dort kannst du eine Menge... "
-"naja... einstellen.Du kannst zum Beispiel Schiffstil und -farbe oder deinen "
-"Namen ändern..."
-
-msgid "Who's Best?"
-msgstr "Wer Ist Der Beste?"
-
-msgid ""
-"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
-"Furthermore the numbers next to your name illustrate your frag counter and "
-"your distance to the best one."
-msgstr ""
-"Du kannst eine Liste mit Frags, Punkten usw. mit <{STATISTICS_KEY}> anzeigen."
-"Zusätzlich zeigen die Zahlen neben deinem Namen deine Fragzahl und deinen "
-"Abstand zum Führenden an."
-
-msgid "Congratulations, {PLAYER1_NAME}!"
-msgstr "Gratulation {PLAYER1_NAME}!"
-
-msgid ""
-"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
-"you want to continue practising, just wait for the enemies to re-spawn. You "
-"can end your training with <Esc>.Have a great time with M.A.R.S.!"
-msgstr ""
-"Du hast das Tutorial gemeistert. Jetzt bist du bereit für den Kampf im "
-"GROßEN KRIEG. Wenn du noch weiter üben willst, warte einfach, bis der Gegner "
-"wieder auftaucht. Beende das Training mit <Esc>.Viel Spaß mit M.A.R.S.!"
-
-msgid "You Failed!"
-msgstr "Du Hast Versagt!"
-
-msgid ""
-"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
-"will get you a new one. Just wait some seconds..."
-msgstr ""
-"Wunderbar {PLAYER1_NAME}, du hast dein brandneues Schiff geschrottet! Na "
-"schön, du kriegst ein neues. Hab' ein paar Sekunden Geduld..."
-
-msgid "Did You Notice?"
-msgstr "Schon Bemerkt?"
-
-msgid ""
-"Your life is draining! Keep an eye on the upper life bar. You better land if "
-"it's too empty."
-msgstr ""
-"Du verlierst Leben! Behalte den grünen Lebensbalken im Auge. Lande lieber, "
-"wenn er zu leer ist."
-
-msgid ""
-"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
-"if it's too empty."
-msgstr ""
-"Du verlierst Treibstoff! Behalte den gelben Treibstoffbalken im Auge. Lande "
-"lieber, wenn er zu leer ist."
-
-msgid "You Nearly Got Him!"
-msgstr "Gleich Hast Du Ihn!"
-
-msgid ""
-"Watch your opponent's name. Its colour indicates his life points. The more "
-"it turns red, the weaker your enemy is."
-msgstr ""
-"Beachte den Namen deines Gegners. Seine Farbe zeigt seine Lebenspunkte. "
-"Desto intensiver das Rot wird, desto schwächer ist dein Feind."
-
-msgid "High Star Field Resolution"
-msgstr "Hochauflösende Sterne"
-
-msgid "Language"
-msgstr "Sprache"
-
-msgid "Hot Key for Screenshots"
-msgstr "Taste für Screenshots"
-
-msgid "Points"
-msgstr "Punkte"
-
-msgid "Suicides"
-msgstr "Suizide"
-
-msgid "Deaths"
-msgstr "Tode"
-
-msgid "Game Options"
-msgstr "Spieleinstellungen"
-
-msgid "Total:"
-msgstr "Gesamt:"
-
-msgid "Statistics"
-msgstr "Statistik"
-
-msgid "Planet Life Points"
-msgstr "Planetenlebenspunkte"
-
-msgid "Shader Effects"
-msgstr "Shadereffekte"
-
-msgid "Sadly, shaders are not supported by your hardware!"
-msgstr "Shader sind mit deiner Hardware leider nicht möglich!"
-
-msgid "PowerUp Spawn Rate"
-msgstr "PowerUp Spawnrate"
-
-msgid "Bot Difficulty"
-msgstr "Botstärke"
-
-msgid "Explosions for Slow Motion"
-msgstr "Explosionen für Slow-Motion"
-
-msgid "Off"
-msgstr "Aus"
-
-msgid "Special Thanks to:"
-msgstr "Besonderer Dank geht an:"
-
-msgid ""
-"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
-"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
-"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
-"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
-"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
-msgstr ""
-"Übersetzungen: Arabisch: Majid Chinesisch: Wecing Tschechisch: Mates "
-"Finnisch: Paavo Französisch: Ludovic Deutsch: Atto Hindi: Antriksh & "
-"Aakanksh Ungarisch: Papp Bence Italienisch: Proch Polnisch: command_dos "
-"Portugisisch: Vitor Russisch: Drakmail Spanisch: Gastón Schwedisch: "
-"HenrikQuellcodebeiträge: Werner und DeubeuliouTests und kreativer Support: "
-"Heinrich, Martin, Bastian, Atto, Diana."
-
-msgid "Resolution"
-msgstr "Auflösung"
-
-msgid "Color Depth"
-msgstr "Farbtiefe"
-
-msgid "Special Ability"
-msgstr "Spezial"
-
-msgid ""
-"Displays the amount of Frames calculated per Second.If this is always very "
-"low (<20), you should adjust some settings in graphics tab!"
-msgstr ""
-"Zeigt die berechnete Anzahl der Bilder pro Sekunde an!Ist diese ziemlich "
-"klein (<20), solltest du einige Grafikeinstellungen ändern!"
-
-msgid "Displays the amount of active particles."
-msgstr "Zeigt die Anzahl der aktiven Partikel."
-
-msgid "Dismisses tool tips like this one."
-msgstr "Schaltet solche Tooltipps aus."
-
-msgid "Sets the format being used when screenshots are saved."
-msgstr "Stellt das bei Screenshots verwendete Dateiformat ein."
-
-msgid ""
-"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
-msgstr "Speichert bei Knopfdruck einen Screenshot in {CONFIG_PATH}screenshots/"
-
-msgid "Pressing this key switches to the next music track."
-msgstr "Spielt den nächsten Musiktitel ab."
-
-msgid ""
-"If that many ships explode simultaneously, the slow motion effect kicks in."
-msgstr ""
-"Bei dieser Anzahl an gleichzeitigen Explosionen wird ein Zeitlupeneffekt "
-"aktiviert."
-
-msgid "Displays the job of each bot."
-msgstr "Zeigt den Job jedes Bots."
-
-msgid ""
-"Displays tactical zones, which are important for the artificial intelligence."
-msgstr "Zeigt taktische Zonen, die für die KI wichtig sind."
-
-msgid "Displays paths calculated by bots."
-msgstr "Zeigt von den Bots berechnete Pfade."
-
-msgid "Maximizes the window, making it cover the entire screen."
-msgstr "Maximiert das Spiel, so dass es den kompletten Bildschirm füllt."
-
-msgid ""
-"Makes the game update according to the refresh rate of your monitor.Enabling "
-"this option typically makes the game run more smoothly."
-msgstr ""
-"Synchronisiert die Bildwiederholrate des Monitors etwa mit der des Spiels."
-"Bei Aktivierung läuft das Spiel in der Regel flüssiger."
-
-msgid "Enables cool effects like heat haze, but reduces game performance."
-msgstr ""
-"Schaltet tolle Effekte, wie Hitzeflimmern ein, aber reduziert die "
-"Spielleistung."
-
-msgid ""
-"Sets the size of the window.Affects both, full screen and windowed mode."
-msgstr ""
-"Stellt die Fenstergröße ein.Beeinflusst sowohl den Vollbildmodus als auch "
-"den Fenstermodus."
-
-msgid ""
-"With high resolution displays, this option makes the star field loop later."
-"Disabling may increase game performance slightly."
-msgstr ""
-"Bei hohen Auflösungen wird eine Wiederholung des Sternenhintergrundes "
-"vermieden.Bei Deaktivierung erhöht sich die Spielleistung leicht."
-
-msgid ""
-"Adjusts the global particle count.Lower values will increase performance "
-"significantly."
-msgstr ""
-"Stellt die globale Partikelanzahl ein!Kleine Werte erhöhen die Spielleistung!"
-
-msgid ""
-"Adjusts the global particle life time.Lower values will increase performance "
-"significantly."
-msgstr ""
-"Stellt die globale Partikellebensdauer ein.Kleine Werte erhöhen die "
-"Spielleistung!"
-
-msgid "Adjusts volume of background music."
-msgstr "Stellt die Musiklautstärke ein."
-
-msgid "Adjusts volume of sound effects."
-msgstr "Stellt die Soundlautstärke ein."
-
-msgid "Adjusts volume of announcers voice."
-msgstr "Stellt die Sprachlautstärke ein."
-
-msgid "Sets the team of the local players."
-msgstr "Stellt das Team der lokalen Spieler ein."
-
-msgid "Enables local players."
-msgstr "Schaltet lokale Spieler ein/aus."
-
-msgid "Adjusts the amount of ships controlled by the artificial intelligence."
-msgstr "Stellt die Anzahl von KI-Bots ein."
-
-msgid "Point limit to be reached by a team in order to win the game."
-msgstr ""
-"Stellt das Punktelimit ein. Erreicht ein Team diese Punktzahl, so gewinnt es."
-
-msgid "Point limit to be reached by a player in order to win the game."
-msgstr ""
-"Stellt das Punktelimit ein. Erreicht ein Spieler diese Punktzahl, so gewinnt "
-"er."
-
-msgid "Adjusts the strength of the bots."
-msgstr "Stellt die Botsstärke ein."
-
-msgid ""
-"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
-"disables Power-Ups entirely."
-msgstr ""
-"Stellt die Anzahl der PowerUps im Spiel ein. Bei 0 werden PowerUps "
-"ausgeschaltet."
-
-msgid "Weapons"
-msgstr "Waffen"
-
-msgid "Special Abilities"
-msgstr "Besondere Fähigkeiten"
-
-msgid "Screenshot saved!"
-msgstr "Screenshot gespeichert!"
-
-msgid ""
-"As the GREAT WAR reduces your resources drastically, scientists were engaged "
-"to find a way of efficiently destroying your enemy by limiting the given "
-"input. They did a lot of research and eventually created a new weapon with "
-"an incredible property: It kills instantly, but launched projectiles are "
-"really affine to any gravitation and they're quite difficult to handle. "
-"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
-"technology, so your enemies can use this evil weapon, too. Now it is your "
-"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
-"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
-msgstr ""
-"Der GROßE KRIEG hält weiter an und zehrt an den vorhandenen Ressourcen. Die "
-"größten Space-Wissenschaftler tüfteln deshalb an Waffen mit minimalen Input, "
-"aber maximaler Zerstörungskraft! Im Zuge dessen wurde eine neue Waffe "
-"entwickelt: Sie tötet instantan, aber ihre Geschosse sind sehr "
-"gravitationsanfällig....die INSTA-GRAVE wurde geboren!  Unglücklichesweise "
-"wurde diese unglaublich mächtige Technologie gestohlen! Deine Feinde "
-"verfügen nun auch über das Wissen! Nun bist du dran: Zahle es diesen Dieben "
-"im großen GRAVE-ITATION-PIT heim!  Gewinne diesen Kampf und der GROßE KRIEG "
-"wird dir Ruhm und Ehre bringen!"
-
-msgid "Destroy es many enemies as possible!"
-msgstr "Vernichte möglichst viele Feinde!"
-
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
+msgstr "Du hast es geschafft! Wie du vielleicht bemerkt hast, hast du einen kleinen Stern über deinem Schiff erhalten. Je mehr Feinde du tötest, desto mehr Sterne bekommst du. Diese zeigen dir aber nicht nur die Anzahl der getöteten Feinde an...lande noch einmal und du wirst den tieferen Sinn der Sterne erfassen!"
+
+#: src/Games/Tutorial.cpp:316
 msgid "Special Abilities..."
 msgstr "Besondere Fähigkeiten..."
 
+#: src/Games/Tutorial.cpp:317
 msgid ""
-"As promised, we will tell you the stars' meaning. They are a resource for "
-"your ship's impressively powerful extra abilities. For example you can heal "
-"you including nearby friends, blast away or freeze ships within a certain "
-"distance! The more stars you have, the larger range and strength of the "
-"ability grow."
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
 msgstr ""
-"Das Gekeimnis der Sterne wird dir nun zuteil: Sie sind Ressourcen für "
-"unglaublich mächtige Fähigkeiten deines Schiffes! So kannst du zum Beispiel "
-"in der Nähe befindliche Freunde und dich selber heilen oder Feinde wegpusten "
-"und einfrieren. Je mehr Sterne du hast, desto mehr Reichweite und Kraft hat "
-"die Fähigkeit! Aber gib Acht: Sobald du stirbst, verlierst du alle bis dahin "
-"gesammelten Sterne!"
+"Das Gekeimnis der Sterne wird dir nun zuteil: Sie sind Ressourcen für unglaublich mächtige Fähigkeiten deines Schiffes! So kannst du zum Beispiel in der Nähe befindliche Freunde und dich selber heilen oder Feinde wegpusten und einfrieren. Je mehr Sterne du hast, desto mehr Reichweite und Kraft hat die Fähigkeit!\n"
+"Aber gib Acht: Sobald du stirbst, verlierst du alle bis dahin gesammelten Sterne!"
 
+#: src/Games/Tutorial.cpp:328
 msgid "Selection..."
 msgstr "Auswahl..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
 msgid ""
-"To switch through the abilities, you just have to press "
-"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
-"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
-"\"Freezer\"! Take off, when you got it!"
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"Um besondere Fähigkeiten auszuwählen, musst du landen und "
-"<{PLAYER1_KEY_SPECIAL}> drücken. Mithilfe der Tasten <{PLAYER1_KEY_LEFT}> "
-"und <{PLAYER1_KEY_RIGHT}> kannst du durch die verschiedenen Fähigkeiten "
-"durchschalten! Nun nimm die \"Freezer\" und heb wieder ab!"
+"Um besondere Fähigkeiten auszuwählen, musst du landen und %s drücken. Mithilfe der Tasten %s und %s kannst du durch die verschiedenen Fähigkeiten durchschalten!\n"
+"Nun nimm die \"Freezer\" und heb wieder ab!"
 
-msgid "That's a bad name... Feel free to enter a better one!"
-msgstr "Was für ein blöder Name...Nimm doch bitte einen Besseren!"
-
-msgid "Next music track!"
-msgstr "Nächster Musiktitel!"
-
-msgid "General Settings"
-msgstr "Allgemein"
-
-msgid "Special Effects"
-msgstr "Spezialeffekte"
-
-msgid "Ship Settings"
-msgstr "Schiffeinstellungen"
-
-msgid "A Button"
-msgstr "Taste A"
-
-msgid "B Button"
-msgstr "Taste B"
-
-msgid "X Button"
-msgstr "Taste X"
-
-msgid "Y Button"
-msgstr "Taste Y"
-
-msgid "Start Button"
-msgstr "Starttaste"
-
-msgid "Back Button"
-msgstr "Zurücktaste"
-
-msgid "Right Bumper"
-msgstr "Bumper Rechts"
-
-msgid "Left Bumper"
-msgstr "Bumper Links"
-
-msgid "Right Trigger"
-msgstr "Trigger Rechts"
-
-msgid "Left Trigger"
-msgstr "Trigger Links"
-
-msgid "Direction Up"
-msgstr "Steuerkreuz Hoch"
-
-msgid "Direction Down"
-msgstr "Steuerkreuz Runter"
-
-msgid "Direction Left"
-msgstr "Steuerkreuz Links"
-
-msgid "Direction Right"
-msgstr "Steuerkreuz Rechts"
-
-msgid "Stick1 Up"
-msgstr "Stick1 Hoch"
-
-msgid "Stick1 Down"
-msgstr "Stick1 Runter"
-
-msgid "Stick1 Left"
-msgstr "Stick1 Links"
-
-msgid "Stick1 Right"
-msgstr "Stick1 Rechts"
-
-msgid "Stick2 Up"
-msgstr "Stick2 Hoch"
-
-msgid "Stick2 Down"
-msgstr "Stick2 Runter"
-
-msgid "Stick2 Left"
-msgstr "Stick2 Links"
-
-msgid "Stick2 Right"
-msgstr "Stick2 Rechts"
-
-msgid "Button"
-msgstr "Taste"
-
-msgid "Hot Key for Statistics"
-msgstr "Taste für Statistiken"
-
-msgid ""
-"When this key is pressed while playing a game, a window pops up displaying "
-"statistics for the current game."
-msgstr ""
-"Beim Drücken der Taste während eines Spieles, wird eine Statistik zum "
-"laufenden Spiel angezeigt."
-
-msgid "CannonShots"
-msgstr "Kanonenschüsse"
-
-msgid "Stop, {PLAYER1_NAME}!"
-msgstr "Stopp, {PLAYER1_NAME}!"
-
-msgid ""
-"We told you to select the Freezer, but you have chosen another ability!"
-"Please land again and take the Freezer!"
-msgstr ""
-"Haben wir nicht gesagt, du sollst die \"Freezer\" nehmen? Du hast eine "
-"andere Fähigkeit gewählt! Lande nochmal und wähle die \"Freezer\" aus!"
-
+#: src/Games/Tutorial.cpp:351
 msgid "The Freezer..."
 msgstr "Der Freezer..."
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
 msgid ""
-"This is a powerful special ability which freezes nearby ships. You have to "
-"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
-"Watch him loosing life slowly... until he dies!"
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
-"Eine sehr mächtige Waffe im GROßEN KRIEG! Mit ihrer Hilfe kannst du in der "
-"Nähe befindliche Schiffe einfrieren! Drücke <{PLAYER1_KEY_SPECIAL}>, um den "
-"Freezer auszulösen! Ganz langsam wird der Feind dahingerafft...bis zum Tod!"
+"Eine sehr mächtige Waffe im GROßEN KRIEG! Mit ihrer Hilfe kannst du in der Nähe befindliche Schiffe einfrieren!\n"
+"Drücke %s, um den Freezer auszulösen! Ganz langsam wird der Feind dahingerafft...bis zum Tod!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"Haben wir nicht gesagt, du sollst die \"Freezer\" nehmen? Du hast eine andere Fähigkeit gewählt!\n"
+"Lande nochmal und wähle die \"Freezer\" aus!"
+
+#: src/Games/Tutorial.cpp:385
 msgid "Practice!"
 msgstr "Übung macht den Meister..."
 
+#: src/Games/Tutorial.cpp:386
 msgid ""
-"Now try to freeze your enemy! For this tutorial we will give you some "
-"FragStars. But remember: In real life you have to smash opponents to get "
-"those stars!"
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
 msgstr ""
-"Nun probier's mal aus! Zu Übungszwecken erhälst du einige Sterne! Aber im "
-"wahren Leben eines Space-Rookie musst du dir diese hart verdienen, indem du "
-"Feinde zerschmetterst!"
+"Nun probier's mal aus!\n"
+"Zu Übungszwecken erhälst du einige Sterne! Aber im wahren Leben eines Space-Rookie musst du dir diese hart verdienen, indem du Feinde zerschmetterst!"
 
-msgid "You Missed Him, {PLAYER1_NAME}!"
-msgstr "Du hast ihn verfehlt!"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "Du hast ihn verfehlt, %s!"
 
+#: src/Games/Tutorial.cpp:411
 msgid "Try again. we will refill your FragStars."
 msgstr "Versuch es noch einmal! Hier sind weitere Sterne!"
 
+#: src/Games/Tutorial.cpp:428
 msgid "You Did It!"
 msgstr "Yeah, gut gemacht!"
 
+#: src/Games/Tutorial.cpp:429
 msgid "Now head back to your planet to select another special ability!"
+msgstr "Flieg zurück zum Heimatplaneten und probier die anderen Fähigkeiten aus!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
 msgstr ""
-"Flieg zurück zum Heimatplaneten und probier die anderen Fähigkeiten aus!"
 
-msgid "Beware, {PLAYER1_NAME}!"
-msgstr "Achtung, {PLAYER1_NAME}!"
-
+#: src/Games/Tutorial.cpp:443
 msgid ""
-"There is no time for further testing!Our enemies have sent two of their real "
-"warriors for vengeance!"
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
 msgstr ""
-"Wir haben keine Zeit mehr zum Üben!  Der Feind hat zwei starke Krieger "
-"geschickt!"
+"Wir haben keine Zeit mehr zum Üben!\n"
+"Der Feind hat zwei starke Krieger geschickt!"
 
-msgid "Players"
-msgstr "Spieler"
+#: src/Games/Tutorial.cpp:457
+msgid "Beat Them!"
+msgstr "Zeig's ihnen!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
+msgstr ""
+"Verbessere deine Fertigkeiten! Erreiche fünf Punkte, indem du sie tötest! Dein aktueller Punktestand wird neben deinem Namen angezeigt!\n"
+"Ein weiterer Rekrut wird dir beistehen, %s!"
+
+#: src/Games/Tutorial.cpp:484
+msgid "Unbelievable!"
+msgstr "Unfassbar!"
+
+#: src/Games/Tutorial.cpp:485
+msgid ""
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
+msgstr ""
+"Du hast alle meine Aufgaben erfolgreich abgeschlossen. Was nun?\n"
+"Werfen wir einmal einen Blick auf das Einstellungsmenü. Dort kannst du eine Menge... naja... einstellen.\n"
+"Du kannst zum Beispiel Schiffstil und -farbe oder deinen Namen ändern..."
+
+#: src/Games/Tutorial.cpp:500
+msgid "Who's Best?"
+msgstr "Wer Ist Der Beste?"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, c-format
+msgid ""
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
+msgstr ""
+"Du kannst eine Liste mit Frags, Punkten usw. mit %s anzeigen.\n"
+"Zusätzlich zeigen die Zahlen neben deinem Namen deine Fragzahl und deinen Abstand zum Führenden an."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "Gratulation %s!"
+
+#: src/Games/Tutorial.cpp:517
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
+msgstr ""
+"Du hast das Tutorial gemeistert. Jetzt bist du bereit für den Kampf im GROßEN KRIEG. Wenn du noch weiter üben willst, warte einfach, bis der Gegner wieder auftaucht. Beende das Training mit <Esc>.\n"
+"\n"
+"Viel Spaß mit M.A.R.S.!"
+
+#: src/Games/Tutorial.cpp:529
+msgid "You Failed!"
+msgstr "Du Hast Versagt!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
+msgstr "Wunderbar %s, du hast dein brandneues Schiff geschrottet! Na schön, du kriegst ein neues. Hab' ein paar Sekunden Geduld..."
+
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
+msgid "Did You Notice?"
+msgstr "Schon Bemerkt?"
+
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "Du verlierst Leben! Behalte den grünen Lebensbalken im Auge. Lande lieber, wenn er zu leer ist."
+
+#: src/Games/Tutorial.cpp:551
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
+msgstr "Du verlierst Treibstoff! Behalte den gelben Treibstoffbalken im Auge. Lande lieber, wenn er zu leer ist."
+
+#: src/Games/Tutorial.cpp:559
+msgid "You Nearly Got Him!"
+msgstr "Gleich Hast Du Ihn!"
+
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "Beachte den Namen deines Gegners. Seine Farbe zeigt seine Lebenspunkte. Desto intensiver das Rot wird, desto schwächer ist dein Feind."
+
+#: src/Hud/TabStats.cpp:178
+msgid "Statistics"
+msgstr "Statistik"
+
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "Fraglimit"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
+msgid "Planet Life Points"
+msgstr "Planetenlebenspunkte"
+
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "Punkte"
+
+#: src/Hud/TabStats.cpp:228
+msgid "CannonShots"
+msgstr "Kanonenschüsse"
+
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr "Tore"
+
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "Frags"
+
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "Teamkills"
+
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "Suizide"
+
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "Tode"
+
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "Gesamt:"
+
+#: src/Hud/musicNotify.cpp:193
 msgid "Artist:"
 msgstr "Von:"
 
+#: src/Hud/musicNotify.cpp:194
 msgid "Album:"
 msgstr "Aus:"
 
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "Nächster Musiktitel!"
+
+#: src/Media/music.cpp:153
 msgid "Previous music track!"
 msgstr "Vorheriger Musiktitel!"
 
-msgid "Play Previous Track"
-msgstr "Spiele vorherigen Titel"
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "Schließen"
 
-msgid "Play Tracks in Random Order"
-msgstr "Zufällige Wiedergabereihenfolge"
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+msgid "About"
+msgstr "Über"
 
-msgid "Pressing this key switches to the previous music track."
-msgstr "Spielt den vorherigen Musiktitel ab."
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "Lizenz"
 
-msgid "Enables music play back in a random sequence."
-msgstr "Aktiviert zufällige Wiedergabereihenfolge."
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "Credits"
 
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"M.A.R.S. ist der erste Versuch, ein Spiel in OpenGL mit SFML zu erstellen. Steuer alleine oder zu zweit dein Weltraumschiff durch eine zweidimensionale Galaxis, beherrscht von den Kräften der Schwerkraft.\n"
+"\n"
+"Homepage:\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr ""
+"Dieses Programm ist kostenfreie Software; es kann entsprechend den Bedingungen der GNU General Public License (Version 3 oder spätere, veröffentlich von der Free Software Foundation) verbreitet und/oder verändert werden.\n"
+"\n"
+"Dieses Programm soll dem Nutzen dienen, dafür übernehmen die Entwickler aber KEINE GARANTIE, insbesondere nicht die der KOMMERZIELLEN VERBREITUNG oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Für weitere Informationen und die englische Originalversion sollte die GNU General Public License unter\n"
+"http://www.gnu.org/licenses/gpl-3.0.html eingesehen werden."
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "Besonderer Dank geht an:"
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Übersetzungen:\n"
+"Arabisch: Majid\n"
+"Chinesisch: Wecing\n"
+"Tschechisch: Mates\n"
+"Finnisch: Paavo\n"
+"Französisch: Ludovic\n"
+"Deutsch: Atto\n"
+"Hindi: Antriksh & Aakanksh\n"
+"Ungarisch: Papp Bence\n"
+"Italienisch: Proch\n"
+"Polnisch: command_dos\n"
+"Portugisisch: Vitor\n"
+"Russisch: Drakmail\n"
+"Spanisch: Gastón\n"
+"Schwedisch: Henrik\n"
+"\n"
+"Quellcodebeiträge:\n"
+"Werner und Deubeuliou\n"
+"\n"
+"Tests und kreativer Support:\n"
+"Heinrich, Martin, Bastian, Atto, Diana."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+msgid "Start Network Game"
+msgstr "Netzwerkspiel starten"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"Das Spielen von M.A.R.S. via Internet oder LAN ist in Planung, bis jetzt aber noch nicht eingebaut.\n"
+"\n"
+"Dranbleiben!"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "Spiel neu starten"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
+#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "Optionen"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "Menü verstecken"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "Zurück zum Hauptmenü"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "Info"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Was für ein blöder Name...Nimm doch bitte einen Besseren!"
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "Willst du das Spiel wirklich verlassen?"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Nimm die Fernbedienung und behalt sie möglichst lange!"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"Als ob der GROßE KRIEG nicht schon genug wäre, hat eine neue Quelle abgrundtiefer Boshaftigkeit sein Augenmerk auf dein Planetensystem gerichtet:\n"
+"Ein riesiges Schiff unbekannter Invasoren schwebt über der Galaxie und nimmt mit einer gigantischen Massenvernichtungswaffe die Heimatplaneten ins Visier!\n"
+"Als Zeichen ihres Zynismus' überlassen die Angreifer die Kontrolle über die todbringende Kanone dir und deinen Gegnern.\n"
+"Erreiche sie zuerst, um den Planeten deiner Feinde in Schutt und Asche zu legen!\n"
+"Sei der CANNONKEEPer."
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "Zeige dieses Fenster wieder an"
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "Vernichte möglichst viele Feinde!"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"Der GROßE KRIEG hat dir alles genommen, wofür du gekämpft hast: dein Zuhause, deine Familie, deine Ehre!\n"
+"Befreie dich nun aus der Misere deines alten Lebens und beginne ein neues als Gladiator in der DEATHMATCH-Arena!\n"
+"Widersetze dich den Angriffen deiner Gegner und zerstöre ihre Schiffe! Sei bereit, denn Ruhm und Ehre erwarten dich!"
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "Vernichte möglichst viele Feinde!"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Der GROßE KRIEG hält weiter an und zehrt an den vorhandenen Ressourcen. Die größten Space-Wissenschaftler tüfteln deshalb an Waffen mit minimalen Input, aber maximaler Zerstörungskraft! Im Zuge dessen wurde eine neue Waffe entwickelt: Sie tötet instantan, aber ihre Geschosse sind sehr gravitationsanfällig....die INSTA-GRAVE wurde geboren!\n"
+"\n"
+"Unglücklichesweise wurde diese unglaublich mächtige Technologie gestohlen! Deine Feinde verfügen nun auch über das Wissen! Nun bist du dran: Zahle es diesen Dieben im großen GRAVE-ITATION-PIT heim!\n"
+"\n"
+"Gewinne diesen Kampf und der GROßE KRIEG wird dir Ruhm und Ehre bringen!"
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Du hast M.A.R.S. mitten in einer Wahnsinnsschlacht angehalten?\n"
+"Wenn du einen Screenshot machen willst, erlaubt dir dieser Knopf epische Hintergrundbilder zu erstellen, indem er alle Fenster verbirgt.\n"
+"\n"
+"Danach kannst du sie einfach durch Drücken auf ESC wieder einblenden."
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Stoße oder Schieße den Ball zum gegnerischen Planeten!"
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"3547 Anno Domini: Unzählige Zivilisationen haben das Universum bevölkert und leben in Frieden und Harmonie zusammen.\n"
+"Aber außerhalb dieser beschaulichen Idylle tobt der GROßE KRIEG.\n"
+"Begib dich auf eine schicksalshafte Reise und beschütze deinen Planeten vor der zerstörerischen Wut deiner Nachbarn. Ruhm und Ehre werden deinen Weg säumen. Bereite dich auf die Schlacht vor, für die du geboren wurdest: SPACEBALL.\n"
+"Aus den Tiefen der Galaxis wurde die Kugel der Verderbnis geschaffen. Als Waffe gegen deine Feinde entfaltet sie ihre Macht und vernichtet den gegnerischen Planeten. Aber in den falschen Händen wird sie dich zerschmettern..."
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"Die Verhandlungen sind gescheitert! Trotz der enormen Verluste auf beiden Seiten ist es nicht möglich, dem GROßEN KRIEG zu entkommen. Die letzten Krieger schließen sich zusammen zu einem gewaltigen TEAM-DEATHMATCH!\n"
+"Beschütze deine Mitstreiter und attakiere deine Feinde!\n"
+"Erteile ihnen eine Lektion, die sie nie vergessen werden!"
+
+#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "Lokales Spiel starten"
+
+#: src/Menu/MainMenu.cpp:46
+msgid "Start Tutorial"
+msgstr "Tutorial starten"
+
+#: src/Menu/MainMenu.cpp:48
+msgid "Join Network Game"
+msgstr "Netzwerkspiel beitreten"
+
+#: src/Menu/MainMenu.cpp:51
+msgid "Quit M.A.R.S."
+msgstr "M.A.R.S. beenden"
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "Willst du das laufende Spiel wirklich beenden?"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "Stellt das Team der lokalen Spieler ein."
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "Schaltet lokale Spieler ein/aus."
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "Bots"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Stellt die Anzahl von KI-Bots ein."
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Stellt das Punktelimit ein. Erreicht ein Team diese Punktzahl, so gewinnt es."
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "Botstärke"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "Stellt die Botsstärke ein."
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "PowerUp Spawnrate"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr ""
+"Stellt die Anzahl der PowerUps im Spiel ein.\n"
+"Bei 0 werden PowerUps ausgeschaltet."
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "Start"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "Linkes Team"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "Rechtes Team"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "Spieleinstellungen"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "Waffenoptionen"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "Spieler"
+
+#: src/Menu/OptionsMenu.cpp:81
+msgid "Interface"
+msgstr "Interface"
+
+#: src/Menu/OptionsMenu.cpp:82
+msgid "Gameplay"
+msgstr "Gameplay"
+
+#: src/Menu/OptionsMenu.cpp:83
+msgid "Graphics"
+msgstr "Grafik"
+
+#: src/Menu/OptionsMenu.cpp:84
+msgid "Audio"
+msgstr "Audio"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "General Settings"
+msgstr "Allgemein"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Language"
+msgstr "Sprache"
+
+#: src/Menu/OptionsMenu.cpp:97
+msgid "File Format for Screenshots"
+msgstr "Dateiformat für Screenshots"
+
+#: src/Menu/OptionsMenu.cpp:98
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Stellt das bei Screenshots verwendete Dateiformat ein."
+
+#: src/Menu/OptionsMenu.cpp:101
+msgid "Hot Key for Screenshots"
+msgstr "Taste für Screenshots"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:104
+#, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "Speichert bei Knopfdruck einen Screenshot in %s"
+
+#: src/Menu/OptionsMenu.cpp:108
+msgid "Hot Key for Statistics"
+msgstr "Taste für Statistiken"
+
+#: src/Menu/OptionsMenu.cpp:109
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "Beim Drücken der Taste während eines Spieles, wird eine Statistik zum laufenden Spiel angezeigt."
+
+#: src/Menu/OptionsMenu.cpp:111
+msgid "Show Game Information"
+msgstr "Zeige Spielinformationen"
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Frames per Second"
+msgstr "Bilder pro Sekunde"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Zeigt die berechnete Anzahl der Bilder pro Sekunde an!\n"
+"Ist diese ziemlich klein (<20), solltest du einige Grafikeinstellungen ändern!"
+
+#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+msgid "Particle Count"
+msgstr "Partikelzahl"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid "Displays the amount of active particles."
+msgstr "Zeigt die Anzahl der aktiven Partikel."
+
+#: src/Menu/OptionsMenu.cpp:122
+msgid "Display Tool Tips"
+msgstr "Zeige Tool-Tipps"
+
+#: src/Menu/OptionsMenu.cpp:123
+msgid "Dismisses tool tips like this one."
+msgstr "Schaltet solche Tooltipps aus."
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Full screen"
+msgstr "Vollbild"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maximiert das Spiel, so dass es den kompletten Bildschirm füllt."
+
+#: src/Menu/OptionsMenu.cpp:130
+msgid "Window Settings"
+msgstr "Fenstereinstellungen"
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "V-Sync"
+msgstr "V-Sync"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr ""
+"Synchronisiert die Bildwiederholrate des Monitors etwa mit der des Spiels.\n"
+"Bei Aktivierung läuft das Spiel in der Regel flüssiger."
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "Shader Effects"
+msgstr "Shadereffekte"
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Schaltet tolle Effekte, wie Hitzeflimmern ein, aber reduziert die Spielleistung."
+
+#: src/Menu/OptionsMenu.cpp:162
+msgid "Off"
+msgstr "Aus"
+
+#: src/Menu/OptionsMenu.cpp:164
+msgid "Resolution"
+msgstr "Auflösung"
+
+#: src/Menu/OptionsMenu.cpp:165
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr ""
+"Stellt die Fenstergröße ein.\n"
+"Beeinflusst sowohl den Vollbildmodus als auch den Fenstermodus."
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Game Settings"
+msgstr "Spieleinstellungen"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "High Star Field Resolution"
+msgstr "Hochauflösende Sterne"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"Bei hohen Auflösungen wird eine Wiederholung des Sternenhintergrundes vermieden.\n"
+"Bei Deaktivierung erhöht sich die Spielleistung leicht."
+
+#: src/Menu/OptionsMenu.cpp:174
 msgid "Moving Stars"
 msgstr "Bewegte Sterne"
 
-msgid ""
-"Draws some moving stars on the background. Eye candy, but reduces game "
-"performance."
-msgstr ""
-"Zeichnet ein paar bewegte Sterne in den Hintergrund. Sieht hübsch aus, "
-"reduziert aber die Spielleistung."
+#: src/Menu/OptionsMenu.cpp:175
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "Zeichnet ein paar bewegte Sterne in den Hintergrund. Sieht hübsch aus, reduziert aber die Spielleistung."
 
-msgid "Goals"
-msgstr "Tore"
+#: src/Menu/OptionsMenu.cpp:179
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Stellt die globale Partikelanzahl ein!\n"
+"Kleine Werte erhöhen die Spielleistung!"
+
+#: src/Menu/OptionsMenu.cpp:182
+msgid "Particle Lifetime"
+msgstr "Partikellebensdauer"
+
+#: src/Menu/OptionsMenu.cpp:183
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Stellt die globale Partikellebensdauer ein.\n"
+"Kleine Werte erhöhen die Spielleistung!"
+
+#: src/Menu/OptionsMenu.cpp:186
+msgid "Volume Settings"
+msgstr "Lautstärke"
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid "Music"
+msgstr "Musik"
+
+#: src/Menu/OptionsMenu.cpp:189
+msgid "Adjusts volume of background music."
+msgstr "Stellt die Musiklautstärke ein."
+
+#: src/Menu/OptionsMenu.cpp:192
+msgid "Sound"
+msgstr "Sound"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Adjusts volume of sound effects."
+msgstr "Stellt die Soundlautstärke ein."
+
+#: src/Menu/OptionsMenu.cpp:196
+msgid "Announcer"
+msgstr "Sprache"
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Adjusts volume of announcers voice."
+msgstr "Stellt die Sprachlautstärke ein."
+
+#: src/Menu/OptionsMenu.cpp:199
+msgid "Playback Settings"
+msgstr "Wiedergabeoptionen"
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Play Tracks in Random Order"
+msgstr "Zufällige Wiedergabereihenfolge"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Enables music play back in a random sequence."
+msgstr "Aktiviert zufällige Wiedergabereihenfolge."
+
+#: src/Menu/OptionsMenu.cpp:205
+msgid "Play Next Track"
+msgstr "Spiele nächsten Titel"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Pressing this key switches to the next music track."
+msgstr "Spielt den nächsten Musiktitel ab."
+
+#: src/Menu/OptionsMenu.cpp:209
+msgid "Play Previous Track"
+msgstr "Spiele vorherigen Titel"
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Pressing this key switches to the previous music track."
+msgstr "Spielt den vorherigen Musiktitel ab."
+
+#: src/Menu/OptionsMenu.cpp:213
+msgid "Special Effects"
+msgstr "Spezialeffekte"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Explosions for Slow Motion"
+msgstr "Explosionen für Slow-Motion"
+
+#: src/Menu/OptionsMenu.cpp:216
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Bei dieser Anzahl an gleichzeitigen Explosionen wird ein Zeitlupeneffekt aktiviert."
+
+#: src/Menu/OptionsMenu.cpp:219
+#, fuzzy
+msgid "Game Speed"
+msgstr "Spieleinstellungen"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:222
+msgid "Show Debug Information"
+msgstr "Debuginformationen"
+
+#: src/Menu/OptionsMenu.cpp:224
+msgid "Bots Orientation"
+msgstr "Botverhalten"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Displays the job of each bot."
+msgstr "Zeigt den Job jedes Bots."
+
+#: src/Menu/OptionsMenu.cpp:228
+msgid "Zones"
+msgstr "Zonen"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Zeigt taktische Zonen, die für die KI wichtig sind."
+
+#: src/Menu/OptionsMenu.cpp:232
+msgid "AI-Paths"
+msgstr "KI-Pfade"
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Displays paths calculated by bots."
+msgstr "Zeigt von den Bots berechnete Pfade."
+
+#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+msgid "Name"
+msgstr "Name"
+
+#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+msgid "Accelerate"
+msgstr "Beschleunigen"
+
+#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+msgid "Turn Left"
+msgstr "Links"
+
+#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+msgid "Turn Right"
+msgstr "Rechts"
+
+#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+msgid "Weapon"
+msgstr "Schießen"
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Special Ability"
+msgstr "Spezial"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Ship Settings"
+msgstr "Schiffeinstellungen"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Ship"
+msgstr "Schiff"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Player Color"
+msgstr "Spielerfarbe"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Team Color"
+msgstr "Teamfarbe"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "Spiel fortsetzen"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Shader sind mit deiner Hardware leider nicht möglich!"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "Weiter"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "Waffen"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "Besondere Fähigkeiten"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "Plus"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr "Backslash"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "Komma"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "Bindestrich"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "Entfernen"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "Geteilt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "Runter"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr "Ende"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "Gleich"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr "Pos1"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr "Einfügen"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "Alt Links"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "Klammer Auf"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "Steuerung Links"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "Links"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "Umschalt Links"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "Super Links"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "Menü"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr "Mal"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "Bild ab"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "Bild auf"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "Pause"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "Punkt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "Anführungszeichen"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "Alt Rechts"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr "Klammer Zu"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "Steuerung Rechts"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "Enter"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "Rechts"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "Umschalt Rechts"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "Super Rechts"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+msgid "Semi Colon"
+msgstr "Semikolon"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr "Slash"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "Leertaste"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr "Minus"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr "Tilde"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "Tab"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "Hoch"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr "Joystick"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "Taste A"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "Taste B"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "Taste X"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "Taste Y"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "Bumper Links"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "Bumper Rechts"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "Starttaste"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "Zurücktaste"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "Taste"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "Trigger Links"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "Trigger Rechts"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "Stick2 Hoch"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "Stick2 Runter"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "Stick2 Links"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "Stick2 Rechts"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "Stick1 Hoch"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "Stick1 Runter"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "Stick1 Links"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "Stick1 Rechts"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "Steuerkreuz Hoch"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "Steuerkreuz Runter"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "Steuerkreuz Links"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "Steuerkreuz Rechts"
+
+#: src/System/window.cpp:373
+msgid "Screenshot saved!"
+msgstr "Screenshot gespeichert!"
+
+#~ msgid "Beware, {PLAYER1_NAME}!"
+#~ msgstr "Achtung, {PLAYER1_NAME}!"
+
+#~ msgid "Stop, {PLAYER1_NAME}!"
+#~ msgstr "Stopp, {PLAYER1_NAME}!"
+
+#~ msgid "Hey, {PLAYER1_NAME}!"
+#~ msgstr "Hey, {PLAYER1_NAME}!"
+
+#~ msgid "Point limit to be reached by a player in order to win the game."
+#~ msgstr "Stellt das Punktelimit ein. Erreicht ein Spieler diese Punktzahl, so gewinnt er."
+
+#~ msgid "Color Depth"
+#~ msgstr "Farbtiefe"
+
+#~ msgid "Bots Right"
+#~ msgstr "Bots Rechts"
+
+#~ msgid "Bots Left"
+#~ msgstr "Bots Links"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

@@ -40,13 +40,13 @@ UiWindow* InfoDM::get() {
 		  instance_->addWidget(new TextBox(_("Destroy as many enemies as possible!"), Vector2f(10,40), 300, 30, Color3f(1.f, 0.7f, 0.9f)));
 		  instance_->addWidget(new TextBox(
 										  _("As a result of the GREAT WAR you have lost everything: your home, your "
-											 "family and your self-esteem. \n"
+											 "family and your self-esteem.\n"
 											 "Your last chance to get out of the miserable life you are stuck in, is to "
-											 "become a gladiator in the glorious \n"
-											 "DEATHMATCH-arena. \n"
+											 "become a gladiator in the glorious\n"
+											 "DEATHMATCH-arena.\n"
 											 "Resist the other fighters and earn points by destroying the nutshells "
-											 "they call ships. \n"
-											 "Prepare yourself! \n"
+											 "they call ships.\n"
+											 "Prepare yourself!\n"
 											 "Death and Glory awaits you."),
 										  Vector2f(10, 80), 300, 160));
 		  instance_->addWidget(new Checkbox(_("Show this info again."), NULL, &settings::C_showInfoDM, Vector2f(10,270), 170));

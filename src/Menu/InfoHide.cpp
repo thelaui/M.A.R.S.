@@ -38,9 +38,9 @@ UiWindow* InfoHide::get() {
 		  instance_->addWidget(new Label(_("Info"), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
 		  instance_->addWidget(new TextBox(
-										  _("You paused M.A.R.S. right in the middle of an insane battle? \n"
+										  _("You paused M.A.R.S. right in the middle of an insane battle?\n"
 											 "If you want to take a screenshot, this button enables you to generate "
-											 "epic wallpapers, by hiding all windows. \n\n"
+											 "epic wallpapers, by hiding all windows.\n\n"
 											 "Simply bring them back afterwards by pressing ESC."),
 										  Vector2f(10, 50), 300, 110));
 		  instance_->addWidget(new Checkbox(_("Show this info again."), NULL, &settings::C_showInfoHide, Vector2f(10,170), 170));
