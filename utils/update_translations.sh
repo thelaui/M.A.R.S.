@@ -8,8 +8,30 @@ if [ -d "../utils" ]; then
 	pushd ..
 fi
 
-# Print all commands.
-set -x
+pushd po
 
-# Now build the catalog
-find src -iname "*.cpp" | xargs xgettext --from-code utf-8 -o - -p po -k_ --c++ -F -c"* TRANSLATORS" --package-name="M.A.R.S." --no-wrap -o marsshooter.pot
+# Print all commands.
+#set -x
+
+# NOCOM fix project id version and \n when everything works
+
+# Now update the translations
+for file in *.po; do
+	echo "Updating translation for $file";
+	file=${file##*/}
+	msgmerge --no-wrap -F --lang=${file%.po} $file -o $file marsshooter.pot
+done
+
+# Now update the translation binaries
+pushd ..
+
+test -d build/locale || mkdir -p build/locale
+test -e locale || ln -s build/locale
+
+for file in po/*.po; do
+	echo "Updating translation binaries for $file";
+	file=${file##*/}
+	test -d "locale/"${file%.po} || mkdir -p "locale/"${file%.po}
+	test -d "locale/"${file%.po}"/LC_MESSAGES" || mkdir -p "locale/"${file%.po}"/LC_MESSAGES"
+	msgfmt -c -o "locale/"${file%.po}"/LC_MESSAGES/marsshooter.mo" "po/"${file%.mo}
+done
