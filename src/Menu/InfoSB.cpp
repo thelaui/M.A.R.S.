@@ -40,12 +40,12 @@ UiWindow* InfoSB::get() {
 		  instance_->addWidget(new TextBox(_("Kick or shoot the ball to your enemy's planet!"), Vector2f(10,40), 300, 30, Color3f(1.f, 0.7f, 0.9f)));
 		  instance_->addWidget(new TextBox(
 										  _("In year 3547, civilizations all over the galaxy have settled their own "
-											 "planets, living in peace and harmony with its environment. \n"
-											 "But outside the contemplative habitats, the GREAT WAR is raging. \n"
+											 "planets, living in peace and harmony with its environment.\n"
+											 "But outside the contemplative habitats, the GREAT WAR is raging.\n"
 											 "As a famous fighter on your way to never ending honor and prosperity, you "
-											 "have to protect your planet from the oncoming doom of your jealous \n"
+											 "have to protect your planet from the oncoming doom of your jealous\n"
 											 "neighbours! Fight the battle, a true hero as you are was born for: "
-											 "SPACEBALL. \n"
+											 "SPACEBALL.\n"
 											 "Protect your planet from the sphere of death and defeat your enemies by "
 											 "letting it crush into their ridiculous globe."),
 										  Vector2f(10, 80), 300, 160));

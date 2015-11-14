@@ -38,7 +38,7 @@ UiWindow* EnterName::get() {
         instance_->addWidget(new TextEdit(NULL, &settings::C_playerIName, "PlayerI", Vector2f(10,85), 300, 0, TEXT_EDIT, 12));
 		  instance_->addWidget(new Button(_("OK"), NULL, &kOk_, Vector2f(220,130), 90, 20));
 		  /** TRANSLATORS: %s is the player's name.*/
-		  instance_->addWidget(new Label(locales::format_string(gettext("Hey, %s"), reinterpret_cast<const char*>(settings::C_playerIName.toUtf8().c_str())), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+		  instance_->addWidget(new Label(locales::format_string(gettext("Hey, %s!"), reinterpret_cast<const char*>(settings::C_playerIName.toUtf8().c_str())), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
 		  instance_->addWidget(new Label(_("Info"), TEXT_ALIGN_RIGHT, Vector2f(310,18), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
 		  instance_->addWidget(new TextBox(_("That's a bad name... Feel free to enter a better one!"), Vector2f(10, 40), 300, 30));

@@ -37,7 +37,7 @@ UiWindow* Connect::get() {
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
 		  instance_->addWidget(new TextBox(
 										  _("M.A.R.S. gaming over the world wide web or a local area network is a "
-											 "planned feature, but not implemented yet. \n\n"
+											 "planned feature, but not implemented yet.\n\n"
 											 "Stay tuned!"),
 										  Vector2f(10, 50), 300, 90));
     }

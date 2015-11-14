@@ -46,7 +46,7 @@ UiWindow* About::get() {
 		  about->addWidget(new TextBox(
 									 _("This is a first attempt to create a game in OpenGL with SFML. It is a game for "
 										"two players, flying with ships in a two-dimensional space setting, governed by "
-										"the laws of gravity. \n\n"
+										"the laws of gravity.\n\n"
 										"Homepage: \nhttp://www.marsshooter.org\n\n"
 										"© 2010-2011 Felix Lauer & Simon Schneegans"),
 									 Vector2f(10, 30), 390, 180));
@@ -54,11 +54,11 @@ UiWindow* About::get() {
 										_("This program is free software; you can redistribute it and/or modify it "
 										  "under the terms of the GNU General Public License as published by the "
 										  "Free Software Foundation; either version 3 of the License, or "
-										  "(at your option) any later version. \n\n"
+										  "(at your option) any later version.\n\n"
 										  "This program is distributed in the hope that it will be useful, but "
 										  "WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY "
 										  "or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for "
-										  "more details. \n\n"
+										  "more details.\n\n"
 										  "Available online under:\nhttp://www.gnu.org/licenses/gpl-3.0.html"),
 										Vector2f(10, 30), 390, 180));
 		  credits->addWidget(new Label(_("Special Thanks to:"), TEXT_ALIGN_LEFT, Vector2f(10,30), 20.f, Color3f(1.f, 0.5f, 0.9f), false));

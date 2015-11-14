@@ -1,1049 +1,1499 @@
 # M.A.R.S. sv.po
 # Henrik, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: Widelands svnVERSION\n"
-"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
-"POT-Creation-Date: 2015-10-04 08:51+0100\n"
-"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"PO-Revision-Date: 2015-11-14 20:14+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Virtaal 0.7.1\n"
 "O-Revision-Date: 2015-10-04 07:52+0000\n"
 
-msgid "Start Local Game"
-msgstr "Spela lokalt"
-
-msgid "Start Network Game"
-msgstr "Starta ett nätverksspel"
-
-msgid "Join Network Game"
-msgstr "Anslut till nätverksspel"
-
-msgid "Options"
-msgstr "Inställningar"
-
-msgid "About"
-msgstr "Om"
-
-msgid "Quit M.A.R.S."
-msgstr "Avsluta M.A.R.S."
-
-msgid "Continue"
-msgstr "Fortsätt"
-
-msgid "Restart Game"
-msgstr "Starta om spel"
-
-msgid "Hide Menu"
-msgstr "Göm menyn"
-
-msgid "Return to Main Menu"
-msgstr "Återvänd till huvudmenyn"
-
-msgid "Start"
-msgstr "Starta"
-
-msgid "Cancel"
-msgstr "Avbryt"
-
-msgid "Info"
-msgstr "Information"
-
-msgid "Close"
-msgstr "Stäng"
-
-msgid "License"
-msgstr "Licens"
-
-msgid "Show this Info again."
-msgstr "Visa den här informationen igen."
-
-msgid "Left Team"
-msgstr "Vänster lag"
-
-msgid "Right Team"
-msgstr "Höger lag"
-
-msgid "Bots Left"
-msgstr "Vänster bottar"
-
-msgid "Bots Right"
-msgstr "Höger bottar"
-
-msgid "Bots"
-msgstr "Bottar"
-
-msgid "Frag Limit"
-msgstr "Frag-gräns"
-
-msgid ""
-"In year 3547, civilizations all over the galaxy have settled their own "
-"planets, living in peace and harmony with its environment.  But outside the "
-"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
-"your way to never ending honor and prosperity, you have to protect your "
-"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
-"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
-"sphere of death and defeat your enemies by letting it crush into their "
-"ridiculous globe."
-msgstr ""
-"Vid år 3547, har galaxens alla civilisationer slått sig ner på sina egna "
-"planeter, där de lever i fred och harmoni med sin omgivning.Men utanför de "
-"kontemplativa miljöerna, rasar det STORA KRIGET.Som en känd kämpe på din väg "
-"mot rikedom och evig ära, så måste du skydda din planet från dess mötande "
-"undergång av dina avundsjuka grannar!Kämpa i slaget, som du som en sann "
-"hjälte föddes för: RYMDBOLL.Skydda din planet från dödssfären, och besegra "
-"dina fiender genom att låta den krossa deras löjliga lilla glob."
-
-msgid "Kick or shoot the ball to your enemy's planet!"
-msgstr "Sparka eller skjut bollen till din fiendes planet!"
-
-msgid ""
-"As a result of the GREAT WAR you have lost everything: your home, your "
-"family and your self-esteem. Your last chance to get out of the miserable "
-"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
-"arena. Resist the other fighters and earn points by destroying the "
-"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
-msgstr ""
-"Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj "
-"och din självkänsla.Din sista chans att komma bort från det miserabla liv du "
-"fastnat i, är att bli en gladiator på den ärorika DÖDSMATCH-arenan.Slåss med "
-"de andra kämparna och tjäna poäng genom att förstöra det skrot som de kallar "
-"skepp.Stålsätt dig!Död och ära väntar dig."
-
-msgid "Destroy as many enemies as possible!"
-msgstr "Förgör så många fiender som möjligt!"
-
-msgid ""
-"The negotiations have failed! Both of you and your neighbours had to record "
-"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
-"gaining the upper hand, you are ordered to decimate your enemy's resources "
-"and to protect your own one's. The only way to do so is an epic "
-"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
-"lesson, they will never forget."
-msgstr ""
-"Förhandlingar har brutit samman!Både du och dina grannar fick utstå enorma "
-"förluster i slutakten av det bestående STORA KRIGET.I ett sista försök att "
-"få övertaget, så förpliktas du att decimera fiendens resurser och skydda "
-"dina egna. Den enda lösningen är en episk LAGDÖDSMATCH.Skydda dina kamrater "
-"och förgör dina fiender!Lär dem en läxa som de aldrig glömmer."
-
-msgid ""
-"As if the GREAT WAR was not enough, your planetary system is threatened by a "
-"new source of incredible evilness: A giant ship of unknown invaders is "
-"levitating over your galaxy, aiming on the home planets with a monolithic "
-"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
-"remote control to adjust this provenance of death and fear. Reach it first "
-"to turn your enemy's home planet into a place of desolation! Be the "
-"CANNONKEEPer."
-msgstr ""
-"Som om det inte vore nog med det STORA KRIGET, så hotas nu hela ditt "
-"planetsystem av en källa av otrolig ondska: Ett gigantiskt skepp av okänt "
-"ursprung svävar över din galax, med sina massförstörelsevapen inriktade på "
-"hemplaneterna.Som ett tecken på cynism, så har angriparna släppt en "
-"fjärrstyrningsanordning som justerar källan till död och rädsla.Nå den först "
-"för att förvandla din fiendes hemplanet till ett ödsligt ställe!Bli "
-"CANNONKEEPer."
-
-msgid "Pick up the remote and keep it as long as possible!"
-msgstr "Fånga fjärrstyrningsanordningen och behåll den så länge som möjligt!"
-
-msgid "Show Debug Information"
-msgstr "Felsökningsinformation"
-
-msgid "Bots Orientation"
-msgstr "Bottarnas orientering"
-
-msgid "Zones"
-msgstr "Zoner"
-
-msgid "AI-Paths"
-msgstr "AI-Banor"
-
-msgid "Show Game Information"
-msgstr "Spelinformation"
-
-msgid "Frames per Second"
-msgstr "Bilder per sekund"
-
-msgid "Particle Count"
-msgstr "Antal partiklar"
-
-msgid "Particle Lifetime"
-msgstr "Partiklarnas livslängd"
-
-msgid "Game Settings"
-msgstr "Spelinställningar"
-
-msgid "Full screen"
-msgstr "Fullskärm"
-
-msgid "Music"
-msgstr "Musik"
-
-msgid "Sound"
-msgstr "Ljudeffekter"
-
-msgid "Announcer"
-msgstr "Annonsör"
-
-msgid "Name"
-msgstr "Namn"
-
-msgid "Accelerate"
-msgstr "Accelerera"
-
-msgid "Turn Left"
-msgstr "Sväng vänster"
-
-msgid "Turn Right"
-msgstr "Sväng höger"
-
-msgid "Weapon"
-msgstr "Vapen"
-
-msgid "Ship"
-msgstr "Skepp"
-
-msgid "Player Color"
-msgstr "Spelarfärg"
-
-msgid "Team Color"
-msgstr "Lagfärg"
-
-msgid "File Format for Screenshots"
-msgstr "Filformat för skärmdump"
-
-msgid "Display Tool Tips"
-msgstr "Visa inforutor"
-
-msgid "Weapon Options"
-msgstr "Vapeninställningar"
-
-msgid ""
-"This is a first attempt to create a game in OpenGL with SFML. It is a game "
-"for two players, flying with ships in a two-dimensional space setting, "
-"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
-"2010-2011 Felix Lauer & Simon Schneegans"
-msgstr ""
-"Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett "
-"spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som "
-"styrs av gravitationslagen. Hemsida: http://www.marsshooter.org© 2010-2011 "
-"Felix Lauer & Simon Schneegans"
-
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 3 of the License, or (at your option) "
-"any later version. This program is distributed in the hope that it will be "
-"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General "
-"Public License for more details. Available online under:http://www.gnu.org/"
-"licenses/gpl-3.0.html"
-msgstr ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 3 of the License, or any later version. "
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for "
-"more details. Available online under:http://www.gnu.org/licenses/gpl-3.0.html"
-
-msgid "Do you really want to quit?"
-msgstr "Vill du verkligen avsluta?"
-
-msgid "Do you really want to end the current game?"
-msgstr "Vill du verkligen avsluta det pågående spelet?"
-
-msgid ""
-"M.A.R.S. gaming over the world wide web or a local area network is a planned "
-"feature, but not implemented yet. Stay tuned!"
-msgstr ""
-"Att spela M.A.R.S. över Internet eller LAN är en planerad funktion som "
-"tyvärr inte är implementerad än. Håll ögonen öppna!"
-
-msgid ""
-"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
-"take a screenshot, this button enables you to generate epic wallpapers, by "
-"hiding all windows. Simply bring them back afterwards by pressing ESC."
-msgstr ""
-"Du pausade M.A.R.S. mitt under en tokintensiv strid? Om du vill ta en "
-"skärmdump, så kan denna knappen hjälpa dig att göra episka bakgrundsbilder "
-"genom att dölja alla fönster. Du får tillbaka dem efteråt genom att trycka "
-"på Espace."
-
-msgid "Add"
-msgstr "Plus"
-
-msgid "Back Slash"
-msgstr "Omvänt snedstreck"
-
-msgid "Comma"
-msgstr "Komma"
-
-msgid "Dash"
-msgstr "Bindestreck"
-
-msgid "Divide"
-msgstr "Division"
-
-msgid "Down"
-msgstr "Ned"
-
-msgid "Equal"
-msgstr "Likamedtecken"
-
-msgid "Left Alt"
-msgstr "Vänster Alt"
-
-msgid "Left Bracket"
-msgstr "Vänster parantes"
-
-msgid "Left Control"
-msgstr "Vänster Ctrl"
-
-msgid "Left"
-msgstr "Vänster"
-
-msgid "Left Shift"
-msgstr "Vänster skift"
-
-msgid "Left Super"
-msgstr "Vänster meta"
-
-msgid "Menu"
-msgstr "Meny"
-
-msgid "Multiply"
-msgstr "Multiplikationstecken"
-
-msgid "Period"
-msgstr "Punkt"
-
-msgid "Quote"
-msgstr "Citattecken"
-
-msgid "Right Alt"
-msgstr "Höger Alt"
-
-msgid "Right Bracket"
-msgstr "Höger parentes"
-
-msgid "Right Control"
-msgstr "Höger Ctrl"
-
-msgid "Right"
-msgstr "Höger"
-
-msgid "Right Shift"
-msgstr "Höger skift"
-
-msgid "Right Super"
-msgstr "Höger meta"
-
-msgid "Semi Colon"
-msgstr "Semikolon"
-
-msgid "Slash"
-msgstr "Snedstreck"
-
-msgid "Space"
-msgstr "Mellanslag"
-
-msgid "Subtract"
-msgstr "Minus"
-
-msgid "Tab"
-msgstr "Tabb"
-
-msgid "Up"
-msgstr "Upp"
-
-msgid "Graphics"
-msgstr "Grafik"
-
-msgid "Audio"
-msgstr "Ljud"
-
-msgid "Window Settings"
-msgstr "Fönsterinställningar"
-
-msgid "Start Tutorial"
-msgstr "Övningsspela"
-
-msgid "Next"
-msgstr "Nästa"
-
+#: src/Games/Tutorial.cpp:111
 msgid "Welcome, Space Rookie!"
 msgstr "Välkommen, Space Rookie!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, c-format
 msgid ""
-"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
-"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
-"the training begin..."
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
 msgstr ""
-"Vi glädjer oss över att ha rekryterat en blivande hjälte som du, "
-"{PLAYER1_NAME}, som valt att bistå oss i det STORA KRIGET!Vi antog att du "
-"behövde lite träning med ditt nya skepp.Låt oss börja med träningen..."
+"Vi glädjer oss över att ha rekryterat en blivande hjälte som du, %s, som "
+"valt att bistå oss i det STORA KRIGET!\n"
+"\n"
+"Vi antog att du behövde lite träning med ditt nya skepp.\n"
+"Låt oss börja med träningen..."
 
+#: src/Games/Tutorial.cpp:125
 msgid "Basic Movement..."
 msgstr "Grundläggande rörelser..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
 msgid ""
-"Controlling your ship is the most important task to master.All movement is "
-"governed by the laws of gravity. To decelerate you have to turn and "
-"accelerate in the opposite direction. Control your ship, using the keys "
-"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
-"Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.Alla "
-"rörelser styrs av gravitationslagen. För att minska farten måste du vända "
-"dig om och accelerera i motsatt riktning. Styr ditt skepp med tangenterna "
-"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}>!"
+"Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.\n"
+"\n"
+"Alla rörelser styrs av gravitationslagen. För att minska farten måste du "
+"vända dig om och accelerera i motsatt riktning. Styr ditt skepp med "
+"tangenterna %s, %s och %s!"
 
+#: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
 msgstr "Uppvärmning!"
 
-msgid "Reach the pink zone!Try not to crash your brand new ship."
-msgstr "Nå den rosa zonen!Försök att inte krascha ditt helt nya skepp."
-
-msgid "Well Done, {PLAYER1_NAME}!"
-msgstr "Bra gjort, {PLAYER1_NAME}!"
-
+#: src/Games/Tutorial.cpp:143
 msgid ""
-"Now head back to your home planet and try to land your ship by slowly "
-"floating back while approaching your planet."
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
 msgstr ""
-"Styr nu tillbaka till din hemplanet och försök att landa ditt skepp genom "
-"att sakta sväva baklänges medan du närmar dig planeten."
+"Nå den rosa zonen!\n"
+"\n"
+"Försök att inte krascha ditt helt nya skepp."
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "Bra gjort, %s!"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "Styr nu tillbaka till din hemplanet och försök att landa ditt skepp genom att sakta sväva baklänges medan du närmar dig planeten."
+
+#: src/Games/Tutorial.cpp:183
 msgid "Good Work!"
 msgstr "Bra jobbat!"
 
+#: src/Games/Tutorial.cpp:184
 msgid ""
-"Proper landing is not a piece of cake, is it?You should learn it by heart."
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
 msgstr ""
-"Att landa korrekt är inte lätt som en plätt, eller?Du skall lära dig det "
-"utantill."
+"Att landa korrekt är inte lätt som en plätt, eller?\n"
+"\n"
+"Du skall lära dig det utantill."
 
+#: src/Games/Tutorial.cpp:192
 msgid "Something More Difficult..."
 msgstr "Någonting lite mer svårt..."
 
+#: src/Games/Tutorial.cpp:193
 msgid ""
-"Try to follow the path marked up by the pink zones!We will contact you "
-"again, after you have mastered this.Now go for it!"
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
 msgstr ""
-"Försök att följa vägen som är markerad med de rosa zonerna!Vi kommer att "
-"kontakta dig igen, när du har bemästrat detta.Sätt igång!"
+"Försök att följa vägen som är markerad med de rosa zonerna!\n"
+"\n"
+"Vi kommer att kontakta dig igen, när du har bemästrat detta.\n"
+"\n"
+"Sätt igång!"
 
+#: src/Games/Tutorial.cpp:215
 msgid "Awesome!"
 msgstr "Kanonbra!"
 
+#: src/Games/Tutorial.cpp:216
 msgid ""
-"You are the best rookie we have ever seen.Now prepare yourself for some "
-"explosive stuff."
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
 msgstr ""
-"Du är den bästa nybörjaren vi någonsin sett.Förbered dig för lite explosiva "
-"saker."
+"Du är den bästa nybörjaren vi någonsin sett.\n"
+"\n"
+"Förbered dig för lite explosiva saker."
 
+#: src/Games/Tutorial.cpp:224
 msgid "Shooting..."
 msgstr "Att skjuta..."
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
 msgid ""
-"To defeat your enemies, you have to know how to shoot them up!For that "
-"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
-"land your ship to continue the tutorial."
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
 msgstr ""
-"För att besegra dina fiender så måste du veta hur du skjuter på dem!För det "
-"ändamålet, tryck <{PLAYER1_KEY_FIRE}>. Ha nu skoj med att skjuta vilt "
-"omkring dig, landa ditt skepp när du är redo att fortsätta med övningarna."
+"För att besegra dina fiender så måste du veta hur du skjuter på dem!\n"
+"\n"
+"För det ändamålet, tryck %s.\n"
+"\n"
+"Ha nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo "
+"att fortsätta med övningarna."
 
-msgid "Volume Settings"
-msgstr "Volyminställningar"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "Bra landning, %s!"
 
-msgid "Good Landing, {PLAYER1_NAME}!"
-msgstr "Bra landning, {PLAYER1_NAME}!"
-
-msgid "You turn out to be a great pilot.Now how about some more weapons?"
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
 msgstr ""
-"Du visar dig ju vara en bra pilot.Så, hur skulle det smaka med fler vapen?"
+"Du visar dig ju vara en bra pilot.\n"
+"\n"
+"Så, hur skulle det smaka med fler vapen?"
 
+#: src/Games/Tutorial.cpp:253
 msgid "The Weapons..."
 msgstr "Vapenarsenalen..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
 msgid ""
-"We know you've been waiting for this. When docked you can switch through "
-"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
-"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
-"weapon! Take-off, when you're ready!"
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
 msgstr ""
 "Vi vet att du har väntat på det här. När du har dockat kan du byta mellan "
-"några otroligt ondskefulla vapen. Håll in <{PLAYER1_KEY_FIRE}> för att öppna "
-"din arsenal.Använd sen <{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}> för "
-"att välja ett vapen! Starta när du är redo!"
+"några otroligt ondskefulla vapen. Håll in %s för att öppna din arsenal.\n"
+"\n"
+"Använd sen %s och %s för att välja ett vapen!\n"
+"\n"
+"Starta när du är redo!"
 
-msgid "Play Next Track"
-msgstr "Spela nästa spår"
-
-msgid "Playback Settings"
-msgstr "Uppspelningsinställningar"
-
+#: src/Games/Tutorial.cpp:276
 msgid "Fight!"
 msgstr "Kämpa!"
 
+#: src/Games/Tutorial.cpp:277
 msgid ""
-"Now let's see how you make it against a rookie from another planet. Seems "
-"like he is trying to improve his flying abilities.Beat him!"
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
 msgstr ""
-"Nu ska vi se hur du klarar av en nybörjare från en annan planet. Ser ut som "
-"att han försöker förbättra sin flygförmåga.Besegra honom!"
+"Nu ska vi se hur du klarar av en nybörjare från en annan planet. Ser ut som att han försöker förbättra sin flygförmåga.\n"
+"\n"
+"Besegra honom!"
 
+#: src/Games/Tutorial.cpp:302
 msgid "Impressive!"
 msgstr "Imponerande!"
 
+#: src/Games/Tutorial.cpp:303
 msgid ""
-"You did it! As you may have noticed, a little star appeared over your ship. "
-"The more enemies you kill, the more of them will show. But they are not only "
-"a frag indicator! Land again and we will show you what else stars are good "
-"for."
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
 msgstr ""
-"Du gjorde det! Som du kanske har märkt, så dök en liten stjärna upp ovanför "
-"ditt skepp. Ju fler fiender du dödar, desto fler stjärnor kommer att visas. "
-"Men de är inte enbart en fragindikator! Landa igen och vi ska visa dig vad "
-"mer stjärnor kan vara bra för."
-
-msgid "Beat Them!"
-msgstr "Ge dem stryk!"
-
-msgid ""
-"Prove your skills! Score at least five points by killing them! Your current "
-"score is displayed next to your name!We will send in an experienced warrior "
-"assisting you, {PLAYER1_NAME}!"
-msgstr ""
-"Bevisa dina kunskaper! Få minst fem poäng genom att döda dem! Din nuvarande "
-"poäng visas bredvid ditt namn!Vi skickar in en erfaren krigare att assistera "
-"dig, {PLAYER1_NAME}!"
-
-msgid "Unbelievable!"
-msgstr "Otroligt!"
-
-msgid ""
-"You managed all our tasks successfully. Now what to do?Let's have a look at "
-"the options menu. There you can adjust a lot of... well... options.For "
-"example you may choose your ship style and color or change your name..."
-msgstr ""
-"Du klarade av alla våra uppdrag med framgång. Så vad göra nu?Låt oss ta en "
-"titt på inställningsmenyn. Där kan man justera en massa... tja... "
-"inställningar.Till exempel så kan du välja stil och färg på skeppet, eller "
-"kanske ändra ditt namn..."
-
-msgid "Who's Best?"
-msgstr "Vem är bäst?"
-
-msgid ""
-"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
-"Furthermore the numbers next to your name illustrate your frag counter and "
-"your distance to the best one."
-msgstr ""
-"Du kan visa en lista med frags, poäng osv med <{STATISTICS_KEY}>.Dessutom så "
-"illustrerar siffrorna sidan om ditt namn ditt antal frags och avståndet till "
-"den bästa."
-
-msgid "Congratulations, {PLAYER1_NAME}!"
-msgstr "Gratulerar, {PLAYER1_NAME}!"
-
-msgid ""
-"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
-"you want to continue practising, just wait for the enemies to re-spawn. You "
-"can end your training with <Esc>.Have a great time with M.A.R.S.!"
-msgstr ""
-"Du har klarat samtliga övningar. Du är nu reda att kämpa i det STORA KRIGET. "
-"Om du vill fortsätta att öva, så behöver du bara vänta tills fienden "
-"återskapas. Du kan sluta din övning med <Esc>.Ha en fantastisk stund med M.A."
-"R.S.!"
-
-msgid "You Failed!"
-msgstr "Du misslyckades!"
-
-msgid ""
-"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
-"will get you a new one. Just wait some seconds..."
-msgstr ""
-"Skitbra {PLAYER1_NAME}. Du förstörde ditt helt nya skepp! Jaja, du ska få "
-"ett nytt. Vänta bara några sekunder..."
-
-msgid "Did You Notice?"
-msgstr "Såg du?"
-
-msgid ""
-"Your life is draining! Keep an eye on the upper life bar. You better land if "
-"it's too empty."
-msgstr ""
-"Din hälsa håller på att ta slut! Håll ett öga på den övre hälsomätaren. Det "
-"är bäst att landa när den är för låg."
-
-msgid ""
-"Your fuel is draining! Keep an eye on the yellow fuel bar. You better land "
-"if it's too empty."
-msgstr ""
-"Ditt bränsle håller på att ta slut! Håll ett öga på den gula bränslemätaren. "
-"Det är bäst att landa när den är för låg."
-
-msgid "You Nearly Got Him!"
-msgstr "Du fick honom nästan!"
-
-msgid ""
-"Watch your opponent's name. Its colour indicates his life points. The more "
-"it turns red, the weaker your enemy is."
-msgstr ""
-"Titta på din motståndares namn. Färgen indikerar hans hälsa. Ju rödare "
-"namnet blir, desto svagare är han."
-
-msgid "Interface"
-msgstr "Gränssnitt"
-
-msgid "High Star Field Resolution"
-msgstr "Hög upplösning på stjärnfältet"
-
-msgid "Language"
-msgstr "Språk"
-
-msgid "Hot Key for Screenshots"
-msgstr "Kortkommando för skärmdump"
-
-msgid "Points"
-msgstr "Poäng"
-
-msgid "Teamkills"
-msgstr "Vådaskott"
-
-msgid "Suicides"
-msgstr "Självmord"
-
-msgid "Deaths"
-msgstr "Dödsfall"
-
-msgid "Game Options"
-msgstr "Spelinställningar"
-
-msgid "Total:"
-msgstr "Totalt:"
-
-msgid "Statistics"
-msgstr "Statistik"
-
-msgid "Planet Life Points"
-msgstr "Planetens livspoäng"
-
-msgid "Shader Effects"
-msgstr "Shader-effekter"
-
-msgid "Sadly, shaders are not supported by your hardware!"
-msgstr "Tyvärr så stödjer inte din hårdvara shaders!"
-
-msgid "Gameplay"
-msgstr "Spel"
-
-msgid "PowerUp Spawn Rate"
-msgstr "Spawn rate för PowerUps"
-
-msgid "Bot Difficulty"
-msgstr "Bottarnas svårighetsgrad"
-
-msgid "Explosions for Slow Motion"
-msgstr "Antal explosioner för slowmotion"
-
-msgid "Off"
-msgstr "Av"
-
-msgid "Credits"
-msgstr "Medverkande"
-
-msgid "Special Thanks to:"
-msgstr "Särskilt tack till:"
-
-msgid ""
-"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
-"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
-"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
-"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
-"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
-msgstr ""
-"Översättningar: Arabiska: Majid Kinesiska: Wecing Tjeckiska: Mates Finska: "
-"Paavo Franska: Astohan Tyska: Sandra Hindi: Antriksh & Aakanksh Ungerska: "
-"Papp Bence Italienska: Proch Polska: command_dos Portugisiska: Vitor Ryska: "
-"Drakmail Spanska: Gastón Svenska: HenrikUtvecklingsstöd: Werner och "
-"DeubeuliouTestning och kreativt stöd: Heinrich, Martin, Bastian, Sandra och "
-"Diana."
-
-msgid "Resolution"
-msgstr "Upplösning"
-
-msgid "Color Depth"
-msgstr "Färgdjup"
-
-msgid "Special Ability"
-msgstr "Specialförmåga"
-
-msgid ""
-"Displays the amount of Frames calculated per Second.If this is always very "
-"low (<20), you should adjust some settings in graphics tab!"
-msgstr ""
-"Visar antalet bilder som beräknas per sekund.Om värdet alltid är väldigt "
-"lågt (<20), så bör du justera några inställningar under grafiktabben!"
-
-msgid "Displays the amount of active particles."
-msgstr "Visar antalet aktiva partiklar."
-
-msgid "Dismisses tool tips like this one."
-msgstr "Stänger av inforutor som denna."
-
-msgid "Sets the format being used when screenshots are saved."
-msgstr "Ställer in filformatet som används när skärmdumpar sparas."
-
-msgid ""
-"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
-msgstr ""
-"Trycker man på den här tangenten, kommer en skärmdump att sparas på "
-"{CONFIG_PATH}screenshots/"
-
-msgid "Pressing this key switches to the next music track."
-msgstr "Trycker man på den här tangenten växlar musiken till nästa spår."
-
-msgid ""
-"If that many ships explode simultaneously, the slow motion effect kicks in."
-msgstr "Om så många skepp exploderar samtidigt, aktiveras slowmotioneffekten."
-
-msgid "Displays the job of each bot."
-msgstr "Visar varje bots jobb."
-
-msgid ""
-"Displays tactical zones, which are important for the artificial intelligence."
-msgstr ""
-"Visar taktiska zoner, vilket är viktigt för den artificiella intelligensen."
-
-msgid "Displays paths calculated by bots."
-msgstr "Visar bottarnas beräknade banor."
-
-msgid "Maximizes the window, making it cover the entire screen."
-msgstr "Maximerar fönstret, så att det upptar hela skärmen."
-
-msgid ""
-"Makes the game update according to the refresh rate of your monitor.Enabling "
-"this option typically makes the game run more smoothly."
-msgstr ""
-"Gör att spelet uppdaterar enligt uppdateringsfrekvensen på din skärm."
-"Aktivering gör oftast spelet smidigare."
-
-msgid "Enables cool effects like heat haze, but reduces game performance."
-msgstr "Aktiverar häftiga effekter som t.ex soldis, men kan minska prestandan."
-
-msgid ""
-"Sets the size of the window.Affects both, full screen and windowed mode."
-msgstr "Sätter storleken på fönstret.Påverkar både fullskärm och fönsterläge."
-
-msgid ""
-"With high resolution displays, this option makes the star field loop later."
-"Disabling may increase game performance slightly."
-msgstr ""
-"Med högupplösta skärmar, gör detta val att stjärnfältet loopar senare."
-"Inaktivering kan öka prestandan något."
-
-msgid ""
-"Adjusts the global particle count.Lower values will increase performance "
-"significantly."
-msgstr ""
-"Justerar det globala antalet partiklar.Lägre värden ökar prestandan avsevärt."
-
-msgid ""
-"Adjusts the global particle life time.Lower values will increase performance "
-"significantly."
-msgstr "Justerar partiklarnas livslängd.Lägre värden ökar prestandan avsevärt."
-
-msgid "Adjusts volume of background music."
-msgstr "Justerar volumen på bakgrundsmusiken."
-
-msgid "Adjusts volume of sound effects."
-msgstr "Justerar volumen på ljudeffekterna."
-
-msgid "Adjusts volume of announcers voice."
-msgstr "Justerar volymen på annonsörens röst."
-
-msgid "Sets the team of the local players."
-msgstr "Väljer lag för de lokala spelarna."
-
-msgid "Enables local players."
-msgstr "Tillåter lokala spelare."
-
-msgid "Adjusts the amount of ships controlled by the artificial intelligence."
-msgstr ""
-"Justerar mängden skepp som kontrolleras av den artificiella intelligensen."
-
-msgid "Point limit to be reached by a team in order to win the game."
-msgstr "Poänggräns som behöver nås av ett lag för att vinna spelet."
-
-msgid "Point limit to be reached by a player in order to win the game."
-msgstr "Poänggräns som behöver nås av en spelare för att vinna spelet."
-
-msgid "Adjusts the strength of the bots."
-msgstr "Justerar styrkan på bottarna."
-
-msgid ""
-"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
-"disables Power-Ups entirely."
-msgstr ""
-"Justerar mängden av Power-Ups som kommer att spawnas under spelet. Noll "
-"stänger av Power-Ups helt."
-
-msgid "Weapons"
-msgstr "Vapen"
-
-msgid "Special Abilities"
-msgstr "Specialförmågor"
-
-msgid "Screenshot saved!"
-msgstr "Skärmdump sparad!"
-
-msgid ""
-"As the GREAT WAR reduces your resources drastically, scientists were engaged "
-"to find a way of efficiently destroying your enemy by limiting the given "
-"input. They did a lot of research and eventually created a new weapon with "
-"an incredible property: It kills instantly, but launched projectiles are "
-"really affine to any gravitation and they're quite difficult to handle. "
-"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
-"technology, so your enemies can use this evil weapon, too. Now it is your "
-"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
-"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
-msgstr ""
-"Eftersom det STORA KRIGET drastiskt minskade dina resurser, engagerades "
-"vetenskapsmännen för att hitta ett sätt att förgöra din fiende så effektivt "
-"som möjligt. De gjorde en hel del forskning och skapade så småningom ett "
-"nytt vapen med en otrolig egenskap: Det dödar omedelbart, men avfyrade "
-"projektiler är väldigt känsliga för gravitation och de är ganska svåra att "
-"hantera. Därför kallade dem det: INSTA-GRAVE!   Olyckligtvis så stal någon "
-"teknologin, så dina fiender kan också använda detta onda vapen. Nu är det "
-"din tur: Besegra tjuvarna i den stora GRAVE-ITATION-GROPEN för att återfå "
-"övertaget.  Vinn denna kamp, och segern i det STORA KRIGET kan bli din."
-
-msgid "Destroy es many enemies as possible!"
-msgstr "Förgör så många fiender som möjligt!"
-
+"Du gjorde det! Som du kanske har märkt, så dök en liten stjärna upp ovanför ditt skepp. Ju fler fiender du dödar, desto fler stjärnor kommer att visas. Men de är inte enbart en fragindikator!\n"
+"\n"
+"Landa igen och vi ska visa dig vad mer stjärnor kan vara bra för."
+
+#: src/Games/Tutorial.cpp:316
 msgid "Special Abilities..."
 msgstr "Specialförmågor..."
 
+#: src/Games/Tutorial.cpp:317
 msgid ""
-"As promised, we will tell you the stars' meaning. They are a resource for "
-"your ship's impressively powerful extra abilities. For example you can heal "
-"you including nearby friends, blast away or freeze ships within a certain "
-"distance! The more stars you have, the larger range and strength of the "
-"ability grow."
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
 msgstr ""
-"Som utlovat, så ska vi berätta meningen med stjärnorna. De är en resurs för "
-"ditt skepps imponerande kraftfulla extra förmågor. Till exempel kan du hela "
-"dig inklusive närbelägna vänner, spränga eller frysa skepp inom ett visst "
-"avstånd! Ju fler stjärnor du har, desto större område och styrka får "
-"förmågan."
+"Som utlovat, så ska vi berätta meningen med stjärnorna. De är en resurs för ditt skepps imponerande kraftfulla extra förmågor.\n"
+"\n"
+"Till exempel kan du hela dig inklusive närbelägna vänner, spränga eller frysa skepp inom ett visst avstånd!\n"
+"\n"
+"Ju fler stjärnor du har, desto större område och styrka får förmågan."
 
+#: src/Games/Tutorial.cpp:328
 msgid "Selection..."
 msgstr "Val..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
 msgid ""
-"To switch through the abilities, you just have to press "
-"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
-"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
-"\"Freezer\"! Take off, when you got it!"
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"För att växla mellan förmågorna, behöver du bara hålla in "
-"<{PLAYER1_KEY_SPECIAL}>. För att välja en, så kan du cykla igenom dem med "
-"<{PLAYER1_KEY_LEFT}> och <{PLAYER1_KEY_RIGHT}>! För den här lektionen, välj "
-"\"Freezer\"! Starta när du har den!"
+"För att växla mellan förmågorna, behöver du bara hålla in %s. För att välja "
+"en, så kan du cykla igenom dem med %s och %s!\n"
+"\n"
+"För den här lektionen, välj \"Freezer\"!\n"
+"\n"
+"Starta när du har den!"
 
-msgid "Hey, {PLAYER1_NAME}!"
-msgstr "Hej, {PLAYER1_NAME}!"
-
-msgid "That's a bad name... Feel free to enter a better one!"
-msgstr "Dåligt namn... Du får gärna skriva in ett bättre!"
-
-msgid "Next music track!"
-msgstr "Nästa musikspår!"
-
-msgid "General Settings"
-msgstr "Allmänna inställningar"
-
-msgid "Special Effects"
-msgstr "Specialeffekter"
-
-msgid "Ship Settings"
-msgstr "Skeppsinställningar"
-
-msgid "A Button"
-msgstr "A-knappen"
-
-msgid "B Button"
-msgstr "B-knappen"
-
-msgid "X Button"
-msgstr "X-knappen"
-
-msgid "Y Button"
-msgstr "Y-knappen"
-
-msgid "Start Button"
-msgstr "Startknappen"
-
-msgid "Back Button"
-msgstr "Bakåtknappen"
-
-msgid "Right Bumper"
-msgstr "Höger bumper"
-
-msgid "Left Bumper"
-msgstr "Vänster bumper"
-
-msgid "Right Trigger"
-msgstr "Höger skjutknapp"
-
-msgid "Left Trigger"
-msgstr "Vänster skjutknapp"
-
-msgid "Direction Up"
-msgstr "Styrkors upp"
-
-msgid "Direction Down"
-msgstr "Styrkors ner"
-
-msgid "Direction Left"
-msgstr "Styrkors vänster"
-
-msgid "Direction Right"
-msgstr "Styrkors höger"
-
-msgid "Stick1 Up"
-msgstr "Styrspak 1 upp"
-
-msgid "Stick1 Down"
-msgstr "Styrspak 1 ner"
-
-msgid "Stick1 Left"
-msgstr "Styrspak 1 vänster"
-
-msgid "Stick1 Right"
-msgstr "Styrspak 1 höger"
-
-msgid "Stick2 Up"
-msgstr "Styrspak 2 upp"
-
-msgid "Stick2 Down"
-msgstr "Styrspak 2 ner"
-
-msgid "Stick2 Left"
-msgstr "Styrspak 2 vänster"
-
-msgid "Stick2 Right"
-msgstr "Styrspak 2 höger"
-
-msgid "Button"
-msgstr "Knapp"
-
-msgid "Hot Key for Statistics"
-msgstr "Kortkommando för statistik"
-
-msgid ""
-"When this key is pressed while playing a game, a window pops up displaying "
-"statistics for the current game."
-msgstr ""
-"Trycker man på här tangenten medan man spelar ett spel, så dyker ett fönster "
-"upp som visar spelstatistiken."
-
-msgid "CannonShots"
-msgstr "Kanonskott"
-
-msgid "Stop, {PLAYER1_NAME}!"
-msgstr "Halt, {PLAYER1_NAME}!"
-
-msgid ""
-"We told you to select the Freezer, but you have chosen another ability!"
-"Please land again and take the Freezer!"
-msgstr ""
-"Vi sade till dig att välja frysen, men du har valt en annan förmåga!Vänligen "
-"landa igen och ta frysen!"
-
+#: src/Games/Tutorial.cpp:351
 msgid "The Freezer..."
 msgstr "Frysen..."
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
 msgid ""
-"This is a powerful special ability which freezes nearby ships. You have to "
-"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
-"Watch him loosing life slowly... until he dies!"
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
-"Detta är en kraftfull specialförmåga som fryser närbelägna skepp. Du behöver "
-"flyga nära din fiende och trycka <{PLAYER1_KEY_SPECIAL}> för att frysa "
-"honom. Se honom sakta förlora livet... tills han dör!"
+"Detta är en kraftfull specialförmåga som fryser närbelägna skepp.\n"
+"\n"
+"Du behöver flyga nära din fiende och trycka %s för att frysa honom. Se honom "
+"sakta förlora livet... tills han dör!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"Vi sade till dig att välja frysen, men du har valt en annan förmåga!\n"
+"\n"
+"Vänligen landa igen och ta frysen!"
+
+#: src/Games/Tutorial.cpp:385
 msgid "Practice!"
 msgstr "Öva!"
 
+#: src/Games/Tutorial.cpp:386
 msgid ""
-"Now try to freeze your enemy! For this tutorial we will give you some "
-"FragStars. But remember: In real life you have to smash opponents to get "
-"those stars!"
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
 msgstr ""
-"Försök nu att frysa din fiende! För den här övningen kommer vi att ge dig "
-"ett antal fragstjärnor. Men kom ihåg: I verkligheten måste du krossa "
-"motståndare för att få dessa stjärnor!"
+"Försök nu att frysa din fiende!\n"
+"\n"
+"För den här övningen kommer vi att ge dig ett antal fragstjärnor. Men kom ihåg: I verkligheten måste du krossa motståndare för att få dessa stjärnor!"
 
-msgid "You Missed Him, {PLAYER1_NAME}!"
-msgstr "Du missade honom, {PLAYER1_NAME}!"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "Du missade honom, %s!"
 
+#: src/Games/Tutorial.cpp:411
 msgid "Try again. we will refill your FragStars."
 msgstr "Försök igen. Vi kommer att fylla på dina fragstjärnor."
 
+#: src/Games/Tutorial.cpp:428
 msgid "You Did It!"
 msgstr "Du gjorde det!"
 
+#: src/Games/Tutorial.cpp:429
 msgid "Now head back to your planet to select another special ability!"
 msgstr "Åk nu tillbaka till din planet och välj en annan specialförmåga!"
 
-msgid "Beware, {PLAYER1_NAME}!"
-msgstr "Se upp, {PLAYER1_NAME}!"
-
-msgid ""
-"There is no time for further testing!Our enemies have sent two of their real "
-"warriors for vengeance!"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
 msgstr ""
-"Det finns ingen tid åt ytterligare övning!Våra fiender har skickat ut två av "
-"deras riktiga krigare för hämnd!"
 
-msgid "Players"
-msgstr "Spelare"
+#: src/Games/Tutorial.cpp:443
+msgid ""
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
+msgstr ""
+"Det finns ingen tid åt ytterligare övning!\n"
+"\n"
+"Våra fiender har skickat ut två av deras riktiga krigare för hämnd!"
 
+#: src/Games/Tutorial.cpp:457
+msgid "Beat Them!"
+msgstr "Ge dem stryk!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
+msgstr ""
+"Bevisa dina kunskaper! Få minst fem poäng genom att döda dem! Din nuvarande "
+"poäng visas bredvid ditt namn!\n"
+"\n"
+"Vi skickar in en erfaren krigare att assistera dig, %s!"
+
+#: src/Games/Tutorial.cpp:484
+msgid "Unbelievable!"
+msgstr "Otroligt!"
+
+#: src/Games/Tutorial.cpp:485
+msgid ""
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
+msgstr ""
+"Du klarade av alla våra uppdrag med framgång. Så vad göra nu?\n"
+"\n"
+"Låt oss ta en titt på inställningsmenyn. Där kan man justera en massa... tja... inställningar.\n"
+"\n"
+"Till exempel så kan du välja stil och färg på skeppet, eller kanske ändra ditt namn..."
+
+#: src/Games/Tutorial.cpp:500
+msgid "Who's Best?"
+msgstr "Vem är bäst?"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, c-format
+msgid ""
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
+msgstr ""
+"Du kan visa en lista med frags, poäng osv med %s.\n"
+"\n"
+"Dessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och "
+"avståndet till den bästa."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "Gratulerar, %s!"
+
+#: src/Games/Tutorial.cpp:517
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
+msgstr ""
+"Du har klarat samtliga övningar. Du är nu reda att kämpa i det STORA KRIGET. Om du vill fortsätta att öva, så behöver du bara vänta tills fienden återskapas. Du kan sluta din övning med <Esc>.\n"
+"\n"
+"Ha en fantastisk stund med M.A.R.S.!"
+
+#: src/Games/Tutorial.cpp:529
+msgid "You Failed!"
+msgstr "Du misslyckades!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
+msgstr ""
+"Skitbra %s. Du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. "
+"Vänta bara några sekunder..."
+
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
+msgid "Did You Notice?"
+msgstr "Såg du?"
+
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "Din hälsa håller på att ta slut! Håll ett öga på den övre hälsomätaren. Det är bäst att landa när den är för låg."
+
+#: src/Games/Tutorial.cpp:551
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
+msgstr "Ditt bränsle håller på att ta slut! Håll ett öga på den gula bränslemätaren. Det är bäst att landa när den är för låg."
+
+#: src/Games/Tutorial.cpp:559
+msgid "You Nearly Got Him!"
+msgstr "Du fick honom nästan!"
+
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "Titta på din motståndares namn. Färgen indikerar hans hälsa. Ju rödare namnet blir, desto svagare är han."
+
+#: src/Hud/TabStats.cpp:178
+msgid "Statistics"
+msgstr "Statistik"
+
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "Frag-gräns"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
+msgid "Planet Life Points"
+msgstr "Planetens livspoäng"
+
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "Poäng"
+
+#: src/Hud/TabStats.cpp:228
+msgid "CannonShots"
+msgstr "Kanonskott"
+
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr "Mål"
+
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "Frags"
+
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "Vådaskott"
+
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "Självmord"
+
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "Dödsfall"
+
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "Totalt:"
+
+#: src/Hud/musicNotify.cpp:193
+msgid "Artist:"
+msgstr "Artist:"
+
+#: src/Hud/musicNotify.cpp:194
+msgid "Album:"
+msgstr "Album:"
+
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "Nästa musikspår!"
+
+#: src/Media/music.cpp:153
 msgid "Previous music track!"
 msgstr "Föregående musikspår!"
 
-msgid "Play Previous Track"
-msgstr "Spela föregående spår"
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "Stäng"
 
-msgid "Play Tracks in Random Order"
-msgstr "Slumpvis uppspelning"
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+msgid "About"
+msgstr "Om"
 
-msgid "Pressing this key switches to the previous music track."
-msgstr "Trycker man på den här tangenten växlar musiken till föregående spår."
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "Licens"
 
-msgid "Enables music play back in a random sequence."
-msgstr "Gör så att bakgrundsmusiken spelas i slumpvis ordning."
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "Medverkande"
 
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett "
+"spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som "
+"styrs av gravitationslagen.\n"
+"\n"
+"Hemsida:\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "Särskilt tack till:"
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Översättningar:\n"
+"Arabiska: Majid\n"
+"Kinesiska: Wecing\n"
+"Tjeckiska: Mates\n"
+"Finska: Paavo\n"
+"Franska: Astohan\n"
+"Tyska: Sandra\n"
+"Hindi: Antriksh & Aakanksh\n"
+"Ungerska: Papp Bence\n"
+"Italienska: Proch\n"
+"Polska: command_dos\n"
+"Portugisiska: Vitor\n"
+"Ryska: Drakmail\n"
+"Spanska: Gastón\n"
+"Svenska: Henrik\n"
+"\n"
+"Utvecklingsstöd: Werner och Deubeuliou\n"
+"\n"
+"Testning och kreativt stöd:\n"
+"Heinrich, Martin, Bastian, Sandra och Diana."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+msgid "Start Network Game"
+msgstr "Starta ett nätverksspel"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"Att spela M.A.R.S. över Internet eller LAN är en planerad funktion som tyvärr inte är implementerad än.\n"
+"\n"
+"Håll ögonen öppna!"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "Starta om spel"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
+#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "Inställningar"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "Göm menyn"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "Återvänd till huvudmenyn"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "Information"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Dåligt namn... Du får gärna skriva in ett bättre!"
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "Vill du verkligen avsluta?"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Fånga fjärrstyrningsanordningen och behåll den så länge som möjligt!"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"Som om det inte vore nog med det STORA KRIGET, så hotas nu hela ditt planetsystem av en källa av otrolig ondska: Ett gigantiskt skepp av okänt ursprung svävar över din galax, med sina massförstörelsevapen inriktade på hemplaneterna.\n"
+"\n"
+"Som ett tecken på cynism, så har angriparna släppt en fjärrstyrningsanordning som justerar källan till död och rädsla.\n"
+"\n"
+"Nå den först för att förvandla din fiendes hemplanet till ett ödsligt ställe!\n"
+"\n"
+"Bli CANNONKEEPer."
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "Visa den här informationen igen."
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "Förgör så många fiender som möjligt!"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj "
+"och din självkänsla.\n"
+"\n"
+"Din sista chans att komma bort från det miserabla liv du fastnat i, är att "
+"bli en gladiator på den ärorika DÖDSMATCH-arenan.\n"
+"\n"
+"Slåss med de andra kämparna och tjäna poäng genom att förstöra det skrot som "
+"de kallar skepp.\n"
+"\n"
+"Stålsätt dig!\n"
+"\n"
+"Död och ära väntar dig."
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "Förgör så många fiender som möjligt!"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Eftersom det STORA KRIGET drastiskt minskade dina resurser, engagerades vetenskapsmännen för att hitta ett sätt att förgöra din fiende så effektivt som möjligt. De gjorde en hel del forskning och skapade så småningom ett nytt vapen med en otrolig egenskap: Det dödar omedelbart, men avfyrade projektiler är väldigt känsliga för gravitation och de är ganska svåra att hantera. Därför kallade dem det: INSTA-GRAVE!\n"
+"\n"
+"Olyckligtvis så stal någon teknologin, så dina fiender kan också använda detta onda vapen. Nu är det din tur: Besegra tjuvarna i den stora GRAVE-ITATION-GROPEN för att återfå övertaget.\n"
+"\n"
+"Vinn denna kamp, och segern i det STORA KRIGET kan bli din."
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Du pausade M.A.R.S. mitt under en tokintensiv strid?\n"
+"Om du vill ta en skärmdump, så kan denna knappen hjälpa dig att göra episka bakgrundsbilder genom att dölja alla fönster.\n"
+"\n"
+"Du får tillbaka dem efteråt genom att trycka på Espace."
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Sparka eller skjut bollen till din fiendes planet!"
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"Vid år 3547, har galaxens alla civilisationer slått sig ner på sina egna planeter, där de lever i fred och harmoni med sin omgivning.\n"
+"\n"
+"Men utanför de kontemplativa miljöerna, rasar det STORA KRIGET.\n"
+"\n"
+"Som en känd kämpe på din väg mot rikedom och evig ära, så måste du skydda din planet från dess mötande undergång av dina avundsjuka grannar!\n"
+"\n"
+"Kämpa i slaget, som du som en sann hjälte föddes för: RYMDBOLL.\n"
+"\n"
+"Skydda din planet från dödssfären, och besegra dina fiender genom att låta den krossa deras löjliga lilla glob."
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"Förhandlingar har brutit samman!\n"
+"\n"
+"Både du och dina grannar fick utstå enorma förluster i slutakten av det "
+"bestående STORA KRIGET.\n"
+"\n"
+"I ett sista försök att få övertaget, så förpliktas du att decimera fiendens "
+"resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH.\n"
+"\n"
+"Skydda dina kamrater och förgör dina fiender!\n"
+"\n"
+"Lär dem en läxa som de aldrig glömmer."
+
+#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "Spela lokalt"
+
+#: src/Menu/MainMenu.cpp:46
+msgid "Start Tutorial"
+msgstr "Övningsspela"
+
+#: src/Menu/MainMenu.cpp:48
+msgid "Join Network Game"
+msgstr "Anslut till nätverksspel"
+
+#: src/Menu/MainMenu.cpp:51
+msgid "Quit M.A.R.S."
+msgstr "Avsluta M.A.R.S."
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "Vill du verkligen avsluta det pågående spelet?"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "Väljer lag för de lokala spelarna."
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "Tillåter lokala spelare."
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "Bottar"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Justerar mängden skepp som kontrolleras av den artificiella intelligensen."
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Poänggräns som behöver nås av ett lag för att vinna spelet."
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "Bottarnas svårighetsgrad"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "Justerar styrkan på bottarna."
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "Spawn rate för PowerUps"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr ""
+"Justerar mängden av Power-Ups som kommer att spawnas under spelet.\n"
+"Noll stänger av Power-Ups helt."
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "Starta"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "Vänster lag"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "Höger lag"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "Spelinställningar"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "Vapeninställningar"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "Spelare"
+
+#: src/Menu/OptionsMenu.cpp:81
+msgid "Interface"
+msgstr "Gränssnitt"
+
+#: src/Menu/OptionsMenu.cpp:82
+msgid "Gameplay"
+msgstr "Spel"
+
+#: src/Menu/OptionsMenu.cpp:83
+msgid "Graphics"
+msgstr "Grafik"
+
+#: src/Menu/OptionsMenu.cpp:84
+msgid "Audio"
+msgstr "Ljud"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "General Settings"
+msgstr "Allmänna inställningar"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Language"
+msgstr "Språk"
+
+#: src/Menu/OptionsMenu.cpp:97
+msgid "File Format for Screenshots"
+msgstr "Filformat för skärmdump"
+
+#: src/Menu/OptionsMenu.cpp:98
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Ställer in filformatet som används när skärmdumpar sparas."
+
+#: src/Menu/OptionsMenu.cpp:101
+msgid "Hot Key for Screenshots"
+msgstr "Kortkommando för skärmdump"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:104
+#, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "Trycker man på den här tangenten, kommer en skärmdump att sparas på %s"
+
+#: src/Menu/OptionsMenu.cpp:108
+msgid "Hot Key for Statistics"
+msgstr "Kortkommando för statistik"
+
+#: src/Menu/OptionsMenu.cpp:109
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "Trycker man på här tangenten medan man spelar ett spel, så dyker ett fönster upp som visar spelstatistiken."
+
+#: src/Menu/OptionsMenu.cpp:111
+msgid "Show Game Information"
+msgstr "Spelinformation"
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Frames per Second"
+msgstr "Bilder per sekund"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Visar antalet bilder som beräknas per sekund.\n"
+"Om värdet alltid är väldigt lågt (<20), så bör du justera några inställningar under grafiktabben!"
+
+#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+msgid "Particle Count"
+msgstr "Antal partiklar"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid "Displays the amount of active particles."
+msgstr "Visar antalet aktiva partiklar."
+
+#: src/Menu/OptionsMenu.cpp:122
+msgid "Display Tool Tips"
+msgstr "Visa inforutor"
+
+#: src/Menu/OptionsMenu.cpp:123
+msgid "Dismisses tool tips like this one."
+msgstr "Stänger av inforutor som denna."
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Full screen"
+msgstr "Fullskärm"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Maximerar fönstret, så att det upptar hela skärmen."
+
+#: src/Menu/OptionsMenu.cpp:130
+msgid "Window Settings"
+msgstr "Fönsterinställningar"
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "V-Sync"
+msgstr "V-Sync"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr ""
+"Gör att spelet uppdaterar enligt uppdateringsfrekvensen på din skärm.\n"
+"Aktivering gör oftast spelet smidigare."
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "Shader Effects"
+msgstr "Shader-effekter"
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Aktiverar häftiga effekter som t.ex soldis, men kan minska prestandan."
+
+#: src/Menu/OptionsMenu.cpp:162
+msgid "Off"
+msgstr "Av"
+
+#: src/Menu/OptionsMenu.cpp:164
+msgid "Resolution"
+msgstr "Upplösning"
+
+#: src/Menu/OptionsMenu.cpp:165
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr ""
+"Sätter storleken på fönstret.\n"
+"Påverkar både fullskärm och fönsterläge."
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Game Settings"
+msgstr "Spelinställningar"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "High Star Field Resolution"
+msgstr "Hög upplösning på stjärnfältet"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"Med högupplösta skärmar, gör detta val att stjärnfältet loopar senare.\n"
+"Inaktivering kan öka prestandan något."
+
+#: src/Menu/OptionsMenu.cpp:174
 msgid "Moving Stars"
 msgstr "Rörliga stjärnor"
 
-msgid ""
-"Draws some moving stars on the background. Eye candy, but reduces game "
-"performance."
-msgstr ""
-"Ritar några rörliga stjärnor i bakgrunden. Ögongodis, men reducerar "
-"prestandan på spelet."
+#: src/Menu/OptionsMenu.cpp:175
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "Ritar några rörliga stjärnor i bakgrunden. Ögongodis, men reducerar prestandan på spelet."
 
-msgid "Goals"
-msgstr "Mål"
+#: src/Menu/OptionsMenu.cpp:179
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Justerar det globala antalet partiklar.\n"
+"Lägre värden ökar prestandan avsevärt."
+
+#: src/Menu/OptionsMenu.cpp:182
+msgid "Particle Lifetime"
+msgstr "Partiklarnas livslängd"
+
+#: src/Menu/OptionsMenu.cpp:183
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Justerar partiklarnas livslängd.\n"
+"Lägre värden ökar prestandan avsevärt."
+
+#: src/Menu/OptionsMenu.cpp:186
+msgid "Volume Settings"
+msgstr "Volyminställningar"
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid "Music"
+msgstr "Musik"
+
+#: src/Menu/OptionsMenu.cpp:189
+msgid "Adjusts volume of background music."
+msgstr "Justerar volumen på bakgrundsmusiken."
+
+#: src/Menu/OptionsMenu.cpp:192
+msgid "Sound"
+msgstr "Ljudeffekter"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Adjusts volume of sound effects."
+msgstr "Justerar volumen på ljudeffekterna."
+
+#: src/Menu/OptionsMenu.cpp:196
+msgid "Announcer"
+msgstr "Annonsör"
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Adjusts volume of announcers voice."
+msgstr "Justerar volymen på annonsörens röst."
+
+#: src/Menu/OptionsMenu.cpp:199
+msgid "Playback Settings"
+msgstr "Uppspelningsinställningar"
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Play Tracks in Random Order"
+msgstr "Slumpvis uppspelning"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Enables music play back in a random sequence."
+msgstr "Gör så att bakgrundsmusiken spelas i slumpvis ordning."
+
+#: src/Menu/OptionsMenu.cpp:205
+msgid "Play Next Track"
+msgstr "Spela nästa spår"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Pressing this key switches to the next music track."
+msgstr "Trycker man på den här tangenten växlar musiken till nästa spår."
+
+#: src/Menu/OptionsMenu.cpp:209
+msgid "Play Previous Track"
+msgstr "Spela föregående spår"
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Pressing this key switches to the previous music track."
+msgstr "Trycker man på den här tangenten växlar musiken till föregående spår."
+
+#: src/Menu/OptionsMenu.cpp:213
+msgid "Special Effects"
+msgstr "Specialeffekter"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Explosions for Slow Motion"
+msgstr "Antal explosioner för slowmotion"
+
+#: src/Menu/OptionsMenu.cpp:216
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Om så många skepp exploderar samtidigt, aktiveras slowmotioneffekten."
+
+#: src/Menu/OptionsMenu.cpp:219
+#, fuzzy
+msgid "Game Speed"
+msgstr "Spelinställningar"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:222
+msgid "Show Debug Information"
+msgstr "Felsökningsinformation"
+
+#: src/Menu/OptionsMenu.cpp:224
+msgid "Bots Orientation"
+msgstr "Bottarnas orientering"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Displays the job of each bot."
+msgstr "Visar varje bots jobb."
+
+#: src/Menu/OptionsMenu.cpp:228
+msgid "Zones"
+msgstr "Zoner"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Visar taktiska zoner, vilket är viktigt för den artificiella intelligensen."
+
+#: src/Menu/OptionsMenu.cpp:232
+msgid "AI-Paths"
+msgstr "AI-Banor"
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Displays paths calculated by bots."
+msgstr "Visar bottarnas beräknade banor."
+
+#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+msgid "Name"
+msgstr "Namn"
+
+#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+msgid "Accelerate"
+msgstr "Accelerera"
+
+#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+msgid "Turn Left"
+msgstr "Sväng vänster"
+
+#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+msgid "Turn Right"
+msgstr "Sväng höger"
+
+#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+msgid "Weapon"
+msgstr "Vapen"
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Special Ability"
+msgstr "Specialförmåga"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Ship Settings"
+msgstr "Skeppsinställningar"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Ship"
+msgstr "Skepp"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Player Color"
+msgstr "Spelarfärg"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Team Color"
+msgstr "Lagfärg"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "Fortsätt"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Tyvärr så stödjer inte din hårdvara shaders!"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "Nästa"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "Vapen"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "Specialförmågor"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "Plus"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr "Omvänt snedstreck"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "Komma"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "Bindestreck"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "Delete"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "Division"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "Ned"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr "End"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "Likamedtecken"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr "Home"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr "Insert"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "Vänster Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "Vänster parantes"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "Vänster Ctrl"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "Vänster"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "Vänster skift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "Vänster meta"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "Meny"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr "Multiplikationstecken"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "Page Down"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "Page Up"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "Pause"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "Punkt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "Citattecken"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "Höger Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr "Höger parentes"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "Höger Ctrl"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "Return"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "Höger"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "Höger skift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "Höger meta"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+msgid "Semi Colon"
+msgstr "Semikolon"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr "Snedstreck"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "Mellanslag"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr "Minus"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr "Tilde"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "Tabb"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "Upp"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr "Joystick"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "A-knappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "B-knappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "X-knappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "Y-knappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "Vänster bumper"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "Höger bumper"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "Startknappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "Bakåtknappen"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "Knapp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "Vänster skjutknapp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "Höger skjutknapp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "Styrspak 2 upp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "Styrspak 2 ner"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "Styrspak 2 vänster"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "Styrspak 2 höger"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "Styrspak 1 upp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "Styrspak 1 ner"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "Styrspak 1 vänster"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "Styrspak 1 höger"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "Styrkors upp"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "Styrkors ner"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "Styrkors vänster"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "Styrkors höger"
+
+#: src/System/window.cpp:373
+msgid "Screenshot saved!"
+msgstr "Skärmdump sparad!"

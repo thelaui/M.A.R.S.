@@ -39,13 +39,13 @@ UiWindow* InfoTDM::get() {
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
 		  instance_->addWidget(new TextBox(_("Destroy as many enemies as possible!"), Vector2f(10,40), 300, 30, Color3f(1.f, 0.7f, 0.9f)));
 		  instance_->addWidget(new TextBox(
-										  _("The negotiations have failed! \n"
+										  _("The negotiations have failed!\n"
 											 "Both of you and your neighbours had to record enormous losses in "
-											 "conclusion of the abiding GREAT WAR. \n"
+											 "conclusion of the abiding GREAT WAR.\n"
 											 "As a last attempt of gaining the upper hand, you are ordered to decimate "
 											 "your enemy's resources and to protect your own one's. The only way to "
-											 "do so is an epic TEAMDEATHMATCH. \n"
-											 "Protect your comrades and destroy your enemies! \n"
+											 "do so is an epic TEAMDEATHMATCH.\n"
+											 "Protect your comrades and destroy your enemies!\n"
 											 "Teach them a lesson they will never forget."),
 										  Vector2f(10, 80), 300, 160));
 		  instance_->addWidget(new Checkbox(_("Show this info again."), NULL, &settings::C_showInfoTDM, Vector2f(10,270), 170));

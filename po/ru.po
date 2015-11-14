@@ -1,1056 +1,1466 @@
 # M.A.R.S. ru.po
 # Drakmail, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: Widelands svnVERSION\n"
-"Report-Msgid-Bugs-To: https://github.com/thelaui/M.A.R.S./issues\n"
-"POT-Creation-Date: 2015-10-04 08:51+0100\n"
-"PO-Revision-Date: 2015-11-11 23:27+0100\n"
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"PO-Revision-Date: 2015-11-14 20:13+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "O-Revision-Date: 2015-10-04 07:52+0000\n"
 
-msgid "Start Local Game"
-msgstr "Начать игру"
-
-msgid "Start Network Game"
-msgstr "Начать сетевую игру"
-
-msgid "Join Network Game"
-msgstr "Зайти в сетевую игру"
-
-msgid "Options"
-msgstr "Настройки"
-
-msgid "About"
-msgstr "О M.A.R.S."
-
-msgid "Quit M.A.R.S."
-msgstr "Выход"
-
-msgid "Continue"
-msgstr "Продолжить"
-
-msgid "Restart Game"
-msgstr "Начать с начала"
-
-msgid "Hide Menu"
-msgstr "Спрятать меню"
-
-msgid "Return to Main Menu"
-msgstr "Вернуться в главное меню"
-
-msgid "Start"
-msgstr "Старт"
-
-msgid "Cancel"
-msgstr "Отмена"
-
-msgid "Info"
-msgstr "Информация"
-
-msgid "Close"
-msgstr "Закрыть"
-
-msgid "License"
-msgstr "Лицензия"
-
-msgid "Ok"
-msgstr "Ок"
-
-msgid "Show this Info again."
-msgstr "Показывать это сообщение снова."
-
-msgid "Left Team"
-msgstr "Левая команда"
-
-msgid "Right Team"
-msgstr "Правая команда"
-
-msgid "Bots Left"
-msgstr "Боты слева"
-
-msgid "Bots Right"
-msgstr "Боты справа"
-
-msgid "Bots"
-msgstr "Боты"
-
-msgid "Frag Limit"
-msgstr "Лимит фрагов"
-
-msgid ""
-"In year 3547, civilizations all over the galaxy have settled their own "
-"planets, living in peace and harmony with its environment.  But outside the "
-"contemplative habitats, the GREAT WAR is raging.  As a famous fighter on "
-"your way to never ending honor and prosperity, you have to protect your "
-"planet from the oncoming doom of your jealous  neighbours! Fight the battle, "
-"a true hero as you are was born for: SPACEBALL. Protect your planet from the "
-"sphere of death and defeat your enemies by letting it crush into their "
-"ridiculous globe."
-msgstr ""
-"В 3547 году, цивилизации всей галактики расселились на своих планетах, живя "
-"в мире и гармонии с природой. Но за пределами уютных планет разгоралась "
-"ВЕЛИКАЯ ВОЙНА. Как прославленный воин, идущий к нескончаемой славе и "
-"богатству, ты решил защищать свою планету от  нападения завистливых соседей! "
-"Сражайся, настоящий герой, так как ты родился для SPACEBALL. Защити свою "
-"планету от сферы смерти, размазав врагов по их ничтожным планетам."
-
-msgid "Kick or shoot the ball to your enemy's planet!"
-msgstr "Ударьте или выстрелите шаром в планету противника!"
-
-msgid ""
-"As a result of the GREAT WAR you have lost everything: your home, your "
-"family and your self-esteem. Your last chance to get out of the miserable "
-"life you are stuck in, is to become a gladiator in the glorious DEATHMATCH-"
-"arena. Resist the other fighters and earn points by destroying the "
-"nutshells, they call ships. Prepare yourself! Death and Glory awaits you."
-msgstr ""
-"В результате ВЕЛИКОЙ ВОЙНЫ ты потерял всё: дом, семью и самоуважение. Твой "
-"последний шанс избавиться от этого жалкого образа жизни — стать гладиатором "
-"во всемирно известной арене для СРАЖЕНИЙ.Тебе надо сражаться с другими "
-"бойцами и получая очки за уничтожение скорлупок, которые они называют "
-"кораблями. Подготовься!  Смерть и Слава ждут тебя."
-
-msgid "Destroy as many enemies as possible!"
-msgstr "Уничтожь как можно больше врагов!"
-
-msgid ""
-"The negotiations have failed! Both of you and your neighbours had to record "
-"enormous losses in conclusion of the abiding GREAT WAR. As a last attempt of "
-"gaining the upper hand, you are ordered to decimate your enemy's resources "
-"and to protect your own one's. The only way to do so is an epic "
-"TEAMDEATHMATCH. Protect your comrades and destroy your enemies! Teach them a "
-"lesson, they will never forget."
-msgstr ""
-"Переговоры провалены! Ты и твои соседи получили огромные потери в результате "
-"соблюдения соглашений ВЕЛИКОЙ ВОЙНЫ. После этого была предпринята последняя "
-"попытка отстоять своё мнение, в результате которой ты получил приказ "
-"уничтожить ресурсы врага и защитить собственные. Единственный путь — великое "
-"КОМАНДНОЕ СРАЖЕНИЕ. Защити своих товарищей и уничтожь врагов! Преподай им "
-"урок, который они никогда не забудут."
-
-msgid ""
-"As if the GREAT WAR was not enough, your planetary system is threatened by a "
-"new source of incredible evilness: A giant ship of unknown invaders is "
-"levitating over your galaxy, aiming on the home planets with a monolithic "
-"weapon of mass destruction. As a sign of cynicism, the attackers dropped a "
-"remote control to adjust this provenance of death and fear. Reach it first "
-"to turn your enemy's home planet into a place of desolation! Be the "
-"CANNONKEEPer."
-msgstr ""
-"Вдобавок к ВЕЛИКОЙ ВОЙНЕ, твоя планетная система теперь под угрозой нового "
-"невероятного зла: огромный корабль неизвестных захватчиков находится в этой "
-"галактике, наводя на планеты свое Монолитное Оружие Массового Уничтожения. В "
-"знак цинизма, захватчики оставили удаленное управление наведением этого "
-"источника разрушений. Доберись до него как можно быстрее, и преврати планеты "
-"врага в вечную пустыню. Будь ХРАНИТЕЛЕМ ОРУЖИЯ."
-
-msgid "Pick up the remote and keep it as long as possible!"
-msgstr "Подбери дистанционное управление и удерживай его как можно дольше!"
-
-msgid "Show Debug Information"
-msgstr "Показывать отладочную информацию"
-
-msgid "Bots Orientation"
-msgstr "Ориентация ботов"
-
-msgid "Zones"
-msgstr "Зоны"
-
-msgid "AI-Paths"
-msgstr "Пути ботов"
-
-msgid "Show Game Information"
-msgstr "Показывать информацию об игре"
-
-msgid "Frames per Second"
-msgstr "Кадров в секунду"
-
-msgid "Particle Count"
-msgstr "Колличество частиц"
-
-msgid "Particle Lifetime"
-msgstr "Время жизни частиц"
-
-msgid "Game Settings"
-msgstr "Настройки игры"
-
-msgid "Full screen"
-msgstr "Полный экран"
-
-msgid "V-Sync"
-msgstr "Вертикальная синхронизация"
-
-msgid "Music"
-msgstr "Музыка"
-
-msgid "Sound"
-msgstr "Эффекты"
-
-msgid "Announcer"
-msgstr "Диктор"
-
-msgid "Name"
-msgstr "Имя"
-
-msgid "Accelerate"
-msgstr "Ускорение"
-
-msgid "Turn Left"
-msgstr "Повернуть налево"
-
-msgid "Turn Right"
-msgstr "Повернуть направо"
-
-msgid "Weapon"
-msgstr "Оружие"
-
-msgid "Ship"
-msgstr "Корабль"
-
-msgid "Player Color"
-msgstr "Цвет игрока"
-
-msgid "Team Color"
-msgstr "Цвет команды"
-
-msgid "File Format for Screenshots"
-msgstr "Тип файла для снимков экрана"
-
-msgid "Display Tool Tips"
-msgstr "Показывать подсказки"
-
-msgid "Weapon Options"
-msgstr "Настройки оружия"
-
-msgid ""
-"This is a first attempt to create a game in OpenGL with SFML. It is a game "
-"for two players, flying with ships in a two-dimensional space setting, "
-"governed by the laws of gravity. Homepage: http://www.marsshooter.org© "
-"2010-2011 Felix Lauer & Simon Schneegans"
-msgstr ""
-"Это первая попытка сделать игру с использование OpenGL и SFML. Эта игра для "
-"двух игроков, летающих на кораблях в двухмерном космическом пространстве, "
-"управляемом законами гравитации. Домашняя страница: http://www.marsshooter."
-"org© 2010-2011 Felix Lauer & Simon Schneegans"
-
-msgid "Do you really want to quit?"
-msgstr "Вы действительно хотите выйти?"
-
-msgid "Do you really want to end the current game?"
-msgstr "Вы действительно хотите завершить текущую игру?"
-
-msgid ""
-"M.A.R.S. gaming over the world wide web or a local area network is a planned "
-"feature, but not implemented yet. Stay tuned!"
-msgstr ""
-"Поддержка игры в M.A.R.S. через интернет или локальную сеть планируется, но "
-"пока не реализована. Ждите!"
-
-msgid ""
-"You paused M.A.R.S. right in the middle of an insane battle? If you want to "
-"take a screenshot, this button enables you to generate epic wallpapers, by "
-"hiding all windows. Simply bring them back afterwards by pressing ESC."
-msgstr ""
-"Вы остановили M.A.R.S. прямо в разгаре этого сумашедшего сражения? Если Вы "
-"хотите сделать снимок экрана, то с помощью этой клавиши Вы сможете делать "
-"эпичные обои, скрывая все окна. Для их возврата просто нажмите ESC."
-
-msgid "Add"
-msgstr "Плюс"
-
-msgid "Back Slash"
-msgstr "Обратный слеш"
-
-msgid "Comma"
-msgstr "Запятая"
-
-msgid "Dash"
-msgstr "Тире"
-
-msgid "Divide"
-msgstr "Делить"
-
-msgid "Down"
-msgstr "Низ"
-
-msgid "Equal"
-msgstr "Равно"
-
-msgid "Left Alt"
-msgstr "Левый Alt"
-
-msgid "Left Bracket"
-msgstr "("
-
-msgid "Left Control"
-msgstr "Левый Control"
-
-msgid "Left"
-msgstr "Лево"
-
-msgid "Left Shift"
-msgstr "Левый Shift"
-
-msgid "Left Super"
-msgstr "Левый Super"
-
-msgid "Menu"
-msgstr "Меню"
-
-msgid "Multiply"
-msgstr "Умножить"
-
-msgid "Period"
-msgstr "Точка"
-
-msgid "Quote"
-msgstr "Кавычки"
-
-msgid "Right Alt"
-msgstr "Правый Alt"
-
-msgid "Right Bracket"
-msgstr ")"
-
-msgid "Right Control"
-msgstr "Правый Control"
-
-msgid "Right"
-msgstr "Право"
-
-msgid "Right Shift"
-msgstr "Правый Shift"
-
-msgid "Right Super"
-msgstr "Правый Super"
-
-msgid "Semi Colon"
-msgstr "Запятая"
-
-msgid "Slash"
-msgstr "Слеш"
-
-msgid "Space"
-msgstr "Пробел"
-
-msgid "Subtract"
-msgstr "Минус"
-
-msgid "Tilde"
-msgstr "Тильда"
-
-msgid "Tab"
-msgstr "Таб"
-
-msgid "Up"
-msgstr "Верх"
-
-msgid "Graphics"
-msgstr "Графика"
-
-msgid "Audio"
-msgstr "Звук"
-
-msgid "Window Settings"
-msgstr "Настройки окна"
-
-msgid "Start Tutorial"
-msgstr "Пройти обучение"
-
-msgid "Next"
-msgstr "Далее"
-
+#: src/Games/Tutorial.cpp:111
 msgid "Welcome, Space Rookie!"
 msgstr "Приветствую, Новобранец!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, c-format
 msgid ""
-"We are glad to recruit a rising hero like you, {PLAYER1_NAME}, to join us in "
-"the GREAT WAR!We figured out you needed some practice with your new ship.Let "
-"the training begin..."
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
 msgstr ""
-"Мы рады завербовать подающего надежды героя вроде тебя, {PLAYER1_NAME}, для "
-"присоединения к ВЕЛИКОЙ ВОЙНЕ!Мы полагаем, что тебе надо немного "
-"попрактиковаться с твоим новым кораблём.Начинаем обучение..."
+"Мы рады завербовать подающего надежды героя вроде тебя, %s, для "
+"присоединения к ВЕЛИКОЙ ВОЙНЕ!\n"
+"Мы полагаем, что тебе надо немного попрактиковаться с твоим новым кораблём.\n"
+"Начинаем обучение..."
 
+#: src/Games/Tutorial.cpp:125
 msgid "Basic Movement..."
 msgstr "Основы движения..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
 msgid ""
-"Controlling your ship is the most important task to master.All movement is "
-"governed by the laws of gravity. To decelerate you have to turn and "
-"accelerate in the opposite direction. Control your ship, using the keys "
-"<{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>!"
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
-"Управление кораблём — это очень важная часть.На все движения воздействует "
-"гравитация. Для уменьшения скорости тебе необходимо развернуться и "
-"ускориться в противоположном направлении. Управляй своим кораблем, используя "
-"клавиши <{PLAYER1_KEY_UP}>, <{PLAYER1_KEY_LEFT}> и <{PLAYER1_KEY_RIGHT}>!"
+"Управление кораблём — это очень важная часть.\n"
+"На все движения воздействует гравитация. Для уменьшения скорости тебе "
+"необходимо развернуться и ускориться в противоположном направлении. Управляй "
+"своим кораблем, используя клавиши %s, %s и %s!"
 
+#: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
 msgstr "Разогрев!"
 
-msgid "Reach the pink zone!Try not to crash your brand new ship."
-msgstr "Доберись до розовой зоны!Попробуй не убить по пути свой новый корабль."
-
-msgid "Well Done, {PLAYER1_NAME}!"
-msgstr "Отлично, {PLAYER1_NAME}!"
-
+#: src/Games/Tutorial.cpp:143
 msgid ""
-"Now head back to your home planet and try to land your ship by slowly "
-"floating back while approaching your planet."
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
 msgstr ""
-"Теперь возвращайся к себе на планету и попробуй приземлиться, медленно "
-"подплывая к планете задом."
+"Доберись до розовой зоны!\n"
+"Попробуй не убить по пути свой новый корабль."
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "Отлично, %s!"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "Теперь возвращайся к себе на планету и попробуй приземлиться, медленно подплывая к планете задом."
+
+#: src/Games/Tutorial.cpp:183
 msgid "Good Work!"
 msgstr "Хорошая работа!"
 
+#: src/Games/Tutorial.cpp:184
 msgid ""
-"Proper landing is not a piece of cake, is it?You should learn it by heart."
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
 msgstr ""
-"Правильная посадка ­— это не так просто, да?Ты должен хорошо это запомнить."
+"Правильная посадка ­— это не так просто, да?\n"
+"Ты должен хорошо это запомнить."
 
+#: src/Games/Tutorial.cpp:192
 msgid "Something More Difficult..."
 msgstr "Кое что посложнее..."
 
+#: src/Games/Tutorial.cpp:193
 msgid ""
-"Try to follow the path marked up by the pink zones!We will contact you "
-"again, after you have mastered this.Now go for it!"
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
 msgstr ""
-"Попробуй пролететь по пути, отмеченному розовыми зонами!Мы свяжемся с тобой "
-"снова после того, как ты выполнишь это задание. А сейчас — вперёд!"
+"Попробуй пролететь по пути, отмеченному розовыми зонами!\n"
+"\n"
+"Мы свяжемся с тобой снова после того, как ты выполнишь это задание. А сейчас — вперёд!"
 
+#: src/Games/Tutorial.cpp:215
 msgid "Awesome!"
 msgstr "Великолепно!"
 
+#: src/Games/Tutorial.cpp:216
 msgid ""
-"You are the best rookie we have ever seen.Now prepare yourself for some "
-"explosive stuff."
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
 msgstr ""
-"Ты лучший новобранец, которого я только видел.Теперь приготовься к взрывам."
+"Ты лучший новобранец, которого я только видел.\n"
+"Теперь приготовься к взрывам."
 
+#: src/Games/Tutorial.cpp:224
 msgid "Shooting..."
 msgstr "Стрельба..."
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
 msgid ""
-"To defeat your enemies, you have to know how to shoot them up!For that "
-"purpose press <{PLAYER1_KEY_FIRE}>. Have some fun shooting around and then "
-"land your ship to continue the tutorial."
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
 msgstr ""
-"Для уничтожения твоих врагов ты должен знать как в них стрелять!Для выстрела "
-"нажми <{PLAYER1_KEY_FIRE}>. Постреляй немного по сторонам, а затем "
-"приземлись для продолжения обучения."
+"Для уничтожения твоих врагов ты должен знать как в них стрелять!\n"
+"Для выстрела нажми %s.\n"
+"Постреляй немного по сторонам, а затем приземлись для продолжения обучения."
 
-msgid "Volume Settings"
-msgstr "Настойки громкости"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "Отличная посадка, %s!"
 
-msgid "Good Landing, {PLAYER1_NAME}!"
-msgstr "Отличная посадка, {PLAYER1_NAME}!"
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
+msgstr ""
+"Ты можешь стать отличным пилотом.\n"
+"\n"
+"Как насчет еще парочки видов оружия?"
 
-msgid "You turn out to be a great pilot.Now how about some more weapons?"
-msgstr "Ты можешь стать отличным пилотом.Как насчет еще парочки видов оружия?"
-
+#: src/Games/Tutorial.cpp:253
 msgid "The Weapons..."
 msgstr "Оружие..."
 
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
 msgid ""
-"We know you've been waiting for this. When docked you can switch through "
-"some incredibly evil weapons. Press <{PLAYER1_KEY_FIRE}> to open your "
-"arsenal.Then use <{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}> to choose a "
-"weapon! Take-off, when you're ready!"
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
 msgstr ""
 "Я знаю, ты ждал этого. После приземления ты можешь выбрать одно из "
-"нескольких очень опасных оружий.Нажми <{PLAYER1_KEY_FIRE}>, для открытия "
-"арсенала. Затем нажимай <{PLAYER1_KEY_LEFT}> и <{PLAYER1_KEY_RIGHT}> для "
-"выбора оружия! Отлетай, когда будешь готов!"
+"нескольких очень опасных оружий.\n"
+"Нажми %s, для открытия арсенала.\n"
+"Затем нажимай %s и %s для выбора оружия! Отлетай, когда будешь готов!"
 
-msgid "Play Next Track"
-msgstr "Играть следующую композицию"
-
-msgid "Playback Settings"
-msgstr "Настройки воспроизведения"
-
+#: src/Games/Tutorial.cpp:276
 msgid "Fight!"
 msgstr "Схватка!"
 
+#: src/Games/Tutorial.cpp:277
 msgid ""
-"Now let's see how you make it against a rookie from another planet. Seems "
-"like he is trying to improve his flying abilities.Beat him!"
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
 msgstr ""
-"Сейчас посмотрим, как быстро ты расправишься с новичком с другой планеиы."
-"Похоже, он хочет потренироваться в упавлении кораблем.Разнеси его в клочья!"
+"Сейчас посмотрим, как быстро ты расправишься с новичком с другой планеиы.\n"
+"Похоже, он хочет потренироваться в упавлении кораблем.\n"
+"Разнеси его в клочья!"
 
+#: src/Games/Tutorial.cpp:302
 msgid "Impressive!"
 msgstr "Невероятно!"
 
+#: src/Games/Tutorial.cpp:303
 msgid ""
-"You did it! As you may have noticed, a little star appeared over your ship. "
-"The more enemies you kill, the more of them will show. But they are not only "
-"a frag indicator! Land again and we will show you what else stars are good "
-"for."
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
 msgstr ""
-"Ты сделал это! Может, ты в курсе: ты набираешь очки репутации за каждого "
-"убитого врага.Маленькое зеленое число всплывающее над твоим кораблем, "
-"показывает это число. Оно будет увеличиваться, если ты уничтожишь множество "
-"врагов подряд."
+"Ты сделал это! Может, ты в курсе: ты набираешь очки репутации за каждого убитого врага.\n"
+"Маленькое зеленое число всплывающее над твоим кораблем, показывает это число. Оно будет увеличиваться, если ты уничтожишь множество врагов подряд."
 
+#: src/Games/Tutorial.cpp:316
+msgid "Special Abilities..."
+msgstr "Специальные способности"
+
+#: src/Games/Tutorial.cpp:317
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
+msgstr ""
+"Как и было обещано, мы расскажем тебе, зачем нужны звезды. Это ресурсы для некоторых впечатляющих дополнительных способностей твоего корабля. Например, ты можешь лечить себя и друзей поблизости, отталкивать или замораживать корабли противника на расстоянии!\n"
+"Чем больше звезд, тем на большее расстояние и с большей силой действуют эти способности."
+
+#: src/Games/Tutorial.cpp:328
+msgid "Selection..."
+msgstr "Переключение..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
+msgid ""
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Для переключения между способностями, тебе необходимо просто нажать %s. Для "
+"выбора определенной способности, ты можешь переключаться между ними, нажимая "
+"%s и %s!\n"
+"Попробуй выбери \"Замораживатель\"!  Взлетай, как только это получится у тебя."
+
+#: src/Games/Tutorial.cpp:351
+msgid "The Freezer..."
+msgstr "Замораживатель..."
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
+msgid ""
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
+msgstr ""
+"Это мощная спец. способность, которая замораживает корабли поблизости.\n"
+"Во время нахождения недалеко от врага, нажми %s для того, чтобы его "
+"заморозить. После этого можешь посмотреть, как он медленно теряет "
+"здоровье... пока не погибнет!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"Мы говорили, чтобы ты выбрал Freezer, но ты выбрал другую способность!\n"
+"Пожалуйста, приземлись обратно, и попробуй выбрать Замораживатель !"
+
+#: src/Games/Tutorial.cpp:385
+msgid "Practice!"
+msgstr "Практика!"
+
+#: src/Games/Tutorial.cpp:386
+msgid ""
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
+msgstr ""
+"Теперь попробуй заморозить противника!\n"
+"Для этого мы дадим тебе немного Звезд. Но помни: в реальной жизни тебе будет необходимо уничтожать врагов для получения этих звезд!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "Ты упустил его, %s!"
+
+#: src/Games/Tutorial.cpp:411
+msgid "Try again. we will refill your FragStars."
+msgstr "Попробуй еще раз, мы дадим тебе еще немного звезд."
+
+#: src/Games/Tutorial.cpp:428
+msgid "You Did It!"
+msgstr "Ты сделал это!"
+
+#: src/Games/Tutorial.cpp:429
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Теперь возвращайся обратно на планету, чтобы выбрать другую способность."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:443
+msgid ""
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
+msgstr ""
+"Больше нету времени для обучения!\n"
+"Наши враги отправили два боевых корабля для мести!"
+
+#: src/Games/Tutorial.cpp:457
 msgid "Beat Them!"
 msgstr "Уничтожь их!"
 
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
 msgid ""
-"Prove your skills! Score at least five points by killing them! Your current "
-"score is displayed next to your name!We will send in an experienced warrior "
-"assisting you, {PLAYER1_NAME}!"
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
 msgstr ""
 "Покажи свои умения! Получи хотя бы пять очков, убивая из! Твой текущий счёт "
-"показан после твоего имени!Мы вышлем опытного воина тебе на помощь, "
-"{PLAYER1_NAME}!"
+"показан после твоего имени!\n"
+"Мы вышлем опытного воина тебе на помощь, %s!"
 
+#: src/Games/Tutorial.cpp:484
 msgid "Unbelievable!"
 msgstr "Великолепно!"
 
+#: src/Games/Tutorial.cpp:485
 msgid ""
-"You managed all our tasks successfully. Now what to do?Let's have a look at "
-"the options menu. There you can adjust a lot of... well... options.For "
-"example you may choose your ship style and color or change your name..."
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
 msgstr ""
-"Ты успешно выполнил все мои задания. Что теперь делать?Посмотри на меню "
-"настроек. Здесь ты можешь изменить множество... ммм... опций...Для примера, "
-"ты можешь изменить внешний вид и цвет корабля, или сменить имя..."
+"Ты успешно выполнил все мои задания. Что теперь делать?\n"
+"Посмотри на меню настроек. Здесь ты можешь изменить множество... ммм... опций...\n"
+"Для примера, ты можешь изменить внешний вид и цвет корабля, или сменить имя..."
 
+#: src/Games/Tutorial.cpp:500
 msgid "Who's Best?"
 msgstr "Кто лучше?"
 
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, c-format
 msgid ""
-"You can display a list of frags, points and so on via <{STATISTICS_KEY}>."
-"Furthermore the numbers next to your name illustrate your frag counter and "
-"your distance to the best one."
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
 msgstr ""
-"Ты можешь посмотреть на список фрагов, очков и прочего с помощью клавиши "
-"<{STATISTICS_KEY}>.Цифры, следующие сразу после твоего имени показывают "
-"счетчик фрагов и расстояние до первого места."
+"Ты можешь посмотреть на список фрагов, очков и прочего с помощью клавиши %s.\n"
+"Цифры, следующие сразу после твоего имени показывают счетчик фрагов и "
+"расстояние до первого места."
 
-msgid "Congratulations, {PLAYER1_NAME}!"
-msgstr "Поздравляем, {PLAYER1_NAME}!"
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "Поздравляем, %s!"
 
+#: src/Games/Tutorial.cpp:517
 msgid ""
-"You finished this tutorial. You are now ready to fight in the GREAT WAR. If "
-"you want to continue practising, just wait for the enemies to re-spawn. You "
-"can end your training with <Esc>.Have a great time with M.A.R.S.!"
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
 msgstr ""
-"Ты окончил это обучение. Теперь ты можешь начать сражаться в ВЕЛИКОЙ ВОЙНЕ. "
-"Если ты хочешь практиковаться дальше, просто подожди, пока появится "
-"противник. Ты можешь покинуть обучение нажатием <Esc>.Получи незабываемые "
-"моменты с M.A.R.S.!"
+"Ты окончил это обучение. Теперь ты можешь начать сражаться в ВЕЛИКОЙ ВОЙНЕ. Если ты хочешь практиковаться дальше, просто подожди, пока появится противник. Ты можешь покинуть обучение нажатием <Esc>.\n"
+"\n"
+"Получи незабываемые моменты с M.A.R.S.!"
 
+#: src/Games/Tutorial.cpp:529
 msgid "You Failed!"
 msgstr "Провал!"
 
-msgid ""
-"Awesome {PLAYER1_NAME}! You destroyed your brand new ship. All right, we "
-"will get you a new one. Just wait some seconds..."
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
 msgstr ""
-"Отлично, {PLAYER1_NAME}, ты уничтожил новый корабль! На самом деле, всё не "
-"так страшно, сейчас мы дадим тебе новый. Просто отдохни пару секунд..."
+"Отлично, %s, ты уничтожил новый корабль! На самом деле, всё не так страшно, "
+"сейчас мы дадим тебе новый. Просто отдохни пару секунд..."
 
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
 msgstr "Ты заметил?"
 
-msgid ""
-"Your life is draining! Keep an eye on the upper life bar. You better land if "
-"it's too empty."
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "Кончается топливо! Следи за желтой полоской. Лучше приземляться, если она будет почти пустая."
+
+#: src/Games/Tutorial.cpp:551
+#, fuzzy
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
 msgstr ""
 "Кончается топливо! Следи за желтой полоской. Лучше приземляться, если она "
 "будет почти пустая."
 
+#: src/Games/Tutorial.cpp:559
 msgid "You Nearly Got Him!"
 msgstr "Ты его почти сделал!"
 
-msgid ""
-"Watch your opponent's name. Its colour indicates his life points. The more "
-"it turns red, the weaker your enemy is."
-msgstr ""
-"Следи за именем противника. Его цвет показывает, сколько у него очков жизни. "
-"Чем оно краснее, тем слабее твой противник."
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "Следи за именем противника. Его цвет показывает, сколько у него очков жизни. Чем оно краснее, тем слабее твой противник."
 
-msgid "Interface"
-msgstr "Интерфейс"
-
-msgid "High Star Field Resolution"
-msgstr "Высокое разрешение звездного неба"
-
-msgid "Language"
-msgstr "Язык"
-
-msgid "Hot Key for Screenshots"
-msgstr "Клавиша для снимка экрана"
-
-msgid "Points"
-msgstr "Очки"
-
-msgid "Frags"
-msgstr "Фраги"
-
-msgid "Teamkills"
-msgstr "Убийств своих"
-
-msgid "Suicides"
-msgstr "Суицидов"
-
-msgid "Deaths"
-msgstr "Смертей"
-
-msgid "Game Options"
-msgstr "Репутация"
-
-msgid "Total:"
-msgstr "Итого:"
-
+#: src/Hud/TabStats.cpp:178
 msgid "Statistics"
 msgstr "Статистика"
 
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "Лимит фрагов"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
 msgid "Planet Life Points"
 msgstr "Лимит очков"
 
-msgid "Shader Effects"
-msgstr "Шейдеры"
-
-msgid "Sadly, shaders are not supported by your hardware!"
-msgstr "К сожалению Ваша видеокарта не поддерживает шейдеры!"
-
-msgid "Gameplay"
-msgstr "Игра"
-
-msgid "PowerUp Spawn Rate"
-msgstr "Время появления бонусов"
-
-msgid "Bot Difficulty"
-msgstr "Уровень ботов"
-
-msgid "Explosions for Slow Motion"
-msgstr "Взрывов в режиме замедленного движения времени"
-
-msgid "Off"
-msgstr "Выключить"
-
-msgid "Credits"
-msgstr "Титры"
-
-msgid "Special Thanks to:"
-msgstr "Особые благодарности:"
-
-msgid ""
-"Translations: Arabic: Majid Chinese: Wecing Czech: Mates Finnish: Paavo "
-"French: Ludovic German: Atto Hindi: Antriksh & Aakanksh Hungarian: Papp "
-"Bence Italian: Proch Polish: command_dos Portuguese: Vitor Russian: Drakmail "
-"Spanish: Gastón Swedish: HenrikCoding support: Werner and DeubeuliouTests "
-"and creative support: Heinrich, Martin, Bastian, Sandra, Diana."
-msgstr ""
-"Переводы: Арабский: Majid Китайский: Wecing Чешский: Mates Финский: Paavo "
-"Французский: Astohan Германский: Sandra Хинди: Antriksh & Aakanksh "
-"Венгерский: Papp Bence Итальянский: Proch Польский: command_dos "
-"Португальский: Vitor Русский: Drakmail Испанский: Gastón Шведский: "
-"HenrikПомощь в программировании: Werner and DeubeuliouТестирование и "
-"творческая поддержка: Heinrich, Martin, Bastian, Sandra, Diana."
-
-msgid "Resolution"
-msgstr "Разрешение"
-
-msgid "Color Depth"
-msgstr "Глубина цвета"
-
-msgid "Special Ability"
-msgstr "Спец. способность"
-
-msgid ""
-"Displays the amount of Frames calculated per Second.If this is always very "
-"low (<20), you should adjust some settings in graphics tab!"
-msgstr ""
-"Показывает колличество кадров, показанных ща секунду.Если эта велечина "
-"всегда очень маленькая (<20), необходимо изменить некоторые опции во вкладке "
-"\"Графика\"."
-
-msgid "Displays the amount of active particles."
-msgstr "Показывает колличество активных частиц."
-
-msgid "Dismisses tool tips like this one."
-msgstr "Убирает всплывающие подсказки (например, такие, как эта)."
-
-msgid "Sets the format being used when screenshots are saved."
-msgstr ""
-"Устанавливает формат, которые будет использоваться для сохранения снимков "
-"экрана."
-
-msgid ""
-"When this key is pressed, a screenshot is saved to {CONFIG_PATH}screenshots/"
-msgstr ""
-"Когда эта клавиша нажата, снимок экрана сохраняется в {CONFIG_PATH}"
-"screenshots/"
-
-msgid "Pressing this key switches to the next music track."
-msgstr "Нажатие этой клавиши переключает музыкальную композицию."
-
-msgid ""
-"If that many ships explode simultaneously, the slow motion effect kicks in."
-msgstr ""
-"Если одновременно взрывается несколько кораблей, то включается эффект "
-"замедленного движения."
-
-msgid "Displays the job of each bot."
-msgstr "Показывает задание каждого бота."
-
-msgid ""
-"Displays tactical zones, which are important for the artificial intelligence."
-msgstr "Показывает тактические зоны, которые важны для ИИ."
-
-msgid "Displays paths calculated by bots."
-msgstr "Показывает пути, рассчитанные ботами."
-
-msgid "Maximizes the window, making it cover the entire screen."
-msgstr "Окно с игрой будет развернуто на весь экран."
-
-msgid ""
-"Makes the game update according to the refresh rate of your monitor.Enabling "
-"this option typically makes the game run more smoothly."
-msgstr ""
-"Привязывает расчет параметров игры к частоте обновления вашего монитора."
-"Включение этой опции обычно делает игру более плавной."
-
-msgid "Enables cool effects like heat haze, but reduces game performance."
-msgstr ""
-"Включает красивые эффекты, например, марево, но уменьшает производительность "
-"игры."
-
-msgid ""
-"Sets the size of the window.Affects both, full screen and windowed mode."
-msgstr ""
-"Устанавливает размер окна.Размер устанавливается сразу для полноэкранного и "
-"оконного режимов."
-
-msgid ""
-"With high resolution displays, this option makes the star field loop later."
-"Disabling may increase game performance slightly."
-msgstr ""
-"На экранах с высоким разрешением, эта опция заставляет звездное небо "
-"повторяться позже.Отключение этой опции может незначительно повысить "
-"производительности игры."
-
-msgid ""
-"Adjusts the global particle count.Lower values will increase performance "
-"significantly."
-msgstr ""
-"Изменяет общее число частиц.Маленькие значения могут существенно увеличить "
-"производительность игры."
-
-msgid ""
-"Adjusts the global particle life time.Lower values will increase performance "
-"significantly."
-msgstr ""
-"Изменяет общее время жизни частиц.Маленькие значения могут существенно "
-"увеличить производительность игры."
-
-msgid "Adjusts volume of background music."
-msgstr "Изменяет громкость фоновой музыки."
-
-msgid "Adjusts volume of sound effects."
-msgstr "Изменяет громкость звуковых эффектов."
-
-msgid "Adjusts volume of announcers voice."
-msgstr "Изменяет громкость диктора."
-
-msgid "Sets the team of the local players."
-msgstr "Устанавливает команду локальных игроков."
-
-msgid "Enables local players."
-msgstr "Включает локальных игроков."
-
-msgid "Adjusts the amount of ships controlled by the artificial intelligence."
-msgstr "Изменяет колличество кораблей, управляемых компьютером."
-
-msgid "Point limit to be reached by a team in order to win the game."
-msgstr ""
-"Указывает предел командных очков, при достижении которого команда выигрывает."
-
-msgid "Point limit to be reached by a player in order to win the game."
-msgstr "Указывает предел очков, при достижении которого игрок выигрывает."
-
-msgid "Adjusts the strength of the bots."
-msgstr "Изменяет сложность ботов."
-
-msgid ""
-"Adjusts the amount of Power-Ups which will spawn during the game. Zero "
-"disables Power-Ups entirely."
-msgstr ""
-"Изменяет количество бонусов, появляющихся по время игры. Ноль отключает "
-"бонусы."
-
-msgid "Weapons"
-msgstr "Оружие"
-
-msgid "Special Abilities"
-msgstr "Специльно"
-
-msgid "Screenshot saved!"
-msgstr "Снимок экрана сохранён!"
-
-msgid ""
-"As the GREAT WAR reduces your resources drastically, scientists were engaged "
-"to find a way of efficiently destroying your enemy by limiting the given "
-"input. They did a lot of research and eventually created a new weapon with "
-"an incredible property: It kills instantly, but launched projectiles are "
-"really affine to any gravitation and they're quite difficult to handle. "
-"Therefore they called it: INSTA-GRAVE!   Unfortunately someone stole the "
-"technology, so your enemies can use this evil weapon, too. Now it is your "
-"turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the "
-"upper hand.  Win this battle, and the victory of the GREAT WAR may be yours."
-msgstr ""
-"Так как на ВЕЛИКУЮ ВОЙНУ уходит огромное колличество ресурсов, ученые искали "
-"новые пути эффективного уничтожения ваших врагов. Они проделали огромную "
-"работу, и однажды создавали новое оружие с невероятными свойствами: для "
-"полного уничтожения врага было достаточно одного попадания, но на запущенные "
-"снаряды очень сильно воздействует гравитация, поэтому они очень сложны в "
-"управлении. Из-за этого оружие получило название СРАЗУ-ГРАВ!   К несчастью, "
-"кто-то украл технологию, поэтому наши противники могут использовать это "
-"ужасное оружие против нас. Настал твой черёд: уничтожь жалких воришек в "
-"великой ГРАВ-ИТАЦИОННОЙ-ДЫРЕ для возвращения лидерства.  Победи в этой "
-"битве, и победа в ВЕЛИКОЙ ВОЙНЕ будет твоей."
-
-msgid "Destroy es many enemies as possible!"
-msgstr "Уничтожь как можно больше врагов!"
-
-msgid "Special Abilities..."
-msgstr "Специальные способности"
-
-msgid ""
-"As promised, we will tell you the stars' meaning. They are a resource for "
-"your ship's impressively powerful extra abilities. For example you can heal "
-"you including nearby friends, blast away or freeze ships within a certain "
-"distance! The more stars you have, the larger range and strength of the "
-"ability grow."
-msgstr ""
-"Как и было обещано, мы расскажем тебе, зачем нужны звезды. Это ресурсы для "
-"некоторых впечатляющих дополнительных способностей твоего корабля. Например, "
-"ты можешь лечить себя и друзей поблизости, отталкивать или замораживать "
-"корабли противника на расстоянии!  Чем больше звезд, тем на большее "
-"расстояние и с большей силой действуют эти способности."
-
-msgid "Selection..."
-msgstr "Переключение..."
-
-msgid ""
-"To switch through the abilities, you just have to press "
-"<{PLAYER1_KEY_SPECIAL}>. To choose one, you may cycle through them using "
-"<{PLAYER1_KEY_LEFT}> and <{PLAYER1_KEY_RIGHT}>! For this lesson, select the "
-"\"Freezer\"! Take off, when you got it!"
-msgstr ""
-"Для переключения между способностями, тебе необходимо просто нажать "
-"<{PLAYER1_KEY_SPECIAL}>. Для выбора определенной способности, ты можешь "
-"переключаться между ними, нажимая <{PLAYER1_KEY_LEFT}> и <{PLAYER1_KEY_RIGHT}"
-">! Попробуй выбери \"Замораживатель\"!  Взлетай, как только это получится у "
-"тебя."
-
-msgid "Hey, {PLAYER1_NAME}!"
-msgstr "Привет, {PLAYER1_NAME}!"
-
-msgid "That's a bad name... Feel free to enter a better one!"
-msgstr "Твоё имя мне не нравится... Попробуй придумай что-нибудь получше!"
-
-msgid "Next music track!"
-msgstr "Переключение музыкальной композиции!"
-
-msgid "General Settings"
-msgstr "Основные настройки"
-
-msgid "Special Effects"
-msgstr "Специальные эффекты"
-
-msgid "Ship Settings"
-msgstr "Настройки корабля"
-
-msgid "A Button"
-msgstr "Кнопка A"
-
-msgid "B Button"
-msgstr "Кнопка B"
-
-msgid "X Button"
-msgstr "Кнопка X"
-
-msgid "Y Button"
-msgstr "Кнопка Y"
-
-msgid "Start Button"
-msgstr "Старт"
-
-msgid "Back Button"
-msgstr "Кнопка назад"
-
-msgid "Right Bumper"
-msgstr "Правый бампер"
-
-msgid "Left Bumper"
-msgstr "Левый бампер"
-
-msgid "Right Trigger"
-msgstr "Правый переключатель"
-
-msgid "Left Trigger"
-msgstr "Левый переключатель"
-
-msgid "Direction Up"
-msgstr "Верх"
-
-msgid "Direction Down"
-msgstr "Низ"
-
-msgid "Direction Left"
-msgstr "Лево"
-
-msgid "Direction Right"
-msgstr "Право"
-
-msgid "Stick1 Up"
-msgstr "Ручка1 Верх"
-
-msgid "Stick1 Down"
-msgstr "Ручка1 Низ"
-
-msgid "Stick1 Left"
-msgstr "Ручка1 Лево"
-
-msgid "Stick1 Right"
-msgstr "Ручка1 Право"
-
-msgid "Stick2 Up"
-msgstr "Ручка2 Верх"
-
-msgid "Stick2 Down"
-msgstr "Ручка2 Низ"
-
-msgid "Stick2 Left"
-msgstr "Ручка2 Лево"
-
-msgid "Stick2 Right"
-msgstr "Ручка2 Право"
-
-msgid "Joystick"
-msgstr "Джойстик"
-
-msgid "Button"
-msgstr "Кнопка"
-
-msgid "Hot Key for Statistics"
-msgstr "Клавиша для статистики"
-
-msgid ""
-"When this key is pressed while playing a game, a window pops up displaying "
-"statistics for the current game."
-msgstr ""
-"При нажатии этой клавишы во время игры всплывает окно, показывающее "
-"статистику."
-
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "Очки"
+
+#: src/Hud/TabStats.cpp:228
 msgid "CannonShots"
 msgstr "Выстрелов Пушки"
 
-msgid "Stop, {PLAYER1_NAME}!"
-msgstr "Стоять, {PLAYER1_NAME}!"
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr "Ударов"
 
-msgid ""
-"We told you to select the Freezer, but you have chosen another ability!"
-"Please land again and take the Freezer!"
-msgstr ""
-"Мы говорили, чтобы ты выбрал Freezer, но ты выбрал другую способность!"
-"Пожалуйста, приземлись обратно, и попробуй выбрать Замораживатель !"
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "Фраги"
 
-msgid "The Freezer..."
-msgstr "Замораживатель..."
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "Убийств своих"
 
-msgid ""
-"This is a powerful special ability which freezes nearby ships. You have to "
-"fly close to your enemy and press <{PLAYER1_KEY_SPECIAL}> to freeze him. "
-"Watch him loosing life slowly... until he dies!"
-msgstr ""
-"Это мощная спец. способность, которая замораживает корабли поблизости. Во "
-"время нахождения недалеко от врага, нажми <{PLAYER1_KEY_SPECIAL}> для того, "
-"чтобы его заморозить. После этого можешь посмотреть, как он медленно теряет "
-"здоровье... пока не погибнет!"
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "Суицидов"
 
-msgid "Practice!"
-msgstr "Практика!"
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "Смертей"
 
-msgid ""
-"Now try to freeze your enemy! For this tutorial we will give you some "
-"FragStars. But remember: In real life you have to smash opponents to get "
-"those stars!"
-msgstr ""
-"Теперь попробуй заморозить противника! Для этого мы дадим тебе немного "
-"Звезд. Но помни: в реальной жизни тебе будет необходимо уничтожать врагов "
-"для получения этих звезд!"
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "Итого:"
 
-msgid "You Missed Him, {PLAYER1_NAME}!"
-msgstr "Ты упустил его, {PLAYER1_NAME}!"
-
-msgid "Try again. we will refill your FragStars."
-msgstr "Попробуй еще раз, мы дадим тебе еще немного звезд."
-
-msgid "You Did It!"
-msgstr "Ты сделал это!"
-
-msgid "Now head back to your planet to select another special ability!"
-msgstr ""
-"Теперь возвращайся обратно на планету, чтобы выбрать другую способность."
-
-msgid "Beware, {PLAYER1_NAME}!"
-msgstr "Внимание, {PLAYER1_NAME}!"
-
-msgid ""
-"There is no time for further testing!Our enemies have sent two of their real "
-"warriors for vengeance!"
-msgstr ""
-"Больше нету времени для обучения!Наши враги отправили два боевых корабля для "
-"мести!"
-
-msgid "Players"
-msgstr "Игроки"
-
+#: src/Hud/musicNotify.cpp:193
 msgid "Artist:"
 msgstr "Исполнитель:"
 
+#: src/Hud/musicNotify.cpp:194
 msgid "Album:"
 msgstr "Альбом:"
 
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "Переключение музыкальной композиции!"
+
+#: src/Media/music.cpp:153
 msgid "Previous music track!"
 msgstr "Предыдущая композиция!"
 
-msgid "Play Previous Track"
-msgstr "Воспроизвести предыдущую композицию"
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "Закрыть"
 
-msgid "Play Tracks in Random Order"
-msgstr "Случайный порядок воспроизведения музыки"
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+msgid "About"
+msgstr "О M.A.R.S."
 
-msgid "Pressing this key switches to the previous music track."
-msgstr "Нажатие этой клавиши начинает воспроизведение предыдущей композиции."
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "Лицензия"
 
-msgid "Enables music play back in a random sequence."
-msgstr "Включает воспроизведение музыки в случайном порядке."
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "Титры"
 
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Это первая попытка сделать игру с использование OpenGL и SFML. Эта игра для "
+"двух игроков, летающих на кораблях в двухмерном космическом пространстве, "
+"управляемом законами гравитации.\n"
+"\n"
+"Домашняя страница:\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "Особые благодарности:"
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Переводы:\n"
+"Арабский: Majid\n"
+"Китайский: Wecing\n"
+"Чешский: Mates\n"
+"Финский: Paavo\n"
+"Французский: Astohan\n"
+"Германский: Sandra\n"
+"Хинди: Antriksh & Aakanksh\n"
+"Венгерский: Papp Bence\n"
+"Итальянский: Proch\n"
+"Польский: command_dos\n"
+"Португальский: Vitor\n"
+"Русский: Drakmail\n"
+"Испанский: Gastón\n"
+"Шведский: Henrik\n"
+"\n"
+"Помощь в программировании:\n"
+"Werner and Deubeuliou\n"
+"\n"
+"Тестирование и творческая поддержка:\n"
+"Heinrich, Martin, Bastian, Sandra, Diana."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "Отмена"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+msgid "Start Network Game"
+msgstr "Начать сетевую игру"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"Поддержка игры в M.A.R.S. через интернет или локальную сеть планируется, но пока не реализована.\n"
+"\n"
+"Ждите!"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "Начать с начала"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
+#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "Настройки"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "Спрятать меню"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "Вернуться в главное меню"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "Информация"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Твоё имя мне не нравится... Попробуй придумай что-нибудь получше!"
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "Вы действительно хотите выйти?"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Подбери дистанционное управление и удерживай его как можно дольше!"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"Вдобавок к ВЕЛИКОЙ ВОЙНЕ, твоя планетная система теперь под угрозой нового невероятного зла: огромный корабль неизвестных захватчиков находится в этой галактике, наводя на планеты свое Монолитное Оружие Массового Уничтожения.\n"
+"В знак цинизма, захватчики оставили удаленное управление наведением этого источника разрушений.\n"
+"Доберись до него как можно быстрее, и преврати планеты врага в вечную пустыню.\n"
+"Будь ХРАНИТЕЛЕМ ОРУЖИЯ."
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "Показывать это сообщение снова."
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "Уничтожь как можно больше врагов!"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"В результате ВЕЛИКОЙ ВОЙНЫ ты потерял всё: дом, семью и\n"
+"самоуважение.\n"
+"Твой последний шанс избавиться от этого жалкого образа жизни — стать "
+"гладиатором во всемирно известной\n"
+"арене для СРАЖЕНИЙ.\n"
+"Тебе надо сражаться с другими бойцами и получая очки за уничтожение "
+"скорлупок, которые они называют кораблями.\n"
+"Подготовься!\n"
+"Смерть и Слава ждут тебя."
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "Уничтожь как можно больше врагов!"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Так как на ВЕЛИКУЮ ВОЙНУ уходит огромное колличество ресурсов, ученые искали новые пути эффективного уничтожения ваших врагов. Они проделали огромную работу, и однажды создавали новое оружие с невероятными свойствами: для полного уничтожения врага было достаточно одного попадания, но на запущенные снаряды очень сильно воздействует гравитация, поэтому они очень сложны в управлении. Из-за этого оружие получило название СРАЗУ-ГРАВ!\n"
+"\n"
+"К несчастью, кто-то украл технологию, поэтому наши противники могут использовать это ужасное оружие против нас. Настал твой черёд: уничтожь жалких воришек в великой ГРАВ-ИТАЦИОННОЙ-ДЫРЕ для возвращения лидерства.\n"
+"\n"
+"Победи в этой битве, и победа в ВЕЛИКОЙ ВОЙНЕ будет твоей."
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Вы остановили M.A.R.S. прямо в разгаре этого сумашедшего сражения?\n"
+"Если Вы хотите сделать снимок экрана, то с помощью этой клавиши Вы сможете делать эпичные обои, скрывая все окна.\n"
+"\n"
+"Для их возврата просто нажмите ESC."
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Ударьте или выстрелите шаром в планету противника!"
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"В 3547 году, цивилизации всей галактики расселились на своих планетах, живя в мире и гармонии с природой.\n"
+"Но за пределами уютных планет разгоралась ВЕЛИКАЯ ВОЙНА.\n"
+"Как прославленный воин, идущий к нескончаемой славе и богатству, ты решил защищать свою планету от  нападения завистливых\n"
+"соседей! Сражайся, настоящий герой, так как ты родился для SPACEBALL.\n"
+"Защити свою планету от сферы смерти, размазав врагов по их ничтожным планетам."
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"Переговоры провалены!\n"
+"Ты и твои соседи получили огромные потери в результате соблюдения соглашений "
+"ВЕЛИКОЙ ВОЙНЫ.\n"
+"После этого была предпринята последняя попытка отстоять своё мнение, в "
+"результате которой ты получил приказ уничтожить ресурсы врага и защитить "
+"собственные. Единственный путь — великое КОМАНДНОЕ СРАЖЕНИЕ.\n"
+"Защити своих товарищей и уничтожь врагов!\n"
+"Преподай им урок, который они никогда не забудут."
+
+#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "Начать игру"
+
+#: src/Menu/MainMenu.cpp:46
+msgid "Start Tutorial"
+msgstr "Пройти обучение"
+
+#: src/Menu/MainMenu.cpp:48
+msgid "Join Network Game"
+msgstr "Зайти в сетевую игру"
+
+#: src/Menu/MainMenu.cpp:51
+msgid "Quit M.A.R.S."
+msgstr "Выход"
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "Вы действительно хотите завершить текущую игру?"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "Устанавливает команду локальных игроков."
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "Включает локальных игроков."
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "Боты"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "Изменяет колличество кораблей, управляемых компьютером."
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Указывает предел командных очков, при достижении которого команда выигрывает."
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "Уровень ботов"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "Изменяет сложность ботов."
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "Время появления бонусов"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr ""
+"Изменяет количество бонусов, появляющихся по время игры.\n"
+"Ноль отключает бонусы."
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "Старт"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "Левая команда"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "Правая команда"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "Репутация"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "Настройки оружия"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "Игроки"
+
+#: src/Menu/OptionsMenu.cpp:81
+msgid "Interface"
+msgstr "Интерфейс"
+
+#: src/Menu/OptionsMenu.cpp:82
+msgid "Gameplay"
+msgstr "Игра"
+
+#: src/Menu/OptionsMenu.cpp:83
+msgid "Graphics"
+msgstr "Графика"
+
+#: src/Menu/OptionsMenu.cpp:84
+msgid "Audio"
+msgstr "Звук"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "General Settings"
+msgstr "Основные настройки"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Language"
+msgstr "Язык"
+
+#: src/Menu/OptionsMenu.cpp:97
+msgid "File Format for Screenshots"
+msgstr "Тип файла для снимков экрана"
+
+#: src/Menu/OptionsMenu.cpp:98
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Устанавливает формат, которые будет использоваться для сохранения снимков экрана."
+
+#: src/Menu/OptionsMenu.cpp:101
+msgid "Hot Key for Screenshots"
+msgstr "Клавиша для снимка экрана"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:104
+#, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "Когда эта клавиша нажата, снимок экрана сохраняется в %s"
+
+#: src/Menu/OptionsMenu.cpp:108
+msgid "Hot Key for Statistics"
+msgstr "Клавиша для статистики"
+
+#: src/Menu/OptionsMenu.cpp:109
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "При нажатии этой клавишы во время игры всплывает окно, показывающее статистику."
+
+#: src/Menu/OptionsMenu.cpp:111
+msgid "Show Game Information"
+msgstr "Показывать информацию об игре"
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Frames per Second"
+msgstr "Кадров в секунду"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"Показывает колличество кадров, показанных ща секунду.\n"
+"Если эта велечина всегда очень маленькая (<20), необходимо изменить некоторые опции во вкладке \"Графика\"."
+
+#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+msgid "Particle Count"
+msgstr "Колличество частиц"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid "Displays the amount of active particles."
+msgstr "Показывает колличество активных частиц."
+
+#: src/Menu/OptionsMenu.cpp:122
+msgid "Display Tool Tips"
+msgstr "Показывать подсказки"
+
+#: src/Menu/OptionsMenu.cpp:123
+msgid "Dismisses tool tips like this one."
+msgstr "Убирает всплывающие подсказки (например, такие, как эта)."
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Full screen"
+msgstr "Полный экран"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Окно с игрой будет развернуто на весь экран."
+
+#: src/Menu/OptionsMenu.cpp:130
+msgid "Window Settings"
+msgstr "Настройки окна"
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "V-Sync"
+msgstr "Вертикальная синхронизация"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr ""
+"Привязывает расчет параметров игры к частоте обновления вашего монитора.\n"
+"Включение этой опции обычно делает игру более плавной."
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "Shader Effects"
+msgstr "Шейдеры"
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Включает красивые эффекты, например, марево, но уменьшает производительность игры."
+
+#: src/Menu/OptionsMenu.cpp:162
+msgid "Off"
+msgstr "Выключить"
+
+#: src/Menu/OptionsMenu.cpp:164
+msgid "Resolution"
+msgstr "Разрешение"
+
+#: src/Menu/OptionsMenu.cpp:165
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr ""
+"Устанавливает размер окна.\n"
+"Размер устанавливается сразу для полноэкранного и оконного режимов."
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Game Settings"
+msgstr "Настройки игры"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "High Star Field Resolution"
+msgstr "Высокое разрешение звездного неба"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"На экранах с высоким разрешением, эта опция заставляет звездное небо повторяться позже.\n"
+"Отключение этой опции может незначительно повысить производительности игры."
+
+#: src/Menu/OptionsMenu.cpp:174
 msgid "Moving Stars"
 msgstr "Движение звёзд"
 
-msgid ""
-"Draws some moving stars on the background. Eye candy, but reduces game "
-"performance."
-msgstr ""
-"ключает движение некоторых фоновых звёзд. Красиво, но уменьшает "
-"производительность игры."
+#: src/Menu/OptionsMenu.cpp:175
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "ключает движение некоторых фоновых звёзд. Красиво, но уменьшает производительность игры."
 
-msgid "Goals"
-msgstr "Ударов"
+#: src/Menu/OptionsMenu.cpp:179
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Изменяет общее число частиц.\n"
+"Маленькие значения могут существенно увеличить производительность игры."
+
+#: src/Menu/OptionsMenu.cpp:182
+msgid "Particle Lifetime"
+msgstr "Время жизни частиц"
+
+#: src/Menu/OptionsMenu.cpp:183
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Изменяет общее время жизни частиц.\n"
+"Маленькие значения могут существенно увеличить производительность игры."
+
+#: src/Menu/OptionsMenu.cpp:186
+msgid "Volume Settings"
+msgstr "Настойки громкости"
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid "Music"
+msgstr "Музыка"
+
+#: src/Menu/OptionsMenu.cpp:189
+msgid "Adjusts volume of background music."
+msgstr "Изменяет громкость фоновой музыки."
+
+#: src/Menu/OptionsMenu.cpp:192
+msgid "Sound"
+msgstr "Эффекты"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Adjusts volume of sound effects."
+msgstr "Изменяет громкость звуковых эффектов."
+
+#: src/Menu/OptionsMenu.cpp:196
+msgid "Announcer"
+msgstr "Диктор"
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Adjusts volume of announcers voice."
+msgstr "Изменяет громкость диктора."
+
+#: src/Menu/OptionsMenu.cpp:199
+msgid "Playback Settings"
+msgstr "Настройки воспроизведения"
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Play Tracks in Random Order"
+msgstr "Случайный порядок воспроизведения музыки"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Enables music play back in a random sequence."
+msgstr "Включает воспроизведение музыки в случайном порядке."
+
+#: src/Menu/OptionsMenu.cpp:205
+msgid "Play Next Track"
+msgstr "Играть следующую композицию"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Pressing this key switches to the next music track."
+msgstr "Нажатие этой клавиши переключает музыкальную композицию."
+
+#: src/Menu/OptionsMenu.cpp:209
+msgid "Play Previous Track"
+msgstr "Воспроизвести предыдущую композицию"
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Pressing this key switches to the previous music track."
+msgstr "Нажатие этой клавиши начинает воспроизведение предыдущей композиции."
+
+#: src/Menu/OptionsMenu.cpp:213
+msgid "Special Effects"
+msgstr "Специальные эффекты"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Explosions for Slow Motion"
+msgstr "Взрывов в режиме замедленного движения времени"
+
+#: src/Menu/OptionsMenu.cpp:216
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Если одновременно взрывается несколько кораблей, то включается эффект замедленного движения."
+
+#: src/Menu/OptionsMenu.cpp:219
+#, fuzzy
+msgid "Game Speed"
+msgstr "Настройки игры"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:222
+msgid "Show Debug Information"
+msgstr "Показывать отладочную информацию"
+
+#: src/Menu/OptionsMenu.cpp:224
+msgid "Bots Orientation"
+msgstr "Ориентация ботов"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Displays the job of each bot."
+msgstr "Показывает задание каждого бота."
+
+#: src/Menu/OptionsMenu.cpp:228
+msgid "Zones"
+msgstr "Зоны"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Показывает тактические зоны, которые важны для ИИ."
+
+#: src/Menu/OptionsMenu.cpp:232
+msgid "AI-Paths"
+msgstr "Пути ботов"
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Displays paths calculated by bots."
+msgstr "Показывает пути, рассчитанные ботами."
+
+#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+msgid "Name"
+msgstr "Имя"
+
+#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+msgid "Accelerate"
+msgstr "Ускорение"
+
+#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+msgid "Turn Left"
+msgstr "Повернуть налево"
+
+#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+msgid "Turn Right"
+msgstr "Повернуть направо"
+
+#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+msgid "Weapon"
+msgstr "Оружие"
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Special Ability"
+msgstr "Спец. способность"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Ship Settings"
+msgstr "Настройки корабля"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Ship"
+msgstr "Корабль"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Player Color"
+msgstr "Цвет игрока"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Team Color"
+msgstr "Цвет команды"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "Продолжить"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "К сожалению Ваша видеокарта не поддерживает шейдеры!"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "Далее"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "Оружие"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "Специльно"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "Плюс"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr "Обратный слеш"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "Запятая"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "Тире"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "Delete"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "Делить"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "Низ"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr "End"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "Равно"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr "Home"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr "Insert"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "Левый Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "("
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "Левый Control"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "Лево"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "Левый Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "Левый Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "Меню"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr "Умножить"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "Page Down"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "Page Up"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "Pause"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "Точка"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "Кавычки"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "Правый Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr ")"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "Правый Control"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "Return"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "Право"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "Правый Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "Правый Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+msgid "Semi Colon"
+msgstr "Запятая"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr "Слеш"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "Пробел"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr "Минус"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr "Тильда"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "Таб"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "Верх"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr "Джойстик"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "Кнопка A"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "Кнопка B"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "Кнопка X"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "Кнопка Y"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "Левый бампер"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "Правый бампер"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "Старт"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "Кнопка назад"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "Кнопка"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "Левый переключатель"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "Правый переключатель"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "Ручка2 Верх"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "Ручка2 Низ"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "Ручка2 Лево"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "Ручка2 Право"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "Ручка1 Верх"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "Ручка1 Низ"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "Ручка1 Лево"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "Ручка1 Право"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "Верх"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "Низ"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "Лево"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "Право"
+
+#: src/System/window.cpp:373
+msgid "Screenshot saved!"
+msgstr "Снимок экрана сохранён!"

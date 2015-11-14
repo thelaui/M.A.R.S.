@@ -225,7 +225,7 @@ void Tutorial::update() {
 												 locales::format_string(
 													 /** TRANSLATORS: %s is a hotkey on the keyboard.*/
 													 gettext("To defeat your enemies, you have to know how to shoot them up!\n"
-														"For that purpose press %s. \n"
+														"For that purpose press %s.\n"
 														"Have some fun shooting around and then land your ship to continue the "
 														"tutorial."),
 													 reinterpret_cast<const char*>(generateName::key(settings::C_playerIfire).toUtf8().c_str())),
@@ -257,7 +257,7 @@ void Tutorial::update() {
 														"through some incredibly evil weapons. Press %s to "
 														"open your arsenal.\n"
 														"Then use %s and %s to choose a "
-														"weapon! \n"
+														"weapon!\n"
 														"Take-off, when you're ready!"),
 													 reinterpret_cast<const char*>(generateName::key(settings::C_playerIfire).toUtf8().c_str()),
 													 reinterpret_cast<const char*>(generateName::key(settings::C_playerIleft).toUtf8().c_str()),
@@ -302,7 +302,7 @@ void Tutorial::update() {
 												 _("Impressive!"),
 												 _("You did it! As you may have noticed, a little star appeared over "
 													"your ship. The more enemies you kill, the more of them will show. "
-													"But they are not only a frag indicator! \n"
+													"But they are not only a frag indicator!\n"
 													"Land again and we will show you what else stars are good for."),
 												 12, false, true));
                 ++state_;
@@ -317,7 +317,7 @@ void Tutorial::update() {
 												 _("As promised, we will tell you the stars' meaning. "
 													"They are a resource for your ship's impressively powerful extra abilities. "
 													"For example you can heal you including nearby friends, blast away or "
-													"freeze ships within a certain distance! \n"
+													"freeze ships within a certain distance!\n"
 													"The more stars you have, the larger range and strength of the ability grow."),
 												 13, false, true));
                 ++state_;
@@ -351,7 +351,7 @@ void Tutorial::update() {
 													  _("The Freezer..."),
 													  locales::format_string(
 														  /** TRANSLATORS: %s is a hotkey on the keyboard.*/
-														  gettext("This is a powerful special ability which freezes nearby ships. \n"
+														  gettext("This is a powerful special ability which freezes nearby ships.\n"
 															 "You have to fly close to your enemy and press %s "
 															 "to freeze him. Watch him loosing life slowly... until he dies!"),
 														  reinterpret_cast<const char*>(generateName::key(settings::C_playerISpecialKey).toUtf8().c_str())),
@@ -383,7 +383,7 @@ void Tutorial::update() {
             if (!menus::visible()) {
 					 menus::showWindow(TutorialWindow::get(
 												 _("Practice!"),
-												 _("Now try to freeze your enemy! \n"
+												 _("Now try to freeze your enemy!\n"
 													"For this tutorial we will give you some FragStars. But remember: "
 													"In real life you have to smash opponents to get those stars!"),
 												 16, false, false));
