@@ -308,6 +308,7 @@ void OptionsMenu::checkWidgets() {
         }
 
 		  locales::load();
+		  locales::setCurrentLocale();
         menus::reload();
 
         settings::save();
