@@ -24,8 +24,9 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <libintl.h>
 # include <SFML/System/String.hpp>
 
-///A macro to make i18n more readable and aid in tagging strings for translation
+/// A macro to make i18n more readable and aid in tagging strings for translation
 #define _(str) locales::string2sfstring(std::string(locales::translate(str)))
+
 
 /// A namespace which handles translations for MARS.
 
@@ -34,14 +35,25 @@ namespace locales {
 	char const * translate(char        const *) __attribute__ ((format_arg (1)));
 	char const * translate(const std::string &);
 
-	/// Wrapper for sprintf. Formats 'format' with the variables var1...
+	/** Wrappers for sprintf. Format 'format' with the variables var1...
+	 *
+	 * In order to keep the strings' encoding intact, translate strings with: gettext("Translate %s")
+	 * Do not use the _("Translate %s") macro!
+	 *
+	 * Settings members need to be fetched with:
+	 *
+	 * reinterpret_cast<const char*>(settings_sfstring.toUtf8().c_str()),
+	 *
+	 * Writing a wrapper for this didn't work because of temporaries.
+	 */
 	sf::String* format_string(const char* format, const char* var1);
 	sf::String* format_string(const char* format, const char* var1, const char* var2);
 	sf::String* format_string(const char* format, const char* var1, const char* var2, const char* var3);
 
+	/// Converts a std::string to an sf::String while keeping the encoding intact.
 	sf::String* string2sfstring(const std::string& string);
 
-    /// Loa ds the current locale, accordind to settings::C_languageID.
+	 /// Loads the current locale, accordind to settings::C_languageID.
     bool                       load();
 
     /// Returns a list of all files in data/locales.
