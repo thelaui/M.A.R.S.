@@ -30,7 +30,8 @@ class MainMenu: public UiWindow {
 
     private:
         MainMenu(int width, int height, Vector2f const& position): UiWindow(width, height, position) {}
-        MainMenu(MainMenu const& copy);
+		  MainMenu(MainMenu const& copy);
+		  static void init();
 
         static UiWindow* instance_;
 

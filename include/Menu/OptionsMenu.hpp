@@ -31,6 +31,7 @@ class OptionsMenu: public UiWindow {
     private:
         OptionsMenu(int width, int height): UiWindow(width, height) {}
         OptionsMenu(OptionsMenu const& copy);
+		  static void init();
 
         static UiWindow* instance_;
 
