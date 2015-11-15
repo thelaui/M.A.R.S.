@@ -97,7 +97,6 @@ namespace locales {
                     newLocale.name_ = *it;
                     newLocale.name_.erase(0, 1);
                     newLocale.name_.erase(newLocale.name_.getSize()-1, 1);
-
                     first = false;
                 }
                 else {
@@ -112,7 +111,7 @@ namespace locales {
 								newLocale.iso_ = arg;
 						  else if (flag == "font:")
                         newLocale.font_ = arg;
-                    else if (flag == "author:")
+						  else if (flag == "author:" && !arg.toAnsiString().empty())
                         newLocale.author_ = "By " + arg;
                     else if (flag == "direction:") {
                         if (arg == "RTL") newLocale.LTR_ = false;
