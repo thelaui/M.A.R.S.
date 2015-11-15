@@ -111,7 +111,7 @@ namespace locales {
 								newLocale.iso_ = arg;
 						  else if (flag == "font:")
                         newLocale.font_ = arg;
-						  else if (flag == "author:" && !arg.toAnsiString().empty())
+						  else if (flag == "author:")
                         newLocale.author_ = "By " + arg;
                     else if (flag == "direction:") {
                         if (arg == "RTL") newLocale.LTR_ = false;
