@@ -192,7 +192,7 @@ namespace menus {
 		  MainMenu::reset();
 		  NewGameConfirm::reset();
 		  NewGameMenu::reset();
-		  //OptionsMenu::reset();
+		  OptionsMenu::reset();
 		  PauseMenu::reset();
 		  ShaderError::reset();
 		  ToMainConfirm::reset();
