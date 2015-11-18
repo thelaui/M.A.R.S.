@@ -17,6 +17,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Locales/locales.hpp"
 
+#ifdef _WIN32
+# include <windows.h>
+# include <cstdlib>
+#endif
+
 #ifdef __FreeBSD__
 #  include <clocale>
 #endif
@@ -170,6 +175,10 @@ namespace locales {
 		  setenv ("LC_ALL",   loc, 1);
 #endif
 #ifdef _WIN32
+#ifdef __MINGW32__
+// Mingw doesn't define _putenv_s()
+extern int _putenv_s(const char*, const char*);
+#endif
 		  _putenv_s("LANG", loc);
 #endif
 

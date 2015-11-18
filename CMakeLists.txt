@@ -35,6 +35,9 @@ include_directories(${OPENGL_INCLUDE_DIR})
 # find the sfml2 headers and library
 find_package(SFML REQUIRED audio graphics)
 
+
+find_package(Gettext REQUIRED)
+
 # libintl is not used on all systems, so only include it when we actually
 # found it.
 if (INTL_FOUND)
