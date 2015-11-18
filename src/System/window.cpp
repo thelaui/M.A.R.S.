@@ -366,35 +366,18 @@ namespace window {
         std::stringstream filename;
         filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
 
-        # ifdef __linux__
-            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-					 hud::displayMessage(*_("Screenshot saved!"));
-            } else {
-                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-            }
-        # endif
-
-        # ifdef __APPLE__
-            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
-            } else {
-                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-            }
-        # endif
-
         # ifdef __WIN32__
             CreateDirectory((settings::C_configPath + "screenshots/").c_str(), NULL);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
-                std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-                hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
-            } else {
-                std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
-            }
+        # else
+            mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
+
+        if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+            std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+                 hud::displayMessage(*_("Screenshot saved!"));
+        } else {
+            std::cout << "Failed saving screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
+        }
     }
 
     void showCursor(bool show) {

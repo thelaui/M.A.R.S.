@@ -32,6 +32,9 @@ include_directories(${OPENGL_INCLUDE_DIR})
 find_package(SFML REQUIRED audio graphics window system)
 include_directories(${SFML_INCLUDE_DIR})
 
+
+find_package(Gettext REQUIRED)
+
 # libintl is not used on all systems, so only include it when we actually
 # found it.
 if (INTL_FOUND)
@@ -71,7 +74,7 @@ endif(APPLE)
 
 # compile source
 set(CMAKE_CXX_FLAGS "-s -O2")
- add_subdirectory(src)
+add_subdirectory(src)
 
 #####################################################################
 # Create package
