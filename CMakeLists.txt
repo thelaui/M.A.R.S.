@@ -76,6 +76,11 @@ endif(APPLE)
 set(CMAKE_CXX_FLAGS "-s -O2")
 add_subdirectory(src)
 
+# Update translations and build translation binaries
+add_custom_target(_build_translation_binaries ALL
+  COMMAND ${MARS_SOURCE_DIR}/utils/update_translations.sh
+)
+
 #####################################################################
 # Create package
 #####################################################################
