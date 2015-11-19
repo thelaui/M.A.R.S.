@@ -78,7 +78,12 @@ include_directories(${MARS_SOURCE_DIR}/include)
 # compile source
 add_subdirectory(src) 
 set(CMAKE_CXX_FLAGS "-s" CACHE STRING "CXX flags")
- 
+
+# Update translations and build translation binaries
+add_custom_target(_build_translation_binaries ALL
+  COMMAND ${MARS_SOURCE_DIR}/utils/update_translations.sh
+)
+
 #####################################################################
 # Create package
 #####################################################################
