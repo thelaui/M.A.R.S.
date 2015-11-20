@@ -54,7 +54,7 @@ namespace players {
                 allPlayers_.push_back(playerII_);
                 break;
             default:
-                Player* bot = new BotPlayer(generateName::bot(((long)team%INT_MAX)/97), color, rand()%SHIP_GRAPHICS_COUNT+1);
+                Player* bot = new BotPlayer(generateName::bot(((intptr_t)team%INT_MAX)/97), color, rand()%SHIP_GRAPHICS_COUNT+1);
                 team->addMember(bot);
                 allPlayers_.push_back(bot);
         }
