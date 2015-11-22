@@ -37,8 +37,13 @@ find_package(SFML REQUIRED audio graphics)
 
 
 find_package(Gettext REQUIRED)
-find_package(INTL REQUIRED)
-include_directories(${INTL_INCLUDE_DIR})
+
+# libintl is not used on all systems, so only include it when we actually
+# found it.
+if(INTL_FOUND)
+	find_package(INTL REQUIRED)
+	include_directories(${INTL_INCLUDE_DIR})
+endif()
 
 # Foundation library needed for apple
 if(APPLE)
