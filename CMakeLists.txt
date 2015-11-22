@@ -34,9 +34,6 @@ include_directories(${SFML_INCLUDE_DIR})
 
 
 find_package(Gettext REQUIRED)
-
-# libintl is not used on all systems, so only include it when we actually
-# found it.
 find_package(INTL REQUIRED)
 include_directories(${INTL_INCLUDE_DIR})
 

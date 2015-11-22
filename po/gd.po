@@ -1,20 +1,20 @@
 # M.A.R.S. gd.po
 # GunChleoc <fios@foramnagaidhlig.net>, 2015.
 # GunChleoc <fios@foramnagaidhlig.net>, 2015.
+# bratzbert <fios@foramnagaidhlig.net>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: M.A.R.S.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-14 19:53+0000\n"
-"PO-Revision-Date: 2015-11-14 20:02+0100\n"
-"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
-"Language-Team: M.A.R.S.\n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
+"PO-Revision-Date: 2015-11-15 11:23+0100\n"
+"Last-Translator: bratzbert <fios@foramnagaidhlig.net>\n"
+"Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
-"(n > 2 && n < 20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n > 2 && n < 20) ? 2 : 3;\n"
 "X-Generator: Virtaal 0.7.1\n"
 "O-Revision-Date: 2015-10-04 07:52+0000\n"
 
@@ -30,10 +30,8 @@ msgid ""
 "We figured out you needed some practice with your new ship.\n"
 "Let the training begin..."
 msgstr ""
-"Tha sinn toilichte gun do thrus sinn mìlidh mar a tha thu fhèin, %s, ach an "
-"cuidich thu leinn sa CHOGADH MHÒR!\n"
-"Cha chreid sinn nach eil thu feumach air beagan cleachdaidh leis an "
-"t-soitheach ùr agad.\n"
+"Tha sinn toilichte gun do thrus sinn mìlidh mar a tha thu fhèin, %s, ach an cuidich thu leinn sa CHOGADH MHÒR!\n"
+"Cha chreid sinn nach eil thu feumach air beagan cleachdaidh leis an t-soitheach ùr agad.\n"
 "Tòisicheamaid air an trèanadh..."
 
 #: src/Games/Tutorial.cpp:125
@@ -47,12 +45,8 @@ msgid ""
 "Controlling your ship is the most important task to master.\n"
 "All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
-"'S e an comas as cudromaiche a dh'fheumas tu ionnsachadh gun cum thu smachd "
-"air an t-soitheach agad.\n"
-"Tha gach gluasad fo smachd laghan na h-iom-tharraing. Gus maille a chur ort, "
-"feumaidh tu tionndadh an comhair a' chùil agus luathachadh dhan chomhair "
-"ud. Cum smachd air an t-soitheach agad leis na h-iuchraichean %s, %s agus %"
-"s!"
+"'S e an comas as cudromaiche a dh'fheumas tu ionnsachadh gun cum thu smachd air an t-soitheach agad.\n"
+"Tha gach gluasad fo smachd laghan na h-iom-tharraing. Gus maille a chur ort, feumaidh tu tionndadh an comhair a' chùil agus luathachadh dhan chomhair ud. Cum smachd air an t-soitheach agad leis na h-iuchraichean %s, %s agus %s!"
 
 #: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
@@ -126,11 +120,9 @@ msgid ""
 "For that purpose press %s.\n"
 "Have some fun shooting around and then land your ship to continue the tutorial."
 msgstr ""
-"Feumaidh tu ionnsachadh mar a loisgeas tu air an nàmhaid ach an cuir thu "
-"ruaig air!\n"
+"Feumaidh tu ionnsachadh mar a loisgeas tu air an nàmhaid ach an cuir thu ruaig air!\n"
 "Gus seo a dhèanamh, brùth air %s.\n"
-"Gabh tlachd às an losgadh agus an uairsin laigh an soitheach agad gus "
-"leantainn air adhart leis an oideachadh."
+"Gabh tlachd às an losgadh agus an uairsin laigh an soitheach agad gus leantainn air adhart leis an oideachadh."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:243
@@ -158,9 +150,7 @@ msgid ""
 "Then use %s and %s to choose a weapon!\n"
 "Take-off, when you're ready!"
 msgstr ""
-"Tha fios againn gun robh fiughar agad ri seo. Nuair a bhios tu san doca, 's "
-"urrainn dhut taghadh eadar roghainn de dh'airm uabhasach olca. Brùth air %s "
-"gus an arm-lann agad fhosgladh.\n"
+"Tha fios againn gun robh fiughar agad ri seo. Nuair a bhios tu san doca, 's urrainn dhut taghadh eadar roghainn de dh'airm uabhasach olca. Brùth air %s gus an arm-lann agad fhosgladh.\n"
 "An uairsin, cleachd %s agus %s gus arm a thaghadh!\n"
 "Tog ort a-rithist nuair a bhios tu ullamh!"
 
@@ -211,8 +201,7 @@ msgid ""
 "To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
 "For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"Gus leum a ghearradh tro na comasan, feumaidh tu brùthadh air %s. Siubhal "
-"tromhpa le %s agus %s gus fear a thaghadh!\n"
+"Gus leum a ghearradh tro na comasan, feumaidh tu brùthadh air %s. Siubhal tromhpa le %s agus %s gus fear a thaghadh!\n"
 "Airson an aonaid seo, tagh a' \"Freezer\"! Tog ort nuair a bhios e agad!"
 
 #: src/Games/Tutorial.cpp:351
@@ -227,9 +216,7 @@ msgid ""
 "You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
 "Seo comas sònraichte cumhachdach a reòthas soithichean am fagas.\n"
-"Feumaidh tu teannadh dhan nàmhaid 's an uairsin brùthadh air %s ach an reòth "
-"thu e. Coimhead air fhad 's a tha e a' call a bheatha gu slaodach... gus am "
-"faigh e bàs!"
+"Feumaidh tu teannadh dhan nàmhaid 's an uairsin brùthadh air %s ach an reòth thu e. Coimhead air fhad 's a tha e a' call a bheatha gu slaodach... gus am faigh e bàs!"
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:365
@@ -300,8 +287,7 @@ msgid ""
 "Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
 "We will send in an experienced warrior assisting you, %s!"
 msgstr ""
-"Dearbhaich na sgilean agad! Faigh co-dhiù còig puingean a' marbhadh an "
-"nàmhaid! Thèid an sgòr a th' agad a shealltainn ri taobh d' ainm!\n"
+"Dearbhaich na sgilean agad! Faigh co-dhiù còig puingean a' marbhadh an nàmhaid! Thèid an sgòr a th' agad a shealltainn ri taobh d' ainm!\n"
 "Cuiridh sinn seann-ghaisgeach ach an toir e cuideachadh dhut, %s!"
 
 #: src/Games/Tutorial.cpp:484
@@ -329,10 +315,8 @@ msgid ""
 "You can display a list of frags, points and so on via %s.\n"
 "Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
 msgstr ""
-"'S urrainn dhut liosta dhe na sgriosan, puingean 's mar sin air adhart a "
-"shealltainn le %s.\n"
-"A bharrachd air sin, seallaidh na h-àireamhan ri taobh d' ainm na sgriosan "
-"agad agus dè cho fad air falbh 's a tha thu on fhear as fhearr."
+"'S urrainn dhut liosta dhe na sgriosan, puingean 's mar sin air adhart a shealltainn le %s.\n"
+"A bharrachd air sin, seallaidh na h-àireamhan ri taobh d' ainm na sgriosan agad agus dè cho fad air falbh 's a tha thu on fhear as fhearr."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:515
@@ -358,9 +342,7 @@ msgstr "Dh'fhàillig leat!"
 #: src/Games/Tutorial.cpp:532
 #, c-format
 msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
-msgstr ""
-"Nach math sin, %s! Mhill thu an soitheach spaideil ùr agad. Na gabh dragh, "
-"bheir sinn fear ùr dhut. Fuirich ort diog..."
+msgstr "Nach math sin, %s! Mhill thu an soitheach spaideil ùr agad. Na gabh dragh, bheir sinn fear ùr dhut. Fuirich ort diog..."
 
 #: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
@@ -439,7 +421,7 @@ msgstr "Albam:"
 
 #: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
 #: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
-#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
 #: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
 #: src/Menu/WeaponOptions.cpp:49
 msgid "OK"
@@ -459,7 +441,7 @@ msgstr "An traca ciùil roimhe!"
 msgid "Close"
 msgstr "Dùin"
 
-#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
 msgid "About"
 msgstr "Mu dhèidhinn"
 
@@ -480,9 +462,7 @@ msgid ""
 "\n"
 "© 2010-2011 Felix Lauer & Simon Schneegans"
 msgstr ""
-"Seo a' chiad oidhirp gus geama a chruthachadh ann an OpenGL le SFML. Seo "
-"geama airson dà chluicheadair a stiùiricheas soithichean ann am fànais le dà "
-"dhimeinsean fo bhuaidh laghan an iom-tharraing.\n"
+"Seo a' chiad oidhirp gus geama a chruthachadh ann an OpenGL le SFML. Seo geama airson dà chluicheadair a stiùiricheas soithichean ann am fànais le dà dhimeinsean fo bhuaidh laghan an iom-tharraing.\n"
 "\n"
 "Duilleag-dhachaigh:\n"
 "http://www.marsshooter.org\n"
@@ -561,7 +541,11 @@ msgstr ""
 msgid "Cancel"
 msgstr "Sguir dheth"
 
-#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+#: src/Menu/ChooseLanguage.cpp:57
+msgid "Select Language"
+msgstr "Tagh cànan"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
 msgid "Start Network Game"
 msgstr "Geama lìonraidh ùr"
 
@@ -579,8 +563,8 @@ msgstr ""
 msgid "Restart Game"
 msgstr "Ath-thòisich an geama"
 
-#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
-#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
 msgid "Options"
 msgstr "Roghainnean"
 
@@ -649,14 +633,11 @@ msgid ""
 "Prepare yourself!\n"
 "Death and Glory awaits you."
 msgstr ""
-"Chaill thu a h-uile rud air thoradh a' CHOGAIDH MHÒIR: do dhachaigh, do "
-"theaghlach agus\n"
+"Chaill thu a h-uile rud air thoradh a' CHOGAIDH MHÒIR: do dhachaigh, do theaghlach agus\n"
 "do fhèin-spèis.\n"
-"Is an teans mu dheireadh agad gus teicheadh on bheatha truagh seo gun tèid "
-"thu 'nad ghladair ann an raon\n"
+"Is an teans mu dheireadh agad gus teicheadh on bheatha truagh seo gun tèid thu 'nad ghladair ann an raon\n"
 "GEAMA a' BHÀIS ghlòrmhòr.\n"
-"Seas an aghaidh nan gaisgeach eile agus buain puingean a' sgrios nan "
-"caochagan a bheil \"soithich\" aca orra.\n"
+"Seas an aghaidh nan gaisgeach eile agus buain puingean a' sgrios nan caochagan a bheil \"soithich\" aca orra.\n"
 "Dèan ullachadh!\n"
 "Tha bàs is cliù romhad."
 
@@ -717,27 +698,24 @@ msgid ""
 "Teach them a lesson they will never forget."
 msgstr ""
 "Dh'fhàillig leis a' cho-rèiteachadh!\n"
-"Tha an dà chuid thu fhèin agus do nàbaidhean air mòran dhaoine a chall air "
-"thoradh a' CHOGAIDH MHÒIR gun chrìch.\n"
-"Mar an oidhirp mu dheireadh ach am buannaicheadh sibh, fhuair thu òrdugh gus "
-"stòrasan an nàmhaid a sgrios agus na stòrasan agad fhèin a dhìon. Chan eil "
-"fuasgladh ann ach GEAMA a' BHÀIS ann an SGIOBA.\n"
+"Tha an dà chuid thu fhèin agus do nàbaidhean air mòran dhaoine a chall air thoradh a' CHOGAIDH MHÒIR gun chrìch.\n"
+"Mar an oidhirp mu dheireadh ach am buannaicheadh sibh, fhuair thu òrdugh gus stòrasan an nàmhaid a sgrios agus na stòrasan agad fhèin a dhìon. Chan eil fuasgladh ann ach GEAMA a' BHÀIS ann an SGIOBA.\n"
 "Dìon do chuideachd agus mill na nàimhdean!\n"
 "Ionnsaich leasan dhaibh nach dìochuimhnich iad gu bràth tuilleadh."
 
-#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
 msgid "Start Local Game"
 msgstr "Geama ionadail"
 
-#: src/Menu/MainMenu.cpp:46
+#: src/Menu/MainMenu.cpp:52
 msgid "Start Tutorial"
 msgstr "Oideachadh"
 
-#: src/Menu/MainMenu.cpp:48
+#: src/Menu/MainMenu.cpp:54
 msgid "Join Network Game"
 msgstr "Geama lìonraidh a tha ann"
 
-#: src/Menu/MainMenu.cpp:51
+#: src/Menu/MainMenu.cpp:57
 msgid "Quit M.A.R.S."
 msgstr "Fàg M.A.R.S."
 
@@ -815,67 +793,65 @@ msgstr "Na h-airm"
 msgid "Players"
 msgstr "Cluicheadairean"
 
-#: src/Menu/OptionsMenu.cpp:81
+#: src/Menu/OptionsMenu.cpp:86
 msgid "Interface"
 msgstr "Eadar-aghaidh"
 
-#: src/Menu/OptionsMenu.cpp:82
+#: src/Menu/OptionsMenu.cpp:87
 msgid "Gameplay"
 msgstr "Cluiche"
 
-#: src/Menu/OptionsMenu.cpp:83
+#: src/Menu/OptionsMenu.cpp:88
 msgid "Graphics"
 msgstr "Grafaigeachd"
 
-#: src/Menu/OptionsMenu.cpp:84
+#: src/Menu/OptionsMenu.cpp:89
 msgid "Audio"
 msgstr "Fuaim"
 
-#: src/Menu/OptionsMenu.cpp:88
+#: src/Menu/OptionsMenu.cpp:93
 msgid "General Settings"
 msgstr "Roghainnean coitcheann"
 
-#: src/Menu/OptionsMenu.cpp:89
+#: src/Menu/OptionsMenu.cpp:94
 msgid "Language"
 msgstr "Cànan"
 
-#: src/Menu/OptionsMenu.cpp:97
+#: src/Menu/OptionsMenu.cpp:102
 msgid "File Format for Screenshots"
 msgstr "Fòrmat nan glacaidhean-sgrìn"
 
-#: src/Menu/OptionsMenu.cpp:98
+#: src/Menu/OptionsMenu.cpp:103
 msgid "Sets the format being used when screenshots are saved."
 msgstr "Seo am fòrmat a thèid a chleachdadh nuair a shàbhaileas tu glacadh-sgrìn."
 
-#: src/Menu/OptionsMenu.cpp:101
+#: src/Menu/OptionsMenu.cpp:106
 msgid "Hot Key for Screenshots"
 msgstr "Hotkey airson glacaidhean-sgrìn"
 
 #. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
-#: src/Menu/OptionsMenu.cpp:104
+#: src/Menu/OptionsMenu.cpp:109
 #, c-format
 msgid "When this key is pressed, a screenshot is saved to %s"
-msgstr ""
-"Nuair a bhrùthas tu air an iuchair seo, thèid glacadh-sgrìn a shàbhaladh an-"
-"seo: %s"
+msgstr "Nuair a bhrùthas tu air an iuchair seo, thèid glacadh-sgrìn a shàbhaladh an-seo: %s"
 
-#: src/Menu/OptionsMenu.cpp:108
+#: src/Menu/OptionsMenu.cpp:113
 msgid "Hot Key for Statistics"
 msgstr "Hotkey airson na stadastaireachd"
 
-#: src/Menu/OptionsMenu.cpp:109
+#: src/Menu/OptionsMenu.cpp:114
 msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
 msgstr "Nuair a thèid an iuchair seo a' brùthadh rè geama, nochdaidh uinneag le stadastaireachd airson a' gheama ud."
 
-#: src/Menu/OptionsMenu.cpp:111
+#: src/Menu/OptionsMenu.cpp:116
 msgid "Show Game Information"
 msgstr "Seall fiosrachadh a' gheama"
 
-#: src/Menu/OptionsMenu.cpp:113
+#: src/Menu/OptionsMenu.cpp:118
 msgid "Frames per Second"
 msgstr "Frèamaichean gach diog"
 
-#: src/Menu/OptionsMenu.cpp:114
+#: src/Menu/OptionsMenu.cpp:119
 msgid ""
 "Displays the amount of Frames calculated per Second.\n"
 "If this is always very low (<20), you should adjust some settings in graphics tab!"
@@ -883,39 +859,39 @@ msgstr ""
 "Seallaidh seo an àireamh de fhrèamaichean a thèid a chunntadh gach diog\n"
 "Ma tha seo glè ìseal (<20) an-còmhnaidh, feuch an cuir thu gleus air cuid a roghainnean ann an taba na grafaigeachd!"
 
-#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
 msgid "Particle Count"
 msgstr "Àireamh nam mìrean"
 
-#: src/Menu/OptionsMenu.cpp:119
+#: src/Menu/OptionsMenu.cpp:124
 msgid "Displays the amount of active particles."
 msgstr "Seallaidh seo an uiread de mhìrean gnìomhach."
 
-#: src/Menu/OptionsMenu.cpp:122
+#: src/Menu/OptionsMenu.cpp:127
 msgid "Display Tool Tips"
 msgstr "Seall gliocasan-sgrìn"
 
-#: src/Menu/OptionsMenu.cpp:123
+#: src/Menu/OptionsMenu.cpp:128
 msgid "Dismisses tool tips like this one."
 msgstr "Leigidh seo seachad glìocasan-sgrin mar a tha am fear seo."
 
-#: src/Menu/OptionsMenu.cpp:127
+#: src/Menu/OptionsMenu.cpp:132
 msgid "Full screen"
 msgstr "Làn-sgrìn"
 
-#: src/Menu/OptionsMenu.cpp:128
+#: src/Menu/OptionsMenu.cpp:133
 msgid "Maximizes the window, making it cover the entire screen."
 msgstr "Làn-mheudaichidh seo an uinneag ach an còmhdaich i an sgrìn gu lèir."
 
-#: src/Menu/OptionsMenu.cpp:130
+#: src/Menu/OptionsMenu.cpp:135
 msgid "Window Settings"
 msgstr "Roghainnean na h-uinneige"
 
-#: src/Menu/OptionsMenu.cpp:132
+#: src/Menu/OptionsMenu.cpp:137
 msgid "V-Sync"
 msgstr "Sioncronachadh-V"
 
-#: src/Menu/OptionsMenu.cpp:133
+#: src/Menu/OptionsMenu.cpp:138
 msgid ""
 "Makes the game update according to the refresh rate of your monitor.\n"
 "Enabling this option typically makes the game run more smoothly."
@@ -923,23 +899,23 @@ msgstr ""
 "Bheir seo air a' gheama ùrachadh a-rèir astar ath-nuadhachaidh na sgrìn agad.\n"
 "Bidh an geama nas rèidh le seo mar as trice."
 
-#: src/Menu/OptionsMenu.cpp:137
+#: src/Menu/OptionsMenu.cpp:142
 msgid "Shader Effects"
 msgstr "Èifeachdan sgàileadair"
 
-#: src/Menu/OptionsMenu.cpp:138
+#: src/Menu/OptionsMenu.cpp:143
 msgid "Enables cool effects like heat haze, but reduces game performance."
 msgstr "Cuiridh seo èifeachdan snasail an comas a leithid sgeò na teothachd, ach lùghdaichidh seo dèanadas a' gheama."
 
-#: src/Menu/OptionsMenu.cpp:162
+#: src/Menu/OptionsMenu.cpp:167
 msgid "Off"
 msgstr "Dheth"
 
-#: src/Menu/OptionsMenu.cpp:164
+#: src/Menu/OptionsMenu.cpp:169
 msgid "Resolution"
 msgstr "Dùmhlachd-bhreacaidh"
 
-#: src/Menu/OptionsMenu.cpp:165
+#: src/Menu/OptionsMenu.cpp:170
 msgid ""
 "Sets the size of the window.\n"
 "Affects both full screen and windowed mode."
@@ -947,15 +923,15 @@ msgstr ""
 "Suidhichidh seo meud na h-uinneige.\n"
 "Bidh buaidh aig seo air an dà chuid modh làn-sgrìn agus modh uinneige."
 
-#: src/Menu/OptionsMenu.cpp:167
+#: src/Menu/OptionsMenu.cpp:172
 msgid "Game Settings"
 msgstr "Roghainnean a' gheama"
 
-#: src/Menu/OptionsMenu.cpp:169
+#: src/Menu/OptionsMenu.cpp:174
 msgid "High Star Field Resolution"
 msgstr "Dùmhlachd-bhreacaidh àrd nan rionnagan sa chùlaibh"
 
-#: src/Menu/OptionsMenu.cpp:170
+#: src/Menu/OptionsMenu.cpp:175
 msgid ""
 "With high resolution displays, this option makes the star field loop later.\n"
 "Disabling may increase game performance slightly."
@@ -963,15 +939,15 @@ msgstr ""
 "Air sgrìnichean le dùmhlachd-bhreacaidh àrd, cuiridh an roghainn seo lùbadh air na rionnagan cùlaibh.\n"
 "Bidh piseach beag air dèanadas a' gheama ma dh'fhaoidte ma chuireas tu seo dheth."
 
-#: src/Menu/OptionsMenu.cpp:174
+#: src/Menu/OptionsMenu.cpp:179
 msgid "Moving Stars"
 msgstr "Rionnagan a' gluasad"
 
-#: src/Menu/OptionsMenu.cpp:175
+#: src/Menu/OptionsMenu.cpp:180
 msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
 msgstr "Tarraingidh seo rionnagan a' gluasad air a' chùlaibh. Tha seo àlainn ach cuiridh e maille air dèanadas a' gheama."
 
-#: src/Menu/OptionsMenu.cpp:179
+#: src/Menu/OptionsMenu.cpp:184
 msgid ""
 "Adjusts the global particle count.\n"
 "Lower values will increase performance significantly."
@@ -979,11 +955,11 @@ msgstr ""
 "Cuiridh seo gleus air uiread coitcheann nam mìrean.\n"
 "Bheir luachan ìosal piseach mòr air dèanadas a' gheama."
 
-#: src/Menu/OptionsMenu.cpp:182
+#: src/Menu/OptionsMenu.cpp:187
 msgid "Particle Lifetime"
 msgstr "Beò nam mìrean"
 
-#: src/Menu/OptionsMenu.cpp:183
+#: src/Menu/OptionsMenu.cpp:188
 msgid ""
 "Adjusts the global particle life time.\n"
 "Lower values will increase performance significantly."
@@ -991,147 +967,147 @@ msgstr ""
 "Cuiridh seo gleus air dè cho fada 's a mhaireas mìrean gu coitcheann.\n"
 "Bheir luachan ìosal piseach mòr air dèanadas a' gheama."
 
-#: src/Menu/OptionsMenu.cpp:186
+#: src/Menu/OptionsMenu.cpp:191
 msgid "Volume Settings"
 msgstr "Roghainnean na h-àirde"
 
-#: src/Menu/OptionsMenu.cpp:188
+#: src/Menu/OptionsMenu.cpp:193
 msgid "Music"
 msgstr "Ceòl"
 
-#: src/Menu/OptionsMenu.cpp:189
+#: src/Menu/OptionsMenu.cpp:194
 msgid "Adjusts volume of background music."
 msgstr "Cuiridh seo àirde na fuaime airson a' chiùil air gleus."
 
-#: src/Menu/OptionsMenu.cpp:192
+#: src/Menu/OptionsMenu.cpp:197
 msgid "Sound"
 msgstr "Èifeachdan fuaime"
 
-#: src/Menu/OptionsMenu.cpp:193
+#: src/Menu/OptionsMenu.cpp:198
 msgid "Adjusts volume of sound effects."
 msgstr "Cuiridh seo àirde na fuaime airson èifeachdan fuaime air gleus."
 
-#: src/Menu/OptionsMenu.cpp:196
+#: src/Menu/OptionsMenu.cpp:201
 msgid "Announcer"
 msgstr "Brathan"
 
-#: src/Menu/OptionsMenu.cpp:197
+#: src/Menu/OptionsMenu.cpp:202
 msgid "Adjusts volume of announcers voice."
 msgstr "Cuiridh seo àirde na fuaime airson bhrathan air gleus."
 
-#: src/Menu/OptionsMenu.cpp:199
+#: src/Menu/OptionsMenu.cpp:204
 msgid "Playback Settings"
 msgstr "Roghainnean cluiche"
 
-#: src/Menu/OptionsMenu.cpp:201
+#: src/Menu/OptionsMenu.cpp:206
 msgid "Play Tracks in Random Order"
 msgstr "Cluich tracaichean air thuaiream"
 
-#: src/Menu/OptionsMenu.cpp:202
+#: src/Menu/OptionsMenu.cpp:207
 msgid "Enables music play back in a random sequence."
 msgstr "Thèid an ceòl a chluich ann an òrdugh air thuaiream."
 
-#: src/Menu/OptionsMenu.cpp:205
+#: src/Menu/OptionsMenu.cpp:210
 msgid "Play Next Track"
 msgstr "Cluich an ath-thraca"
 
-#: src/Menu/OptionsMenu.cpp:206
+#: src/Menu/OptionsMenu.cpp:211
 msgid "Pressing this key switches to the next music track."
 msgstr "Gearraidh tu leum dhan ath-thraca ciùil nuair a bhrùthas tu air an iuchair seo."
 
-#: src/Menu/OptionsMenu.cpp:209
+#: src/Menu/OptionsMenu.cpp:214
 msgid "Play Previous Track"
 msgstr "Cluich an traca roimhe"
 
-#: src/Menu/OptionsMenu.cpp:210
+#: src/Menu/OptionsMenu.cpp:215
 msgid "Pressing this key switches to the previous music track."
 msgstr "Gearraidh tu leum dhan traca ciùil roimhe nuair a bhrùthas tu air an iuchair seo."
 
-#: src/Menu/OptionsMenu.cpp:213
+#: src/Menu/OptionsMenu.cpp:218
 msgid "Special Effects"
 msgstr "Èifeachdan sònraichte"
 
-#: src/Menu/OptionsMenu.cpp:215
+#: src/Menu/OptionsMenu.cpp:220
 msgid "Explosions for Slow Motion"
 msgstr "Mall-ghluasad nam spreadhadh"
 
-#: src/Menu/OptionsMenu.cpp:216
+#: src/Menu/OptionsMenu.cpp:221
 msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
 msgstr "Ma thèid an àireamh seo de shoithichean a spreadhadh aig an aon àm, tòisichidh seo èifeachd mall-ghluasaid."
 
-#: src/Menu/OptionsMenu.cpp:219
+#: src/Menu/OptionsMenu.cpp:224
 msgid "Game Speed"
 msgstr "Luaths a' gheama"
 
-#: src/Menu/OptionsMenu.cpp:220
+#: src/Menu/OptionsMenu.cpp:225
 msgid "Adjusts the game speed in percent."
 msgstr "Cuiridh seo gleus air luaths a' gheama mar cheudad."
 
-#: src/Menu/OptionsMenu.cpp:222
+#: src/Menu/OptionsMenu.cpp:227
 msgid "Show Debug Information"
 msgstr "Fiosrachadh dì-bhugachaidh"
 
-#: src/Menu/OptionsMenu.cpp:224
+#: src/Menu/OptionsMenu.cpp:229
 msgid "Bots Orientation"
 msgstr "Comhair nam bot"
 
-#: src/Menu/OptionsMenu.cpp:225
+#: src/Menu/OptionsMenu.cpp:230
 msgid "Displays the job of each bot."
 msgstr "Seallaidh seo an obair a tha aig gabh bot."
 
-#: src/Menu/OptionsMenu.cpp:228
+#: src/Menu/OptionsMenu.cpp:233
 msgid "Zones"
 msgstr "Roinnean"
 
-#: src/Menu/OptionsMenu.cpp:229
+#: src/Menu/OptionsMenu.cpp:234
 msgid "Displays tactical zones, which are important for the artificial intelligence."
 msgstr "Seallaidh seo na roinnean innleachdach a tha cudromach dhan inntinn fhuadain."
 
-#: src/Menu/OptionsMenu.cpp:232
+#: src/Menu/OptionsMenu.cpp:237
 msgid "AI-Paths"
 msgstr "Slighean IF"
 
-#: src/Menu/OptionsMenu.cpp:233
+#: src/Menu/OptionsMenu.cpp:238
 msgid "Displays paths calculated by bots."
 msgstr "Seallaidh seo na slighean a chaidh àireamhachadh leis na botaichean."
 
-#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
 msgid "Name"
 msgstr "Ainm"
 
-#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
 msgid "Accelerate"
 msgstr "Luathachadh"
 
-#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
 msgid "Turn Left"
 msgstr "Tionndadh gu clì"
 
-#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
 msgid "Turn Right"
 msgstr "Tionndadh gu deas"
 
-#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
 msgid "Weapon"
 msgstr "Arm"
 
-#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
 msgid "Special Ability"
 msgstr "Comas sònraichte"
 
-#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
 msgid "Ship Settings"
 msgstr "Roghainnean an t-soithich"
 
-#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
 msgid "Ship"
 msgstr "Soitheach"
 
-#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
 msgid "Player Color"
 msgstr "Dath a' chluicheadair"
 
-#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
 msgid "Team Color"
 msgstr "Dath an sgioba"
 
@@ -1464,6 +1440,9 @@ msgstr "Comhair gu clì"
 msgid "Direction Right"
 msgstr "Comhair gu deas"
 
-#: src/System/window.cpp:373
+#: src/System/window.cpp:377
 msgid "Screenshot saved!"
 msgstr "Chaidh glacadh-sgrìn a shàbhaladh!"
+
+#~ msgid "System Language"
+#~ msgstr "Cànan an t-siostaim"

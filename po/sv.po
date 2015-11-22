@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: M.A.R.S.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
 "PO-Revision-Date: 2015-11-14 20:14+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: M.A.R.S.\n"
@@ -29,8 +29,7 @@ msgid ""
 "We figured out you needed some practice with your new ship.\n"
 "Let the training begin..."
 msgstr ""
-"Vi glädjer oss över att ha rekryterat en blivande hjälte som du, %s, som "
-"valt att bistå oss i det STORA KRIGET!\n"
+"Vi glädjer oss över att ha rekryterat en blivande hjälte som du, %s, som valt att bistå oss i det STORA KRIGET!\n"
 "\n"
 "Vi antog att du behövde lite träning med ditt nya skepp.\n"
 "Låt oss börja med träningen..."
@@ -48,9 +47,7 @@ msgid ""
 msgstr ""
 "Att kontrollera ditt skepp är den viktigaste uppgiften att bemästra.\n"
 "\n"
-"Alla rörelser styrs av gravitationslagen. För att minska farten måste du "
-"vända dig om och accelerera i motsatt riktning. Styr ditt skepp med "
-"tangenterna %s, %s och %s!"
+"Alla rörelser styrs av gravitationslagen. För att minska farten måste du vända dig om och accelerera i motsatt riktning. Styr ditt skepp med tangenterna %s, %s och %s!"
 
 #: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
@@ -133,8 +130,7 @@ msgstr ""
 "\n"
 "För det ändamålet, tryck %s.\n"
 "\n"
-"Ha nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo "
-"att fortsätta med övningarna."
+"Ha nu skoj med att skjuta vilt omkring dig, landa ditt skepp när du är redo att fortsätta med övningarna."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:243
@@ -163,8 +159,7 @@ msgid ""
 "Then use %s and %s to choose a weapon!\n"
 "Take-off, when you're ready!"
 msgstr ""
-"Vi vet att du har väntat på det här. När du har dockat kan du byta mellan "
-"några otroligt ondskefulla vapen. Håll in %s för att öppna din arsenal.\n"
+"Vi vet att du har väntat på det här. När du har dockat kan du byta mellan några otroligt ondskefulla vapen. Håll in %s för att öppna din arsenal.\n"
 "\n"
 "Använd sen %s och %s för att välja ett vapen!\n"
 "\n"
@@ -222,8 +217,7 @@ msgid ""
 "To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
 "For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"För att växla mellan förmågorna, behöver du bara hålla in %s. För att välja "
-"en, så kan du cykla igenom dem med %s och %s!\n"
+"För att växla mellan förmågorna, behöver du bara hålla in %s. För att välja en, så kan du cykla igenom dem med %s och %s!\n"
 "\n"
 "För den här lektionen, välj \"Freezer\"!\n"
 "\n"
@@ -242,8 +236,7 @@ msgid ""
 msgstr ""
 "Detta är en kraftfull specialförmåga som fryser närbelägna skepp.\n"
 "\n"
-"Du behöver flyga nära din fiende och trycka %s för att frysa honom. Se honom "
-"sakta förlora livet... tills han dör!"
+"Du behöver flyga nära din fiende och trycka %s för att frysa honom. Se honom sakta förlora livet... tills han dör!"
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:365
@@ -317,8 +310,7 @@ msgid ""
 "Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
 "We will send in an experienced warrior assisting you, %s!"
 msgstr ""
-"Bevisa dina kunskaper! Få minst fem poäng genom att döda dem! Din nuvarande "
-"poäng visas bredvid ditt namn!\n"
+"Bevisa dina kunskaper! Få minst fem poäng genom att döda dem! Din nuvarande poäng visas bredvid ditt namn!\n"
 "\n"
 "Vi skickar in en erfaren krigare att assistera dig, %s!"
 
@@ -351,8 +343,7 @@ msgid ""
 msgstr ""
 "Du kan visa en lista med frags, poäng osv med %s.\n"
 "\n"
-"Dessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och "
-"avståndet till den bästa."
+"Dessutom så illustrerar siffrorna sidan om ditt namn ditt antal frags och avståndet till den bästa."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:515
@@ -378,9 +369,7 @@ msgstr "Du misslyckades!"
 #: src/Games/Tutorial.cpp:532
 #, c-format
 msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
-msgstr ""
-"Skitbra %s. Du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. "
-"Vänta bara några sekunder..."
+msgstr "Skitbra %s. Du förstörde ditt helt nya skepp! Jaja, du ska få ett nytt. Vänta bara några sekunder..."
 
 #: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
@@ -459,7 +448,7 @@ msgstr "Album:"
 
 #: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
 #: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
-#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
 #: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
 #: src/Menu/WeaponOptions.cpp:49
 msgid "OK"
@@ -479,7 +468,7 @@ msgstr "Föregående musikspår!"
 msgid "Close"
 msgstr "Stäng"
 
-#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
 msgid "About"
 msgstr "Om"
 
@@ -500,9 +489,7 @@ msgid ""
 "\n"
 "© 2010-2011 Felix Lauer & Simon Schneegans"
 msgstr ""
-"Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett "
-"spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som "
-"styrs av gravitationslagen.\n"
+"Detta är ett första försök att skapa ett spel i OpenGL med SFML. Det är ett spel för två spelare, som flyger rymdskepp i en tvådimensionell värld som styrs av gravitationslagen.\n"
 "\n"
 "Hemsida:\n"
 "http://www.marsshooter.org\n"
@@ -580,7 +567,12 @@ msgstr ""
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "Språk"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
 msgid "Start Network Game"
 msgstr "Starta ett nätverksspel"
 
@@ -598,8 +590,8 @@ msgstr ""
 msgid "Restart Game"
 msgstr "Starta om spel"
 
-#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
-#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
 msgid "Options"
 msgstr "Inställningar"
 
@@ -671,14 +663,11 @@ msgid ""
 "Prepare yourself!\n"
 "Death and Glory awaits you."
 msgstr ""
-"Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj "
-"och din självkänsla.\n"
+"Till följd av det STORA KRIGET så har du förlorat allt: ditt hem, din familj och din självkänsla.\n"
 "\n"
-"Din sista chans att komma bort från det miserabla liv du fastnat i, är att "
-"bli en gladiator på den ärorika DÖDSMATCH-arenan.\n"
+"Din sista chans att komma bort från det miserabla liv du fastnat i, är att bli en gladiator på den ärorika DÖDSMATCH-arenan.\n"
 "\n"
-"Slåss med de andra kämparna och tjäna poäng genom att förstöra det skrot som "
-"de kallar skepp.\n"
+"Slåss med de andra kämparna och tjäna poäng genom att förstöra det skrot som de kallar skepp.\n"
 "\n"
 "Stålsätt dig!\n"
 "\n"
@@ -746,29 +735,27 @@ msgid ""
 msgstr ""
 "Förhandlingar har brutit samman!\n"
 "\n"
-"Både du och dina grannar fick utstå enorma förluster i slutakten av det "
-"bestående STORA KRIGET.\n"
+"Både du och dina grannar fick utstå enorma förluster i slutakten av det bestående STORA KRIGET.\n"
 "\n"
-"I ett sista försök att få övertaget, så förpliktas du att decimera fiendens "
-"resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH.\n"
+"I ett sista försök att få övertaget, så förpliktas du att decimera fiendens resurser och skydda dina egna. Den enda lösningen är en episk LAGDÖDSMATCH.\n"
 "\n"
 "Skydda dina kamrater och förgör dina fiender!\n"
 "\n"
 "Lär dem en läxa som de aldrig glömmer."
 
-#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
 msgid "Start Local Game"
 msgstr "Spela lokalt"
 
-#: src/Menu/MainMenu.cpp:46
+#: src/Menu/MainMenu.cpp:52
 msgid "Start Tutorial"
 msgstr "Övningsspela"
 
-#: src/Menu/MainMenu.cpp:48
+#: src/Menu/MainMenu.cpp:54
 msgid "Join Network Game"
 msgstr "Anslut till nätverksspel"
 
-#: src/Menu/MainMenu.cpp:51
+#: src/Menu/MainMenu.cpp:57
 msgid "Quit M.A.R.S."
 msgstr "Avsluta M.A.R.S."
 
@@ -846,65 +833,65 @@ msgstr "Vapeninställningar"
 msgid "Players"
 msgstr "Spelare"
 
-#: src/Menu/OptionsMenu.cpp:81
+#: src/Menu/OptionsMenu.cpp:86
 msgid "Interface"
 msgstr "Gränssnitt"
 
-#: src/Menu/OptionsMenu.cpp:82
+#: src/Menu/OptionsMenu.cpp:87
 msgid "Gameplay"
 msgstr "Spel"
 
-#: src/Menu/OptionsMenu.cpp:83
+#: src/Menu/OptionsMenu.cpp:88
 msgid "Graphics"
 msgstr "Grafik"
 
-#: src/Menu/OptionsMenu.cpp:84
+#: src/Menu/OptionsMenu.cpp:89
 msgid "Audio"
 msgstr "Ljud"
 
-#: src/Menu/OptionsMenu.cpp:88
+#: src/Menu/OptionsMenu.cpp:93
 msgid "General Settings"
 msgstr "Allmänna inställningar"
 
-#: src/Menu/OptionsMenu.cpp:89
+#: src/Menu/OptionsMenu.cpp:94
 msgid "Language"
 msgstr "Språk"
 
-#: src/Menu/OptionsMenu.cpp:97
+#: src/Menu/OptionsMenu.cpp:102
 msgid "File Format for Screenshots"
 msgstr "Filformat för skärmdump"
 
-#: src/Menu/OptionsMenu.cpp:98
+#: src/Menu/OptionsMenu.cpp:103
 msgid "Sets the format being used when screenshots are saved."
 msgstr "Ställer in filformatet som används när skärmdumpar sparas."
 
-#: src/Menu/OptionsMenu.cpp:101
+#: src/Menu/OptionsMenu.cpp:106
 msgid "Hot Key for Screenshots"
 msgstr "Kortkommando för skärmdump"
 
 #. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
-#: src/Menu/OptionsMenu.cpp:104
+#: src/Menu/OptionsMenu.cpp:109
 #, c-format
 msgid "When this key is pressed, a screenshot is saved to %s"
 msgstr "Trycker man på den här tangenten, kommer en skärmdump att sparas på %s"
 
-#: src/Menu/OptionsMenu.cpp:108
+#: src/Menu/OptionsMenu.cpp:113
 msgid "Hot Key for Statistics"
 msgstr "Kortkommando för statistik"
 
-#: src/Menu/OptionsMenu.cpp:109
+#: src/Menu/OptionsMenu.cpp:114
 msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
 msgstr "Trycker man på här tangenten medan man spelar ett spel, så dyker ett fönster upp som visar spelstatistiken."
 
-#: src/Menu/OptionsMenu.cpp:111
+#: src/Menu/OptionsMenu.cpp:116
 msgid "Show Game Information"
 msgstr "Spelinformation"
 
-#: src/Menu/OptionsMenu.cpp:113
+#: src/Menu/OptionsMenu.cpp:118
 msgid "Frames per Second"
 msgstr "Bilder per sekund"
 
-#: src/Menu/OptionsMenu.cpp:114
+#: src/Menu/OptionsMenu.cpp:119
 msgid ""
 "Displays the amount of Frames calculated per Second.\n"
 "If this is always very low (<20), you should adjust some settings in graphics tab!"
@@ -912,39 +899,39 @@ msgstr ""
 "Visar antalet bilder som beräknas per sekund.\n"
 "Om värdet alltid är väldigt lågt (<20), så bör du justera några inställningar under grafiktabben!"
 
-#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
 msgid "Particle Count"
 msgstr "Antal partiklar"
 
-#: src/Menu/OptionsMenu.cpp:119
+#: src/Menu/OptionsMenu.cpp:124
 msgid "Displays the amount of active particles."
 msgstr "Visar antalet aktiva partiklar."
 
-#: src/Menu/OptionsMenu.cpp:122
+#: src/Menu/OptionsMenu.cpp:127
 msgid "Display Tool Tips"
 msgstr "Visa inforutor"
 
-#: src/Menu/OptionsMenu.cpp:123
+#: src/Menu/OptionsMenu.cpp:128
 msgid "Dismisses tool tips like this one."
 msgstr "Stänger av inforutor som denna."
 
-#: src/Menu/OptionsMenu.cpp:127
+#: src/Menu/OptionsMenu.cpp:132
 msgid "Full screen"
 msgstr "Fullskärm"
 
-#: src/Menu/OptionsMenu.cpp:128
+#: src/Menu/OptionsMenu.cpp:133
 msgid "Maximizes the window, making it cover the entire screen."
 msgstr "Maximerar fönstret, så att det upptar hela skärmen."
 
-#: src/Menu/OptionsMenu.cpp:130
+#: src/Menu/OptionsMenu.cpp:135
 msgid "Window Settings"
 msgstr "Fönsterinställningar"
 
-#: src/Menu/OptionsMenu.cpp:132
+#: src/Menu/OptionsMenu.cpp:137
 msgid "V-Sync"
 msgstr "V-Sync"
 
-#: src/Menu/OptionsMenu.cpp:133
+#: src/Menu/OptionsMenu.cpp:138
 msgid ""
 "Makes the game update according to the refresh rate of your monitor.\n"
 "Enabling this option typically makes the game run more smoothly."
@@ -952,23 +939,23 @@ msgstr ""
 "Gör att spelet uppdaterar enligt uppdateringsfrekvensen på din skärm.\n"
 "Aktivering gör oftast spelet smidigare."
 
-#: src/Menu/OptionsMenu.cpp:137
+#: src/Menu/OptionsMenu.cpp:142
 msgid "Shader Effects"
 msgstr "Shader-effekter"
 
-#: src/Menu/OptionsMenu.cpp:138
+#: src/Menu/OptionsMenu.cpp:143
 msgid "Enables cool effects like heat haze, but reduces game performance."
 msgstr "Aktiverar häftiga effekter som t.ex soldis, men kan minska prestandan."
 
-#: src/Menu/OptionsMenu.cpp:162
+#: src/Menu/OptionsMenu.cpp:167
 msgid "Off"
 msgstr "Av"
 
-#: src/Menu/OptionsMenu.cpp:164
+#: src/Menu/OptionsMenu.cpp:169
 msgid "Resolution"
 msgstr "Upplösning"
 
-#: src/Menu/OptionsMenu.cpp:165
+#: src/Menu/OptionsMenu.cpp:170
 msgid ""
 "Sets the size of the window.\n"
 "Affects both full screen and windowed mode."
@@ -976,15 +963,15 @@ msgstr ""
 "Sätter storleken på fönstret.\n"
 "Påverkar både fullskärm och fönsterläge."
 
-#: src/Menu/OptionsMenu.cpp:167
+#: src/Menu/OptionsMenu.cpp:172
 msgid "Game Settings"
 msgstr "Spelinställningar"
 
-#: src/Menu/OptionsMenu.cpp:169
+#: src/Menu/OptionsMenu.cpp:174
 msgid "High Star Field Resolution"
 msgstr "Hög upplösning på stjärnfältet"
 
-#: src/Menu/OptionsMenu.cpp:170
+#: src/Menu/OptionsMenu.cpp:175
 msgid ""
 "With high resolution displays, this option makes the star field loop later.\n"
 "Disabling may increase game performance slightly."
@@ -992,15 +979,15 @@ msgstr ""
 "Med högupplösta skärmar, gör detta val att stjärnfältet loopar senare.\n"
 "Inaktivering kan öka prestandan något."
 
-#: src/Menu/OptionsMenu.cpp:174
+#: src/Menu/OptionsMenu.cpp:179
 msgid "Moving Stars"
 msgstr "Rörliga stjärnor"
 
-#: src/Menu/OptionsMenu.cpp:175
+#: src/Menu/OptionsMenu.cpp:180
 msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
 msgstr "Ritar några rörliga stjärnor i bakgrunden. Ögongodis, men reducerar prestandan på spelet."
 
-#: src/Menu/OptionsMenu.cpp:179
+#: src/Menu/OptionsMenu.cpp:184
 msgid ""
 "Adjusts the global particle count.\n"
 "Lower values will increase performance significantly."
@@ -1008,11 +995,11 @@ msgstr ""
 "Justerar det globala antalet partiklar.\n"
 "Lägre värden ökar prestandan avsevärt."
 
-#: src/Menu/OptionsMenu.cpp:182
+#: src/Menu/OptionsMenu.cpp:187
 msgid "Particle Lifetime"
 msgstr "Partiklarnas livslängd"
 
-#: src/Menu/OptionsMenu.cpp:183
+#: src/Menu/OptionsMenu.cpp:188
 msgid ""
 "Adjusts the global particle life time.\n"
 "Lower values will increase performance significantly."
@@ -1020,148 +1007,148 @@ msgstr ""
 "Justerar partiklarnas livslängd.\n"
 "Lägre värden ökar prestandan avsevärt."
 
-#: src/Menu/OptionsMenu.cpp:186
+#: src/Menu/OptionsMenu.cpp:191
 msgid "Volume Settings"
 msgstr "Volyminställningar"
 
-#: src/Menu/OptionsMenu.cpp:188
+#: src/Menu/OptionsMenu.cpp:193
 msgid "Music"
 msgstr "Musik"
 
-#: src/Menu/OptionsMenu.cpp:189
+#: src/Menu/OptionsMenu.cpp:194
 msgid "Adjusts volume of background music."
 msgstr "Justerar volumen på bakgrundsmusiken."
 
-#: src/Menu/OptionsMenu.cpp:192
+#: src/Menu/OptionsMenu.cpp:197
 msgid "Sound"
 msgstr "Ljudeffekter"
 
-#: src/Menu/OptionsMenu.cpp:193
+#: src/Menu/OptionsMenu.cpp:198
 msgid "Adjusts volume of sound effects."
 msgstr "Justerar volumen på ljudeffekterna."
 
-#: src/Menu/OptionsMenu.cpp:196
+#: src/Menu/OptionsMenu.cpp:201
 msgid "Announcer"
 msgstr "Annonsör"
 
-#: src/Menu/OptionsMenu.cpp:197
+#: src/Menu/OptionsMenu.cpp:202
 msgid "Adjusts volume of announcers voice."
 msgstr "Justerar volymen på annonsörens röst."
 
-#: src/Menu/OptionsMenu.cpp:199
+#: src/Menu/OptionsMenu.cpp:204
 msgid "Playback Settings"
 msgstr "Uppspelningsinställningar"
 
-#: src/Menu/OptionsMenu.cpp:201
+#: src/Menu/OptionsMenu.cpp:206
 msgid "Play Tracks in Random Order"
 msgstr "Slumpvis uppspelning"
 
-#: src/Menu/OptionsMenu.cpp:202
+#: src/Menu/OptionsMenu.cpp:207
 msgid "Enables music play back in a random sequence."
 msgstr "Gör så att bakgrundsmusiken spelas i slumpvis ordning."
 
-#: src/Menu/OptionsMenu.cpp:205
+#: src/Menu/OptionsMenu.cpp:210
 msgid "Play Next Track"
 msgstr "Spela nästa spår"
 
-#: src/Menu/OptionsMenu.cpp:206
+#: src/Menu/OptionsMenu.cpp:211
 msgid "Pressing this key switches to the next music track."
 msgstr "Trycker man på den här tangenten växlar musiken till nästa spår."
 
-#: src/Menu/OptionsMenu.cpp:209
+#: src/Menu/OptionsMenu.cpp:214
 msgid "Play Previous Track"
 msgstr "Spela föregående spår"
 
-#: src/Menu/OptionsMenu.cpp:210
+#: src/Menu/OptionsMenu.cpp:215
 msgid "Pressing this key switches to the previous music track."
 msgstr "Trycker man på den här tangenten växlar musiken till föregående spår."
 
-#: src/Menu/OptionsMenu.cpp:213
+#: src/Menu/OptionsMenu.cpp:218
 msgid "Special Effects"
 msgstr "Specialeffekter"
 
-#: src/Menu/OptionsMenu.cpp:215
+#: src/Menu/OptionsMenu.cpp:220
 msgid "Explosions for Slow Motion"
 msgstr "Antal explosioner för slowmotion"
 
-#: src/Menu/OptionsMenu.cpp:216
+#: src/Menu/OptionsMenu.cpp:221
 msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
 msgstr "Om så många skepp exploderar samtidigt, aktiveras slowmotioneffekten."
 
-#: src/Menu/OptionsMenu.cpp:219
+#: src/Menu/OptionsMenu.cpp:224
 #, fuzzy
 msgid "Game Speed"
 msgstr "Spelinställningar"
 
-#: src/Menu/OptionsMenu.cpp:220
+#: src/Menu/OptionsMenu.cpp:225
 msgid "Adjusts the game speed in percent."
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:222
+#: src/Menu/OptionsMenu.cpp:227
 msgid "Show Debug Information"
 msgstr "Felsökningsinformation"
 
-#: src/Menu/OptionsMenu.cpp:224
+#: src/Menu/OptionsMenu.cpp:229
 msgid "Bots Orientation"
 msgstr "Bottarnas orientering"
 
-#: src/Menu/OptionsMenu.cpp:225
+#: src/Menu/OptionsMenu.cpp:230
 msgid "Displays the job of each bot."
 msgstr "Visar varje bots jobb."
 
-#: src/Menu/OptionsMenu.cpp:228
+#: src/Menu/OptionsMenu.cpp:233
 msgid "Zones"
 msgstr "Zoner"
 
-#: src/Menu/OptionsMenu.cpp:229
+#: src/Menu/OptionsMenu.cpp:234
 msgid "Displays tactical zones, which are important for the artificial intelligence."
 msgstr "Visar taktiska zoner, vilket är viktigt för den artificiella intelligensen."
 
-#: src/Menu/OptionsMenu.cpp:232
+#: src/Menu/OptionsMenu.cpp:237
 msgid "AI-Paths"
 msgstr "AI-Banor"
 
-#: src/Menu/OptionsMenu.cpp:233
+#: src/Menu/OptionsMenu.cpp:238
 msgid "Displays paths calculated by bots."
 msgstr "Visar bottarnas beräknade banor."
 
-#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
 msgid "Name"
 msgstr "Namn"
 
-#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
 msgid "Accelerate"
 msgstr "Accelerera"
 
-#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
 msgid "Turn Left"
 msgstr "Sväng vänster"
 
-#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
 msgid "Turn Right"
 msgstr "Sväng höger"
 
-#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
 msgid "Weapon"
 msgstr "Vapen"
 
-#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
 msgid "Special Ability"
 msgstr "Specialförmåga"
 
-#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
 msgid "Ship Settings"
 msgstr "Skeppsinställningar"
 
-#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
 msgid "Ship"
 msgstr "Skepp"
 
-#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
 msgid "Player Color"
 msgstr "Spelarfärg"
 
-#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
 msgid "Team Color"
 msgstr "Lagfärg"
 
@@ -1494,6 +1481,10 @@ msgstr "Styrkors vänster"
 msgid "Direction Right"
 msgstr "Styrkors höger"
 
-#: src/System/window.cpp:373
+#: src/System/window.cpp:377
 msgid "Screenshot saved!"
 msgstr "Skärmdump sparad!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "Språk"

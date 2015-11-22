@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: M.A.R.S.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
 "PO-Revision-Date: 2015-11-14 20:04+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: M.A.R.S.\n"
@@ -29,8 +29,7 @@ msgid ""
 "We figured out you needed some practice with your new ship.\n"
 "Let the training begin..."
 msgstr ""
-"Örülünk, hogy sikerült egy hozzád hasonló tehetséget meggyőzni, hogy "
-"csatlakozzon hozzánk a nagy háborúban, %s!\n"
+"Örülünk, hogy sikerült egy hozzád hasonló tehetséget meggyőzni, hogy csatlakozzon hozzánk a nagy háborúban, %s!\n"
 "Úgy gondoltuk szükséged lehet némi gyakorlásra az új űrhajóddal.\n"
 "Kezdődjön hát a kiképzés..."
 
@@ -46,9 +45,7 @@ msgid ""
 "All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
 "Hajód irányítása a legfontosabb, amit el kell sajátítanod.\n"
-"Mozgásodat befolyásolják a gravitációs törvények. Lassításhoz meg kell "
-"fordítanod a hajód, és az új irányba kell gyorsulnod. Hajód irányításához "
-"használd a(z) %s, %s és %s billentyűket!"
+"Mozgásodat befolyásolják a gravitációs törvények. Lassításhoz meg kell fordítanod a hajód, és az új irányba kell gyorsulnod. Hajód irányításához használd a(z) %s, %s és %s billentyűket!"
 
 #: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
@@ -152,11 +149,8 @@ msgid ""
 "Then use %s and %s to choose a weapon!\n"
 "Take-off, when you're ready!"
 msgstr ""
-"Tudjuk, hogy csak erre vártál. Amikor a bolygódon dokkolsz, hihetetlenül "
-"gonosz fegyverek közül válogathatsz. Nyomd meg a(z) %s billentyűt, hogy "
-"feltérképezd a lehetőségeid.\n"
-"Ezután használd a(z) %s és %s billentyűket a megfelelő fegyver "
-"kiválasztásához.\n"
+"Tudjuk, hogy csak erre vártál. Amikor a bolygódon dokkolsz, hihetetlenül gonosz fegyverek közül válogathatsz. Nyomd meg a(z) %s billentyűt, hogy feltérképezd a lehetőségeid.\n"
+"Ezután használd a(z) %s és %s billentyűket a megfelelő fegyver kiválasztásához.\n"
 "Szállj fel, ha készen vagy!"
 
 #: src/Games/Tutorial.cpp:276
@@ -206,8 +200,7 @@ msgid ""
 "To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
 "For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"A különleges képességek közötti váltáshoz nyomd meg a(z) %s gombot. A "
-"választáshoz a(z) %s és %s billentyűket használd.\n"
+"A különleges képességek közötti váltáshoz nyomd meg a(z) %s gombot. A választáshoz a(z) %s és %s billentyűket használd.\n"
 "Ehhez a leckéhez válaszd a \"Freezer\" nevű képességet! Szállj fel, ha megvan!"
 
 #: src/Games/Tutorial.cpp:351
@@ -222,9 +215,7 @@ msgid ""
 "You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
 "Ez a különleges képesség megfagyasztja a körülötted lévő hajókat.\n"
-"Használatához közel kell repülnöd ellenségedhez, majd a(z) %s megnyomásával "
-"megfagyasztani őt. Figyeld csak meg ahogy lassan elveszti az életerejét... "
-"és végül meghal!"
+"Használatához közel kell repülnöd ellenségedhez, majd a(z) %s megnyomásával megfagyasztani őt. Figyeld csak meg ahogy lassan elveszti az életerejét... és végül meghal!"
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:365
@@ -295,8 +286,7 @@ msgid ""
 "Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
 "We will send in an experienced warrior assisting you, %s!"
 msgstr ""
-"Mutasd meg, mit tudsz, %s! Szerezz legalább öt pontot azzal, hogy kilövöd "
-"őket! Az aktuális pontjaid a neved mellett vannak kiírva.\n"
+"Mutasd meg, mit tudsz, %s! Szerezz legalább öt pontot azzal, hogy kilövöd őket! Az aktuális pontjaid a neved mellett vannak kiírva.\n"
 "Küldünk egy tapasztalt harcost is, hogy segítsen neked."
 
 #: src/Games/Tutorial.cpp:484
@@ -324,10 +314,8 @@ msgid ""
 "You can display a list of frags, points and so on via %s.\n"
 "Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
 msgstr ""
-"A(z) %s segítségével megnézheted találataid, pontjaid számát és még sok más "
-"adatot.\n"
-"A neved melletti számok pedig a találataid számát és a legjobbtól való "
-"távolságot mutatják."
+"A(z) %s segítségével megnézheted találataid, pontjaid számát és még sok más adatot.\n"
+"A neved melletti számok pedig a találataid számát és a legjobbtól való távolságot mutatják."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:515
@@ -352,9 +340,7 @@ msgstr "Elestél!"
 #: src/Games/Tutorial.cpp:532
 #, c-format
 msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
-msgstr ""
-"Csodálatos, %s! Sikerült teljesen tönkre tenned a vadiúj űrhajód! Jól van, "
-"kapsz egy másikat. Csak néhány másodperc..."
+msgstr "Csodálatos, %s! Sikerült teljesen tönkre tenned a vadiúj űrhajód! Jól van, kapsz egy másikat. Csak néhány másodperc..."
 
 #: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
@@ -433,7 +419,7 @@ msgstr "Album:"
 
 #: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
 #: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
-#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
 #: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
 #: src/Menu/WeaponOptions.cpp:49
 msgid "OK"
@@ -453,7 +439,7 @@ msgstr "Előző zeneszám!"
 msgid "Close"
 msgstr "Bezárás"
 
-#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
 msgid "About"
 msgstr "Névjegy"
 
@@ -474,9 +460,7 @@ msgid ""
 "\n"
 "© 2010-2011 Felix Lauer & Simon Schneegans"
 msgstr ""
-"Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék "
-"elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy "
-"kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett.\n"
+"Ez az első próbálkozás egy, az SMFL segítségével OpenGL-ben megírt játék elkészítésére. Ez egy kétszemélyes játék, ahol űrhajókkal repülhetsz egy kétdimenziós űrben a gravitáció törvényeinek érvényesülése mellett.\n"
 "\n"
 "Honlap:\n"
 "http://www.marsshooter.org\n"
@@ -554,7 +538,12 @@ msgstr ""
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "Nyelv"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
 msgid "Start Network Game"
 msgstr "Hálózati játék indítása"
 
@@ -572,8 +561,8 @@ msgstr ""
 msgid "Restart Game"
 msgstr "Játék újraindítása"
 
-#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
-#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
 msgid "Options"
 msgstr "Beállítások"
 
@@ -642,12 +631,9 @@ msgid ""
 "Prepare yourself!\n"
 "Death and Glory awaits you."
 msgstr ""
-"A nagy háború során elvesztettél mindent: az otthonod, a családod és az "
-"önbecsülésed.\n"
-"Az utolsó esélyed kitörni ebből a nyomorúságos életből, ha a dicső "
-"DEATHMATCH aréna gladiátora leszel.\n"
-"Szállj szembe a többi harcossal, és szerezz pontokat űrhajónak nevezett "
-"ócskaságaik kilövésével.\n"
+"A nagy háború során elvesztettél mindent: az otthonod, a családod és az önbecsülésed.\n"
+"Az utolsó esélyed kitörni ebből a nyomorúságos életből, ha a dicső DEATHMATCH aréna gladiátora leszel.\n"
+"Szállj szembe a többi harcossal, és szerezz pontokat űrhajónak nevezett ócskaságaik kilövésével.\n"
 "Készülj a küzdelemre!\n"
 "Halál és dicsőség vár rád!"
 
@@ -706,27 +692,24 @@ msgid ""
 "Teach them a lesson they will never forget."
 msgstr ""
 "A tárgyalások eredménytelenek voltak!\n"
-"A nagy háború során mind Ti, mind szomszédjaitok hatalmas veszteségeket "
-"könyvelhettek el.\n"
-"Az erőfölény megszerzése érdekében feladatod az ellenfél készleteinek "
-"megtizedelése és sajátunk védelme. Ennek egyetlen módja a hatalmas "
-"TEAMDEATHMATCH.\n"
+"A nagy háború során mind Ti, mind szomszédjaitok hatalmas veszteségeket könyvelhettek el.\n"
+"Az erőfölény megszerzése érdekében feladatod az ellenfél készleteinek megtizedelése és sajátunk védelme. Ennek egyetlen módja a hatalmas TEAMDEATHMATCH.\n"
 "Védd meg társaid, és pusztítsd el ellenségeid!\n"
 "Tanítsd őket móresre!"
 
-#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
 msgid "Start Local Game"
 msgstr "Helyi játék indítása"
 
-#: src/Menu/MainMenu.cpp:46
+#: src/Menu/MainMenu.cpp:52
 msgid "Start Tutorial"
 msgstr "Oktatómód indítása"
 
-#: src/Menu/MainMenu.cpp:48
+#: src/Menu/MainMenu.cpp:54
 msgid "Join Network Game"
 msgstr "Csatlakozás hálózati játékhoz"
 
-#: src/Menu/MainMenu.cpp:51
+#: src/Menu/MainMenu.cpp:57
 msgid "Quit M.A.R.S."
 msgstr "Kilépés"
 
@@ -804,44 +787,44 @@ msgstr "Fegyverbeállítások"
 msgid "Players"
 msgstr "Játékosok"
 
-#: src/Menu/OptionsMenu.cpp:81
+#: src/Menu/OptionsMenu.cpp:86
 msgid "Interface"
 msgstr "Kezelőfelület"
 
-#: src/Menu/OptionsMenu.cpp:82
+#: src/Menu/OptionsMenu.cpp:87
 msgid "Gameplay"
 msgstr "Játékmenet"
 
-#: src/Menu/OptionsMenu.cpp:83
+#: src/Menu/OptionsMenu.cpp:88
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Menu/OptionsMenu.cpp:84
+#: src/Menu/OptionsMenu.cpp:89
 msgid "Audio"
 msgstr "Hang"
 
-#: src/Menu/OptionsMenu.cpp:88
+#: src/Menu/OptionsMenu.cpp:93
 msgid "General Settings"
 msgstr "Általános beállítások"
 
-#: src/Menu/OptionsMenu.cpp:89
+#: src/Menu/OptionsMenu.cpp:94
 msgid "Language"
 msgstr "Nyelv"
 
-#: src/Menu/OptionsMenu.cpp:97
+#: src/Menu/OptionsMenu.cpp:102
 msgid "File Format for Screenshots"
 msgstr "Képernyőkép formátuma"
 
-#: src/Menu/OptionsMenu.cpp:98
+#: src/Menu/OptionsMenu.cpp:103
 msgid "Sets the format being used when screenshots are saved."
 msgstr "Beállítja a képernyőkép formátumát."
 
-#: src/Menu/OptionsMenu.cpp:101
+#: src/Menu/OptionsMenu.cpp:106
 msgid "Hot Key for Screenshots"
 msgstr "Gyorsbillentyű képernyőkép készítéséhez"
 
 #. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
-#: src/Menu/OptionsMenu.cpp:104
+#: src/Menu/OptionsMenu.cpp:109
 #, c-format
 msgid "When this key is pressed, a screenshot is saved to %s"
 msgstr ""
@@ -849,23 +832,23 @@ msgstr ""
 "%s\n"
 "könyvtárba lesz elmentve."
 
-#: src/Menu/OptionsMenu.cpp:108
+#: src/Menu/OptionsMenu.cpp:113
 msgid "Hot Key for Statistics"
 msgstr "Gyorsbillentyű a statisztikákhoz"
 
-#: src/Menu/OptionsMenu.cpp:109
+#: src/Menu/OptionsMenu.cpp:114
 msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
 msgstr "Ennek a gombnak a játék közben való megnyomásával egy, az aktuális játékkal kapcsolatos statisztikákat tartalmazó ablak jelenik meg."
 
-#: src/Menu/OptionsMenu.cpp:111
+#: src/Menu/OptionsMenu.cpp:116
 msgid "Show Game Information"
 msgstr "Játék információk megjelenítése"
 
-#: src/Menu/OptionsMenu.cpp:113
+#: src/Menu/OptionsMenu.cpp:118
 msgid "Frames per Second"
 msgstr "Másodpercenkénti képkockák száma (FPS)"
 
-#: src/Menu/OptionsMenu.cpp:114
+#: src/Menu/OptionsMenu.cpp:119
 msgid ""
 "Displays the amount of Frames calculated per Second.\n"
 "If this is always very low (<20), you should adjust some settings in graphics tab!"
@@ -873,39 +856,39 @@ msgstr ""
 "Megjeleníti a másodpercenkénti képkockák számát.\n"
 "Ha ez az érték folyamatosan alacsony (<20), változtass a grafikus beállításokon."
 
-#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
 msgid "Particle Count"
 msgstr "Részecskék száma"
 
-#: src/Menu/OptionsMenu.cpp:119
+#: src/Menu/OptionsMenu.cpp:124
 msgid "Displays the amount of active particles."
 msgstr "Megjeleníti az aktív részecskék mennyiségét."
 
-#: src/Menu/OptionsMenu.cpp:122
+#: src/Menu/OptionsMenu.cpp:127
 msgid "Display Tool Tips"
 msgstr "Segítség megjelenítése"
 
-#: src/Menu/OptionsMenu.cpp:123
+#: src/Menu/OptionsMenu.cpp:128
 msgid "Dismisses tool tips like this one."
 msgstr "Az ehhez hasonló segítségek megjelenítésének beállítása."
 
-#: src/Menu/OptionsMenu.cpp:127
+#: src/Menu/OptionsMenu.cpp:132
 msgid "Full screen"
 msgstr "Teljes képernyő"
 
-#: src/Menu/OptionsMenu.cpp:128
+#: src/Menu/OptionsMenu.cpp:133
 msgid "Maximizes the window, making it cover the entire screen."
 msgstr "Felnagyítja az ablakot, hogy az a teljes képernyőt lefedje."
 
-#: src/Menu/OptionsMenu.cpp:130
+#: src/Menu/OptionsMenu.cpp:135
 msgid "Window Settings"
 msgstr "Ablak beállítások"
 
-#: src/Menu/OptionsMenu.cpp:132
+#: src/Menu/OptionsMenu.cpp:137
 msgid "V-Sync"
 msgstr "V-Sync"
 
-#: src/Menu/OptionsMenu.cpp:133
+#: src/Menu/OptionsMenu.cpp:138
 msgid ""
 "Makes the game update according to the refresh rate of your monitor.\n"
 "Enabling this option typically makes the game run more smoothly."
@@ -913,23 +896,23 @@ msgstr ""
 "A játékot a képernyő megjelenítési frekvenciájához hangolja.\n"
 "Ennek a beállításnak az engedélyezése általában gördülékenyebbé teszi a játék futását."
 
-#: src/Menu/OptionsMenu.cpp:137
+#: src/Menu/OptionsMenu.cpp:142
 msgid "Shader Effects"
 msgstr "Shader effektek"
 
-#: src/Menu/OptionsMenu.cpp:138
+#: src/Menu/OptionsMenu.cpp:143
 msgid "Enables cool effects like heat haze, but reduces game performance."
 msgstr "Látványos hatásokat kapcsol be (mint például hőpára), ez viszont ronthatja a játék teljesítményét."
 
-#: src/Menu/OptionsMenu.cpp:162
+#: src/Menu/OptionsMenu.cpp:167
 msgid "Off"
 msgstr "Ki"
 
-#: src/Menu/OptionsMenu.cpp:164
+#: src/Menu/OptionsMenu.cpp:169
 msgid "Resolution"
 msgstr "Felbontás"
 
-#: src/Menu/OptionsMenu.cpp:165
+#: src/Menu/OptionsMenu.cpp:170
 msgid ""
 "Sets the size of the window.\n"
 "Affects both full screen and windowed mode."
@@ -937,15 +920,15 @@ msgstr ""
 "Beállítja az ablak méretét.\n"
 "Mind a teljes képernyős, mind az ablak-módra hatással van."
 
-#: src/Menu/OptionsMenu.cpp:167
+#: src/Menu/OptionsMenu.cpp:172
 msgid "Game Settings"
 msgstr "Játék beállítások"
 
-#: src/Menu/OptionsMenu.cpp:169
+#: src/Menu/OptionsMenu.cpp:174
 msgid "High Star Field Resolution"
 msgstr "Nagy felbontású csillagmező"
 
-#: src/Menu/OptionsMenu.cpp:170
+#: src/Menu/OptionsMenu.cpp:175
 msgid ""
 "With high resolution displays, this option makes the star field loop later.\n"
 "Disabling may increase game performance slightly."
@@ -953,15 +936,15 @@ msgstr ""
 "Nagy felbontású képernyőkön ez az opció késlelteti a csillagmező ismétlődését.\n"
 "Kikapcsolása javíthatja a játék teljesítményét."
 
-#: src/Menu/OptionsMenu.cpp:174
+#: src/Menu/OptionsMenu.cpp:179
 msgid "Moving Stars"
 msgstr "Mozgó csillagok"
 
-#: src/Menu/OptionsMenu.cpp:175
+#: src/Menu/OptionsMenu.cpp:180
 msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
 msgstr "Mozgó csillagokat rajzol a háttérre. Jól néz ki, de csökkenti a játék teljesítményét."
 
-#: src/Menu/OptionsMenu.cpp:179
+#: src/Menu/OptionsMenu.cpp:184
 msgid ""
 "Adjusts the global particle count.\n"
 "Lower values will increase performance significantly."
@@ -969,11 +952,11 @@ msgstr ""
 "Beállítja a globális részecskeszámot.\n"
 "Az alacsonyabb értékek jelentősen növelik a játék teljesítményét."
 
-#: src/Menu/OptionsMenu.cpp:182
+#: src/Menu/OptionsMenu.cpp:187
 msgid "Particle Lifetime"
 msgstr "Részecskék élettartama"
 
-#: src/Menu/OptionsMenu.cpp:183
+#: src/Menu/OptionsMenu.cpp:188
 msgid ""
 "Adjusts the global particle life time.\n"
 "Lower values will increase performance significantly."
@@ -981,148 +964,148 @@ msgstr ""
 "Beállítja a globális részecske-élettartamot.\n"
 "Az alacsonyabb értékek jelentősen növelik a játék teljesítményét."
 
-#: src/Menu/OptionsMenu.cpp:186
+#: src/Menu/OptionsMenu.cpp:191
 msgid "Volume Settings"
 msgstr "Hangerő"
 
-#: src/Menu/OptionsMenu.cpp:188
+#: src/Menu/OptionsMenu.cpp:193
 msgid "Music"
 msgstr "Zene"
 
-#: src/Menu/OptionsMenu.cpp:189
+#: src/Menu/OptionsMenu.cpp:194
 msgid "Adjusts volume of background music."
 msgstr "A háttérzene hangerejét állítja be."
 
-#: src/Menu/OptionsMenu.cpp:192
+#: src/Menu/OptionsMenu.cpp:197
 msgid "Sound"
 msgstr "Hang"
 
-#: src/Menu/OptionsMenu.cpp:193
+#: src/Menu/OptionsMenu.cpp:198
 msgid "Adjusts volume of sound effects."
 msgstr "A hanghatások hangerejét állítja be."
 
-#: src/Menu/OptionsMenu.cpp:196
+#: src/Menu/OptionsMenu.cpp:201
 msgid "Announcer"
 msgstr "Bemondó"
 
-#: src/Menu/OptionsMenu.cpp:197
+#: src/Menu/OptionsMenu.cpp:202
 msgid "Adjusts volume of announcers voice."
 msgstr "A bemondó hangerejét állítja be."
 
-#: src/Menu/OptionsMenu.cpp:199
+#: src/Menu/OptionsMenu.cpp:204
 msgid "Playback Settings"
 msgstr "Zenelejátszás"
 
-#: src/Menu/OptionsMenu.cpp:201
+#: src/Menu/OptionsMenu.cpp:206
 msgid "Play Tracks in Random Order"
 msgstr "Zeneszámok véletlenszerű lejátszása"
 
-#: src/Menu/OptionsMenu.cpp:202
+#: src/Menu/OptionsMenu.cpp:207
 msgid "Enables music play back in a random sequence."
 msgstr "Lehetővé teszi a zeneszámok véletlenszerű lejátszását."
 
-#: src/Menu/OptionsMenu.cpp:205
+#: src/Menu/OptionsMenu.cpp:210
 msgid "Play Next Track"
 msgstr "Következő zeneszám lejátszása"
 
-#: src/Menu/OptionsMenu.cpp:206
+#: src/Menu/OptionsMenu.cpp:211
 msgid "Pressing this key switches to the next music track."
 msgstr "Ennek a gombnak a lenyomásával a következő zeneszám kerül lejátszásra."
 
-#: src/Menu/OptionsMenu.cpp:209
+#: src/Menu/OptionsMenu.cpp:214
 msgid "Play Previous Track"
 msgstr "Előző zeneszám lejátszása"
 
-#: src/Menu/OptionsMenu.cpp:210
+#: src/Menu/OptionsMenu.cpp:215
 msgid "Pressing this key switches to the previous music track."
 msgstr "Ennek a gombnak a lenyomásával az előző zeneszám kerül lejátszásra."
 
-#: src/Menu/OptionsMenu.cpp:213
+#: src/Menu/OptionsMenu.cpp:218
 msgid "Special Effects"
 msgstr "Különleges hatások"
 
-#: src/Menu/OptionsMenu.cpp:215
+#: src/Menu/OptionsMenu.cpp:220
 msgid "Explosions for Slow Motion"
 msgstr "Lassítás-effekt x robbanás után"
 
-#: src/Menu/OptionsMenu.cpp:216
+#: src/Menu/OptionsMenu.cpp:221
 msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
 msgstr "Ennyi űrhajónak kell egyszerre felrobbannia, hogy a lassítás-effekt bekövetkezzen."
 
-#: src/Menu/OptionsMenu.cpp:219
+#: src/Menu/OptionsMenu.cpp:224
 #, fuzzy
 msgid "Game Speed"
 msgstr "Játék beállítások"
 
-#: src/Menu/OptionsMenu.cpp:220
+#: src/Menu/OptionsMenu.cpp:225
 msgid "Adjusts the game speed in percent."
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:222
+#: src/Menu/OptionsMenu.cpp:227
 msgid "Show Debug Information"
 msgstr "Hibakeresési információk megjelenítése"
 
-#: src/Menu/OptionsMenu.cpp:224
+#: src/Menu/OptionsMenu.cpp:229
 msgid "Bots Orientation"
 msgstr "Botok céljai"
 
-#: src/Menu/OptionsMenu.cpp:225
+#: src/Menu/OptionsMenu.cpp:230
 msgid "Displays the job of each bot."
 msgstr "Megjeleníti az egyes botok feladatát."
 
-#: src/Menu/OptionsMenu.cpp:228
+#: src/Menu/OptionsMenu.cpp:233
 msgid "Zones"
 msgstr "Területek"
 
-#: src/Menu/OptionsMenu.cpp:229
+#: src/Menu/OptionsMenu.cpp:234
 msgid "Displays tactical zones, which are important for the artificial intelligence."
 msgstr "Megjeleníti a taktikai zónákat, melyek fontosak a mesterséges intelligencia számára."
 
-#: src/Menu/OptionsMenu.cpp:232
+#: src/Menu/OptionsMenu.cpp:237
 msgid "AI-Paths"
 msgstr "MI útvonalak"
 
-#: src/Menu/OptionsMenu.cpp:233
+#: src/Menu/OptionsMenu.cpp:238
 msgid "Displays paths calculated by bots."
 msgstr "Megjeleníti a botok által kiszámított útvonalakat."
 
-#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
 msgid "Name"
 msgstr "Név"
 
-#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
 msgid "Accelerate"
 msgstr "Gyorsítás"
 
-#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
 msgid "Turn Left"
 msgstr "Balra fordulás"
 
-#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
 msgid "Turn Right"
 msgstr "Jobbra fordulás"
 
-#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
 msgid "Weapon"
 msgstr "Fegyver"
 
-#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
 msgid "Special Ability"
 msgstr "Speciális képesség"
 
-#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
 msgid "Ship Settings"
 msgstr "Űrhajó beállításai"
 
-#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
 msgid "Ship"
 msgstr "Űrhajó"
 
-#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
 msgid "Player Color"
 msgstr "Játékos színe"
 
-#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
 msgid "Team Color"
 msgstr "Csapat színe"
 
@@ -1455,6 +1438,10 @@ msgstr "Balra iránygomb"
 msgid "Direction Right"
 msgstr "Jobbra iránygomb"
 
-#: src/System/window.cpp:373
+#: src/System/window.cpp:377
 msgid "Screenshot saved!"
 msgstr "Képernyőkép elmentve!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "Nyelv"
