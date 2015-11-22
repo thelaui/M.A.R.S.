@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: M.A.R.S.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
 "PO-Revision-Date: 2015-11-14 20:15+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: M.A.R.S.\n"
@@ -29,8 +29,7 @@ msgid ""
 "We figured out you needed some practice with your new ship.\n"
 "Let the training begin..."
 msgstr ""
-"เรารู้สึกดีใจ ที่ได้วีรบุรุษใหม่อย่างคุณ, %s, "
-"เพื่อเข้าร่วมกับเราในมหาสงคราม!\n"
+"เรารู้สึกดีใจ ที่ได้วีรบุรุษใหม่อย่างคุณ, %s, เพื่อเข้าร่วมกับเราในมหาสงคราม!\n"
 "เราเห็นว่าคุณจำเป็นต้องมีการฝึกซ้อมบางอย่างกับยานลำใหม่ของคุณก่อน\n"
 "โปรดให้การฝึกซ้อมได้เริ่มต้น..."
 
@@ -46,9 +45,7 @@ msgid ""
 "All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
 "การควบคุมยานเป็นงานที่สำคัญที่สุดในการที่จะเป็นผู้เชี่ยวชาญ\n"
-"การเคลื่อนที่ทั้งหมดถูกกำหนดโดยกฎของแรงโน้มถ่วง "
-"เพื่อชะลอยานคุณต้องเลี้ยวและเร่งในทิศทางตรงข้าม ควบคุมยานของคุณ, โดยใช้ %s, "
-"%s และ %s!"
+"การเคลื่อนที่ทั้งหมดถูกกำหนดโดยกฎของแรงโน้มถ่วง เพื่อชะลอยานคุณต้องเลี้ยวและเร่งในทิศทางตรงข้าม ควบคุมยานของคุณ, โดยใช้ %s, %s และ %s!"
 
 #: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
@@ -152,8 +149,7 @@ msgid ""
 "Then use %s and %s to choose a weapon!\n"
 "Take-off, when you're ready!"
 msgstr ""
-"เรารู้ว่าคุณกำลังรอคอยสิ่งนี้ เมื่อเทียบท่ายาน "
-"คุณสามารถสลับการใช้อาวุธร้ายแรงต่างๆได้ กด %s เพื่อเปิดปืนใหญ่ของคุณ\n"
+"เรารู้ว่าคุณกำลังรอคอยสิ่งนี้ เมื่อเทียบท่ายาน คุณสามารถสลับการใช้อาวุธร้ายแรงต่างๆได้ กด %s เพื่อเปิดปืนใหญ่ของคุณ\n"
 "แล้วใช้ %s และ %s เพื่อเลือกอาวุธ! แล้วขึ้นยาน, เมื่อคุณพร้อม!"
 
 #: src/Games/Tutorial.cpp:276
@@ -203,8 +199,7 @@ msgid ""
 "To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
 "For this lesson, select the \"Freezer\"! Take off, when you got it!"
 msgstr ""
-"เพื่อสลับใช้ความสามารถต่างๆ, คุณเพียงกด %s เพื่อเลือกหนึ่งอย่าง, "
-"คุณสามารถทำการวนดูแต่ละอย่างโดยใช้ %s และ %s!\n"
+"เพื่อสลับใช้ความสามารถต่างๆ, คุณเพียงกด %s เพื่อเลือกหนึ่งอย่าง, คุณสามารถทำการวนดูแต่ละอย่างโดยใช้ %s และ %s!\n"
 "สำหรับบทเรียนนี้, เลือก \"ตัวแช่แข็ง\"! แล้วขึ้นยาน, เมื่อคุณได้มันแล้ว!"
 
 #: src/Games/Tutorial.cpp:351
@@ -219,8 +214,7 @@ msgid ""
 "You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
 "นี่คือความสามารถพิเศษอันทรงพลังที่จะแช่แข็งยานใกล้เคียง\n"
-"คุณต้องบินใกล้ศัตรูของคุณและกด %s เพื่อแช่แข็งเขา "
-"เฝ้ามองเขาสูญเสียชีวิตอย่างช้าๆ... จนกระทั่งเขาตาย!"
+"คุณต้องบินใกล้ศัตรูของคุณและกด %s เพื่อแช่แข็งเขา เฝ้ามองเขาสูญเสียชีวิตอย่างช้าๆ... จนกระทั่งเขาตาย!"
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:365
@@ -291,8 +285,7 @@ msgid ""
 "Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
 "We will send in an experienced warrior assisting you, %s!"
 msgstr ""
-"พิสูจน์ฝีมือของคุณ! ทำคะแนนให้ได้อย่างน้อย 5 คะแนนโดยการฆ่าพวกเขา! "
-"คะแนนปัจจุบันของคุณจะถูกแสดงถัดจากชื่อของคุณ!\n"
+"พิสูจน์ฝีมือของคุณ! ทำคะแนนให้ได้อย่างน้อย 5 คะแนนโดยการฆ่าพวกเขา! คะแนนปัจจุบันของคุณจะถูกแสดงถัดจากชื่อของคุณ!\n"
 "เราจะส่งนักรบผู้มีประสบการณ์รายหนึ่งเพื่อช่วยเหลือคุณ, %s!"
 
 #: src/Games/Tutorial.cpp:484
@@ -321,8 +314,7 @@ msgid ""
 "Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
 msgstr ""
 "คุณสามารถแสดงสถิติการสังหาร, คะแนน และอื่นๆ ผ่านทาง %s\n"
-"นอกจากนี้ หมายเลขที่ถัดจากชื่อของคุณจะแสดงตัวนับการสังหาร "
-"และระยะห่างของคุณกับผู้ที่ทำได้ดีที่สุด"
+"นอกจากนี้ หมายเลขที่ถัดจากชื่อของคุณจะแสดงตัวนับการสังหาร และระยะห่างของคุณกับผู้ที่ทำได้ดีที่สุด"
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:515
@@ -348,9 +340,7 @@ msgstr "คุณล้มเหลว!"
 #: src/Games/Tutorial.cpp:532
 #, c-format
 msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
-msgstr ""
-"เอาล่ะสิ %s! คุณทำลายยานใหม่เอี่ยมของคุณ  แต่แน่นอน เราจะให้ลำใหม่แก่คุณ "
-"เพียงรอสักครู่..."
+msgstr "เอาล่ะสิ %s! คุณทำลายยานใหม่เอี่ยมของคุณ  แต่แน่นอน เราจะให้ลำใหม่แก่คุณ เพียงรอสักครู่..."
 
 #: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
@@ -429,7 +419,7 @@ msgstr "อัลบั้ม:"
 
 #: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
 #: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
-#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
 #: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
 #: src/Menu/WeaponOptions.cpp:49
 msgid "OK"
@@ -449,7 +439,7 @@ msgstr "ดนตรีเพลงก่อนหน้า!"
 msgid "Close"
 msgstr "ปิด"
 
-#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
 msgid "About"
 msgstr "เกี่ยวกับเกม"
 
@@ -470,9 +460,7 @@ msgid ""
 "\n"
 "© 2010-2011 Felix Lauer & Simon Schneegans"
 msgstr ""
-"นี่คือความพยายามครั้งแรกของการสร้างเกมใน OpenGL กับ SFML มันเป็นเกมสำหรับ 2 "
-"ผู้เล่น, บินกับยานที่ตั้งค่าแบบ 2 มิติในอวกาศ, "
-"และถูกควบคุมโดยกฎของแรงโน้มถ่วง\n"
+"นี่คือความพยายามครั้งแรกของการสร้างเกมใน OpenGL กับ SFML มันเป็นเกมสำหรับ 2 ผู้เล่น, บินกับยานที่ตั้งค่าแบบ 2 มิติในอวกาศ, และถูกควบคุมโดยกฎของแรงโน้มถ่วง\n"
 "\n"
 "โฮมเพจ:\n"
 "http://www.marsshooter.org\n"
@@ -551,7 +539,12 @@ msgstr ""
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "ภาษา"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
 msgid "Start Network Game"
 msgstr "เริ่มเกมเครือข่าย"
 
@@ -569,8 +562,8 @@ msgstr ""
 msgid "Restart Game"
 msgstr "เริ่มเกมอีกครั้ง"
 
-#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
-#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
 msgid "Options"
 msgstr "ตัวเลือก"
 
@@ -641,8 +634,7 @@ msgid ""
 "Prepare yourself!\n"
 "Death and Glory awaits you."
 msgstr ""
-"ผลลัพธ์ของมหาสงคราม คุณได้สูญเสียทุกๆสิ่ง: บ้านของคุณ, ครอบครัวของคุณ "
-"และการนิยมนับถือในตัวคุณ\n"
+"ผลลัพธ์ของมหาสงคราม คุณได้สูญเสียทุกๆสิ่ง: บ้านของคุณ, ครอบครัวของคุณ และการนิยมนับถือในตัวคุณ\n"
 "โอกาสสุดท้ายของคุณ เพื่อกำจัดความเลวร้ายในชีวิตที่ติดอยู่,\n"
 "คือการกลายเป็นนักรบที่น่าสรรเสริญ ในสังเวียน DEATHMATCH\n"
 "ต้านทานนักรบอื่น ๆ และเก็บคะแนน โดยการทำลายเกราะที่พวกเขาเรียกว่ายาน\n"
@@ -711,27 +703,25 @@ msgid ""
 "Teach them a lesson they will never forget."
 msgstr ""
 "การเจรจาล้มเหลว!\n"
-"ทั้งคุณและเพื่อนบ้านต่างจารึกการสูญเสียครั้งยิ่งใหญ่ "
-"ในบทสรุปของมหาสงครามไปตลอดกาล\n"
-"ความพยายามครั้งสุดท้ายเพื่อชิงความได้เปรียบ, "
-"คุณถูกสั่งให้ทำลายทรัพยากรของศัตรูให้มากที่สุด\n"
+"ทั้งคุณและเพื่อนบ้านต่างจารึกการสูญเสียครั้งยิ่งใหญ่ ในบทสรุปของมหาสงครามไปตลอดกาล\n"
+"ความพยายามครั้งสุดท้ายเพื่อชิงความได้เปรียบ, คุณถูกสั่งให้ทำลายทรัพยากรของศัตรูให้มากที่สุด\n"
 "และปกป้องส่วนที่เป็นของคุณเอง ทางเดียวที่จะทำแบบนั้นได้ คือ  TEAMDEATHMATCH.\n"
 "ปกป้องสหายและทำลายศัตรูของคุณ!\n"
 "สอนบทเรียนให้พวกมัน, แล้วพวกมันจะลืมไม่ลง"
 
-#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
 msgid "Start Local Game"
 msgstr "เริ่มเกมในเครื่อง"
 
-#: src/Menu/MainMenu.cpp:46
+#: src/Menu/MainMenu.cpp:52
 msgid "Start Tutorial"
 msgstr "เริ่มการฝึกซ้อม"
 
-#: src/Menu/MainMenu.cpp:48
+#: src/Menu/MainMenu.cpp:54
 msgid "Join Network Game"
 msgstr "เข้าร่วมเกมเครือข่าย"
 
-#: src/Menu/MainMenu.cpp:51
+#: src/Menu/MainMenu.cpp:57
 msgid "Quit M.A.R.S."
 msgstr "ออกจาก M.A.R.S."
 
@@ -809,65 +799,65 @@ msgstr "ตัวเลือกของอาวุธ"
 msgid "Players"
 msgstr "ผู้เล่น"
 
-#: src/Menu/OptionsMenu.cpp:81
+#: src/Menu/OptionsMenu.cpp:86
 msgid "Interface"
 msgstr "แบบการใช้งาน"
 
-#: src/Menu/OptionsMenu.cpp:82
+#: src/Menu/OptionsMenu.cpp:87
 msgid "Gameplay"
 msgstr "การเล่นเกม"
 
-#: src/Menu/OptionsMenu.cpp:83
+#: src/Menu/OptionsMenu.cpp:88
 msgid "Graphics"
 msgstr "ภาพกราฟิก"
 
-#: src/Menu/OptionsMenu.cpp:84
+#: src/Menu/OptionsMenu.cpp:89
 msgid "Audio"
 msgstr "เสียง"
 
-#: src/Menu/OptionsMenu.cpp:88
+#: src/Menu/OptionsMenu.cpp:93
 msgid "General Settings"
 msgstr "การตั้งค่าทั่วไป"
 
-#: src/Menu/OptionsMenu.cpp:89
+#: src/Menu/OptionsMenu.cpp:94
 msgid "Language"
 msgstr "ภาษา"
 
-#: src/Menu/OptionsMenu.cpp:97
+#: src/Menu/OptionsMenu.cpp:102
 msgid "File Format for Screenshots"
 msgstr "รูปแบบแฟ้มสำหรับภาพหน้าจอ"
 
-#: src/Menu/OptionsMenu.cpp:98
+#: src/Menu/OptionsMenu.cpp:103
 msgid "Sets the format being used when screenshots are saved."
 msgstr "ตั้งค่ารูปแบบที่จะใช้เมื่อภาพหน้าจอถูกบันทึก"
 
-#: src/Menu/OptionsMenu.cpp:101
+#: src/Menu/OptionsMenu.cpp:106
 msgid "Hot Key for Screenshots"
 msgstr "ปุ่มลัดสำหรับภาพหน้าจอ"
 
 #. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
-#: src/Menu/OptionsMenu.cpp:104
+#: src/Menu/OptionsMenu.cpp:109
 #, c-format
 msgid "When this key is pressed, a screenshot is saved to %s"
 msgstr "เมื่อปุ่มนี้ถูกกด, ภาพหน้าจอจะถูกบันทึกสู่ %s"
 
-#: src/Menu/OptionsMenu.cpp:108
+#: src/Menu/OptionsMenu.cpp:113
 msgid "Hot Key for Statistics"
 msgstr "ปุ่มลัดสำหรับสถิติ"
 
-#: src/Menu/OptionsMenu.cpp:109
+#: src/Menu/OptionsMenu.cpp:114
 msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
 msgstr "เมื่อกดปุ่มนี้ขณะเล่นเกม, จะแสดงหน้าต่างสถิติของเกมปัจจุบัน"
 
-#: src/Menu/OptionsMenu.cpp:111
+#: src/Menu/OptionsMenu.cpp:116
 msgid "Show Game Information"
 msgstr "แสดงข้อมูลเกม"
 
-#: src/Menu/OptionsMenu.cpp:113
+#: src/Menu/OptionsMenu.cpp:118
 msgid "Frames per Second"
 msgstr "เฟรมต่อวินาที"
 
-#: src/Menu/OptionsMenu.cpp:114
+#: src/Menu/OptionsMenu.cpp:119
 msgid ""
 "Displays the amount of Frames calculated per Second.\n"
 "If this is always very low (<20), you should adjust some settings in graphics tab!"
@@ -875,39 +865,39 @@ msgstr ""
 "แสดงจำนวนเฟรมที่คำนวณได้ต่อวินาที\n"
 "ถ้ามันต่ำมากตลอด (<20), คุณควรปรับการตั้งค่าบางอย่างในหัวข้อภาพกราฟิก!"
 
-#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
 msgid "Particle Count"
 msgstr "จำนวนอนุภาค"
 
-#: src/Menu/OptionsMenu.cpp:119
+#: src/Menu/OptionsMenu.cpp:124
 msgid "Displays the amount of active particles."
 msgstr "แสดงจำนวนอนุภาคที่แอ็คทีฟ"
 
-#: src/Menu/OptionsMenu.cpp:122
+#: src/Menu/OptionsMenu.cpp:127
 msgid "Display Tool Tips"
 msgstr "แสดงเกร็ดคู่มือ"
 
-#: src/Menu/OptionsMenu.cpp:123
+#: src/Menu/OptionsMenu.cpp:128
 msgid "Dismisses tool tips like this one."
 msgstr "ยกเลิกเกร็ดคู่มือที่คล้ายสิ่งนี้"
 
-#: src/Menu/OptionsMenu.cpp:127
+#: src/Menu/OptionsMenu.cpp:132
 msgid "Full screen"
 msgstr "เต็มจอ"
 
-#: src/Menu/OptionsMenu.cpp:128
+#: src/Menu/OptionsMenu.cpp:133
 msgid "Maximizes the window, making it cover the entire screen."
 msgstr "ขยายหน้าต่างใหญ่สุด, เพื่อให้ครอบคลุมทั้งหน้าจอ"
 
-#: src/Menu/OptionsMenu.cpp:130
+#: src/Menu/OptionsMenu.cpp:135
 msgid "Window Settings"
 msgstr "การตั้งค่าหน้าต่าง"
 
-#: src/Menu/OptionsMenu.cpp:132
+#: src/Menu/OptionsMenu.cpp:137
 msgid "V-Sync"
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:133
+#: src/Menu/OptionsMenu.cpp:138
 msgid ""
 "Makes the game update according to the refresh rate of your monitor.\n"
 "Enabling this option typically makes the game run more smoothly."
@@ -915,23 +905,23 @@ msgstr ""
 "ปรับเกมให้สอดคล้องกับ refresh rate ของหน้าจอของคุณ\n"
 "การเลือกใช้งานตัวเลือกนี้ โดยปกติจะทำให้เกมดำเนินราบรื่นขึ้น"
 
-#: src/Menu/OptionsMenu.cpp:137
+#: src/Menu/OptionsMenu.cpp:142
 msgid "Shader Effects"
 msgstr "Shader effect"
 
-#: src/Menu/OptionsMenu.cpp:138
+#: src/Menu/OptionsMenu.cpp:143
 msgid "Enables cool effects like heat haze, but reduces game performance."
 msgstr "ใช้งานการแสดงผลแบบเย็นคล้ายหมอกความร้อน, แต่จะลดสมรรถนะของเกม"
 
-#: src/Menu/OptionsMenu.cpp:162
+#: src/Menu/OptionsMenu.cpp:167
 msgid "Off"
 msgstr "ปิด"
 
-#: src/Menu/OptionsMenu.cpp:164
+#: src/Menu/OptionsMenu.cpp:169
 msgid "Resolution"
 msgstr "ความละเอียด"
 
-#: src/Menu/OptionsMenu.cpp:165
+#: src/Menu/OptionsMenu.cpp:170
 msgid ""
 "Sets the size of the window.\n"
 "Affects both full screen and windowed mode."
@@ -939,15 +929,15 @@ msgstr ""
 "ตั้งค่าขนาดหน้าต่าง\n"
 "มีผลต่อทั้งโหมดเต็มจอและโหมดหน้าต่าง"
 
-#: src/Menu/OptionsMenu.cpp:167
+#: src/Menu/OptionsMenu.cpp:172
 msgid "Game Settings"
 msgstr "การตั้งค่าเกม"
 
-#: src/Menu/OptionsMenu.cpp:169
+#: src/Menu/OptionsMenu.cpp:174
 msgid "High Star Field Resolution"
 msgstr "การกระจายพื้นที่ดาวสูง"
 
-#: src/Menu/OptionsMenu.cpp:170
+#: src/Menu/OptionsMenu.cpp:175
 msgid ""
 "With high resolution displays, this option makes the star field loop later.\n"
 "Disabling may increase game performance slightly."
@@ -955,15 +945,15 @@ msgstr ""
 "การแสดงผลแบบการกระจายสูง, ตัวเลือกนี้ทำให้พื้นที่ของดาววนรอบ\n"
 "การไม่ใช้งาน อาจเพิ่มสมรรถนะเกมได้เล็กน้อย"
 
-#: src/Menu/OptionsMenu.cpp:174
+#: src/Menu/OptionsMenu.cpp:179
 msgid "Moving Stars"
 msgstr "ดาวเคลื่อนไหว"
 
-#: src/Menu/OptionsMenu.cpp:175
+#: src/Menu/OptionsMenu.cpp:180
 msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
 msgstr "วาดดาวที่เคลื่อนไหวบนพื้นหลังเป็นอาหารตา แต่จะลดสมรรถนะของเกม"
 
-#: src/Menu/OptionsMenu.cpp:179
+#: src/Menu/OptionsMenu.cpp:184
 msgid ""
 "Adjusts the global particle count.\n"
 "Lower values will increase performance significantly."
@@ -971,11 +961,11 @@ msgstr ""
 "ปรับจำนวนอนุภาคโดยรวม\n"
 "ค่ายิ่งต่ำ ยิ่งเพิ่มสมรรถนะของเกมอย่างชัดเจน"
 
-#: src/Menu/OptionsMenu.cpp:182
+#: src/Menu/OptionsMenu.cpp:187
 msgid "Particle Lifetime"
 msgstr "ระยะชีวิตอนุภาค"
 
-#: src/Menu/OptionsMenu.cpp:183
+#: src/Menu/OptionsMenu.cpp:188
 msgid ""
 "Adjusts the global particle life time.\n"
 "Lower values will increase performance significantly."
@@ -983,148 +973,148 @@ msgstr ""
 "ปรับระยะชีวิตอนุภาคโดยรวม\n"
 "ค่ายิ่งต่ำ ยิ่งเพิ่มสมรรถนะของเกมอย่างชัดเจน"
 
-#: src/Menu/OptionsMenu.cpp:186
+#: src/Menu/OptionsMenu.cpp:191
 msgid "Volume Settings"
 msgstr "การตั้งค่าระดับเสียง"
 
-#: src/Menu/OptionsMenu.cpp:188
+#: src/Menu/OptionsMenu.cpp:193
 msgid "Music"
 msgstr "ดนตรี"
 
-#: src/Menu/OptionsMenu.cpp:189
+#: src/Menu/OptionsMenu.cpp:194
 msgid "Adjusts volume of background music."
 msgstr "ปรับระดับเสียงของดนตรีพื้นหลัง"
 
-#: src/Menu/OptionsMenu.cpp:192
+#: src/Menu/OptionsMenu.cpp:197
 msgid "Sound"
 msgstr "เสียง"
 
-#: src/Menu/OptionsMenu.cpp:193
+#: src/Menu/OptionsMenu.cpp:198
 msgid "Adjusts volume of sound effects."
 msgstr "ปรับระดับเสียงของเสียงประกอบ"
 
-#: src/Menu/OptionsMenu.cpp:196
+#: src/Menu/OptionsMenu.cpp:201
 msgid "Announcer"
 msgstr "ผู้ประกาศ"
 
-#: src/Menu/OptionsMenu.cpp:197
+#: src/Menu/OptionsMenu.cpp:202
 msgid "Adjusts volume of announcers voice."
 msgstr "ปรับระดับเสียงของเสียงผู้ประกาศ"
 
-#: src/Menu/OptionsMenu.cpp:199
+#: src/Menu/OptionsMenu.cpp:204
 msgid "Playback Settings"
 msgstr "ตั้งค่าการเปิดเล่น"
 
-#: src/Menu/OptionsMenu.cpp:201
+#: src/Menu/OptionsMenu.cpp:206
 msgid "Play Tracks in Random Order"
 msgstr "เล่นเพลงโดยสุ่มลำดับ"
 
-#: src/Menu/OptionsMenu.cpp:202
+#: src/Menu/OptionsMenu.cpp:207
 msgid "Enables music play back in a random sequence."
 msgstr "ใช้งานการเปิดเล่นดนตรีในแบบสุ่มลำดับ"
 
-#: src/Menu/OptionsMenu.cpp:205
+#: src/Menu/OptionsMenu.cpp:210
 msgid "Play Next Track"
 msgstr "เล่นเพลงถัดไป"
 
-#: src/Menu/OptionsMenu.cpp:206
+#: src/Menu/OptionsMenu.cpp:211
 msgid "Pressing this key switches to the next music track."
 msgstr "การกดปุ่มนี้จะสลับไปยังดนตรีเพลงถัดไป"
 
-#: src/Menu/OptionsMenu.cpp:209
+#: src/Menu/OptionsMenu.cpp:214
 msgid "Play Previous Track"
 msgstr "เล่นเพลงก่อนหน้า"
 
-#: src/Menu/OptionsMenu.cpp:210
+#: src/Menu/OptionsMenu.cpp:215
 msgid "Pressing this key switches to the previous music track."
 msgstr "การกดปุ่มนี้จะสลับไปยังดนตรีเพลงก่อนหน้า"
 
-#: src/Menu/OptionsMenu.cpp:213
+#: src/Menu/OptionsMenu.cpp:218
 msgid "Special Effects"
 msgstr "การแสดงผลพิเศษ"
 
-#: src/Menu/OptionsMenu.cpp:215
+#: src/Menu/OptionsMenu.cpp:220
 msgid "Explosions for Slow Motion"
 msgstr "การระเบิดของภาพช้า"
 
-#: src/Menu/OptionsMenu.cpp:216
+#: src/Menu/OptionsMenu.cpp:221
 msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
 msgstr "ถ้ายานจำนวนมากระเบิดพร้อมๆกัน, การแสดงผลภาพช้าจะถูกนำมาใช้"
 
-#: src/Menu/OptionsMenu.cpp:219
+#: src/Menu/OptionsMenu.cpp:224
 #, fuzzy
 msgid "Game Speed"
 msgstr "การตั้งค่าเกม"
 
-#: src/Menu/OptionsMenu.cpp:220
+#: src/Menu/OptionsMenu.cpp:225
 msgid "Adjusts the game speed in percent."
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:222
+#: src/Menu/OptionsMenu.cpp:227
 msgid "Show Debug Information"
 msgstr "แสดงข้อมูล Debug"
 
-#: src/Menu/OptionsMenu.cpp:224
+#: src/Menu/OptionsMenu.cpp:229
 msgid "Bots Orientation"
 msgstr "ตำแหน่งทิศทางหุ่น"
 
-#: src/Menu/OptionsMenu.cpp:225
+#: src/Menu/OptionsMenu.cpp:230
 msgid "Displays the job of each bot."
 msgstr "แสดงงานของแต่ละหุ่น"
 
-#: src/Menu/OptionsMenu.cpp:228
+#: src/Menu/OptionsMenu.cpp:233
 msgid "Zones"
 msgstr "บริเวณ"
 
-#: src/Menu/OptionsMenu.cpp:229
+#: src/Menu/OptionsMenu.cpp:234
 msgid "Displays tactical zones, which are important for the artificial intelligence."
 msgstr "แสดงเขตยุทธศาสตร์, ที่สำคัญสำหรับปัญญาเทียม"
 
-#: src/Menu/OptionsMenu.cpp:232
+#: src/Menu/OptionsMenu.cpp:237
 msgid "AI-Paths"
 msgstr "เส้นทางปัญญาเทียม"
 
-#: src/Menu/OptionsMenu.cpp:233
+#: src/Menu/OptionsMenu.cpp:238
 msgid "Displays paths calculated by bots."
 msgstr "แสดงเส้นทางที่คำนวณโดยหุ่น"
 
-#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
 msgid "Name"
 msgstr "ชื่อ"
 
-#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
 msgid "Accelerate"
 msgstr "การเร่ง"
 
-#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
 msgid "Turn Left"
 msgstr "เลี้ยวซ้าย"
 
-#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
 msgid "Turn Right"
 msgstr "เลี้ยวขวา"
 
-#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
 msgid "Weapon"
 msgstr "อาวุธ"
 
-#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
 msgid "Special Ability"
 msgstr "ความสามารถพิเศษ"
 
-#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
 msgid "Ship Settings"
 msgstr "การตั้งค่ายาน"
 
-#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
 msgid "Ship"
 msgstr "ยาน"
 
-#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
 msgid "Player Color"
 msgstr "สีผู้เล่น"
 
-#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
 msgid "Team Color"
 msgstr "สีทีม"
 
@@ -1471,6 +1461,10 @@ msgstr "เลี้ยวซ้าย"
 msgid "Direction Right"
 msgstr "เลี้ยวขวา"
 
-#: src/System/window.cpp:373
+#: src/System/window.cpp:377
 msgid "Screenshot saved!"
 msgstr "ภาพหน้าจอถูกบันทึกแล้ว!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "ภาษา"

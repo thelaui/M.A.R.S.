@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: M.A.R.S.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-14 19:53+0000\n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
 "PO-Revision-Date: 2015-11-14 20:07+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: M.A.R.S.\n"
@@ -44,8 +44,7 @@ msgid ""
 "All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
 msgstr ""
 "Үндсэн хөдөлгөөнүүд нь Урагшаа, Баруун, Зүүн гэсэн хөдөлгөөнтэй.\n"
-"Та урагшаа явахдаа %s дарна, зүүн тийшээ эргэхдээ %s дарна мөн баруун тийшээ "
-"эргэхдээ %s тус тус дарж явна!"
+"Та урагшаа явахдаа %s дарна, зүүн тийшээ эргэхдээ %s дарна мөн баруун тийшээ эргэхдээ %s тус тус дарж явна!"
 
 #: src/Games/Tutorial.cpp:142
 msgid "Warming Up!"
@@ -119,10 +118,8 @@ msgid ""
 "For that purpose press %s.\n"
 "Have some fun shooting around and then land your ship to continue the tutorial."
 msgstr ""
-"Та дайсны эсрэг тулалдах гэж байна, хамгийн гол нь өөрөө үхэхгүй өрсөлдөгчөө "
-"ялах юм.\n"
-"Та буудахдаа %s товчийг дарна. Мөн та одоо Өөрийнхөө гараг дээр очиж зогсоод "
-"дайсны гарагруу харж зогсон түр хүлээнэ үү."
+"Та дайсны эсрэг тулалдах гэж байна, хамгийн гол нь өөрөө үхэхгүй өрсөлдөгчөө ялах юм.\n"
+"Та буудахдаа %s товчийг дарна. Мөн та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:243
@@ -148,10 +145,8 @@ msgid ""
 "Then use %s and %s to choose a weapon!\n"
 "Take-off, when you're ready!"
 msgstr ""
-"Та %s дараад %s эсвэл %s товчийг дарж буугаа сольж болно. Таньд Shotgun, "
-"Rofle, AFK-47 гэсэн 3 буу байгаа дуртайгаа сонго.\n"
-"Тэгээд бэлэн болсон бол урагшаа дарна уу. Тэргүүлэгч - LeaDe[R]!!! миний бие "
-"таныг ялна гэдэгт итгэлтэй байна."
+"Та %s дараад %s эсвэл %s товчийг дарж буугаа сольж болно. Таньд Shotgun, Rofle, AFK-47 гэсэн 3 буу байгаа дуртайгаа сонго.\n"
+"Тэгээд бэлэн болсон бол урагшаа дарна уу. Тэргүүлэгч - LeaDe[R]!!! миний бие таныг ялна гэдэгт итгэлтэй байна."
 
 #: src/Games/Tutorial.cpp:276
 msgid "Fight!"
@@ -215,8 +210,7 @@ msgid ""
 "You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
 msgstr ""
 "FREEZER бусад чадваруудаа бодвол маш хүчтэй юм.\n"
-"Та дайсны хажууд очиж байгаад %s товчоо дарах юм бол дайсан чинь шууд "
-"хөлдөөд амь нь бага багаар явсаар байгаад үхэх болно."
+"Та дайсны хажууд очиж байгаад %s товчоо дарах юм бол дайсан чинь шууд хөлдөөд амь нь бага багаар явсаар байгаад үхэх болно."
 
 #. * TRANSLATORS: %s is the player's name.
 #: src/Games/Tutorial.cpp:365
@@ -340,9 +334,7 @@ msgstr "Та устгагдлаа!"
 #: src/Games/Tutorial.cpp:532
 #, c-format
 msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
-msgstr ""
-"%s та дайсанд буудуулж үхлээ. Хэсэг хугацааны дараа та төрөх учир түр "
-"хүлээнэ үү."
+msgstr "%s та дайсанд буудуулж үхлээ. Хэсэг хугацааны дараа та төрөх учир түр хүлээнэ үү."
 
 #: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
 msgid "Did You Notice?"
@@ -421,7 +413,7 @@ msgstr "Цомог:"
 
 #: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
 #: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
-#: src/Menu/OptionsMenu.cpp:77 src/Menu/ShaderError.cpp:34
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
 #: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
 #: src/Menu/WeaponOptions.cpp:49
 msgid "OK"
@@ -441,7 +433,7 @@ msgstr "Өмнөх дуу!"
 msgid "Close"
 msgstr "Хаах"
 
-#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:50
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
 msgid "About"
 msgstr "Тухай..."
 
@@ -462,9 +454,7 @@ msgid ""
 "\n"
 "© 2010-2011 Felix Lauer & Simon Schneegans"
 msgstr ""
-"Энэ тоглоом нь анхны дэмжлэг болох OpenGL болон SFML дээр суурилсан. 2 "
-"тоглогчоос бүрдэх бөгөөд, сансар дээр явах хөлөгийг тухай ба, дэлхийн "
-"таталцлын хуулиас санаачласан болно.\n"
+"Энэ тоглоом нь анхны дэмжлэг болох OpenGL болон SFML дээр суурилсан. 2 тоглогчоос бүрдэх бөгөөд, сансар дээр явах хөлөгийг тухай ба, дэлхийн таталцлын хуулиас санаачласан болно.\n"
 "\n"
 "Вебсайт:\n"
 "http://www.marsshooter.org\n"
@@ -538,7 +528,12 @@ msgstr ""
 msgid "Cancel"
 msgstr "Болих"
 
-#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:47
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "Хэл"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
 msgid "Start Network Game"
 msgstr "Сүлжээгээр тоглох"
 
@@ -556,8 +551,8 @@ msgstr ""
 msgid "Restart Game"
 msgstr "Шинээр эхлэх"
 
-#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:49
-#: src/Menu/OptionsMenu.cpp:78 src/Menu/PauseMenu.cpp:42
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
 msgid "Options"
 msgstr "Тохиргоо"
 
@@ -684,24 +679,23 @@ msgid ""
 "Protect your comrades and destroy your enemies!\n"
 "Teach them a lesson they will never forget."
 msgstr ""
-"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг "
-"хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч,\n"
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч,\n"
 "оюун ухаанаа шавхан харийхантай тэмцэх хэрэгтэй.\n"
 "Тулааныг ялж өөрийн нэр хүндээ авчир!"
 
-#: src/Menu/MainMenu.cpp:45 src/Menu/NewGameMenu.cpp:79
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
 msgid "Start Local Game"
 msgstr "Шинээр тоглох"
 
-#: src/Menu/MainMenu.cpp:46
+#: src/Menu/MainMenu.cpp:52
 msgid "Start Tutorial"
 msgstr "Сургуулилтанд орох"
 
-#: src/Menu/MainMenu.cpp:48
+#: src/Menu/MainMenu.cpp:54
 msgid "Join Network Game"
 msgstr "Сүлжээрүү нэвтрэх"
 
-#: src/Menu/MainMenu.cpp:51
+#: src/Menu/MainMenu.cpp:57
 msgid "Quit M.A.R.S."
 msgstr "Гарах"
 
@@ -777,144 +771,139 @@ msgstr "Зэвсэгийн тохиргоо"
 msgid "Players"
 msgstr "Тоглогчид"
 
-#: src/Menu/OptionsMenu.cpp:81
+#: src/Menu/OptionsMenu.cpp:86
 msgid "Interface"
 msgstr "Интерфайс"
 
-#: src/Menu/OptionsMenu.cpp:82
+#: src/Menu/OptionsMenu.cpp:87
 msgid "Gameplay"
 msgstr "Тоглолт"
 
-#: src/Menu/OptionsMenu.cpp:83
+#: src/Menu/OptionsMenu.cpp:88
 msgid "Graphics"
 msgstr "График"
 
-#: src/Menu/OptionsMenu.cpp:84
+#: src/Menu/OptionsMenu.cpp:89
 msgid "Audio"
 msgstr "Дуу авиа"
 
-#: src/Menu/OptionsMenu.cpp:88
+#: src/Menu/OptionsMenu.cpp:93
 msgid "General Settings"
 msgstr "Үндсэн тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:89
+#: src/Menu/OptionsMenu.cpp:94
 msgid "Language"
 msgstr "Хэл"
 
-#: src/Menu/OptionsMenu.cpp:97
+#: src/Menu/OptionsMenu.cpp:102
 msgid "File Format for Screenshots"
 msgstr "Зурагны формат"
 
-#: src/Menu/OptionsMenu.cpp:98
+#: src/Menu/OptionsMenu.cpp:103
 msgid "Sets the format being used when screenshots are saved."
 msgstr "Зургийг ямар өргөгдөлтэй (формат) хадгалахыг тохируулах."
 
-#: src/Menu/OptionsMenu.cpp:101
+#: src/Menu/OptionsMenu.cpp:106
 msgid "Hot Key for Screenshots"
 msgstr "Зураг авах товч"
 
 #. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
-#: src/Menu/OptionsMenu.cpp:104
+#: src/Menu/OptionsMenu.cpp:109
 #, c-format
 msgid "When this key is pressed, a screenshot is saved to %s"
-msgstr ""
-"Дүрс авахдаа ямар товч дарж авах вэ? %s гэсэн хавтас дотор таны авсан "
-"дүрсүүд байх болно."
+msgstr "Дүрс авахдаа ямар товч дарж авах вэ? %s гэсэн хавтас дотор таны авсан дүрсүүд байх болно."
 
-#: src/Menu/OptionsMenu.cpp:108
+#: src/Menu/OptionsMenu.cpp:113
 msgid "Hot Key for Statistics"
 msgstr "Товчны статс"
 
-#: src/Menu/OptionsMenu.cpp:109
+#: src/Menu/OptionsMenu.cpp:114
 msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
 msgstr "Тоглолтын статус-ыг харах."
 
-#: src/Menu/OptionsMenu.cpp:111
+#: src/Menu/OptionsMenu.cpp:116
 msgid "Show Game Information"
 msgstr "Танилцуулга"
 
-#: src/Menu/OptionsMenu.cpp:113
+#: src/Menu/OptionsMenu.cpp:118
 msgid "Frames per Second"
 msgstr "Дүрс/сэкунд"
 
-#: src/Menu/OptionsMenu.cpp:114
+#: src/Menu/OptionsMenu.cpp:119
 msgid ""
 "Displays the amount of Frames calculated per Second.\n"
 "If this is always very low (<20), you should adjust some settings in graphics tab!"
 msgstr "FPS. (Идвэхжүүлэх хэрэггүй)"
 
-#: src/Menu/OptionsMenu.cpp:118 src/Menu/OptionsMenu.cpp:178
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
 msgid "Particle Count"
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:119
+#: src/Menu/OptionsMenu.cpp:124
 msgid "Displays the amount of active particles."
 msgstr "Дэлгэцэнд идвэхтэй байгаа жижигхэн тоосыг гаргах."
 
-#: src/Menu/OptionsMenu.cpp:122
+#: src/Menu/OptionsMenu.cpp:127
 msgid "Display Tool Tips"
 msgstr "Тайлбарыг харуулах"
 
-#: src/Menu/OptionsMenu.cpp:123
+#: src/Menu/OptionsMenu.cpp:128
 msgid "Dismisses tool tips like this one."
 msgstr "Үгэн дээр курсороо авчирхад тайлбарыг гаргах."
 
-#: src/Menu/OptionsMenu.cpp:127
+#: src/Menu/OptionsMenu.cpp:132
 msgid "Full screen"
 msgstr "Дэлгэц дүүрэн"
 
-#: src/Menu/OptionsMenu.cpp:128
+#: src/Menu/OptionsMenu.cpp:133
 msgid "Maximizes the window, making it cover the entire screen."
 msgstr "Дэлгэц дүүрэн болгох."
 
-#: src/Menu/OptionsMenu.cpp:130
+#: src/Menu/OptionsMenu.cpp:135
 msgid "Window Settings"
 msgstr "Цонхны тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:132
+#: src/Menu/OptionsMenu.cpp:137
 msgid "V-Sync"
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:133
+#: src/Menu/OptionsMenu.cpp:138
 msgid ""
 "Makes the game update according to the refresh rate of your monitor.\n"
 "Enabling this option typically makes the game run more smoothly."
 msgstr "Идвэхжүүлсэн байх ёстой тохиргоо. Өндөр хүчин чадалтай компьютерууд тоглоомыг түрүүлж тооцоолсоны улмаас тоглоом дүрс давахцах, үйлдэлүүд нь аймар хурдан болох гэх мэт асуудлууд..."
 
-#: src/Menu/OptionsMenu.cpp:137
+#: src/Menu/OptionsMenu.cpp:142
 msgid "Shader Effects"
 msgstr "Сүүдэр эффект"
 
-#: src/Menu/OptionsMenu.cpp:138
+#: src/Menu/OptionsMenu.cpp:143
 msgid "Enables cool effects like heat haze, but reduces game performance."
 msgstr "Сүүдэрийг идвэхжүүлэх."
 
-#: src/Menu/OptionsMenu.cpp:162
+#: src/Menu/OptionsMenu.cpp:167
 msgid "Off"
 msgstr "Унтраах"
 
-#: src/Menu/OptionsMenu.cpp:164
+#: src/Menu/OptionsMenu.cpp:169
 msgid "Resolution"
 msgstr "Нягтрал"
 
-#: src/Menu/OptionsMenu.cpp:165
+#: src/Menu/OptionsMenu.cpp:170
 msgid ""
 "Sets the size of the window.\n"
 "Affects both full screen and windowed mode."
-msgstr ""
-"Дүрсний нягтаршилыг харуулах ба хэр нягтаршил сайтай тоглоомоо тоглохыг "
-"хүсэнэ тэр хэмжээгээрээ нягтаршилаа сонго. Ихэсгэх тусам нягтаршил сайжирна, "
-"багасгах тусам нягтаршил муудна."
+msgstr "Дүрсний нягтаршилыг харуулах ба хэр нягтаршил сайтай тоглоомоо тоглохыг хүсэнэ тэр хэмжээгээрээ нягтаршилаа сонго. Ихэсгэх тусам нягтаршил сайжирна, багасгах тусам нягтаршил муудна."
 
-#: src/Menu/OptionsMenu.cpp:167
+#: src/Menu/OptionsMenu.cpp:172
 msgid "Game Settings"
 msgstr "Тоглоомын тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:169
+#: src/Menu/OptionsMenu.cpp:174
 msgid "High Star Field Resolution"
 msgstr "Ододын өндөр нягтрал"
 
-#: src/Menu/OptionsMenu.cpp:170
+#: src/Menu/OptionsMenu.cpp:175
 msgid ""
 "With high resolution displays, this option makes the star field loop later.\n"
 "Disabling may increase game performance slightly."
@@ -922,15 +911,15 @@ msgstr ""
 "Тоглоомын гэрэлт однуудыг гаргах тохиргоо.\n"
 "Идвэхжүүлвэл хамаагүй гоё."
 
-#: src/Menu/OptionsMenu.cpp:174
+#: src/Menu/OptionsMenu.cpp:179
 msgid "Moving Stars"
 msgstr "Хөдлөж буй одод"
 
-#: src/Menu/OptionsMenu.cpp:175
+#: src/Menu/OptionsMenu.cpp:180
 msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
 msgstr "Жижигхэн однуудыг хөдөлгөх."
 
-#: src/Menu/OptionsMenu.cpp:179
+#: src/Menu/OptionsMenu.cpp:184
 msgid ""
 "Adjusts the global particle count.\n"
 "Lower values will increase performance significantly."
@@ -938,11 +927,11 @@ msgstr ""
 "Дэлбэрэлтийн эффэктийг тохируулах.\n"
 "Хамгийн бага дээр нь тавибал ямарч дэлбэрэлтийн эффэкт байхгүй тоглоно."
 
-#: src/Menu/OptionsMenu.cpp:182
+#: src/Menu/OptionsMenu.cpp:187
 msgid "Particle Lifetime"
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:183
+#: src/Menu/OptionsMenu.cpp:188
 msgid ""
 "Adjusts the global particle life time.\n"
 "Lower values will increase performance significantly."
@@ -950,148 +939,148 @@ msgstr ""
 "Жижигхэн тоосуудыг тохируулах.\n"
 "Хамгийн бага дээр нь тавибал ямарч жижигхэн тоосгүй тоглоно."
 
-#: src/Menu/OptionsMenu.cpp:186
+#: src/Menu/OptionsMenu.cpp:191
 msgid "Volume Settings"
 msgstr "Дуу"
 
-#: src/Menu/OptionsMenu.cpp:188
+#: src/Menu/OptionsMenu.cpp:193
 msgid "Music"
 msgstr "Хөгжим"
 
-#: src/Menu/OptionsMenu.cpp:189
+#: src/Menu/OptionsMenu.cpp:194
 msgid "Adjusts volume of background music."
 msgstr "Тоглоомны хөгжимийг чангалах, сулруулах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:192
+#: src/Menu/OptionsMenu.cpp:197
 msgid "Sound"
 msgstr "Авиа"
 
-#: src/Menu/OptionsMenu.cpp:193
+#: src/Menu/OptionsMenu.cpp:198
 msgid "Adjusts volume of sound effects."
 msgstr "Тоглоомны дуу авиаг чангалах, сулруулах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:196
+#: src/Menu/OptionsMenu.cpp:201
 msgid "Announcer"
 msgstr "уншигч"
 
-#: src/Menu/OptionsMenu.cpp:197
+#: src/Menu/OptionsMenu.cpp:202
 msgid "Adjusts volume of announcers voice."
 msgstr "Тоглоомны дуу хоолойг чангалах, сулруулах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:199
+#: src/Menu/OptionsMenu.cpp:204
 msgid "Playback Settings"
 msgstr "Тоглуулагчын тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:201
+#: src/Menu/OptionsMenu.cpp:206
 msgid "Play Tracks in Random Order"
 msgstr "Хамаагүй тоглуулах"
 
-#: src/Menu/OptionsMenu.cpp:202
+#: src/Menu/OptionsMenu.cpp:207
 msgid "Enables music play back in a random sequence."
 msgstr "Автоматаар хөгжимийг тохируулах."
 
-#: src/Menu/OptionsMenu.cpp:205
+#: src/Menu/OptionsMenu.cpp:210
 msgid "Play Next Track"
 msgstr "Дараагын ая"
 
-#: src/Menu/OptionsMenu.cpp:206
+#: src/Menu/OptionsMenu.cpp:211
 msgid "Pressing this key switches to the next music track."
 msgstr "Дараагийн хөгжимийг явуулах."
 
-#: src/Menu/OptionsMenu.cpp:209
+#: src/Menu/OptionsMenu.cpp:214
 msgid "Play Previous Track"
 msgstr "Өмнөх ая"
 
-#: src/Menu/OptionsMenu.cpp:210
+#: src/Menu/OptionsMenu.cpp:215
 msgid "Pressing this key switches to the previous music track."
 msgstr "Өмнөх хөгжимийг явуулах."
 
-#: src/Menu/OptionsMenu.cpp:213
+#: src/Menu/OptionsMenu.cpp:218
 msgid "Special Effects"
 msgstr "Онцгой эффэкт"
 
-#: src/Menu/OptionsMenu.cpp:215
+#: src/Menu/OptionsMenu.cpp:220
 msgid "Explosions for Slow Motion"
 msgstr "Тэсрэлтийг удаашруулах"
 
-#: src/Menu/OptionsMenu.cpp:216
+#: src/Menu/OptionsMenu.cpp:221
 msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
 msgstr "Тэсрэлтийг удаашруулах хөдөлгөөний эффэктийг тохируулах."
 
-#: src/Menu/OptionsMenu.cpp:219
+#: src/Menu/OptionsMenu.cpp:224
 #, fuzzy
 msgid "Game Speed"
 msgstr "Тоглоомын тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:220
+#: src/Menu/OptionsMenu.cpp:225
 msgid "Adjusts the game speed in percent."
 msgstr ""
 
-#: src/Menu/OptionsMenu.cpp:222
+#: src/Menu/OptionsMenu.cpp:227
 msgid "Show Debug Information"
 msgstr "Дебуг"
 
-#: src/Menu/OptionsMenu.cpp:224
+#: src/Menu/OptionsMenu.cpp:229
 msgid "Bots Orientation"
 msgstr "Ботын зүг чиг"
 
-#: src/Menu/OptionsMenu.cpp:225
+#: src/Menu/OptionsMenu.cpp:230
 msgid "Displays the job of each bot."
 msgstr "БОТ-ыг хашаа явах гэж байгааг гаргах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:228
+#: src/Menu/OptionsMenu.cpp:233
 msgid "Zones"
 msgstr "Бүсүүд"
 
-#: src/Menu/OptionsMenu.cpp:229
+#: src/Menu/OptionsMenu.cpp:234
 msgid "Displays tactical zones, which are important for the artificial intelligence."
 msgstr "Байлдааны тактикийг гаргах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:232
+#: src/Menu/OptionsMenu.cpp:237
 msgid "AI-Paths"
 msgstr "AИ-зам"
 
-#: src/Menu/OptionsMenu.cpp:233
+#: src/Menu/OptionsMenu.cpp:238
 msgid "Displays paths calculated by bots."
 msgstr "БОТ-ын тоцооллыг гаргах тохиргоо."
 
-#: src/Menu/OptionsMenu.cpp:236 src/Menu/OptionsMenu.cpp:248
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
 msgid "Name"
 msgstr "Нэр"
 
-#: src/Menu/OptionsMenu.cpp:237 src/Menu/OptionsMenu.cpp:249
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
 msgid "Accelerate"
 msgstr "Удирдлага"
 
-#: src/Menu/OptionsMenu.cpp:238 src/Menu/OptionsMenu.cpp:250
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
 msgid "Turn Left"
 msgstr "Зүүн тийш"
 
-#: src/Menu/OptionsMenu.cpp:239 src/Menu/OptionsMenu.cpp:251
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
 msgid "Turn Right"
 msgstr "Баруун тийш"
 
-#: src/Menu/OptionsMenu.cpp:240 src/Menu/OptionsMenu.cpp:252
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
 msgid "Weapon"
 msgstr "Зэвсэг"
 
-#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
 msgid "Special Ability"
 msgstr "Онцгой чадвар"
 
-#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
 msgid "Ship Settings"
 msgstr "Хөлөгийн тохиргоо"
 
-#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
 msgid "Ship"
 msgstr "Хөлөг"
 
-#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
 msgid "Player Color"
 msgstr "Тоглогчын өнгө"
 
-#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
 msgid "Team Color"
 msgstr "Багын өнгө"
 
@@ -1425,6 +1414,10 @@ msgstr "Чиглэл Зүүн"
 msgid "Direction Right"
 msgstr "Чиглэл Баруун"
 
-#: src/System/window.cpp:373
+#: src/System/window.cpp:377
 msgid "Screenshot saved!"
 msgstr "Дэлгэцний зураг сануулагдлаа!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "Хэл"
