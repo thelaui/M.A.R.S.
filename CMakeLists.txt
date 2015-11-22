@@ -37,10 +37,8 @@ find_package(Gettext REQUIRED)
 
 # libintl is not used on all systems, so only include it when we actually
 # found it.
-if (INTL_FOUND)
-	find_package(INTL REQUIRED)
-	include_directories(${INTL_INCLUDE_DIR})
-endif()
+find_package(INTL REQUIRED)
+include_directories(${INTL_INCLUDE_DIR})
 
 # Foundation library needed for apple
 if(APPLE)
@@ -77,9 +75,9 @@ set(CMAKE_CXX_FLAGS "-s -O2")
 add_subdirectory(src)
 
 # Update translations and build translation binaries
-add_custom_target(_build_translation_binaries ALL
-  COMMAND ${MARS_SOURCE_DIR}/utils/update_translations.sh
-)
+#add_custom_target(_build_translation_binaries ALL
+#  COMMAND ${MARS_SOURCE_DIR}/utils/update_translations.sh
+#)
 
 #####################################################################
 # Create package

@@ -175,10 +175,6 @@ namespace locales {
 		  setenv ("LC_ALL",   loc, 1);
 #endif
 #ifdef _WIN32
-#ifdef __MINGW32__
-// Mingw doesn't define _putenv_s()
-extern int _putenv_s(const char*, const char*);
-#endif
 		  _putenv_s("LANG", loc);
 #endif
 

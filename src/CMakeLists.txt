@@ -48,6 +48,11 @@ else(APPLE)
 	)
 endif(APPLE)
 
+#current mingw32 provide _putenv_s
+IF (WIN32)
+	add_definitions(-DMINGW_HAS_SECURE_API)
+ENDIF (WIN32)
+
 # link SFML and other libraries
 target_link_libraries(
 	mars
@@ -57,6 +62,7 @@ target_link_libraries(
 		${XRANDR_LIBRARY}
 		${FRIBIDI_LIBRARY}
 		${TAG_LIBRARY}
+		${INTL_LIBRARY}
 )
 
 #####################################################################
