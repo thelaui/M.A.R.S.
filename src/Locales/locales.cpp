@@ -151,12 +151,9 @@ namespace locales {
 	  */
 	 void setCurrentLocale() {
 		  char const * const dom = "marsshooter";
-
-		  char const * const localedir = (settings::C_dataPath + std::string("locale")).c_str();
-		  std::cout << "localedir " << localedir;
-
-		  char const * const loc =  getCurrentLocale().iso_.toAnsiString().c_str();
-		  std::cout << "localedir: " << localedir << " locale: " << loc << "\n";
+		  const std::string loc =  std::string(getCurrentLocale().iso_.toAnsiString());
+		  const std::string localedir = (settings::C_dataPath + std::string("locale"));
+		  std::cout << "localedir: " << localedir.c_str() << " locale: " << loc.c_str() << "\n";
 
 #ifndef _WIN32
 #ifndef __AMIGAOS4__
@@ -166,20 +163,20 @@ namespace locales {
 #endif
 #endif
 #ifdef __BEOS__
-		  setenv ("LANG",   loc, 1);
-		  setenv ("LC_ALL", loc, 1);
+		  setenv ("LANG",   loc.c_str(), 1);
+		  setenv ("LC_ALL", loc.c_str(), 1);
 #endif
 #ifdef __APPLE__
-		  setenv ("LANGUAGE", loc, 1);
-		  setenv ("LANG",     loc, 1);
-		  setenv ("LC_ALL",   loc, 1);
+		  setenv ("LANGUAGE", loc.c_str(), 1);
+		  setenv ("LANG",     loc.c_str(), 1);
+		  setenv ("LC_ALL",   loc.c_str(), 1);
 #endif
 #ifdef _WIN32
-		  _putenv_s("LANG", loc);
+		  _putenv_s("LANG", loc.c_str());
 #endif
 
 #ifdef __linux__
-		  setenv("LANGUAGE", loc, 1);
+		  setenv("LANGUAGE", loc.c_str(), 1);
 #endif
 		  // set locale according to the env. variables
 		  SETLOCALE(LC_ALL, "");
@@ -187,7 +184,7 @@ namespace locales {
 		  SETLOCALE(LC_MESSAGES, "");
 
 		  textdomain(dom);
-		  bindtextdomain(dom, localedir);
+		  bindtextdomain(dom, localedir.c_str());
 		  bind_textdomain_codeset(dom, "UTF-8");
 	 }
 
