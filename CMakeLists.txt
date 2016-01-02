@@ -11,7 +11,7 @@ set(mars_PATCH 5)
 set(mars_VERSION ${mars_MAJOR}.${mars_MINOR}.${mars_PATCH})
 set(mars_DESCRIPTION "M.A.R.S. - a ridiculous Shooter")
 set(mars_HOMEPAGE "http://www.marsshooter.org")
-set(mars_EXENAME "mars")
+set(mars_EXENAME "marsshooter")
 set(mars_PACKAGENAME "mars")
  
 # We require at least version 2.8.0

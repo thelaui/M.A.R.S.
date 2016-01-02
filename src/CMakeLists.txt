@@ -11,7 +11,7 @@ file(GLOB MARS_RESOURCES ${MARS_SOURCE_DIR}/mars.cfg)
 # create executable
 if(APPLE)
 	add_executable(
-		mars MACOSX_BUNDLE
+		marsshooter MACOSX_BUNDLE
 			main.cpp
 			${MARS_SOURCES}
 			${MARS_HEADERS}
@@ -40,7 +40,7 @@ if(APPLE)
   )
 else(APPLE)
 	add_executable(
-		mars
+		marsshooter
 			main.cpp 
 			${MARS_SOURCES}
 			${MARS_HEADERS}
@@ -50,7 +50,7 @@ endif(APPLE)
 
 # link SFML and other libraries
 target_link_libraries(
-	mars
+	marsshooter
 		${FOUNDATION_LIBRARY}
 		${SFML_LIBRARIES}
 		${OPENGL_LIBRARIES}
@@ -66,7 +66,7 @@ target_link_libraries(
 if(UNIX)
 	install(
 		TARGETS 
-			mars
+			marsshooter
 		RUNTIME DESTINATION
 			${CMAKE_INSTALL_PREFIX}/games
 	)
@@ -99,26 +99,26 @@ if(UNIX)
 	# icons
 	install(
 		FILES
-			${MARS_SOURCE_DIR}/resources/mars.png
+			${MARS_SOURCE_DIR}/resources/marsshooter.png
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/512x512/apps
 	)
 	install(
 		FILES
-			${MARS_SOURCE_DIR}/resources/mars.svg
+			${MARS_SOURCE_DIR}/resources/marsshooter.svg
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps
 	)
 	install(
 		FILES
-			${MARS_SOURCE_DIR}/resources/mars.xpm
+			${MARS_SOURCE_DIR}/resources/marsshooter.xpm
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/pixmaps
 	)
 	# desktop file
 	install(
 		FILES
-			${MARS_SOURCE_DIR}/resources/mars.desktop
+			${MARS_SOURCE_DIR}/resources/marsshooter.desktop
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/applications
 	)
@@ -132,7 +132,7 @@ if(UNIX)
 	# manpage
 	install(
 		FILES
-			${MARS_SOURCE_DIR}/resources/mars.6
+			${MARS_SOURCE_DIR}/resources/marsshooter.6
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/man/man6
 	)
@@ -145,7 +145,7 @@ if(UNIX)
 else(UNIX)
 	# executable
 	install(
-		TARGETS mars
+		TARGETS marsshooter
 			RUNTIME DESTINATION .
 			BUNDLE DESTINATION .
 	)
