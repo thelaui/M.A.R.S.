@@ -63,7 +63,7 @@ endif(APPLE)
 #####################################################################
 
 # compile source
-set(CMAKE_CXX_FLAGS "-s -O2")
+set(CMAKE_CXX_FLAGS "-s -O2" CACHE STRING "CXX flags")
  add_subdirectory(src) 
  
 #####################################################################
