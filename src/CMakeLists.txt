@@ -122,6 +122,13 @@ if(UNIX)
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/applications
 	)
+	# manpage
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/mars.6
+		DESTINATION
+			${CMAKE_INSTALL_PREFIX}/share/man/man6
+	)
     #install(
     #FILES
     #${MARS_SOURCE_DIR}/resources/mars
