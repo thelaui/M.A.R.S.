@@ -122,6 +122,13 @@ if(UNIX)
 		DESTINATION
 			${CMAKE_INSTALL_PREFIX}/share/applications
 	)
+	# appdata file
+	install(
+		FILES
+			${MARS_SOURCE_DIR}/resources/marsshooter.appdata.xml
+		DESTINATION
+			${CMAKE_INSTALL_PREFIX}/share/appdata
+	)
 	# manpage
 	install(
 		FILES
