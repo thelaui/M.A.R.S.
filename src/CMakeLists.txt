@@ -68,7 +68,7 @@ if(UNIX)
 		TARGETS 
 			marsshooter
 		RUNTIME DESTINATION
-			${CMAKE_INSTALL_PREFIX}/games
+			${mars_EXE_DEST_DIR}
 	)
 	install(
 		FILES
@@ -82,7 +82,7 @@ if(UNIX)
 			${MARS_SOURCE_DIR}/data/botnames.txt
 			${MARS_SOURCE_DIR}/data/shipnames.txt
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/games/marsshooter
+			${mars_DATA_DEST_DIR}
 	)
 	install(
 		DIRECTORY 
@@ -92,7 +92,7 @@ if(UNIX)
 			${CMAKE_SOURCE_DIR}/data/shaders
 			${CMAKE_SOURCE_DIR}/data/tex
 		DESTINATION 
-			${CMAKE_INSTALL_PREFIX}/share/games/marsshooter
+			${mars_DATA_DEST_DIR}
 		PATTERN 
 			".svn" EXCLUDE
 	)
