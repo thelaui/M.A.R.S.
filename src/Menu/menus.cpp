@@ -64,8 +64,8 @@ namespace menus {
                 (*it)->draw();
 
             Vector2f viewPort = window::getViewPort();
-            text::drawScreenText(sf::String("M.A.R.S. Alpha " + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH)
-                                            + " (rev" + VERSION_REVIS + ") - " + sf::String(__DATE__)), Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
+            text::drawScreenText(sf::String("M.A.R.S. ") + sf::String(VERSION_MAJOR) + "." + sf::String(VERSION_MINOR) + "." + sf::String(VERSION_PATCH),
+                                            Vector2f(viewPort.x_-4.f, viewPort.y_-14.f) , 11.f, TEXT_ALIGN_RIGHT, Color3f(0.8, 0.8, 0.8));
 
             toolTip::draw();
         }
