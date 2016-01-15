@@ -40,13 +40,12 @@ void ROFLE::draw(float alpha) const {
 
 void ROFLE::fire() const {
     float time = timer::totalTime();
-    if (time - timer_ > 3.0) {
-        timer_ = time;
-        float angleRad = parent_->rotation()*M_PI / 180;
-        Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoROFLE, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
-        sound::playSound(sound::Sniper, parent_->location());
-    }
+    if (time - timer_ <= 3.0) return;
+    timer_ = time;
+    float angleRad = parent_->rotation()*M_PI / 180;
+    Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
+    particles::spawn(particles::pAmmoROFLE, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+    sound::playSound(sound::Sniper, parent_->location());
 }
 
 float ROFLE::maxDistance() const {
