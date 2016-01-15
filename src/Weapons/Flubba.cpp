@@ -40,14 +40,13 @@ void Flubba::draw(float alpha) const {
 
 void Flubba::fire() const {
     float time = timer::totalTime();
-    if (time - timer_ > 0.2f) {
-        timer_ = time;
-        float angleRad = parent_->rotation()*M_PI / 180.f;
-        Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
-        particles::spawn(particles::pAmmoFlubba, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
-        parent_->velocity() -= faceDirection*10.f;
-        sound::playSound(sound::Blub, parent_->location());
-    }
+    if (time - timer_ <= 0.2f) return;
+    timer_ = time;
+    float angleRad = parent_->rotation()*M_PI / 180.f;
+    Vector2f faceDirection(std::cos(angleRad), std::sin(angleRad));
+    particles::spawn(particles::pAmmoFlubba, parent_->location() + faceDirection*parent_->radius(), faceDirection, parent_->velocity(), Color3f(), parent_->getOwner());
+    parent_->velocity() -= faceDirection*10.f;
+    sound::playSound(sound::Blub, parent_->location());
 }
 
 float Flubba::maxDistance() const {
