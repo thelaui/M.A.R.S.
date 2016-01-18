@@ -60,16 +60,16 @@ void ComboBox::mouseMoved(Vector2f const& position) {
 }
 
 void ComboBox::mouseWheelMoved(Vector2f const& position, int delta) {
-    int valsize(values_.size());
-    if (hovered_ && valsize > 1) {
+    int values_size(values_.size());
+    if (hovered_ && values_size > 1) {
         int i(0);
-        for (i=0; i<valsize; ++i) {
+        for (i=0; i<values_size; ++i) {
             if (values_[i] == (*currentValue_))
                 break;
         }
         i-=delta;
         if      (i<0)               i=0;
-        else if (i>=valsize) i=valsize-1;
+        else if (i>=values_size) i=values_size-1;
         (*currentValue_) = values_[i];
     }
 }
