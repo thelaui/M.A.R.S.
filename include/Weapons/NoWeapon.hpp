@@ -35,13 +35,13 @@ class NoWeapon: public Weapon {
         void draw(float alpha) const {}
 
         /// Returns the maximum distance from which this weapon should be used.
-        float maxDistance() const {}
+        float maxDistance() const { return .0F; }
 
         /// Returns the minimum distance from which this weapon should be used.
-        float minDistance() const {}
+        float minDistance() const { return .0F; }
 
         /// Returns the maximum angle from which this weapon should be used.
-        float maxAngle()   const {}
+        float maxAngle() const { return .0F; }
 };
 
 # endif // NOWEAPON_HPP_INCLUDED

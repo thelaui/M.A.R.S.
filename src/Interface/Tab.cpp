@@ -110,6 +110,7 @@ bool Tab::tabNext() {
             return true;
         }
     }
+    return false;
 }
 
 bool Tab::tabPrevious() {
@@ -140,6 +141,7 @@ bool Tab::tabPrevious() {
             return true;
         }
     }
+    return false;
 }
 
 

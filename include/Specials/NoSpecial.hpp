@@ -32,7 +32,7 @@ class NoSpecial: public Special {
         /// Does nothing.
         void activate() const {}
 
-        float radius() const {}
+        float radius() const { return .0F; }
 
         /// Draws the special.
         void draw(float alpha) const;
