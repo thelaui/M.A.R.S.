@@ -23,7 +23,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 #####################################################################
 # Installation directories
 #####################################################################
-set(mars_DATA_DEST_DIR ${CMAKE_INSTALL_PREFIX}/share/games/marsshooter CACHE STRING "marsshooter data files destdir")
+include(GNUInstallDirs)
+set(mars_DATA_DEST_DIR ${CMAKE_INSTALL_FULL_DATAROOTDIR}/games/marsshooter CACHE STRING "marsshooter data files destdir")
 set(mars_EXE_DEST_DIR ${CMAKE_INSTALL_PREFIX}/games CACHE STRING "marsshooter exe destdir")
 
 #####################################################################

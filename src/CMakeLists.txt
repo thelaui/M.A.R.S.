@@ -75,7 +75,7 @@ if(UNIX)
 			${MARS_SOURCE_DIR}/credits.txt
 			${MARS_SOURCE_DIR}/license.txt
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/doc/marsshooter
+			${CMAKE_INSTALL_FULL_DOCDIR}
 	)
 	install(
 		FILES
@@ -101,40 +101,40 @@ if(UNIX)
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.png
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/512x512/apps
+			${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/512x512/apps
 	)
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.svg
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps
+			${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/scalable/apps
 	)
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.xpm
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/pixmaps
+			${CMAKE_INSTALL_FULL_DATAROOTDIR}/pixmaps
 	)
 	# desktop file
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.desktop
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/applications
+			${CMAKE_INSTALL_FULL_DATAROOTDIR}/applications
 	)
 	# appdata file
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.appdata.xml
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/appdata
+			${CMAKE_INSTALL_FULL_DATAROOTDIR}/appdata
 	)
 	# manpage
 	install(
 		FILES
 			${MARS_SOURCE_DIR}/resources/marsshooter.6
 		DESTINATION
-			${CMAKE_INSTALL_PREFIX}/share/man/man6
+			${CMAKE_INSTALL_FULL_MANDIR}/man6
 	)
     #install(
     #FILES
