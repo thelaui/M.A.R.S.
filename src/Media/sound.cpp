@@ -47,8 +47,8 @@ namespace sound {
             // check if sound is already loaded
             if (sounds_[sound] != NULL) {
                 // if its already loaded search for free soundChannel_
-                int i(0);
-                while (soundChannel_[i].getStatus() == sf::Sound::Playing && i<CHANNELCOUNT) ++i;
+                int i = 0;
+                while((i < CHANNELCOUNT) && (soundChannel_[i].getStatus() == sf::Sound::Playing)) i++;
                 if (i < CHANNELCOUNT) {
                     // play sound with random pitch
                     soundChannel_[i].setBuffer(*sounds_[sound]);
