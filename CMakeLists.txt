@@ -2,7 +2,7 @@
 # Project M.A.R.S.
 ################################################################
 
- PROJECT(MARS)
+PROJECT(MARS)
 
 # version number
 set(mars_MAJOR 0)
@@ -63,15 +63,15 @@ else(APPLE)
 endif(APPLE)
 
 # include the 'include' directory
- include_directories(${MARS_SOURCE_DIR}/include)
+include_directories(${MARS_SOURCE_DIR}/include)
  
 #####################################################################
 # Create executable
 #####################################################################
 
 # compile source
-set(CMAKE_CXX_FLAGS "-s -O2" CACHE STRING "CXX flags")
- add_subdirectory(src) 
+add_subdirectory(src) 
+set(CMAKE_CXX_FLAGS "-s" CACHE STRING "CXX flags")
  
 #####################################################################
 # Create package
@@ -114,5 +114,3 @@ message( "  XRANDR_LIBRARY = ${XRANDR_LIBRARY}" )
 message( "  FRIBIDI_LIBRARY = ${FRIBIDI_LIBRARY}" )
 message( "  TAG_LIBRARY = ${TAG_LIBRARY}" )
 message( "" )
-
-
