@@ -27,7 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 # include <iostream>
 
-# ifdef __WIN32__
+# if defined(__WIN32__) || defined(_WIN32)
     # include <shlobj.h>
     # include <windows.h>
 # endif
@@ -234,7 +234,7 @@ namespace settings {
             mkdir((home + ".marsshooter/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         # endif
 
-        # ifdef __WIN32__
+        # if defined(__WIN32__) || defined(_WIN32)
             TCHAR szAppData[MAX_PATH];
             SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, 0, szAppData);
             std::string home(szAppData);
@@ -267,7 +267,7 @@ namespace settings {
                     C_configPath =      home + ".marsshooter/";
             # endif
 
-            # ifdef __WIN32__
+            # if defined(__WIN32__) || defined(_WIN32)
                 TCHAR szAppData[MAX_PATH];
                 SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, 0, szAppData);
                 std::string home(szAppData);
@@ -327,7 +327,7 @@ namespace settings {
                 }
             # endif
 
-            # ifdef __WIN32__
+            # if defined(__WIN32__) || defined(_WIN32)
                 if (std::ifstream((C_dataPath + "locales/English.txt").c_str()))
                     success = true;
             # endif

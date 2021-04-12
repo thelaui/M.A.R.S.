@@ -40,13 +40,13 @@ class TabStats: public HudElement {
 
     private:
         struct playerPtrCmp{
-            bool operator()(Player* lhs, Player* rhs){
+            bool operator()(Player* lhs, Player* rhs) const {
                 return lhs->points_ > rhs->points_;
             }
         };
 
         struct teamPtrCmp{
-            bool operator()(Team* lhs, Team* rhs){
+            bool operator()(Team* lhs, Team* rhs) const {
                 return lhs->points() > rhs->points();
             }
         };

@@ -35,7 +35,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <time.h>
 # include <sys/stat.h>
 
-# ifdef __WIN32__
+# if defined(__WIN32__) || defined(_WIN32)
     # include <windows.h>
 # endif
 
@@ -377,7 +377,7 @@ namespace window {
 
         # ifdef __APPLE__
             mkdir((settings::C_configPath + "screenshots/").c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+            if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
                 hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
             } else {
@@ -385,9 +385,9 @@ namespace window {
             }
         # endif
 
-        # ifdef __WIN32__
+        # if defined(__WIN32__) || defined(_WIN32)
             CreateDirectory((settings::C_configPath + "screenshots/").c_str(), NULL);
-            if (shot.SaveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
+            if (shot.saveToFile(settings::C_configPath + "screenshots/" + filename.str())) {
                 std::cout << "Saved screenshot to " << settings::C_configPath << "screenshots/" << filename.str() << "." << std::endl;
                 hud::displayMessage(*locales::getLocale(locales::SavedScreenshot));
             } else {
