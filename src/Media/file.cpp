@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <iostream>
 # include <fstream>
 # include <sstream>
+# include <vector>
 
 # include <fribidi/fribidi.h>
 
@@ -41,18 +42,18 @@ namespace file {
                     line.erase(line.end()-1);
                 // Convert it to utf-32
                 int inSize = line.size();
-                FriBidiChar logical[inSize];
+                std::vector<FriBidiChar> logical(inSize);
                 const char* tmp(line.c_str());
-                int outSize = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8, tmp, inSize, logical);
+                int outSize = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8, tmp, inSize, logical.data());
 
-                FriBidiChar visual[outSize];
+                std::vector<FriBidiChar> visual(outSize);
                 FriBidiParType base = FRIBIDI_PAR_LTR;
-                fribidi_log2vis(logical, outSize, &base, visual, NULL, NULL, NULL);
+                fribidi_log2vis(logical.data(), outSize, &base, visual.data(), NULL, NULL, NULL);
 
-                char outstring[outSize];
-                fribidi_unicode_to_charset(FRIBIDI_CHAR_SET_UTF8, visual, outSize, outstring);
+                std::vector<char> outstring(outSize);
+                fribidi_unicode_to_charset(FRIBIDI_CHAR_SET_UTF8, visual.data(), outSize, outstring.data());
 
-                line = std::string(outstring);
+                line = std::string(outstring.begin(), outstring.end());
 
                 std::basic_string<sf::Uint32> utf32line;
                 sf::Utf8::toUtf32(line.begin(), line.end(), back_inserter(utf32line));
