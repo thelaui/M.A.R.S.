@@ -37,9 +37,19 @@ namespace file {
             // Play with all the lines in the file
             while (std::getline(fileStream, line, '\n')) {
                 ++ lineCount;
+
+                // ignore empty lines
+                if (line.empty())
+                    continue;
+
+                // ignore comment lines
+                if (line.size() >= 2 && (line[0] == 47 && line[1] == 47))
+                    continue;
+
                 // remove '\r' at end of lines, when file has a CR LF EOL (windows...)
                 if (*(line.end()-1) == '\r')
                     line.erase(line.end()-1);
+
                 // Convert it to utf-32
                 int inSize = line.size();
                 std::vector<FriBidiChar> logical(inSize);
@@ -50,17 +60,15 @@ namespace file {
                 FriBidiParType base = FRIBIDI_PAR_LTR;
                 fribidi_log2vis(logical.data(), outSize, &base, visual.data(), NULL, NULL, NULL);
 
-                std::vector<char> outstring(outSize);
+                std::vector<char> outstring(outSize * 4, 0);
                 fribidi_unicode_to_charset(FRIBIDI_CHAR_SET_UTF8, visual.data(), outSize, outstring.data());
 
-                line = std::string(outstring.begin(), outstring.end());
+                line = std::string(outstring.data());
 
                 std::basic_string<sf::Uint32> utf32line;
                 sf::Utf8::toUtf32(line.begin(), line.end(), back_inserter(utf32line));
-
-                // ignore comments and nearly empty lines
-                if(utf32line.size() > 2 && (utf32line[0] != 47 && utf32line[1] != 47))
-                    strings.push_back(utf32line);
+                
+                strings.push_back(utf32line);
             }
             fileStream.close();
         }
