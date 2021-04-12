@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+ext_libs_for_windows/**/* -text -eol linguist-vendored
+
+*.png -text -eol
+*.jpg -text -eol
+*.wav -text -eol
+*.ogg -text -eol
+*.ttf -text -eol
+*.ttc -text -eol
+*.xcf -text -eol
+*.svg -text -eol
+*.blend -text -eol
+*.icns -text -eol
+*.ico -text -eol
+*.eml -text -eol
+*.xpm -text -eol
