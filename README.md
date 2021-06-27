@@ -3,13 +3,13 @@ M.A.R.S
 
 **M.A.R.S. - a ridiculous shooter** is a 2D space shooter with awesome visual effects and attractive physics. Players can battle each other or computer controlled enemies in exciting game modes. 
 
-Feel free to visit its **homepage** at http://www.marsshooter.org
+Feel free to visit its **homepage** at http://mars-game.sourceforge.net/
 
 ## The Story
 In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment. But outside the contemplative habitats, the GREAT WAR is raging. As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous neighbours!
 
 ## Compiling and installing from source!
-For information on how to compile the game from source, please feel free to visit http://mars-game.sourceforge.net/?page_id=160&vasthtmlaction=viewtopic&t=18.0
+For information on how to compile the game from source, please feel free to visit [BUILD.md](BUILD.md)
 
 ## Donate!
 We are always happy if people are interested in supporting our project. Aside from sending in patches and giving feedback concerning gameplay etc., a nice way to show your liking is to donate some money ;-)
