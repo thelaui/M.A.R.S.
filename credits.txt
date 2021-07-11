@@ -17,12 +17,20 @@ Sound Files:
  - some soundfiles are modified with Audacity       (http://audacity.sourceforge.net/)
  - Credits go to:
  - music by Obsidian Shell, CC-BY-SA 3.0          (http://www.obsidianshell.com/index.php )
- - interface-sounds                               (http://www.soundjay.com/)
+ - interface-sounds, CC-AT 3.0, Recorded by Mike Koenig:
+   click.wav: http://soundbible.com/772-Button.html (first half)
+   check.wav: http://soundbible.com/772-Button.html (second half)
+   tab.wav:   http://soundbible.com/1726-Karate-Kid-Punch.html
  - all weapon sounds are public domain
  - announcer sounds are created with eSpeak         (http://espeak.sourceforge.net/)
    
-Fonts
- - For copyright notices, have a look at the corresponding meta-data fields within the font files.
+Fonts licenses:
+ ae_AlMothnna-Bold.ttf:   GPL with font embedding exception
+ Comfortaa-Regular.ttf:   OFL
+ DejaVuSans.ttf:          Bitstream Vera and Public Domain
+ gargi.ttf:               GPLv2+
+ Waree.ttf:               GPLv2+ and Bitstream Vera
+ wqy-microhei.ttc:        ASL 2.0 or GPLv3 with exceptions
 
 Translations
  - German: Sandra
