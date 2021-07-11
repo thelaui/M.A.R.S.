@@ -1,0 +1,1423 @@
+# M.A.R.S. mn.po
+# GaVaL TeaM, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
+"PO-Revision-Date: 2015-11-14 20:07+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
+"Language: mn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+#: src/Games/Tutorial.cpp:111
+msgid "Welcome, Space Rookie!"
+msgstr "Тавтай морил, Сансарын дайнд!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, c-format
+msgid ""
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
+msgstr ""
+"%s та энэхүү хөлгөөр байлдах бөгөөд, сансарын дайнд оролцох болно.\n"
+"Таньд амжилт хүсье..."
+
+#: src/Games/Tutorial.cpp:125
+msgid "Basic Movement..."
+msgstr "Үндсэн хөдөлгөөнүүд..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
+msgid ""
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
+msgstr ""
+"Үндсэн хөдөлгөөнүүд нь Урагшаа, Баруун, Зүүн гэсэн хөдөлгөөнтэй.\n"
+"Та урагшаа явахдаа %s дарна, зүүн тийшээ эргэхдээ %s дарна мөн баруун тийшээ эргэхдээ %s тус тус дарж явна!"
+
+#: src/Games/Tutorial.cpp:142
+msgid "Warming Up!"
+msgstr "Анхаарлаа хандуулна уу!"
+
+#: src/Games/Tutorial.cpp:143
+msgid ""
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
+msgstr ""
+"Яагаан гэрэл дээр очно уу!\n"
+"Та гарагуудыг мөргөвөл таны амь чинь багасах болно."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "Маш сайн, %s!"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+#: src/Games/Tutorial.cpp:183
+msgid "Good Work!"
+msgstr "Сайн байна!"
+
+#: src/Games/Tutorial.cpp:184
+msgid ""
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
+msgstr ""
+"Дараагийн даалгаварлуугаа оръё.\n"
+"Энэхүү даалгавар нь таныг хөлөг өө сайн жолоодож сурахад туслах болно."
+
+#: src/Games/Tutorial.cpp:192
+msgid "Something More Difficult..."
+msgstr "Даалгаварыг гүйцэтгэх заавар:"
+
+#: src/Games/Tutorial.cpp:193
+msgid ""
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
+msgstr ""
+"Яагаан өнгөтэй гэрлийг дагаж явна.\n"
+"Мөн заавал дарааллаар нь авах ёстой.\n"
+"Таньд амжилт хүсье!"
+
+#: src/Games/Tutorial.cpp:215
+msgid "Awesome!"
+msgstr "Баяр хүргье!"
+
+#: src/Games/Tutorial.cpp:216
+msgid ""
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
+msgstr ""
+"Та хамгийн сайн сансарын нисгэгч боллоо.\n"
+"Одоо таныг дайсантайгаа өрсөлдөхөд бэлэн болсон гэж бодож байна."
+
+#: src/Games/Tutorial.cpp:224
+msgid "Shooting..."
+msgstr "Устга..."
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
+msgstr ""
+"Та дайсны эсрэг тулалдах гэж байна, хамгийн гол нь өөрөө үхэхгүй өрсөлдөгчөө ялах юм.\n"
+"Та буудахдаа %s товчийг дарна. Мөн та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "Сайн байна, %s!"
+
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
+msgstr "За сансарын нисгэгч минь амжилт!"
+
+#: src/Games/Tutorial.cpp:253
+msgid "The Weapons..."
+msgstr "Таны буунууд..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
+msgid ""
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
+msgstr ""
+"Та %s дараад %s эсвэл %s товчийг дарж буугаа сольж болно. Таньд Shotgun, Rofle, AFK-47 гэсэн 3 буу байгаа дуртайгаа сонго.\n"
+"Тэгээд бэлэн болсон бол урагшаа дарна уу. Тэргүүлэгч - LeaDe[R]!!! миний бие таныг ялна гэдэгт итгэлтэй байна."
+
+#: src/Games/Tutorial.cpp:276
+msgid "Fight!"
+msgstr "Амжилт!"
+
+#: src/Games/Tutorial.cpp:277
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
+msgstr ""
+"Энэхүү даалгавар нь эсрэг талийн нисгэгчийг устгах юм.\n"
+"Бэлэн болсон бол Enter товчийг дарна уу."
+
+#: src/Games/Tutorial.cpp:302
+msgid "Impressive!"
+msgstr "Та амжилттай устгаж чадлаа!"
+
+#: src/Games/Tutorial.cpp:303
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
+msgstr ""
+"Та сайн сансарын дайчин болж.\n"
+"Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+#: src/Games/Tutorial.cpp:316
+msgid "Special Abilities..."
+msgstr "Онцгой чадвар хэрэглэх..."
+
+#: src/Games/Tutorial.cpp:317
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
+msgstr ""
+"Онцгой чадварууд нь ойр байгаа дайсны талын хүмүүсээ бүгдийг нь хөлдөөх (FREEZER), цацардаг сум (BLAST), амиа нөхөх (HEAL) гэсэн 3 чадвар бий.\n"
+"Мөн дайсантайгаа ойртож байгаад хэрэглэвэл амийг нь их гүйлгэх болно."
+
+#: src/Games/Tutorial.cpp:328
+msgid "Selection..."
+msgstr "FREEZER-ийг сонго..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
+msgid ""
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
+msgstr ""
+"Та %s товчийг дараад %s эсвэл %s дарж онцгой чадвараа солиж болно!\n"
+"Харин одоо таны биелүүлэх даалгавар бол \"FREEZER\"-ийг сонгох юм."
+
+#: src/Games/Tutorial.cpp:351
+msgid "The Freezer..."
+msgstr "Яагаад заавал FREEZER..."
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
+msgid ""
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
+msgstr ""
+"FREEZER бусад чадваруудаа бодвол маш хүчтэй юм.\n"
+"Та дайсны хажууд очиж байгаад %s товчоо дарах юм бол дайсан чинь шууд хөлдөөд амь нь бага багаар явсаар байгаад үхэх болно."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"Та заавал \"FREEZER\"-ийг сонго! Сонгож байж л даалгавараа гүйцэтгэнэ.\n"
+"Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+#: src/Games/Tutorial.cpp:385
+msgid "Practice!"
+msgstr "Хөлдөөж устга!"
+
+#: src/Games/Tutorial.cpp:386
+msgid ""
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
+msgstr ""
+"Дайсныгаа хөлдөөж усгах хэрэгтэй!\n"
+"Ойртож байгаад хэрэглэнэ шүү!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "Та онсонгүй, %s!"
+
+#: src/Games/Tutorial.cpp:411
+msgid "Try again. we will refill your FragStars."
+msgstr "Дахин оролдоно уу."
+
+#: src/Games/Tutorial.cpp:428
+msgid "You Did It!"
+msgstr "Зөв гүйцэтгэлээ!"
+
+#: src/Games/Tutorial.cpp:429
+msgid "Now head back to your planet to select another special ability!"
+msgstr "Та одоо Өөрийнхөө гараг дээр очиж зогсоод дайсны гарагруу харж зогсон түр хүлээнэ үү."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:443
+msgid ""
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
+msgstr ""
+"Одоо та 2 эсрэг 2 тулалдах гэж байна.\n"
+"Дайсан чинь 2уулаа, танайх мөн 2уулаа тийм учраас сайн тулалдаарай."
+
+#: src/Games/Tutorial.cpp:457
+msgid "Beat Them!"
+msgstr "Устга!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
+msgstr ""
+"Та ур чадваруудаа хэрэглэн дайснуудаа устга.\n"
+"Тэд маш хүчтэй болохоор басах хэрггүй, %s!"
+
+#: src/Games/Tutorial.cpp:484
+msgid "Unbelievable!"
+msgstr "Тохиргоо хийх!"
+
+#: src/Games/Tutorial.cpp:485
+msgid ""
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
+msgstr ""
+"Та тохиргооруугаа орж тохиргоо хиймээр байна уу?\n"
+"Нэр эсвэл онгоцны загвараа солимоор байна уу?\n"
+"мөн өөрийн нэрээ ч сольж болно."
+
+#: src/Games/Tutorial.cpp:500
+msgid "Who's Best?"
+msgstr "Тоглолтын статус-ыг яаж харах вэ?"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, fuzzy, c-format
+msgid ""
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
+msgstr "Та %s товчийг дарж бүгдийг харах болно."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "Баяр хүргэе, %s!"
+
+#: src/Games/Tutorial.cpp:517
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
+msgstr ""
+"Ингээд заавараа өндөрлийдөө. Та одоо Сансарын дайнд бэлэн болсон. Мөн хүссэнээрээ тоглохыг хүсвэл <Esc> товчийг дарж дайнаас гараад өөр дайн эхлүүлж тоглож болно.\n"
+"\n"
+"Сайхан наадаарай таныг хүндэтгэсэн Тэргүүлэгч - LeaDe[R]!!!"
+
+#: src/Games/Tutorial.cpp:529
+msgid "You Failed!"
+msgstr "Та устгагдлаа!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
+msgstr "%s та дайсанд буудуулж үхлээ. Хэсэг хугацааны дараа та төрөх учир түр хүлээнэ үү."
+
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
+msgid "Did You Notice?"
+msgstr "Анхааруулга?"
+
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "Таны амь чинь багасаж байна! Амь чинь багасаад дуусвал та үхэх болно."
+
+#: src/Games/Tutorial.cpp:551
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
+msgstr "Таны тийрэлтэд хөдөлгүүрийн цэнэг дуусч байна! Тийрэлтэд хөдөлгүүрийн цэнэг чинь дуусвал та явж чадахгүй болно. (Байрандаа юу ч дарахгүй зогсовол бага багаар тийрэлтэд хөдөлгүүрээ цэнэглэх болно)"
+
+#: src/Games/Tutorial.cpp:559
+msgid "You Nearly Got Him!"
+msgstr "Дайсны амь!"
+
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "Дайсныхаа амь ямар байгааг яаж харах вэ гэж үү? Маш амархан түүний нэр ямар өнгөтэй байна тэрүүгээр нь харж болно Ногооноос улаан руу гэсэн өнгө байх ёстой. Ногоон бол амь дүүрэн, шар бол дундуур, улаан бол үхэх гэж байгаа гэсэн үг."
+
+#: src/Hud/TabStats.cpp:178
+msgid "Statistics"
+msgstr "Дүн"
+
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "Онооны лимит"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
+msgid "Planet Life Points"
+msgstr "Гаригийн"
+
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "Оноо"
+
+#: src/Hud/TabStats.cpp:228
+msgid "CannonShots"
+msgstr "Ихбуун буудалт"
+
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr ""
+
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "Туг"
+
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "Баг/аллага"
+
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "Амиа Хоролсон"
+
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "Үхсэн"
+
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "Нийт:"
+
+#: src/Hud/musicNotify.cpp:193
+msgid "Artist:"
+msgstr "Уран бүтээлч:"
+
+#: src/Hud/musicNotify.cpp:194
+msgid "Album:"
+msgstr "Цомог:"
+
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "Дараачийн дуу!"
+
+#: src/Media/music.cpp:153
+msgid "Previous music track!"
+msgstr "Өмнөх дуу!"
+
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "Хаах"
+
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
+msgid "About"
+msgstr "Тухай..."
+
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "Лиценс"
+
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "Бүтээсэн"
+
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"Энэ тоглоом нь анхны дэмжлэг болох OpenGL болон SFML дээр суурилсан. 2 тоглогчоос бүрдэх бөгөөд, сансар дээр явах хөлөгийг тухай ба, дэлхийн таталцлын хуулиас санаачласан болно.\n"
+"\n"
+"Вебсайт:\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr "Энэ програм бол үнэгүй ба; та энэ тоглоомыг хөгжүүлэх, өөрчлөхийг хүсвэл тоглоом зохиосон баг болон GaVaL багаас зөвшөөрөлтэй байх хэрэгтэй."
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "Талархаж буй:"
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"Хөрвүүлсэн:\n"
+"Монгол: GaVaL TeaM\n"
+"Араб: Majid\n"
+"Хужаа: Wecing\n"
+"Чех: Mates\n"
+"Финланди: Paavo\n"
+"Францу: Astohan\n"
+"Герман: Sandra\n"
+"Хинди: Antriksh & Aakanksh\n"
+"Венгер: Papp Bence\n"
+"Италь: Proch\n"
+"Польш: command_dos\n"
+"Португаль: Vitor\n"
+"Орос: Drakmail\n"
+"Испан: Gastón\n"
+"Швед: Henrik\n"
+"\n"
+"Програмчлалд туслалцаа үзүүлсэн:\n"
+"Werner and Deubeuliou\n"
+"\n"
+"Тестэлсэн болон зураглал:\n"
+"Heinrich, Martin, Bastian, Sandra, Diana."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "Болих"
+
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "Хэл"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
+msgid "Start Network Game"
+msgstr "Сүлжээгээр тоглох"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"M.A.R.S. тоглоом нь онлайн болон LAN сүлжээ дээр танигдсан.\n"
+"\n"
+"Stay tuned!"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "Шинээр эхлэх"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "Тохиргоо"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "Цэсийг нуух"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "Үндсэн цэсрүү буцах"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "Мэдээлэл"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "Доорх хүснэгтэнд өөрийн нэрээ бичнэ үү! Би таны хөтөч байна би танд бүхнийг зааж өгөх болно надтай цуг байгаарай."
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "Үнэхээр гарахдаа итгэлтэй байна уу?"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "Удирдлагыг авч аль болох удаан өөртөө байлга!"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"Чи оюун ухаанаа шавхан харийхантай тэмцэх хэрэгтэй.\n"
+"Чамд тэдний өөдөөс ашиглах хүчирхэг зэвсэг байгаа болов ч тэдэнд ч мөн чиний өөдөөс ашиглах аюулт зэвсэг байгаa.\n"
+"Канноныг удирда!"
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "Энэ мэдээлэлийг дахин харуулна уу."
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "Аль болох олон дайсан устга!"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"Дайны уршигаар та бүх зүйлээ алдсан: таны гэр, таны гэр бүл мөн\n"
+"өөрийгөө хүндлэх хүндлэлээ.\n"
+"Одоо таны од болох цаг иржээ гладиаторшиг тулалдан\n"
+"тулааны тавцанг эзэгнэ."
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "Аль болох олон дайсан устга!"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч,\n"
+"оюун ухаанаа шавхан харийхантай тэмцэх хэрэгтэй.\n"
+"Чамд тэдний өөдөөс ашиглах хүчирхэг зэвсэг байгаа болов ч тэдэнд ч мөн чиний өөдөөс ашиглах аюулт зэвсэг байга.\n"
+"\n"
+"Тулааныг ялж өөрийн нэр хүндээ авчир!"
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"Та M.A.R.S тоглоомыг түр зогсоолоо. Та тулаанаа үргэлжлүүлэхгүй юмуу?\n"
+"Хэрвээ та зураг авахыг хүсвэл зураг авах товч даран авна уу. Та авсан зургийг боловсруулан дэлгэцний зураг ч хийх боломжтой.\n"
+"\n"
+"Энгийнээр хийхийн тулд ESC товчыг дарна уу."
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "Бөмбөгийг дайсныхаа гаригруу онилуулан цохь."
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"3547 онд, бүх гариг ертөнцийн оршин суугчид өөрсдийн гаригтаа амар тайван сууршиж байв,\n"
+"Гэвч эдгээр амгалан тайваны гадуур аймшигт дайн оршин байв.\n"
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг хариуцлага тохогдож байна."
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"Эрэлхэг дайчин чамд өөрийнхөө гариг ертөнцийг хамгаалах аугаа үүрэг хариуцлага тохогдож байна. ҮҮний тулд хамаг хүч,\n"
+"оюун ухаанаа шавхан харийхантай тэмцэх хэрэгтэй.\n"
+"Тулааныг ялж өөрийн нэр хүндээ авчир!"
+
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "Шинээр тоглох"
+
+#: src/Menu/MainMenu.cpp:52
+msgid "Start Tutorial"
+msgstr "Сургуулилтанд орох"
+
+#: src/Menu/MainMenu.cpp:54
+msgid "Join Network Game"
+msgstr "Сүлжээрүү нэвтрэх"
+
+#: src/Menu/MainMenu.cpp:57
+msgid "Quit M.A.R.S."
+msgstr "Гарах"
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "Үнэхээр тоглолтыг дуусгах уу?"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "Тоглогчийг идвэхжүүлэх."
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "Тоглогчийг идвэхжүүлэх."
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "Бот"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "БОТ-оруулах тохиргоо. 0 болговол БОТ-гүй тоглоно."
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "Гарагуудыг мөргөхөд хэр их амь явахыг тохируулах."
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "Ботын түвшин"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "БОТ-уудыг хүчтэй болгох."
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "Нэмэлт гарж ирэх хугацаа"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr "Хүчний тохиргоо."
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "Эхлэх"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "Зүүн баг"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "Баруун баг"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "Тоглоомын тохиргоо"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "Зэвсэгийн тохиргоо"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "Тоглогчид"
+
+#: src/Menu/OptionsMenu.cpp:86
+msgid "Interface"
+msgstr "Интерфайс"
+
+#: src/Menu/OptionsMenu.cpp:87
+msgid "Gameplay"
+msgstr "Тоглолт"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "Graphics"
+msgstr "График"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Audio"
+msgstr "Дуу авиа"
+
+#: src/Menu/OptionsMenu.cpp:93
+msgid "General Settings"
+msgstr "Үндсэн тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:94
+msgid "Language"
+msgstr "Хэл"
+
+#: src/Menu/OptionsMenu.cpp:102
+msgid "File Format for Screenshots"
+msgstr "Зурагны формат"
+
+#: src/Menu/OptionsMenu.cpp:103
+msgid "Sets the format being used when screenshots are saved."
+msgstr "Зургийг ямар өргөгдөлтэй (формат) хадгалахыг тохируулах."
+
+#: src/Menu/OptionsMenu.cpp:106
+msgid "Hot Key for Screenshots"
+msgstr "Зураг авах товч"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:109
+#, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "Дүрс авахдаа ямар товч дарж авах вэ? %s гэсэн хавтас дотор таны авсан дүрсүүд байх болно."
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Hot Key for Statistics"
+msgstr "Товчны статс"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "Тоглолтын статус-ыг харах."
+
+#: src/Menu/OptionsMenu.cpp:116
+msgid "Show Game Information"
+msgstr "Танилцуулга"
+
+#: src/Menu/OptionsMenu.cpp:118
+msgid "Frames per Second"
+msgstr "Дүрс/сэкунд"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr "FPS. (Идвэхжүүлэх хэрэггүй)"
+
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
+msgid "Particle Count"
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:124
+msgid "Displays the amount of active particles."
+msgstr "Дэлгэцэнд идвэхтэй байгаа жижигхэн тоосыг гаргах."
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Display Tool Tips"
+msgstr "Тайлбарыг харуулах"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Dismisses tool tips like this one."
+msgstr "Үгэн дээр курсороо авчирхад тайлбарыг гаргах."
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "Full screen"
+msgstr "Дэлгэц дүүрэн"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "Дэлгэц дүүрэн болгох."
+
+#: src/Menu/OptionsMenu.cpp:135
+msgid "Window Settings"
+msgstr "Цонхны тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "V-Sync"
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr "Идвэхжүүлсэн байх ёстой тохиргоо. Өндөр хүчин чадалтай компьютерууд тоглоомыг түрүүлж тооцоолсоны улмаас тоглоом дүрс давахцах, үйлдэлүүд нь аймар хурдан болох гэх мэт асуудлууд..."
+
+#: src/Menu/OptionsMenu.cpp:142
+msgid "Shader Effects"
+msgstr "Сүүдэр эффект"
+
+#: src/Menu/OptionsMenu.cpp:143
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "Сүүдэрийг идвэхжүүлэх."
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Off"
+msgstr "Унтраах"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "Resolution"
+msgstr "Нягтрал"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr "Дүрсний нягтаршилыг харуулах ба хэр нягтаршил сайтай тоглоомоо тоглохыг хүсэнэ тэр хэмжээгээрээ нягтаршилаа сонго. Ихэсгэх тусам нягтаршил сайжирна, багасгах тусам нягтаршил муудна."
+
+#: src/Menu/OptionsMenu.cpp:172
+msgid "Game Settings"
+msgstr "Тоглоомын тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:174
+msgid "High Star Field Resolution"
+msgstr "Ододын өндөр нягтрал"
+
+#: src/Menu/OptionsMenu.cpp:175
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"Тоглоомын гэрэлт однуудыг гаргах тохиргоо.\n"
+"Идвэхжүүлвэл хамаагүй гоё."
+
+#: src/Menu/OptionsMenu.cpp:179
+msgid "Moving Stars"
+msgstr "Хөдлөж буй одод"
+
+#: src/Menu/OptionsMenu.cpp:180
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "Жижигхэн однуудыг хөдөлгөх."
+
+#: src/Menu/OptionsMenu.cpp:184
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Дэлбэрэлтийн эффэктийг тохируулах.\n"
+"Хамгийн бага дээр нь тавибал ямарч дэлбэрэлтийн эффэкт байхгүй тоглоно."
+
+#: src/Menu/OptionsMenu.cpp:187
+msgid "Particle Lifetime"
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"Жижигхэн тоосуудыг тохируулах.\n"
+"Хамгийн бага дээр нь тавибал ямарч жижигхэн тоосгүй тоглоно."
+
+#: src/Menu/OptionsMenu.cpp:191
+msgid "Volume Settings"
+msgstr "Дуу"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Music"
+msgstr "Хөгжим"
+
+#: src/Menu/OptionsMenu.cpp:194
+msgid "Adjusts volume of background music."
+msgstr "Тоглоомны хөгжимийг чангалах, сулруулах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Sound"
+msgstr "Авиа"
+
+#: src/Menu/OptionsMenu.cpp:198
+msgid "Adjusts volume of sound effects."
+msgstr "Тоглоомны дуу авиаг чангалах, сулруулах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Announcer"
+msgstr "уншигч"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Adjusts volume of announcers voice."
+msgstr "Тоглоомны дуу хоолойг чангалах, сулруулах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:204
+msgid "Playback Settings"
+msgstr "Тоглуулагчын тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Play Tracks in Random Order"
+msgstr "Хамаагүй тоглуулах"
+
+#: src/Menu/OptionsMenu.cpp:207
+msgid "Enables music play back in a random sequence."
+msgstr "Автоматаар хөгжимийг тохируулах."
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Play Next Track"
+msgstr "Дараагын ая"
+
+#: src/Menu/OptionsMenu.cpp:211
+msgid "Pressing this key switches to the next music track."
+msgstr "Дараагийн хөгжимийг явуулах."
+
+#: src/Menu/OptionsMenu.cpp:214
+msgid "Play Previous Track"
+msgstr "Өмнөх ая"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Pressing this key switches to the previous music track."
+msgstr "Өмнөх хөгжимийг явуулах."
+
+#: src/Menu/OptionsMenu.cpp:218
+msgid "Special Effects"
+msgstr "Онцгой эффэкт"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Explosions for Slow Motion"
+msgstr "Тэсрэлтийг удаашруулах"
+
+#: src/Menu/OptionsMenu.cpp:221
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "Тэсрэлтийг удаашруулах хөдөлгөөний эффэктийг тохируулах."
+
+#: src/Menu/OptionsMenu.cpp:224
+#, fuzzy
+msgid "Game Speed"
+msgstr "Тоглоомын тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:227
+msgid "Show Debug Information"
+msgstr "Дебуг"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Bots Orientation"
+msgstr "Ботын зүг чиг"
+
+#: src/Menu/OptionsMenu.cpp:230
+msgid "Displays the job of each bot."
+msgstr "БОТ-ыг хашаа явах гэж байгааг гаргах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Zones"
+msgstr "Бүсүүд"
+
+#: src/Menu/OptionsMenu.cpp:234
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "Байлдааны тактикийг гаргах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:237
+msgid "AI-Paths"
+msgstr "AИ-зам"
+
+#: src/Menu/OptionsMenu.cpp:238
+msgid "Displays paths calculated by bots."
+msgstr "БОТ-ын тоцооллыг гаргах тохиргоо."
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Name"
+msgstr "Нэр"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Accelerate"
+msgstr "Удирдлага"
+
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
+msgid "Turn Left"
+msgstr "Зүүн тийш"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Turn Right"
+msgstr "Баруун тийш"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Weapon"
+msgstr "Зэвсэг"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Special Ability"
+msgstr "Онцгой чадвар"
+
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
+msgid "Ship Settings"
+msgstr "Хөлөгийн тохиргоо"
+
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
+msgid "Ship"
+msgstr "Хөлөг"
+
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
+msgid "Player Color"
+msgstr "Тоглогчын өнгө"
+
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
+msgid "Team Color"
+msgstr "Багын өнгө"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "Үргэлжлүүлэх"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "Муу л байна, сүүдэр танигдаагүй байна!"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "Дараачынх"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "Зэвсэгүүд"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "Онцгой чадварууд"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "Нэмэх"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "Таслал"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "Зураас"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "Арилгах"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "Хуваах"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "Доош"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "Тэнцүү"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "Зүүн Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "Зүүн хаалт"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "Зүүн Control"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "Зүүн"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "Зүүн Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "Зүүн Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "Цэс"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "Хуудас доош"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "Хуудас дээш"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "Түр зогсоох"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "Ээлж"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "Ишлэл"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "Баруун Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr "Баруун хаалт"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "Баруун Control"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "Буцах"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "Баруун"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "Баруун Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "Баруун Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+#, fuzzy
+msgid "Semi Colon"
+msgstr "Багын өнгө"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "Зай"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr ""
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "Тab"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "Дээш"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr ""
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "A товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "B товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "X товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "Y товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "Зүүн Bumper"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "Баруун Bumper"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "Эхлэх товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "Буцах товч"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "Товч"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "Зүүн Trigger"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "Баруун Trigger"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "Stick2 Дээш"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "Stick2 Доош"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "Stick2 Зүүн"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "Stick2 Баруун"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "Stick1 Дээш"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "Stick1 Доош"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "Stick1 Зүүн"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "Stick1 Баруун"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "Чиглэл Дээш"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "Чиглэл Дүүш"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "Чиглэл Зүүн"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "Чиглэл Баруун"
+
+#: src/System/window.cpp:377
+msgid "Screenshot saved!"
+msgstr "Дэлгэцний зураг сануулагдлаа!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "Хэл"

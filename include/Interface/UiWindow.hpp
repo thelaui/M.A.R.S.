@@ -33,6 +33,8 @@ class UiWindow: public UiElement {
         void keyEvent(bool down, Key const& key);
         void textEntered(sf::Uint32 keyCode);
 
+		  void clear();
+
         bool tabNext();
         bool tabPrevious();
 

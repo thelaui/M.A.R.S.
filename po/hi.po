@@ -1,0 +1,1449 @@
+# M.A.R.S. hi.po
+# Antriksh & Aakanksh, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
+"PO-Revision-Date: 2015-11-14 20:03+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+#: src/Games/Tutorial.cpp:111
+msgid "Welcome, Space Rookie!"
+msgstr "स्वागतम! प्रारंभ करनेवाले!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, fuzzy, c-format
+msgid ""
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
+msgstr ""
+"हम खुश हैं ही आप जैसे उभरते हीरो को हम महयुध में शामिल कर रहे हैं!\n"
+"हमने सोचा की आपको अपने शिप के साथ अभ्यास करने की आवश्यकता होगी.\n"
+"चलो प्रशिक्षण आरंभ करें..."
+
+#: src/Games/Tutorial.cpp:125
+msgid "Basic Movement..."
+msgstr "बुनियादी नियंत्रण..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
+msgid ""
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
+msgstr ""
+"शिप का नियंत्रण करना सबसे महत्वपूर्ण कला है.\n"
+"सब कुछ गुरुत्वाकर्षण के मुताबिक चलता है. शिप की गति को धीमा करने के लिए दूसरी तरफ मुड़ कर चलना है. शिप को चलाइए %s, %s और %s के मदद से!"
+
+#: src/Games/Tutorial.cpp:142
+msgid "Warming Up!"
+msgstr "वॉर्म उप!"
+
+#: src/Games/Tutorial.cpp:143
+msgid ""
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
+msgstr ""
+"गुलाबी क्षेत्र तक जाइए!\n"
+"अपने नये शिप के साथ दुर्घटना ना कर देना."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "बहुत अच्छे, %s!"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "अब फिर से अपने ग्रह तक जाओ और धीरे से अपने शिप को पीछे की ओर घुमा कर उतार दो."
+
+#: src/Games/Tutorial.cpp:183
+msgid "Good Work!"
+msgstr "बहुत अच्छे!"
+
+#: src/Games/Tutorial.cpp:184
+msgid ""
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
+msgstr ""
+"शिप उतारना उतना भी आसान नही है, क्यूँ?\n"
+"आपको यह बहुत अच्छे से सीखना होगा."
+
+#: src/Games/Tutorial.cpp:192
+msgid "Something More Difficult..."
+msgstr "अब कुछ ज़्यादा मुश्किल..."
+
+#: src/Games/Tutorial.cpp:193
+msgid ""
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
+msgstr ""
+"गुलाबी क्षेत्रों से चिह्नित किए रास्ते पर जाओ!\n"
+"\n"
+"हम आपसे बाद में संपर्क करेंगे, जब आपने यह अच्छे से कर लिया होगा. अब जाओ!"
+
+#: src/Games/Tutorial.cpp:215
+msgid "Awesome!"
+msgstr "वाह!"
+
+#: src/Games/Tutorial.cpp:216
+msgid ""
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
+msgstr ""
+"आप अब तक के सबसे अच्छे छात्र हो.\n"
+"अब अपने आप को कुछ विस्फोटों के लिए तय्यार कर लो."
+
+#: src/Games/Tutorial.cpp:224
+msgid "Shooting..."
+msgstr "शूटिंग..."
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
+msgstr ""
+"दुश्मनों को हराने के लिए, आपको उन्हें शूट करना समझना होगा!\n"
+"उसके लिए दबाइए %s.\n"
+"गोली मारने का मज़ा लो और फिर प्रशिक्षण ख़त्म करने के लिए शिप को उतार दो."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "अच्छी तरह उतारा है, %s!"
+
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
+msgstr ""
+"आप तो कितने अच्छे हवाबाज़ हैं.\n"
+"अब कुछ और हथियारों के बारे में क्या ख़याल है?"
+
+#: src/Games/Tutorial.cpp:253
+msgid "The Weapons..."
+msgstr "हथियार..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
+msgid ""
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
+msgstr ""
+"मुझे मालूम है आप इसी का इंतेज़ार कर रहे थे. जब शिप उतरा हुआ है आप कुछ बहुत ही ख़तरनाक हथियारों में बदल सकते हैं. हथियार देखने के लिए %s दबाइए.\n"
+"फिर %s और %s से हथियार चुनें!\n"
+"जब तय्यार हों तब उड़ें!"
+
+#: src/Games/Tutorial.cpp:276
+msgid "Fight!"
+msgstr "लड़ाई करो!"
+
+#: src/Games/Tutorial.cpp:277
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
+msgstr ""
+"अब चलो देखें कि तुम दूसरे ग्रह से आए नौसीखिए के सामने टिक पाते हो या नहीं.\n"
+"शायद वह उड़ना सीख रहा है.\n"
+"हरा दो उसे!"
+
+#: src/Games/Tutorial.cpp:302
+msgid "Impressive!"
+msgstr "विस्मयकारी!"
+
+#: src/Games/Tutorial.cpp:303
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
+msgstr ""
+"आपने कर दिखाया! जैसा की आपने ध्यान दिया होगा, आपको हर मारे दुश्मन के लिए प्रतिष्ठा के अंक मिलते हैं.\n"
+"शिप के ऊपर वह चीज़ यही दिखता है. यदि आप ज़्यादा दुश्मनों को मरते हैं, यह बढ़ेगा."
+
+#: src/Games/Tutorial.cpp:316
+msgid "Special Abilities..."
+msgstr "विशेष योग्यता..."
+
+#: src/Games/Tutorial.cpp:317
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
+msgstr ""
+"जैसा वादा किया था, मैं आपको उन तारों का मतलब बताऊँगा. वे आपके शिप के ताकतवर विशेष योग्यताओं का उपयोग करने में आपकी मदद करते हैं. जैसे की, आप अपने आप को और अपने आस पास के दोस्तों का हेल्थ भर सकते हैं, आस पास के शिप धक्का मार कर हटा सकते हैं और लोगों को जमा सकते हैं!\n"
+"जीतने ज़्यादा तारे आपके शिप के ऊपर हैं, उतनी ज़्यादा ताक़त के साथ आप अपनी विशेष योग्यताओं आ उपयोग कर सकते हैं."
+
+#: src/Games/Tutorial.cpp:328
+msgid "Selection..."
+msgstr "चुनाव..."
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
+msgid ""
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
+msgstr ""
+"उन योग्यताओं  को बदलने के लिए, आपको केवल %s दबाना है. फिर %s और %s से आप उन्हें बदल सकते हैं!\n"
+"इस पाठ के लिए, \"फ्रीज़र\" चुनो! जब आपको मिल गया है, उड़ जाओ!"
+
+#: src/Games/Tutorial.cpp:351
+msgid "The Freezer..."
+msgstr "फ्रीज़र..."
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
+msgid ""
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
+msgstr ""
+"यह एक ताकतवर विशेष योग्यता है जो आस पास के शिप को जमा देता है.\n"
+"आप दुश्मन के पास जा कर %s दबाने पर वह जाम जाएगा. उसे धीरे धीरे कमज़ोर हो कर मरते हुए देखो!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"हमने आपको फ्रीज़र चुनने को कहा था, परंतु आपने दूसरी योग्यता चुन ली!\n"
+"कृपया अपने ग्रह पर उतार के फ्रीज़र चुनिए!"
+
+#: src/Games/Tutorial.cpp:385
+msgid "Practice!"
+msgstr "अभ्यास!"
+
+#: src/Games/Tutorial.cpp:386
+msgid ""
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
+msgstr ""
+"अब अपने दुश्मन को जमा दो!\n"
+"इस पाठ के लिए हम आपको कुछ फ्रॅग-स्टार्स देते हैं. पर याद रखिए: असली खेल में आपको दुश्मन के शिप उड़ाने हैं, उन्हेइन कमाने के लिए!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "आप चूक गये, %s!"
+
+#: src/Games/Tutorial.cpp:411
+msgid "Try again. we will refill your FragStars."
+msgstr "फिर से कोशिश करिए. हम आपको और फ्रॅग-स्टार्स देते हैं."
+
+#: src/Games/Tutorial.cpp:428
+msgid "You Did It!"
+msgstr "आपने कर दिखाया!"
+
+#: src/Games/Tutorial.cpp:429
+msgid "Now head back to your planet to select another special ability!"
+msgstr "अब अपने ग्रह जाकर दूसरी विशेष योग्यता चुनिए!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:443
+msgid ""
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
+msgstr ""
+"और परीक्षण का समय नहीं है!\n"
+"हमारे दुश्मनों ने बदला के लिए असली योद्धाओं को भेजा है!"
+
+#: src/Games/Tutorial.cpp:457
+msgid "Beat Them!"
+msgstr "हरा दो उन्हें!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
+msgstr ""
+"अपनी कौशलता साबित करो! उन्हे मार कर कम से कम पाँच अंक जमा करिए! आपका स्कोर आपके नाम के पास दिखाई देगा!\n"
+"हम आपको सहयता देने के लिए एक तजुर्बेकार योद्धा को भेज रहे हैं, %s!"
+
+#: src/Games/Tutorial.cpp:484
+msgid "Unbelievable!"
+msgstr "अविश्वसनीय!"
+
+#: src/Games/Tutorial.cpp:485
+msgid ""
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
+msgstr ""
+"आपने मेरे सारे कार्य कर दिए. अब क्या करें?\n"
+"चलिए विकल्प मेनू देखें. वहाँ पर आप... विकल्प बदल सकते हैं.\n"
+"जैसे की आप अपना नाम या शिप आ रंग बदल सकते हैं..."
+
+#: src/Games/Tutorial.cpp:500
+msgid "Who's Best?"
+msgstr "कौन सबसे अच्छा है?"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, c-format
+msgid ""
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
+msgstr ""
+"आप फ्रॅग्स, अंक और दूसरे चीज़ों की सूची देखने के लिए  %s दबा सकते हैं.\n"
+"साथ साथ आपके नाम के बाजू जो अंक हैं उससे आपके फ्रॅग दिखाई देते हैं, और वे यह भी बताते हैं की आप सबसे अच्छे वाले से कितने दूर हैं."
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "बधाई हो, %s!"
+
+#: src/Games/Tutorial.cpp:517
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
+msgstr ""
+"आपने टुटोरियल खत्म कर दिया. अब आप महयुध लड़ने के लियर तय्यार हैं. यदि आपको और अभ्यास करना हो तो थोड़ी देर रुकिये और दुश्मन फिर से आ जायगा. <एस्केप> बटन दबा कर आप अपना अभ्यास का कभी भी अंत कर सकते हैं.\n"
+"\n"
+"मार्स के साथ मज़ा करिएगा!"
+
+#: src/Games/Tutorial.cpp:529
+msgid "You Failed!"
+msgstr "आप असफल रहे!"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
+msgstr "बहुत अच्छे %s! आपने अपना बिल्कुल नया शिप नष्ट कर दिया. ठीक है, हम आपको एक नया वाला दे देंगे. कुछ पल रुकिये..."
+
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
+msgid "Did You Notice?"
+msgstr "क्या आपने ध्यान दिया?"
+
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "आपका हेल्थ ख़त्म हो रहा है! उस हारे रंग के बार पर ध्यान रखिएगा. अगर वह खाली हो रहा है तो आपको अपने ग्रह पर उतरना चाहिए."
+
+#: src/Games/Tutorial.cpp:551
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
+msgstr "आपका फ्युयेल ख़त्म हो रहा है! उस पीले रंग के बार पर ध्यान रखना. अगर वह खाली हो रहा है, तो आपको अपने ग्रह पर उतरना चाहिए."
+
+#: src/Games/Tutorial.cpp:559
+msgid "You Nearly Got Him!"
+msgstr "आपने उसे लगभग ख़त्म कर दिया!"
+
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "अपने दुश्मन के नाम पर ध्यान रखना. उसका रंग बताता है की वह कितना कमज़ोर है. जितना ज़्यादा लाल होता है, वह उतना कमज़ोर है."
+
+#: src/Hud/TabStats.cpp:178
+msgid "Statistics"
+msgstr "सांख्यिकी"
+
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "फ्रॅग की सीमा"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
+msgid "Planet Life Points"
+msgstr "पॉइंट की सीमा"
+
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "पायंट्स"
+
+#: src/Hud/TabStats.cpp:228
+msgid "CannonShots"
+msgstr "तोप के शॉट"
+
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr "गोल्स"
+
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "फ्रॅग"
+
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "खुदके टीम को मारा"
+
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "आत्महत्या"
+
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "मौतें"
+
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "कुल:"
+
+#: src/Hud/musicNotify.cpp:193
+msgid "Artist:"
+msgstr "गायक:"
+
+#: src/Hud/musicNotify.cpp:194
+msgid "Album:"
+msgstr "एल्बम:"
+
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "अगला गाना!"
+
+#: src/Media/music.cpp:153
+msgid "Previous music track!"
+msgstr "पिछला गाना!"
+
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "बंद"
+
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
+msgid "About"
+msgstr "मार्स के बारे में"
+
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "लाइसेंस"
+
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "क्रेडिट"
+
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"यह एस.एफ.एम.एल से ओपन-जीएल में बनाए खेल का पहला प्रयास है. यह दो लोगों के दिए खेल है जिसमे वे दो आयामों में शिप उड़ते हैं, जिसमे गुरुत्वाकर्षण काम करता है.\n"
+"\n"
+"वेबसाइट:\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr ""
+"यह प्रोग्राम मुफ़्त है; आप इसे फिर से विभाजित कर सकते हैं या संशोधित कर सकते हैं जब तक की आप जी.एन.यू जेनेरल पब्लिक लिसेंसेके शर्तों के तहत चलें जैसा फ्री सॉफ्टवेर फाउंडेशन ने प्रकाशित किया है; या लाइसेन्स का संस्करण ३ या आपके मुताबिक कोई भी नया संस्करण.\n"
+"\n"
+"इस प्रोग्राम को वितरित इस उमीद के साथ किया गया है की यह आपके लिए काम करेगा, पर बिना किसी वारंटी के; बिना किसी व्यापारिकता या किसी विशेष काम के लिए बनाए जाने के लिए वारंटी के. और जानने के लिए जि.एन.यु जेनेरल पब्लिक लाइसेन्स देखिए.\n"
+"\n"
+"इंटरनेट पर यहाँ मिलेगा:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "विशेष धन्यवाद:"
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"अनुवाद:\n"
+"उर्दू: माजिद\n"
+"चीनी: वेसिंग\n"
+"चेक: मेट्स\n"
+"फिनिश: पावो\n"
+"फ्रांसीसी: अस्तोहन\n"
+"जर्मन: सैंड्रा\n"
+"हिन्दी: अंतरिक्ष और आकांक्ष\n"
+"हंगेरी: पाप बेन्स\n"
+"इतालवी: प्रॉक\n"
+"पोलिश: कमॅंड_डोस\n"
+"पुर्तगाली: विटोर\n"
+"रूसी: ड्रेकमैल\n"
+"स्पेनिश: गॅसटन\n"
+"स्वीडिश: हेनरिक\n"
+"\n"
+"कोडिंग में समर्थन:\n"
+"वर्नर और डूबूलिओ\n"
+"\n"
+"परीक्षण और रचनात्मक समर्थन:\n"
+" हेनरिक, मार्टिन, बास्टीअन, सैंड्रा, डाइना."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "रद्द"
+
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "भाषा"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
+msgid "Start Network Game"
+msgstr "नेटवर्क पर खेल शुरू करें"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"इंटरनेट या लोकल एरिया नेटवर्क पर खेलना की योजना बनाई गयी है, पर अब तक वह बना नहीं है.\n"
+"\n"
+"जमे रहो!"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "खेल शुरू से खेलें"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "विकल्प"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "मेनू छिपा दें"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "मुख्य मेनू में लौटें"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "जानकारी"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "यह नाम खराब है... आप ज़्यादा वाला डाल सकते हैं"
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "आपको सच में बंद करना है?"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "रिमोट को ज़्यादा से ज़्यादा देर तक अपने पास रखो!"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"जैसे कि महयुध काफ़ी नहीं था, आपके ग्रह के आस पास एक बड़ा सा शिप आ रहा है. उसके पास एक ऐसा हथियार है जो पहले कभी ना देखा गया है.\n"
+"सनक दिखाने के लिए हमलावरों ने एक रिमोट आपके सामने गिरा दिया है.\n"
+"उसे पहले लो ताकि आप अपने दुश्मनों के ग्रह को तनहाई की जगह बना दो !\n"
+"कॅननकीपर बन जाओ."
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "यह जानकारी वापिस दिखना"
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "जितने दुश्मन हो सकते हैं उतने मारो!"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"महयुध के कारण आपने अपना सभ कुछ खो दिया है: अपना परिवार, अपना घर और\n"
+"अपना आत्मसम्मान.\n"
+"अपनी दुखी जिंदगी से निकालने के लिए जो आपका आखरी मौका है वह है एक योद्धा बनकर महान\n"
+"डेतमॅच-रणभूमि में लड़ें.\n"
+"दूसरे योद्धाओं से बचो और उनके तुच्छ जहाज़ों को उड़ा डालो.\n"
+"तय्यार हो जाओ!\n"
+"मौत और महिमा दोनो आपका इंतेज़ार कर रहे हैं."
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "जीतने दुश्मन हो सकें उतने खत्म करो!"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"महयुध के कारण क्यूँ की आपके संसाधन कम होते जा रहे है वैज्ञानिक कम से कम संसाधन आ उपयोग कर दुश्मनों को हराने का तरीका ढूँढ रहे थे. बहुत अनुसाधन के बाद उन्हों ने एक ऐसा हथियार तय्यार कर दिया जो सबसे अलग था. वह झट से दुश्मन को खत्म कर देता. परंतु, उसके गोली गुरुत्वाकर्षण के चपेट में जल्दी आ जाते थे और उनका उपयोग करना बड़ा मुश्किल था. इसलिए वे उसे इन्स्टा-ग्रेव बुलाते थे!\n"
+"\n"
+"दुर्भाग्या से किसी ने उसे चोरी कर लिया और आपके दुश्मनों के पास भी यह हथियार है. अब आपकी बारी है: उन चोरों को हरा दो ग्रेव-इटेशन-पिट में ताकि आप उनसे ज़्यादा ताकतवर हो जाएँ.\n"
+"\n"
+"इस जुंग को जीत लो और हो सकता है महयुध में आप ही विजय पाओगे."
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"आपने खेल को जंग के बीचो बीच रोक दिया?\n"
+"अगर आपको स्क्रीन की तस्वीर लेनी है, यह बटन आपको वॉलपेपर के लिए या अन्या कामों के लिए स्क्रीन सॉफ कर देगा.\n"
+"\n"
+"आप एस्केप दबा कर इसे वापस ले आ सकते हो."
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "बॉल को दुश्मनों के ग्रह पर धक्का मरो या गोली से उड़ा दो!"
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"बरस ३४५७ में विभिन्न सभ्यता अलग अलग ग्रहों पर बस गये हैं. सभी शांति और सद्भाव के साथ रह रहे हैं.\n"
+"परंतु मननशील निवसों के बाहर महयुध उबाल रहा है.\n"
+"एक महान और प्रषिध सैनिक के रूप में, सम्मान और समृद्धि पाने के लिए आपको आते कयामत से अपने ग्रह की रक्षा करनी है\n"
+"लढ़ाई लाडो. वह करो जिसके लिए तुमने जन्म लिया है: स्पेसबॉल!\n"
+"अपने ग्रह की रक्षा करो और अपने दुश्मनों के ग्रह पर उसे धक्का मार कर उन्हे हराओ"
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"वार्ता असफल रहे!\n"
+"महयुध समाप्त होने के बाद आप और आपके दुश्मनों को बहुत हानि पहुँची है.\n"
+"जीतने की एक आखरी कोशिश के लिए आपको भेजा जा रहा है. आपको अपने अपने संसाधन बचाते हुए अपने दुश्मनों के संसाधन ख़त्म करने हैं. यह करने का सिर्फ़ एक ही तरीका है: एक महान टीम-डेतमॅच.\n"
+"अपने साथियों को बचाओ और दुश्मनों को नष्ट कर दो!\n"
+"उन्हे ऐसा सबक सिख़ाओ जो वे कभी ना भूल सकें."
+
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "लोकल खेल खेलें"
+
+#: src/Menu/MainMenu.cpp:52
+msgid "Start Tutorial"
+msgstr "प्रशिक्षण करें"
+
+#: src/Menu/MainMenu.cpp:54
+msgid "Join Network Game"
+msgstr "नेटवर्क पर खेल में शामिल हों"
+
+#: src/Menu/MainMenu.cpp:57
+msgid "Quit M.A.R.S."
+msgstr "मार्स बंद करें"
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "आपको सच में खेल अंत करना है?"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "लोकल खिलाड़ियों के टीम को सेट करता है."
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "लोकल खिलाड़ियों को लाता है."
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "बॉट"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "कृत्रिम बुद्धि के नियंत्रण में शिप की गिनती बदलता है."
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "किसी टीम को जीतने के लिए आवश्यक पायंट्स की गिनती बदलता है."
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "बॉट की कठिनाई"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "बोट लोगों की मजबूती बदलता है."
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "पावर अप आने का रेट"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr ""
+"यह खेल के बीच आने वाले पावर-अप की गिनती बदलता है.\n"
+"शून्य करने से पावर-अप बँध हो जाते हैं."
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "शुरू"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "बाएँ टीम"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "दाएँ टीम"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "प्रतिष्ठा"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "हथियार के विकल्प"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "खिलाड़ी"
+
+#: src/Menu/OptionsMenu.cpp:86
+msgid "Interface"
+msgstr "इंटरफ़ेस"
+
+#: src/Menu/OptionsMenu.cpp:87
+msgid "Gameplay"
+msgstr "ग़मेप्ले"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "Graphics"
+msgstr "ग्राफिक्स"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Audio"
+msgstr "आवाज़"
+
+#: src/Menu/OptionsMenu.cpp:93
+msgid "General Settings"
+msgstr "सामान्य सेटिंग्स"
+
+#: src/Menu/OptionsMenu.cpp:94
+msgid "Language"
+msgstr "भाषा"
+
+#: src/Menu/OptionsMenu.cpp:102
+msgid "File Format for Screenshots"
+msgstr "स्क्रीन शॉट के लिइए फाइल फॉर्मॅट"
+
+#: src/Menu/OptionsMenu.cpp:103
+msgid "Sets the format being used when screenshots are saved."
+msgstr "स्क्रीनशॉट का फॉर्मॅट बदलता है."
+
+#: src/Menu/OptionsMenu.cpp:106
+msgid "Hot Key for Screenshots"
+msgstr "स्क्रीनशॉट के लिए बटन"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:109
+#, fuzzy, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "जब यह बटन दबाया जाएगा, स्क्रीनशॉट {CONFIG_PATH} में सेव हो जाएगा/"
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Hot Key for Statistics"
+msgstr "आँकड़ों के लिए बटन"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "जब यह बटन दबाया जाएगा, खेल के आंकड़े दिखाए जाएँगे."
+
+#: src/Menu/OptionsMenu.cpp:116
+msgid "Show Game Information"
+msgstr "खेल की जानकारी बताओ"
+
+#: src/Menu/OptionsMenu.cpp:118
+msgid "Frames per Second"
+msgstr "फ्रेम प्रति सेकंड"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"इससे फ्रेम्स प्रति सेकेंड दिखाई देते हैं.\n"
+"यदि यह बहुत ही कम है (<२०), आपको ग्रॅफिक्स के विकल्प बदलने चाहिए!"
+
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
+msgid "Particle Count"
+msgstr "कण की गिनती"
+
+#: src/Menu/OptionsMenu.cpp:124
+msgid "Displays the amount of active particles."
+msgstr "इससे सक्रिय पार्टिकल्स दिखाई देते हैं."
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Display Tool Tips"
+msgstr "टूल टिप्स दिखायें"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Dismisses tool tips like this one."
+msgstr "इससे टूल-टिप्स (जैसे की यह वाला) बाँध हो जाएँगे."
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "Full screen"
+msgstr "फुलस्क्रीन"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "मार्स पूरे स्क्रीन पर चलेगा."
+
+#: src/Menu/OptionsMenu.cpp:135
+msgid "Window Settings"
+msgstr "विंडो सेटिंग"
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "V-Sync"
+msgstr "वी-सिंक"
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr "इससे खेल अपने आप आपके मॉनिटर के रीफ़्रेश रेट के मुताबिक अपडेट होगा. ज़्यादा तर इसे चालू करने से खेल ज़्यादा अच्छा चलता है"
+
+#: src/Menu/OptionsMenu.cpp:142
+msgid "Shader Effects"
+msgstr "शेडर के इफ्फेकट्स"
+
+#: src/Menu/OptionsMenu.cpp:143
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "कुछ मजेदार एफेक्ट्स आ जाते हैं, परंतु हो सकता है की खेल ठीक से ना चले."
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Off"
+msgstr "बंद"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "Resolution"
+msgstr "रेसोलूशण"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr ""
+"विंडो का आकार बदलता है.\n"
+"इससे दोनो फुल-स्क्रीन और विंडो वाले मोड पर फराक पड़ता है."
+
+#: src/Menu/OptionsMenu.cpp:172
+msgid "Game Settings"
+msgstr "खेल के सेट्टिंग"
+
+#: src/Menu/OptionsMenu.cpp:174
+msgid "High Star Field Resolution"
+msgstr "तारों की ज़्यादा रेसोलूशण"
+
+#: src/Menu/OptionsMenu.cpp:175
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"हाइ-रेज़ल्यूशन स्क्रीनों के साथ इससे सितारों का तस्वीर बदलता है.\n"
+"इसे बँध करने से खेल ज़रा सा ज़्यादा अच्छा चल सकता है."
+
+#: src/Menu/OptionsMenu.cpp:179
+msgid "Moving Stars"
+msgstr "हिलते हुए तारे"
+
+#: src/Menu/OptionsMenu.cpp:180
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "इससे पृष्ठभूमि में हिलते तारे नज़र आयेंगे. अच्छे दिखाई देते हैं, पर खेल धीरे अटक सकता है"
+
+#: src/Menu/OptionsMenu.cpp:184
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"पार्टिकल की गिनती समायोजित करता है.\n"
+"कम रखने से खेल ज़्यादा अच्छे तरीके से चल सकता है."
+
+#: src/Menu/OptionsMenu.cpp:187
+msgid "Particle Lifetime"
+msgstr "कण की अवधि"
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"पार्टिकल की आयु बदलता है.\n"
+"कम रखने से खेल ज़्यादा अच्छे तरीके से चल सकता है."
+
+#: src/Menu/OptionsMenu.cpp:191
+msgid "Volume Settings"
+msgstr "आवाज़ के विकल्प"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Music"
+msgstr "संगीत"
+
+#: src/Menu/OptionsMenu.cpp:194
+msgid "Adjusts volume of background music."
+msgstr "संगीत का आयतन बदलता है."
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Sound"
+msgstr "आवाज़"
+
+#: src/Menu/OptionsMenu.cpp:198
+msgid "Adjusts volume of sound effects."
+msgstr "अन्या आवाज़ों का आयतन बदलता है."
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Announcer"
+msgstr "उद्घोषक"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Adjusts volume of announcers voice."
+msgstr "उद्घोषक के आवाज़ का आयतन बदलता है."
+
+#: src/Menu/OptionsMenu.cpp:204
+msgid "Playback Settings"
+msgstr "गाना बजाने के विकल्प"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Play Tracks in Random Order"
+msgstr "किसी भी क्रमांक मे गाने बजाओ"
+
+#: src/Menu/OptionsMenu.cpp:207
+msgid "Enables music play back in a random sequence."
+msgstr "इससे गाने किसी भी क्रमांक मे बजते हैं."
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Play Next Track"
+msgstr "अगला गाना"
+
+#: src/Menu/OptionsMenu.cpp:211
+msgid "Pressing this key switches to the next music track."
+msgstr "यह बटन दबाने से अगला गाना बजेगा."
+
+#: src/Menu/OptionsMenu.cpp:214
+msgid "Play Previous Track"
+msgstr "पिछला गाना बजाओ"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Pressing this key switches to the previous music track."
+msgstr "इस बटन से पिछला गाना बजता है."
+
+#: src/Menu/OptionsMenu.cpp:218
+msgid "Special Effects"
+msgstr "स्पेशल एफेक्ट"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Explosions for Slow Motion"
+msgstr "धीमी गति के लिए विस्फोट"
+
+#: src/Menu/OptionsMenu.cpp:221
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "अगर इतने शिप एक साथ फटेंगे तो स्लो-मोशन चालू होगा."
+
+#: src/Menu/OptionsMenu.cpp:224
+#, fuzzy
+msgid "Game Speed"
+msgstr "खेल के सेट्टिंग"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:227
+msgid "Show Debug Information"
+msgstr "डीबग के बारे में जानकारी बताओ"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Bots Orientation"
+msgstr "बॉट अभिविन्यास"
+
+#: src/Menu/OptionsMenu.cpp:230
+msgid "Displays the job of each bot."
+msgstr "हर बोट का काम दिखाई देता है."
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Zones"
+msgstr "क्षेत्र"
+
+#: src/Menu/OptionsMenu.cpp:234
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "इससे सामरिक क्षेत्र दिखाई पड़ेंगे, जो कृत्रिम बुद्धि के काम आते हैं."
+
+#: src/Menu/OptionsMenu.cpp:237
+msgid "AI-Paths"
+msgstr "बॉट पथ"
+
+#: src/Menu/OptionsMenu.cpp:238
+msgid "Displays paths calculated by bots."
+msgstr "बोट लोगों ने जो रास्ता सोच रखा है, वह दिखाई पड़ेगा."
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Name"
+msgstr "नाम"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Accelerate"
+msgstr "तेज़ी बढ़ाना"
+
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
+msgid "Turn Left"
+msgstr "बायें घूमना"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Turn Right"
+msgstr "दायें घूमना"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Weapon"
+msgstr "हथियार"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Special Ability"
+msgstr "स्पेशल योग्यता"
+
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
+msgid "Ship Settings"
+msgstr "शिप के विकल्प"
+
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
+msgid "Ship"
+msgstr "शिप"
+
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
+msgid "Player Color"
+msgstr "खिलाड़ी का रंग"
+
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
+msgid "Team Color"
+msgstr "टीम का रंग"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "आयेज बढ़ें"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "शेडर आपके हार्डवेयर पर नहीं चलेंगे!"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "अगला"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "हथियार"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "विशेष योग्यता"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "प्लस"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr "बॅकस्लैश"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "कॉमा"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "डॅश"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "डिलीट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "डिवाइड"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "नीचे"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr "एंड"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "ईक्वल"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr "होम"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr "इनसर्ट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "बायां आल्ट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "बायां ब्रॅकेट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "बायां कंट्रोल"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "बायां"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "बायां शिफ्ट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "बायां सूपर"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "मेनू"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr "मल्टिप्लाइ"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "पेज डाउन"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "पेज अप"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "विश्राम"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "नुकता"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "क़वोट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "दायां आल्ट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr "दायां ब्रॅकेट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "दायां कंट्रोल"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "एंटर"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "दायां"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "दायां शिफ्ट"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "दायां सूपर"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+msgid "Semi Colon"
+msgstr "अर्ध बृहदान्त्र"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr "स्लैश"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "स्पेसबार"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr "माइनस"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr "टिल्ड"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "टैब"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "ऊपर"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr "जॉयस्टिक"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "ए बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "बी बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "एक्स बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "वाय बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "बायां बमपर"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "दायां बमपर"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "स्टार्ट बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "बॅक बटन"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "बटन"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "बायां ट्रिगर"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "दायां ट्रिगर"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "स्टिक२ ऊपर"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "स्टिक२ नीचे"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "स्टिक२ बायं"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "स्टिक२ दायं"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "स्टिक१ ऊपर"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "स्टिक१ नीचे"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "स्टिक१ बायं"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "स्टिक१ दायं"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "ऊपर"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "नीचे"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "बायं"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "दायं"
+
+#: src/System/window.cpp:377
+msgid "Screenshot saved!"
+msgstr "स्क्रीनशॉट सवे हो गया!"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "भाषा"

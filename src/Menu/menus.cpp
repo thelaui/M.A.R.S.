@@ -23,13 +23,21 @@ this program.  If not, see <http://www.gnu.org/licenses/>.*/
 # include "Menu/ShaderError.hpp"
 # include "Menu/About.hpp"
 # include "Menu/Connect.hpp"
+# include "Menu/EnterName.hpp"
 # include "Menu/InfoCK.hpp"
+# include "Menu/InfoGIP.hpp"
 # include "Menu/InfoSB.hpp"
 # include "Menu/InfoDM.hpp"
 # include "Menu/InfoTDM.hpp"
 # include "Menu/InfoHide.hpp"
 # include "Menu/MainMenu.hpp"
+# include "Menu/NewGameConfirm.hpp"
+# include "Menu/NewGameMenu.hpp"
+# include "Menu/OptionsMenu.hpp"
 # include "Menu/PauseMenu.hpp"
+# include "Menu/ToMainConfirm.hpp"
+# include "Menu/TutorialWindow.hpp"
+# include "Menu/WeaponOptions.hpp"
 # include "Menu/EndMenu.hpp"
 # include "Menu/ExitConfirm.hpp"
 # include "Interface/toolTip.hpp"
@@ -168,15 +176,29 @@ namespace menus {
         return keyboardFixTarget_;
     }
 
-    void reload() {
-        About::reset();
-        Connect::reset();
-        InfoCK::reset();
-        InfoDM::reset();
-        InfoHide::reset();
-        InfoSB::reset();
-        InfoTDM::reset();
-    }
+	 void reload() {
+		  About::reset();
+		  ChooseLanguage::reset();
+		  Connect::reset();
+		  EndMenu::reset();
+		  EnterName::reset();
+		  ExitConfirm::reset();
+		  InfoCK::reset();
+		  InfoDM::reset();
+		  InfoGIP::reset();
+		  InfoHide::reset();
+		  InfoSB::reset();
+		  InfoTDM::reset();
+		  MainMenu::reset();
+		  NewGameConfirm::reset();
+		  NewGameMenu::reset();
+		  OptionsMenu::reset();
+		  PauseMenu::reset();
+		  ShaderError::reset();
+		  ToMainConfirm::reset();
+		  TutorialWindow::reset();
+		  WeaponOptions::reset();
+	 }
 
     bool visible() {
         return !windowStack_.empty();

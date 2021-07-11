@@ -17,6 +17,16 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 # include "Locales/locales.hpp"
 
+#ifdef _WIN32
+# include <windows.h>
+# include <cstdlib>
+#endif
+
+#ifdef __FreeBSD__
+#  include <clocale>
+#endif
+#  include <cstring>
+
 # include "System/settings.hpp"
 # include "System/generateName.hpp"
 # include "Media/file.hpp"
@@ -25,85 +35,57 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include <sstream>
 # include <iostream>
 
+#ifdef __APPLE__
+# if LIBINTL_VERSION >= 0x001201
+// for older libintl versions, setlocale is just fine
+#  define SETLOCALE libintl_setlocale
+# endif // LIBINTL_VERSION
+#else // __APPLE__
+# if defined _WIN32
+#  define SETLOCALE setlocale
+# else
+#  define SETLOCALE std::setlocale
+# endif
+#endif
+
 namespace locales {
+	/**
+	 * Translate a string with gettext
+	 */
+	char const * translate(char const * const str) {
+		return gettext(str);
+	}
+	char const * translate(const std::string & str) {
+		return gettext(str.c_str());
+	}
 
-    namespace {
-        std::vector<Locale>     locales_;
-        std::vector<sf::String> localeStrings_(COUNT, "Error");
+	sf::String* format_string(const char* format, const char* var1) {
+		char buffer [2 * (strlen(format) + strlen(var1))];
+		sprintf(buffer, format, var1);
+		return string2sfstring(std::string(buffer));
+	}
 
-        bool load(std::string const& fileName) {
-            std::vector<sf::String> lines;
-            if (file::load(fileName, lines)) {
-                for (std::vector<sf::String>::iterator it = lines.begin(); it != lines.end(); ++it) {
-                    std::stringstream sstr(it->toAnsiString());
-                    int id;
-                    sstr >> id;
-                    if (id < COUNT && it->getSize() > 4) {
-                        sf::String tmp(*it);
-                        tmp.erase(0, 4);
 
-                        for (int i=0; i<tmp.getSize(); ++i) {
-                            if (tmp[i] == '{') {
-                                int j(i+1);
-                                sf::String macro;
-                                while (tmp[j] != '}') {
-                                    macro.insert(macro.getSize(), tmp[j]);
-                                    ++j;
-                                    if (j == tmp.getSize()) {
-                                        std::cout << "Error parsing " << fileName << ": At ID " << id << " the macro " << macro.toAnsiString() << " misses a trailing '}' !" << std::endl;
-                                        break;
-                                    }
-                                }
-                                tmp.erase(i, j-i+1);
+	sf::String* format_string(const char* format, const char* var1, const char* var2) {
+		char buffer [2 * (strlen(format) + strlen(var1) + strlen(var2))];
+		sprintf(buffer, format, var1, var2);
+		return string2sfstring(std::string(buffer));
+	}
 
-                                if (macro == "PLAYER1_KEY_UP")
-                                    tmp.insert(i, generateName::key(settings::C_playerIup));
-                                else if (macro == "PLAYER2_KEY_UP")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIup));
-                                else if (macro == "PLAYER1_KEY_RIGHT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIright));
-                                else if (macro == "PLAYER2_KEY_RIGHT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIright));
-                                else if (macro == "PLAYER1_KEY_LEFT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIleft));
-                                else if (macro == "PLAYER2_KEY_LEFT")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIleft));
-                                else if (macro == "PLAYER1_KEY_FIRE")
-                                    tmp.insert(i, generateName::key(settings::C_playerIfire));
-                                else if (macro == "PLAYER2_KEY_FIRE")
-                                    tmp.insert(i, generateName::key(settings::C_playerIIfire));
-                                else if (macro == "PLAYER1_KEY_SPECIAL")
-                                    tmp.insert(i, generateName::key(settings::C_playerISpecialKey));
-                                else if (macro == "PLAYER2_KEY_SPECIAL")
-                                    tmp.insert(i, generateName::key(settings::C_playerIISpecialKey));
-                                else if (macro == "PLAYER1_NAME")
-                                    tmp.insert(i, settings::C_playerIName);
-                                else if (macro == "PLAYER2_NAME")
-                                    tmp.insert(i, settings::C_playerIIName);
-                                else if (macro == "DATA_PATH")
-                                    tmp.insert(i, settings::C_dataPath);
-                                else if (macro == "CONFIG_PATH")
-                                    tmp.insert(i, settings::C_configPath);
-                                else if (macro == "STATISTICS_KEY")
-                                    tmp.insert(i, generateName::key(settings::C_statisticsKey));
-                                else
-                                    std::cout << "Error parsing " << fileName << ": At ID " << id << " is an unknown macro " << macro.toAnsiString() << "!" << std::endl;
-                            }
-                        }
+	sf::String* format_string(const char* format, const char* var1, const char* var2, const char* var3) {
+		char buffer [2 * (strlen(format) + strlen(var1) + strlen(var2) + strlen(var3))];
+		sprintf(buffer, format, var1, var2, var3);
+		return string2sfstring(std::string(buffer));
+	}
 
-                        //if (id == ttScreenShotKey)
-                        //    tmp += " " + settings::C_configPath + "screenshots/";
-                        localeStrings_[id] = tmp;
-                    }
-                }
-                return true;
-            }
-            else {
-                std::cout << "Failed to open locale " << fileName << "! Interface will be messed up with errors...\n";
-                return false;
-            }
-        }
-    }
+	sf::String* string2sfstring(const std::string& string) {
+		sf::String result = sf::String::fromUtf8(string.begin(), string.end());
+		return new sf::String(result);
+	}
+
+	 namespace {
+		  std::vector<Locale>     locales_;
+	 } // namespace
 
     bool load() {
         std::vector<sf::String> lines;
@@ -120,7 +102,6 @@ namespace locales {
                     newLocale.name_ = *it;
                     newLocale.name_.erase(0, 1);
                     newLocale.name_.erase(newLocale.name_.getSize()-1, 1);
-
                     first = false;
                 }
                 else {
@@ -131,11 +112,11 @@ namespace locales {
                     sf::String arg(*it);
                     arg.erase(0, flag.size()+1);
 
-                    if (flag == "file:")
-                        newLocale.fileName_ = arg;
-                    else if (flag == "font:")
+						  if (flag == "iso:")
+								newLocale.iso_ = arg;
+						  else if (flag == "font:")
                         newLocale.font_ = arg;
-                    else if (flag == "author:")
+						  else if (flag == "author:")
                         newLocale.author_ = "By " + arg;
                     else if (flag == "direction:") {
                         if (arg == "RTL") newLocale.LTR_ = false;
@@ -146,25 +127,9 @@ namespace locales {
                 }
             }
 
-            if (!first)
-                locales_.push_back(newLocale);
-
-            bool loadSuccess(false);
-
-            load (settings::C_dataPath + "locales/English.txt");
-            if (settings::C_languageID < locales_.size()) {
-                if (!load (settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_)) {
-                    std::cout << "Failed to load " << settings::C_dataPath << "locales/" << locales_[settings::C_languageID].fileName_.toAnsiString() << "! Falling back to English..." << std::endl;
-                    settings::C_languageID = 0;
-                }
-
-            }
-            else {
-                std::cout << "Specified language in mars.conf doesn't match any in locales.conf! Falling back to English..." << std::endl;
-                settings::C_languageID = 0;
-            }
-
-            return true;
+				if (!first)
+					 locales_.push_back(newLocale);
+				return true;
         }
         else {
             std::cout << "Not found! Aborting..." << std::endl;
@@ -176,17 +141,51 @@ namespace locales {
         return locales_;
     }
 
-    sf::String* getLocale(LocaleType type) {
-        return &localeStrings_[type];
-    }
-
     Locale const& getCurrentLocale() {
         return locales_[settings::C_languageID];
     }
 
-    void setCurrentLocale() {
-        load(settings::C_dataPath + "locales/"+locales_[settings::C_languageID].fileName_);
-    }
-}
+	 /**
+	  * Set the locale to the given string.
+	  * Code inspired by wesnoth.org
+	  */
+	 void setCurrentLocale() {
+		  char const * const dom = "marsshooter";
+		  const std::string loc =  std::string(getCurrentLocale().iso_.toAnsiString());
+		  const std::string localedir = (settings::C_dataPath + std::string("locale"));
+		  std::cout << "localedir: " << localedir.c_str() << " locale: " << loc.c_str() << "\n";
 
+#ifndef _WIN32
+#ifndef __AMIGAOS4__
+#ifndef __APPLE__
+		  unsetenv ("LANGUAGE"); // avoid problems with this variable
+#endif
+#endif
+#endif
+#ifdef __BEOS__
+		  setenv ("LANG",   loc.c_str(), 1);
+		  setenv ("LC_ALL", loc.c_str(), 1);
+#endif
+#ifdef __APPLE__
+		  setenv ("LANGUAGE", loc.c_str(), 1);
+		  setenv ("LANG",     loc.c_str(), 1);
+		  setenv ("LC_ALL",   loc.c_str(), 1);
+#endif
+#ifdef _WIN32
+		  _putenv_s("LANG", loc.c_str());
+#endif
 
+#ifdef __linux__
+		  setenv("LANGUAGE", loc.c_str(), 1);
+#endif
+		  // set locale according to the env. variables
+		  SETLOCALE(LC_ALL, "");
+		  SETLOCALE(LC_NUMERIC, "C");
+		  SETLOCALE(LC_MESSAGES, "");
+
+		  textdomain(dom);
+		  bindtextdomain(dom, localedir.c_str());
+		  bind_textdomain_codeset(dom, "UTF-8");
+	 }
+
+} // namespace locales

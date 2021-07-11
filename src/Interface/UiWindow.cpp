@@ -89,6 +89,11 @@ void UiWindow::textEntered(sf::Uint32 keyCode) {
         focusedWidget_->textEntered(keyCode);
 }
 
+void UiWindow::clear() {
+	focusedWidget_ = NULL;
+	widgets_.clear();
+}
+
 void UiWindow::draw () const {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

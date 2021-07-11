@@ -46,12 +46,12 @@ bool WeaponOptions::kFireWall_(false);
 UiWindow* WeaponOptions::get() {
     if (instance_ == NULL) {
         instance_ = new WeaponOptions(350, 300);
-        instance_->addWidget(new Button(locales::getLocale(locales::Ok),     NULL, &kOk_, Vector2f(250,270), 90, 20));
-        instance_->addWidget(new Label(locales::getLocale(locales::WeaponOptions), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+		  instance_->addWidget(new Button(_("OK"),     NULL, &kOk_, Vector2f(250,270), 90, 20));
+		  instance_->addWidget(new Label(_("Weapon Options"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(310, 35)));
 
-        instance_->addWidget(new LabeledBox(locales::getLocale(locales::Weapons), Vector2f(10, 50), 100, 210));
-        instance_->addWidget(new LabeledBox(locales::getLocale(locales::Specials), Vector2f(160, 50), 100, 210));
+		  instance_->addWidget(new LabeledBox(_("Weapons"), Vector2f(10, 50), 100, 210));
+		  instance_->addWidget(new LabeledBox(_("Special Abilities"), Vector2f(160, 50), 100, 210));
 
         // weapons
         instance_->addWidget(new Checkbox(new sf::String("AFK-47"), NULL, &kAFK_, Vector2f(20,80), 100));

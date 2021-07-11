@@ -35,6 +35,16 @@ include_directories(${OPENGL_INCLUDE_DIR})
 # find the sfml2 headers and library
 find_package(SFML REQUIRED audio graphics)
 
+
+find_package(Gettext REQUIRED)
+
+# libintl is not used on all systems, so only include it when we actually
+# found it.
+if(INTL_FOUND)
+	find_package(INTL REQUIRED)
+	include_directories(${INTL_INCLUDE_DIR})
+endif()
+
 # Foundation library needed for apple
 if(APPLE)
 	find_library(FOUNDATION_LIBRARY Foundation)
@@ -68,7 +78,12 @@ include_directories(${MARS_SOURCE_DIR}/include)
 # compile source
 add_subdirectory(src) 
 set(CMAKE_CXX_FLAGS "-s" CACHE STRING "CXX flags")
- 
+
+# Update translations and build translation binaries
+#add_custom_target(_build_translation_binaries ALL
+#  COMMAND ${MARS_SOURCE_DIR}/utils/update_translations.sh
+#)
+
 #####################################################################
 # Create package
 #####################################################################

@@ -53,8 +53,8 @@ UiWindow* ChooseLanguage::get() {
             top += 24;
         }
 
-        instance_->addWidget(new Button(locales::getLocale(locales::Cancel), NULL, &kCancel_, Vector2f(120,top+30), 90, 20));
-        instance_->addWidget(new Label(new sf::String("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
+		  instance_->addWidget(new Button(_("Cancel"), NULL, &kCancel_, Vector2f(120,top+30), 90, 20));
+		  instance_->addWidget(new Label(_("Select Language"), TEXT_ALIGN_LEFT, Vector2f(10,10), 20.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Label(new sf::String("* Incomplete"), TEXT_ALIGN_LEFT, Vector2f(10,top+10), 12.f, Color3f(1.f, 0.5f, 0.9f), false));
         instance_->addWidget(new Line(Vector2f(10, 35), Vector2f(210, 35)));
     }
@@ -70,7 +70,8 @@ void ChooseLanguage::checkWidgets() {
         if (*(it->second)) {
             *(it->second) = false;
             settings::C_languageID = it->first;
-            locales::load();
+				locales::load();
+				locales::setCurrentLocale();
             menus::reload();
             settings::save();
             menus::hideWindow();
@@ -96,7 +97,7 @@ void ChooseLanguage::next() {
             ++it;
             if (it != --sortedLocales_.begin()) {
                 settings::C_languageID = it->second;
-                locales::load();
+					 locales::setCurrentLocale();
                 menus::reload();
             }
             break;
@@ -111,7 +112,7 @@ void ChooseLanguage::previous() {
             --it;
             if (it != --sortedLocales_.begin()) {
                 settings::C_languageID = it->second;
-                locales::load();
+					 locales::setCurrentLocale();
                 menus::reload();
             }
             break;

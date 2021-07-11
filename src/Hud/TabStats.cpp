@@ -175,23 +175,23 @@ void TabStats::draw() const {
         glDisable(GL_TEXTURE_2D);
 
         text::drawFooText();
-        text::drawScreenText(*locales::getLocale(locales::Statistics), topLeft + Vector2f(10*mirror, 10), 20.f, TEXT_ALIGN_LEFT, Color3f(1.f, 0.5f, 0.8f));
+		  text::drawScreenText(*_("Statistics"), topLeft + Vector2f(10*mirror, 10), 20.f, TEXT_ALIGN_LEFT, Color3f(1.f, 0.5f, 0.8f));
         std::stringstream sstr;
         int seconds = games::elapsedTime();
         sstr << std::setfill('0') << std::setw(2) << (seconds-seconds%60)/60 << " : " << std::setw(2) << seconds%60;
         text::drawScreenText(sf::String(sstr.str()), topLeft + Vector2f(width-10*mirror, 18), 12.f, TEXT_ALIGN_RIGHT, Color3f(1.f, 0.5f, 0.8f));
 
         int pointlimit;
-        sf::String name = *locales::getLocale(locales::Fraglimit);
+		  sf::String name = *_("Frag Limit");
 
          switch (games::type()) {
             case games::gSpaceBall:
                 pointlimit = settings::C_pointLimitSB;
-                name       = *locales::getLocale(locales::Pointlimit);
+					 name       = *_("Planet Life Points");
                 break;
             case games::gCannonKeep:
                 pointlimit = settings::C_pointLimitCK;
-                name       = *locales::getLocale(locales::Pointlimit);
+					 name       = *_("Planet Life Points");
                 break;
             case games::gDeathMatch:
                 pointlimit = settings::C_pointLimitDM;
@@ -223,16 +223,16 @@ void TabStats::draw() const {
         // Index of the column we are writing
         int col = 0;
 
-        text::drawScreenText(*locales::getLocale(locales::Points), topLeft+Vector2f((140+80*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+		  text::drawScreenText(*_("Points"), topLeft+Vector2f((140+80*col++)*mirror,0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gCannonKeep)
-            text::drawScreenText(*locales::getLocale(locales::CannonShots), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+				text::drawScreenText(*_("CannonShots"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() == games::gSpaceBall)
-             text::drawScreenText(*locales::getLocale(locales::SpaceBallGoals), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Frags), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+				 text::drawScreenText(*_("Goals"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+		  text::drawScreenText(*_("Frags"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
         if (games::type() != games::gDeathMatch && games::type() != games::gRally)
-            text::drawScreenText(*locales::getLocale(locales::TeamKills), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Suicides), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
-        text::drawScreenText(*locales::getLocale(locales::Deaths), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+				text::drawScreenText(*_("Teamkills"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+		  text::drawScreenText(*_("Suicides"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
+		  text::drawScreenText(*_("Deaths"), topLeft + Vector2f((140+80*col++)*mirror, 0), 12.f, TEXT_ALIGN_CENTER, Color3f(0.7f, 0.7f, 0.7f));
 
         topLeft.y_ += 15;
 
@@ -336,7 +336,7 @@ void TabStats::draw() const {
                 glEnd();
 
                 Color3f drawColor(teamColor);
-                text::drawScreenText(*locales::getLocale(locales::Total), topLeft + Vector2f(2*mirror, 0), 12.f, TEXT_ALIGN_LEFT, drawColor);
+					 text::drawScreenText(*_("Total:"), topLeft + Vector2f(2*mirror, 0), 12.f, TEXT_ALIGN_LEFT, drawColor);
 
                 if (totalPoints > 0)      drawColor = Color3f(0.3,1,0.3);
                 else if (totalPoints < 0) drawColor = Color3f(1,0.3,0.3);

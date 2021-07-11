@@ -1,0 +1,1447 @@
+# M.A.R.S. zh_CN.po
+# Wecing, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: M.A.R.S.\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-22 16:30+0000\n"
+"PO-Revision-Date: 2015-11-14 20:16+0100\n"
+"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
+"Language-Team: M.A.R.S.\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Virtaal 0.7.1\n"
+"O-Revision-Date: 2015-10-04 07:52+0000\n"
+
+#: src/Games/Tutorial.cpp:111
+msgid "Welcome, Space Rookie!"
+msgstr "欢迎，太空新生！"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:114
+#, c-format
+msgid ""
+"We are glad to recruit a rising hero like you, %s, to join us in the GREAT WAR!\n"
+"We figured out you needed some practice with your new ship.\n"
+"Let the training begin..."
+msgstr ""
+"我们很高兴能召募到你，%s这样的未来之星加入星际大战！\n"
+"但是目前你需要进行一些操作练习。现在就开始吧……"
+
+#: src/Games/Tutorial.cpp:125
+msgid "Basic Movement..."
+msgstr "基本移动……"
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:128
+#, c-format
+msgid ""
+"Controlling your ship is the most important task to master.\n"
+"All movement is governed by the laws of gravity. To decelerate you have to turn and accelerate in the opposite direction. Control your ship, using the keys %s, %s and %s!"
+msgstr ""
+"想要掌握控制飞船的技术，必须先学会移动。\n"
+"所有的移动都是在重力定律下进行的。想要减速，唯一的方法是转到反方向，然后加速。操控飞船需要按键%s，%s以及%s。"
+
+#: src/Games/Tutorial.cpp:142
+msgid "Warming Up!"
+msgstr "热身开始！"
+
+#: src/Games/Tutorial.cpp:143
+msgid ""
+"Reach the pink zone!\n"
+"Try not to crash your brand new ship."
+msgstr "飞到粉色区域里去！尽量不要撞毁你全新的飞船。"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:171
+#, c-format
+msgid "Well Done, %s!"
+msgstr "干得漂亮，%s！"
+
+#: src/Games/Tutorial.cpp:173
+msgid "Now head back to your home planet and try to land your ship by slowly floating back while approaching your planet."
+msgstr "现在调头回到你的星球去，试着通过在它的重力场的作用下向后慢慢移动来降落。"
+
+#: src/Games/Tutorial.cpp:183
+msgid "Good Work!"
+msgstr "完美！"
+
+#: src/Games/Tutorial.cpp:184
+msgid ""
+"Proper landing is not a piece of cake, is it?\n"
+"You should learn it by heart."
+msgstr ""
+"准绝地降落并不像看上去那么简单，是不是？\n"
+"你应该试着用心体验。"
+
+#: src/Games/Tutorial.cpp:192
+msgid "Something More Difficult..."
+msgstr "进阶的挑战……"
+
+#: src/Games/Tutorial.cpp:193
+msgid ""
+"Try to follow the path marked up by the pink zones!\n"
+"We will contact you again, after you have mastered this.\n"
+"Now go for it!"
+msgstr ""
+"沿着粉色区域标记的轨迹移动！\n"
+"\n"
+"在你完成之后我们会继续下一课。开始吧！"
+
+#: src/Games/Tutorial.cpp:215
+msgid "Awesome!"
+msgstr "漂亮！"
+
+#: src/Games/Tutorial.cpp:216
+msgid ""
+"You are the best rookie we have ever seen.\n"
+"Now prepare yourself for some explosive stuff."
+msgstr ""
+"你是我见过的表现最优秀的新手！\n"
+"\n"
+"现在做好准备，迎接更困难的挑战。"
+
+#: src/Games/Tutorial.cpp:224
+msgid "Shooting..."
+msgstr "射击……"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:227
+#, c-format
+msgid ""
+"To defeat your enemies, you have to know how to shoot them up!\n"
+"For that purpose press %s.\n"
+"Have some fun shooting around and then land your ship to continue the tutorial."
+msgstr ""
+"为了打败敌人，你必须了解怎样向他们射击！\n"
+"你需要做的只是按下%s。\n"
+"试着随便向四周开火。着陆之后我们将进行下一节的教学。"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:243
+#, c-format
+msgid "Good Landing, %s!"
+msgstr "漂亮的着陆，%s！"
+
+#: src/Games/Tutorial.cpp:245
+msgid ""
+"You turn out to be a great pilot.\n"
+"Now how about some more weapons?"
+msgstr ""
+"你绝对有成为一个优秀飞行员的潜质。\n"
+"\n"
+"现在试试其他武器怎么样？"
+
+#: src/Games/Tutorial.cpp:253
+msgid "The Weapons..."
+msgstr "各种武器……"
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:256
+#, c-format
+msgid ""
+"We know you've been waiting for this. When docked you can switch through some incredibly evil weapons. Press %s to open your arsenal.\n"
+"Then use %s and %s to choose a weapon!\n"
+"Take-off, when you're ready!"
+msgstr ""
+"我知道，为这一刻你已经等了很久。停泊在星球上的时候，你可以切换到其他更具有威力的武器。按下%s可以打开你的武器库。\n"
+"然后用%s和%s选择武器！\n"
+"当你准备好了之后，起飞！"
+
+#: src/Games/Tutorial.cpp:276
+msgid "Fight!"
+msgstr "战斗！"
+
+#: src/Games/Tutorial.cpp:277
+msgid ""
+"Now let's see how you make it against a rookie from another planet. Seems like he is trying to improve his flying abilities.\n"
+"Beat him!"
+msgstr ""
+"现在我们来看一看你和其他星球的新手间的对战会是什么样子。\n"
+"不过似乎对手的飞行技术还有待加强。\n"
+"\n"
+"战斗开始！"
+
+#: src/Games/Tutorial.cpp:302
+msgid "Impressive!"
+msgstr "太完美了！"
+
+#: src/Games/Tutorial.cpp:303
+msgid ""
+"You did it! As you may have noticed, a little star appeared over your ship. The more enemies you kill, the more of them will show. But they are not only a frag indicator!\n"
+"Land again and we will show you what else stars are good for."
+msgstr ""
+"你成功地打败了敌人！也许你已经注意到了，有一颗小星星出现在了飞船的上方。你打败的敌人越多，相应地，出现的星星也就越多。但是它们并不是对杀敌数目的统计！\n"
+"再次着陆，我们会告诉你这些星星到底是做什么的。"
+
+#: src/Games/Tutorial.cpp:316
+msgid "Special Abilities..."
+msgstr "特殊能力……"
+
+#: src/Games/Tutorial.cpp:317
+msgid ""
+"As promised, we will tell you the stars' meaning. They are a resource for your ship's impressively powerful extra abilities. For example you can heal you including nearby friends, blast away or freeze ships within a certain distance!\n"
+"The more stars you have, the larger range and strength of the ability grow."
+msgstr ""
+"我们保证过会告诉你星星的涵义——事实上，它们是你的飞船的额外能力之源。比如你可以为你自己及附近的队友提供治疗，吹走或是冻结附近一段距离之间的飞船！\n"
+"你所拥有的星星越多，你的特殊能力的有效范围及强度就越大。"
+
+#: src/Games/Tutorial.cpp:328
+msgid "Selection..."
+msgstr "选择特殊能力……"
+
+#. * TRANSLATORS: all %s are hotkeys on the keyboard.
+#: src/Games/Tutorial.cpp:331
+#, c-format
+msgid ""
+"To switch through the abilities, you just have to press %s. To choose one, you may cycle through them using %s and %s!\n"
+"For this lesson, select the \"Freezer\"! Take off, when you got it!"
+msgstr ""
+"选择特殊能力只需要按下%s，然后用%s和%s选择你所偏爱的能力。\n"
+"在这一课中，我们用“Freezer”来做示范。准备好了就起飞吧。"
+
+#: src/Games/Tutorial.cpp:351
+msgid "The Freezer..."
+msgstr "Freezer……"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:354
+#, c-format
+msgid ""
+"This is a powerful special ability which freezes nearby ships.\n"
+"You have to fly close to your enemy and press %s to freeze him. Watch him loosing life slowly... until he dies!"
+msgstr ""
+"这是一种能冻结附近飞船的特殊能力。\n"
+"你需要飞到目标飞船附近，然后按下%s来冻住他们。看着对手的生命值慢慢下降直到变为零吧。"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:365
+#, c-format
+msgid "Stop, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:367
+msgid ""
+"We told you to select the Freezer, but you have chosen another ability!\n"
+"Please land again and take the Freezer!"
+msgstr ""
+"我们告诉过你要选择“Freezer”，但是你并没有这样做！\n"
+"请再次降落，并把特殊能力切换过去。"
+
+#: src/Games/Tutorial.cpp:385
+msgid "Practice!"
+msgstr "练习！"
+
+#: src/Games/Tutorial.cpp:386
+msgid ""
+"Now try to freeze your enemy!\n"
+"For this tutorial we will give you some FragStars. But remember: In real life you have to smash opponents to get those stars!"
+msgstr ""
+"现在试着冻住你的敌人！\n"
+"在这个教程中我们会给你一些星星。但是请记住：在实际中只有击毁敌人的飞船才能得到星星！"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:409
+#, c-format
+msgid "You Missed Him, %s!"
+msgstr "被它逃掉了，%s!"
+
+#: src/Games/Tutorial.cpp:411
+msgid "Try again. we will refill your FragStars."
+msgstr "再试一次吧。我们会再给你一些星星的。"
+
+#: src/Games/Tutorial.cpp:428
+msgid "You Did It!"
+msgstr "你做到了！"
+
+#: src/Games/Tutorial.cpp:429
+msgid "Now head back to your planet to select another special ability!"
+msgstr "现在回到你的星球，选择其他的特殊能力吧！"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:441
+#, c-format
+msgid "Beware, %s!"
+msgstr ""
+
+#: src/Games/Tutorial.cpp:443
+msgid ""
+"There is no time for further testing!\n"
+"Our enemies have sent two of their real warriors for vengeance!"
+msgstr ""
+"没有时间进行更多的教学了！\n"
+"我们的敌人送来了两个真正的复仇武士！"
+
+#: src/Games/Tutorial.cpp:457
+msgid "Beat Them!"
+msgstr "打败他们！"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:460
+#, c-format
+msgid ""
+"Prove your skills! Score at least five points by killing them! Your current score is displayed next to your name!\n"
+"We will send in an experienced warrior assisting you, %s!"
+msgstr ""
+"检验你操控飞船的技术！通过击败他们得到至少五分！在分数版里，你个人的当前得分就在你的名字旁边！\n"
+"我们会派一个久经沙场的战士协助你，%s!"
+
+#: src/Games/Tutorial.cpp:484
+msgid "Unbelievable!"
+msgstr "难以置信！"
+
+#: src/Games/Tutorial.cpp:485
+msgid ""
+"You managed all our tasks successfully. Now what to do?\n"
+"Let's have a look at the options menu. There you can adjust a lot of... well... options.\n"
+"For example you may choose your ship style and color or change your name..."
+msgstr ""
+"你成功地完成了所有任务。接下来做什么呢？\n"
+"\n"
+"我们来看一下选项菜单。在那里你可以调节很多的……呃，选项。\n"
+"比如，你可以选择你喜欢的飞船外形及颜色，或是改变你的名字……"
+
+#: src/Games/Tutorial.cpp:500
+msgid "Who's Best?"
+msgstr "谁是最优秀的战士？"
+
+#. * TRANSLATORS: %s is a hotkey on the keyboard.
+#: src/Games/Tutorial.cpp:503
+#, c-format
+msgid ""
+"You can display a list of frags, points and so on via %s.\n"
+"Furthermore the numbers next to your name illustrate your frag counter and your distance to the best one."
+msgstr ""
+"你可以通过按 %s 来查看数据统计。\n"
+"此外，在你名字旁边的数字显示了到目前为止你总共击毁的敌机数，以及与第一名之间的差距。"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:515
+#, c-format
+msgid "Congratulations, %s!"
+msgstr "祝贺，%s！"
+
+#: src/Games/Tutorial.cpp:517
+msgid ""
+"You finished this tutorial. You are now ready to fight in the GREAT WAR. If you want to continue practising, just wait for the enemies to re-spawn. You can end your training with <Esc>.\n"
+"\n"
+"Have a great time with M.A.R.S.!"
+msgstr ""
+"你已经完成了教程。现在的你已经可以参加星际大战了。如果想继续练习，只需要在这里等待——敌人会源源不断地出现。按<Esc>结束练习。\n"
+"\n"
+"祝你在M.A.R.S.的世界里玩得愉快！"
+
+#: src/Games/Tutorial.cpp:529
+msgid "You Failed!"
+msgstr "你失败了！"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Games/Tutorial.cpp:532
+#, c-format
+msgid "Awesome, %s! You destroyed your brand new ship. All right, we will get you a new one. Just wait some seconds..."
+msgstr "算你厉害，%s！你毁掉了自己全新的飞船！好吧，几秒之后，我们还会给你一艘新的……"
+
+#: src/Games/Tutorial.cpp:541 src/Games/Tutorial.cpp:550
+msgid "Did You Notice?"
+msgstr "你注意到了吗？"
+
+#: src/Games/Tutorial.cpp:542
+msgid "Your life is draining! Keep an eye on the upper life bar. You better land if it's too empty."
+msgstr "你的生命值正在下降！注意观察上方的生命条。如果它快空了，最好马上降落。"
+
+#: src/Games/Tutorial.cpp:551
+msgid "Your fuel is draining! Keep an eye on the yellow fuel bar. You better land if it's too empty."
+msgstr "你的燃料储备正在下降！注意观察黄色的燃料条。如果它快空了，最好马上降落母星。"
+
+#: src/Games/Tutorial.cpp:559
+msgid "You Nearly Got Him!"
+msgstr "胜利近在眼前！"
+
+#: src/Games/Tutorial.cpp:560
+msgid "Watch your opponent's name. Its colour indicates his life points. The more it turns red, the weaker your enemy is."
+msgstr "注意敌人的名字。它的颜色越红，敌人的生命值也就越低。"
+
+#: src/Hud/TabStats.cpp:178
+msgid "Statistics"
+msgstr "数据统计"
+
+#: src/Hud/TabStats.cpp:185 src/Menu/NewGameMenu.cpp:113
+#: src/Menu/NewGameMenu.cpp:132 src/Menu/NewGameMenu.cpp:170
+#: src/Menu/NewGameMenu.cpp:179
+msgid "Frag Limit"
+msgstr "总杀敌数上限"
+
+#: src/Hud/TabStats.cpp:190 src/Hud/TabStats.cpp:194
+#: src/Menu/NewGameMenu.cpp:102 src/Menu/NewGameMenu.cpp:151
+msgid "Planet Life Points"
+msgstr "行星生命值"
+
+#: src/Hud/TabStats.cpp:226
+msgid "Points"
+msgstr "得分"
+
+#: src/Hud/TabStats.cpp:228
+msgid "CannonShots"
+msgstr "加农炮射击次数"
+
+#: src/Hud/TabStats.cpp:230
+msgid "Goals"
+msgstr "撞击次数"
+
+#: src/Hud/TabStats.cpp:231
+msgid "Frags"
+msgstr "击毁敌机"
+
+#: src/Hud/TabStats.cpp:233
+msgid "Teamkills"
+msgstr "误伤队友"
+
+#: src/Hud/TabStats.cpp:234
+msgid "Suicides"
+msgstr "自杀"
+
+#: src/Hud/TabStats.cpp:235
+msgid "Deaths"
+msgstr "死亡"
+
+#: src/Hud/TabStats.cpp:339
+msgid "Total:"
+msgstr "合计："
+
+#: src/Hud/musicNotify.cpp:193
+msgid "Artist:"
+msgstr "艺术家："
+
+#: src/Hud/musicNotify.cpp:194
+msgid "Album:"
+msgstr "专辑："
+
+#: src/Interface/ColorPickerWindow.cpp:33 src/Menu/EnterName.cpp:39
+#: src/Menu/ExitConfirm.cpp:35 src/Menu/NewGameConfirm.cpp:35
+#: src/Menu/OptionsMenu.cpp:82 src/Menu/ShaderError.cpp:34
+#: src/Menu/ToMainConfirm.cpp:35 src/Menu/TutorialWindow.cpp:38
+#: src/Menu/WeaponOptions.cpp:49
+msgid "OK"
+msgstr ""
+
+#: src/Media/music.cpp:146
+msgid "Next music track!"
+msgstr "下一音轨！"
+
+#: src/Media/music.cpp:153
+msgid "Previous music track!"
+msgstr "上一曲！"
+
+#: src/Menu/About.cpp:36 src/Menu/Connect.cpp:34 src/Menu/InfoCK.cpp:36
+#: src/Menu/InfoDM.cpp:36 src/Menu/InfoGIP.cpp:36 src/Menu/InfoHide.cpp:36
+#: src/Menu/InfoSB.cpp:36 src/Menu/InfoTDM.cpp:36
+msgid "Close"
+msgstr "关闭"
+
+#: src/Menu/About.cpp:42 src/Menu/MainMenu.cpp:56
+msgid "About"
+msgstr "关于"
+
+#: src/Menu/About.cpp:43
+msgid "License"
+msgstr "许可"
+
+#: src/Menu/About.cpp:44
+msgid "Credits"
+msgstr "贡献者"
+
+#: src/Menu/About.cpp:47
+msgid ""
+"This is a first attempt to create a game in OpenGL with SFML. It is a game for two players, flying with ships in a two-dimensional space setting, governed by the laws of gravity.\n"
+"\n"
+"Homepage: \n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+msgstr ""
+"M.A.R.S.是对用OpenGL和SFML制作游戏的一次尝试。\n"
+"这是一个适合最多两人进行的在二维宇宙中飞行的游戏，当然一切都是在重力的影响下进行的(:-P)。\n"
+"\n"
+"项目主页：\n"
+"http://www.marsshooter.org\n"
+"\n"
+"© 2010-2011 Felix Lauer & Simon Schneegans"
+
+#: src/Menu/About.cpp:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n"
+"\n"
+"Available online under:\n"
+"http://www.gnu.org/licenses/gpl-3.0.html"
+msgstr ""
+"本程序为自由软件;您可依据自由软件基金会所发表的GNU通用公共授权条款，对本程序再次发布和/或修改;无论您依据的是本授权的第三版，或(您可选的)任一日后发行的版本。\n"
+"\n"
+"本程序是基于使用目的而加以发布，然而不负任何担保责任;亦无对适售性或特定目的适用性所为的默示性担保。详情请参照GNU通用公共授权。\n"
+"\n"
+"您应已收到附随于本程序的GNU通用公共授权的副本;如果没有，请参照http://www.gnu.org/licenses/gpl-3.0.html"
+
+#: src/Menu/About.cpp:64
+msgid "Special Thanks to:"
+msgstr "特别感谢："
+
+#: src/Menu/About.cpp:66
+msgid ""
+"Translations:\n"
+" Arabic: Majid\n"
+" Chinese: Wecing\n"
+" Czech: Mates\n"
+" Finnish: Paavo\n"
+" French: Ludovic\n"
+" German: Atto\n"
+" Hindi: Antriksh & Aakanksh\n"
+" Hungarian: Papp Bence\n"
+" Italian: Proch\n"
+" Polish: command_dos\n"
+" Portuguese: Vitor\n"
+" Russian: Drakmail\n"
+" Spanish: Gastón\n"
+" Swedish: Henrik\n"
+"\n"
+"Coding support:\n"
+" Werner and Deubeuliou\n"
+"\n"
+"Tests and creative support:\n"
+" Heinrich, Martin, Bastian, Sandra, Diana."
+msgstr ""
+"翻译人员：\n"
+"阿拉伯语：Majid\n"
+"简体中文：Wecing\n"
+"捷克语：Mates\n"
+"芬兰语：Paavo\n"
+"法语：Astohan\n"
+"德语：Sandra\n"
+"北印度语：Antriksh & Aakanksh\n"
+"匈牙利语：Papp Bence\n"
+"意大利语： Proch\n"
+"波兰语：command_dos\n"
+"葡萄牙语：Vitor\n"
+"俄语： Drakmail\n"
+"西班牙语：Gastón\n"
+"瑞典语：Henrik\n"
+"\n"
+"编程支持：\n"
+"Werner and Deubeuliou\n"
+"\n"
+"测试及创意提供：\n"
+"Heinrich, Martin, Bastian, Sandra, Diana."
+
+#: src/Menu/ChooseLanguage.cpp:56 src/Menu/ExitConfirm.cpp:36
+#: src/Menu/NewGameConfirm.cpp:36 src/Menu/NewGameMenu.cpp:194
+#: src/Menu/ToMainConfirm.cpp:36
+msgid "Cancel"
+msgstr "取消"
+
+#: src/Menu/ChooseLanguage.cpp:57
+#, fuzzy
+msgid "Select Language"
+msgstr "语言"
+
+#: src/Menu/Connect.cpp:35 src/Menu/MainMenu.cpp:53
+msgid "Start Network Game"
+msgstr "建立对战主机"
+
+#: src/Menu/Connect.cpp:39
+msgid ""
+"M.A.R.S. gaming over the world wide web or a local area network is a planned feature, but not implemented yet.\n"
+"\n"
+"Stay tuned!"
+msgstr ""
+"此项功能暂不支持：M.A.R.S.的互联网和局域网对战功能正在筹备中。\n"
+"\n"
+"请继续关注我们！"
+
+#: src/Menu/EndMenu.cpp:39 src/Menu/PauseMenu.cpp:41
+msgid "Restart Game"
+msgstr "重新开始"
+
+#: src/Menu/EndMenu.cpp:40 src/Menu/MainMenu.cpp:55
+#: src/Menu/OptionsMenu.cpp:83 src/Menu/PauseMenu.cpp:42
+msgid "Options"
+msgstr "选项"
+
+#: src/Menu/EndMenu.cpp:41 src/Menu/InfoHide.cpp:37 src/Menu/PauseMenu.cpp:43
+msgid "Hide Menu"
+msgstr "隐藏菜单"
+
+#: src/Menu/EndMenu.cpp:42 src/Menu/PauseMenu.cpp:44
+msgid "Return to Main Menu"
+msgstr "回到主菜单"
+
+#. * TRANSLATORS: %s is the player's name.
+#: src/Menu/EnterName.cpp:41
+#, c-format
+msgid "Hey, %s!"
+msgstr ""
+
+#: src/Menu/EnterName.cpp:42 src/Menu/InfoCK.cpp:38 src/Menu/InfoDM.cpp:38
+#: src/Menu/InfoGIP.cpp:38 src/Menu/InfoHide.cpp:38 src/Menu/InfoSB.cpp:38
+#: src/Menu/InfoTDM.cpp:38 src/Menu/NewGameMenu.cpp:105
+#: src/Menu/NewGameMenu.cpp:116 src/Menu/NewGameMenu.cpp:135
+#: src/Menu/NewGameMenu.cpp:154 src/Menu/NewGameMenu.cpp:172
+#: src/Menu/NewGameMenu.cpp:182 src/Menu/TutorialWindow.cpp:41
+msgid "Info"
+msgstr "相关信息"
+
+#: src/Menu/EnterName.cpp:44
+msgid "That's a bad name... Feel free to enter a better one!"
+msgstr "这个名字太烂了……还是换个更好一点的吧。"
+
+#: src/Menu/ExitConfirm.cpp:37
+msgid "Do you really want to quit?"
+msgstr "你确定要退出？"
+
+#: src/Menu/InfoCK.cpp:40
+msgid "Pick up the remote and keep it as long as possible!"
+msgstr "拿起控制器，尽可能避免敌人从你手中夺走它！"
+
+#: src/Menu/InfoCK.cpp:42
+msgid ""
+"As if the GREAT WAR was not enough, your planetary system is threatened by a new source of incredible evilness: A giant ship of unknown invaders is levitating over your galaxy, aiming on the home planets with a monolithic weapon of mass destruction.\n"
+"As a sign of cynicism, the attackers dropped a remote control to adjust this provenance of death and fear.\n"
+"Reach it first to turn your enemy's home planet into a place of desolation!\n"
+"Be the CANNONKEEPer."
+msgstr ""
+"似乎星际大战并没有让命运的主宰者感到满足——现在，你的星球正遭受着一股新的邪恶力量的威胁：一艘不明身份的侵略者的巨型飞船正在你的星系中游荡，并用一种威力极大的石制武器瞄准了各个文明所依附的星球。\n"
+"做为一种邪恶的嘲讽，飞船的所有者将死亡与恐惧的源泉——武器的控制器——留了下来。抢在敌人之前夺走它，使敌人的家园变成荒凉之地！\n"
+"\n"
+"你就是邪恶力量的守卫者。"
+
+#: src/Menu/InfoCK.cpp:50 src/Menu/InfoDM.cpp:52 src/Menu/InfoGIP.cpp:51
+#: src/Menu/InfoHide.cpp:46 src/Menu/InfoSB.cpp:52 src/Menu/InfoTDM.cpp:51
+msgid "Show this info again."
+msgstr "下次仍然显示此信息"
+
+#: src/Menu/InfoDM.cpp:40 src/Menu/InfoTDM.cpp:40
+msgid "Destroy as many enemies as possible!"
+msgstr "尽你所能来击败敌人吧！"
+
+#: src/Menu/InfoDM.cpp:42
+msgid ""
+"As a result of the GREAT WAR you have lost everything: your home, your family and your self-esteem.\n"
+"Your last chance to get out of the miserable life you are stuck in, is to become a gladiator in the glorious\n"
+"DEATHMATCH-arena.\n"
+"Resist the other fighters and earn points by destroying the nutshells they call ships.\n"
+"Prepare yourself!\n"
+"Death and Glory awaits you."
+msgstr ""
+"星际大战使你失去了一切：家园，家庭，甚至还有你的自尊。\n"
+"在无上荣耀的死亡竞赛的竞技场中做一名角斗士，是你最后的摆脱这种痛苦的机会。\n"
+"与其它的角斗士战斗，通过破坏那些坚果壳般的飞船来赢得分数。\n"
+"\n"
+"做好准备！死亡和荣耀都在等着你。"
+
+#: src/Menu/InfoGIP.cpp:40
+msgid "Destroy es many enemies as possible!"
+msgstr "尽可能多地打倒敌人！"
+
+#: src/Menu/InfoGIP.cpp:42
+msgid ""
+"As the GREAT WAR reduces your resources drastically, scientists were engaged to find a way of efficiently destroying your enemy by limiting the given input. They did a lot of research and eventually created a new weapon with an incredible property: It kills instantly, but launched projectiles are really affine to any gravitation and they're quite difficult to handle. Therefore they called it: INSTA-GRAVE!\n"
+"\n"
+"Unfortunately someone stole the technology, so your enemies can use this evil weapon, too. Now it is your turn: Defeat those thieves in the great GRAVE-ITATION-PIT to regain the upper hand.\n"
+"\n"
+"Win this battle, and the victory of the GREAT WAR may be yours."
+msgstr ""
+"星际大战严重消耗了星球上的资源，因此科学家们需要找到一种仅仅消耗少量资源却能有效杀伤敌人的方法。最终，经过无数次的实验后，他们终于创造出了一种具有独特性质的新型武器：它可以在一瞬间将敌人杀死，但是射出的子弹却很容易受到万有引力的影响，因此非常难以控制。所以科学家们称之为：引力弹！\n"
+"\n"
+"不幸的是，有人偷走了它，于是这项邪恶的技术也落入了敌人的手中。现在，轮到你来大显神威了：在重力井的空间里击败敌人，夺回战斗的上风！\n"
+"\n"
+"如果能赢得这场战斗的话，星际大战的全局胜利也就指日可待了。"
+
+#: src/Menu/InfoHide.cpp:41
+msgid ""
+"You paused M.A.R.S. right in the middle of an insane battle?\n"
+"If you want to take a screenshot, this button enables you to generate epic wallpapers, by hiding all windows.\n"
+"\n"
+"Simply bring them back afterwards by pressing ESC."
+msgstr ""
+"你在一场疯狂的战斗中叫了暂停？\n"
+"如果你想截图，这个按钮可以隐藏所有的窗口，从而使你获得一张超豪华的墙纸。\n"
+"\n"
+"截图完毕之后别忘了按ESC键继续战斗！"
+
+#: src/Menu/InfoSB.cpp:40
+msgid "Kick or shoot the ball to your enemy's planet!"
+msgstr "你可以通过碰撞或是射击的方式将球推向敌人的星球！"
+
+#: src/Menu/InfoSB.cpp:42
+msgid ""
+"In year 3547, civilizations all over the galaxy have settled their own planets, living in peace and harmony with its environment.\n"
+"But outside the contemplative habitats, the GREAT WAR is raging.\n"
+"As a famous fighter on your way to never ending honor and prosperity, you have to protect your planet from the oncoming doom of your jealous\n"
+"neighbours! Fight the battle, a true hero as you are was born for: SPACEBALL.\n"
+"Protect your planet from the sphere of death and defeat your enemies by letting it crush into their ridiculous globe."
+msgstr ""
+"公元3547年，银河系内的文明都已经定居在了各自的星球上，与环境和平而和谐地共存着。但是在安稳的居住地之外，星际大战正在进行。\n"
+"做为一个赫赫有名的、永远追求着荣耀与繁荣的战士，你必须从贪婪的邻居带来的毁灭的阴影中拯救你的星球！现在就加入星际球战斗吧，你这样的勇士正是为它而降临的！\n"
+"在星际球模式的战斗中，你需要保持这颗死亡之球远离你的星球，并通过使它撞击到敌人的星球上来打败你的对手。"
+
+#: src/Menu/InfoTDM.cpp:42
+msgid ""
+"The negotiations have failed!\n"
+"Both of you and your neighbours had to record enormous losses in conclusion of the abiding GREAT WAR.\n"
+"As a last attempt of gaining the upper hand, you are ordered to decimate your enemy's resources and to protect your own one's. The only way to do so is an epic TEAMDEATHMATCH.\n"
+"Protect your comrades and destroy your enemies!\n"
+"Teach them a lesson they will never forget."
+msgstr ""
+"谈判破裂了！\n"
+"你和你的邻居都不得不承受持久的星际大战所带来的巨大的资源消耗。\n"
+"做为取得上风的最后手段，你奉命毁灭敌人的资源并保护我方的仓库，这就免不了与敌人的小队进行一番殊死搏斗。\n"
+"保护你的战友，毁灭你的敌人！给他们一点颜色瞧瞧，让他们永远记住你的厉害！"
+
+#: src/Menu/MainMenu.cpp:51 src/Menu/NewGameMenu.cpp:79
+msgid "Start Local Game"
+msgstr "本地游戏"
+
+#: src/Menu/MainMenu.cpp:52
+msgid "Start Tutorial"
+msgstr "教程"
+
+#: src/Menu/MainMenu.cpp:54
+msgid "Join Network Game"
+msgstr "加入网络对战"
+
+#: src/Menu/MainMenu.cpp:57
+msgid "Quit M.A.R.S."
+msgstr "退出"
+
+#: src/Menu/NewGameConfirm.cpp:37 src/Menu/ToMainConfirm.cpp:37
+msgid "Do you really want to end the current game?"
+msgstr "结束当前游戏？"
+
+#: src/Menu/NewGameMenu.cpp:65
+msgid "Sets the team of the local players."
+msgstr "设定本地玩家所属的队伍。"
+
+#: src/Menu/NewGameMenu.cpp:66
+msgid "Enables local players."
+msgstr "开启本地玩家。"
+
+#: src/Menu/NewGameMenu.cpp:67
+msgid "Bots"
+msgstr "AI数量"
+
+#: src/Menu/NewGameMenu.cpp:68
+msgid "Adjusts the amount of ships controlled by the artificial intelligence."
+msgstr "调整AI所控制的飞船数。"
+
+#: src/Menu/NewGameMenu.cpp:69
+msgid "Point limit to be reached by a team in order to win the game."
+msgstr "团队赢得比赛所需得到的分数。"
+
+#: src/Menu/NewGameMenu.cpp:70
+msgid "Bot Difficulty"
+msgstr "AI强度"
+
+#: src/Menu/NewGameMenu.cpp:71
+msgid "Adjusts the strength of the bots."
+msgstr "调整AI的强度。"
+
+#: src/Menu/NewGameMenu.cpp:72
+msgid "PowerUp Spawn Rate"
+msgstr "道具生成速率"
+
+#: src/Menu/NewGameMenu.cpp:73
+msgid ""
+"Adjusts the amount of Power-Ups which will spawn during the game.\n"
+"Zero disables Power-Ups entirely."
+msgstr ""
+"调整游戏中道具出现的速率。\n"
+"如果设置为零则会完全取消道具的出现。"
+
+#: src/Menu/NewGameMenu.cpp:77
+msgid "Start"
+msgstr "开始"
+
+#: src/Menu/NewGameMenu.cpp:89 src/Menu/NewGameMenu.cpp:119
+#: src/Menu/NewGameMenu.cpp:138 src/Menu/NewGameMenu.cpp:157
+msgid "Left Team"
+msgstr "左队"
+
+#: src/Menu/NewGameMenu.cpp:90 src/Menu/NewGameMenu.cpp:120
+#: src/Menu/NewGameMenu.cpp:139 src/Menu/NewGameMenu.cpp:158
+msgid "Right Team"
+msgstr "右队"
+
+#: src/Menu/NewGameMenu.cpp:101 src/Menu/NewGameMenu.cpp:112
+#: src/Menu/NewGameMenu.cpp:131 src/Menu/NewGameMenu.cpp:150
+#: src/Menu/NewGameMenu.cpp:169 src/Menu/NewGameMenu.cpp:178
+msgid "Game Options"
+msgstr "游戏选项"
+
+#: src/Menu/NewGameMenu.cpp:106 src/Menu/NewGameMenu.cpp:117
+#: src/Menu/NewGameMenu.cpp:136 src/Menu/NewGameMenu.cpp:155
+#: src/Menu/NewGameMenu.cpp:183 src/Menu/WeaponOptions.cpp:50
+msgid "Weapon Options"
+msgstr "武器选项"
+
+#: src/Menu/NewGameMenu.cpp:108 src/Menu/NewGameMenu.cpp:174
+msgid "Players"
+msgstr "玩家"
+
+#: src/Menu/OptionsMenu.cpp:86
+msgid "Interface"
+msgstr "界面"
+
+#: src/Menu/OptionsMenu.cpp:87
+msgid "Gameplay"
+msgstr "游戏"
+
+#: src/Menu/OptionsMenu.cpp:88
+msgid "Graphics"
+msgstr "视觉效果"
+
+#: src/Menu/OptionsMenu.cpp:89
+msgid "Audio"
+msgstr "声音"
+
+#: src/Menu/OptionsMenu.cpp:93
+msgid "General Settings"
+msgstr "一般设定"
+
+#: src/Menu/OptionsMenu.cpp:94
+msgid "Language"
+msgstr "语言"
+
+#: src/Menu/OptionsMenu.cpp:102
+msgid "File Format for Screenshots"
+msgstr "截屏图片格式"
+
+#: src/Menu/OptionsMenu.cpp:103
+msgid "Sets the format being used when screenshots are saved."
+msgstr "设置截图的保存格式。"
+
+#: src/Menu/OptionsMenu.cpp:106
+msgid "Hot Key for Screenshots"
+msgstr "截屏快捷键"
+
+#. * TRANSLATORS: %s is a file path, representing /path/to/mars_config/screenshots.
+#: src/Menu/OptionsMenu.cpp:109
+#, c-format
+msgid "When this key is pressed, a screenshot is saved to %s"
+msgstr "当这个键被按下的时候，截屏就会被保存到%s 。"
+
+#: src/Menu/OptionsMenu.cpp:113
+msgid "Hot Key for Statistics"
+msgstr "统计数据快捷键"
+
+#: src/Menu/OptionsMenu.cpp:114
+msgid "When this key is pressed while playing a game, a window pops up displaying statistics for the current game."
+msgstr "当在游戏进行中按下这个键时，一个显示着统计数据的窗口就会弹出。"
+
+#: src/Menu/OptionsMenu.cpp:116
+msgid "Show Game Information"
+msgstr "显示游戏信息"
+
+#: src/Menu/OptionsMenu.cpp:118
+msgid "Frames per Second"
+msgstr "每秒帧数"
+
+#: src/Menu/OptionsMenu.cpp:119
+msgid ""
+"Displays the amount of Frames calculated per Second.\n"
+"If this is always very low (<20), you should adjust some settings in graphics tab!"
+msgstr ""
+"显示每秒帧数。\n"
+"如果这个数字总是低于20，你应该马上在选项中调整显示设置！"
+
+#: src/Menu/OptionsMenu.cpp:123 src/Menu/OptionsMenu.cpp:183
+msgid "Particle Count"
+msgstr "粒子数目"
+
+#: src/Menu/OptionsMenu.cpp:124
+msgid "Displays the amount of active particles."
+msgstr "显示当前活跃的粒子数目。"
+
+#: src/Menu/OptionsMenu.cpp:127
+msgid "Display Tool Tips"
+msgstr "显示工具提示"
+
+#: src/Menu/OptionsMenu.cpp:128
+msgid "Dismisses tool tips like this one."
+msgstr "屏蔽掉所有的工具提示，比如您现在看到的这个。"
+
+#: src/Menu/OptionsMenu.cpp:132
+msgid "Full screen"
+msgstr "全屏"
+
+#: src/Menu/OptionsMenu.cpp:133
+msgid "Maximizes the window, making it cover the entire screen."
+msgstr "最大化窗口，使之覆盖整个屏幕。"
+
+#: src/Menu/OptionsMenu.cpp:135
+msgid "Window Settings"
+msgstr "窗口设置"
+
+#: src/Menu/OptionsMenu.cpp:137
+msgid "V-Sync"
+msgstr "垂直同步"
+
+#: src/Menu/OptionsMenu.cpp:138
+msgid ""
+"Makes the game update according to the refresh rate of your monitor.\n"
+"Enabling this option typically makes the game run more smoothly."
+msgstr ""
+"让游戏依照显示器的刷新频率来更新画面。\n"
+"一般来说，选择此选项可以让画面更加流畅。"
+
+#: src/Menu/OptionsMenu.cpp:142
+msgid "Shader Effects"
+msgstr "启用shader"
+
+#: src/Menu/OptionsMenu.cpp:143
+msgid "Enables cool effects like heat haze, but reduces game performance."
+msgstr "开启一些特殊效果，比如热雾；但是这会加重计算机的计算负担。"
+
+#: src/Menu/OptionsMenu.cpp:167
+msgid "Off"
+msgstr "关闭"
+
+#: src/Menu/OptionsMenu.cpp:169
+msgid "Resolution"
+msgstr "分辨率"
+
+#: src/Menu/OptionsMenu.cpp:170
+msgid ""
+"Sets the size of the window.\n"
+"Affects both full screen and windowed mode."
+msgstr ""
+"设置窗口大小。\n"
+"这会影响到全屏和窗口化两种模式。"
+
+#: src/Menu/OptionsMenu.cpp:172
+msgid "Game Settings"
+msgstr "游戏设置"
+
+#: src/Menu/OptionsMenu.cpp:174
+msgid "High Star Field Resolution"
+msgstr "高星图分辨率"
+
+#: src/Menu/OptionsMenu.cpp:175
+msgid ""
+"With high resolution displays, this option makes the star field loop later.\n"
+"Disabling may increase game performance slightly."
+msgstr ""
+"这个选项会使星图的计算被延后。\n"
+"取消此选项可能会轻微地提高游戏速度。"
+
+#: src/Menu/OptionsMenu.cpp:179
+msgid "Moving Stars"
+msgstr "动态背景星图"
+
+#: src/Menu/OptionsMenu.cpp:180
+msgid "Draws some moving stars on the background. Eye candy, but reduces game performance."
+msgstr "在背景上绘制动态的星图。效果很好，但是会降低运行速度。"
+
+#: src/Menu/OptionsMenu.cpp:184
+msgid ""
+"Adjusts the global particle count.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"调整全局粒子数目。\n"
+"选择更低的值会明显提高运行速度。"
+
+#: src/Menu/OptionsMenu.cpp:187
+msgid "Particle Lifetime"
+msgstr "粒子周期"
+
+#: src/Menu/OptionsMenu.cpp:188
+msgid ""
+"Adjusts the global particle life time.\n"
+"Lower values will increase performance significantly."
+msgstr ""
+"调整全局粒子生存周期。\n"
+"更低的值会让运行速度明显提高。"
+
+#: src/Menu/OptionsMenu.cpp:191
+msgid "Volume Settings"
+msgstr "音量设定"
+
+#: src/Menu/OptionsMenu.cpp:193
+msgid "Music"
+msgstr "背景音乐"
+
+#: src/Menu/OptionsMenu.cpp:194
+msgid "Adjusts volume of background music."
+msgstr "调整背景音乐的音量。"
+
+#: src/Menu/OptionsMenu.cpp:197
+msgid "Sound"
+msgstr "游戏声音"
+
+#: src/Menu/OptionsMenu.cpp:198
+msgid "Adjusts volume of sound effects."
+msgstr "调整声音效果的音量。"
+
+#: src/Menu/OptionsMenu.cpp:201
+msgid "Announcer"
+msgstr "游戏旁白"
+
+#: src/Menu/OptionsMenu.cpp:202
+msgid "Adjusts volume of announcers voice."
+msgstr "调整旁白的音量。"
+
+#: src/Menu/OptionsMenu.cpp:204
+msgid "Playback Settings"
+msgstr "回放设置"
+
+#: src/Menu/OptionsMenu.cpp:206
+msgid "Play Tracks in Random Order"
+msgstr "随机播放"
+
+#: src/Menu/OptionsMenu.cpp:207
+msgid "Enables music play back in a random sequence."
+msgstr "允许随机回放。"
+
+#: src/Menu/OptionsMenu.cpp:210
+msgid "Play Next Track"
+msgstr "切换背景音乐"
+
+#: src/Menu/OptionsMenu.cpp:211
+msgid "Pressing this key switches to the next music track."
+msgstr "按下这个键可以切换到下一条音轨。"
+
+#: src/Menu/OptionsMenu.cpp:214
+msgid "Play Previous Track"
+msgstr "播放上一首歌曲"
+
+#: src/Menu/OptionsMenu.cpp:215
+msgid "Pressing this key switches to the previous music track."
+msgstr "按下此键播放上一曲。"
+
+#: src/Menu/OptionsMenu.cpp:218
+msgid "Special Effects"
+msgstr "特殊效果"
+
+#: src/Menu/OptionsMenu.cpp:220
+msgid "Explosions for Slow Motion"
+msgstr "慢动作爆炸数目"
+
+#: src/Menu/OptionsMenu.cpp:221
+msgid "If that many ships explode simultaneously, the slow motion effect kicks in."
+msgstr "当有很多飞船同时爆炸时，慢动作效果会生效。"
+
+#: src/Menu/OptionsMenu.cpp:224
+#, fuzzy
+msgid "Game Speed"
+msgstr "游戏设置"
+
+#: src/Menu/OptionsMenu.cpp:225
+msgid "Adjusts the game speed in percent."
+msgstr ""
+
+#: src/Menu/OptionsMenu.cpp:227
+msgid "Show Debug Information"
+msgstr "显示调试信息"
+
+#: src/Menu/OptionsMenu.cpp:229
+msgid "Bots Orientation"
+msgstr "AI定向"
+
+#: src/Menu/OptionsMenu.cpp:230
+msgid "Displays the job of each bot."
+msgstr "显示每个AI的任务。"
+
+#: src/Menu/OptionsMenu.cpp:233
+msgid "Zones"
+msgstr "区域"
+
+#: src/Menu/OptionsMenu.cpp:234
+msgid "Displays tactical zones, which are important for the artificial intelligence."
+msgstr "显示对AI来说非常重要的战术区域。"
+
+#: src/Menu/OptionsMenu.cpp:237
+msgid "AI-Paths"
+msgstr "AI轨迹"
+
+#: src/Menu/OptionsMenu.cpp:238
+msgid "Displays paths calculated by bots."
+msgstr "显示AI的运动路径。"
+
+#: src/Menu/OptionsMenu.cpp:241 src/Menu/OptionsMenu.cpp:253
+msgid "Name"
+msgstr "名字"
+
+#: src/Menu/OptionsMenu.cpp:242 src/Menu/OptionsMenu.cpp:254
+msgid "Accelerate"
+msgstr "加速"
+
+#: src/Menu/OptionsMenu.cpp:243 src/Menu/OptionsMenu.cpp:255
+msgid "Turn Left"
+msgstr "左转"
+
+#: src/Menu/OptionsMenu.cpp:244 src/Menu/OptionsMenu.cpp:256
+msgid "Turn Right"
+msgstr "右转"
+
+#: src/Menu/OptionsMenu.cpp:245 src/Menu/OptionsMenu.cpp:257
+msgid "Weapon"
+msgstr "武器"
+
+#: src/Menu/OptionsMenu.cpp:246 src/Menu/OptionsMenu.cpp:258
+msgid "Special Ability"
+msgstr "特殊能力"
+
+#: src/Menu/OptionsMenu.cpp:247 src/Menu/OptionsMenu.cpp:259
+msgid "Ship Settings"
+msgstr "飞船设置"
+
+#: src/Menu/OptionsMenu.cpp:249 src/Menu/OptionsMenu.cpp:261
+msgid "Ship"
+msgstr "飞船型号"
+
+#: src/Menu/OptionsMenu.cpp:250 src/Menu/OptionsMenu.cpp:262
+msgid "Player Color"
+msgstr "玩家颜色"
+
+#: src/Menu/OptionsMenu.cpp:251 src/Menu/OptionsMenu.cpp:263
+msgid "Team Color"
+msgstr "队伍颜色"
+
+#: src/Menu/PauseMenu.cpp:40
+msgid "Continue"
+msgstr "继续"
+
+#: src/Menu/ShaderError.cpp:35
+msgid "Sadly, shaders are not supported by your hardware!"
+msgstr "抱歉，您的显卡不支持shader！"
+
+#: src/Menu/TutorialWindow.cpp:38
+msgid "Next"
+msgstr "下一步"
+
+#: src/Menu/WeaponOptions.cpp:53
+msgid "Weapons"
+msgstr "武器"
+
+#: src/Menu/WeaponOptions.cpp:54
+msgid "Special Abilities"
+msgstr "特殊能力"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:171
+msgid "Add"
+msgstr "加号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:173
+msgid "Back Slash"
+msgstr "反斜杠"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:175
+msgid "Comma"
+msgstr "逗号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:177
+msgid "Dash"
+msgstr "横杠"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:179
+msgid "Delete"
+msgstr "Del"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:181
+msgid "Divide"
+msgstr "除号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:183
+msgid "Down"
+msgstr "下"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:185
+msgid "End"
+msgstr "End"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:187
+msgid "Equal"
+msgstr "等号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:201
+msgid "Home"
+msgstr "Home"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:203
+msgid "Insert"
+msgstr "Insert"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:205
+msgid "Left Alt"
+msgstr "左Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:207
+msgid "Left Bracket"
+msgstr "左方括号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:209
+msgid "Left Control"
+msgstr "左Ctrl"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:211
+msgid "Left"
+msgstr "左"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:213
+msgid "Left Shift"
+msgstr "左Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:215
+msgid "Left Super"
+msgstr "左Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:217
+msgid "Menu"
+msgstr "菜单键"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:219
+msgid "Multiply"
+msgstr "乘号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:231
+msgid "Page Down"
+msgstr "Page Down"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:233
+msgid "Page Up"
+msgstr "Page Up"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:235
+msgid "Pause"
+msgstr "Pause"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:237
+msgid "Period"
+msgstr "句号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:239
+msgid "Quote"
+msgstr "单引号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:241
+msgid "Right Alt"
+msgstr "右Alt"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:243
+msgid "Right Bracket"
+msgstr "右方括号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:245
+msgid "Right Control"
+msgstr "右Ctrl"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:247
+msgid "Return"
+msgstr "回车键"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:249
+msgid "Right"
+msgstr "右"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:251
+msgid "Right Shift"
+msgstr "右Shift"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:253
+msgid "Right Super"
+msgstr "右Super"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:255
+msgid "Semi Colon"
+msgstr "分号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:257
+msgid "Slash"
+msgstr "斜杠"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:259
+msgid "Space"
+msgstr "空格"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:261
+msgid "Subtract"
+msgstr "减号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:263
+msgid "Tilde"
+msgstr "波浪号"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:265
+msgid "Tab"
+msgstr "Tab"
+
+#. * TRANSLATORS: A key on your keyboard
+#: src/System/generateName.cpp:267
+msgid "Up"
+msgstr "上"
+
+#: src/System/generateName.cpp:275 src/System/generateName.cpp:305
+msgid "Joystick"
+msgstr "游戏手柄"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:277
+msgid "A Button"
+msgstr "A"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:279
+msgid "B Button"
+msgstr "B"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:281
+msgid "X Button"
+msgstr "X"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:283
+msgid "Y Button"
+msgstr "Y"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:285
+msgid "Left Bumper"
+msgstr "L1"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:287
+msgid "Right Bumper"
+msgstr "R1"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:289
+msgid "Start Button"
+msgstr "Start"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:291
+msgid "Back Button"
+msgstr "Back"
+
+#. * TRANSLATORS: A joystick button
+#: src/System/generateName.cpp:296
+msgid "Button"
+msgstr "按键"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:307
+msgid "Left Trigger"
+msgstr "L2"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:309
+msgid "Right Trigger"
+msgstr "R2"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:311
+msgid "Stick2 Up"
+msgstr "摇杆2 上"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:313
+msgid "Stick2 Down"
+msgstr "摇杆2 下"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:315
+msgid "Stick2 Left"
+msgstr "摇杆2 左"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:317
+msgid "Stick2 Right"
+msgstr "摇杆2 右"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:319
+msgid "Stick1 Up"
+msgstr "摇杆1 上"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:321
+msgid "Stick1 Down"
+msgstr "摇杆1 下"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:323
+msgid "Stick1 Left"
+msgstr "摇杆1 左"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:325
+msgid "Stick1 Right"
+msgstr "摇杆1 右"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:327
+msgid "Direction Up"
+msgstr "上"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:329
+msgid "Direction Down"
+msgstr "下"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:331
+msgid "Direction Left"
+msgstr "左"
+
+#. * TRANSLATORS: A joystick axis type
+#: src/System/generateName.cpp:333
+msgid "Direction Right"
+msgstr "右"
+
+#: src/System/window.cpp:377
+msgid "Screenshot saved!"
+msgstr "截屏已保存！"
+
+#, fuzzy
+#~ msgid "System Language"
+#~ msgstr "语言"
