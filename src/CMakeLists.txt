@@ -112,12 +112,6 @@ if(UNIX)
 		DESTINATION
 			${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/scalable/apps
 	)
-	install(
-		FILES
-			${MARS_SOURCE_DIR}/resources/marsshooter.xpm
-		DESTINATION
-			${CMAKE_INSTALL_FULL_DATAROOTDIR}/pixmaps
-	)
 	# desktop file
 	install(
 		FILES
