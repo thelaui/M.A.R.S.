@@ -1,0 +1,109 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: ${{ matrix.platform.name }} ${{ matrix.config.name }}
+    runs-on: ${{ matrix.platform.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+        - { name: Windows VS2019, os: windows-2019  }
+        - { name: Windows VS2022, os: windows-2022  }
+        - { name: Linux GCC,      os: ubuntu-latest }
+        - { name: Linux Clang,    os: ubuntu-latest, flags: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ }
+        - { name: MacOS XCode,    os: macos-latest  }
+        config:
+        - { name: Shared, flags: -DCMAKESFMLPROJECT_STATIC_LIBS=OFF -DBUILD_SHARED_LIBS=TRUE }
+        - { name: Static, flags: -DCMAKESFMLPROJECT_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=FALSE }
+
+    steps:
+    - name: Install Linux Dependencies
+      if: runner.os == 'Linux'
+      run: sudo apt-get update && sudo apt-get install libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev libfribidi-dev
+
+    - name: Install macOS Dependencies
+      if: runner.os == 'macOS'
+      run: brew install fribidi
+
+    - name: SFML - Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        repository: SFML/SFML
+        ref: 2.6.x
+        path: SFML
+
+    - name: SFML - Configure CMake
+      shell: bash
+      run: cmake -S $GITHUB_WORKSPACE/SFML -B $GITHUB_WORKSPACE/SFML/build -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/SFML/install -DCMAKE_VERBOSE_MAKEFILE=ON ${{matrix.platform.flags}} ${{matrix.config.flags}}
+
+    - name: SFML - Build
+      shell: bash
+      run: cmake --build $GITHUB_WORKSPACE/SFML/build --config Release --target install
+
+    - name: TagLib - Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        repository: taglib/taglib
+        path: taglib
+
+    - name: TagLib - Configure CMake
+      shell: bash
+      run: cmake -S $GITHUB_WORKSPACE/taglib -B $GITHUB_WORKSPACE/taglib/build -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/taglib/install -DCMAKE_VERBOSE_MAKEFILE=ON ${{matrix.platform.flags}} ${{matrix.config.flags}}
+
+    - name: TagLib - Build
+      shell: bash
+      run: cmake --build $GITHUB_WORKSPACE/taglib/build --config Release --target install
+
+    - name: GNU FriBidi - Checkout Code
+      if: runner.os == 'Windows'
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        repository: fribidi/fribidi
+        path: fribidi
+
+    - name: GNU FriBidi - Setup MSVC
+      if: runner.os == 'Windows'
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: GNU FriBidi - Setup Python
+      if: runner.os == 'Windows'
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.6
+
+    - name: GNU FriBidi - Setup meson
+      if: runner.os == 'Windows'
+      run: |
+        python -m pip install --upgrade pip
+        pip install meson ninja
+
+    - name: GNU FriBidi - Configure
+      if: runner.os == 'Windows'
+      run: meson build -Ddocs=false -Dprefix=$GITHUB_WORKSPACE/fribidi -Ddebug=false
+
+    - name: GNU FriBidi - Build
+      if: runner.os == 'Windows'
+      run: ninja -C build
+
+    - name: GNU FriBidi - Build
+      if: runner.os == 'Windows'
+      shell: bash
+      run: cmake --build $GITHUB_WORKSPACE/fribidi/build --config Release --target install
+
+    - name: M.A.R.S - Checkout Code
+      uses: actions/checkout@v3
+
+    - name: M.A.R.S - Configure CMake
+      shell: bash
+      run: cmake -S $GITHUB_WORKSPACE -B $GITHUB_WORKSPACE/build -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/install -DCMAKE_VERBOSE_MAKEFILE=ON -DSFML_DIR=$GITHUB_WORKSPACE/SFML/install/lib/cmake/SFML ${{matrix.platform.flags}} ${{matrix.config.flags}}
+
+    - name: M.A.R.S - Build
+      shell: bash
+      run: cmake --build $GITHUB_WORKSPACE/build --config Release --target install
