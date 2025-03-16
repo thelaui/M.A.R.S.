@@ -26,6 +26,8 @@ class SpaceObject;
 
 class Zone {
     public:
+        virtual ~Zone() = default;
+
         /// Returns true, if the given SpaceObject is inside this Zone.
         virtual bool isInside(SpaceObject const& toBeChecked) const = 0;
 

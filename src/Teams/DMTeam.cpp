@@ -67,6 +67,7 @@ void DMTeam::checkPowerUps() {
 
     powerUpLocations_.clear();
     std::list<PowerUp*> const& powerUps = items::getPowerUps();
+    powerUpLocations_.reserve(powerUps.size());
     for (std::list<PowerUp*>::const_iterator it=powerUps.begin(); it!=powerUps.end(); ++it) {
         if (!(*it)->isCollected()) {
             powerUpLocations_.push_back((*it)->location());

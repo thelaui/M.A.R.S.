@@ -27,6 +27,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class UiElement {
     public:
         UiElement(Vector2f const& topLeft, int width, int height);
+        virtual ~UiElement() = default;
 
         virtual void mouseMoved(Vector2f const& position);
         virtual void mouseWheelMoved(Vector2f const& position, int delta) {}

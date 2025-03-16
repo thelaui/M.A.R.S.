@@ -27,6 +27,7 @@ class Team;
 class Player {
     public:
         Player(controllers::ControlType controlType);
+        virtual ~Player() = default;
 
         void                      resetPoints();
 

@@ -30,6 +30,7 @@ class Special {
     public:
         /// Ctor which constructs the base special.
         Special(specials::SpecialType type, Ship* parent, sf::String name);
+        virtual ~Special() = default;
 
         /// This function is called whenever the special is activated.
         virtual void activate() const = 0;

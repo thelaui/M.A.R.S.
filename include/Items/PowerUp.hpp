@@ -31,7 +31,7 @@ class PowerUp {
         PowerUp(items::PowerUpType type, Vector2f const& location, float radius,
                 float totalLifeTime, int texX, int texY, Color3f const& bgColor);
 
-        ~PowerUp();
+        virtual ~PowerUp();
 
         virtual void update();
         virtual void draw() const;
