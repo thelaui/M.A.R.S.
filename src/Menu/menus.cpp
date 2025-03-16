@@ -128,7 +128,7 @@ namespace menus {
             showPause();
     }
 
-    void textEntered(sf::Uint32 keyCode) {
+    void textEntered(char32_t keyCode) {
         if (visible())
             windowStack_.back()->textEntered(keyCode);
     }

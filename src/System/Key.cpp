@@ -27,19 +27,19 @@ Key::Key(sf::Keyboard::Key code):
 
     code_.keyBoard_ = code;
 
-    if (code == sf::Keyboard::Return || code == sf::Keyboard::Space)
+    if (code == sf::Keyboard::Key::Enter || code == sf::Keyboard::Key::Space)
         navi_ = nConfirm;
-    else if (code == sf::Keyboard::Escape)
+    else if (code == sf::Keyboard::Key::Escape)
         navi_ = nAbort;
-    else if ((code == sf::Keyboard::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) || sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)))
-             || (code == sf::Keyboard::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)))
-             || (code == sf::Keyboard::Up))
+    else if ((code == sf::Keyboard::Key::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LControl) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RControl)))
+             || (code == sf::Keyboard::Key::Tab && (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift)))
+             || (code == sf::Keyboard::Key::Up))
         navi_ = nUp;
-    else if (code == sf::Keyboard::Tab || code == sf::Keyboard::Down)
+    else if (code == sf::Keyboard::Key::Tab || code == sf::Keyboard::Key::Down)
         navi_ = nDown;
-    else if (code == sf::Keyboard::Left)
+    else if (code == sf::Keyboard::Key::Left)
         navi_ = nLeft;
-    else if (code == sf::Keyboard::Right)
+    else if (code == sf::Keyboard::Key::Right)
         navi_ = nRight;
 }
 
@@ -54,25 +54,25 @@ Key::Key(unsigned int joyID, sf::Joystick::Axis joyAxis, int strength):
     code_.joyButton_ = tmp.first;
     strength_ = tmp.second;
 
-    if ((joyAxis == 7 && strength == -100) || (joyAxis == 1 && strength == -100) ||
+    if ((joyAxis == sf::Joystick::Axis::PovY && strength == -100) || (joyAxis == sf::Joystick::Axis::Y && strength == -100) ||
         # if defined __WIN32__
-            (joyAxis == 3 && strength == -100)
+            (joyAxis == sf::Joystick::Axis::R && strength == -100)
         # else
-            (joyAxis == 5 && strength == -100)
+            (joyAxis == sf::Joystick::Axis::V && strength == -100)
         # endif
         )
         navi_ = nUp;
-    else if ((joyAxis == 7 && strength == 100) || (joyAxis == 1 && strength == 100) ||
+    else if ((joyAxis == sf::Joystick::Axis::PovY && strength == 100) || (joyAxis == sf::Joystick::Axis::Y && strength == 100) ||
         # if defined __WIN32__
-            (joyAxis == 3 && strength == 100)
+            (joyAxis == sf::Joystick::Axis::R && strength == 100)
         # else
-            (joyAxis == 5 && strength == 100)
+            (joyAxis == sf::Joystick::Axis::V && strength == 100)
         # endif
         )
         navi_ = nDown;
-    else if ((joyAxis == 6 && strength == -100) || (joyAxis == 0 && strength == -100) || (joyAxis == 4 && strength == -100))
+    else if ((joyAxis == sf::Joystick::Axis::PovX && strength == -100) || (joyAxis == sf::Joystick::Axis::X && strength == -100) || (joyAxis == sf::Joystick::Axis::U && strength == -100))
         navi_ = nLeft;
-    else if ((joyAxis == 6 && strength == 100) || (joyAxis == 0 && strength == 100) || (joyAxis == 4 && strength == 100))
+    else if ((joyAxis == sf::Joystick::Axis::PovX && strength == 100) || (joyAxis == sf::Joystick::Axis::X && strength == 100) || (joyAxis == sf::Joystick::Axis::U && strength == 100))
         navi_ = nRight;
 }
 
@@ -104,16 +104,16 @@ std::pair<Key::AxisType, int> Key::convertFromSFML(sf::Joystick::Axis joyAxis, i
     std::pair<AxisType, int> result;
     result.second = std::abs(strength);
     switch (joyAxis) {
-        case sf::Joystick::X:
+        case sf::Joystick::Axis::X:
             if (strength < 0) result.first = aALleft;
             else              result.first = aALright;
             break;
-        case sf::Joystick::Y:
+        case sf::Joystick::Axis::Y:
             if (strength < 0) result.first = aALup;
             else              result.first = aALdown;
             break;
 
-        case sf::Joystick::Z:
+        case sf::Joystick::Axis::Z:
             # if defined __WIN32__
                 if (strength > 0) {
                     result.first = aLT;
@@ -129,7 +129,7 @@ std::pair<Key::AxisType, int> Key::convertFromSFML(sf::Joystick::Axis joyAxis, i
             # endif
                 break;
 
-        case sf::Joystick::R:
+        case sf::Joystick::Axis::R:
             # if defined __WIN32__
                 if (strength < 0) result.first = aARup;
                 else              result.first = aARdown;
@@ -139,21 +139,21 @@ std::pair<Key::AxisType, int> Key::convertFromSFML(sf::Joystick::Axis joyAxis, i
             # endif
                 break;
 
-        case sf::Joystick::U:
+        case sf::Joystick::Axis::U:
             if (strength < 0) result.first = aARleft;
             else              result.first = aARright;
             break;
-        case sf::Joystick::V:
+        case sf::Joystick::Axis::V:
             # if !defined __WIN32__
                 if (strength < 0) result.first = aARup;
                 else              result.first = aARdown;
             # endif
             break;
-        case sf::Joystick::PovX:
+        case sf::Joystick::Axis::PovX:
             if (strength < 0) result.first = aPOVleft;
             else              result.first = aPOVright;
             break;
-        case sf::Joystick::PovY:
+        case sf::Joystick::Axis::PovY:
             if (strength < 0) result.first = aPOVup;
             else              result.first = aPOVdown;
             break;
@@ -166,27 +166,27 @@ std::pair<Key::AxisType, int> Key::convertFromSFML(sf::Joystick::Axis joyAxis, i
 
 sf::Joystick::Axis Key::convertToSFML(AxisType joyAxis) {
     if(joyAxis == aALleft || joyAxis == aALright)
-        return sf::Joystick::X;
+        return sf::Joystick::Axis::X;
     else if(joyAxis == aALup || joyAxis == aALdown)
-        return sf::Joystick::Y;
+        return sf::Joystick::Axis::Y;
     else if(joyAxis == aLT)
-        return sf::Joystick::Z;
+        return sf::Joystick::Axis::Z;
     else if(joyAxis == aRT) {
         # if defined __WIN32__
-            return sf::Joystick::Z;
+            return sf::Joystick::Axis::Z;
         # else
-            return sf::Joystick::R;
+            return sf::Joystick::Axis::R;
         # endif
     }
     else if(joyAxis == aARleft || joyAxis == aARright)
-        return sf::Joystick::U;
+        return sf::Joystick::Axis::U;
     else if(joyAxis == aARup || joyAxis == aARdown)
         # if defined __WIN32__
-            return sf::Joystick::R;
+            return sf::Joystick::Axis::R;
         # else
-            return sf::Joystick::V;
+            return sf::Joystick::Axis::V;
         # endif
-    else return sf::Joystick::PovX;
+    else return sf::Joystick::Axis::PovX;
 }
 
 bool operator== (Key const& lhs, Key const& rhs) {

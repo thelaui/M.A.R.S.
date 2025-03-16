@@ -20,13 +20,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "System/settings.hpp"
 # include "Games/games.hpp"
 
+# include <optional>
+
 # define CHANNELCOUNT 64
 
 namespace sound {
 
     namespace {
         std::vector<sf::SoundBuffer*> sounds_(COUNT);
-        sf::Sound soundChannel_[CHANNELCOUNT];
+        std::optional<sf::Sound> soundChannel_[CHANNELCOUNT];
         bool initialized_(false);
 
         void loadSound_(SoundType sound, std::string fileName) {
@@ -36,7 +38,7 @@ namespace sound {
         }
 
         void init_() {
-            sf::Listener::setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
+            sf::Listener::setPosition({SPACE_X_RESOLUTION*0.5f, 0.f, 300.f});
             initialized_ = true;
         }
     }
@@ -48,16 +50,20 @@ namespace sound {
             if (sounds_[sound] != NULL) {
                 // if its already loaded search for free soundChannel_
                 int i = 0;
-                while((i < CHANNELCOUNT) && (soundChannel_[i].getStatus() == sf::Sound::Playing)) i++;
+                while((i < CHANNELCOUNT) && soundChannel_[i] && (soundChannel_[i]->getStatus() == sf::Sound::Status::Playing)) i++;
                 if (i < CHANNELCOUNT) {
                     // play sound with random pitch
-                    soundChannel_[i].setBuffer(*sounds_[sound]);
+                    if (soundChannel_[i])
+                        soundChannel_[i]->setBuffer(*sounds_[sound]);
+                    else
+                        soundChannel_[i] = sf::Sound(*sounds_[sound]);
+
                     if (sound != Click && sound != Tab && sound != Check && sound != Countdown && sound != Start )
-                        soundChannel_[i].setPitch(1 + static_cast<float>(rand()%100)/200.f - 0.25f);
-                    soundChannel_[i].setVolume((volume < 0.f ? -volume : volume)*static_cast<float>(settings::C_soundVolume)/100.f);
-                    soundChannel_[i].setPosition(position.x_, 0.f, 0.f);
-                    soundChannel_[i].setAttenuation(0.f);
-                    soundChannel_[i].play();
+                        soundChannel_[i]->setPitch(1 + static_cast<float>(rand()%100)/200.f - 0.25f);
+                    soundChannel_[i]->setVolume((volume < 0.f ? -volume : volume)*static_cast<float>(settings::C_soundVolume)/100.f);
+                    soundChannel_[i]->setPosition({position.x_, 0.f, 0.f});
+                    soundChannel_[i]->setAttenuation(0.f);
+                    soundChannel_[i]->play();
                 }
             }
             else {

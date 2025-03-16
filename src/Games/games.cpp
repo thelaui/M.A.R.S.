@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Media/music.hpp"
 # include "Menu/menus.hpp"
 # include "Hud/hud.hpp"
+# include "Shaders/postFX.hpp"
 # include "System/window.hpp"
 
 # include <SFML/OpenGL.hpp>
@@ -84,6 +85,8 @@ namespace games {
     }
 
     void draw() {
+        postFX::update();
+
         window::startDrawSpace();
 
         currentGame_->draw();

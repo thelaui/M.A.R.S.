@@ -56,7 +56,7 @@ void TextEdit::mouseMoved(Vector2f const& position) {
     UiElement::mouseMoved(position);
     if (label_)
         label_->mouseMoved(position);
-    if (pressed_ && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+    if (pressed_ && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
         cursorPos_ = 0;
         cursorTimer_ = 0;
         int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
@@ -87,25 +87,25 @@ void TextEdit::keyEvent(bool down, Key const& key) {
         if (pressed_) {
             if (down) {
                 // backspace
-                if (key.code_.keyBoard_ == sf::Keyboard::BackSpace && cursorPos_ > 0) {
+                if (key.code_.keyBoard_ == sf::Keyboard::Key::Backspace && cursorPos_ > 0) {
                     value_->erase(cursorPos_-1, 1);
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
                 // delete
-                else if (key.code_.keyBoard_ == sf::Keyboard::Delete && cursorPos_ < value_->getSize()) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Key::Delete && cursorPos_ < value_->getSize()) {
                     value_->erase(cursorPos_, 1);
                 }
                 // move cursor
-                else if (key.code_.keyBoard_ == sf::Keyboard::Left && cursorPos_ > 0) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Key::Left && cursorPos_ > 0) {
                     --cursorPos_;
                     cursorTimer_ = 0;
                 }
-                else if (key.code_.keyBoard_ == sf::Keyboard::Right && cursorPos_ < value_->getSize()) {
+                else if (key.code_.keyBoard_ == sf::Keyboard::Key::Right && cursorPos_ < value_->getSize()) {
                     ++cursorPos_;
                     cursorTimer_ = 0;
                 }
-                else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Keyboard::Up || key.code_.keyBoard_ == sf::Keyboard::Down || key.navi_ == Key::nConfirm) {
+                else if (key.navi_ == Key::nAbort || key.code_.keyBoard_ == sf::Keyboard::Key::Up || key.code_.keyBoard_ == sf::Keyboard::Key::Down || key.navi_ == Key::nConfirm) {
                     if (*value_ == "")
                         *value_ = fallBack_;
                     menus::unFixKeyboard();
@@ -120,7 +120,7 @@ void TextEdit::keyEvent(bool down, Key const& key) {
     }
 }
 
-void TextEdit::textEntered(sf::Uint32 keyCode) {
+void TextEdit::textEntered(char32_t keyCode) {
     if (pressed_) {
         if (type_ == TEXT_EDIT) {
             if (value_->getSize() < maxLength_ && keyCode != 8 && keyCode != 13 && keyCode != 32 && keyCode != 127) {

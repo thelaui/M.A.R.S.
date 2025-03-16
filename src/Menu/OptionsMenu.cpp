@@ -109,9 +109,9 @@ UiWindow* OptionsMenu::get() {
         std::vector<sf::String> resolutions;
         std::vector<sf::String> colorDepths;
         for (std::vector<sf::VideoMode>::iterator it = modes.begin(); it != modes.end(); ++it) {
-            if (it->width >= 800 && it->bitsPerPixel >= 8) {
+            if (it->size.x >= 800 && it->bitsPerPixel >= 8) {
                 std::stringstream res, depth;
-                res << it->width << " x " << it->height;
+                res << it->size.x << " x " << it->size.y;
                 depth << it->bitsPerPixel;
                 sf::String resString(res.str()), depthString(depth.str());
 
@@ -266,12 +266,12 @@ void OptionsMenu::onShow() {
     else if (settings::C_screenShotFormat == "png") format_ = "PNG(*.png)";
     else if (settings::C_screenShotFormat == "jpg") format_ = "JPEG (*.jpg)";
 
-    sf::VideoMode mode(settings::C_resX, settings::C_resY);
+    sf::VideoMode mode({settings::C_resX, settings::C_resY});
     std::vector<sf::VideoMode> modes = sf::VideoMode::getFullscreenModes();
     if (modes.size() > 0 && !mode.isValid()) {
         mode = sf::VideoMode::getFullscreenModes().front();
-        settings::C_resX = mode.width;
-        settings::C_resY = mode.height;
+        settings::C_resX = mode.size.x;
+        settings::C_resY = mode.size.y;
     }
 
     std::stringstream sstr1;

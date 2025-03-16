@@ -33,7 +33,8 @@ namespace announcer {
                         COUNT};
 
         std::vector<sf::SoundBuffer*> sounds_(COUNT);
-        sf::Sound soundChannel_;
+        const sf::SoundBuffer emptyBuffer_;
+        sf::Sound soundChannel_(emptyBuffer_);
 
         void loadSound_(SoundType sound, std::string fileName) {
             sounds_[sound] = new sf::SoundBuffer;
@@ -44,11 +45,11 @@ namespace announcer {
         void playSound(SoundType sound) {
             // check if sound is already loaded
             if (sounds_[sound] != NULL) {
-                if (soundChannel_.getStatus() != sf::Sound::Playing) {
+                if (soundChannel_.getStatus() != sf::Sound::Status::Playing) {
                     // play sound
                     soundChannel_.setBuffer(*sounds_[sound]);
                     soundChannel_.setVolume(static_cast<float>(settings::C_announcerVolume));
-                    soundChannel_.setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 0.f);
+                    soundChannel_.setPosition({SPACE_X_RESOLUTION*0.5f, 0.f, 0.f});
                     soundChannel_.setAttenuation(0.f);
                     soundChannel_.play();
                 }

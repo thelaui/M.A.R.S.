@@ -21,6 +21,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Locales/locales.hpp"
 
 # include <iostream>
+# include <map>
 
 namespace font {
     namespace {
@@ -32,7 +33,7 @@ namespace font {
         if (it == fonts_.end()) {
             // load it from file and...
             sf::Font* font = new sf::Font();
-            font->loadFromFile(settings::C_dataPath + "fonts/" + locales::getLocales()[languageID].font_);
+            font->openFromFile((settings::C_dataPath + "fonts/" + locales::getLocales()[languageID].font_).toUtf32());
             fonts_.insert(std::make_pair(languageID, font));
             // ... return it afterwards
             return font;

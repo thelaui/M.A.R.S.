@@ -20,6 +20,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class HudElement {
     public:
+        virtual ~HudElement() = default;
         virtual void draw() const = 0;
         virtual void update() {};
 };

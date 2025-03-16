@@ -31,6 +31,7 @@ class KeyController;
 class Team {
     public:
         Team(Color3f const& color);
+        virtual ~Team() = default;
 
         void update();
 

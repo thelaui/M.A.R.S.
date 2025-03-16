@@ -41,13 +41,13 @@ void Tab::mouseMoved(Vector2f const& position) {
     int mirror(locales::getCurrentLocale().LTR_ ? 1 : -1);
     Vector2f topLeftAbs(getTopLeft() + topLeft_*mirror-Vector2f(0.f, 10.f));
     if (locales::getCurrentLocale().LTR_) {
-        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
+        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) || pressed_) && topLeftAbs.x_+width_ > position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ < position.x_ && topLeftAbs.y_ < position.y_)
             hovered_ = true;
         else
             hovered_ = false;
     }
     else {
-        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
+        if ((!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) || pressed_) && topLeftAbs.x_-width_ < position.x_ && topLeftAbs.y_+height_ > position.y_ && topLeftAbs.x_ > position.x_ && topLeftAbs.y_ < position.y_)
             hovered_ = true;
         else
             hovered_ = false;
@@ -145,7 +145,7 @@ bool Tab::tabPrevious() {
 }
 
 
-void Tab::textEntered(sf::Uint32 keyCode) {
+void Tab::textEntered(char32_t keyCode) {
     if (active_ && focusedWidget_)
         focusedWidget_->textEntered(keyCode);
 }

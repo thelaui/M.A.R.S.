@@ -36,7 +36,7 @@ namespace menus {
     void mouseWheelMoved(Vector2f const& position, int delta);
     void mouseLeft(bool down);
     void keyEvent(bool down, Key const& key);
-    void textEntered(sf::Uint32 keyCode);
+    void textEntered(char32_t keyCode);
 
     void showMain();
     void showPause();

@@ -32,7 +32,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 # include "Menu/menus.hpp"
 # include "System/window.hpp"
 # include "Media/announcer.hpp"
-# include "Shaders/postFX.hpp"
 # include "SpaceObjects/stars.hpp"
 # include "TrailEffects/trailEffects.hpp"
 # include "Teams/teams.hpp"
@@ -76,7 +75,6 @@ void Game::update() {
         spaceObjects::update();
         particles::update();
         items::update();
-        postFX::update();
         trailEffects::update();
 
         if (teams::getFirstPoints() >= pointLimit_) {

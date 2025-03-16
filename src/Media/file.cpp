@@ -65,7 +65,7 @@ namespace file {
 
                 line = std::string(outstring.data());
 
-                std::basic_string<sf::Uint32> utf32line;
+                std::u32string utf32line;
                 sf::Utf8::toUtf32(line.begin(), line.end(), back_inserter(utf32line));
                 
                 strings.push_back(utf32line);

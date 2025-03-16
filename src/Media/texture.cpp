@@ -35,7 +35,7 @@ namespace texture {
             img.loadFromFile(fileName);
 
             // convert sf::Image to GLuint
-            const sf::Uint8* ptr = img.getPixelsPtr();
+            const std::uint8_t* ptr = img.getPixelsPtr();
             glGenTextures(1, textures_[type]);
             glBindTexture(GL_TEXTURE_2D, *textures_[type]);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.getSize().x, img.getSize().y, 0, GL_RGBA,GL_UNSIGNED_BYTE, ptr);

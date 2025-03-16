@@ -24,6 +24,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 class DecoObject {
     public:
+        virtual ~DecoObject() = default;
+
         /// Draws the DecoObject.
         virtual void draw() const = 0;
 };

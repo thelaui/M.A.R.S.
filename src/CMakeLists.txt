@@ -55,7 +55,7 @@ endif(APPLE)
 target_link_libraries(
 	marsshooter
 		${FOUNDATION_LIBRARY}
-		sfml-graphics sfml-audio
+		SFML::Graphics SFML::Audio
 		${OPENGL_LIBRARIES}
 		${XRANDR_LIBRARY}
 		${FRIBIDI_LIBRARY}

@@ -73,11 +73,11 @@ namespace settings {
     int         C_resY =                    INITIAL_WINDOW_Y;
     int         C_colorDepth =              32;
     bool        C_shaders =                 false;
-    Key         C_screenShotKey =           Key(sf::Keyboard::F12);
+    Key         C_screenShotKey =           Key(sf::Keyboard::Key::F12);
     bool        C_audioRandom =             true;
-    Key         C_audioNextKey =            Key(sf::Keyboard::F8);
-    Key         C_audioPreviousKey =        Key(sf::Keyboard::F7);
-    Key         C_statisticsKey =           Key(sf::Keyboard::Tab);
+    Key         C_audioNextKey =            Key(sf::Keyboard::Key::F8);
+    Key         C_audioPreviousKey =        Key(sf::Keyboard::Key::F7);
+    Key         C_statisticsKey =           Key(sf::Keyboard::Key::Tab);
     std::string C_configPath =              "";
     std::string C_dataPath =                "";
     std::string C_screenShotFormat =        "jpg";
@@ -92,11 +92,11 @@ namespace settings {
     sf::String    C_playerIName =           "PlayerI";
     Color3f       C_playerIColor =          Color3f(1.f, 0.87f, 0.0125f);
     Color3f       C_playerITeamColor =      Color3f(0.94f, 0.24f, 1.f);
-    Key           C_playerIup =             Key(sf::Keyboard::Up);
-    Key           C_playerIleft =           Key(sf::Keyboard::Left);
-    Key           C_playerIright =          Key(sf::Keyboard::Right);
-    Key           C_playerIfire =           Key(sf::Keyboard::RControl);
-    Key           C_playerISpecialKey =     Key(sf::Keyboard::RShift);
+    Key           C_playerIup =             Key(sf::Keyboard::Key::Up);
+    Key           C_playerIleft =           Key(sf::Keyboard::Key::Left);
+    Key           C_playerIright =          Key(sf::Keyboard::Key::Right);
+    Key           C_playerIfire =           Key(sf::Keyboard::Key::RControl);
+    Key           C_playerISpecialKey =     Key(sf::Keyboard::Key::RShift);
     bool          C_playerIteamL =          false;
     bool          C_playerIteamR =          true;
     int           C_playerIShip =           0;
@@ -105,11 +105,11 @@ namespace settings {
     sf::String    C_playerIIName =          "PlayerII";
     Color3f       C_playerIIColor =         Color3f(0.5f, 0.4f, 0.82f);
     Color3f       C_playerIITeamColor =     Color3f(0.05f, 1.f, 0.785f);
-    Key           C_playerIIup =            Key(sf::Keyboard::W);
-    Key           C_playerIIleft =          Key(sf::Keyboard::A);
-    Key           C_playerIIright =         Key(sf::Keyboard::D);
-    Key           C_playerIIfire =          Key(sf::Keyboard::LControl);
-    Key           C_playerIISpecialKey =    Key(sf::Keyboard::LShift);
+    Key           C_playerIIup =            Key(sf::Keyboard::Key::W);
+    Key           C_playerIIleft =          Key(sf::Keyboard::Key::A);
+    Key           C_playerIIright =         Key(sf::Keyboard::Key::D);
+    Key           C_playerIIfire =          Key(sf::Keyboard::Key::LControl);
+    Key           C_playerIISpecialKey =    Key(sf::Keyboard::Key::LShift);
     bool          C_playerIIteamL =         true;
     bool          C_playerIIteamR =         false;
     int           C_playerIIShip =          0;
@@ -497,22 +497,22 @@ namespace settings {
                 }
                 else if (inputLine == "[playerIName]") {
                     sf::String tmp;
-                    sf::Uint32 character(0);
+                    uint32_t character(0);
                     iss >> character;
                     int i(0);
                     while (character != 0 && i++ < 12) {
-                        tmp.insert(tmp.getSize(), character);
+                        tmp.insert(tmp.getSize(), static_cast<char32_t>(character));
                         iss >> character;
                     }
                     C_playerIName = tmp;
                 }
                 else if (inputLine == "[playerIIName]") {
                     sf::String tmp;
-                    sf::Uint32 character(0);
+                    uint32_t character(0);
                     iss >> character;
                     int i(0);
                     while (character != 0 && i++ < 12) {
-                        tmp.insert(tmp.getSize(), character);
+                        tmp.insert(tmp.getSize(), static_cast<char32_t>(character));
                         iss >> character;
                     }
                     C_playerIIName = tmp;

@@ -55,9 +55,9 @@ namespace music {
             }
             closedir(dp);
 
-            musicChannel_.setLoop(false);
+            musicChannel_.setLooping(false);
             musicChannel_.setRelativeToListener(true);
-            sf::Listener::setPosition(SPACE_X_RESOLUTION*0.5f, 0.f, 300.f);
+            sf::Listener::setPosition({SPACE_X_RESOLUTION*0.5f, 0.f, 300.f});
             setGlobalVolume();
             initialized_ = true;
         }
@@ -75,7 +75,7 @@ namespace music {
                 musicChannel_.setVolume(settings::C_musicVolume*fadeOutTimer_*2.5f);
             }
 
-            if (musicChannel_.getStatus() == sf::Music::Stopped && files_.size() > 0) {
+            if (musicChannel_.getStatus() == sf::Music::Status::Stopped && files_.size() > 0) {
                 if (games::type() == games::gMenu) play(settings::C_dataPath + "audio/menu.ogg");
                 else                               play();
             }
@@ -96,7 +96,7 @@ namespace music {
             if (games::type() != games::gMenu && games::type() != games::gTutorial && window::isKeyDown(settings::C_statisticsKey))
                     musicNotify::show(settings::C_dataPath + "/audio/music/" + files_[playList_.back()]);
         }
-        else if (musicChannel_.getStatus() == sf::Music::Playing)
+        else if (musicChannel_.getStatus() == sf::Music::Status::Playing)
             stop();
     }
 

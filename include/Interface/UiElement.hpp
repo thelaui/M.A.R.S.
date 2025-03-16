@@ -27,12 +27,13 @@ this program.  If not, see <http://www.gnu.org/licenses/>. */
 class UiElement {
     public:
         UiElement(Vector2f const& topLeft, int width, int height);
+        virtual ~UiElement() = default;
 
         virtual void mouseMoved(Vector2f const& position);
         virtual void mouseWheelMoved(Vector2f const& position, int delta) {}
         virtual void mouseLeft(bool down);
         virtual void keyEvent(bool down, Key const& key) {}
-        virtual void textEntered(sf::Uint32 keyCode) {}
+        virtual void textEntered(char32_t keyCode) {}
         virtual bool tabNext() {return true;}
         virtual bool tabPrevious() {return true;}
 

@@ -32,8 +32,8 @@ set(mars_EXE_DEST_DIR ${CMAKE_INSTALL_PREFIX}/games CACHE STRING "marsshooter ex
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
 
-# find the sfml2 headers and library
-find_package(SFML REQUIRED audio graphics)
+# find the sfml3 headers and library
+find_package(SFML 3 REQUIRED Audio Graphics)
 
 # Foundation library needed for apple
 if(APPLE)

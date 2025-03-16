@@ -35,7 +35,7 @@ class Game {
         /// particles::clear(), spaceObjects::clear(),
         /// controllers::clear(), players::clear(), zones::clear(),
         /// decoObjects::clear(), items::clear().
-        ~Game();
+        virtual ~Game();
 
         /// Updates the game.
         /// Has to be called every frame.
