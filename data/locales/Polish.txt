@@ -130,7 +130,7 @@
 
 // about
 
-057 Jest to pierwsza próba stworzenia gry w OpenGL z SFML (Simple and Fast Multimedia Library). Jest to gra dla dwóch graczy, gdzie lata się statkami kosmicznymi w dwuwymiarowej przestrzeni, w której rządzą prawa grawitacji. \n\nStrona domowa projektu: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer & Simon Schneegans
+057 Jest to pierwsza próba stworzenia gry w OpenGL z SFML (Simple and Fast Multimedia Library). Jest to gra dla dwóch graczy, gdzie lata się statkami kosmicznymi w dwuwymiarowej przestrzeni, w której rządzą prawa grawitacji. \n\nStrona domowa projektu: \nhttp://mars-game.sourceforge.net\n\n© 2010-2011 Felix Lauer & Simon Schneegans
 
 // license
 

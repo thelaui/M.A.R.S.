@@ -131,7 +131,7 @@
 
 // about
 
-057 Seo a' chiad oidhirp gus geama a chruthachadh ann an OpenGL le SFML. Seo geama airson dà chluicheadair a stiùiricheas soithichean ann am fànais le dà dhimeinsean fo bhuaidh laghan an iom-tharraing. \n\nDuilleag-dhachaigh: \nhttp://www.marsshooter.org\n\n© 2010-2011 Felix Lauer agus Simon Schneegans
+057 Seo a' chiad oidhirp gus geama a chruthachadh ann an OpenGL le SFML. Seo geama airson dà chluicheadair a stiùiricheas soithichean ann am fànais le dà dhimeinsean fo bhuaidh laghan an iom-tharraing. \n\nDuilleag-dhachaigh: \nhttp://mars-game.sourceforge.net\n\n© 2010-2011 Felix Lauer agus Simon Schneegans
 
 // license
 

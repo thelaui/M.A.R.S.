@@ -99,7 +99,7 @@ class BotController: public Controller {
         void     shootPoint(Vector2f const& location, bool avoidTeamMembers = true);
 
         Vector2f nextRoutePoint_;
-        TacticalZone* toCover_;
+        float toCoverRadius_;
         const float strength_;
 
         //path variables

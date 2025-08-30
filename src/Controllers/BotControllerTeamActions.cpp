@@ -175,10 +175,11 @@ void  BotController::attackTarget() {
 
 void BotController::protectZone() {
     if (nextRoutePoint_.x_ == FLT_MAX) {
-        toCover_ = static_cast<TacticalZone*>(currentJob_.object_);
+        TacticalZone* toCover_ = static_cast<TacticalZone*>(currentJob_.object_);
         nextRoutePoint_ = toCover_->getRandomPoint();
+        toCoverRadius_ = toCover_->radius_;
     }
-    if (moveTo(nextRoutePoint_, 0.5f, false, toCover_->radius_ / 4.f + 10.f)) {
+    if (moveTo(nextRoutePoint_, 0.5f, false, toCoverRadius_ / 4.f + 10.f)) {
         nextRoutePoint_.x_ = FLT_MAX;
     }
 }

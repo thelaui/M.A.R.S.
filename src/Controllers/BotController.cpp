@@ -38,7 +38,7 @@ BotController::BotController(Player* slave, float strength):
     specialChangeTimer_(randomizer::random(0.f, 0.5f)),
     currentJob_(Job::jCharge, 1),
     nextRoutePoint_(FLT_MAX, FLT_MAX),
-    toCover_(NULL),
+    toCoverRadius_(0.f),
     strength_(strength) {}
 
 void BotController::update() {
